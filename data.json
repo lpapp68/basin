@@ -1,5 +1,5 @@
 {
-  "generalva": "2026-08-05T20:41:11+00:00",
+  "generalva": "2026-08-05T20:54:25+00:00",
   "doboz": {
     "nev": "Magyarország",
     "terulet_km2": 93030,
@@ -21,7 +21,7 @@
       "terulet_szamitas": "Vaskapu I. vízgyűjtője 577 250 km² mínusz a Duna dévényi vízgyűjtője ~131 350 km²",
       "terulet_provenance": "helyorzo",
       "allapot": "tervezett",
-      "falak": "KÉT szelvény elég: Duna Dévénynél (be) és Duna a Vaskapunál / Orsovánál (ki). A Tisza, a Dráva, a Száva és a Morava vízgyűjtője teljes egészében a dobozon BELÜL van.",
+      "falak": "A falaihoz mindössze két szelvény kell: a Duna Dévénynél (be) és a Duna a Vaskapunál, Orsovánál (ki). A Tisza, a Dráva, a Száva és a Morava vízgyűjtője teljes egészében a dobozon belül van.",
       "megjegyzes": "Ehhez szlovák (SHMÚ) és román (INHGA) hozamadat kell — lásd SETUP.md."
     }
   },
@@ -34,7 +34,7 @@
     },
     "napi": {
       "cimke": "csapadék · párolgás",
-      "forras": "ERA5-Land + EUMETSAT LSA-SAF ET (még nincs bekötve)",
+      "forras": "GPM IMERG Early + EUMETSAT LSA-SAF ET",
       "utolso": "2026-08-04"
     },
     "havi": {
@@ -402,9 +402,9 @@
       "torzsszam": "1344",
       "nullpont_mBf": 80.99,
       "utolso_cm": -25.0,
-      "utolso_ido": "2026.08.05. 21:00",
+      "utolso_ido": "2026.08.05. 22:00",
       "hozam_m3s": 728.3,
-      "hozam_ido": "2026.08.05. 21:00",
+      "hozam_ido": "2026.08.05. 22:00",
       "vizho_c": 28.6,
       "lkv_cm": 14.0,
       "lnv_cm": 989.0,
@@ -412,7 +412,6 @@
       "rekord_alatt": true,
       "savon": -0.04,
       "sorozat_cm": [
-        -26.0,
         -27.0,
         -27.0,
         -27.0,
@@ -449,6 +448,7 @@
         -26.0,
         -26.0,
         -26.0,
+        -25.0,
         -25.0,
         -25.0,
         -25.0,
@@ -1102,10 +1102,10 @@
       "torzsszam": "2275",
       "nullpont_mBf": 73.7,
       "utolso_cm": 56.0,
-      "utolso_ido": "2026.08.05. 21:00",
+      "utolso_ido": "2026.08.05. 22:00",
       "hozam_m3s": 116.0,
       "hozam_ido": "2026.08.05. 07:00",
-      "vizho_c": 26.8,
+      "vizho_c": 26.9,
       "lkv_cm": -250.0,
       "lnv_cm": 1009.0,
       "lkv_folott_cm": 306.0,
@@ -1124,7 +1124,6 @@
         60.0,
         60.0,
         60.0,
-        60.0,
         59.0,
         59.0,
         59.0,
@@ -1159,9 +1158,10 @@
         57.0,
         56.0,
         57.0,
+        56.0,
         56.0
       ],
-      "valtozas_24h_cm": -3.0,
+      "valtozas_24h_cm": -2.0,
       "provenance": "mert"
     },
     {
@@ -1172,9 +1172,9 @@
       "torzsszam": "1523",
       "nullpont_mBf": 113.56,
       "utolso_cm": -156.0,
-      "utolso_ido": "2026.08.05. 21:00",
+      "utolso_ido": "2026.08.05. 22:00",
       "hozam_m3s": 17.77,
-      "hozam_ido": "2026.08.05. 21:00",
+      "hozam_ido": "2026.08.05. 22:00",
       "vizho_c": 27.0,
       "lkv_cm": -159.0,
       "lnv_cm": 902.0,
@@ -1182,7 +1182,6 @@
       "rekord_alatt": false,
       "savon": 0.0028,
       "sorozat_cm": [
-        -155.0,
         -154.0,
         -153.0,
         -154.0,
@@ -1229,9 +1228,10 @@
         -156.0,
         -155.0,
         -157.0,
+        -156.0,
         -156.0
       ],
-      "valtozas_24h_cm": -4.0,
+      "valtozas_24h_cm": -1.0,
       "provenance": "mert"
     },
     {
@@ -1382,17 +1382,16 @@
       "torzsszam": "2278",
       "nullpont_mBf": 79.5,
       "utolso_cm": -120.0,
-      "utolso_ido": "2026.08.05. 21:00",
-      "hozam_m3s": 34.66,
-      "hozam_ido": "2026.08.05. 21:00",
-      "vizho_c": 29.9,
+      "utolso_ido": "2026.08.05. 22:00",
+      "hozam_m3s": 34.77,
+      "hozam_ido": "2026.08.05. 22:00",
+      "vizho_c": 29.7,
       "lkv_cm": -127.0,
       "lnv_cm": 625.0,
       "lkv_folott_cm": 7.0,
       "rekord_alatt": false,
       "savon": 0.0093,
       "sorozat_cm": [
-        -94.0,
         -95.0,
         -95.0,
         -96.0,
@@ -1438,6 +1437,7 @@
         -119.0,
         -119.0,
         -119.0,
+        -120.0,
         -120.0,
         -120.0
       ],
@@ -1670,7 +1670,7 @@
       "megjegyzes": "közepes vízállású átlagos térfogat, kerekítve — rögzített viszonyítási pont"
     }
   },
-  "figyelmeztetes": "V2: a folyók vízállása, vízhozama és vízhője mérés, óránként. A csapadék, a párolgás és a készletváltozás még helyőrző — ezekre döntést ne alapozz.",
+  "figyelmeztetes": "A folyók vízállása, vízhozama és vízhője mérés, óránként. A csapadék és a párolgás műholdas mérés, naponta. A készletváltozás és a kivételi tételek még helyőrzők — ezekre döntést ne alapozz.",
   "nyitott_falak": [
     "Hernád (Szlovákia felől) — nincs bekötve",
     "Kraszna, Fekete-Körös, Berettyó (Románia felől) — nincs bekötve",
@@ -1686,11 +1686,11 @@
     "napok": [
       {
         "nap": "2026-08-05",
-        "mintak": 11,
-        "q_be": 995.5,
+        "mintak": 12,
+        "q_be": 998.1,
         "q_ki": -1047.7,
-        "paks_cm": -133.4,
-        "paks_q": 749.3,
+        "paks_cm": -133.3,
+        "paks_q": 749.4,
         "paks_c": 29.3,
         "csapadek_mm": null,
         "parolgas_mm": null,

@@ -2,9 +2,9 @@
   "_olvasd_el": "Minden érték itt lakik, ami MÉG NEM ÉL. Amint egy feed bekötésre kerül, a fetch_data.py onnan tölti, és a 'provenance' 'mert'-re vagy 'modellezett'-re vált. A 'helyorzo' címke a dashboardon vonalkázott háttérrel jelenik meg — szándékosan csúnyán.",
   "_ervenyes": "2026-07-30",
   "_ervenyes_havi": "2026-06",
-  "_figyelmeztetes": "V2: a folyók vízállása, vízhozama és vízhője mérés, óránként. A csapadék, a párolgás és a készletváltozás még helyőrző — ezekre döntést ne alapozz.",
+  "_figyelmeztetes": "A folyók vízállása, vízhozama és vízhője mérés, óránként. A csapadék és a párolgás műholdas mérés, naponta. A készletváltozás és a kivételi tételek még helyőrzők — ezekre döntést ne alapozz.",
   "_forrasok": {
-    "napi": "ERA5-Land + EUMETSAT LSA-SAF ET (még nincs bekötve)",
+    "napi": "GPM IMERG Early + EUMETSAT LSA-SAF ET",
     "havi": "GRACE-FO (még nincs bekötve)"
   },
   "csapadek_mm_nap": {
