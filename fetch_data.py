@@ -3,7 +3,7 @@
 basin.equora.institute — v2 adatgyűjtő
 
 VÁLTOZÁS a v1-hez képest:
-Az OVF mércénkénti óras idősora NEM csak vízállást ad, hanem VÍZHOZAMOT (m3/s) és
+Az OVF mércénkénti órás idősora NEM csak vízállást ad, hanem VÍZHOZAMOT (m3/s) és
 VÍZHŐFOKOT is. A v1-ben tévesen azt írtam, hogy a hozam nem publikus és GloFAS kell
 hozzá — nem kell. A mérleg folyó-tagjai innentől mérések, nem modell.
 
@@ -11,7 +11,7 @@ Paks csomópont: minket a víz érdekel. A blokkteljesítmény csak azért szere
 ez mondja meg, mennyi hűtővizet vesznek ki — semmi más energiaadatot nem tárolunk.
 
 Forrás:
-  OVF Országos Vízjelző Szolgálat, vizugy.hu — vízállás, vízhozam, vízhő (óras)
+  OVF Országos Vízjelző Szolgálat, vizugy.hu — vízállás, vízhozam, vízhő (órás)
   holadelej.hu /api/data (CC BY 4.0) — paksi blokkteljesítmény, kizárólag üzemállapotnak
 """
 
@@ -33,7 +33,7 @@ DOBOZOK = {
         "nev": "Magyarország",
         "terulet_km2": 93030,
         "allapot": "aktív",
-        "falak": "11 belépő + 3 kilépő magyar mérce, mind mért óras vízhozammal",
+        "falak": "11 belépő + 3 kilépő magyar mérce, mind mért órás vízhozammal",
         "megjegyzes": "Nem a medence, hanem a medence magyar szelete. Ezt tudjuk MA mérni.",
     },
     "mdb": {
@@ -109,7 +109,7 @@ def sz(s):
 
 
 def parse_allomas(html: str):
-    """Metaadat + óras idősor egy mérce adatlapjáról."""
+    """Metaadat + órás idősor egy mérce adatlapjáról."""
     plain = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html))
     meta = {}
     m = re.search(r"Vízmérce név:\s*(.{0,40}?)\s+Törzsszám:\s*(\d+)", plain)
@@ -298,10 +298,10 @@ def main():
         "merleg_m3s": {
             "csapadek": {"ertek": round(be_P), **meta_of(p["csapadek_mm_nap"])},
             "hozam_be": {"ertek": round(be_Q), "provenance": "mert", "kor_ora": 1,
-                         "forras": "OVF óras vízhozam: " + ", ".join(m["nev"] for m in be)},
+                         "forras": "OVF órás vízhozam: " + ", ".join(m["nev"] for m in be)},
             "parolgas": {"ertek": round(ki_ET), **meta_of(p["parolgas_mm_nap"])},
             "hozam_ki": {"ertek": round(ki_Q), "provenance": "mert", "kor_ora": 1,
-                         "forras": "OVF óras vízhozam: " + ", ".join(m["nev"] for m in ki)},
+                         "forras": "OVF órás vízhozam: " + ", ".join(m["nev"] for m in ki)},
             "keszletvaltozas": {"ertek": round(dS), "provenance": "modellezett", "kor_ora": None,
                                 "forras": "maradéktag a fenti tételekből"},
         },

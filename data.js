@@ -1,10 +1,10 @@
 window.BASIN_DATA = {
-  "generalva": "2026-08-05T19:44:11+00:00",
+  "generalva": "2026-08-05T20:24:50+00:00",
   "doboz": {
     "nev": "Magyarország",
     "terulet_km2": 93030,
     "allapot": "aktív",
-    "falak": "11 belépő + 3 kilépő magyar mérce, mind mért óras vízhozammal",
+    "falak": "11 belépő + 3 kilépő magyar mérce, mind mért órás vízhozammal",
     "megjegyzes": "Nem a medence, hanem a medence magyar szelete. Ezt tudjuk MA mérni."
   },
   "dobozok": {
@@ -12,7 +12,7 @@ window.BASIN_DATA = {
       "nev": "Magyarország",
       "terulet_km2": 93030,
       "allapot": "aktív",
-      "falak": "11 belépő + 3 kilépő magyar mérce, mind mért óras vízhozammal",
+      "falak": "11 belépő + 3 kilépő magyar mérce, mind mért órás vízhozammal",
       "megjegyzes": "Nem a medence, hanem a medence magyar szelete. Ezt tudjuk MA mérni."
     },
     "mdb": {
@@ -402,9 +402,9 @@ window.BASIN_DATA = {
       "torzsszam": "1344",
       "nullpont_mBf": 80.99,
       "utolso_cm": -25.0,
-      "utolso_ido": "2026.08.05. 20:00",
-      "hozam_m3s": 732.4,
-      "hozam_ido": "2026.08.05. 20:00",
+      "utolso_ido": "2026.08.05. 21:00",
+      "hozam_m3s": 728.3,
+      "hozam_ido": "2026.08.05. 21:00",
       "vizho_c": 28.6,
       "lkv_cm": 14.0,
       "lnv_cm": 989.0,
@@ -413,7 +413,6 @@ window.BASIN_DATA = {
       "savon": -0.04,
       "sorozat_cm": [
         -26.0,
-        -26.0,
         -27.0,
         -27.0,
         -27.0,
@@ -450,6 +449,7 @@ window.BASIN_DATA = {
         -26.0,
         -26.0,
         -26.0,
+        -25.0,
         -25.0,
         -25.0,
         -25.0,
@@ -461,7 +461,7 @@ window.BASIN_DATA = {
         -25.0,
         -25.0
       ],
-      "valtozas_24h_cm": 3.0,
+      "valtozas_24h_cm": 2.0,
       "provenance": "mert"
     },
     {
@@ -962,9 +962,9 @@ window.BASIN_DATA = {
       "torzsszam": "1518",
       "nullpont_mBf": 98.14,
       "utolso_cm": -356.0,
-      "utolso_ido": "2026.08.05. 20:00",
+      "utolso_ido": "2026.08.05. 21:00",
       "hozam_m3s": 66.26,
-      "hozam_ido": "2026.08.05. 20:00",
+      "hozam_ido": "2026.08.05. 21:00",
       "vizho_c": 26.9,
       "lkv_cm": -367.0,
       "lnv_cm": 758.0,
@@ -976,7 +976,6 @@ window.BASIN_DATA = {
         -344.0,
         -344.0,
         -344.0,
-        -344.0,
         -345.0,
         -345.0,
         -345.0,
@@ -1017,6 +1016,7 @@ window.BASIN_DATA = {
         -355.0,
         -355.0,
         -355.0,
+        -356.0,
         -356.0,
         -356.0,
         -356.0
@@ -1101,16 +1101,16 @@ window.BASIN_DATA = {
       "jegyzet": "kilépés közeli, nem a határszelvény",
       "torzsszam": "2275",
       "nullpont_mBf": 73.7,
-      "utolso_cm": 57.0,
-      "utolso_ido": "2026.08.05. 20:00",
+      "utolso_cm": 56.0,
+      "utolso_ido": "2026.08.05. 21:00",
       "hozam_m3s": 116.0,
       "hozam_ido": "2026.08.05. 07:00",
       "vizho_c": 26.8,
       "lkv_cm": -250.0,
       "lnv_cm": 1009.0,
-      "lkv_folott_cm": 307.0,
+      "lkv_folott_cm": 306.0,
       "rekord_alatt": false,
-      "savon": 0.2438,
+      "savon": 0.2431,
       "sorozat_cm": [
         60.0,
         60.0,
@@ -1125,7 +1125,6 @@ window.BASIN_DATA = {
         60.0,
         60.0,
         60.0,
-        60.0,
         59.0,
         59.0,
         59.0,
@@ -1159,9 +1158,10 @@ window.BASIN_DATA = {
         57.0,
         57.0,
         56.0,
-        57.0
+        57.0,
+        56.0
       ],
-      "valtozas_24h_cm": -2.0,
+      "valtozas_24h_cm": -3.0,
       "provenance": "mert"
     },
     {
@@ -1382,17 +1382,16 @@ window.BASIN_DATA = {
       "torzsszam": "2278",
       "nullpont_mBf": 79.5,
       "utolso_cm": -120.0,
-      "utolso_ido": "2026.08.05. 20:00",
+      "utolso_ido": "2026.08.05. 21:00",
       "hozam_m3s": 34.66,
-      "hozam_ido": "2026.08.05. 20:00",
-      "vizho_c": 30.1,
+      "hozam_ido": "2026.08.05. 21:00",
+      "vizho_c": 29.9,
       "lkv_cm": -127.0,
       "lnv_cm": 625.0,
       "lkv_folott_cm": 7.0,
       "rekord_alatt": false,
       "savon": 0.0093,
       "sorozat_cm": [
-        -94.0,
         -94.0,
         -95.0,
         -95.0,
@@ -1439,6 +1438,7 @@ window.BASIN_DATA = {
         -119.0,
         -119.0,
         -119.0,
+        -120.0,
         -120.0
       ],
       "valtozas_24h_cm": -15.0,
@@ -1587,7 +1587,7 @@ window.BASIN_DATA = {
       "ertek": 1014,
       "provenance": "mert",
       "kor_ora": 1,
-      "forras": "OVF óras vízhozam: Nagybajcs, Ipolytarnóc, Őrtilos, Szentgotthárd, Tiszabecs, Csenger, Felsőberecki, Sajópüspöki, Makó, Körösszakál, Gyula"
+      "forras": "OVF órás vízhozam: Nagybajcs, Ipolytarnóc, Őrtilos, Szentgotthárd, Tiszabecs, Csenger, Felsőberecki, Sajópüspöki, Makó, Körösszakál, Gyula"
     },
     "parolgas": {
       "ertek": -2046,
@@ -1599,7 +1599,7 @@ window.BASIN_DATA = {
       "ertek": -1048,
       "provenance": "mert",
       "kor_ora": 1,
-      "forras": "OVF óras vízhozam: Mohács, Drávaszabolcs, Szeged"
+      "forras": "OVF órás vízhozam: Mohács, Drávaszabolcs, Szeged"
     },
     "keszletvaltozas": {
       "ertek": -2135,
@@ -1686,11 +1686,11 @@ window.BASIN_DATA = {
     "napok": [
       {
         "nap": "2026-08-05",
-        "mintak": 7,
-        "q_be": 979.3,
+        "mintak": 8,
+        "q_be": 983.6,
         "q_ki": -1048.0,
-        "paks_cm": -133.6,
-        "paks_q": 748.4,
+        "paks_cm": -133.5,
+        "paks_q": 748.7,
         "paks_c": 29.5,
         "csapadek_mm": null,
         "parolgas_mm": null,
