@@ -284,7 +284,12 @@ a{color:var(--viz)}
   const el = (t,c,h) => { const n=document.createElement(t); if(c)n.className=c;
                           if(h!=null)n.innerHTML=h; return n; };
   const num = n => n==null ? "—" : n.toLocaleString("hu-HU");
-  const sgn = n => (n>0?"+":"") + num(n);
+  // Minden törtszám ezen megy át: magyar tizedesvessző, rögzített jegyszám.
+  const PR_NEV = {mert:"mért", modellezett:"modellezett", helyorzo:"helyőrző"};
+  const pr = k => `<span class="pr ${k}">${PR_NEV[k] || k}</span>`;
+  const dec = (n,j=1) => n==null ? "—"
+    : n.toLocaleString("hu-HU",{minimumFractionDigits:j,maximumFractionDigits:j});
+  const sgn = n => (n>0?"+":"") + num(n);   // num() adja a magyar mínuszjelet
 
   /* ── fogalmak ── */
   const FOGALOM = {
@@ -409,10 +414,10 @@ a{color:var(--viz)}
     box.appendChild(svg);
     box.appendChild(el("div","ertek",num(m.utolso_cm)+" cm"));
     box.appendChild(el("div","hozam", m.hozam_m3s!=null
-      ? m.hozam_m3s.toLocaleString("hu-HU",{maximumFractionDigits:1})+" m³/s" : "hozam nincs"));
+      ? dec(m.hozam_m3s,1)+" m³/s" : "hozam nincs"));
     box.appendChild(el("div","alatt", m.rekord_alatt
-      ? "▼ "+Math.abs(m.lkv_folott_cm)+" cm az LKV alatt"
-      : m.lkv_folott_cm+" cm az LKV felett"));
+      ? "▼ "+Math.abs(m.lkv_folott_cm)+" cm-rel az LKV alatt"
+      : m.lkv_folott_cm+" cm-rel az LKV felett"));
     box.title = m.folyo+" – "+m.nev+(m.jegyzet?" · "+m.jegyzet:"")
       +"\n24 órás változás: "+sgn(m.valtozas_24h_cm)+" cm";
     return box;
@@ -447,24 +452,24 @@ a{color:var(--viz)}
     };
     const P4=$("#paks");
     P4.appendChild(kartya("1. fal · vízszint",
-      num(K.vizallas_cm)+' <small>cm</small>',
+      num(K.vizallas_cm)+'<small> cm</small>',
       K.lkv_alatt_cm>0
         ? `<b>${K.lkv_alatt_cm} cm-rel a mindenkori legkisebb vízállás alatt</b> (LKV ${num(K.lkv_cm)} cm). A szivattyúk szívócsonkja fix magasságban van.`
         : `LKV ${num(K.lkv_cm)} cm. A szivattyúk szívócsonkja fix magasságban van.`,
       K.lkv_alatt_cm>0));
     P4.appendChild(kartya("2. fal · vízhő",
-      K.vizho_c+' <small>°C</small>',
-      `A hőterhelési korlát ${K.hokorlat_c} °C a melegvíz-csatorna torkolatától 500 méterre. `+
-      `Tartalék: <b>${K.hokorlat_tartalek_c} °C</b>.`,
+      dec(K.vizho_c,1)+'<small> °C</small>',
+      `A hőterhelési korlát ${dec(K.hokorlat_c,0)} °C a melegvíz-csatorna torkolatától 500 méterre. `+
+      `Tartalék: <b>${dec(K.hokorlat_tartalek_c,1)} °C</b>.`,
       K.hokorlat_tartalek_c!=null && K.hokorlat_tartalek_c<3));
     P4.appendChild(kartya("A folyó",
-      num(K.hozam_m3s)+' <small>m³/s</small>',
-      `Mért óras vízhozam a paksi szelvényben. <span class="pr mert">mért</span>`, false));
+      num(K.hozam_m3s)+'<small> m³/s</small>',
+      `Mért órás vízhozam a paksi szelvényben. ${pr("mert")}`, false));
     P4.appendChild(kartya("Hűtővízkivétel",
-      (hv.ertek!=null?num(hv.ertek):"—")+' <small>m³/s</small>',
+      dec(hv.ertek,1)+'<small> m³/s</small>',
       `${hv.allapot||"—"}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("hu-HU",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
       `és gyakorlatilag teljes egészében visszatér — felmelegítve. `+
-      `<span class="pr modellezett">modellezett</span> ${hv.forras||""}`, false));
+      `${pr("modellezett")} ${hv.forras||""}`, false));
   }
 
   /* ── 1 Pulzus ── */
@@ -476,15 +481,15 @@ a{color:var(--viz)}
     const t=M[k], neg=t.ertek<0, ossz=(k==="keszletvaltozas");
     const r=el("div","tetel"+(ossz?" ossz":""));
     r.appendChild(el("div","cim",cim));
-    r.appendChild(el("div","szam "+(neg?"neg":"poz"), sgn(t.ertek)+' <small>m³/s</small>'));
+    r.appendChild(el("div","szam "+(neg?"neg":"poz"), sgn(t.ertek)+'<small> m³/s</small>'));
     const rud=el("div","rud2");
     const i=el("i", neg?"balra":"jobbra");
     i.style.width=(Math.abs(t.ertek)/maxAbs*50)+"%";
     if(ossz) i.classList.add("dS");
     rud.appendChild(el("span","nulla")); rud.appendChild(i); r.appendChild(rud);
     r.appendChild(el("div","meta",
-      `<span class="pr ${t.provenance}">${t.provenance}</span>`+
-      `<span>${MM[k]} mm/nap</span><span>· ${t.forras}</span>`+
+      pr(t.provenance)+
+      `<span>${dec(MM[k],2)} mm/nap</span><span>· ${t.forras}</span>`+
       (t.kor_ora?`<span>· ${t.kor_ora} órás</span>`:"")));
     $("#pulzus").appendChild(r);
   });
@@ -501,9 +506,9 @@ a{color:var(--viz)}
         +`<text x="42" y="${y2(g)+3}" font-size="9" text-anchor="end" fill="var(--halvany)" font-family="var(--mono)">${(g/R.terfogat_km3).toFixed(0)}</text>`;
   }
   $("#egyenleg").innerHTML =
-    `<div class="nagy ${E.kumulalt_km3<0?"neg":""}">${sgn(E.kumulalt_km3)}<span class="egys">km³</span></div>`+
+    `<div class="nagy ${E.kumulalt_km3<0?"neg":""}">${sgn(E.kumulalt_km3)}<span class="egys"> km³</span></div>`+
     `<div style="margin-top:8px;font-size:12px;color:var(--halvany)">`+
-    `<span class="pr ${E.provenance}">${E.provenance}</span> &nbsp;${E.kezdet} óta</div>`+
+    `${pr(E.provenance)} &nbsp;${E.kezdet} óta</div>`+
     `<svg viewBox="0 0 ${W2} ${H2}" width="100%" style="margin-top:16px" role="img"
       aria-label="Kumulált vízhiány, lefelé mutató sáv a nullavonalról">
       ${rac}
@@ -524,8 +529,8 @@ a{color:var(--viz)}
     </svg>`+
     `<p style="font-size:12.5px;color:var(--halvany);margin:4px 0 0">`+
     `A sáv a nullavonal alatt nő: ez hiány, nem készlet. Egy rácsvonal = egy `+
-    `${R.nev} (${R.terfogat_km3} km³); a hiány jelenleg `+
-    `<b style="font-family:var(--mono);color:var(--rekord)">${(Math.abs(E.kumulalt_km3)/R.terfogat_km3).toFixed(1)}</b> ${R.nev}-nyi.</p>`+
+    `${R.nev} (${dec(R.terfogat_km3,1)} km³); a hiány jelenleg `+
+    `<b style="font-family:var(--mono);color:var(--rekord)">${dec(Math.abs(E.kumulalt_km3)/R.terfogat_km3,1)}</b> ${R.nev}-nyi.</p>`+
     `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0;padding-top:10px;`+
     `border-top:1px solid var(--vonal-halk)">A lap NEM azt mutatja, mennyi víz van — `+
     `azt, hogy mennyivel van kevesebb. Teljes készletet nem tudunk mérni.<br>Forrás: ${E.forras}</p>`;
@@ -537,11 +542,11 @@ a{color:var(--viz)}
     const t=H[k];
     hl.appendChild(el("div","par",
       `<span>${c}<br><span style="font-size:11.5px;color:var(--halvany)">${t.forras}</span></span>`+
-      `<b>${num(t.ertek)} m³/s</b>`));
+      `<b>${num(t.ertek)} m³/s</b>`));
   });
   hl.appendChild(el("div","res",
     `<div class="cim">Nem tudjuk, hova lett</div>`+
-    `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
+    `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
     `<p>Ha a két becslés egyezne, ez nulla volna. Amíg nem az, a különbség a mérésrendszer
      hiányát méri, nem a vizet. Ez a panel v1-ben a legfontosabb, mert megmondja,
      mennyire hihető a többi.</p>`));
@@ -552,7 +557,7 @@ a{color:var(--viz)}
     const s=el("div","s");
     s.appendChild(el("div","n",k.nev+
       `<span class="tag ${k.fogyaszto?"fogy":"vissza"}">${k.fogyaszto?"fogyasztó":"visszatér"}</span>`));
-    s.appendChild(el("div","v",num(k.ertek)+" m³/s"));
+    s.appendChild(el("div","v",dec(k.ertek,1)+"\u00a0m³/s"));
     s.appendChild(el("div","m",k.megjegyzes));
     $("#kivetel").appendChild(s);
   });
@@ -560,7 +565,7 @@ a{color:var(--viz)}
   /* lábjegyzet */
   $("#lab").innerHTML =
     `Vízállás, vízhozam és vízhő: OVF Országos Vízjelző Szolgálat (vizugy.hu), mércénkénti `+
-    `óras idősor. Az LKV/LNV a mércék hivatalos adatlapjáról származik. `+
+    `órás idősor. Az LKV/LNV a mércék hivatalos adatlapjáról származik. `+
     `Paksi blokkteljesítmény: holadelej.hu /api/data (CC BY 4.0) — kizárólag a hűtővízkivétel `+
     `üzemállapotához. A csapadék, a párolgás és a készletváltozás még helyőrző: `+
     `ERA5-Land, LSA-SAF és GRACE-FO nincs bekötve. Egyetlen pipeline, egyetlen kimenet: `+
