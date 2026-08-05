@@ -42,8 +42,8 @@ DOBOZOK = {
         "terulet_szamitas": "Vaskapu I. vízgyűjtője 577 250 km² mínusz a Duna dévényi vízgyűjtője ~131 350 km²",
         "terulet_provenance": "helyorzo",
         "allapot": "tervezett",
-        "falak": "KÉT szelvény elég: Duna Dévénynél (be) és Duna a Vaskapunál / Orsovánál (ki). "
-                 "A Tisza, a Dráva, a Száva és a Morava vízgyűjtője teljes egészében a dobozon BELÜL van.",
+        "falak": "A falaihoz mindössze két szelvény kell: Duna Dévénynél (be) és Duna a Vaskapunál vagy Orsovánál (ki). "
+                 "A Tisza, a Dráva, a Száva és a Morava vízgyűjtője teljes egészében a dobozon belül van.",
         "megjegyzes": "Ehhez szlovák (SHMÚ) és román (INHGA) hozamadat kell — lásd SETUP.md.",
     },
 }
