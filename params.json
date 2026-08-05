@@ -10,20 +10,20 @@
   "csapadek_mm_nap": {
     "ertek": 0.0,
     "provenance": "mert",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-04, koszinusz-súlyozott átlag a dobozra",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-04, területsúlyozott átlag országhatár-maszkkal",
     "kor_ora": 24,
     "datum": "2026-08-04",
-    "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Téglalap-átlag, nem vízgyűjtőre maszkolt.",
+    "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 2.2,
+    "ertek": 1.9,
     "provenance": "mert",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-04, koszinusz-súlyozott átlag, minőségszűrve (missing_values_percent ≤ 20%)",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-04, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
     "kor_ora": 24,
     "datum": "2026-08-04",
     "lefedettseg": 0.982,
-    "figyelmeztetes": "Téglalap-átlag, nem vízgyűjtőre maszkolt. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
+    "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
   },
   "hozam_be_m3s": {
