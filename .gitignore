@@ -10,3 +10,5 @@ maszk_cache/
 __pycache__/
 .DS_Store
 archiv/log.txt
+data.json
+data.js
