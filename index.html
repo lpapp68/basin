@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Középső-Duna-medence vízmérlege — EQUORA Institute</title>
+<link rel="canonical" href="https://basin.equora.institute/">
+<meta name="description" content="Mennyi víz érkezik a Középső-Duna-medencébe, mennyi párolog el és mennyi távozik — mért vízhozamból, műholdas párolgásból és csapadékból, óránként frissülve.">
+<meta property="og:title" content="Középső-Duna-medence vízmérlege">
+<meta property="og:description" content="Mért vízhozam 22 mércéről, műholdas párolgás és csapadék. Minden szám mellett ott, hogy mérés, modell vagy helyőrző.">
+<meta property="og:url" content="https://basin.equora.institute/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -82,6 +89,17 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .racs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:22px;align-items:start}
 .panel{border:1px solid var(--vonal);background:var(--papir-2);padding:20px}
 .panel h3{font-family:var(--serif);font-size:17px;font-weight:700;margin:0 0 3px}
+.pontos{font-family:var(--sans);font-size:12.5px;font-weight:400;color:var(--halvany);
+  letter-spacing:0}
+.jelmagy{display:flex;flex-wrap:wrap;gap:6px 22px;margin:16px 0 0;padding:12px 14px;
+  border:1px solid var(--vonal);background:var(--papir-2);font-size:12.5px;
+  color:var(--halvany)}
+.jelmagy span{display:flex;align-items:baseline;gap:7px}
+.jelmagy b{flex:0 0 auto}
+.fog{border-bottom:1px dotted var(--halvany);cursor:help}
+.fogbuborek{position:fixed;z-index:50;max-width:280px;background:var(--tinta);
+  color:var(--papir);font-size:12.5px;line-height:1.45;padding:9px 11px;
+  box-shadow:0 4px 14px rgba(22,38,43,.28)}
 .panel .alcim{font-size:13px;color:var(--halvany);margin:0 0 18px}
 
 /* provenance jelölők */
@@ -209,37 +227,45 @@ a{color:var(--viz)}
 
 <section id="paks-sec">
   <div class="sz"><h2>Paks · a vízoldal</h2><span class="n">csomópont</span></div>
-  <p class="lead">Nem energiaadat. A blokkteljesítmény itt egyetlen dolgot mond meg:
-  mennyi hűtővizet vesznek ki a Dunából. Két vízoldali fal van, és mindkettő látszik.</p>
+  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti a kondenzátorokon, és
+  felmelegítve visszaengedi. A víz tehát nem fogy el — de az erőműnek két vízoldali
+  feltétele van, és ha bármelyik nem teljesül, nem tud termelni. Ezért van itt.
+  A blokkteljesítmény csak azt mondja meg, mennyi vizet vesznek ki éppen;
+  más energiaadatot a lap nem használ.</p>
   <div class="paksdoboz" id="paks"></div>
 </section>
 
 <section>
   <div class="sz"><h2>Négy panel</h2><span class="n">v2</span></div>
+  <div class="jelmagy">
+    <span><b class="pr mert">mért</b> műszer vagy műhold mérte; a lap nem számolt hozzá</span>
+    <span><b class="pr modellezett">modellezett</b> mért tételekből számítva, nem közvetlen mérés</span>
+    <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg nincs bekötve a forrás — döntést ne alapozz rá</span>
+  </div>
   <div class="racs">
 
     <div class="panel" id="p-pulzus">
-      <h3>1 · Pulzus</h3>
+      <h3>1 · Pulzus <span class="pontos">a mérleg öt tagja</span></h3>
       <p class="alcim">A mérleg öt tagja, mind ugyanabban a mértékegységben. A folyótagok
       mérésből jönnek, a párolgás egyelőre nem.</p>
       <div id="pulzus"></div>
     </div>
 
     <div class="panel" id="p-egyenleg">
-      <h3>2 · Egyenleg</h3>
+      <h3>2 · Egyenleg <span class="pontos">mennyivel van kevesebb</span></h3>
       <p class="alcim">Bankszámla-logika, egyetlen futó egyenleggel.</p>
       <div id="egyenleg"></div>
     </div>
 
     <div class="panel" id="p-hovalett">
-      <h3>3 · Hova lett</h3>
+      <h3>3 · Hova lett <span class="pontos">amit nem tudunk elszámolni</span></h3>
       <p class="alcim">Két független becslés ugyanarra a párolgásra. A különbségük az, amit
       nem tudunk.</p>
       <div id="hovalett"></div>
     </div>
 
     <div class="panel" id="p-kivetel">
-      <h3>4 · Kivétel</h3>
+      <h3>4 · Kivétel <span class="pontos">amit az ember kivesz</span></h3>
       <p class="alcim">Amit kiveszünk. A döntő nem a mennyiség, hanem hogy visszatér-e.</p>
       <div class="kiv" id="kivetel"></div>
     </div>
@@ -259,6 +285,55 @@ a{color:var(--viz)}
                           if(h!=null)n.innerHTML=h; return n; };
   const num = n => n==null ? "—" : n.toLocaleString("hu-HU");
   const sgn = n => (n>0?"+":"") + num(n);
+
+  /* ── fogalmak ── */
+  const FOGALOM = {
+    "vízhozam": "Mennyi víz halad át a szelvényen másodpercenként (m³/s). Nem azonos a vízállással: alacsony vízálláshoz széles mederben is tartozhat nagy hozam.",
+    "vízállás": "A vízfelszín magassága a mérce nullpontjához képest, centiméterben. Lehet negatív — az csak azt jelenti, hogy a nullpont alatt van.",
+    "LKV": "Legkisebb vízállás: a mércénél valaha nyilvántartott legalacsonyabb érték. Hogy ez mikor frissült utoljára, az OVF-nél tisztázandó.",
+    "párolgás": "Tényleges evapotranszspiráció: amit a talaj elpárologtat és a növényzet elpárologtat. Aszályban csökken, mert nincs mit elpárologtatni.",
+    "maradéktag": "Nem mérjük, hanem kiszámoljuk: ami a többi tag összeadása után marad. Minden fenti tag hibája ebben gyűlik össze.",
+    "hőterhelési korlát": "A melegvíz-csatorna torkolatától 500 méterre a Duna nem lehet 30 °C-nál melegebb. Ez az erőmű második vízoldali feltétele a vízszint mellett.",
+  };
+  function fogalmakat_jeloli(){
+    const gyok = document.querySelectorAll(".lead, .alcim, .tetel .cim, .pk .m, .kiv .s .m, .res p, footer");
+    const kulcsok = Object.keys(FOGALOM).sort((a,b)=>b.length-a.length);
+    gyok.forEach(n=>{
+      const seta = document.createTreeWalker(n, NodeFilter.SHOW_TEXT);
+      const csomok=[]; let c; while((c=seta.nextNode())) csomok.push(c);
+      csomok.forEach(t=>{
+        for(const k of kulcsok){
+          const i = t.nodeValue.indexOf(k);
+          if(i<0 || t.parentElement.closest(".fog")) continue;
+          const utan = t.splitText(i), maradek = utan.splitText(k.length);
+          const sp = el("span","fog",k); sp.dataset.mag = FOGALOM[k];
+          utan.replaceWith(sp); void maradek; break;
+        }
+      });
+    });
+  }
+  let buborek=null;
+  function buborek_be(cel){
+    buborek_ki();
+    buborek = el("div","fogbuborek", cel.dataset.mag);
+    document.body.appendChild(buborek);
+    const r = cel.getBoundingClientRect(), b = buborek.getBoundingClientRect();
+    buborek.style.left = Math.max(8, Math.min(window.innerWidth-b.width-8, r.left)) + "px";
+    buborek.style.top = (r.bottom + b.height + 10 > window.innerHeight
+      ? r.top - b.height - 6 : r.bottom + 6) + "px";
+  }
+  function buborek_ki(){ if(buborek){ buborek.remove(); buborek=null; } }
+  document.addEventListener("click", e=>{
+    const f = e.target.closest(".fog");
+    f ? buborek_be(f) : buborek_ki();
+  });
+  document.addEventListener("mouseover", e=>{
+    const f = e.target.closest(".fog"); if(f) buborek_be(f);
+  });
+  document.addEventListener("mouseout", e=>{
+    if(e.target.closest(".fog")) buborek_ki();
+  });
+  window.addEventListener("scroll", buborek_ki, {passive:true});
 
   if(!D){ document.body.innerHTML =
     '<div class="warn">Nincs adat. Futtasd előbb: <code>python3 fetch_data.py</code></div>'; return; }
@@ -495,6 +570,8 @@ a{color:var(--viz)}
     `<br><br><b>Nyitott falak</b> — amit a mérleg nem fog be, és ezért a maradéktagban jelenik meg: `+
     D.nyitott_falak.join(" · ") +
     (D.hibak && D.hibak.length ? `<br><br><b>Hibák a legutóbbi futásból:</b> ${D.hibak.join(" · ")}` : "");
+
+  fogalmakat_jeloli();
 })();
 </script>
 </body>
