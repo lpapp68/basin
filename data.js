@@ -1,5 +1,5 @@
 window.BASIN_DATA = {
-  "generalva": "2026-08-05T19:21:10+00:00",
+  "generalva": "2026-08-05T19:23:22+00:00",
   "doboz": {
     "nev": "Magyarország",
     "terulet_km2": 93030,
@@ -1686,11 +1686,11 @@ window.BASIN_DATA = {
     "napok": [
       {
         "nap": "2026-08-05",
-        "mintak": 5,
-        "q_be": 967.8,
-        "q_ki": -1048.4,
-        "paks_cm": -133.8,
-        "paks_q": 747.4,
+        "mintak": 6,
+        "q_be": 973.5,
+        "q_ki": -1048.0,
+        "paks_cm": -133.7,
+        "paks_q": 748.0,
         "paks_c": 29.6,
         "csapadek_mm": null,
         "parolgas_mm": null,
