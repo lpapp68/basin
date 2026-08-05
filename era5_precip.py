@@ -26,6 +26,8 @@ import cdsapi
 import numpy as np
 import xarray as xr
 
+import maszk
+
 # A doboz befoglaló téglalapja: É, Ny, D, K
 BBOX = [49.1, 16.0, 45.7, 22.9]
 KESES_NAP = 6          # az ERA5-Land kb. 5 napot késik; 6 biztonságos
@@ -82,8 +84,9 @@ def terulet_atlag(path: str) -> float:
         if d in da.dims:
             da = da.isel({d: 0})
     lat_nev = "latitude" if "latitude" in da.coords else "lat"
-    suly = np.cos(np.deg2rad(da[lat_nev]))
-    atlag_m = float(da.weighted(suly.fillna(0)).mean().values)
+    lon_nev = "longitude" if "longitude" in da.coords else "lon"
+    atlag_m, cellak, terulet = maszk.sulyozott_atlag(da, lat_nev, lon_nev)
+    print(f"  maszk: {cellak} cella, {terulet:,.0f} km²")
     return atlag_m * 1000.0
 
 
@@ -93,11 +96,11 @@ def beir(mm: float, nap: dt.date) -> None:
         "ertek": round(mm, 2),
         "provenance": "mert",
         "forras": f"ERA5-Land total_precipitation, {nap.isoformat()}, "
-                  f"koszinusz-súlyozott átlag a(z) {BBOX} téglalapra (Copernicus, CC-BY)",
+                  f"területsúlyozott átlag országhatár-maszkkal (Copernicus, CC-BY)",
         "kor_ora": (dt.date.today() - nap).days * 24,
         "datum": nap.isoformat(),
-        "figyelmeztetes": "Téglalap-átlag, nem országhatárra vagy vízgyűjtőre maszkolt. "
-                          "A doboz valódi alakjához maszk kell — addig ez felső közelítés.",
+        "figyelmeztetes": "Országhatár-maszkkal súlyozva. A doboz jelenleg Magyarország, "
+                          "nem a teljes vízgyűjtő.",
     }
     p["_ervenyes"] = nap.isoformat()
     PARAMS.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")

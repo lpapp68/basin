@@ -27,6 +27,8 @@ import urllib.request
 import numpy as np
 import xarray as xr
 
+import maszk
+
 GEP = "datalsasaf.lsasvcs.ipma.pt"
 URL = ("https://" + GEP + "/PRODUCTS/MSG/MDMETv3/NETCDF/{d:%Y}/{d:%m}/{d:%d}/"
        "NETCDF4_LSASAF_MSG_DMETv3_MSG-Disk_{d:%Y%m%d}0000.nc")
@@ -65,18 +67,18 @@ def terulet_atlag(path: str):
     if "time" in et.dims:
         et, hiany = et.isel(time=0), hiany.isel(time=0)
 
-    # A lat lehet csökkenő sorrendű, ezért maszkkal vágunk, nem slice-szal.
+    # Előszűrés a befoglaló téglalapra, hogy ne a fél glóbuszt maszkoljuk.
     m = ((ds.lat >= BBOX["lat_min"]) & (ds.lat <= BBOX["lat_max"]))
     n = ((ds.lon >= BBOX["lon_min"]) & (ds.lon <= BBOX["lon_max"]))
     et, hiany = et.where(m & n, drop=True), hiany.where(m & n, drop=True)
 
-    cellak_ossz = int(et.notnull().sum())
     jo = et.where(hiany <= MAX_HIANY_SZAZALEK)
+    cellak_ossz = int(et.notnull().sum())
     cellak_jo = int(jo.notnull().sum())
     lefedettseg = cellak_jo / cellak_ossz if cellak_ossz else 0.0
 
-    suly = np.cos(np.deg2rad(jo["lat"])).broadcast_like(jo).where(jo.notnull())
-    atlag = float(jo.weighted(suly.fillna(0)).mean(skipna=True).values)
+    atlag, cellak, terulet = maszk.sulyozott_atlag(jo, "lat", "lon")
+    print(f"  maszk: {cellak} cella, {terulet:,.0f} km²")
     return atlag, lefedettseg, cellak_ossz, cellak_jo
 
 
@@ -86,12 +88,12 @@ def beir(mm: float, nap: dt.date, lefedettseg: float) -> None:
         "ertek": round(mm, 2),
         "provenance": "mert",
         "forras": (f"EUMETSAT LSA SAF DMETv3 (MSG), {nap.isoformat()}, "
-                   f"koszinusz-súlyozott átlag, minőségszűrve "
+                   f"területsúlyozott átlag országhatár-maszkkal, minőségszűrve "
                    f"(missing_values_percent ≤ {MAX_HIANY_SZAZALEK:.0f}%)"),
         "kor_ora": (dt.date.today() - nap).days * 24,
         "datum": nap.isoformat(),
         "lefedettseg": round(lefedettseg, 3),
-        "figyelmeztetes": ("Téglalap-átlag, nem vízgyűjtőre maszkolt. "
+        "figyelmeztetes": ("Országhatár-maszkkal súlyozva. "
                            "A minőségszűrés miatt a felhős cellák kimaradnak — "
                            "erősen felhős napon a maradék minta torzíthat."),
         "hivatkozas": ("Data provided by the EUMETSAT Satellite Application Facility "

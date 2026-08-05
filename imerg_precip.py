@@ -35,6 +35,8 @@ import earthaccess
 import numpy as np
 import xarray as xr
 
+import maszk
+
 BBOX = {"lat_min": 45.7, "lat_max": 49.1, "lon_min": 16.0, "lon_max": 22.9}
 TERMEK = "GPM_3IMERGDE"      # Early, napi. A Final (GPM_3IMERGDF) pontosabb, de hónapokat késik.
 VERZIO = "07"
@@ -87,9 +89,9 @@ def terulet_atlag(path: str) -> float:
     da = da.where(da >= 0)
     cellak = int(da.notnull().sum())
 
-    suly = np.cos(np.deg2rad(da[lat])).broadcast_like(da).where(da.notnull())
-    atlag = float(da.weighted(suly.fillna(0)).mean(skipna=True).values)
-    print(f"  {nev} ({egyseg}) a dobozban: {cellak} cella"
+    atlag, cellak_maszk, terulet = maszk.sulyozott_atlag(da, lat, lon)
+    print(f"  maszk: {cellak_maszk} cella, {terulet:,.0f} km²")
+    print(f"  {nev} ({egyseg}) a téglalapban: {cellak} cella"
           + (f", {hianyzo} hiányzó kidobva" if hianyzo else ""))
     print(f"  medián {float(da.median()):.2f} · max {float(da.max()):.2f} · "
           f"1 mm felett {float((da > 1).mean()) * 100:.0f}%")
@@ -105,12 +107,12 @@ def beir(mm: float, nap: dt.date) -> None:
         "ertek": round(mm, 2),
         "provenance": "mert",
         "forras": f"GPM IMERG Early napi ({TERMEK} V{VERZIO}), {nap.isoformat()}, "
-                  f"koszinusz-súlyozott átlag a dobozra",
+                  f"területsúlyozott átlag országhatár-maszkkal",
         "kor_ora": (dt.date.today() - nap).days * 24,
         "datum": nap.isoformat(),
         "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de "
                           "kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. "
-                          "Téglalap-átlag, nem vízgyűjtőre maszkolt.",
+                          "Országhatár-maszkkal súlyozva.",
         "hivatkozas": "GPM IMERG, NASA GES DISC",
     }
     PARAMS.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")

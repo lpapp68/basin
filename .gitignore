@@ -2,11 +2,11 @@
 *.nc4
 imerg/
 _publish/
-.netrc
-.cdsapirc
+hatar.geojson
+maszk_cache/
+.netrc*
+.cdsapirc*
+*.rtf
 __pycache__/
 .DS_Store
 archiv/log.txt
-.cdsapirc*
-.netrc*
-*.rtf
