@@ -12,7 +12,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 VENV="${VENV:-$HOME/cds-env}"
-source "$VENV/bin/activate"
+if [ -f "$VENV/bin/activate" ]; then
+  source "$VENV/bin/activate"
+fi
 
 MOD="${1:-auto}"
 JELZO="archiv/.utolso-napi"
