@@ -54,7 +54,7 @@ jobs:
         run: |
           git config user.name  "basin-bot"
           git config user.email "basin-bot@users.noreply.github.com"
-          git add archiv data.json data.js params.json
+          git add archiv params.json
           git diff --staged --quiet || git commit -m "adat: $(date -u +%FT%TZ)"
           git push
 
