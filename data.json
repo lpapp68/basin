@@ -1,5 +1,5 @@
 {
-  "generalva": "2026-08-05T20:37:30+00:00",
+  "generalva": "2026-08-05T20:41:11+00:00",
   "doboz": {
     "nev": "Magyarország",
     "terulet_km2": 93030,
@@ -1686,12 +1686,12 @@
     "napok": [
       {
         "nap": "2026-08-05",
-        "mintak": 10,
-        "q_be": 992.3,
-        "q_ki": -1047.8,
+        "mintak": 11,
+        "q_be": 995.5,
+        "q_ki": -1047.7,
         "paks_cm": -133.4,
-        "paks_q": 749.1,
-        "paks_c": 29.4,
+        "paks_q": 749.3,
+        "paks_c": 29.3,
         "csapadek_mm": null,
         "parolgas_mm": null,
         "csapadek_datum": "2026-08-04",
