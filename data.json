@@ -1,5 +1,5 @@
 {
-  "generalva": "2026-08-05T20:54:25+00:00",
+  "generalva": "2026-08-05T21:02:13+00:00",
   "doboz": {
     "nev": "Magyarország",
     "terulet_km2": 93030,
@@ -1560,10 +1560,10 @@
       "termelesi_resz": 11.3,
       "fenntarto_resz": 1.67,
       "arany": 0.113,
-      "mw": 226.8,
+      "mw": 226.9,
       "allapot": "termel",
       "provenance": "modellezett",
-      "forras": "226.8 MW / 2000 MW arányában — nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc"
+      "forras": "226.9 MW / 2000 MW arányában — nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc"
     },
     "hutoviz_a_folyo_szazalekaban": 1.73,
     "ido": "2026.08.05. 22:00"
@@ -1655,7 +1655,7 @@
       "ertek": 13.0,
       "fogyaszto": false,
       "provenance": "modellezett",
-      "megjegyzes": "termel — felmelegítve visszatér. 226.8 MW / 2000 MW arányában — nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc"
+      "megjegyzes": "termel — felmelegítve visszatér. 226.9 MW / 2000 MW arányában — nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc"
     }
   ],
   "egyenleg": {
@@ -1686,11 +1686,11 @@
     "napok": [
       {
         "nap": "2026-08-05",
-        "mintak": 12,
-        "q_be": 998.1,
-        "q_ki": -1047.7,
+        "mintak": 13,
+        "q_be": 1000.3,
+        "q_ki": -1047.6,
         "paks_cm": -133.3,
-        "paks_q": 749.4,
+        "paks_q": 749.5,
         "paks_c": 29.3,
         "csapadek_mm": null,
         "parolgas_mm": null,
