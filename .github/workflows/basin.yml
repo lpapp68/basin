@@ -1,0 +1,69 @@
+name: basin
+
+# Óránként a mércék, hajnalban a légköri tagok is.
+# A gépedtől függetlenül fut — nem kell, hogy a Mac ébren legyen.
+on:
+  schedule:
+    - cron: "7 * * * *"      # minden óra 7. percében (UTC)
+  workflow_dispatch:          # kézi indítás is
+
+concurrency:                  # ne fusson két példány egyszerre az archívumra
+  group: basin
+  cancel-in-progress: false
+
+permissions:
+  contents: write             # az archiv/ visszaírásához
+
+jobs:
+  frissit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Függőségek
+        run: pip install cdsapi earthaccess xarray netCDF4 h5netcdf numpy
+
+      - name: Hitelesítés a titkokból
+        env:
+          CDS_TOKEN: ${{ secrets.CDS_TOKEN }}
+          LSASAF_USER: ${{ secrets.LSASAF_USER }}
+          LSASAF_PASS: ${{ secrets.LSASAF_PASS }}
+          EARTHDATA_USER: ${{ secrets.EARTHDATA_USER }}
+          EARTHDATA_PASS: ${{ secrets.EARTHDATA_PASS }}
+        run: |
+          printf 'url: https://cds.climate.copernicus.eu/api\nkey: %s\n' \
+            "$CDS_TOKEN" > ~/.cdsapirc
+          {
+            printf 'machine datalsasaf.lsasvcs.ipma.pt login %s password %s\n' \
+              "$LSASAF_USER" "$LSASAF_PASS"
+            printf 'machine urs.earthdata.nasa.gov login %s password %s\n' \
+              "$EARTHDATA_USER" "$EARTHDATA_PASS"
+          } > ~/.netrc
+          chmod 600 ~/.cdsapirc ~/.netrc
+
+      - name: Futtatás
+        run: |
+          chmod +x frissit.sh
+          ./frissit.sh
+
+      - name: Archívum visszaírása
+        run: |
+          git config user.name  "basin-bot"
+          git config user.email "basin-bot@users.noreply.github.com"
+          git add archiv data.json data.js params.json
+          git diff --staged --quiet || git commit -m "adat: $(date -u +%FT%TZ)"
+          git push
+
+      - name: Publikálás Cloudflare Pages-re
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          mkdir -p _publish
+          cp index.html data.js data.json _publish/
+          npx --yes wrangler pages deploy _publish \
+            --project-name basin --commit-dirty=true

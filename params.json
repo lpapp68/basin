@@ -1,0 +1,87 @@
+{
+  "_olvasd_el": "Minden érték itt lakik, ami MÉG NEM ÉL. Amint egy feed bekötésre kerül, a fetch_data.py onnan tölti, és a 'provenance' 'mert'-re vagy 'modellezett'-re vált. A 'helyorzo' címke a dashboardon vonalkázott háttérrel jelenik meg — szándékosan csúnyán.",
+  "_ervenyes": "2026-07-30",
+  "_ervenyes_havi": "2026-06",
+  "_figyelmeztetes": "V2: a folyók vízállása, vízhozama és vízhője mérés, óránként. A csapadék, a párolgás és a készletváltozás még helyőrző — ezekre döntést ne alapozz.",
+  "_forrasok": {
+    "napi": "ERA5-Land + EUMETSAT LSA-SAF ET (még nincs bekötve)",
+    "havi": "GRACE-FO (még nincs bekötve)"
+  },
+  "csapadek_mm_nap": {
+    "ertek": 0.0,
+    "provenance": "mert",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-04, koszinusz-súlyozott átlag a dobozra",
+    "kor_ora": 24,
+    "datum": "2026-08-04",
+    "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Téglalap-átlag, nem vízgyűjtőre maszkolt.",
+    "hivatkozas": "GPM IMERG, NASA GES DISC"
+  },
+  "parolgas_mm_nap": {
+    "ertek": 2.2,
+    "provenance": "mert",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-04, koszinusz-súlyozott átlag, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 24,
+    "datum": "2026-08-04",
+    "lefedettseg": 0.982,
+    "figyelmeztetes": "Téglalap-átlag, nem vízgyűjtőre maszkolt. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
+    "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
+  },
+  "hozam_be_m3s": {
+    "ertek": 1420,
+    "provenance": "helyorzo",
+    "forras": "GloFAS napi hozam a belépő szelvényekben (Duna, Tisza, Dráva, Rába)",
+    "kor_ora": 24
+  },
+  "hozam_ki_m3s": {
+    "ertek": 1810,
+    "provenance": "helyorzo",
+    "forras": "GloFAS napi hozam Mohács + Tisza-torkolat + Dráva-torkolat",
+    "kor_ora": 24
+  },
+  "keszletvaltozas_m3s": {
+    "ertek": -760,
+    "provenance": "helyorzo",
+    "forras": "GRACE-FO havi anomália, ~300 km — élőre alkalmatlan, trendre jó",
+    "kor_ora": 1400
+  },
+  "egyenleg": {
+    "kezdet": "2021-01-01",
+    "kumulalt_km3": -18.4,
+    "provenance": "helyorzo",
+    "forras": "GRACE-FO + OVF Integrált Vízháztartási Tájékoztató havi sorozatából számítandó",
+    "megjegyzes": "Mennyivel kevesebb víz van a dobozban, mint a kezdőnapon.",
+    "referencia": {
+      "nev": "Balaton",
+      "terfogat_km3": 1.9,
+      "megjegyzes": "közepes vízállású átlagos térfogat, kerekítve — rögzített viszonyítási pont"
+    }
+  },
+  "kivetel_m3s": [
+    {
+      "nev": "Öntözés",
+      "ertek": 34,
+      "fogyaszto": true,
+      "megjegyzes": "térfogatban apró, de szinte teljesen elpárolog"
+    },
+    {
+      "nev": "Ivóvíz",
+      "ertek": 21,
+      "fogyaszto": true,
+      "megjegyzes": "nagy része tisztítva visszatér, a nyári locsolás nem"
+    },
+    {
+      "nev": "Ipari hűtés (Paks nélkül)",
+      "ertek": 95,
+      "fogyaszto": false,
+      "megjegyzes": "átfolyó: felmelegítve visszatér"
+    }
+  ],
+  "paks_hutoviz": {
+    "nevleges_mw": 2000,
+    "nevleges_m3s": 100,
+    "fenntarto_m3perc": 100,
+    "forras": "nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc",
+    "provenance": "modellezett",
+    "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
+  }
+}

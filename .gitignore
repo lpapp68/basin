@@ -1,0 +1,12 @@
+*.nc
+*.nc4
+imerg/
+_publish/
+.netrc
+.cdsapirc
+__pycache__/
+.DS_Store
+archiv/log.txt
+.cdsapirc*
+.netrc*
+*.rtf
