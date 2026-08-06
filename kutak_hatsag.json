@@ -1,0 +1,5632 @@
+[
+ {
+  "azonosito": "HUGWOAIF715",
+  "nev": "Dóc Duna-Tisza köze, IV/30.",
+  "local_id": "HUGWOAIF715",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.115922021000074,
+  "lat": 46.43969419505815
+ },
+ {
+  "azonosito": "HUGWOAIH710",
+  "nev": "Cserkeszőlő 2129",
+  "local_id": "HUGWOAIH710",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.18452668500009,
+  "lat": 46.876688086058934
+ },
+ {
+  "azonosito": "HUGWOAIH713",
+  "nev": "Csévharaszt 4332",
+  "local_id": "HUGWOAIH713",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.349766957000096,
+  "lat": 47.29209108106011
+ },
+ {
+  "azonosito": "HUGWOAIH721",
+  "nev": "Csongrád -1",
+  "local_id": "HUGWOAIH721",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.117749695000157,
+  "lat": 46.7151497220587
+ },
+ {
+  "azonosito": "HUGWOAIH722",
+  "nev": "Csongrád -2",
+  "local_id": "HUGWOAIH722",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.117926870000133,
+  "lat": 46.71550792605865
+ },
+ {
+  "azonosito": "HUGWOAII975",
+  "nev": "Újhartyán 4224",
+  "local_id": "HUGWOAII975",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.395022914000094,
+  "lat": 47.223013576059905
+ },
+ {
+  "azonosito": "HUGWOAII977",
+  "nev": "Újlengyel 1150",
+  "local_id": "HUGWOAII977",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.492606137,
+  "lat": 47.215543768059845
+ },
+ {
+  "azonosito": "HUGWOAII979",
+  "nev": "Újszász 2190",
+  "local_id": "HUGWOAII979",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.063098488000097,
+  "lat": 47.26044080605985
+ },
+ {
+  "azonosito": "HUGWOAII811",
+  "nev": "Szolnok 2214",
+  "local_id": "HUGWOAII811",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.182796156000162,
+  "lat": 47.1779844680598
+ },
+ {
+  "azonosito": "HUGWOACV379",
+  "nev": "Kiskőrös Stradfürdő 2. sz hévízkút",
+  "local_id": "HUGWOACV379",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.273643659000015,
+  "lat": 46.62223455305846
+ },
+ {
+  "azonosito": "HUGWOACV436",
+  "nev": "Mórahalom strandfürdő",
+  "local_id": "HUGWOACV436",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.88723137800014,
+  "lat": 46.21622520505779
+ },
+ {
+  "azonosito": "HUGWOAIH709",
+  "nev": "Cserkeszőlő -1",
+  "local_id": "HUGWOAIH709",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.176612052999985,
+  "lat": 46.86978132705897
+ },
+ {
+  "azonosito": "HUGWOAIH654",
+  "nev": "Bugyi 1156",
+  "local_id": "HUGWOAIH654",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.190205398000046,
+  "lat": 47.14574669905966
+ },
+ {
+  "azonosito": "HUGWOAIH662",
+  "nev": "Cegléd 2176",
+  "local_id": "HUGWOAIH662",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.704808904000174,
+  "lat": 47.18001799805965
+ },
+ {
+  "azonosito": "HUGWOAIH663",
+  "nev": "Cegléd 2183",
+  "local_id": "HUGWOAIH663",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.832054594000056,
+  "lat": 47.22506171805991
+ },
+ {
+  "azonosito": "HUGWOAIH665",
+  "nev": "Cegléd K-282",
+  "local_id": "HUGWOAIH665",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.830730234000043,
+  "lat": 47.22480088105993
+ },
+ {
+  "azonosito": "HUGWOAIH670",
+  "nev": "Cegléd Vm.Újvárosszél Béke úti kút",
+  "local_id": "HUGWOAIH670",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.80041927200017,
+  "lat": 47.15245190005961
+ },
+ {
+  "azonosito": "HUGWOACW095",
+  "nev": "Dunapataj Szelidi vb. 6.sz.",
+  "local_id": "HUGWOACW095",
+  "viz": "TRUE",
+  "mukodes_kezd": "2009",
+  "mukodes_veg": " ",
+  "lon": 19.00828563699997,
+  "lat": 46.628658371058506
+ },
+ {
+  "azonosito": "HUGWOACS295",
+  "nev": "Harta Vm.2",
+  "local_id": "HUGWOACS295",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.029021215000057,
+  "lat": 46.704265897058654
+ },
+ {
+  "azonosito": "HUGWOAIF554",
+  "nev": "Ásotthalom IV/22 vaditató",
+  "local_id": "HUGWOAIF554",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.739606765000133,
+  "lat": 46.22532499005784
+ },
+ {
+  "azonosito": "HUGWOAIF583",
+  "nev": "Balotaszállás TIM-I 0603 A piezo",
+  "local_id": "HUGWOAIF583",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.64688095800011,
+  "lat": 46.30304280005792
+ },
+ {
+  "azonosito": "HUGWOACN983",
+  "nev": "Dunavarsány Vm.1.kút",
+  "local_id": "HUGWOACN983",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2011",
+  "lon": 19.053200000000174,
+  "lat": 47.286569999059935
+ },
+ {
+  "azonosito": "HUGWOACB201",
+  "nev": "Dabas Vízmű 1.",
+  "local_id": "HUGWOACB201",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2011",
+  "lon": 19.319149999999976,
+  "lat": 47.16616999905966
+ },
+ {
+  "azonosito": "HUGWOADE239",
+  "nev": "Szelevény Halesz vm.1",
+  "local_id": "HUGWOADE239",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2011",
+  "lon": 20.179380000000155,
+  "lat": 46.824049999058886
+ },
+ {
+  "azonosito": "HUGWOAIF541",
+  "nev": "Akasztó K 99",
+  "local_id": "HUGWOAIF541",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.222399999999993,
+  "lat": 46.70262999905863
+ },
+ {
+  "azonosito": "HUGWOAII739",
+  "nev": "Szabadszállás 1374",
+  "local_id": "HUGWOAII739",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.15055419100014,
+  "lat": 46.85465141905889
+ },
+ {
+  "azonosito": "HUGWOAII740",
+  "nev": "Szabadszállás 1377",
+  "local_id": "HUGWOAII740",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.213414471000025,
+  "lat": 46.925339110059035
+ },
+ {
+  "azonosito": "HUGWOAII741",
+  "nev": "Szabadszállás 1382",
+  "local_id": "HUGWOAII741",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.33706736400012,
+  "lat": 46.89623443705913
+ },
+ {
+  "azonosito": "HUGWOAII752",
+  "nev": "Szank K 28",
+  "local_id": "HUGWOAII752",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.68464114799997,
+  "lat": 46.55761001905827
+ },
+ {
+  "azonosito": "HUGWOAII762",
+  "nev": "Szeged B-418",
+  "local_id": "HUGWOAII762",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.118284156000016,
+  "lat": 46.247158219057916
+ },
+ {
+  "azonosito": "HUGWOAII763",
+  "nev": "Szeged K-431",
+  "local_id": "HUGWOAII763",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.086425443000053,
+  "lat": 46.263560338057786
+ },
+ {
+  "azonosito": "HUGWOAIF799",
+  "nev": "Harta GA_HAR_01A mg. figyelő",
+  "local_id": "HUGWOAIF799",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.018487661000165,
+  "lat": 46.70428610405863
+ },
+ {
+  "azonosito": "HUGWOAIF800",
+  "nev": "Harta GA_HAR_01B mg. figyelő",
+  "local_id": "HUGWOAIF800",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.018492762000164,
+  "lat": 46.70428394705871
+ },
+ {
+  "azonosito": "HUGWOAIF801",
+  "nev": "Harta GA_HAR_01C mg. figyelő",
+  "local_id": "HUGWOAIF801",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.018505575000063,
+  "lat": 46.70428646905859
+ },
+ {
+  "azonosito": "HUGWOAIF815",
+  "nev": "Kistelek GA_KIT_01A mg. figyelő",
+  "local_id": "HUGWOAIF815",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.95967051000002,
+  "lat": 46.475593355058265
+ },
+ {
+  "azonosito": "HUGWOAIF816",
+  "nev": "Kistelek GA_KIT_01B mg. figyelő",
+  "local_id": "HUGWOAIF816",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.959675581000173,
+  "lat": 46.475585217058146
+ },
+ {
+  "azonosito": "HUGWOAIF817",
+  "nev": "Kistelek GA_KIT_01C mg. figyelő",
+  "local_id": "HUGWOAIF817",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.959681955000182,
+  "lat": 46.4755770690582
+ },
+ {
+  "azonosito": "HUGWOAII789",
+  "nev": "Szentkirály 2219",
+  "local_id": "HUGWOAII789",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.88677355800013,
+  "lat": 46.92038951505906
+ },
+ {
+  "azonosito": "HUGWOAII790",
+  "nev": "Szentkirály 4029",
+  "local_id": "HUGWOAII790",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.972807555000088,
+  "lat": 46.92519456705906
+ },
+ {
+  "azonosito": "HUGWOAII984",
+  "nev": "Újszilvás 4434",
+  "local_id": "HUGWOAII984",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.951632925000126,
+  "lat": 47.244738394059794
+ },
+ {
+  "azonosito": "HUGWOACT603",
+  "nev": "Hajós Vm.Pincefalu",
+  "local_id": "HUGWOACT603",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.14920974900008,
+  "lat": 46.38383114905798
+ },
+ {
+  "azonosito": "HUGWOAIH701",
+  "nev": "Csemő -Ny vízbázis II/f-4 j. figyelő",
+  "local_id": "HUGWOAIH701",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66731067500001,
+  "lat": 47.11220842805951
+ },
+ {
+  "azonosito": "HUGWOAIH705",
+  "nev": "Csépa 2128",
+  "local_id": "HUGWOAIH705",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.131212782000034,
+  "lat": 46.80946159305883
+ },
+ {
+  "azonosito": "HUGWOACV823",
+  "nev": "Szank Vm.2",
+  "local_id": "HUGWOACV823",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66735371500005,
+  "lat": 46.55091342605835
+ },
+ {
+  "azonosito": "HUGWOAIF870",
+  "nev": "Szakmár GN_SZA_01A figyelő",
+  "local_id": "HUGWOAIF870",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.071284081000158,
+  "lat": 46.551470448058424
+ },
+ {
+  "azonosito": "HUGWOAIF871",
+  "nev": "Szakmár GN_SZA_01B figyelő",
+  "local_id": "HUGWOAIF871",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.07129190800015,
+  "lat": 46.55147764305839
+ },
+ {
+  "azonosito": "HUGWOAIF872",
+  "nev": "Szakmár GN_SZA_03A figyelő",
+  "local_id": "HUGWOAIF872",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.077074420000088,
+  "lat": 46.55530501505833
+ },
+ {
+  "azonosito": "HUGWOAIF873",
+  "nev": "Szakmár GN_SZA_03B figyelő",
+  "local_id": "HUGWOAIF873",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.07706528900013,
+  "lat": 46.55529872005828
+ },
+ {
+  "azonosito": "HUGWOAIF892",
+  "nev": "Hajós ADUKÖFE II/19 j.figyelő",
+  "local_id": "HUGWOAIF892",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.123758787000156,
+  "lat": 46.41011466805804
+ },
+ {
+  "azonosito": "HUGWOAIF897",
+  "nev": "Harta -Solt távlati vb. 1SZFI/2",
+  "local_id": "HUGWOAIF897",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.025227585000042,
+  "lat": 46.722675400058726
+ },
+ {
+  "azonosito": "HUGWOAIF898",
+  "nev": "Harta -Solt távlati vb. 1SZFI/3",
+  "local_id": "HUGWOAIF898",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.025234123000075,
+  "lat": 46.722679899058676
+ },
+ {
+  "azonosito": "HUGWOAIF899",
+  "nev": "Harta -Solt távlati vb. 1SZFI/1",
+  "local_id": "HUGWOAIF899",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.025221046000127,
+  "lat": 46.72267090105863
+ },
+ {
+  "azonosito": "HUGWOAIF933",
+  "nev": "Jászszentlászló ATIKÖFE IV/13",
+  "local_id": "HUGWOAIF933",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.77937826900012,
+  "lat": 46.58778870505832
+ },
+ {
+  "azonosito": "HUGWOAIG017",
+  "nev": "Kömpöc ATIKÖFE IV/14 j.figyelő",
+  "local_id": "HUGWOAIG017",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.88867658300006,
+  "lat": 46.48589879805821
+ },
+ {
+  "azonosito": "HUGWOAIG078",
+  "nev": "Röszke Mihálytelep Duna-Tisza köze, IV/32",
+  "local_id": "HUGWOAIG078",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.06529906600008,
+  "lat": 46.20502136605776
+ },
+ {
+  "azonosito": "HUGWOAIG231",
+  "nev": "Szatymaz Duna-Tisza köze, IV31",
+  "local_id": "HUGWOAIG231",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.046224476000134,
+  "lat": 46.37144866305805
+ },
+ {
+  "azonosito": "HUGWOAIG308",
+  "nev": "Mórahalom Zákányszék ATIKÖFE IV/21 jelű",
+  "local_id": "HUGWOAIG308",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.870778432000066,
+  "lat": 46.2440625030579
+ },
+ {
+  "azonosito": "HUGWOAIG128",
+  "nev": "Öttömös Vízmű 3.",
+  "local_id": "HUGWOAIG128",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.683104769000124,
+  "lat": 46.27999009705787
+ },
+ {
+  "azonosito": "HUGWOAIG200",
+  "nev": "Sükösd Vm.4/A",
+  "local_id": "HUGWOAIG200",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.002042118000077,
+  "lat": 46.296705288057964
+ },
+ {
+  "azonosito": "HUGWOAIF571",
+  "nev": "Baja ADUKÖFE II/38 j.figyelő",
+  "local_id": "HUGWOAIF571",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.059692313000085,
+  "lat": 46.15012200005766
+ },
+ {
+  "azonosito": "HUGWOAIF539",
+  "nev": "Akasztó ADUKÖFE II/24 j.figyelő",
+  "local_id": "HUGWOAIF539",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.223986073000052,
+  "lat": 46.702746443058714
+ },
+ {
+  "azonosito": "HUGWOAIF540",
+  "nev": "Akasztó ADUKÖFE II/25 j.figyelő",
+  "local_id": "HUGWOAIF540",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.22401209400016,
+  "lat": 46.7027059210587
+ },
+ {
+  "azonosito": "HUGWOAII271",
+  "nev": "Kunpeszér 1358",
+  "local_id": "HUGWOAII271",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2013",
+  "lon": 19.263320000000192,
+  "lat": 47.124769999059666
+ },
+ {
+  "azonosito": "HUGWOAIF670",
+  "nev": "Császártöltés ADUKÖFE II/35 j.figyelő",
+  "local_id": "HUGWOAIF670",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.206671568000157,
+  "lat": 46.41623794005808
+ },
+ {
+  "azonosito": "HUGWOAIF786",
+  "nev": "Bácsalmás GA_BAA_01A mg. figyelő",
+  "local_id": "HUGWOAIF786",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.38322110100017,
+  "lat": 46.12252137305771
+ },
+ {
+  "azonosito": "HUGWOAIF787",
+  "nev": "Bácsalmás GA_BAA_01B mg. figyelő",
+  "local_id": "HUGWOAIF787",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.383203895000182,
+  "lat": 46.122521425057656
+ },
+ {
+  "azonosito": "HUGWOAIF788",
+  "nev": "Bácsalmás GA_BAA_01C mg. figyelő",
+  "local_id": "HUGWOAIF788",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.38321592000017,
+  "lat": 46.12254135905775
+ },
+ {
+  "azonosito": "HUGWOAIF809",
+  "nev": "Kiskunmajsa GA_KIM_01A mg. figyelő",
+  "local_id": "HUGWOAIF809",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.666223551000144,
+  "lat": 46.50895742805835
+ },
+ {
+  "azonosito": "HUGWOAIF810",
+  "nev": "Kiskunmajsa GA_KIM_01B mg. figyelő",
+  "local_id": "HUGWOAIF810",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.666210563000107,
+  "lat": 46.50896109805829
+ },
+ {
+  "azonosito": "HUGWOAIF811",
+  "nev": "Kiskunmajsa GA_KIM_01C mg. figyelő",
+  "local_id": "HUGWOAIF811",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66619887800016,
+  "lat": 46.50896476005821
+ },
+ {
+  "azonosito": "HUGWOAIF818",
+  "nev": "Mélykút GA_MEL_01B mg. figyelő",
+  "local_id": "HUGWOAIF818",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.472897462999978,
+  "lat": 46.247465367057906
+ },
+ {
+  "azonosito": "HUGWOAIF831",
+  "nev": "Üllés GA_ULL_01A  mg. figyelő",
+  "local_id": "HUGWOAIF831",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.815627257000187,
+  "lat": 46.35137116605797
+ },
+ {
+  "azonosito": "HUGWOAIF832",
+  "nev": "Üllés GA_ULL_01B  mg. figyelő",
+  "local_id": "HUGWOAIF832",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.81561807400004,
+  "lat": 46.35136493105807
+ },
+ {
+  "azonosito": "HUGWOAIF955",
+  "nev": "Kecel ADUKÖFE II/26 j.figyelő",
+  "local_id": "HUGWOAIF955",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.188472413999985,
+  "lat": 46.5508454760584
+ },
+ {
+  "azonosito": "HUGWOAIG025",
+  "nev": "Kunfehértó ATIKÖFE IV/6 j.figyelő",
+  "local_id": "HUGWOAIG025",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.438641759000006,
+  "lat": 46.35807316105799
+ },
+ {
+  "azonosito": "HUGWOAIG050",
+  "nev": "Baja Mátéháza II/37 981. talajvíz észlelőkút",
+  "local_id": "HUGWOAIG050",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.05989421100008,
+  "lat": 46.15003741905765
+ },
+ {
+  "azonosito": "HUGWOAIG147",
+  "nev": "Pusztamérges TIM-I 2106 A piezo",
+  "local_id": "HUGWOAIG147",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67799877900012,
+  "lat": 46.333550352058005
+ },
+ {
+  "azonosito": "HUGWOAIG193",
+  "nev": "Soltvadkert _TIM-I 1603 A piezo",
+  "local_id": "HUGWOAIG193",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.40029939300012,
+  "lat": 46.58889674305836
+ },
+ {
+  "azonosito": "HUGWOAIW450",
+  "nev": "Balotaszállás TIM-I 0603 B piezo",
+  "local_id": "HUGWOAIW450",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.646887498000126,
+  "lat": 46.30304726305785
+ },
+ {
+  "azonosito": "HUGWOAII080",
+  "nev": "Jászkarajenő GA_JAJ_01A  mg. figyelő",
+  "local_id": "HUGWOAII080",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.03836715300008,
+  "lat": 47.05068668005936
+ },
+ {
+  "azonosito": "HUGWOAII081",
+  "nev": "Jászkarajenő GA_JAJ_01B  mg. figyelő",
+  "local_id": "HUGWOAII081",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.038370952000093,
+  "lat": 47.05067855105949
+ },
+ {
+  "azonosito": "HUGWOAIF796",
+  "nev": "Fülöpjakab GA_FUJ_01A mg. figyelő",
+  "local_id": "HUGWOAIF796",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.673730954000007,
+  "lat": 46.766282903058745
+ },
+ {
+  "azonosito": "HUGWOAIF797",
+  "nev": "Fülöpjakab GA_FUJ_01B mg. figyelő",
+  "local_id": "HUGWOAIF797",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67374278800014,
+  "lat": 46.76628733605882
+ },
+ {
+  "azonosito": "HUGWOACI037",
+  "nev": "Bugyi DTK I/8. jelű figyelő kút",
+  "local_id": "HUGWOACI037",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.21879895700005,
+  "lat": 47.115401669059494
+ },
+ {
+  "azonosito": "HUGWOAIH909",
+  "nev": "Fülöpszállás ADUKÖFE II/11 j.figyelő",
+  "local_id": "HUGWOAIH909",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.239429635000135,
+  "lat": 46.83275977105888
+ },
+ {
+  "azonosito": "HUGWOAII021",
+  "nev": "Helvécia GN_HEL_02A figyelő",
+  "local_id": "HUGWOAII021",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.620261612000153,
+  "lat": 46.83738917105894
+ },
+ {
+  "azonosito": "HUGWOAII022",
+  "nev": "Helvécia GN_HEL_02B figyelő",
+  "local_id": "HUGWOAII022",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.62025497100006,
+  "lat": 46.8373811080589
+ },
+ {
+  "azonosito": "HUGWOAII023",
+  "nev": "Helvécia GN_HEL_02C figyelő",
+  "local_id": "HUGWOAII023",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.620248330000095,
+  "lat": 46.83737304505884
+ },
+ {
+  "azonosito": "HUGWOAII062",
+  "nev": "Jakabszállás GA_JAS_01A mg. figyelő",
+  "local_id": "HUGWOAII062",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.619525168000166,
+  "lat": 46.78520976905873
+ },
+ {
+  "azonosito": "HUGWOAII063",
+  "nev": "Jakabszállás GA_JAS_01B mg. figyelő",
+  "local_id": "HUGWOAII063",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.61951958900011,
+  "lat": 46.785202420058766
+ },
+ {
+  "azonosito": "HUGWOAII064",
+  "nev": "Jakabszállás GA_JAS_01C mg. figyelő",
+  "local_id": "HUGWOAII064",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.619513344000037,
+  "lat": 46.78519399505883
+ },
+ {
+  "azonosito": "HUGWOADD807",
+  "nev": "Ceglédbercel Fritz János öntözőkútja",
+  "local_id": "HUGWOADD807",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67187186000001,
+  "lat": 47.21115616705981
+ },
+ {
+  "azonosito": "HUGWOADE811",
+  "nev": "Cegléd KÖTIKÖFE III/2 jelű figyelő",
+  "local_id": "HUGWOADE811",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.707212987000048,
+  "lat": 47.17917659405967
+ },
+ {
+  "azonosito": "HUGWOADE839",
+  "nev": "Kőröstetétlen Duna-Tisza köze, III/6. j.figyelő",
+  "local_id": "HUGWOADE839",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.03792010000012,
+  "lat": 47.0839662860595
+ },
+ {
+  "azonosito": "HUGWOAIF655",
+  "nev": "Bugacpusztaháza ATIKÖFE IV/4 j.figyelő",
+  "local_id": "HUGWOAIF655",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.610639666000168,
+  "lat": 46.706503442058626
+ },
+ {
+  "azonosito": "HUGWOAIF924",
+  "nev": "Jakabszállás ADUKÖFE II/40 j.",
+  "local_id": "HUGWOAIF924",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.585367684000122,
+  "lat": 46.75433681905862
+ },
+ {
+  "azonosito": "HUGWOAIH664",
+  "nev": "Cegléd Jaksics György kertészete,1.",
+  "local_id": "HUGWOAIH664",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.73599622700016,
+  "lat": 47.208405795059775
+ },
+ {
+  "azonosito": "HUGWOAIH666",
+  "nev": "Cegléd TIM-S 7913 A piezométer (mély)",
+  "local_id": "HUGWOAIH666",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.74519991200009,
+  "lat": 47.225757043059836
+ },
+ {
+  "azonosito": "HUGWOAIH703",
+  "nev": "Csemő Ny vízbázis,2 SZF I/2",
+  "local_id": "HUGWOAIH703",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.65834558300008,
+  "lat": 47.12897440305956
+ },
+ {
+  "azonosito": "HUGWOAII154",
+  "nev": "Kecskemét GN_KEC_05A figyelő",
+  "local_id": "HUGWOAII154",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.69871291300018,
+  "lat": 46.916725491059104
+ },
+ {
+  "azonosito": "HUGWOAII155",
+  "nev": "Kecskemét GN_KEC_05B figyelő",
+  "local_id": "HUGWOAII155",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.698726107000027,
+  "lat": 46.91673081405908
+ },
+ {
+  "azonosito": "HUGWOAII156",
+  "nev": "Kecskemét GN_KEC_05C figyelő",
+  "local_id": "HUGWOAII156",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.698735340000155,
+  "lat": 46.916734360059
+ },
+ {
+  "azonosito": "HUGWOAII157",
+  "nev": "Kecskemét GN_KEC_06A figyelő",
+  "local_id": "HUGWOAII157",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.698942648000067,
+  "lat": 46.8913253860591
+ },
+ {
+  "azonosito": "HUGWOAII158",
+  "nev": "Kecskemét GN_KEC_06B figyelő",
+  "local_id": "HUGWOAII158",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.698937497000088,
+  "lat": 46.891333512059035
+ },
+ {
+  "azonosito": "HUGWOAII159",
+  "nev": "Kecskemét GN_KEC_06C figyelő",
+  "local_id": "HUGWOAII159",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.69893235800009,
+  "lat": 46.89134253805909
+ },
+ {
+  "azonosito": "HUGWOAIG127",
+  "nev": "Öttömös 3507",
+  "local_id": "HUGWOAIG127",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66331572000013,
+  "lat": 46.25746982705793
+ },
+ {
+  "azonosito": "HUGWOAIG129",
+  "nev": "Páhi 1407",
+  "local_id": "HUGWOAIG129",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.381628770000138,
+  "lat": 46.713737387058636
+ },
+ {
+  "azonosito": "HUGWOAIG131",
+  "nev": "Petőfiszállás Pálmonostora 2371",
+  "local_id": "HUGWOAIG131",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.874642550000033,
+  "lat": 46.586899549058465
+ },
+ {
+  "azonosito": "HUGWOAIG140",
+  "nev": "Pirtó 4148",
+  "local_id": "HUGWOAIG140",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.418475205000163,
+  "lat": 46.514630188058234
+ },
+ {
+  "azonosito": "HUGWOAII160",
+  "nev": "Kecskemét GN_KEC_07A figyelő",
+  "local_id": "HUGWOAII160",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.711893396000104,
+  "lat": 46.916002759058955
+ },
+ {
+  "azonosito": "HUGWOAII161",
+  "nev": "Kecskemét GN_KEC_07B figyelő",
+  "local_id": "HUGWOAII161",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.711900049000064,
+  "lat": 46.91600991705903
+ },
+ {
+  "azonosito": "HUGWOAII162",
+  "nev": "Kecskemét GN_KEC_07C figyelő",
+  "local_id": "HUGWOAII162",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.711906714000175,
+  "lat": 46.91601797505896
+ },
+ {
+  "azonosito": "HUGWOAII190",
+  "nev": "Kerekegyháza GA_KEE_01A mg. figyelő",
+  "local_id": "HUGWOAII190",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.451142943000036,
+  "lat": 46.959851970059226
+ },
+ {
+  "azonosito": "HUGWOAII191",
+  "nev": "Kerekegyháza GA_KEE_01B mg. figyelő",
+  "local_id": "HUGWOAII191",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.451132256000108,
+  "lat": 46.95984616105921
+ },
+ {
+  "azonosito": "HUGWOAII458",
+  "nev": "Nagykőrös GA_NAK_01A  mg. figyelő",
+  "local_id": "HUGWOAII458",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.679585690000007,
+  "lat": 47.05422034905945
+ },
+ {
+  "azonosito": "HUGWOAII459",
+  "nev": "Nagykőrös GA_NAK_01B  mg. figyelő",
+  "local_id": "HUGWOAII459",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67959616600018,
+  "lat": 47.05421579305943
+ },
+ {
+  "azonosito": "HUGWOAII461",
+  "nev": "Nagykőrös GA_NAK_02A  mg. figyelő",
+  "local_id": "HUGWOAII461",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.755964839,
+  "lat": 47.000390651059305
+ },
+ {
+  "azonosito": "HUGWOAII462",
+  "nev": "Nagykőrös GA_NAK_02B  mg. figyelő",
+  "local_id": "HUGWOAII462",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.75595439200015,
+  "lat": 47.000396113059246
+ },
+ {
+  "azonosito": "HUGWOAII743",
+  "nev": "Szabadszállás TIM-I 4703 A piezométer (mély)",
+  "local_id": "HUGWOAII743",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.188722564000102,
+  "lat": 46.91797759205904
+ },
+ {
+  "azonosito": "HUGWOACS298",
+  "nev": "Kaskantyú Vm 2.",
+  "local_id": "HUGWOACS298",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.396763267000157,
+  "lat": 46.67569268905859
+ },
+ {
+  "azonosito": "HUGWOADB598",
+  "nev": "Cegléd Vm.6.",
+  "local_id": "HUGWOADB598",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.80715267200003,
+  "lat": 47.202118818059745
+ },
+ {
+  "azonosito": "HUGWOAIF538",
+  "nev": "Akasztó 1402",
+  "local_id": "HUGWOAIF538",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.204482056000188,
+  "lat": 46.70343162405864
+ },
+ {
+  "azonosito": "HUGWOAIF543",
+  "nev": "Csólyospálos Alsópálos 2398",
+  "local_id": "HUGWOAIF543",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.854620817000125,
+  "lat": 46.39560820005803
+ },
+ {
+  "azonosito": "HUGWOAIF549",
+  "nev": "Ásotthalom 2418",
+  "local_id": "HUGWOAIF549",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.70434253300004,
+  "lat": 46.22463634505777
+ },
+ {
+  "azonosito": "HUGWOAIF550",
+  "nev": "Ásotthalom 2421",
+  "local_id": "HUGWOAIF550",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.8234064130001,
+  "lat": 46.15739752405779
+ },
+ {
+  "azonosito": "HUGWOAIF551",
+  "nev": "Ásotthalom 4510",
+  "local_id": "HUGWOAIF551",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.777717494000115,
+  "lat": 46.20434830905777
+ },
+ {
+  "azonosito": "HUGWOAIF562",
+  "nev": "Bácsalmás 3863",
+  "local_id": "HUGWOAIF562",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.311913139000126,
+  "lat": 46.11801903205753
+ },
+ {
+  "azonosito": "HUGWOAIF563",
+  "nev": "Bácsalmás B-24",
+  "local_id": "HUGWOAIF563",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.335968515000044,
+  "lat": 46.12439201705753
+ },
+ {
+  "azonosito": "HUGWOAIF564",
+  "nev": "Bácsbokod 1433",
+  "local_id": "HUGWOAIF564",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.157426428000065,
+  "lat": 46.13300115705774
+ },
+ {
+  "azonosito": "HUGWOAIF565",
+  "nev": "Bácsbokod B-27",
+  "local_id": "HUGWOAIF565",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.155734637000133,
+  "lat": 46.11500234605751
+ },
+ {
+  "azonosito": "HUGWOAIF570",
+  "nev": "Baja 3618",
+  "local_id": "HUGWOAIF570",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.059700066999994,
+  "lat": 46.15006442605766
+ },
+ {
+  "azonosito": "HUGWOAIF581",
+  "nev": "Balástya 2403",
+  "local_id": "HUGWOAIF581",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.94269747600004,
+  "lat": 46.43621232605811
+ },
+ {
+  "azonosito": "HUGWOAIF582",
+  "nev": "Balástya 2442",
+  "local_id": "HUGWOAIF582",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.986445236000066,
+  "lat": 46.41516553605817
+ },
+ {
+  "azonosito": "HUGWOAIF643",
+  "nev": "Bócsa 2361",
+  "local_id": "HUGWOAIF643",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.545458402000065,
+  "lat": 46.67975412305853
+ },
+ {
+  "azonosito": "HUGWOAIF944",
+  "nev": "Kaskantyú 1406",
+  "local_id": "HUGWOAIF944",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.363550954000058,
+  "lat": 46.65085270805859
+ },
+ {
+  "azonosito": "HUGWOAIF764",
+  "nev": "Érsekhalma 4145",
+  "local_id": "HUGWOAIF764",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.13000826000007,
+  "lat": 46.32247647905788
+ },
+ {
+  "azonosito": "HUGWOAIF783",
+  "nev": "Forráskút 2406",
+  "local_id": "HUGWOAIF783",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.907240114000103,
+  "lat": 46.36676447005797
+ },
+ {
+  "azonosito": "HUGWOAIF951",
+  "nev": "Kecel 1403",
+  "local_id": "HUGWOAIF951",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.228234822000164,
+  "lat": 46.55661783305825
+ },
+ {
+  "azonosito": "HUGWOAIF954",
+  "nev": "Kecel 3742",
+  "local_id": "HUGWOAIF954",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.26904101600013,
+  "lat": 46.51228531205817
+ },
+ {
+  "azonosito": "HUGWOAIF957",
+  "nev": "Kelebia 2417",
+  "local_id": "HUGWOAIF957",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.622147110000185,
+  "lat": 46.19827696705779
+ },
+ {
+  "azonosito": "HUGWOAIF978",
+  "nev": "Kiskőrös 4476",
+  "local_id": "HUGWOAIF978",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.28848491600013,
+  "lat": 46.62418323305842
+ },
+ {
+  "azonosito": "HUGWOAIF980",
+  "nev": "Kiskőrös K-1065",
+  "local_id": "HUGWOAIF980",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.270388861000015,
+  "lat": 46.62451696105852
+ },
+ {
+  "azonosito": "HUGWOAIF981",
+  "nev": "Kiskőrös K-1085",
+  "local_id": "HUGWOAIF981",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.27174138100003,
+  "lat": 46.63264670105842
+ },
+ {
+  "azonosito": "HUGWOAIF645",
+  "nev": "Bócsa B 6",
+  "local_id": "HUGWOAIF645",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.46976184000016,
+  "lat": 46.61435271305842
+ },
+ {
+  "azonosito": "HUGWOAIF648",
+  "nev": "Bordány 4509",
+  "local_id": "HUGWOAIF648",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.9618236390001,
+  "lat": 46.30906408205788
+ },
+ {
+  "azonosito": "HUGWOAIF649",
+  "nev": "Borota 3741",
+  "local_id": "HUGWOAIF649",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.249096356000166,
+  "lat": 46.296365202057856
+ },
+ {
+  "azonosito": "HUGWOAIF650",
+  "nev": "Borota 4360",
+  "local_id": "HUGWOAIF650",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.180471367000166,
+  "lat": 46.28739863605793
+ },
+ {
+  "azonosito": "HUGWOAIF652",
+  "nev": "Bugac 4316",
+  "local_id": "HUGWOAIF652",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.754170964000025,
+  "lat": 46.64831303805861
+ },
+ {
+  "azonosito": "HUGWOAIF653",
+  "nev": "Bugac 4317",
+  "local_id": "HUGWOAIF653",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.730037454000183,
+  "lat": 46.709806380058666
+ },
+ {
+  "azonosito": "HUGWOAIF654",
+  "nev": "Bugac T-002364 talajvíz figyelő",
+  "local_id": "HUGWOAIF654",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.63060090100004,
+  "lat": 46.69644230205854
+ },
+ {
+  "azonosito": "HUGWOAIF665",
+  "nev": "Csanytelek 2379",
+  "local_id": "HUGWOAIF665",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.08743901600019,
+  "lat": 46.56002967505832
+ },
+ {
+  "azonosito": "HUGWOAIF668",
+  "nev": "Császártöltés 4078",
+  "local_id": "HUGWOAIF668",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.23143068899998,
+  "lat": 46.395557490058096
+ },
+ {
+  "azonosito": "HUGWOAIF669",
+  "nev": "Császártöltés 4146",
+  "local_id": "HUGWOAIF669",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.239593074000084,
+  "lat": 46.43885059905818
+ },
+ {
+  "azonosito": "HUGWOAIF674",
+  "nev": "Csávoly 1428",
+  "local_id": "HUGWOAIF674",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.142102085000147,
+  "lat": 46.190506902057614
+ },
+ {
+  "azonosito": "HUGWOAIF675",
+  "nev": "Csengele 2372",
+  "local_id": "HUGWOAIF675",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.8854575580001,
+  "lat": 46.52121771605832
+ },
+ {
+  "azonosito": "HUGWOAIF676",
+  "nev": "Csengele 2451",
+  "local_id": "HUGWOAIF676",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.910933830000033,
+  "lat": 46.48432065105829
+ },
+ {
+  "azonosito": "HUGWOAIG001",
+  "nev": "Kisszállás 2388",
+  "local_id": "HUGWOAIG001",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.53359747200017,
+  "lat": 46.27343242405789
+ },
+ {
+  "azonosito": "HUGWOAIG002",
+  "nev": "Kistelek T-002392 talajvíz figyelő",
+  "local_id": "HUGWOAIG002",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.996658737000185,
+  "lat": 46.478326597058285
+ },
+ {
+  "azonosito": "HUGWOAIF677",
+  "nev": "Csengele 2456",
+  "local_id": "HUGWOAIF677",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.804635602000133,
+  "lat": 46.51998714405825
+ },
+ {
+  "azonosito": "HUGWOAIF690",
+  "nev": "Csikéria 1449",
+  "local_id": "HUGWOAIF690",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.49113481100011,
+  "lat": 46.162030359057674
+ },
+ {
+  "azonosito": "HUGWOAIF695",
+  "nev": "Csólyospálos 4184",
+  "local_id": "HUGWOAIF695",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.809074432000045,
+  "lat": 46.46507934405813
+ },
+ {
+  "azonosito": "HUGWOAIF696",
+  "nev": "Csongrád -3",
+  "local_id": "HUGWOAIF696",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.117751306000176,
+  "lat": 46.7152306780586
+ },
+ {
+  "azonosito": "HUGWOAIF697",
+  "nev": "Csongrád -4",
+  "local_id": "HUGWOAIF697",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.117832996000175,
+  "lat": 46.715391851058534
+ },
+ {
+  "azonosito": "HUGWOAIF698",
+  "nev": "Csongrád 2378",
+  "local_id": "HUGWOAIF698",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.070895125000106,
+  "lat": 46.69864017105859
+ },
+ {
+  "azonosito": "HUGWOAIF699",
+  "nev": "Csongrád 2380",
+  "local_id": "HUGWOAIF699",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.134825087000024,
+  "lat": 46.672045850058524
+ },
+ {
+  "azonosito": "HUGWOAIF716",
+  "nev": "Domaszék 2404",
+  "local_id": "HUGWOAIF716",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.981216022000126,
+  "lat": 46.2727123040578
+ },
+ {
+  "azonosito": "HUGWOAIF717",
+  "nev": "Domaszék K 18",
+  "local_id": "HUGWOAIF717",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.003400274000114,
+  "lat": 46.24102962605787
+ },
+ {
+  "azonosito": "HUGWOAIF750",
+  "nev": "Dusnok 1421",
+  "local_id": "HUGWOAIF750",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.03423896000004,
+  "lat": 46.40528562205797
+ },
+ {
+  "azonosito": "HUGWOAIF837",
+  "nev": "Gátér 4513",
+  "local_id": "HUGWOAIF837",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.961217650000094,
+  "lat": 46.68364153605857
+ },
+ {
+  "azonosito": "HUGWOAIF890",
+  "nev": "Hajós 1423",
+  "local_id": "HUGWOAIF890",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.11623399500013,
+  "lat": 46.407182261058146
+ },
+ {
+  "azonosito": "HUGWOAIF894",
+  "nev": "Harkakötöny 2391",
+  "local_id": "HUGWOAIF894",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.591034594000064,
+  "lat": 46.442405826058064
+ },
+ {
+  "azonosito": "HUGWOAIF896",
+  "nev": "Harkakötöny 4050",
+  "local_id": "HUGWOAIF896",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.56209033000005,
+  "lat": 46.50515436305834
+ },
+ {
+  "azonosito": "HUGWOAIF903",
+  "nev": "Harta 4264",
+  "local_id": "HUGWOAIF903",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.101079168000066,
+  "lat": 46.70970687005863
+ },
+ {
+  "azonosito": "HUGWOAIF916",
+  "nev": "Homokmégy 1411",
+  "local_id": "HUGWOAIF916",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.08115440400013,
+  "lat": 46.48385246105829
+ },
+ {
+  "azonosito": "HUGWOAIF925",
+  "nev": "Kéleshalom Jánoshalma-1",
+  "local_id": "HUGWOAIF925",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.268974831000094,
+  "lat": 46.346309470058024
+ },
+ {
+  "azonosito": "HUGWOAIF926",
+  "nev": "Kéleshalom Jánoshalma-2",
+  "local_id": "HUGWOAIF926",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.268935934000183,
+  "lat": 46.34632753805791
+ },
+ {
+  "azonosito": "HUGWOAIF927",
+  "nev": "Kéleshalom Jánoshalma-3",
+  "local_id": "HUGWOAIF927",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.268883900000105,
+  "lat": 46.34630964805804
+ },
+ {
+  "azonosito": "HUGWOAIF929",
+  "nev": "Jánoshalma 4363",
+  "local_id": "HUGWOAIF929",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.30130311700009,
+  "lat": 46.270297948057866
+ },
+ {
+  "azonosito": "HUGWOAIF930",
+  "nev": "Jánoshalma B-40",
+  "local_id": "HUGWOAIF930",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.328244666000046,
+  "lat": 46.30267358705788
+ },
+ {
+  "azonosito": "HUGWOAIF932",
+  "nev": "Jászszentlászló 3938",
+  "local_id": "HUGWOAIF932",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.75919633700005,
+  "lat": 46.5461190820583
+ },
+ {
+  "azonosito": "HUGWOAIF982",
+  "nev": "Szeged Kiskundorozsma 2409",
+  "local_id": "HUGWOAIF982",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.0849274090001,
+  "lat": 46.24966530405774
+ },
+ {
+  "azonosito": "HUGWOAIF985",
+  "nev": "Kiskunfélegyháza 4508",
+  "local_id": "HUGWOAIF985",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.883889638000028,
+  "lat": 46.7355526480586
+ },
+ {
+  "azonosito": "HUGWOAIF987",
+  "nev": "Kiskunhalas 2384",
+  "local_id": "HUGWOAIF987",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.44743046500014,
+  "lat": 46.468903648058166
+ },
+ {
+  "azonosito": "HUGWOAIF988",
+  "nev": "Kiskunhalas 2386",
+  "local_id": "HUGWOAIF988",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.474329057000148,
+  "lat": 46.39621609505801
+ },
+ {
+  "azonosito": "HUGWOAIF990",
+  "nev": "Kiskunhalas 4320",
+  "local_id": "HUGWOAIF990",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.339397576000177,
+  "lat": 46.43855675505817
+ },
+ {
+  "azonosito": "HUGWOAIF991",
+  "nev": "Kiskunhalas K 117",
+  "local_id": "HUGWOAIF991",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.535158258000138,
+  "lat": 46.437082624058164
+ },
+ {
+  "azonosito": "HUGWOAIF993",
+  "nev": "Kiskunmajsa -Bodoglár 4507",
+  "local_id": "HUGWOAIF993",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.653312795000033,
+  "lat": 46.51515720805835
+ },
+ {
+  "azonosito": "HUGWOAIF994",
+  "nev": "Kiskunmajsa 2385",
+  "local_id": "HUGWOAIF994",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.773486074000118,
+  "lat": 46.364734026058024
+ },
+ {
+  "azonosito": "HUGWOAIF995",
+  "nev": "Kiskunmajsa 2394",
+  "local_id": "HUGWOAIF995",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.680182034000154,
+  "lat": 46.46497318705813
+ },
+ {
+  "azonosito": "HUGWOAIF996",
+  "nev": "Kiskunmajsa 2396",
+  "local_id": "HUGWOAIF996",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.75403333800017,
+  "lat": 46.437547519058164
+ },
+ {
+  "azonosito": "HUGWOAIG018",
+  "nev": "Kömpöc K 7",
+  "local_id": "HUGWOAIG018",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.838236290000115,
+  "lat": 46.47651902805825
+ },
+ {
+  "azonosito": "HUGWOAIG019",
+  "nev": "Kömpöc K 8",
+  "local_id": "HUGWOAIG019",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.838532851000025,
+  "lat": 46.476575524058255
+ },
+ {
+  "azonosito": "HUGWOAIG023",
+  "nev": "Kunfehértó 2383",
+  "local_id": "HUGWOAIG023",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.53612054600018,
+  "lat": 46.356293339058
+ },
+ {
+  "azonosito": "HUGWOAIG024",
+  "nev": "Kunfehértó 4193",
+  "local_id": "HUGWOAIG024",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.402277441000024,
+  "lat": 46.37352494905808
+ },
+ {
+  "azonosito": "HUGWOAIG253",
+  "nev": "Szeged Szentmihálytelek 2479",
+  "local_id": "HUGWOAIG253",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.10347112800008,
+  "lat": 46.206309182057744
+ },
+ {
+  "azonosito": "HUGWOAIH516",
+  "nev": "Áporka 3752",
+  "local_id": "HUGWOAIH516",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.008599696000147,
+  "lat": 47.22408886605987
+ },
+ {
+  "azonosito": "HUGWOAIG052",
+  "nev": "Mátételke 1445",
+  "local_id": "HUGWOAIG052",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.23118400300018,
+  "lat": 46.14954754705762
+ },
+ {
+  "azonosito": "HUGWOAIG063",
+  "nev": "Mélykút 3864",
+  "local_id": "HUGWOAIG063",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.372289674000115,
+  "lat": 46.223103588057874
+ },
+ {
+  "azonosito": "HUGWOAIG064",
+  "nev": "Mélykút K-32",
+  "local_id": "HUGWOAIG064",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.397131435000066,
+  "lat": 46.18012798105769
+ },
+ {
+  "azonosito": "HUGWOAIG081",
+  "nev": "Mindszent 2428",
+  "local_id": "HUGWOAIG081",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.193928802000077,
+  "lat": 46.50142248705832
+ },
+ {
+  "azonosito": "HUGWOAIG087",
+  "nev": "Mórahalom T-002422 talajvíz figyelő",
+  "local_id": "HUGWOAIG087",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.887100163000014,
+  "lat": 46.224502818057815
+ },
+ {
+  "azonosito": "HUGWOAIG111",
+  "nev": "Nemesnádudvar 1436",
+  "local_id": "HUGWOAIG111",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.047868166000054,
+  "lat": 46.339517276057904
+ },
+ {
+  "azonosito": "HUGWOAIG117",
+  "nev": "Orgovány 1414",
+  "local_id": "HUGWOAIG117",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.50934357200009,
+  "lat": 46.72402340505864
+ },
+ {
+  "azonosito": "HUGWOAIG146",
+  "nev": "Pusztamérges 4563",
+  "local_id": "HUGWOAIG146",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.68098648600011,
+  "lat": 46.32693042605788
+ },
+ {
+  "azonosito": "HUGWOAIG149",
+  "nev": "Pusztaszer 4558",
+  "local_id": "HUGWOAIG149",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.986034491000108,
+  "lat": 46.54970445905839
+ },
+ {
+  "azonosito": "HUGWOAIG169",
+  "nev": "Rém K-12",
+  "local_id": "HUGWOAIG169",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.14656239600015,
+  "lat": 46.24311065505784
+ },
+ {
+  "azonosito": "HUGWOAIG173",
+  "nev": "Röszke 4511",
+  "local_id": "HUGWOAIG173",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.03801002099999,
+  "lat": 46.18722838405778
+ },
+ {
+  "azonosito": "HUGWOAIG174",
+  "nev": "Röszke 4561",
+  "local_id": "HUGWOAIG174",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.965320138000095,
+  "lat": 46.18204157305773
+ },
+ {
+  "azonosito": "HUGWOAIG175",
+  "nev": "Röszke K 33",
+  "local_id": "HUGWOAIG175",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.055602695000065,
+  "lat": 46.2034010100578
+ },
+ {
+  "azonosito": "HUGWOAIG176",
+  "nev": "Sándorfalva 2413",
+  "local_id": "HUGWOAIG176",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.113575151000074,
+  "lat": 46.36455625305799
+ },
+ {
+  "azonosito": "HUGWOAIG177",
+  "nev": "Sándorfalva 4499",
+  "local_id": "HUGWOAIG177",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.17981086300017,
+  "lat": 46.41406048705812
+ },
+ {
+  "azonosito": "HUGWOAIG187",
+  "nev": "Solt 4477",
+  "local_id": "HUGWOAIG187",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.092730002999986,
+  "lat": 46.7982933790588
+ },
+ {
+  "azonosito": "HUGWOAIG188",
+  "nev": "Soltszentimre 1380",
+  "local_id": "HUGWOAIG188",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.285661160000075,
+  "lat": 46.77157057005883
+ },
+ {
+  "azonosito": "HUGWOAIG190",
+  "nev": "Soltvadkert 4076",
+  "local_id": "HUGWOAIG190",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.328850316000057,
+  "lat": 46.585074803058276
+ },
+ {
+  "azonosito": "HUGWOAIG191",
+  "nev": "Soltvadkert 4144",
+  "local_id": "HUGWOAIG191",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.424034065,
+  "lat": 46.59995772805848
+ },
+ {
+  "azonosito": "HUGWOAIG194",
+  "nev": "Sövényháza 2377",
+  "local_id": "HUGWOAIG194",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.073174419000054,
+  "lat": 46.51634537205821
+ },
+ {
+  "azonosito": "HUGWOAIG195",
+  "nev": "Sövényháza 2412",
+  "local_id": "HUGWOAIG195",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.10566884500014,
+  "lat": 46.45873690805806
+ },
+ {
+  "azonosito": "HUGWOAIH498",
+  "nev": "Albertirsa 2175",
+  "local_id": "HUGWOAIH498",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.614598453999974,
+  "lat": 47.23426610605981
+ },
+ {
+  "azonosito": "HUGWOAIH499",
+  "nev": "Albertirsa K 88",
+  "local_id": "HUGWOAIH499",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.580257086000017,
+  "lat": 47.22475116505987
+ },
+ {
+  "azonosito": "HUGWOAIG207",
+  "nev": "Szank -Móricgát 2365",
+  "local_id": "HUGWOAIG207",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.681796369000097,
+  "lat": 46.60260717105842
+ },
+ {
+  "azonosito": "HUGWOAIG208",
+  "nev": "Szank 2363",
+  "local_id": "HUGWOAIG208",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.59789709600011,
+  "lat": 46.5835680210583
+ },
+ {
+  "azonosito": "HUGWOAIG230",
+  "nev": "Szatymaz 2441",
+  "local_id": "HUGWOAIG230",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.9993530320001,
+  "lat": 46.36512643705808
+ },
+ {
+  "azonosito": "HUGWOAIG236",
+  "nev": "Szeged 3506",
+  "local_id": "HUGWOAIG236",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.14143604500009,
+  "lat": 46.300124753058
+ },
+ {
+  "azonosito": "HUGWOAIG237",
+  "nev": "Szeged B-427",
+  "local_id": "HUGWOAIG237",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.146571367000092,
+  "lat": 46.273633328057784
+ },
+ {
+  "azonosito": "HUGWOAIG239",
+  "nev": "Szeged K-432",
+  "local_id": "HUGWOAIG239",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.085905467000032,
+  "lat": 46.26350215105787
+ },
+ {
+  "azonosito": "HUGWOAIG240",
+  "nev": "Szeged K-433",
+  "local_id": "HUGWOAIG240",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.08616536900001,
+  "lat": 46.26352674705775
+ },
+ {
+  "azonosito": "HUGWOAIG262",
+  "nev": "Tázlár 3868",
+  "local_id": "HUGWOAIG262",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.51762341900013,
+  "lat": 46.56060175605828
+ },
+ {
+  "azonosito": "HUGWOAIG266",
+  "nev": "Tiszasziget 2342",
+  "local_id": "HUGWOAIG266",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.16241954700007,
+  "lat": 46.17425263705773
+ },
+ {
+  "azonosito": "HUGWOAIG269",
+  "nev": "Tompa 2415",
+  "local_id": "HUGWOAIG269",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.537118465000052,
+  "lat": 46.20785425905776
+ },
+ {
+  "azonosito": "HUGWOAIG277",
+  "nev": "Tömörkény 2381",
+  "local_id": "HUGWOAIG277",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.023420145000046,
+  "lat": 46.61889722805846
+ },
+ {
+  "azonosito": "HUGWOAIG285",
+  "nev": "Szeged Új 2477",
+  "local_id": "HUGWOAIG285",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.160775291000103,
+  "lat": 46.21598669505781
+ },
+ {
+  "azonosito": "HUGWOAIG289",
+  "nev": "Üllés 2399",
+  "local_id": "HUGWOAIG289",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.84669526900001,
+  "lat": 46.33789860005805
+ },
+ {
+  "azonosito": "HUGWOAIG306",
+  "nev": "Zákányszék 2400",
+  "local_id": "HUGWOAIG306",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.85226412700018,
+  "lat": 46.2878212200579
+ },
+ {
+  "azonosito": "HUGWOAIG312",
+  "nev": "Zsana 3505",
+  "local_id": "HUGWOAIG312",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.61825406200012,
+  "lat": 46.395041883058155
+ },
+ {
+  "azonosito": "HUGWOAIG313",
+  "nev": "Zsana 4321",
+  "local_id": "HUGWOAIG313",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.697878216000106,
+  "lat": 46.42301328305816
+ },
+ {
+  "azonosito": "HUGWOAIH486",
+  "nev": "Abony 2189",
+  "local_id": "HUGWOAIH486",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.98605301000009,
+  "lat": 47.17315055205968
+ },
+ {
+  "azonosito": "HUGWOAIH733",
+  "nev": "Dabas 4357",
+  "local_id": "HUGWOAIH733",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.298808035000096,
+  "lat": 47.19201369205979
+ },
+ {
+  "azonosito": "HUGWOAIH734",
+  "nev": "Dabas 4518",
+  "local_id": "HUGWOAIH734",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.247892683000146,
+  "lat": 47.17803646305973
+ },
+ {
+  "azonosito": "HUGWOAIH798",
+  "nev": "Dömsöd 1135",
+  "local_id": "HUGWOAIH798",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.094429367000092,
+  "lat": 47.11475461205951
+ },
+ {
+  "azonosito": "HUGWOAIH799",
+  "nev": "Dömsöd 1137",
+  "local_id": "HUGWOAIH799",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.102848549000043,
+  "lat": 47.16529681205962
+ },
+ {
+  "azonosito": "HUGWOAIH800",
+  "nev": "Dömsöd K-39",
+  "local_id": "HUGWOAIH800",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.021110248000188,
+  "lat": 47.09014869505953
+ },
+ {
+  "azonosito": "HUGWOAIH821",
+  "nev": "Dunavarsány 1139",
+  "local_id": "HUGWOAIH821",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.02736491100012,
+  "lat": 47.295075125060045
+ },
+ {
+  "azonosito": "HUGWOAIH907",
+  "nev": "Fülöpszállás 1375",
+  "local_id": "HUGWOAIH907",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.197616089999997,
+  "lat": 46.80208141705891
+ },
+ {
+  "azonosito": "HUGWOAIH908",
+  "nev": "Fülöpszállás 4226",
+  "local_id": "HUGWOAIH908",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.285286158000133,
+  "lat": 46.81418517305886
+ },
+ {
+  "azonosito": "HUGWOAII220",
+  "nev": "Kocsér 2185",
+  "local_id": "HUGWOAII220",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.936136303000126,
+  "lat": 47.026883490059255
+ },
+ {
+  "azonosito": "HUGWOAII020",
+  "nev": "Helvécia 4362",
+  "local_id": "HUGWOAII020",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.597471333000154,
+  "lat": 46.83117166605883
+ },
+ {
+  "azonosito": "HUGWOAII026",
+  "nev": "Hernád 4140",
+  "local_id": "HUGWOAII026",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.403506555000092,
+  "lat": 47.16123173305963
+ },
+ {
+  "azonosito": "HUGWOAII061",
+  "nev": "Izsák 1383",
+  "local_id": "HUGWOAII061",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.367746159000152,
+  "lat": 46.79644155505888
+ },
+ {
+  "azonosito": "HUGWOAII282",
+  "nev": "Lajosmizse 4364",
+  "local_id": "HUGWOAII282",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.644517473000068,
+  "lat": 46.99997132405934
+ },
+ {
+  "azonosito": "HUGWOAII283",
+  "nev": "Lajosmizse 4435",
+  "local_id": "HUGWOAII283",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.622286944000052,
+  "lat": 47.10580496405955
+ },
+ {
+  "azonosito": "HUGWOAII284",
+  "nev": "Felsőlajos Lajosmizse 4480",
+  "local_id": "HUGWOAII284",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.509952479000162,
+  "lat": 47.064545676059446
+ },
+ {
+  "azonosito": "HUGWOAII285",
+  "nev": "Lajosmizse K-89",
+  "local_id": "HUGWOAII285",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.566830510000045,
+  "lat": 47.03923955605934
+ },
+ {
+  "azonosito": "HUGWOAII144",
+  "nev": "Kecskemét -1",
+  "local_id": "HUGWOAII144",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.542485721000048,
+  "lat": 46.96125375105915
+ },
+ {
+  "azonosito": "HUGWOAII145",
+  "nev": "Kecskemét -2",
+  "local_id": "HUGWOAII145",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.542430811000145,
+  "lat": 46.961169967059114
+ },
+ {
+  "azonosito": "HUGWOAII146",
+  "nev": "Kecskemét -3",
+  "local_id": "HUGWOAII146",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.542382607000036,
+  "lat": 46.961086603059144
+ },
+ {
+  "azonosito": "HUGWOAII147",
+  "nev": "Kecskemét 1391",
+  "local_id": "HUGWOAII147",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.57599394800007,
+  "lat": 46.794524116058746
+ },
+ {
+  "azonosito": "HUGWOAII148",
+  "nev": "Kecskemét 2352",
+  "local_id": "HUGWOAII148",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.6312337600001,
+  "lat": 46.9418087130592
+ },
+ {
+  "azonosito": "HUGWOAII149",
+  "nev": "Kecskemét 2356",
+  "local_id": "HUGWOAII149",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.727440908000123,
+  "lat": 46.96396498605921
+ },
+ {
+  "azonosito": "HUGWOAII150",
+  "nev": "Kecskemét 2440",
+  "local_id": "HUGWOAII150",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.788106488000153,
+  "lat": 46.93032912005908
+ },
+ {
+  "azonosito": "HUGWOAII151",
+  "nev": "Kecskemét 4048",
+  "local_id": "HUGWOAII151",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67577196600013,
+  "lat": 46.869828537058964
+ },
+ {
+  "azonosito": "HUGWOAII152",
+  "nev": "Kecskemét 4560",
+  "local_id": "HUGWOAII152",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.77344867500017,
+  "lat": 46.87200178905901
+ },
+ {
+  "azonosito": "HUGWOAII165",
+  "nev": "Kecskemét K  784",
+  "local_id": "HUGWOAII165",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.652795025000156,
+  "lat": 46.90516348705898
+ },
+ {
+  "azonosito": "HUGWOAII166",
+  "nev": "Kecskemét K 753",
+  "local_id": "HUGWOAII166",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.744791501000122,
+  "lat": 46.89164828905908
+ },
+ {
+  "azonosito": "HUGWOAII167",
+  "nev": "Kecskemét K 790",
+  "local_id": "HUGWOAII167",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.751765005000152,
+  "lat": 46.893044871059004
+ },
+ {
+  "azonosito": "HUGWOAII184",
+  "nev": "Kerekegyháza -1",
+  "local_id": "HUGWOAII184",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.43053643300016,
+  "lat": 46.95543989705913
+ },
+ {
+  "azonosito": "HUGWOAII185",
+  "nev": "Kerekegyháza -2",
+  "local_id": "HUGWOAII185",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.430625479000067,
+  "lat": 46.955453902059105
+ },
+ {
+  "azonosito": "HUGWOAII186",
+  "nev": "Kerekegyháza -3",
+  "local_id": "HUGWOAII186",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.4306870740001,
+  "lat": 46.955469079059235
+ },
+ {
+  "azonosito": "HUGWOAII187",
+  "nev": "Kerekegyháza 1387",
+  "local_id": "HUGWOAII187",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.424785651000036,
+  "lat": 46.92046550905908
+ },
+ {
+  "azonosito": "HUGWOAII188",
+  "nev": "Kerekegyháza 1389",
+  "local_id": "HUGWOAII188",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.527660161000142,
+  "lat": 46.90763821605902
+ },
+ {
+  "azonosito": "HUGWOAII189",
+  "nev": "Kerekegyháza 3833",
+  "local_id": "HUGWOAII189",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.422592355999996,
+  "lat": 46.959829755059054
+ },
+ {
+  "azonosito": "HUGWOAII204",
+  "nev": "Kiskunfélegyháza T-002357 talajvíz figyelő",
+  "local_id": "HUGWOAII204",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.86675072100013,
+  "lat": 46.81733779305878
+ },
+ {
+  "azonosito": "HUGWOAII258",
+  "nev": "Kunadacs -1",
+  "local_id": "HUGWOAII258",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.292956758000116,
+  "lat": 46.96189929805919
+ },
+ {
+  "azonosito": "HUGWOAII259",
+  "nev": "Kunadacs -2",
+  "local_id": "HUGWOAII259",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.292917709000164,
+  "lat": 46.961980344059114
+ },
+ {
+  "azonosito": "HUGWOAII260",
+  "nev": "Kunadacs -3",
+  "local_id": "HUGWOAII260",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.29285258599998,
+  "lat": 46.96210642505912
+ },
+ {
+  "azonosito": "HUGWOAII261",
+  "nev": "Kunadacs 1360",
+  "local_id": "HUGWOAII261",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.296101383000117,
+  "lat": 47.005387149059345
+ },
+ {
+  "azonosito": "HUGWOAII273",
+  "nev": "Kunszentmiklós 1454",
+  "local_id": "HUGWOAII273",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.15390238800012,
+  "lat": 47.03006629905929
+ },
+ {
+  "azonosito": "HUGWOAII274",
+  "nev": "Kunszentmiklós 4059",
+  "local_id": "HUGWOAII274",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.105621762000055,
+  "lat": 47.03330313505939
+ },
+ {
+  "azonosito": "HUGWOAII280",
+  "nev": "Ladánybene 3744",
+  "local_id": "HUGWOAII280",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.446491927000125,
+  "lat": 47.028594124059225
+ },
+ {
+  "azonosito": "HUGWOAII281",
+  "nev": "Lajosmizse 1365",
+  "local_id": "HUGWOAII281",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.598351203000107,
+  "lat": 47.03460331705936
+ },
+ {
+  "azonosito": "HUGWOAII576",
+  "nev": "Örkény 4331",
+  "local_id": "HUGWOAII576",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.46122568700008,
+  "lat": 47.11869730005963
+ },
+ {
+  "azonosito": "HUGWOAII456",
+  "nev": "Nagykőrös 2178",
+  "local_id": "HUGWOAII456",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.716819832000056,
+  "lat": 47.05625507205935
+ },
+ {
+  "azonosito": "HUGWOAII457",
+  "nev": "Nagykőrös 4426",
+  "local_id": "HUGWOAII457",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.79178661700007,
+  "lat": 47.02323550805943
+ },
+ {
+  "azonosito": "HUGWOAII464",
+  "nev": "Nagykőrös K-711",
+  "local_id": "HUGWOAII464",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.792031126000154,
+  "lat": 47.01622595005939
+ },
+ {
+  "azonosito": "HUGWOAII479",
+  "nev": "Nagyrév 2125",
+  "local_id": "HUGWOAII479",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.193277857000112,
+  "lat": 46.919065410059176
+ },
+ {
+  "azonosito": "HUGWOAII509",
+  "nev": "Nyáregyháza 4222",
+  "local_id": "HUGWOAII509",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.48339899600018,
+  "lat": 47.271495037059985
+ },
+ {
+  "azonosito": "HUGWOAII510",
+  "nev": "Nyárlőrinc -1",
+  "local_id": "HUGWOAII510",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.874163767000088,
+  "lat": 46.86814080505898
+ },
+ {
+  "azonosito": "HUGWOAII511",
+  "nev": "Nyárlőrinc -2",
+  "local_id": "HUGWOAII511",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.87404752400016,
+  "lat": 46.86825860005903
+ },
+ {
+  "azonosito": "HUGWOAII512",
+  "nev": "Nyárlőrinc -3",
+  "local_id": "HUGWOAII512",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.874059809000016,
+  "lat": 46.86820453305891
+ },
+ {
+  "azonosito": "HUGWOAII513",
+  "nev": "Nyárlőrinc -4",
+  "local_id": "HUGWOAII513",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.874166016000004,
+  "lat": 46.868116499058914
+ },
+ {
+  "azonosito": "HUGWOAII514",
+  "nev": "Nyárlőrinc 4049",
+  "local_id": "HUGWOAII514",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.876313530000065,
+  "lat": 46.85955166905901
+ },
+ {
+  "azonosito": "HUGWOAII553",
+  "nev": "Ócsa 1109",
+  "local_id": "HUGWOAII553",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.22290928300015,
+  "lat": 47.28830596906008
+ },
+ {
+  "azonosito": "HUGWOAII653",
+  "nev": "Pusztavacs 3754",
+  "local_id": "HUGWOAII653",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.505576048000137,
+  "lat": 47.161744068059626
+ },
+ {
+  "azonosito": "HUGWOAII969",
+  "nev": "Törtel 4181",
+  "local_id": "HUGWOAII969",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.935483354000155,
+  "lat": 47.11832603805964
+ },
+ {
+  "azonosito": "HUGWOAIJ015",
+  "nev": "Városföld 4318",
+  "local_id": "HUGWOAIJ015",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.71723970900007,
+  "lat": 46.803857386058844
+ },
+ {
+  "azonosito": "HUGWOAII855",
+  "nev": "Tass 1356",
+  "local_id": "HUGWOAII855",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.022923129000162,
+  "lat": 47.04487407305933
+ },
+ {
+  "azonosito": "HUGWOAII861",
+  "nev": "Tatárszentgyörgy 3040",
+  "local_id": "HUGWOAII861",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.351165874000117,
+  "lat": 47.03853882005929
+ },
+ {
+  "azonosito": "HUGWOAII862",
+  "nev": "Tatárszentgyörgy 4139",
+  "local_id": "HUGWOAII862",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.353279816000054,
+  "lat": 47.10264754105953
+ },
+ {
+  "azonosito": "HUGWOAII873",
+  "nev": "Tiszaalpár 4191",
+  "local_id": "HUGWOAII873",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.986363030000177,
+  "lat": 46.77772994305872
+ },
+ {
+  "azonosito": "HUGWOAII899",
+  "nev": "Tiszakécske 2199",
+  "local_id": "HUGWOAII899",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.030371429000184,
+  "lat": 46.95426709405917
+ },
+ {
+  "azonosito": "HUGWOAII947",
+  "nev": "Tószeg 206244",
+  "local_id": "HUGWOAII947",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.15104505400012,
+  "lat": 47.0999174230596
+ },
+ {
+  "azonosito": "HUGWOAII948",
+  "nev": "Tószeg XV/a",
+  "local_id": "HUGWOAII948",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.152176956000176,
+  "lat": 47.093492012059514
+ },
+ {
+  "azonosito": "HUGWOAIJ076",
+  "nev": "Zagyvarékas K-11",
+  "local_id": "HUGWOAIJ076",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.093406877000003,
+  "lat": 47.24332814205983
+ },
+ {
+  "azonosito": "HUGWOADF624",
+  "nev": "Mindszent Vm.Észak u 2",
+  "local_id": "HUGWOADF624",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.199163808000154,
+  "lat": 46.52268318105834
+ },
+ {
+  "azonosito": "HUGWOADF625",
+  "nev": "Mindszent Vm.Észak u III",
+  "local_id": "HUGWOADF625",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.19918964900006,
+  "lat": 46.52177440505825
+ },
+ {
+  "azonosito": "HUGWOACE670",
+  "nev": "Rém Vm.1",
+  "local_id": "HUGWOACE670",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.148727365000127,
+  "lat": 46.24296481305784
+ },
+ {
+  "azonosito": "HUGWOACE673",
+  "nev": "Mélykút Vm.1",
+  "local_id": "HUGWOACE673",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.380350007000118,
+  "lat": 46.21230302505783
+ },
+ {
+  "azonosito": "HUGWOACE678",
+  "nev": "Felsőlajos Vm.1",
+  "local_id": "HUGWOACE678",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.492277900000143,
+  "lat": 47.062123799059364
+ },
+ {
+  "azonosito": "HUGWOACL407",
+  "nev": "Hajós Vm.2/A",
+  "local_id": "HUGWOACL407",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.13082885900019,
+  "lat": 46.40090237505812
+ },
+ {
+  "azonosito": "HUGWOACN037",
+  "nev": "Szakmár Kistény TSZ. major",
+  "local_id": "HUGWOACN037",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.067106532000082,
+  "lat": 46.571251576058444
+ },
+ {
+  "azonosito": "HUGWOACE697",
+  "nev": "Kunadacs Vm.1",
+  "local_id": "HUGWOACE697",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.290503577000035,
+  "lat": 46.954060178059244
+ },
+ {
+  "azonosito": "HUGWOACE869",
+  "nev": "Akasztó Vm.2",
+  "local_id": "HUGWOACE869",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.22333597700009,
+  "lat": 46.70268447405864
+ },
+ {
+  "azonosito": "HUGWOACE874",
+  "nev": "Miske Vm.2",
+  "local_id": "HUGWOACE874",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.03926573100017,
+  "lat": 46.44046930605809
+ },
+ {
+  "azonosito": "HUGWOACE884",
+  "nev": "Felsőszentiván Vm.2",
+  "local_id": "HUGWOACE884",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.183633394000022,
+  "lat": 46.20258199305785
+ },
+ {
+  "azonosito": "HUGWOACE890",
+  "nev": "Felsőlajos Vm.2",
+  "local_id": "HUGWOACE890",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.492411037000014,
+  "lat": 47.06230319805937
+ },
+ {
+  "azonosito": "HUGWOACE900",
+  "nev": "Tázlár Vm.2",
+  "local_id": "HUGWOACE900",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.507979621000178,
+  "lat": 46.54922518805825
+ },
+ {
+  "azonosito": "HUGWOACE901",
+  "nev": "Szabadszállás Vm.2",
+  "local_id": "HUGWOACE901",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.212017625000104,
+  "lat": 46.88073972505908
+ },
+ {
+  "azonosito": "HUGWOACE903",
+  "nev": "Nemesnádudvar Vm.2",
+  "local_id": "HUGWOACE903",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.054751887000066,
+  "lat": 46.337582976058044
+ },
+ {
+  "azonosito": "HUGWOACE904",
+  "nev": "Pirtó Vm.2",
+  "local_id": "HUGWOACE904",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.431331226000108,
+  "lat": 46.51202354305826
+ },
+ {
+  "azonosito": "HUGWOACE906",
+  "nev": "Imrehegy Vm.2",
+  "local_id": "HUGWOACE906",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.305608266000096,
+  "lat": 46.48861155405816
+ },
+ {
+  "azonosito": "HUGWOACF004",
+  "nev": "Felsőszentiván Vm.3",
+  "local_id": "HUGWOACF004",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.182213915999967,
+  "lat": 46.204877623057676
+ },
+ {
+  "azonosito": "HUGWOACF030",
+  "nev": "Mélykút Vm.3",
+  "local_id": "HUGWOACF030",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.38241176800011,
+  "lat": 46.21042578105775
+ },
+ {
+  "azonosito": "HUGWOACF044",
+  "nev": "Soltvadkert Vm.II Telep 1",
+  "local_id": "HUGWOACF044",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.37907701800003,
+  "lat": 46.57745467705837
+ },
+ {
+  "azonosito": "HUGWOACF045",
+  "nev": "Császártöltés Vm.3",
+  "local_id": "HUGWOACF045",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.182731593000085,
+  "lat": 46.42440399205806
+ },
+ {
+  "azonosito": "HUGWOACF106",
+  "nev": "Borota Vízmű 4.",
+  "local_id": "HUGWOACF106",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.22072549100011,
+  "lat": 46.263622122057924
+ },
+ {
+  "azonosito": "HUGWOACF116",
+  "nev": "Csávoly Vm.4",
+  "local_id": "HUGWOACF116",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.13901030200003,
+  "lat": 46.20063870405768
+ },
+ {
+  "azonosito": "HUGWOACF122",
+  "nev": "Rém Vm.4",
+  "local_id": "HUGWOACF122",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.146796183000053,
+  "lat": 46.243335347057794
+ },
+ {
+  "azonosito": "HUGWOACF169",
+  "nev": "Császártöltés Vízmű 5.sz.",
+  "local_id": "HUGWOACF169",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.18295290200001,
+  "lat": 46.42446670105814
+ },
+ {
+  "azonosito": "HUGWOACF226",
+  "nev": "Bácsalmás Vm.6",
+  "local_id": "HUGWOACF226",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.318459209000142,
+  "lat": 46.141563423057605
+ },
+ {
+  "azonosito": "HUGWOACF228",
+  "nev": "Kiskőrös I. vm.6.sz.",
+  "local_id": "HUGWOACF228",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.27505873400014,
+  "lat": 46.63271208905853
+ },
+ {
+  "azonosito": "HUGWOACF230",
+  "nev": "Kecel Vm.6.",
+  "local_id": "HUGWOACF230",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.242383927000162,
+  "lat": 46.520295601058315
+ },
+ {
+  "azonosito": "HUGWOACF232",
+  "nev": "Lajosmizse Vm.6.sz",
+  "local_id": "HUGWOACF232",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.569923697000092,
+  "lat": 47.03932444205943
+ },
+ {
+  "azonosito": "HUGWOACF264",
+  "nev": "Kecel Vízmű 7.",
+  "local_id": "HUGWOACF264",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.244248428000162,
+  "lat": 46.52054427805822
+ },
+ {
+  "azonosito": "HUGWOACG034",
+  "nev": "Bácsbokod Vm.1",
+  "local_id": "HUGWOACG034",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.154619456000148,
+  "lat": 46.12681478405774
+ },
+ {
+  "azonosito": "HUGWOACG483",
+  "nev": "Szabadszállás Balázspuszta vm.1",
+  "local_id": "HUGWOACG483",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.367688186000066,
+  "lat": 46.89899550305897
+ },
+ {
+  "azonosito": "HUGWOADC712",
+  "nev": "Bócsa Vm.3",
+  "local_id": "HUGWOADC712",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.478373561000122,
+  "lat": 46.61254761705841
+ },
+ {
+  "azonosito": "HUGWOADC796",
+  "nev": "Nagykőrös Kukoricavonalnál",
+  "local_id": "HUGWOADC796",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.782730437000055,
+  "lat": 47.050615137059424
+ },
+ {
+  "azonosito": "HUGWOADC797",
+  "nev": "Nagykőrös III.kút",
+  "local_id": "HUGWOADC797",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.783697322000023,
+  "lat": 47.04914256605935
+ },
+ {
+  "azonosito": "HUGWOADD026",
+  "nev": "Csólyospálos Vm.2",
+  "local_id": "HUGWOADD026",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.83904342000011,
+  "lat": 46.41973414905808
+ },
+ {
+  "azonosito": "HUGWOADD237",
+  "nev": "Dóc Vm.2",
+  "local_id": "HUGWOADD237",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.13567869600007,
+  "lat": 46.437507695058045
+ },
+ {
+  "azonosito": "HUGWOAIF644",
+  "nev": "Bócsa ATIKÖFE II/32A. jelű figyelő",
+  "local_id": "HUGWOAIF644",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.542403772000114,
+  "lat": 46.655709057058495
+ },
+ {
+  "azonosito": "HUGWOADF966",
+  "nev": "Pusztaszer Vm.1",
+  "local_id": "HUGWOADF966",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.987336127000162,
+  "lat": 46.54956772405836
+ },
+ {
+  "azonosito": "HUGWOAIF548",
+  "nev": "Ásotthalom (Vm.) IV. kút",
+  "local_id": "HUGWOAIF548",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.78427064700008,
+  "lat": 46.20559894705771
+ },
+ {
+  "azonosito": "HUGWOAIF553",
+  "nev": "Ásotthalom ATIKÖFE IV/23 j.figyelő",
+  "local_id": "HUGWOAIF553",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.737433203000077,
+  "lat": 46.22706917705784
+ },
+ {
+  "azonosito": "HUGWOAIF566",
+  "nev": "Bácsborsód Közös  Vm.3",
+  "local_id": "HUGWOAIF566",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.152845766000098,
+  "lat": 46.10700554905764
+ },
+ {
+  "azonosito": "HUGWOAIF781",
+  "nev": "Felgyő Duna-Tisza köze, IV/27",
+  "local_id": "HUGWOAIF781",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.09690689399997,
+  "lat": 46.62977198405854
+ },
+ {
+  "azonosito": "HUGWOAIF798",
+  "nev": "Fülöpjakab GA_FUJ_01C mg. figyelő",
+  "local_id": "HUGWOAIF798",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67375461300014,
+  "lat": 46.76629087005873
+ },
+ {
+  "azonosito": "HUGWOACN988",
+  "nev": "Dunavarsány Vm.III. kút",
+  "local_id": "HUGWOACN988",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.055460212000128,
+  "lat": 47.28435447406004
+ },
+ {
+  "azonosito": "HUGWOACO029",
+  "nev": "Bugyi Vm.2/1",
+  "local_id": "HUGWOACO029",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.15510389300016,
+  "lat": 47.2298473500598
+ },
+ {
+  "azonosito": "HUGWOACO033",
+  "nev": "Újlengyel Vízmű 2.sz.",
+  "local_id": "HUGWOACO033",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.445924864000173,
+  "lat": 47.23710634705987
+ },
+ {
+  "azonosito": "HUGWOACO059",
+  "nev": "Nyársapát Vízmű 2.",
+  "local_id": "HUGWOACO059",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.802582192000045,
+  "lat": 47.100261050059494
+ },
+ {
+  "azonosito": "HUGWOACO063",
+  "nev": "Pusztavacs Községi Vm.2.",
+  "local_id": "HUGWOACO063",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.501587700000186,
+  "lat": 47.165985075059666
+ },
+ {
+  "azonosito": "HUGWOACO064",
+  "nev": "Táborfalva Községi Vízmű 2.",
+  "local_id": "HUGWOACO064",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.485826331,
+  "lat": 47.12208774305958
+ },
+ {
+  "azonosito": "HUGWOACO090",
+  "nev": "Dömsöd Községi Vízmű 3. kút",
+  "local_id": "HUGWOACO090",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.024732105000112,
+  "lat": 47.0906712460595
+ },
+ {
+  "azonosito": "HUGWOACO119",
+  "nev": "Inárcs Új Vízműtelep 1.",
+  "local_id": "HUGWOACO119",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.324098690000028,
+  "lat": 47.25530159505997
+ },
+ {
+  "azonosito": "HUGWOACP307",
+  "nev": "Baja Vm.Martonszállás",
+  "local_id": "HUGWOACP307",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.04170227600008,
+  "lat": 46.20412039905775
+ },
+ {
+  "azonosito": "HUGWOACV906",
+  "nev": "Szatymaz Vm.1",
+  "local_id": "HUGWOACV906",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.04230559000007,
+  "lat": 46.34399214205798
+ },
+ {
+  "azonosito": "HUGWOACV983",
+  "nev": "Szeged V vm.V 04-03 Fonógyár",
+  "local_id": "HUGWOACV983",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.097530071000108,
+  "lat": 46.264950933057825
+ },
+ {
+  "azonosito": "HUGWOACW534",
+  "nev": "Szolnok Húsipar 1. sz.315 m-es kút",
+  "local_id": "HUGWOACW534",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.17925897200007,
+  "lat": 47.15927986205968
+ },
+ {
+  "azonosito": "HUGWOACW536",
+  "nev": "Szolnok Húsipar 3. sz. 61 m-es kút",
+  "local_id": "HUGWOACW536",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.179259544000104,
+  "lat": 47.1593068460596
+ },
+ {
+  "azonosito": "HUGWOACY182",
+  "nev": "Pilis Csilló Béla, major",
+  "local_id": "HUGWOACY182",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.551983841000098,
+  "lat": 47.28460000506002
+ },
+ {
+  "azonosito": "HUGWOACY858",
+  "nev": "Soltvadkert Vadkerti-tó 2. kút",
+  "local_id": "HUGWOACY858",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.394575318000022,
+  "lat": 46.6098842010585
+ },
+ {
+  "azonosito": "HUGWOACZ068",
+  "nev": "Abony Vm.vásártéri",
+  "local_id": "HUGWOACZ068",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.995585607000066,
+  "lat": 47.1787667220597
+ },
+ {
+  "azonosito": "HUGWOACZ819",
+  "nev": "Tataháza Vm.1",
+  "local_id": "HUGWOACZ819",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.301019829000097,
+  "lat": 46.17335914205776
+ },
+ {
+  "azonosito": "HUGWOACZ820",
+  "nev": "Délegyháza Vízmű  1. sz. kút",
+  "local_id": "HUGWOACZ820",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.07074544200009,
+  "lat": 47.248168697059874
+ },
+ {
+  "azonosito": "HUGWOACZ871",
+  "nev": "Hernád Vm.1.",
+  "local_id": "HUGWOACZ871",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.418356896000034,
+  "lat": 47.16448082605961
+ },
+ {
+  "azonosito": "HUGWOACS016",
+  "nev": "Orgovány Vm.1",
+  "local_id": "HUGWOACS016",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.46331137800007,
+  "lat": 46.751440880058745
+ },
+ {
+  "azonosito": "HUGWOACS018",
+  "nev": "Kaskantyú Vm.1",
+  "local_id": "HUGWOACS018",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.385974723000118,
+  "lat": 46.67058853305851
+ },
+ {
+  "azonosito": "HUGWOACS210",
+  "nev": "Nyáregyháza Vm.2. kút",
+  "local_id": "HUGWOACS210",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.484102461000187,
+  "lat": 47.2718611830599
+ },
+ {
+  "azonosito": "HUGWOACS248",
+  "nev": "Soltszentimre Vízmű 2.",
+  "local_id": "HUGWOACS248",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.289015281000044,
+  "lat": 46.77499998305882
+ },
+ {
+  "azonosito": "HUGWOACS250",
+  "nev": "Kéleshalom Vízmű 2.",
+  "local_id": "HUGWOACS250",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.287092635000082,
+  "lat": 46.363158018057995
+ },
+ {
+  "azonosito": "HUGWOACS296",
+  "nev": "Orgovány Vm.2",
+  "local_id": "HUGWOACS296",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.464276826000003,
+  "lat": 46.75104152705866
+ },
+ {
+  "azonosito": "HUGWOACS297",
+  "nev": "Fülöpháza Vm.2",
+  "local_id": "HUGWOACS297",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.441361732000136,
+  "lat": 46.89092992305895
+ },
+ {
+  "azonosito": "HUGWOACS299",
+  "nev": "Páhi Vm.2",
+  "local_id": "HUGWOACS299",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.38611200100007,
+  "lat": 46.71327434905867
+ },
+ {
+  "azonosito": "HUGWOACS300",
+  "nev": "Csengőd Vm.2",
+  "local_id": "HUGWOACS300",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.268351502000147,
+  "lat": 46.71710776105863
+ },
+ {
+  "azonosito": "HUGWOACS301",
+  "nev": "Jakabszállás Vm.2",
+  "local_id": "HUGWOACS301",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.607684390000088,
+  "lat": 46.75593221805873
+ },
+ {
+  "azonosito": "HUGWOACS369",
+  "nev": "Újsolt Vízmű 2.számú kút",
+  "local_id": "HUGWOACS369",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.119958557000132,
+  "lat": 46.87272045005908
+ },
+ {
+  "azonosito": "HUGWOACS442",
+  "nev": "Izsák Vm 3.sz.",
+  "local_id": "HUGWOACS442",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.339114068000185,
+  "lat": 46.806647760058816
+ },
+ {
+  "azonosito": "HUGWOADA284",
+  "nev": "Újhartyán Vízmű, 2. kút",
+  "local_id": "HUGWOADA284",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.395352486000036,
+  "lat": 47.222931621059814
+ },
+ {
+  "azonosito": "HUGWOADA346",
+  "nev": "Tiszakürt 1. Vm.Kft.",
+  "local_id": "HUGWOADA346",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.141021455000104,
+  "lat": 46.85421675305901
+ },
+ {
+  "azonosito": "HUGWOADA351",
+  "nev": "Nagykőrös V./2. sz. kút",
+  "local_id": "HUGWOADA351",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.80976770600006,
+  "lat": 47.02676956205943
+ },
+ {
+  "azonosito": "HUGWOADA358",
+  "nev": "Dánszentmiklós Vízszolgáltató Kft. 176,0 m-es kút",
+  "local_id": "HUGWOADA358",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.542081178000046,
+  "lat": 47.20899961205979
+ },
+ {
+  "azonosito": "HUGWOADA383",
+  "nev": "Bácsszőlős Vm.2",
+  "local_id": "HUGWOADA383",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.422077969000156,
+  "lat": 46.135518386057555
+ },
+ {
+  "azonosito": "HUGWOADA385",
+  "nev": "Csikéria Vm.3",
+  "local_id": "HUGWOADA385",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.470521191000046,
+  "lat": 46.12500166205765
+ },
+ {
+  "azonosito": "HUGWOADA388",
+  "nev": "Tabdi Vm.1",
+  "local_id": "HUGWOADA388",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.310960677000025,
+  "lat": 46.6866107910585
+ },
+ {
+  "azonosito": "HUGWOADA391",
+  "nev": "Kunpeszér Vm.2",
+  "local_id": "HUGWOADA391",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.27859764700014,
+  "lat": 47.06023468905937
+ },
+ {
+  "azonosito": "HUGWOADB072",
+  "nev": "Ceglédbercel Vm.1",
+  "local_id": "HUGWOADB072",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.67007651200015,
+  "lat": 47.22134003505991
+ },
+ {
+  "azonosito": "HUGWOADB080",
+  "nev": "Szelevény vm.1",
+  "local_id": "HUGWOADB080",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.19628854600012,
+  "lat": 46.80285901005885
+ },
+ {
+  "azonosito": "HUGWOADB081",
+  "nev": "Kőröstetétlen Vm.1",
+  "local_id": "HUGWOADB081",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.021796786000092,
+  "lat": 47.09756305705944
+ },
+ {
+  "azonosito": "HUGWOADB120",
+  "nev": "Szentkirály Vm.1",
+  "local_id": "HUGWOADB120",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.91934840099998,
+  "lat": 46.91707768205899
+ },
+ {
+  "azonosito": "HUGWOADB126",
+  "nev": "Csépa Vm.1",
+  "local_id": "HUGWOADB126",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.13820997900018,
+  "lat": 46.80881002505892
+ },
+ {
+  "azonosito": "HUGWOADB127",
+  "nev": "Csemő 1.Vm.kút",
+  "local_id": "HUGWOADB127",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.698295577000067,
+  "lat": 47.11547405105965
+ },
+ {
+  "azonosito": "HUGWOADB182",
+  "nev": "Cegléd Vm.13",
+  "local_id": "HUGWOADB182",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.805738226000074,
+  "lat": 47.194544660059776
+ },
+ {
+  "azonosito": "HUGWOADB251",
+  "nev": "Mikebuda Vm.2",
+  "local_id": "HUGWOADB251",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.619089335000073,
+  "lat": 47.15669211005959
+ },
+ {
+  "azonosito": "HUGWOADB270",
+  "nev": "Vezseny Vm.2",
+  "local_id": "HUGWOADB270",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.11734900700003,
+  "lat": 47.03440984205942
+ },
+ {
+  "azonosito": "HUGWOADB334",
+  "nev": "Újszilvás Kossuth úti kút",
+  "local_id": "HUGWOADB334",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.915734203000113,
+  "lat": 47.26948410005989
+ },
+ {
+  "azonosito": "HUGWOADB335",
+  "nev": "Csépa Vm.2",
+  "local_id": "HUGWOADB335",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.138645840000095,
+  "lat": 46.80962455805889
+ },
+ {
+  "azonosito": "HUGWOADB399",
+  "nev": "Albertirsa Vm.3",
+  "local_id": "HUGWOADB399",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.61549049500019,
+  "lat": 47.249815082059946
+ },
+ {
+  "azonosito": "HUGWOADB404",
+  "nev": "Pilis 2. sz. vízmű kút",
+  "local_id": "HUGWOADB404",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.54063411800007,
+  "lat": 47.26667625405995
+ },
+ {
+  "azonosito": "HUGWOADB419",
+  "nev": "Tiszainoka Vm.3",
+  "local_id": "HUGWOADB419",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.15729509800019,
+  "lat": 46.90296588505906
+ },
+ {
+  "azonosito": "HUGWOADB491",
+  "nev": "Tiszavárkony Vm.4",
+  "local_id": "HUGWOADB491",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.159913814000106,
+  "lat": 47.055100867059494
+ },
+ {
+  "azonosito": "HUGWOADB503",
+  "nev": "Törtel 4.kút Batthyány út",
+  "local_id": "HUGWOADB503",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.935873441000012,
+  "lat": 47.12989204605954
+ },
+ {
+  "azonosito": "HUGWOADB544",
+  "nev": "Ceglédbercel Vm.5",
+  "local_id": "HUGWOADB544",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.661452503000074,
+  "lat": 47.228070225059916
+ },
+ {
+  "azonosito": "HUGWOADB545",
+  "nev": "Jászkarajenő Vm.5",
+  "local_id": "HUGWOADB545",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.072724243000096,
+  "lat": 47.056868698059496
+ },
+ {
+  "azonosito": "HUGWOADB615",
+  "nev": "Tiszakécske Vm.7",
+  "local_id": "HUGWOADB615",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.09645132600014,
+  "lat": 46.90618634705908
+ },
+ {
+  "azonosito": "HUGWOADC290",
+  "nev": "Baks Vm.2",
+  "local_id": "HUGWOADC290",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.105888463000156,
+  "lat": 46.54973755905833
+ },
+ {
+  "azonosito": "HUGWOADC294",
+  "nev": "Balástya Vm.3",
+  "local_id": "HUGWOADC294",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.00842563800012,
+  "lat": 46.42609563405821
+ },
+ {
+  "azonosito": "HUGWOADC331",
+  "nev": "Balotaszállás Vm.2",
+  "local_id": "HUGWOADC331",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.545211573000188,
+  "lat": 46.35019931005799
+ },
+ {
+  "azonosito": "HUGWOADE079",
+  "nev": "Abony Györe-tanya 44.3 m-es kútja",
+  "local_id": "HUGWOADE079",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.012382272000078,
+  "lat": 47.2276644940598
+ },
+ {
+  "azonosito": "HUGWOADE841",
+  "nev": "Tiszavárkony Duna-Tisza köze, III/7. jelű",
+  "local_id": "HUGWOADE841",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.16837793000002,
+  "lat": 47.07705986905938
+ },
+ {
+  "azonosito": "HUGWOADE842",
+  "nev": "Tiszavárkony KÖTIKÖFE III/8 j.figyelő",
+  "local_id": "HUGWOADE842",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.168352352000056,
+  "lat": 47.07709610505934
+ },
+ {
+  "azonosito": "HUGWOADF121",
+  "nev": "Lakitelek Kapásfalu 1.",
+  "local_id": "HUGWOADF121",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.95887459000005,
+  "lat": 46.868026258058954
+ },
+ {
+  "azonosito": "HUGWOADF464",
+  "nev": "Kunszállás Vm.2",
+  "local_id": "HUGWOADF464",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.750369135000142,
+  "lat": 46.76407316705868
+ },
+ {
+  "azonosito": "HUGWOAIF806",
+  "nev": "Kiskunfélegyháza GA_KIF_01A mg. figyelő",
+  "local_id": "HUGWOAIF806",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.83817437200014,
+  "lat": 46.690766049058595
+ },
+ {
+  "azonosito": "HUGWOAIF807",
+  "nev": "Kiskunfélegyháza GA_KIF_01B mg. figyelő",
+  "local_id": "HUGWOAIF807",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.838174517000027,
+  "lat": 46.69077594405866
+ },
+ {
+  "azonosito": "HUGWOAIF808",
+  "nev": "Kiskunfélegyháza GA_KIF_01C mg. figyelő",
+  "local_id": "HUGWOAIF808",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.838175956999976,
+  "lat": 46.690784931058616
+ },
+ {
+  "azonosito": "HUGWOAIF838",
+  "nev": "Gátér ATIKÖFE IV/26.j.figyelő",
+  "local_id": "HUGWOAIF838",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.96275890700002,
+  "lat": 46.66234141605848
+ },
+ {
+  "azonosito": "HUGWOAIF931",
+  "nev": "Jánoshalma Vm.2/3",
+  "local_id": "HUGWOAIF931",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.31262675400012,
+  "lat": 46.28605980105792
+ },
+ {
+  "azonosito": "HUGWOAIF959",
+  "nev": "Kéleshalom ADUKÖFE II/41A jelű",
+  "local_id": "HUGWOAIF959",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.268809173000083,
+  "lat": 46.34646092605795
+ },
+ {
+  "azonosito": "HUGWOAIF979",
+  "nev": "Kiskőrös I. vm.5",
+  "local_id": "HUGWOAIF979",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.275211619999993,
+  "lat": 46.62560493405855
+ },
+ {
+  "azonosito": "HUGWOAIF986",
+  "nev": "Kiskunfélegyháza ATIKÖFE IV/11",
+  "local_id": "HUGWOAIF986",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.851933776000124,
+  "lat": 46.680893105058644
+ },
+ {
+  "azonosito": "HUGWOAIH628",
+  "nev": "Bokros Vm.II",
+  "local_id": "HUGWOAIH628",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.03261954700002,
+  "lat": 46.75502747305879
+ },
+ {
+  "azonosito": "HUGWOAIH667",
+  "nev": "Cegléd Vízmű 1. sz.kút",
+  "local_id": "HUGWOAIH667",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.807626603000074,
+  "lat": 47.19554870405968
+ },
+ {
+  "azonosito": "HUGWOAIH669",
+  "nev": "Cegléd Vm.12",
+  "local_id": "HUGWOAIH669",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.809505326000192,
+  "lat": 47.211575854059795
+ },
+ {
+  "azonosito": "HUGWOAIH698",
+  "nev": "Csemő -Ny vízbázis II/f-1 j. figyelő",
+  "local_id": "HUGWOAIH698",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66729732200008,
+  "lat": 47.112193207059605
+ },
+ {
+  "azonosito": "HUGWOAIH699",
+  "nev": "Csemő -Ny vízbázis II/f-2 j. figyelő",
+  "local_id": "HUGWOAIH699",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66733607499998,
+  "lat": 47.11223977605964
+ },
+ {
+  "azonosito": "HUGWOAIH700",
+  "nev": "Csemő -Ny vízbázis II/f-3 j. figyelő",
+  "local_id": "HUGWOAIH700",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.66732403900005,
+  "lat": 47.11222454805963
+ },
+ {
+  "azonosito": "HUGWOAIH702",
+  "nev": "Csemő Ny vízbázis,2 SZF I/1",
+  "local_id": "HUGWOAIH702",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.65835878900009,
+  "lat": 47.12898809705963
+ },
+ {
+  "azonosito": "HUGWOAIH910",
+  "nev": "Fülöpszállás Vm.4",
+  "local_id": "HUGWOAIH910",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.230626343000043,
+  "lat": 46.820439005058894
+ },
+ {
+  "azonosito": "HUGWOAII097",
+  "nev": "Kakucs Vízmű 1.",
+  "local_id": "HUGWOAII097",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.36038103800013,
+  "lat": 47.24481074205991
+ },
+ {
+  "azonosito": "HUGWOAII098",
+  "nev": "Kakucs Vízmű 2.",
+  "local_id": "HUGWOAII098",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.36055126600019,
+  "lat": 47.24523108505982
+ },
+ {
+  "azonosito": "HUGWOAII153",
+  "nev": "Kecskemét 9.VOLÁN 2.kút",
+  "local_id": "HUGWOAII153",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.71194610700013,
+  "lat": 46.90129015505914
+ },
+ {
+  "azonosito": "HUGWOAII163",
+  "nev": "Kecskemét II. vm.4/B",
+  "local_id": "HUGWOAII163",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.748033332000038,
+  "lat": 46.888668691059095
+ },
+ {
+  "azonosito": "HUGWOAII164",
+  "nev": "Kecskemét II. vm.8/A",
+  "local_id": "HUGWOAII164",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.767712662999998,
+  "lat": 46.87761580205892
+ },
+ {
+  "azonosito": "HUGWOAII221",
+  "nev": "Kocsér KÖTIKÖFE III/5 jelű figyelő",
+  "local_id": "HUGWOAII221",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.971198467000022,
+  "lat": 46.987264774059234
+ },
+ {
+  "azonosito": "HUGWOAII222",
+  "nev": "Kocsér Vízmű 2.",
+  "local_id": "HUGWOAII222",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.92515927700009,
+  "lat": 47.00415367405935
+ },
+ {
+  "azonosito": "HUGWOAII460",
+  "nev": "Nagykőrös GA_NAK_01C  mg. figyelő",
+  "local_id": "HUGWOAII460",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.679607948000125,
+  "lat": 47.054210331059316
+ },
+ {
+  "azonosito": "HUGWOAII463",
+  "nev": "Nagykőrös GA_NAK_02C  mg. figyelő",
+  "local_id": "HUGWOAII463",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.755945259000157,
+  "lat": 47.00040156705931
+ },
+ {
+  "azonosito": "HUGWOAII515",
+  "nev": "Nyárlőrinc GN_NYA_03A figyelő",
+  "local_id": "HUGWOAII515",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.87690829000007,
+  "lat": 46.856622625058954
+ },
+ {
+  "azonosito": "HUGWOAII516",
+  "nev": "Nyárlőrinc GN_NYA_03B figyelő",
+  "local_id": "HUGWOAII516",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.876917386000116,
+  "lat": 46.856617161058985
+ },
+ {
+  "azonosito": "HUGWOAII517",
+  "nev": "Nyárlőrinc GN_NYA_03C figyelő",
+  "local_id": "HUGWOAII517",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.876927792999993,
+  "lat": 46.85661168805899
+ },
+ {
+  "azonosito": "HUGWOADC806",
+  "nev": "Bordány Vm.2",
+  "local_id": "HUGWOADC806",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2011",
+  "lon": 19.91909000000004,
+  "lat": 46.320899999058
+ },
+ {
+  "azonosito": "HUGWOAIF992",
+  "nev": "Kiskunhalas Textiltisztító Szöv.",
+  "local_id": "HUGWOAIF992",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2014",
+  "lon": 19.47537000000006,
+  "lat": 46.429369999058146
+ },
+ {
+  "azonosito": "HUGWOAIH735",
+  "nev": "Dabas Vízmű 4.",
+  "local_id": "HUGWOAIH735",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2011",
+  "lon": 19.318420000000174,
+  "lat": 47.16569999905971
+ },
+ {
+  "azonosito": "HUGWOACV998",
+  "nev": "Szeged III vm.III 02-01",
+  "local_id": "HUGWOACV998",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2011",
+  "lon": 20.10331000000008,
+  "lat": 46.275519999057856
+ },
+ {
+  "azonosito": "HUGWOACW000",
+  "nev": "Szeged III vm.III 01-03",
+  "local_id": "HUGWOACW000",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": "2011",
+  "lon": 20.147170000000127,
+  "lat": 46.27012999905793
+ },
+ {
+  "azonosito": "HUGWOAII918",
+  "nev": "Tiszasas GA_TIS_01A  mg. figyelő",
+  "local_id": "HUGWOAII918",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.092318882000143,
+  "lat": 46.83169231005894
+ },
+ {
+  "azonosito": "HUGWOAII919",
+  "nev": "Tiszasas GA_TIS_01B  mg. figyelő",
+  "local_id": "HUGWOAII919",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.092328214000023,
+  "lat": 46.83170032205886
+ },
+ {
+  "azonosito": "HUGWOAII920",
+  "nev": "Tiszasas GA_TIS_01C  mg. figyelő",
+  "local_id": "HUGWOAII920",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 20.092336218000185,
+  "lat": 46.83170744605895
+ },
+ {
+  "azonosito": "HUGWOADF323",
+  "nev": "Kiskunhalas I. vízmű I. telep 4/a",
+  "local_id": "HUGWOADF323",
+  "viz": "TRUE",
+  "mukodes_kezd": "2014",
+  "mukodes_veg": " ",
+  "lon": 19.468794200000048,
+  "lat": 46.43019703405812
+ },
+ {
+  "azonosito": "HUGWOAME153",
+  "nev": "Dömsöd Községi Vízmű 2/A kút",
+  "local_id": "HUGWOAME153",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 19.01255296400018,
+  "lat": 47.09437085105946
+ },
+ {
+  "azonosito": "HUGWOAME154",
+  "nev": "Dunavarsány Vízmű 4. kút",
+  "local_id": "HUGWOAME154",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 19.05546086800018,
+  "lat": 47.28431471506005
+ },
+ {
+  "azonosito": "HUGWOAIJ016",
+  "nev": "Városföld Kecskeméti II. vm.11/A",
+  "local_id": "HUGWOAIJ016",
+  "viz": "TRUE",
+  "mukodes_kezd": "2007",
+  "mukodes_veg": " ",
+  "lon": 19.783879293000037,
+  "lat": 46.868412827058904
+ },
+ {
+  "azonosito": "HUGWOANU500",
+  "nev": "Kunpeszér 1359",
+  "local_id": "HUGWOANU500",
+  "viz": "TRUE",
+  "mukodes_kezd": "2014",
+  "mukodes_veg": " ",
+  "lon": 19.27838498000006,
+  "lat": 47.0628168790595
+ },
+ {
+  "azonosito": "HUGWOANU501",
+  "nev": "Kunszentmiklós-1",
+  "local_id": "HUGWOANU501",
+  "viz": "TRUE",
+  "mukodes_kezd": "2014",
+  "mukodes_veg": " ",
+  "lon": 19.15058323900007,
+  "lat": 47.02660336305928
+ },
+ {
+  "azonosito": "HUGWOANU502",
+  "nev": "Kunszentmiklós-2",
+  "local_id": "HUGWOANU502",
+  "viz": "TRUE",
+  "mukodes_kezd": "2014",
+  "mukodes_veg": " ",
+  "lon": 19.15064057100017,
+  "lat": 47.02658963805931
+ },
+ {
+  "azonosito": "HUGWOANU529",
+  "nev": "Tószeg XV/b",
+  "local_id": "HUGWOANU529",
+  "viz": "TRUE",
+  "mukodes_kezd": "2014",
+  "mukodes_veg": " ",
+  "lon": 20.151993386000072,
+  "lat": 47.09340606605952
+ },
+ {
+  "azonosito": "HUGWOACI057",
+  "nev": "Dabas Vízmű 5. sz. kút",
+  "local_id": "HUGWOACI057",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 19.319202251000153,
+  "lat": 47.16547552405966
+ },
+ {
+  "azonosito": "HUGWOACI061",
+  "nev": "Dabas Vízmű 8. sz. kút",
+  "local_id": "HUGWOACI061",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 19.344512132000037,
+  "lat": 47.170483261059715
+ },
+ {
+  "azonosito": "HUGWOACW022",
+  "nev": "Szeged északi  vm.E-03-03",
+  "local_id": "HUGWOACW022",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 20.188317725000047,
+  "lat": 46.36408713205796
+ },
+ {
+  "azonosito": "HUGWOACW035",
+  "nev": "Szeged északi  vm.E-04-02",
+  "local_id": "HUGWOACW035",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 20.189299312000003,
+  "lat": 46.36745833905797
+ },
+ {
+  "azonosito": "HUGWOACX449",
+  "nev": "Zákányszék Vm.3",
+  "local_id": "HUGWOACX449",
+  "viz": "TRUE",
+  "mukodes_kezd": "2011",
+  "mukodes_veg": " ",
+  "lon": 19.886544552000146,
+  "lat": 46.27685494305781
+ },
+ {
+  "azonosito": "HU102088978",
+  "nev": "Algyő, Irmamajori út",
+  "local_id": "HU102088978",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.192678246000188,
+  "lat": 46.351510333058016
+ },
+ {
+  "azonosito": "HU102088989",
+  "nev": "Szeged-Kiskundorozsma, E-5-ös út",
+  "local_id": "HU102088989",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.06691636100004,
+  "lat": 46.310502969058014
+ },
+ {
+  "azonosito": "HU102380399",
+  "nev": "Csanytelek IV-es medence",
+  "local_id": "HU102380399",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.091749628000116,
+  "lat": 46.57857421005839
+ },
+ {
+  "azonosito": "HU101845954",
+  "nev": "Dunatetétlen",
+  "local_id": "HU101845954",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.119430162000185,
+  "lat": 46.77098622705869
+ },
+ {
+  "azonosito": "HU101846984",
+  "nev": "Cibakháza",
+  "local_id": "HU101846984",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.19454933100019,
+  "lat": 46.94166152505912
+ },
+ {
+  "azonosito": "HU102086974",
+  "nev": "Kiskunfélegyháza-Tiszaalpár közúti híd",
+  "local_id": "HU102086974",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.905293126000117,
+  "lat": 46.764038104058706
+ },
+ {
+  "azonosito": "HU102086963",
+  "nev": "Gátéri-Fehértó mellett",
+  "local_id": "HU102086963",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.99392148100003,
+  "lat": 46.66260073005843
+ },
+ {
+  "azonosito": "HU101846962",
+  "nev": "Pálmonostora (E5-ös út)",
+  "local_id": "HU101846962",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.92215402700015,
+  "lat": 46.59575574205841
+ },
+ {
+  "azonosito": "HU101846973",
+  "nev": "Baks",
+  "local_id": "HU101846973",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.089766680000025,
+  "lat": 46.55671620005833
+ },
+ {
+  "azonosito": "HU102087166",
+  "nev": "Szeged-Kiskundorozsma torkolat felett",
+  "local_id": "HU102087166",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.02367970900019,
+  "lat": 46.27494381305781
+ },
+ {
+  "azonosito": "HU102087177",
+  "nev": "Zsombó",
+  "local_id": "HU102087177",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.968025141000165,
+  "lat": 46.32564825905796
+ },
+ {
+  "azonosito": "HU102138767",
+  "nev": "Bordány alatt, Seregélyesi csatorna befolyása alatt",
+  "local_id": "HU102138767",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.955412097000192,
+  "lat": 46.313038311057994
+ },
+ {
+  "azonosito": "HU102087362",
+  "nev": "Kiskunfélegyháza",
+  "local_id": "HU102087362",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.90046218700019,
+  "lat": 46.687298407058556
+ },
+ {
+  "azonosito": "HU101846102",
+  "nev": "Dunatetétlen",
+  "local_id": "HU101846102",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.090539764000084,
+  "lat": 46.76162684805868
+ },
+ {
+  "azonosito": "HU102138790",
+  "nev": "Kiskunfélegyháza-Jászszentlászló közúti híd",
+  "local_id": "HU102138790",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.798297790000106,
+  "lat": 46.6209598870585
+ },
+ {
+  "azonosito": "HU102138930",
+  "nev": "Akasztó",
+  "local_id": "HU102138930",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.19547633600007,
+  "lat": 46.7001151320587
+ },
+ {
+  "azonosito": "HU102088370",
+  "nev": "Tiszajenő, közúti híd",
+  "local_id": "HU102088370",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.127456658000085,
+  "lat": 47.01299304305937
+ },
+ {
+  "azonosito": "HU102088347",
+  "nev": "Petőfiszállás",
+  "local_id": "HU102088347",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.87105119500012,
+  "lat": 46.62089638405852
+ },
+ {
+  "azonosito": "HU102138804",
+  "nev": "Tószeg, közúti híd",
+  "local_id": "HU102138804",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.1289339060001,
+  "lat": 47.10429366105951
+ },
+ {
+  "azonosito": "HU101847383",
+  "nev": "Mindszent",
+  "local_id": "HU101847383",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.183055194000133,
+  "lat": 46.54258504705838
+ },
+ {
+  "azonosito": "HU102380458",
+  "nev": "Harkakötöny",
+  "local_id": "HU102380458",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.586423947000014,
+  "lat": 46.47073249305825
+ },
+ {
+  "azonosito": "HU102293402",
+  "nev": "Pálmonostora",
+  "local_id": "HU102293402",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.901140402000067,
+  "lat": 46.598974563058384
+ },
+ {
+  "azonosito": "HU102087247",
+  "nev": "Jászszentlászló",
+  "local_id": "HU102087247",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.749709811999992,
+  "lat": 46.574633661058385
+ },
+ {
+  "azonosito": "HU102283931",
+  "nev": "Ócsa, Bugyi úti híd",
+  "local_id": "HU102283931",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.182989614000064,
+  "lat": 47.269676447059936
+ },
+ {
+  "azonosito": "HU102169336",
+  "nev": "Kunpeszéri-zsilip",
+  "local_id": "HU102169336",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.21352406800014,
+  "lat": 47.126914747059644
+ },
+ {
+  "azonosito": "HU102087214",
+  "nev": "Sári",
+  "local_id": "HU102087214",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.259986834000074,
+  "lat": 47.21049662605987
+ },
+ {
+  "azonosito": "HU102283942",
+  "nev": "Sári, temető",
+  "local_id": "HU102283942",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.26285848700013,
+  "lat": 47.215519745059694
+ },
+ {
+  "azonosito": "HU101178645",
+  "nev": "Tiszasziget, jobb part",
+  "local_id": "HU101178645",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.104841446000137,
+  "lat": 46.18551411705783
+ },
+ {
+  "azonosito": "HU102293240",
+  "nev": "Dunatetétlen (Dunatetétlen-Akasztó közút hídja)",
+  "local_id": "HU102293240",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.1532146940001,
+  "lat": 46.73986114805857
+ },
+ {
+  "azonosito": "HU102295381",
+  "nev": "Tabdi (Akasztó, torkolat)",
+  "local_id": "HU102295381",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.25551073200012,
+  "lat": 46.67732464705862
+ },
+ {
+  "azonosito": "HU102283229",
+  "nev": "Kunszentmiklós (Kunszentmiklós-Kunbábony, híd)",
+  "local_id": "HU102283229",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.176699031000112,
+  "lat": 47.02314327905933
+ },
+ {
+  "azonosito": "HU101846087",
+  "nev": "Kunszentmiklós (Kunszentm-Szabadszállás)",
+  "local_id": "HU101846087",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.16692028300014,
+  "lat": 46.94981150305913
+ },
+ {
+  "azonosito": "HU102380403",
+  "nev": "Csongrád",
+  "local_id": "HU102380403",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.98356864699997,
+  "lat": 46.740229950058726
+ },
+ {
+  "azonosito": "HU102380447",
+  "nev": "Felgyő",
+  "local_id": "HU102380447",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.16396032900019,
+  "lat": 46.63683737005851
+ },
+ {
+  "azonosito": "HU102380539",
+  "nev": "Szeged",
+  "local_id": "HU102380539",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.07843430000014,
+  "lat": 46.25260379305784
+ },
+ {
+  "azonosito": "HU102380540",
+  "nev": "Erdőtelek (Kiskőrös)",
+  "local_id": "HU102380540",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.26042017800006,
+  "lat": 46.616385650058504
+ },
+ {
+  "azonosito": "HU102449238",
+  "nev": "hattyasi átjáró",
+  "local_id": "HU102449238",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.098396198000103,
+  "lat": 46.227300819057795
+ },
+ {
+  "azonosito": "HU102449249",
+  "nev": "középső átjáró",
+  "local_id": "HU102449249",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.091998201000024,
+  "lat": 46.222879977057794
+ },
+ {
+  "azonosito": "HU102449250",
+  "nev": "röszkei átjáró",
+  "local_id": "HU102449250",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.028028264000056,
+  "lat": 46.176748275057804
+ },
+ {
+  "azonosito": "HU101846054",
+  "nev": "Akasztó",
+  "local_id": "HU101846054",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.21450846100015,
+  "lat": 46.68120633305862
+ },
+ {
+  "azonosito": "HU101846065",
+  "nev": "Kiskőrös",
+  "local_id": "HU101846065",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.323764153000127,
+  "lat": 46.64939091305851
+ },
+ {
+  "azonosito": "HU102089849",
+  "nev": "Kiskőrös",
+  "local_id": "HU102089849",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.29741488799999,
+  "lat": 46.63238634305839
+ },
+ {
+  "azonosito": "HU102089975",
+  "nev": "Mánteleki útnál",
+  "local_id": "HU102089975",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.25066449700017,
+  "lat": 47.19248654305972
+ },
+ {
+  "azonosito": "HU102139144",
+  "nev": "Apaj, Juhászföldi út",
+  "local_id": "HU102139144",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.16342148400014,
+  "lat": 47.118880025059575
+ },
+ {
+  "azonosito": "HU101846076",
+  "nev": "Kunszentmiklós-Szabadszállás között",
+  "local_id": "HU101846076",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.166828897000077,
+  "lat": 46.95007247405918
+ },
+ {
+  "azonosito": "HU102089997",
+  "nev": "Apaji-útnál",
+  "local_id": "HU102089997",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.12686906900012,
+  "lat": 47.12178949605947
+ },
+ {
+  "azonosito": "HU102293181",
+  "nev": "Kunadacs (Kunadacs-Kunszentmiklós út, híd)",
+  "local_id": "HU102293181",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.29307655000008,
+  "lat": 46.96798020905918
+ },
+ {
+  "azonosito": "HU102293228",
+  "nev": "Mórahalom (Mórahalom-Röszke)",
+  "local_id": "HU102293228",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.934968961000155,
+  "lat": 46.17696800305769
+ },
+ {
+  "azonosito": "HU102293251",
+  "nev": "Mórahalom (Mórahalom észak)",
+  "local_id": "HU102293251",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.872378726000136,
+  "lat": 46.23494830905781
+ },
+ {
+  "azonosito": "HU102293262",
+  "nev": "Mórahalom (Mórahalom-Röszke közúti híd)",
+  "local_id": "HU102293262",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.951198277000056,
+  "lat": 46.21136711305783
+ },
+ {
+  "azonosito": "HU101847095",
+  "nev": "Tiszaugi Holt-Tisza, Tiszaugi Holt-Tisza",
+  "local_id": "HU101847095",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 20.065590000000157,
+  "lat": 46.85048999905899
+ },
+ {
+  "azonosito": "HU102293479",
+  "nev": "Röszke",
+  "local_id": "HU102293479",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.019658280000098,
+  "lat": 46.17580982905779
+ },
+ {
+  "azonosito": "HU102293549",
+  "nev": "Ásotthalom (országhatár, vízmérce felett)",
+  "local_id": "HU102293549",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.795776558000057,
+  "lat": 46.13965528005774
+ },
+ {
+  "azonosito": "HU102293550",
+  "nev": "Kiskunhalas",
+  "local_id": "HU102293550",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.464331844000128,
+  "lat": 46.45896504605812
+ },
+ {
+  "azonosito": "HU102293594",
+  "nev": "Soltszentimre",
+  "local_id": "HU102293594",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.27580275800005,
+  "lat": 46.77174364005873
+ },
+ {
+  "azonosito": "HU102293608",
+  "nev": "Szatymaz",
+  "local_id": "HU102293608",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.05594810100007,
+  "lat": 46.34690303205793
+ },
+ {
+  "azonosito": "HU102293619",
+  "nev": "Kiskőrös (Kiskőrös-Kalocsai út hídja)",
+  "local_id": "HU102293619",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.262197741000136,
+  "lat": 46.584014661058326
+ },
+ {
+  "azonosito": "HU101178667",
+  "nev": "Mindszent (bal part)",
+  "local_id": "HU101178667",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.163551076000147,
+  "lat": 46.532594270058354
+ },
+ {
+  "azonosito": "HU101180109",
+  "nev": "Tiszasziget, bal part",
+  "local_id": "HU101180109",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.104841446000137,
+  "lat": 46.18551411705783
+ },
+ {
+  "azonosito": "HU102380470",
+  "nev": "Szabadszállás (Szabadszállás-Kerekegyházi út)",
+  "local_id": "HU102380470",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 19.318490058000123,
+  "lat": 46.897377459059015
+ },
+ {
+  "azonosito": "HU102088923",
+  "nev": "Tiszakécske",
+  "local_id": "HU102088923",
+  "viz": "TRUE",
+  "mukodes_kezd": "2010",
+  "mukodes_veg": " ",
+  "lon": 20.085497917000055,
+  "lat": 46.95675737905924
+ },
+ {
+  "azonosito": "HU102088945",
+  "nev": "Levelény",
+  "local_id": "HU102088945",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.132754188000035,
+  "lat": 46.509654492058296
+ },
+ {
+  "azonosito": "HU102089034",
+  "nev": "Abony, Abony- Köröstetétleni út közúti híd",
+  "local_id": "HU102089034",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.014308706000126,
+  "lat": 47.130759717059654
+ },
+ {
+  "azonosito": "HU102089540",
+  "nev": "Homokmégy-Halom",
+  "local_id": "HU102089540",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.052361740000098,
+  "lat": 46.50925277205829
+ },
+ {
+  "azonosito": "HU101846043",
+  "nev": "Akasztó",
+  "local_id": "HU101846043",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.192836310000132,
+  "lat": 46.67625219805862
+ },
+ {
+  "azonosito": "HU101845998",
+  "nev": "Szabadszállás",
+  "local_id": "HU101845998",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.172495591000146,
+  "lat": 46.87281028305897
+ },
+ {
+  "azonosito": "HU101846010",
+  "nev": "Szabadszállás",
+  "local_id": "HU101846010",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.178087074000132,
+  "lat": 46.83080229005885
+ },
+ {
+  "azonosito": "HU101846940",
+  "nev": "Pusztaszer",
+  "local_id": "HU101846940",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.030002249000006,
+  "lat": 46.54949392105839
+ },
+ {
+  "azonosito": "HU101846951",
+  "nev": "Szeged (gátőrház, horgász lejárat",
+  "local_id": "HU101846951",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.18771721900015,
+  "lat": 46.399030547057954
+ },
+ {
+  "azonosito": "HU102139177",
+  "nev": "Észak-Böddi, Fülöpszállás-Járáspuszta",
+  "local_id": "HU102139177",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 19.148012198000057,
+  "lat": 46.78874278805878
+ },
+ {
+  "azonosito": "HU102088820",
+  "nev": "Nádas-tó, Sándorfalva",
+  "local_id": "HU102088820",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 20.09693285800017,
+  "lat": 46.38624615005808
+ },
+ {
+  "azonosito": "HU101846180",
+  "nev": "Rekettye-Bogárzó-csatorna, Kecel",
+  "local_id": "HU101846180",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 19.23498000000012,
+  "lat": 46.54052999905832
+ },
+ {
+  "azonosito": "HU101180246",
+  "nev": "Tisza, Mindszent",
+  "local_id": "HU101180246",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 20.16355108199997,
+  "lat": 46.532594271058244
+ },
+ {
+  "azonosito": "HU102086734",
+  "nev": "Bácsbokod, tározó kifolyása",
+  "local_id": "HU102086734",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.17346489700003,
+  "lat": 46.14330599405762
+ },
+ {
+  "azonosito": "HU102087465",
+  "nev": "Gerje belvízcsatorna, Kőröstetétlen közúti híd",
+  "local_id": "HU102087465",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.02206571700009,
+  "lat": 47.098027263059514
+ },
+ {
+  "azonosito": "HU102087823",
+  "nev": "Izsák-Kisizsák, 52-es út",
+  "local_id": "HU102087823",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.310750816000105,
+  "lat": 46.847252367059
+ },
+ {
+  "azonosito": "HU101846146",
+  "nev": "Izsák Észak",
+  "local_id": "HU101846146",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.34601357900004,
+  "lat": 46.815176094058906
+ },
+ {
+  "azonosito": "HU101846157",
+  "nev": "Kisizsák",
+  "local_id": "HU101846157",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.323833538000088,
+  "lat": 46.836516324058906
+ },
+ {
+  "azonosito": "HU102088646",
+  "nev": "Bácsalmás-Madaras közút",
+  "local_id": "HU102088646",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.296248362000142,
+  "lat": 46.11136596605757
+ },
+ {
+  "azonosito": "HU101846179",
+  "nev": "Mélykút",
+  "local_id": "HU101846179",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.35807748200017,
+  "lat": 46.20369448105784
+ },
+ {
+  "azonosito": "HU102138985",
+  "nev": "Kistelek",
+  "local_id": "HU102138985",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.985160038000117,
+  "lat": 46.452603395058155
+ },
+ {
+  "azonosito": "HU101846928",
+  "nev": "Mórahalom (Észak (2. tó))",
+  "local_id": "HU101846928",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.918425682000137,
+  "lat": 46.193596474057635
+ },
+ {
+  "azonosito": "HU101846939",
+  "nev": "Mórahalom (dél 4-es tó)",
+  "local_id": "HU101846939",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.928786961000068,
+  "lat": 46.18387177905782
+ },
+ {
+  "azonosito": "HU102138996",
+  "nev": "Röszke",
+  "local_id": "HU102138996",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.95200535400011,
+  "lat": 46.21158554505777
+ },
+ {
+  "azonosito": "HU102139188",
+  "nev": "Balástya",
+  "local_id": "HU102139188",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.980236612000052,
+  "lat": 46.4028645850581
+ },
+ {
+  "azonosito": "HU102089241",
+  "nev": "Csongrád (sportpálya)",
+  "local_id": "HU102089241",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.151195430000147,
+  "lat": 46.7048795150586
+ },
+ {
+  "azonosito": "HU101846009",
+  "nev": "Dunapataj",
+  "local_id": "HU101846009",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.042603481000132,
+  "lat": 46.62368153705846
+ },
+ {
+  "azonosito": "HU101846032",
+  "nev": "Soltvadkert",
+  "local_id": "HU101846032",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.39609327200003,
+  "lat": 46.6124794210585
+ },
+ {
+  "azonosito": "HU102139122",
+  "nev": "Felgyő (1-es tó)",
+  "local_id": "HU102139122",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.138368455000148,
+  "lat": 46.62953774405855
+ },
+ {
+  "azonosito": "HU102139133",
+  "nev": "Felgyő (2-es tó)",
+  "local_id": "HU102139133",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.124789289000148,
+  "lat": 46.64210102505844
+ },
+ {
+  "azonosito": "HU101179158",
+  "nev": "Tiszaug",
+  "local_id": "HU101179158",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.048413465000124,
+  "lat": 46.867547464058966
+ },
+ {
+  "azonosito": "HU101179170",
+  "nev": "Tiszasziget",
+  "local_id": "HU101179170",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.10484143900004,
+  "lat": 46.1855141150578
+ },
+ {
+  "azonosito": "HU102087306",
+  "nev": "Balástya",
+  "local_id": "HU102087306",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.968575896000175,
+  "lat": 46.402366399058145
+ },
+ {
+  "azonosito": "HU102087546",
+  "nev": "Csépa",
+  "local_id": "HU102087546",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.105483274000107,
+  "lat": 46.78448559205875
+ },
+ {
+  "azonosito": "HU102138815",
+  "nev": "Gyova-Mámai-Holt-Tisza",
+  "local_id": "HU102138815",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.142404523000096,
+  "lat": 46.76581906205882
+ },
+ {
+  "azonosito": "HU102138642",
+  "nev": "Alpár-Nyárlőrinci-csatorna, Kiskunfélegyháza-Tiszaalpár közúti híd",
+  "local_id": "HU102138642",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 19.96831000000003,
+  "lat": 46.800579999058805
+ },
+ {
+  "azonosito": "HU102086804",
+  "nev": "Bócsa-Bugaci-csatorna, Szank",
+  "local_id": "HU102086804",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 19.65920000000017,
+  "lat": 46.59772999905845
+ },
+ {
+  "azonosito": "HU101846917",
+  "nev": "Kelebiai-halastavak, Kelebiai-halastavak",
+  "local_id": "HU101846917",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": "2009",
+  "lon": 19.633920000000103,
+  "lat": 46.20881999905774
+ },
+ {
+  "azonosito": "HU101179446",
+  "nev": "Újszász",
+  "local_id": "HU101179446",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 20.091913073000054,
+  "lat": 47.29246049006001
+ },
+ {
+  "azonosito": "HU101845943",
+  "nev": "Akasztó",
+  "local_id": "HU101845943",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.14961825000006,
+  "lat": 46.74094391905872
+ },
+ {
+  "azonosito": "HU101845965",
+  "nev": "Fülöpszállás",
+  "local_id": "HU101845965",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.185912836000167,
+  "lat": 46.80034195605873
+ },
+ {
+  "azonosito": "HU101845976",
+  "nev": "Izsák",
+  "local_id": "HU101845976",
+  "viz": "TRUE",
+  "mukodes_kezd": "2008",
+  "mukodes_veg": " ",
+  "lon": 19.341658016000167,
+  "lat": 46.80060906405885
+ }
+]

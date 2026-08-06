@@ -1445,5 +1445,22 @@
         "km3": -14.54
       }
     ]
+  },
+  "talaj_vizhiany": {
+    "datum": "2026-08-05",
+    "atlag_mm": 26.6,
+    "min_mm": 18.3,
+    "max_mm": 35.0,
+    "allomasok": {
+      "Apaj": 34.7,
+      "Csólyospálos": 18.3,
+      "Fülöpháza": 25.1,
+      "Hódmezővásárhely": 20.1,
+      "Kiskunfélegyháza": 35.0
+    },
+    "melyseg": "80 cm",
+    "provenance": "mert",
+    "forras": "OVF Aszálymonitoring — Operatív Vízhiány Értékelő és Előrejelző Rendszer (aszalymonitoring.vizugy.hu)",
+    "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   }
 }
