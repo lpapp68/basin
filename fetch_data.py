@@ -315,6 +315,7 @@ def main():
         },
         "kivetel_m3s": kivetel,
         "egyenleg": p["egyenleg"],
+        "keszlet_idosor": p.get("keszlet_idosor"),
         "figyelmeztetes": p["_figyelmeztetes"],
         "nyitott_falak": NYITOTT_FALAK,
         "hibak": hibak,

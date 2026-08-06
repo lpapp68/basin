@@ -238,11 +238,13 @@ a{color:var(--viz)}
 
 <section id="paks-sec">
   <div class="sz"><h2>Paks · a vízoldal</h2><span class="n">csomópont</span></div>
-  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti a kondenzátorokon, és
-  felmelegítve visszaengedi. A víz tehát nem fogy el — de az erőműnek két vízoldali
-  feltétele van, és ha bármelyik nem teljesül, nem tud termelni. Ezért van itt.
-  A blokkteljesítmény csak azt mondja meg, mennyi vizet vesznek ki éppen;
-  más energiaadatot a lap nem használ.</p>
+  <p class="lead">Paks az egyetlen pont az országban, ahol a víz <em>állapota</em> —
+  néhány centiméter vízszint és néhány tizedfok hőmérséklet — közvetlenül átfordul
+  országos rendszerkérdéssé. A mérleg többi tétele mennyiségről szól; ez küszöbökről.
+  Az erőmű a Duna vizével hűt: kiveszi, átvezeti a kondenzátorokon, és felmelegítve
+  visszaengedi, tehát a víz nem fogy el. Két vízoldali feltétele viszont van, és ha
+  bármelyik nem teljesül, nem tud termelni. A blokkteljesítmény itt csak azt mondja meg,
+  mennyi vizet vesznek ki éppen; más energiaadatot a lap nem használ.</p>
   <div class="paksdoboz" id="paks"></div>
 </section>
 
@@ -506,47 +508,66 @@ a{color:var(--viz)}
   $("#pulzus").appendChild(el("p","elojel",D.elojel));
 
   /* ── 2 Egyenleg ── */
-  const E=D.egyenleg, R=E.referencia;
-  const W2=340, H2=150, TOP=22;
-  const maxKm3=Math.ceil(Math.abs(E.kumulalt_km3)/R.terfogat_km3+0.6)*R.terfogat_km3;
-  const y2=v=>TOP+(Math.abs(v)/maxKm3)*(H2-TOP-14);
-  let rac="";
-  for(let g=R.terfogat_km3; g<=maxKm3+0.01; g+=R.terfogat_km3){
-    rac+=`<line x1="46" y1="${y2(g)}" x2="${W2-6}" y2="${y2(g)}" stroke="var(--vonal-halk)" stroke-width="1"/>`
-        +`<text x="42" y="${y2(g)+3}" font-size="9" text-anchor="end" fill="var(--halvany)" font-family="var(--mono)">${(g/R.terfogat_km3).toFixed(0)}</text>`;
-  }
-  $("#egyenleg").innerHTML =
-    `<div class="nagy ${E.kumulalt_km3<0?"neg":""}">${sgn(E.kumulalt_km3)}<span class="egys"> km³</span></div>`+
-    `<div style="margin-top:8px;font-size:12px;color:var(--halvany)">`+
-    `${pr(E.provenance)} &nbsp;${E.kezdet} óta</div>`+
-    `<svg viewBox="0 0 ${W2} ${H2}" width="100%" style="margin-top:16px" role="img"
-      aria-label="Kumulált vízhiány, lefelé mutató sáv a nullavonalról">
-      ${rac}
-      <line x1="46" y1="${TOP}" x2="${W2-6}" y2="${TOP}" stroke="var(--tinta)" stroke-width="1.5"/>
-      <text x="42" y="${TOP+3}" font-size="9" text-anchor="end" fill="var(--tinta)" font-family="var(--mono)">0</text>
-      <text x="50" y="${TOP-7}" font-size="9.5" fill="var(--halvany)" font-family="var(--mono)">${E.kezdet} szintje</text>
-      <defs><pattern id="hi" width="7" height="7" patternTransform="rotate(45)"
-        patternUnits="userSpaceOnUse">
-        <rect width="7" height="7" fill="var(--papir-2)"/>
-        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--rekord)" stroke-width="3.4"/>
-      </pattern></defs>
-      <rect x="72" y="${TOP}" width="${(W2-90)*0.55}" height="${y2(E.kumulalt_km3)-TOP}"
-        fill="url(#hi)" stroke="var(--rekord)" stroke-width="1"/>
-      <text x="${72+(W2-90)*0.55+10}" y="${TOP+(y2(E.kumulalt_km3)-TOP)/2}" font-size="10"
-        fill="var(--halvany)" font-family="var(--mono)">ennyi tűnt el</text>
-      <text x="${72+(W2-90)*0.55}" y="${y2(E.kumulalt_km3)+13}" font-size="10" text-anchor="end"
-        fill="var(--rekord)" font-family="var(--mono)" font-weight="600">${sgn(E.kumulalt_km3)} km³</text>
-    </svg>`+
-    `<p style="font-size:12.5px;color:var(--halvany);margin:4px 0 0">`+
-    `A sáv a nullavonal alatt nő: ez hiány, nem készlet. Egy rácsvonal = egy `+
-    `${R.nev} (${dec(R.terfogat_km3,1)} km³); a hiány jelenleg `+
-    `<b style="font-family:var(--mono);color:var(--rekord)">${dec(Math.abs(E.kumulalt_km3)/R.terfogat_km3,1)}</b> ${R.nev}-nyi.</p>`+
-    `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0;padding-top:10px;`+
-    `border-top:1px solid var(--vonal-halk)">A lap NEM azt mutatja, mennyi víz van — `+
-    `azt, hogy mennyivel van kevesebb. Teljes készletet nem tudunk mérni.<br>Forrás: ${E.forras}</p>`;
+  const E=D.egyenleg, R=E.referencia, IS=D.keszlet_idosor;
 
-  const KIV_OSSZ = D.kivetel_m3s.reduce((a,k)=>a+(k.ertek||0),0);
-  const KIV_FOGY = D.kivetel_m3s.filter(k=>k.fogyaszto).reduce((a,k)=>a+(k.ertek||0),0);
+  if(IS && IS.sorozat && IS.sorozat.length > 24){
+    const S=IS.sorozat, W2=520, H2=190, BAL=44, JOBB=10, FENT=16, LENT=26;
+    const ev = h => +h.slice(0,4) + (+h.slice(5,7)-1)/12;
+    const x0=ev(S[0].honap), x1=ev(S[S.length-1].honap);
+    const ymin=Math.min(...S.map(r=>r.km3)), ymax=Math.max(...S.map(r=>r.km3));
+    const px = h => BAL + (ev(h)-x0)/(x1-x0)*(W2-BAL-JOBB);
+    const py = v => FENT + (ymax-v)/(ymax-ymin)*(H2-FENT-LENT);
+
+    // A GRACE és a GRACE-FO közti szünetnél megszakítjuk a vonalat.
+    let utak=[], akt=[];
+    S.forEach((r,i)=>{
+      if(i && ev(r.honap)-ev(S[i-1].honap) > 0.6){ utak.push(akt); akt=[]; }
+      akt.push(`${px(r.honap).toFixed(1)},${py(r.km3).toFixed(1)}`);
+    });
+    utak.push(akt);
+
+    let racs="";
+    for(let v=Math.ceil(ymin/5)*5; v<=ymax; v+=5)
+      racs += `<line x1="${BAL}" y1="${py(v)}" x2="${W2-JOBB}" y2="${py(v)}"
+        stroke="var(--vonal-halk)" stroke-width="1"/>
+        <text x="${BAL-5}" y="${py(v)+3}" font-size="9" text-anchor="end"
+          fill="var(--halvany)" font-family="var(--mono)">${v>0?"+":""}${v}</text>`;
+    let evek="";
+    for(let e=Math.ceil(x0/5)*5; e<=x1; e+=5)
+      evek += `<text x="${BAL+(e-x0)/(x1-x0)*(W2-BAL-JOBB)}" y="${H2-8}" font-size="9"
+        text-anchor="middle" fill="var(--halvany)" font-family="var(--mono)">${e}</text>`;
+
+    $("#egyenleg").innerHTML =
+      `<div class="nagy ${IS.sorozat[IS.sorozat.length-1].km3<0?"neg":""}">`+
+      `${sgn(IS.sorozat[IS.sorozat.length-1].km3)}<span class="egys">&nbsp;km³</span></div>`+
+      `<div style="margin-top:6px;font-size:12px;color:var(--halvany)">`+
+      `${pr(IS.provenance)} &nbsp;${IS.veg} · ${IS.pontok} havi pont ${IS.kezdet} óta</div>`+
+      `<svg viewBox="0 0 ${W2} ${H2}" width="100%" style="margin-top:14px" role="img"
+        aria-label="Vízkészlet-anomália idősora ${IS.kezdet} és ${IS.veg} között">
+        ${racs}${evek}
+        <line x1="${BAL}" y1="${py(0)}" x2="${W2-JOBB}" y2="${py(0)}"
+          stroke="var(--tinta)" stroke-width="1.5"/>
+        ${utak.map(u=>`<polyline points="${u.join(" ")}" fill="none"
+          stroke="var(--rekord)" stroke-width="1.4" stroke-linejoin="round"/>`).join("")}
+      </svg>`+
+      `<p style="font-size:12.5px;color:var(--halvany);margin:6px 0 0">`+
+      `A nulla nem a teli medencét jelenti, hanem a termék sokéves átlagát. `+
+      `A görbe azt mutatja, hogy egy-egy aszály után <b>visszaáll-e a korábbi szint</b>. `+
+      `Tízéves trend: <b style="font-family:var(--mono);color:var(--rekord)">`+
+      `${dec(IS.trend_km3_ev,2)} km³/év</b> — kb. `+
+      `${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} tíz év alatt.</p>`+
+      `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0;padding-top:10px;`+
+      `border-top:1px solid var(--vonal-halk)">${IS.figyelmeztetes}<br>Forrás: ${IS.forras}</p>`;
+  } else {
+    const db = Math.abs(E.kumulalt_km3)/R.terfogat_km3;
+    $("#egyenleg").innerHTML =
+      `<div class="nagy neg">${sgn(E.kumulalt_km3)}<span class="egys">&nbsp;km³</span></div>`+
+      `<div style="margin-top:10px;font-size:12px;color:var(--halvany)">`+
+      `${pr(E.provenance)} &nbsp;${E.kezdet} óta</div>`+
+      `<p style="font-size:13px;margin:16px 0 0">${E.megjegyzes} `+
+      `A hiány jelenleg <b style="font-family:var(--mono)">${dec(db,1)}</b> ${R.nev}-nyi.</p>`+
+      `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0">Forrás: ${E.forras}</p>`;
+  }
 
   /* ── 3 Hova lett ── */
   const H=D.hova_lett_m3s, hl=el("div","hl");
