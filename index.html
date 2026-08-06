@@ -569,6 +569,9 @@ a{color:var(--viz)}
       `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0">Forrás: ${E.forras}</p>`;
   }
 
+  const KIV_OSSZ = D.kivetel_m3s.reduce((a,k)=>a+(k.ertek||0),0);
+  const KIV_FOGY = D.kivetel_m3s.filter(k=>k.fogyaszto).reduce((a,k)=>a+(k.ertek||0),0);
+
   /* ── 3 Hova lett ── */
   const H=D.hova_lett_m3s, hl=el("div","hl");
   [["parolgas_muhold","Műholdas párolgásbecslés"],
