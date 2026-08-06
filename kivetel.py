@@ -36,10 +36,10 @@ TETELEK = [
     {
         "nev": "Mezőgazdasági öntözés",
         "eves_millio_m3": 154.0,
-        "forras": "ASZ-jelentes a Nemzeti Vizstrategia vegrehajtasarol, 2019-2023 atlag: "
-                  "a mezogazdasagi vizhasznalat 30 szazaleka, 154 millio m3. FIGYELEM: a KSH szerint "
-                  "ebben NINCSENEK BENNE az engedely nelkuli vizkivetelek, amelyeket "
-                  "tanulmanyok a bejelentett mennyiseg duplajara becsulnek.",
+        "forras": "ÁSZ-jelentés a Nemzeti Vízstratégia végrehajtásáról, 2019–2023 átlag: "
+                  "a mezőgazdasági vízhasználat 30%-a, 154 millió m³. A KSH kimondja, hogy "
+                  "ebből kimaradnak az engedély nélküli vízkivételek, amelyeket "
+                  "tanulmányok a bejelentett mennyiség duplájára becsülnek.",
         "profil": [0, 0, 0, 0.03, 0.12, 0.22, 0.28, 0.24, 0.09, 0.02, 0, 0],
         "profil_indok": "Tenyészidőszak, július–augusztusi csúccsal. FELTÉTELEZÉS.",
         "fogyaszto_hanyad": 0.90,
@@ -49,8 +49,8 @@ TETELEK = [
     {
         "nev": "Halastavak",
         "eves_millio_m3": 356.0,
-        "forras": "ASZ-jelentes, 2019-2023 atlag: a mezogazdasagi vizhasznalat (510 millio m3) "
-                  "kb. 70 szazaleka. Ez BRUTTO SZOLGALTATOTT VIZ, nem elveszett viz.",
+        "forras": "ÁSZ-jelentés, 2019–2023 átlag: a mezőgazdasági vízhasználat (510 millió m³) "
+                  "kb. 70%-a. Ez bruttó szolgáltatott víz: egy része leeresztéskor visszatér a vízrendszerbe, más része talajvizet táplál.",
         "profil": [0, 0, 0.02, 0.08, 0.13, 0.16, 0.18, 0.17, 0.13, 0.08, 0.03, 0.02],
         "profil_indok": "Feltöltés tavasszal, párolgáspótlás nyáron. FELTÉTELEZÉS.",
         "fogyaszto_hanyad": 0.70,
@@ -114,7 +114,7 @@ def main():
             "provenance": "modellezett",
             "megjegyzes": (f"Éves {eves_m3/1e6:.0f} millió m³, ebből "
                            f"{t['profil'][ho-1]*100:.0f}% esik erre a hónapra; "
-                           f"a kivett víz {t['fogyaszto_hanyad']*100:.0f}%-a nem tér vissza. "
+                           f"a kivett vízből {t['fogyaszto_hanyad']*100:.0f}% véglegesen távozik. "
                            f"{t['forras']}"),
         })
 

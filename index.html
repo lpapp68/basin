@@ -164,6 +164,8 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .kivosszeg{margin:0 0 14px;padding:9px 11px;background:var(--papir);
   border:1px solid var(--vonal-halk);font-size:12.5px;color:var(--halvany)}
 .res p+p{margin-top:10px;padding-top:9px;border-top:1px dotted var(--ismeretlen)}
+.res p.kutatas{color:var(--tinta);font-size:13px}
+.res p.kutatas b{color:var(--ismeretlen)}
 .res{margin-top:16px;padding:14px;border:1px dashed var(--ismeretlen);
   background:repeating-linear-gradient(45deg,transparent 0 5px,rgba(122,74,110,.07) 5px 10px)}
 .res .cim{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
@@ -250,12 +252,7 @@ a{color:var(--viz)}
 <header>
   <div class="eyebrow">EQUORA Institute · vízmérleg v2 · basin.equora.institute</div>
   <h1>Mennyi víz jön be, mennyi párolog el,<br>és mennyi folyik tovább</h1>
-  <p class="dek">Egy országnyi terület vízháztartása néhány számban: mennyi érkezik, mennyi
-  párolog el, mennyi folyik tovább. A Középső-Duna-medence erre ritkán alkalmas hely,
-  mert hidrológiailag majdnem zárt doboz — Dévénynél belép, a Vaskapunál kilép, és a
-  Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. A mérlege ezért
-  felírható. Hogy melyik tagját tudjuk tényleg megmérni, az külön kérdés — és ez az
-  oldal erről is beszámol.</p>
+  <p class="dek">Egy ország vízháztartását az dönti el, meddig marad itt a víz. A folyó vize egy hét alatt továbbmegy: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter mást ér a három helyen — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt doboz: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. A mérlege ezért felírható. Hogy melyik tagját tudjuk tényleg megmérni, az külön kérdés — és ez az oldal erről is beszámol.</p>
   <div class="dobozjel" id="dobozjel"></div>
   <div class="orak" id="orak"></div>
 </header>
@@ -621,13 +618,13 @@ a{color:var(--viz)}
     `<span><i>Q<sub>be</sub></i> folyókon beérkezik — 11 határszelvény mért vízhozama</span>`+
     `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
     `<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>`+
-    `<span><i>fogyasztó kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
+    `<span><i>veszteség kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
   hl.appendChild(el("div","res",
     `<div class="cim">Nem tudjuk, hova lett</div>`+
     `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
-    `<p>Ez a szám nem vízről szól, hanem tudásról: azt méri, mennyi az, amit a mérőrendszerünk nem lát. Amíg nagy, a mérleg többi számát is fenntartással kell olvasni — ezért van kiírva, ahelyett hogy elsimítanánk.</p>
+    `<p>Ez a szám nem vízről szól, hanem tudásról: azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
      <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
-     ebből fogyasztó ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
+     ebből veszteség ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
      A különbség a készletváltozás és a párolgás bizonytalanságából jön,
      nem az öntözésből.</p>`));
@@ -636,12 +633,12 @@ a{color:var(--viz)}
   /* ── 4 Kivétel ── */
   $("#p-kivetel .alcim").insertAdjacentHTML("afterend",
     `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
-    `ebből <b>fogyasztó ${num(KIV_FOGY)} m³/s</b> — ennyi nem tér vissza a rendszerbe.</span></div>`);
+    `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi hagyja el a rendszert véglegesen.</span></div>`);
   D.kivetel_m3s.forEach(k=>{
     const s=el("div","s");
     s.appendChild(el("div","n",k.nev+
-      `<span class="tag ${k.fogyaszto?"fogy":"vissza"}">${k.fogyaszto?"fogyasztó":"visszatér"}</span>`));
-    s.appendChild(el("div","v",dec(k.ertek,1)+"\u00a0m³/s"+(k.fogyaszto_m3s!=null?`<em class="tf">ebből fogyasztó ${dec(k.fogyaszto_m3s,1)}</em>`:"")));
+      `<span class="tag ${k.fogyaszto?"fogy":"vissza"}">${k.fogyaszto?"veszteség":"visszatér"}</span>`));
+    s.appendChild(el("div","v",dec(k.ertek,1)+"\u00a0m³/s"+(k.fogyaszto_m3s!=null?`<em class="tf">ebből veszteség ${dec(k.fogyaszto_m3s,1)}</em>`:"")));
     s.appendChild(el("div","m",k.megjegyzes));
     $("#kivetel").appendChild(s);
   });

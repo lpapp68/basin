@@ -65,7 +65,7 @@
       "fogyaszto_hanyad": 0.9,
       "eves_millio_m3": 154.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 154 millió m³, ebből 24% esik erre a hónapra; a kivett víz 90%-a nem tér vissza. ASZ-jelentes a Nemzeti Vizstrategia vegrehajtasarol, 2019-2023 atlag: a mezogazdasagi vizhasznalat 30 szazaleka, 154 millio m3. FIGYELEM: a KSH szerint ebben NINCSENEK BENNE az engedely nelkuli vizkivetelek, amelyeket tanulmanyok a bejelentett mennyiseg duplajara becsulnek."
+      "megjegyzes": "Éves 154 millió m³, ebből 24% esik erre a hónapra; a kivett vízből 90% véglegesen távozik. ÁSZ-jelentés a Nemzeti Vízstratégia végrehajtásáról, 2019–2023 átlag: a mezőgazdasági vízhasználat 30%-a, 154 millió m³. A KSH kimondja, hogy ebből kimaradnak az engedély nélküli vízkivételek, amelyeket tanulmányok a bejelentett mennyiség duplájára becsülnek."
     },
     {
       "nev": "Halastavak",
@@ -75,7 +75,7 @@
       "fogyaszto_hanyad": 0.7,
       "eves_millio_m3": 356.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 356 millió m³, ebből 17% esik erre a hónapra; a kivett víz 70%-a nem tér vissza. ASZ-jelentes, 2019-2023 atlag: a mezogazdasagi vizhasznalat (510 millio m3) kb. 70 szazaleka. Ez BRUTTO SZOLGALTATOTT VIZ, nem elveszett viz."
+      "megjegyzes": "Éves 356 millió m³, ebből 17% esik erre a hónapra; a kivett vízből 70% véglegesen távozik. ÁSZ-jelentés, 2019–2023 átlag: a mezőgazdasági vízhasználat (510 millió m³) kb. 70%-a. Ez bruttó szolgáltatott víz: egy része leeresztéskor visszatér a vízrendszerbe, más része talajvizet táplál."
     },
     {
       "nev": "Lakossági ivóvíz",
@@ -85,7 +85,7 @@
       "fogyaszto_hanyad": 0.25,
       "eves_millio_m3": 367.6,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 368 millió m³, ebből 9% esik erre a hónapra; a kivett víz 25%-a nem tér vissza. KSH: egy főre jutó éves lakossági közüzemi vízfogyasztás 38,7 m³ (2022); 2024-ben kb. 105 liter/fő/nap."
+      "megjegyzes": "Éves 368 millió m³, ebből 9% esik erre a hónapra; a kivett vízből 25% véglegesen távozik. KSH: egy főre jutó éves lakossági közüzemi vízfogyasztás 38,7 m³ (2022); 2024-ben kb. 105 liter/fő/nap."
     },
     {
       "nev": "Ipar (erőművi hűtés nélkül)",
@@ -95,7 +95,7 @@
       "fogyaszto_hanyad": 0.15,
       "eves_millio_m3": 290.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 290 millió m³, ebből 8% esik erre a hónapra; a kivett víz 15%-a nem tér vissza. SZÁRMAZTATOTT: a GKI szerinti 1 160 millió m³ teljes nettó vízkivételből (erőművek nélkül) levonva a fenti tételeket. ELLENŐRIZENDŐ a VGT3 ágazati bontásából."
+      "megjegyzes": "Éves 290 millió m³, ebből 8% esik erre a hónapra; a kivett vízből 15% véglegesen távozik. SZÁRMAZTATOTT: a GKI szerinti 1 160 millió m³ teljes nettó vízkivételből (erőművek nélkül) levonva a fenti tételeket. ELLENŐRIZENDŐ a VGT3 ágazati bontásából."
     }
   ],
   "paks_hutoviz": {
