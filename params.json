@@ -59,21 +59,43 @@
   "kivetel_m3s": [
     {
       "nev": "Mezőgazdasági öntözés",
-      "ertek": 34,
+      "ertek": 14.2,
+      "fogyaszto_m3s": 12.8,
       "fogyaszto": true,
-      "megjegyzes": "A növénytermesztés öntözővíz-kivétele a tenyészidőszakban. Térfogatban apró, de szinte teljesen elpárolog, ezért fogyasztó tétel. HELYŐRZŐ: a valódi számot a vízjogi engedélyek és a vízgyűjtő-gazdálkodási terv adja."
+      "fogyaszto_hanyad": 0.9,
+      "eves_millio_m3": 158.4,
+      "provenance": "modellezett",
+      "megjegyzes": "Éves 158 millió m³, ebből 24% esik erre a hónapra; a kivett víz 90%-a nem tér vissza. AKI/OSAP Öntözésjelentés 2022 — 99 832 ha, 1 586,6 m³/ha átlag, halastavak nélkül. Aszályos év, tehát felső érték."
     },
     {
-      "nev": "Ivóvíz és települési",
-      "ertek": 21,
+      "nev": "Halastavak",
+      "ertek": 21.6,
+      "fogyaszto_m3s": 15.1,
       "fogyaszto": true,
-      "megjegyzes": "Közműves vízellátás. Nagy része tisztítva visszatér a folyókba, a nyári locsolás nem. HELYŐRZŐ."
+      "fogyaszto_hanyad": 0.7,
+      "eves_millio_m3": 340.0,
+      "provenance": "modellezett",
+      "megjegyzes": "Éves 340 millió m³, ebből 17% esik erre a hónapra; a kivett víz 70%-a nem tér vissza. Húsz éve stabilan 330–350 millió m³/év, 28–30 ezer hektár üzemeltetett halastó (agrárstatisztika)."
     },
     {
-      "nev": "Ipari hűtés (Paks nélkül)",
-      "ertek": 95,
+      "nev": "Lakossági ivóvíz",
+      "ertek": 12.9,
+      "fogyaszto_m3s": 3.2,
       "fogyaszto": false,
-      "megjegyzes": "Átfolyó hűtés: felmelegítve visszatér, nem fogy el. HELYŐRZŐ."
+      "fogyaszto_hanyad": 0.25,
+      "eves_millio_m3": 367.6,
+      "provenance": "modellezett",
+      "megjegyzes": "Éves 368 millió m³, ebből 9% esik erre a hónapra; a kivett víz 25%-a nem tér vissza. KSH: egy főre jutó éves lakossági közüzemi vízfogyasztás 38,7 m³ (2022); 2024-ben kb. 105 liter/fő/nap."
+    },
+    {
+      "nev": "Ipar (erőművi hűtés nélkül)",
+      "ertek": 9.0,
+      "fogyaszto_m3s": 1.4,
+      "fogyaszto": false,
+      "fogyaszto_hanyad": 0.15,
+      "eves_millio_m3": 290.0,
+      "provenance": "modellezett",
+      "megjegyzes": "Éves 290 millió m³, ebből 8% esik erre a hónapra; a kivett víz 15%-a nem tér vissza. SZÁRMAZTATOTT: a GKI szerinti 1 160 millió m³ teljes nettó vízkivételből (erőművek nélkül) levonva a fenti tételeket. ELLENŐRIZENDŐ a VGT3 ágazati bontásából."
     }
   ],
   "paks_hutoviz": {
@@ -116,5 +138,14 @@
     "kc_min": 0.8,
     "kc_max": 1.2,
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
+  },
+  "kivetel_modell": {
+    "datum": "2026-08-05",
+    "honap": 8,
+    "osszes_m3s": 57.7,
+    "fogyaszto_m3s": 32.5,
+    "provenance": "modellezett",
+    "modszer": "Éves statisztikai mennyiség × havi profil ÷ a hónap másodpercei, majd fogyasztó hányaddal szorozva.",
+    "figyelmeztetes": "Az éves mennyiségek hivatkozott statisztikák, a HAVI ELOSZLÁS és a FOGYASZTÓ HÁNYAD viszont feltételezés. A pontos adatot a vízkészletjárulék-bevallások és a VGT3 ágazati bontása adná — ezek az OVF-nél kérhetők."
   }
 }
