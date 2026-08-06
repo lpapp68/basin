@@ -250,9 +250,12 @@ a{color:var(--viz)}
 <header>
   <div class="eyebrow">EQUORA Institute · vízmérleg v2 · basin.equora.institute</div>
   <h1>Mennyi víz jön be, mennyi párolog el,<br>és mennyi folyik tovább</h1>
-  <p class="dek">A Középső-Duna-medence hidrológiailag majdnem zárt doboz: Dévénynél belép, a
-  Vaskapunál kilép. A Tisza, a Dráva és a Száva vízgyűjtője teljes egészében belül van.
-  Ezért a mérlege felírható — az viszont külön kérdés, hogy melyik tagját tudjuk tényleg mérni.</p>
+  <p class="dek">Egy országnyi terület vízháztartása néhány számban: mennyi érkezik, mennyi
+  párolog el, mennyi folyik tovább. A Középső-Duna-medence erre ritkán alkalmas hely,
+  mert hidrológiailag majdnem zárt doboz — Dévénynél belép, a Vaskapunál kilép, és a
+  Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. A mérlege ezért
+  felírható. Hogy melyik tagját tudjuk tényleg megmérni, az külön kérdés — és ez az
+  oldal erről is beszámol.</p>
   <div class="dobozjel" id="dobozjel"></div>
   <div class="orak" id="orak"></div>
 </header>
@@ -267,13 +270,7 @@ a{color:var(--viz)}
 
 <section id="paks-sec">
   <div class="sz"><h2>Paks · a vízoldal</h2><span class="n">csomópont</span></div>
-  <p class="lead">Paks az egyetlen pont az országban, ahol a víz <em>állapota</em> —
-  néhány centiméter vízszint és néhány tizedfok hőmérséklet — közvetlenül átfordul
-  országos rendszerkérdéssé. A mérleg többi tétele mennyiségről szól; ez küszöbökről.
-  Az erőmű a Duna vizével hűt: kiveszi, átvezeti a kondenzátorokon, és felmelegítve
-  visszaengedi, tehát a víz nem fogy el. Két vízoldali feltétele viszont van, és ha
-  bármelyik nem teljesül, nem tud termelni. A blokkteljesítmény itt csak azt mondja meg,
-  mennyi vizet vesznek ki éppen; más energiaadatot a lap nem használ.</p>
+  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet eldönti, hogy van-e áram. A mérleg többi tétele mennyiségről szól; ez küszöbökről.</p>
   <div class="paksdoboz" id="paks"></div>
 </section>
 
@@ -289,8 +286,10 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-pulzus">
       <h3>1 · Pulzus <span class="pontos">a mérleg öt tagja</span></h3>
-      <p class="alcim">A mérleg öt tagja, mind ugyanabban a mértékegységben. A folyótagok
-      mérésből jönnek, a párolgás egyelőre nem.</p>
+      <p class="alcim">Öt tétel, mind ugyanabban a mértékegységben, hogy összemérhetők legyenek.
+      Egy m³/s annyi, mint másodpercenként egy ezerliteres kád. A párolgás is így
+      szerepel — így derül ki, hogy nyáron az ország több vizet ad le a levegőbe,
+      mint amennyit a Duna hoz.</p>
       <div id="pulzus"></div>
     </div>
 
@@ -302,14 +301,13 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-hovalett">
       <h3>3 · Hova lett <span class="pontos">amit nem tudunk elszámolni</span></h3>
-      <p class="alcim">Két független becslés ugyanarra a párolgásra. A különbségük az, amit
-      nem tudunk.</p>
+      <p class="alcim">Ugyanazt a párolgást kétféleképpen is meg lehet becsülni. Ha jól mérnénk, a két szám egyezne. Nem egyezik — és a különbségük megmutatja, mekkora a bizonytalanság az egész mérlegben.</p>
       <div id="hovalett"></div>
     </div>
 
     <div class="panel" id="p-kivetel">
       <h3>4 · Kivétel <span class="pontos">amit az ember kivesz</span></h3>
-      <p class="alcim">Amit kiveszünk. A nagy szám a BRUTTÓ kivétel; a mérlegbe csak a fogyasztó rész számít. A fogyasztó hányadok feltételezések, mérési alap nélkül.</p>
+      <p class="alcim">Amit az ember kivesz a rendszerből. A nagy szám a teljes kivétel — de a víz egy része tisztítva vagy felmelegítve visszatér. Csak az számít veszteségnek, ami nem jön vissza: az elpárolgó öntözővíz, a locsolás, a halastavak felszíne.</p>
       <div class="kiv" id="kivetel"></div>
     </div>
 
@@ -318,10 +316,7 @@ a{color:var(--viz)}
 
 <section id="talaj-sec">
   <div class="sz"><h2>A talaj</h2><span class="n">ahol az aszály zajlik</span></div>
-  <p class="lead">A mérleg eddigi tagjai a folyókat és a légkört mérték. A köztes rekesz
-  a talaj: itt marad a víz napokig-hetekig, és itt dől el, mit ér a lehullott csapadék.
-  A folyón átfolyó víz és a talaj szárazsága két különböző rekesz — ezért nem old meg
-  mindent az, ha sok víz folyik a mederben.</p>
+  <p class="lead">A folyó és a levegő mellett van egy harmadik hely, ahol a víz megfordul: a talaj. Itt marad napokig-hetekig, és itt dől el, mit ér a lehullott csapadék. Ez az a rekesz, amiről a hírek nem szólnak, pedig az aszály itt zajlik — nem a folyómederben.</p>
   <div id="talaj"></div>
 </section>
 
@@ -630,9 +625,7 @@ a{color:var(--viz)}
   hl.appendChild(el("div","res",
     `<div class="cim">Nem tudjuk, hova lett</div>`+
     `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
-    `<p>Ha a két becslés egyezne, ez nulla volna. Amíg nem az, a különbség a mérésrendszer
-     hiányát méri, nem a vizet. Ez a panel v1-ben a legfontosabb, mert megmondja,
-     mennyire hihető a többi.</p>
+    `<p>Ez a szám nem vízről szól, hanem tudásról: azt méri, mennyi az, amit a mérőrendszerünk nem lát. Amíg nagy, a mérleg többi számát is fenntartással kell olvasni — ezért van kiírva, ahelyett hogy elsimítanánk.</p>
      <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
      ebből fogyasztó ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
@@ -681,28 +674,29 @@ a{color:var(--viz)}
               ${dec(Math.abs(MM.parolgas),2)} mm/napos ütemmel. Ennyi csapadék hiányzik
               ahhoz, hogy a gyökérzóna feltöltődjön.</div>` : ""}
           <div class="trekesz">
-            <div><b>napok</b> <span>a folyó — a Duna a magyar szakaszon nagyjából
-              egy hét alatt halad át. Ez forgalom, nem készlet.</span></div>
-            <div><b>hetek</b> <span>a talajnedvesség — a fenti hiány ennyi idő alatt
-              épült fel, és ennyi alatt tölthető vissza.</span></div>
-            <div><b>évtizedek</b> <span>a talajvíz — a hátságon métereket süllyedt
-              ötven év alatt, és csak csapadékból pótlódik.</span></div>
+            <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
+            <div><b>hetek</b> <span>a talaj. A fenti hiány ennyi idő alatt épült fel, és ennyi alatt is tölthető vissza — de csak esőből. Ide a folyóból nem lehet átemelni.</span></div>
+            <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
-          <p class="tmegj">A három rekesz között három nagyságrend a különbség.
-          Ezért nem vezetéképítés kérdése az aszály: a folyó vize a gyors rekeszben van,
-          az aszály a lassúban.</p>
+          <p class="tmegj">A három rekesz között ezerszeres a különbség abban, meddig marad ott a víz. Ezért nem csővezeték-kérdés az aszály: a folyó vize a gyors rekeszben van, a szárazság a lassúban. Nem attól lesz nedves a talaj, hogy mellette folyik a Duna.</p>
         </div>
       </div>` +
       (OI ? `<div class="oigeny">
-        <b>Ha nem lenne vízhiány</b>
-        <span>A referencia-párolgás ${dec(OI.et_ref_mm,2)} mm/nap, a tényleges
-        ${dec(OI.et_act_mm,2)} — a felszín a lehetséges teljesítményének
-        <b>${dec(OI.vizstressz*100,0)}%-án</b> működik.
-        A szántóterület vízhiány nélküli ellátásához
-        <b>${num(OI.tartomany.also.m3s)}–${num(OI.tartomany.felso.m3s)} m³/s</b> kellene —
-        nagyjából annyi, amennyi az egész országba beérkezik a folyókon.
-        A tényleges öntözés ennek töredéke. ${pr(OI.provenance)}</span>
-        <em>${OI.figyelmeztetes}</em></div>` : "") +
+        <b>Amennyi víz kellene, és amennyi van</b>
+        <span>A növényzet ma <b>${dec(OI.et_ref_mm,2)} milliméter</b> vizet párologtatna el,
+        ha jutna neki elég. Valójában <b>${dec(OI.et_act_mm,2)} millimétert</b> ad le — a
+        lehetségesnek alig több mint a harmadát. Ilyenkor a növény lezárja a leveleit, és amíg
+        zárva vannak, nem is növekszik. A szárazság nem a hervadásnál kezdődik, hanem itt.</span>
+        <span>Ahhoz, hogy a szántóföldeken ne legyen vízhiány, naponta
+        <b>${num(Math.round(OI.tartomany.also.m3s*86400/1e6))}–${num(Math.round(OI.tartomany.felso.m3s*86400/1e6))} millió köbméter</b>
+        vízre lenne szükség. Ez nagyjából annyi, amennyi a Dunán, a Tiszán és a többi folyón
+        együtt <b>beérkezik az országba</b>. Öntözésre ténylegesen ennek körülbelül egy
+        századát használjuk.</span>
+        <span><b>Ez nem azt jelenti, hogy többet kellene öntözni — azt jelenti, hogy nem
+        lehetne.</b> Ennyi víz fizikailag nincs. A magyar növénytermesztés ezért csapadékfüggő,
+        és aszályban a hiányt nem öntözéssel pótolja, hanem terméskieséssel nyeli le.</span>
+        <em>${pr(OI.provenance)} Nagyságrendi számítás, nem öntözési terv: a műholdas párolgás
+        vegyes felszínborításra vonatkozik, és a szántóterület még helyőrző.</em></div>` : "") +
       `<p class="tforras">${TV.figyelmeztetes}<br>Forrás: ${TV.forras}</p>`;
   }
 
