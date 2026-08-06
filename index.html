@@ -153,6 +153,16 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .hl .par{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;
   border-top:1px solid var(--vonal-halk);font-size:14px}
 .hl .par b{font-family:var(--mono);font-size:17px;font-weight:600}
+.kepletmagy{margin-top:14px;padding:11px 13px;border:1px solid var(--vonal-halk);
+  background:var(--papir);font-size:12.5px;line-height:1.5}
+.kepletmagy b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--halvany);margin-bottom:5px}
+.kepletmagy span{display:block;color:var(--halvany)}
+.kepletmagy i{font-family:var(--mono);font-style:normal;font-weight:600;color:var(--tinta);
+  display:inline-block;min-width:5.5em}
+.kivosszeg{margin:0 0 14px;padding:9px 11px;background:var(--papir);
+  border:1px solid var(--vonal-halk);font-size:12.5px;color:var(--halvany)}
+.res p+p{margin-top:10px;padding-top:9px;border-top:1px dotted var(--ismeretlen)}
 .res{margin-top:16px;padding:14px;border:1px dashed var(--ismeretlen);
   background:repeating-linear-gradient(45deg,transparent 0 5px,rgba(122,74,110,.07) 5px 10px)}
 .res .cim{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
@@ -535,6 +545,9 @@ a{color:var(--viz)}
     `border-top:1px solid var(--vonal-halk)">A lap NEM azt mutatja, mennyi víz van — `+
     `azt, hogy mennyivel van kevesebb. Teljes készletet nem tudunk mérni.<br>Forrás: ${E.forras}</p>`;
 
+  const KIV_OSSZ = D.kivetel_m3s.reduce((a,k)=>a+(k.ertek||0),0);
+  const KIV_FOGY = D.kivetel_m3s.filter(k=>k.fogyaszto).reduce((a,k)=>a+(k.ertek||0),0);
+
   /* ── 3 Hova lett ── */
   const H=D.hova_lett_m3s, hl=el("div","hl");
   [["parolgas_muhold","Műholdas párolgásbecslés"],
@@ -544,15 +557,30 @@ a{color:var(--viz)}
       `<span>${c}<br><span style="font-size:11.5px;color:var(--halvany)">${t.forras}</span></span>`+
       `<b>${num(t.ertek)} m³/s</b>`));
   });
+  hl.appendChild(el("div","kepletmagy",
+    `<b>A képlet tagjai</b>`+
+    `<span><i>P</i> csapadék — ami a dobozra hullik</span>`+
+    `<span><i>Q<sub>be</sub></i> folyókon beérkezik — 11 határszelvény mért vízhozama</span>`+
+    `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
+    `<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>`+
+    `<span><i>fogyasztó kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
   hl.appendChild(el("div","res",
     `<div class="cim">Nem tudjuk, hova lett</div>`+
     `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
     `<p>Ha a két becslés egyezne, ez nulla volna. Amíg nem az, a különbség a mérésrendszer
      hiányát méri, nem a vizet. Ez a panel v1-ben a legfontosabb, mert megmondja,
-     mennyire hihető a többi.</p>`));
+     mennyire hihető a többi.</p>
+     <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
+     ebből fogyasztó ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
+     ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
+     A különbség a készletváltozás és a párolgás bizonytalanságából jön,
+     nem az öntözésből.</p>`));
   $("#hovalett").appendChild(hl);
 
   /* ── 4 Kivétel ── */
+  $("#p-kivetel .alcim").insertAdjacentHTML("afterend",
+    `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
+    `ebből <b>fogyasztó ${num(KIV_FOGY)} m³/s</b> — ennyi nem tér vissza a rendszerbe.</span></div>`);
   D.kivetel_m3s.forEach(k=>{
     const s=el("div","s");
     s.appendChild(el("div","n",k.nev+

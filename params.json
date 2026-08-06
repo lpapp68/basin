@@ -58,22 +58,22 @@
   },
   "kivetel_m3s": [
     {
-      "nev": "Öntözés",
+      "nev": "Mezőgazdasági öntözés",
       "ertek": 34,
       "fogyaszto": true,
-      "megjegyzes": "térfogatban apró, de szinte teljesen elpárolog"
+      "megjegyzes": "A növénytermesztés öntözővíz-kivétele a tenyészidőszakban. Térfogatban apró, de szinte teljesen elpárolog, ezért fogyasztó tétel. HELYŐRZŐ: a valódi számot a vízjogi engedélyek és a vízgyűjtő-gazdálkodási terv adja."
     },
     {
-      "nev": "Ivóvíz",
+      "nev": "Ivóvíz és települési",
       "ertek": 21,
       "fogyaszto": true,
-      "megjegyzes": "nagy része tisztítva visszatér, a nyári locsolás nem"
+      "megjegyzes": "Közműves vízellátás. Nagy része tisztítva visszatér a folyókba, a nyári locsolás nem. HELYŐRZŐ."
     },
     {
       "nev": "Ipari hűtés (Paks nélkül)",
       "ertek": 95,
       "fogyaszto": false,
-      "megjegyzes": "átfolyó: felmelegítve visszatér"
+      "megjegyzes": "Átfolyó hűtés: felmelegítve visszatér, nem fogy el. HELYŐRZŐ."
     }
   ],
   "paks_hutoviz": {
