@@ -106,6 +106,7 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .pr{font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;
   padding:1px 5px;border:1px solid currentColor;white-space:nowrap;vertical-align:2px}
 .pr.mert{color:var(--viz);background:rgba(43,92,119,.1)}
+.pr.muholdas{color:var(--parolgas);background:rgba(169,119,47,.10)}
 .pr.modellezett{color:var(--halvany)}
 .pr.helyorzo{color:var(--ismeretlen);
   background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(122,74,110,.22) 3px 6px)}
@@ -178,6 +179,7 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .kiv .s:first-child{border-top:0}
 .kiv .s .n{font-size:14px;font-weight:500}
 .kiv .s .v{font-family:var(--mono);font-size:16px;font-weight:600;text-align:right}
+.kiv .s .v .tf{display:block;font-size:10.5px;font-weight:400;font-style:normal;color:var(--halvany);white-space:nowrap;margin-top:2px}
 .kiv .s .m{grid-column:1/-1;font-size:11.5px;color:var(--halvany)}
 .tag{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
   padding:1px 5px;margin-left:6px;border:1px solid currentColor}
@@ -278,9 +280,10 @@ a{color:var(--viz)}
 <section>
   <div class="sz"><h2>Négy panel</h2><span class="n">v2</span></div>
   <div class="jelmagy">
-    <span><b class="pr mert">mért</b> műszer vagy műhold mérte; a lap nem számolt hozzá</span>
-    <span><b class="pr modellezett">modellezett</b> mért tételekből számítva, nem közvetlen mérés</span>
-    <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg nincs bekötve a forrás — döntést ne alapozz rá</span>
+    <span><b class="pr mert">mért</b> műszer mérte a helyszínen. A vízhozam ebből: vízállásból, kalibrált vízhozamgörbével számítva — nem közvetlen hozammérés</span>
+    <span><b class="pr muholdas">műholdas</b> műholdas mérésből modellel visszaszámított becslés — párolgás, csapadék, készlet-anomália</span>
+    <span><b class="pr modellezett">modellezett</b> más tételekből számítva, feltételezésekkel</span>
+    <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg nincs bekötve a forrás</span>
   </div>
   <div class="racs">
 
@@ -306,7 +309,7 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-kivetel">
       <h3>4 · Kivétel <span class="pontos">amit az ember kivesz</span></h3>
-      <p class="alcim">Amit kiveszünk. A döntő nem a mennyiség, hanem hogy visszatér-e.</p>
+      <p class="alcim">Amit kiveszünk. A nagy szám a BRUTTÓ kivétel; a mérlegbe csak a fogyasztó rész számít. A fogyasztó hányadok feltételezések, mérési alap nélkül.</p>
       <div class="kiv" id="kivetel"></div>
     </div>
 
@@ -334,7 +337,7 @@ a{color:var(--viz)}
                           if(h!=null)n.innerHTML=h; return n; };
   const num = n => n==null ? "—" : n.toLocaleString("hu-HU");
   // Minden törtszám ezen megy át: magyar tizedesvessző, rögzített jegyszám.
-  const PR_NEV = {mert:"mért", modellezett:"modellezett", helyorzo:"helyőrző"};
+  const PR_NEV = {mert:"mért", muholdas:"műholdas", modellezett:"modellezett", helyorzo:"helyőrző"};
   const pr = k => `<span class="pr ${k}">${PR_NEV[k] || k}</span>`;
   const dec = (n,j=1) => n==null ? "—"
     : n.toLocaleString("hu-HU",{minimumFractionDigits:j,maximumFractionDigits:j});
@@ -525,7 +528,7 @@ a{color:var(--viz)}
   const maxAbs=Math.max(...Object.values(M).map(t=>Math.abs(t.ertek)));
   [["csapadek","Csapadék · érkezik"],["hozam_be","Folyókon beérkezik"],
    ["parolgas","Elpárolog · távozik"],["hozam_ki","Folyókon távozik"],
-   ["keszletvaltozas","= Készletváltozás"]].forEach(([k,cim])=>{
+   ["keszletvaltozas","= Készletváltozás (maradéktag)"]].forEach(([k,cim])=>{
     const t=M[k], neg=t.ertek<0, ossz=(k==="keszletvaltozas");
     const r=el("div","tetel"+(ossz?" ossz":""));
     r.appendChild(el("div","cim",cim));
@@ -606,7 +609,7 @@ a{color:var(--viz)}
   }
 
   const KIV_OSSZ = D.kivetel_m3s.reduce((a,k)=>a+(k.ertek||0),0);
-  const KIV_FOGY = D.kivetel_m3s.filter(k=>k.fogyaszto).reduce((a,k)=>a+(k.ertek||0),0);
+  const KIV_FOGY = D.kivetel_m3s.reduce((a,k)=>a+(k.fogyaszto_m3s||0),0);
 
   /* ── 3 Hova lett ── */
   const H=D.hova_lett_m3s, hl=el("div","hl");
@@ -645,7 +648,7 @@ a{color:var(--viz)}
     const s=el("div","s");
     s.appendChild(el("div","n",k.nev+
       `<span class="tag ${k.fogyaszto?"fogy":"vissza"}">${k.fogyaszto?"fogyasztó":"visszatér"}</span>`));
-    s.appendChild(el("div","v",dec(k.ertek,1)+"\u00a0m³/s"));
+    s.appendChild(el("div","v",dec(k.ertek,1)+"\u00a0m³/s"+(k.fogyaszto_m3s!=null?`<em class="tf">ebből fogyasztó ${dec(k.fogyaszto_m3s,1)}</em>`:"")));
     s.appendChild(el("div","m",k.megjegyzes));
     $("#kivetel").appendChild(s);
   });

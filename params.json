@@ -2,14 +2,14 @@
   "_olvasd_el": "Minden érték itt lakik, ami MÉG NEM ÉL. Amint egy feed bekötésre kerül, a fetch_data.py onnan tölti, és a 'provenance' 'mert'-re vagy 'modellezett'-re vált. A 'helyorzo' címke a dashboardon vonalkázott háttérrel jelenik meg — szándékosan csúnyán.",
   "_ervenyes": "2026-07-30",
   "_ervenyes_havi": "2026-06",
-  "_figyelmeztetes": "A folyók vízállása, vízhozama és vízhője mérés, óránként. A csapadék és a párolgás műholdas mérés, naponta. A készletváltozás és a kivételi tételek még helyőrzők — ezekre döntést ne alapozz.",
+  "_figyelmeztetes": "A folyók vízállása és vízhője mérés, óránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított érték. A csapadék és a párolgás műholdas becslés. A vízkivétel éves statisztikából modellezett. A készletváltozás maradéktag, nem megfigyelt országos készletcsökkenés.",
   "_forrasok": {
     "napi": "GPM IMERG Early + EUMETSAT LSA-SAF ET",
     "havi": "GRACE-FO (még nincs bekötve)"
   },
   "csapadek_mm_nap": {
     "ertek": 0.0,
-    "provenance": "mert",
+    "provenance": "muholdas",
     "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-04, területsúlyozott átlag országhatár-maszkkal",
     "kor_ora": 24,
     "datum": "2026-08-04",
@@ -18,7 +18,7 @@
   },
   "parolgas_mm_nap": {
     "ertek": 1.9,
-    "provenance": "mert",
+    "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-04, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
     "kor_ora": 24,
     "datum": "2026-08-04",
@@ -59,23 +59,23 @@
   "kivetel_m3s": [
     {
       "nev": "Mezőgazdasági öntözés",
-      "ertek": 14.2,
-      "fogyaszto_m3s": 12.8,
+      "ertek": 13.8,
+      "fogyaszto_m3s": 12.4,
       "fogyaszto": true,
       "fogyaszto_hanyad": 0.9,
-      "eves_millio_m3": 158.4,
+      "eves_millio_m3": 154.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 158 millió m³, ebből 24% esik erre a hónapra; a kivett víz 90%-a nem tér vissza. AKI/OSAP Öntözésjelentés 2022 — 99 832 ha, 1 586,6 m³/ha átlag, halastavak nélkül. Aszályos év, tehát felső érték."
+      "megjegyzes": "Éves 154 millió m³, ebből 24% esik erre a hónapra; a kivett víz 90%-a nem tér vissza. ASZ-jelentes a Nemzeti Vizstrategia vegrehajtasarol, 2019-2023 atlag: a mezogazdasagi vizhasznalat 30 szazaleka, 154 millio m3. FIGYELEM: a KSH szerint ebben NINCSENEK BENNE az engedely nelkuli vizkivetelek, amelyeket tanulmanyok a bejelentett mennyiseg duplajara becsulnek."
     },
     {
       "nev": "Halastavak",
-      "ertek": 21.6,
-      "fogyaszto_m3s": 15.1,
+      "ertek": 22.6,
+      "fogyaszto_m3s": 15.8,
       "fogyaszto": true,
       "fogyaszto_hanyad": 0.7,
-      "eves_millio_m3": 340.0,
+      "eves_millio_m3": 356.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 340 millió m³, ebből 17% esik erre a hónapra; a kivett víz 70%-a nem tér vissza. Húsz éve stabilan 330–350 millió m³/év, 28–30 ezer hektár üzemeltetett halastó (agrárstatisztika)."
+      "megjegyzes": "Éves 356 millió m³, ebből 17% esik erre a hónapra; a kivett víz 70%-a nem tér vissza. ASZ-jelentes, 2019-2023 atlag: a mezogazdasagi vizhasznalat (510 millio m3) kb. 70 szazaleka. Ez BRUTTO SZOLGALTATOTT VIZ, nem elveszett viz."
     },
     {
       "nev": "Lakossági ivóvíz",
@@ -140,16 +140,16 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-05",
+    "datum": "2026-08-06",
     "honap": 8,
-    "osszes_m3s": 57.7,
-    "fogyaszto_m3s": 32.5,
+    "osszes_m3s": 58.3,
+    "fogyaszto_m3s": 32.8,
     "provenance": "modellezett",
     "modszer": "Éves statisztikai mennyiség × havi profil ÷ a hónap másodpercei, majd fogyasztó hányaddal szorozva.",
     "figyelmeztetes": "Az éves mennyiségek hivatkozott statisztikák, a HAVI ELOSZLÁS és a FOGYASZTÓ HÁNYAD viszont feltételezés. A pontos adatot a vízkészletjárulék-bevallások és a VGT3 ágazati bontása adná — ezek az OVF-nél kérhetők."
   },
   "keszlet_idosor": {
-    "provenance": "mert",
+    "provenance": "muholdas",
     "forras": "NASA/JPL GRACE és GRACE-FO mascon (PO.DAAC), országhatár-maszkkal",
     "egyseg": "km³ anomália a termék sokéves átlagához képest",
     "terulet_km2": 94513,
@@ -157,7 +157,7 @@
     "veg": "2026-05",
     "pontok": 257,
     "trend_km3_ev": -1.3,
-    "figyelmeztetes": "ANOMÁLIA, nem abszolút készlet: a nulla a termék sokéves átlagát jelenti, nem a teli medencét. Felbontás kb. 300 km, havi, 1–2 hónapos késéssel. 2017 közepe és 2018 közepe között adathiány a két műholdpár között.",
+    "figyelmeztetes": "ANOMÁLIA, nem abszolút készlet: a nulla a termék sokéves átlaga, nem a teli medence. Felbontás kb. 300 km — Magyarország néhány rácscella, a szomszédos területek beleszólnak. Havi, 40-60 napos késéssel. 2017 közepe és 2018 közepe között adathiány.",
     "sorozat": [
       {
         "honap": "2002-04",

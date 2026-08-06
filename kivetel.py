@@ -35,9 +35,11 @@ PARAMS = pathlib.Path("params.json")
 TETELEK = [
     {
         "nev": "Mezőgazdasági öntözés",
-        "eves_millio_m3": 158.4,
-        "forras": "AKI/OSAP Öntözésjelentés 2022 — 99 832 ha, 1 586,6 m³/ha átlag, "
-                  "halastavak nélkül. Aszályos év, tehát felső érték.",
+        "eves_millio_m3": 154.0,
+        "forras": "ASZ-jelentes a Nemzeti Vizstrategia vegrehajtasarol, 2019-2023 atlag: "
+                  "a mezogazdasagi vizhasznalat 30 szazaleka, 154 millio m3. FIGYELEM: a KSH szerint "
+                  "ebben NINCSENEK BENNE az engedely nelkuli vizkivetelek, amelyeket "
+                  "tanulmanyok a bejelentett mennyiseg duplajara becsulnek.",
         "profil": [0, 0, 0, 0.03, 0.12, 0.22, 0.28, 0.24, 0.09, 0.02, 0, 0],
         "profil_indok": "Tenyészidőszak, július–augusztusi csúccsal. FELTÉTELEZÉS.",
         "fogyaszto_hanyad": 0.90,
@@ -46,9 +48,9 @@ TETELEK = [
     },
     {
         "nev": "Halastavak",
-        "eves_millio_m3": 340.0,
-        "forras": "Húsz éve stabilan 330–350 millió m³/év, 28–30 ezer hektár "
-                  "üzemeltetett halastó (agrárstatisztika).",
+        "eves_millio_m3": 356.0,
+        "forras": "ASZ-jelentes, 2019-2023 atlag: a mezogazdasagi vizhasznalat (510 millio m3) "
+                  "kb. 70 szazaleka. Ez BRUTTO SZOLGALTATOTT VIZ, nem elveszett viz.",
         "profil": [0, 0, 0.02, 0.08, 0.13, 0.16, 0.18, 0.17, 0.13, 0.08, 0.03, 0.02],
         "profil_indok": "Feltöltés tavasszal, párolgáspótlás nyáron. FELTÉTELEZÉS.",
         "fogyaszto_hanyad": 0.70,

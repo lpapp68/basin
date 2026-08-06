@@ -251,10 +251,13 @@ def main():
     kivetel = [dict(k, provenance="helyorzo") for k in p["kivetel_m3s"]]
     kivetel.append({
         "nev": "Paks hűtővíz", "ertek": paks_hv["ertek"], "fogyaszto": False,
+        "fogyaszto_m3s": 0.0, "fogyaszto_hanyad": 0.0,
         "provenance": paks_hv["provenance"],
         "megjegyzes": f"{paks_hv['allapot']} — felmelegítve visszatér. {paks_hv['forras']}",
     })
-    fogyaszto = sum(k["ertek"] for k in kivetel if k["fogyaszto"] and k["ertek"])
+    # MINDEN tétel fogyasztó RÉSZE számít, nem a bruttó kivétele, és nem csak
+    # azoké, amelyek 50% fölött fogyasztók.
+    fogyaszto = sum(k.get("fogyaszto_m3s") or 0 for k in kivetel)
     # Előjel-konvenció: ami a dobozba kerül, POZITÍV; ami elhagyja, NEGATÍV.
     # Az öt tag így összeadva adja ki a készletváltozást.
     be_P, be_Q = P, Q_be
@@ -294,14 +297,14 @@ def main():
         "paks": paks_csomopont,
         "mm_nap": {"csapadek": mm(be_P), "hozam_be": mm(be_Q), "parolgas": mm(ki_ET),
                    "hozam_ki": mm(ki_Q), "keszletvaltozas": mm(dS)},
-        "elojel": "Ami a dobozba kerül: pozitív. Ami elhagyja: negatív. Az öt tag összege a készletváltozás.",
+        "elojel": ("Ami a dobozba kerül: pozitív, ami elhagyja: negatív. Az öt tag összege a ""készletváltozás — ez NEM megfigyelt országos készletcsökkenés, hanem MARADÉKTAG, ""amelyben a fenti tagok minden hibája összegyűlik. A tagok időléptéke eltér: órás, ""napi és havi adat kerül egyetlen egyenletbe."),
         "merleg_m3s": {
             "csapadek": {"ertek": round(be_P), **meta_of(p["csapadek_mm_nap"])},
             "hozam_be": {"ertek": round(be_Q), "provenance": "mert", "kor_ora": 1,
-                         "forras": "OVF órás vízhozam: " + ", ".join(m["nev"] for m in be)},
+                         "forras": "OVF órás vízhozam (vízállásból, vízhozamgörbével): " + ", ".join(m["nev"] for m in be)},
             "parolgas": {"ertek": round(ki_ET), **meta_of(p["parolgas_mm_nap"])},
             "hozam_ki": {"ertek": round(ki_Q), "provenance": "mert", "kor_ora": 1,
-                         "forras": "OVF órás vízhozam: " + ", ".join(m["nev"] for m in ki)},
+                         "forras": "OVF órás vízhozam (vízállásból, vízhozamgörbével): " + ", ".join(m["nev"] for m in ki)},
             "keszletvaltozas": {"ertek": round(dS), "provenance": "modellezett", "kor_ora": None,
                                 "forras": "maradéktag a fenti tételekből"},
         },
