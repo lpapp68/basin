@@ -83,5 +83,38 @@
     "forras": "nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc",
     "provenance": "modellezett",
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
+  },
+  "ontozesigeny": {
+    "datum": "2026-08-04",
+    "et_ref_mm": 5.3,
+    "et_act_mm": 1.92,
+    "vizstressz": 0.361,
+    "szanto_ha": 4300000,
+    "tartomany": {
+      "also": {
+        "kc": 0.8,
+        "hiany_mm_nap": 2.32,
+        "m3s": 1157
+      },
+      "kozep": {
+        "kc": 1.0,
+        "hiany_mm_nap": 3.38,
+        "m3s": 1684
+      },
+      "felso": {
+        "kc": 1.2,
+        "hiany_mm_nap": 4.44,
+        "m3s": 2212
+      }
+    },
+    "provenance": "modellezett",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-04, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
+  },
+  "ontozesigeny_beallitas": {
+    "szanto_ha": 4300000,
+    "kc_min": 0.8,
+    "kc_max": 1.2,
+    "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   }
 }
