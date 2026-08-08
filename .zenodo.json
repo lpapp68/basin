@@ -1,0 +1,32 @@
+{
+  "title": "Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method",
+  "upload_type": "software",
+  "language": "hun",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Papp, László",
+      "affiliation": "EQUORA Institute",
+      "orcid": "0009-0005-6329-5808"
+    }
+  ],
+  "keywords": [
+    "water balance",
+    "Middle Danube Basin",
+    "Pannonian Basin",
+    "evapotranspiration",
+    "GRACE",
+    "data provenance",
+    "drought",
+    "open data",
+    "hydrology",
+    "Hungary"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://basin.equora.institute",
+      "relation": "isDocumentedBy",
+      "resource_type": "other"
+    }
+  ]
+}

@@ -1,84 +1,11 @@
-# Zenodo-deposit — a feltöltés terve és a módszertan
+# A Középső-Duna-medence vízmérlege
 
-Két rész. Az első megmondja, mit töltünk fel és milyen metaadatokkal. A második maga a
-módszertan: erre mutat a DOI, és erre hivatkoznak az OVF-, SHMÚ- és INHGA-levelek.
+## Nyílt, provenance-címkézett monitorozási módszer
 
-**A sorrend számít.** A deposit megelőzi az adatkéréseket, mert egy DOI-val hivatkozható
-módszertannal a levél egy futó kutatás adatigényévé válik.
-
----
-
-# I. rész — A deposit összeállítása
-
-## Feltöltendő fájlok
-
-| Fájl | Szerepe |
-|---|---|
-| `ZENODO.md` II. része | a hivatkozás tárgya |
-| `README.md`, `SETUP.md` | futtatás és az adatforrások hozzáférési módja |
-| `fetch_data.py`, `maszk.py`, `archivum.py` | a mérleg magja |
-| `era5_precip.py`, `imerg_precip.py`, `lsasaf_et.py` | csapadék és párolgás |
-| `grace.py`, `aszaly.py`, `kutak.py` | készlet, talaj, észlelőhálózat |
-| `kulfold.py` | a teljes medence két fala (SHMÚ, INHGA) |
-| `kivetel.py`, `ontozesigeny.py` | vízkivétel és vízigény |
-| `frissit.sh`, `.github/workflows/basin.yml` | a napi és órás ciklus |
-| `params.json` | a feltételezések egy helyen, olvashatóan |
-| `index.html` | a megjelenítés — a provenance-jelölés itt válik láthatóvá |
-| `kutak.json` | INSPIRE-észlelőhely-jegyzék, 4 911 pont |
-| `archiv/napi.csv` | a saját napi idősor |
-
-## A deposit körén kívül maradó fájlok
-
-A `.netrc` és a `.cdsapirc` hitelesítést tárol. A `*.nc`, `*.nc4`, `grace/` és `imerg/`
-letöltött nyersadat: a forrásoknál mindig frissebb és külön hivatkozható változat áll
-rendelkezésre. A `hatar.geojson` és a `maszk_cache/` egyetlen parancsból újraáll. A
-`data.json` és a `data.js` egy adott nap pillanatképe, a deposit viszont a módszerről szól.
-
-## Zenodo-metaadatok
-
-| Mező | Érték |
-|---|---|
-| Upload type | Software |
-| Title | Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method |
-| Authors | Papp László, EQUORA Institute — ORCID 0009-0005-6329-5808 |
-| Description | a II. rész Összefoglalás bekezdése, angolul és magyarul |
-| Version | v1.0.0 |
-| Language | Hungarian, kétnyelvű absztrakttal |
-| License | kód MIT, dokumentáció CC BY 4.0 |
-| Keywords | water balance, Middle Danube Basin, Pannonian Basin, evapotranspiration, GRACE, data provenance, drought, open data, hydrology |
-| Related identifiers | isSupplementTo → GitHub-repó · references → az alábbi forrás-DOI-k |
-
-**A `references` mezőbe kerülő források**
-
-- Copernicus C3S: ERA5-Land hourly data — CDS DOI
-- EUMETSAT LSA SAF: DMETv3, METREF — Trigo et al. (2011), Remote Sensing
-- NASA GPM IMERG — GES DISC DOI
-- NASA/JPL GRACE és GRACE-FO mascon RL06.3 V4 — PO.DAAC DOI
-- OVF Országos Vízjelző Szolgálat — vizugy.hu
-- OVF Aszálymonitoring — aszalymonitoring.vizugy.hu
-- SHMÚ napi hidrológiai jelentés — shmu.sk
-- INHGA napi hidrológiai bulletin — hidro.ro
-- Állami Számvevőszék: jelentés a Nemzeti Vízstratégia végrehajtásáról
-
-## A feltöltés módja
-
-**A GitHub–Zenodo összekötés a javasolt út.** Minden release automatikusan új verziót és
-új DOI-t kap, és keletkezik egy **koncepció-DOI**, ami mindig a legfrissebbre mutat — ez
-megy a levelekbe és a lap láblécébe.
-
-Első release: `v1.0.0`.
-
-## Verziózási séma
-
-| Szám | Mikor lép | Példa |
-|---|---|---|
-| fő | a doboz vagy a mérlegegyenlet változik | váltás a magyar dobozról a teljes medencére |
-| közép | új tag kerül be, vagy egy osztály feljebb lép | a talaj vízhiánya az aszálymonitoringból |
-| utolsó | javítás, pontosítás, szövegezés | a provenance-osztályok felülírásának javítása |
+**Papp László** · EQUORA Institute · ORCID 0009-0005-6329-5808
+Élő felület: https://basin.equora.institute
 
 ---
-
-# II. rész — A módszertan
 
 ## Összefoglalás
 
@@ -91,6 +18,8 @@ külön számként jelenik meg. A módszer központi tervezési döntése, hogy 
 **maradéktagként** áll elő: így a mérlegben megjelenő eltérés azt méri, mennyire zárt a
 mérési rendszer.
 
+---
+
 ## 1. A doboz
 
 | | terület | falak | állapot |
@@ -98,20 +27,22 @@ mérési rendszer.
 | `hu` Magyarország | 93 030 km² | 11 belépő és 3 kilépő magyar mérce, órás hozammal | **aktív** |
 | `mdb` Középső-Duna-medence | ~445 900 km² | Duna, Dévény (SHMÚ) és Duna, Baziás (INHGA) | falak bekötve, a doboz még nem aktív |
 
-**A terület levezetése és a mért szelvény két különböző dolog.** A ~445 900 km² a Vaskapu I.
-vízgyűjtőjéből (577 250 km²) mínusz a Duna dévényi vízgyűjtőjéből (~131 350 km²) áll elő —
-ez a szakirodalmi medencehatár. A ténylegesen **mért** kilépő szelvény ezzel szemben
-**Baziás** (fkm 1072), amely a Tisza, a Száva és a Velika Morava torkolata után, a Vaskapu
-gátja **előtt** van. A kettő közti szakasz hozzáfolyása a mérlegből kimarad; ez a különbség
-a nyitott tételek között szerepel.
+**A terület levezetése és a mért szelvény két különböző dolog.** A ~445 900 km² a
+Vaskapu I. vízgyűjtőjéből (577 250 km²) mínusz a Duna dévényi vízgyűjtőjéből
+(~131 350 km²) áll elő — ez a szakirodalmi medencehatár. A ténylegesen **mért** kilépő
+szelvény ezzel szemben **Baziás** (fkm 1072), amely a Tisza, a Száva és a Velika Morava
+torkolata után, a Vaskapu gátja **előtt** van. A kettő közti szakasz hozzáfolyása a
+mérlegből kimarad; ez a nyitott tételek között szerepel.
 
 **A magyar doboz azért aktív, mert a területi tagok maszkja országhatárra készült.**
 A csapadék és a párolgás területtel skálázódik, ezért a doboz átváltásához a maszkot
-vízgyűjtő-poligonra kell cserélni (HydroSHEDS/HydroBASINS). A második akadály a kadencia:
-a baziási hozam naponta jön, ezért az `mdb` doboz mérlege napi ütemű lenne.
+vízgyűjtő-poligonra kell cserélni (HydroSHEDS/HydroBASINS). A második akadály a
+kadencia: a baziási hozam naponta jön, ezért az `mdb` doboz mérlege napi ütemű lenne.
 
 **A magyar doboz nyitott falai:** Hernád, Kraszna, Fekete-Körös, Berettyó, valamint a
 határon átnyúló felszín alatti vízáramlás. Ezek a maradéktagban jelennek meg.
+
+---
 
 ## 2. A mérlegegyenlet és az előjelek
 
@@ -120,8 +51,11 @@ határon átnyúló felszín alatti vízáramlás. Ezek a maradéktagban jelenne
 **Előjel-konvenció:** a dobozba érkező tételek pozitívak, a távozók negatívak. Az öt tag
 összege adja a készletváltozást.
 
-**A központi döntés:** a ΔS maradéktagként áll elő. Ez a szokásos vízmérlegek fordítottja,
-és szándékos — így a mérlegben megjelenő eltérés megmondja, mennyire hihető a többi tag.
+**A központi döntés:** a ΔS maradéktagként áll elő. Ez a szokásos vízmérlegek
+fordítottja, és szándékos — így a mérlegben megjelenő eltérés megmondja, mennyire
+hihető a többi tag.
+
+---
 
 ## 3. A tagok és az öt provenance-osztály
 
@@ -160,11 +94,13 @@ Ez a szabály egy korábbi hiba után született (lásd a változásnaplót).
 
 A mérleg három sebességű adatból áll össze: **órás** (vízállás, hozam, vízhő), **napi**
 (csapadék, párolgás), **havi** (készletváltozás). A három számlap a fenntartás vizuális
-formája. Mindhárom dátum magából az adatból származik, ezért egy forrás leállása
-a fejlécben azonnal látszik.
+formája. Mindhárom dátum magából az adatból származik, ezért egy forrás leállása a
+fejlécben azonnal látszik.
 
 A rendszer hibaként jelzi, ha a csapadék és a párolgás dátuma eltér: egy mérleg tagjai
 egyetlen naphoz tartoznak.
+
+---
 
 ## 4. Területi átlagolás
 
@@ -179,6 +115,8 @@ képest 0,2% eltéréssel.
 terület annak 42%-a. A téglalap-átlag 58%-ban külföldi területet mért. A váltás a
 párolgás napi értékét 2,20-ról 1,90 mm-re módosította — 14% szisztematikus eltérés.
 
+---
+
 ## 5. A teljes medence két fala
 
 A `kulfold.py` két nyilvános forrásból olvassa a doboz falait:
@@ -188,18 +126,20 @@ A `kulfold.py` két nyilvános forrásból olvassa a doboz falait:
 | Belépő — Duna, Dévény | SHMÚ napi jelentés | táblázat: vízállás, hozam, vízhő | 981,0 m³/s |
 | Kilépő — Duna, Baziás | INHGA napi bulletin | próza | 1 400,0 m³/s |
 
-**A medence hozzáfolyása 419 m³/s** — ennyit ad hozzá a Tisza, a Dráva, a Száva, a Morava
-és minden belső hozzáfolyás együttvéve, nagyjából 446 ezer km²-ről. A kilépő hozam a
-sokéves augusztusi átlag (3 900 m³/s) **36%-a**.
+**A medence hozzáfolyása 419 m³/s** — ennyit ad hozzá a Tisza, a Dráva, a Száva, a
+Morava és minden belső hozzáfolyás együttvéve, nagyjából 446 ezer km²-ről. A kilépő
+hozam a sokéves augusztusi átlag (3 900 m³/s) **36%-a**.
 
 **Két fenntartás.** Mindkét forrás operatív, korrekció nélküli adat; a SHMÚ ezt ki is
 mondja. A baziási hozam a bulletin *szövegéből* származik, ezért a minta törékeny —
 átfogalmazás esetén a script hangosan elhasal, ahelyett hogy csendben rosszat írna.
 
-**A dunai profil és a bősi hatás.** A SHMÚ jelentéséből a magyar szakasz előtti profil is
-kiolvasható: Dévény 981 → Medve 722 → Komárom 761 → Párkány 790 m³/s. A Dévény és Medve
-közti 259 m³/s-os esés a bősi vízlépcső üzemrendjéből ered — a víz nagy része az
-üzemvízcsatornán halad. Üzemeltetési átrendezés, nem vízveszteség; a lap ezt kiírja.
+**A dunai profil és a bősi hatás.** A SHMÚ jelentéséből a magyar szakasz előtti profil
+is kiolvasható: Dévény 981 → Medve 722 → Komárom 761 → Párkány 790 m³/s. A Dévény és
+Medve közti 259 m³/s-os esés a bősi vízlépcső üzemrendjéből ered — a víz nagy része az
+üzemvízcsatornán halad. Üzemeltetési átrendezés, nem vízveszteség.
+
+---
 
 ## 6. Paks mint küszöb-csomópont
 
@@ -214,6 +154,8 @@ korlát a melegvíz-csatorna torkolatától 500 méterre.
 leállított blokkok fenntartó hűtése kb. 100 m³/**perc** — hatvanszoros különbség. A
 blokkteljesítmény kizárólag ezt az arányosítást szolgálja.
 
+---
+
 ## 7. Vízkivétel: teljes kivétel és veszteség
 
 Az éves statisztikai mennyiség havi profillal napi értékké alakul, majd
@@ -225,7 +167,7 @@ veszteséghányaddal szorzódik.
 | Mezőgazdasági öntözés | 154 millió m³ | ÁSZ, 2019–2023 átlag | 13,8 m³/s | 12,4 |
 | Lakossági ivóvíz | 38,7 m³/fő/év | KSH, 2022 | 12,9 m³/s | 3,2 |
 | Ipar, Paks nélkül | 290 millió m³ | származtatott | 9,0 m³/s | 1,4 |
-| Paks hűtővíz | állapotfüggő | MAVIR-alapú arányosítás | 13,0 m³/s | 0,0 |
+| Paks hűtővíz | állapotfüggő | blokkteljesítményből | 13,0 m³/s | 0,0 |
 | **Összesen** | | | **71,3 m³/s** | **32,8** |
 
 **A megkülönböztetés lényegi.** A halastavakhoz vezetett víz bruttó szolgáltatott
@@ -233,12 +175,15 @@ mennyiség: egy része leeresztéskor visszatér, más része talajvizet táplá
 kizárólag a veszteségrész számít — ami a vizsgált időszakon belül kívül marad a magyar
 vízrendszeren.
 
-**A veszteséghányadok feltételezések:** öntözés 90%, halastavak 70%, ivóvíz 25%, ipar 15%.
-Mérési alapjuk hiányzik; a vízkészletjárulék-bevallások adnának helyettük tényadatot.
+**A veszteséghányadok feltételezések:** öntözés 90%, halastavak 70%, ivóvíz 25%,
+ipar 15%. Mérési alapjuk hiányzik; a vízkészletjárulék-bevallások adnának helyettük
+tényadatot.
 
 **Az öntözési statisztika hiányos.** A KSH kimondja, hogy az engedély nélküli
-vízkivételek kimaradnak belőle, és tanulmányok ezeket a bejelentett mennyiség duplájára
-becsülik.
+vízkivételek kimaradnak belőle, és tanulmányok ezeket a bejelentett mennyiség
+duplájára becsülik.
+
+---
 
 ## 8. A talaj rekesze és a tartózkodási idő
 
@@ -263,16 +208,21 @@ mélyül.
 **A hiány és a napi párolgás hányadosa pótlási időegyenérték**, nem tartózkodási idő:
 azt mondja meg, mekkora csapadék töltené vissza a gyökérzónát.
 
+---
+
 ## 9. Öntözésigény kontra tényleges kivétel
 
 `ETc = Kc × ET_ref`, `hiány = max(0, ETc − ET_act)`, Kc tartományként (0,8–1,2).
 
 **Példa, 2026. augusztus 4.:** referencia-párolgás 5,30 mm/nap, tényleges 1,92 mm/nap,
 vízstressz-index 0,36. A 4,3 millió hektár szántó vízhiánymentes ellátásához naponta
-100–191 millió m³ víz kellene — nagyjából annyi, amennyi a folyókon beérkezik az országba.
+100–191 millió m³ víz kellene — nagyjából annyi, amennyi a folyókon beérkezik az
+országba.
 
 Figyelemre méltó egybeesés: a vízstressz-index 36%, és a baziási hozam is a sokéves
 augusztusi átlag 36%-a. Két független mérés, azonos irány.
+
+---
 
 ## 10. A számok érvényességi köre
 
@@ -291,11 +241,13 @@ augusztusi átlag 36%-a. Két független mérés, azonos irány.
 8. **Az aszálymonitoring végpontja visszafejtett** a lap JavaScriptjéből.
 9. **A baziási hozam prózából származik**, ezért a minta törékeny.
 10. **A vízhozamgörbék a mederbevágódással vándorolnak.**
-11. **A két párolgásbecslés eltér.** A különbség a 3. panelen külön számként szerepel,
-    és a mérési rendszer nyitottságát méri.
+11. **A két párolgásbecslés eltér.** A különbség a felületen külön számként szerepel, és
+    a mérési rendszer nyitottságát méri.
 12. **A meder és a felszín alatti víz cseréje a dobozon belüli átrendezés**, ezért a
     maradéktagot nem növeli — a határon átnyúló felszín alatti áramlás viszont igen,
     és azt nem mérjük.
+
+---
 
 ## 11. Licencek
 
@@ -308,6 +260,8 @@ augusztusi átlag 36%-a. Két független mérés, azonos irány.
 | NASA GPM IMERG, GRACE-FO | nyílt, hivatkozási kötelezettséggel |
 | holadelej.hu (paksi üzemállapot) | CC BY 4.0 |
 | **OVF, SHMÚ, INHGA adat** | **tisztázás alatt — adatigénylés folyamatban** |
+
+---
 
 ## 12. Reprodukálhatóság
 
@@ -327,14 +281,17 @@ vagy egyenként:
     python fetch_data.py       # mércék és mérleg → data.json
 
 A hitelesítés a `~/.netrc` és a `~/.cdsapirc` fájlokból érkezik; a kód kulcsot mellőz.
-A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi idősort gyűjti —
-ez az egyetlen adat, amely újraelőállításra alkalmatlan.
+A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi idősort gyűjti
+— ez az egyetlen adat, amely újraelőállításra alkalmatlan.
+
+---
 
 ## 13. Változásnapló
 
 **v1.0.0** — első nyilvános verzió.
 
-Öt javítás érdemel említést, mert mindegyik nagyságrendi vagy bizalmi hibát szüntetett meg:
+Öt javítás érdemel említést, mert mindegyik nagyságrendi vagy bizalmi hibát szüntetett
+meg:
 
 - **A területi átlagolás maszkra váltása.** A befoglaló téglalap 58%-ban külföldi
   területet mért; a párolgás napi értéke 2,20-ról 1,90 mm-re módosult.
@@ -344,14 +301,18 @@ ez az egyetlen adat, amely újraelőállításra alkalmatlan.
 - **A paksi hűtővíz állapotfüggővé tétele.** A korábbi 100 m³/s a névleges üzem értéke;
   a mai, arányosított érték 226 MW mellett 13 m³/s.
 - **A provenance-osztályok felülírásának megszüntetése.** A `fetch_data.py` a vízkivétel
-  osztályát `helyőrző`-re írta felül, holott a `kivetel.py` már `számított`-ként adta át.
-  Innen a szabály: az osztályt a forrás írja, a felület csak megjeleníti.
-- **Az ötödik osztály bevezetése.** A folyók vízhozama korábban `helyszíni mérés` címkét
-  kapott, holott vízállásból származik. Az új `helyszíni adatból számított` osztály ezt
-  a különbséget teszi láthatóvá.
+  osztályát `helyőrző`-re írta felül, holott a `kivetel.py` már `számított`-ként adta
+  át. Innen a szabály: az osztályt a forrás írja, a felület csak megjeleníti.
+- **Az ötödik osztály bevezetése.** A folyók vízhozama korábban `helyszíni mérés`
+  címkét kapott, holott vízállásból származik. Az új `helyszíni adatból számított`
+  osztály ezt a különbséget teszi láthatóvá.
+
+---
 
 ## Hivatkozás
 
 > Papp L. (2026). *Water balance of the Middle Danube Basin: an open,
 > provenance-labelled monitoring method.* EQUORA Institute. Zenodo.
 > https://doi.org/[koncepció-DOI]
+
+Angol nyelvű kivonat: `METHODOLOGY.md`
