@@ -68,6 +68,8 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .sz{display:flex;align-items:baseline;gap:14px;margin:52px 0 6px;
   border-bottom:1px solid var(--tinta);padding-bottom:6px}
 .sz h2{font-family:var(--serif);font-weight:700;font-size:21px;margin:0;letter-spacing:-.01em}
+.alcim.mert{border-left:2px solid var(--vonal);padding-left:14px;
+  font-size:13px;color:var(--halvany)}
 .sz .n{font-family:var(--mono);font-size:11px;color:var(--halvany);margin-left:auto;
   letter-spacing:.06em}
 .lead{color:var(--halvany);font-size:14px;margin:10px 0 22px;max-width:min(78ch,100%)}
@@ -393,11 +395,13 @@ a{color:var(--viz)}
   <div class="racs">
 
     <div class="panel" id="p-pulzus">
-      <h3>1 · Pulzus <span class="pontos">a mérleg öt tagja</span></h3>
-      <p class="alcim">Öt tétel, mind ugyanabban a mértékegységben, hogy összemérhetők legyenek.
-      Egy m³/s annyi, mint másodpercenként egy ezerliteres kád. A párolgás is így
-      szerepel — így derül ki, hogy nyáron az ország több vizet ad le a levegőbe,
-      mint amennyit a Duna hoz.</p>
+      <h3>1 · Pulzus <span class="pontos" id="pulzusnap">a mérleg öt tagja</span></h3>
+      <p class="alcim">Öt tétel <b>ugyanarról a napról</b>, mind azonos
+      mértékegységben. A mérleg csak akkor értelmes, ha minden tagja egyetlen naphoz
+      tartozik: a tegnapi eső egy része ma is a mederben van, ezért a tegnapi csapadékot
+      a mai hozammal összevetni hibás volna. Ezért a folyók hozama is aznapi átlag,
+      az órás mintákból.</p>
+      <p class="alcim mert" id="mertekegyseg"></p>
       <div id="pulzus"></div>
     </div>
 
@@ -698,6 +702,21 @@ a{color:var(--viz)}
 
   /* ── 1 Pulzus ── */
   const M=D.merleg_m3s, MM=D.mm_nap;
+  if(D.merleg_datum) $("#pulzusnap").textContent = D.merleg_datum + " · a legutóbbi teljes nap";
+  // Minden tétel két mértékegységben szerepel. A mm/nap a doboz TERÜLETÉRE szétterített
+  // változat — ez teszi összevethetővé a csapadékot és a párolgást (amelyeket eleve így
+  // mérnek) a folyók hozamával.
+  {
+    const egymm = 0.001 * D.doboz.terulet_km2 * 1e6 / 86400;
+    $("#mertekegyseg").innerHTML =
+      `Minden tétel <b>két számmal</b> szerepel. A <b>m³/s</b> a vízforgalom: egy köbméter
+       másodpercenként annyi, mint egy ezerliteres kád minden másodpercben. A <b>mm/nap</b>
+       ugyanaz az adat a doboz teljes területére szétterítve — mintha aznap ilyen vastag
+       vízréteg borítaná az egészet. ${D.doboz.nev} ${num(D.doboz.terulet_km2)} km²-én
+       <b>1 mm/nap ≈ ${num(Math.round(egymm))} m³/s</b>. A mm/nap azért kell, mert a
+       csapadékot és a párolgást eleve így mérik, és így válik összevethetővé a folyók
+       hozamával.`;
+  }
   const maxAbs=Math.max(...Object.values(M).map(t=>Math.abs(t.ertek)));
   [["csapadek","Csapadék · érkezik"],["hozam_be","Folyókon beérkezik"],
    ["parolgas","Elpárolog · távozik"],["hozam_ki","Folyókon távozik"],
