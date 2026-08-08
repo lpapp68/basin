@@ -290,8 +290,7 @@ def main():
                      "forras": (f"csapadék {d_csap or '?'} · párolgás {d_par or '?'}"
                                 if d_csap != d_par else p["_forrasok"]["napi"]),
                      "utolso": merleg_napja},
-            "havi": {"cimke": "készletváltozás", "forras": p["_forrasok"]["havi"],
-                     "utolso": p["_ervenyes_havi"]},
+            "havi": {"cimke": "keszletvaltozas","forras": ((p.get("keszlet_idosor") or {}).get("forras") or p["_forrasok"]["havi"]),"utolso": ((p.get("keszlet_idosor") or {}).get("veg") or p.get("_ervenyes_havi"))},
         },
         "mercek": mercek,
         "paks": paks_csomopont,

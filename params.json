@@ -5,7 +5,7 @@
   "_figyelmeztetes": "A folyók vízállása és vízhője mérés, óránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított érték. A csapadék és a párolgás műholdas becslés. A vízkivétel éves statisztikából modellezett. A készletváltozás maradéktag, nem megfigyelt országos készletcsökkenés.",
   "_forrasok": {
     "napi": "GPM IMERG Early + EUMETSAT LSA-SAF ET",
-    "havi": "GRACE-FO (még nincs bekötve)"
+    "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
     "ertek": 2.49,
