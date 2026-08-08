@@ -97,15 +97,27 @@ script writes it into `params.json`, and `fetch_data.py` passes it through witho
 overriding. This rule followed a bug in which the interface layer silently downgraded a
 computed term to placeholder.
 
-### Three clocks in the header
+### The balance belongs to a single day
 
-The balance combines data at three speeds: **hourly** (stage, discharge, water
-temperature), **daily** (precipitation, ET), **monthly** (storage change). The three
-clocks are the caveat made visual. Each date is read from the data itself, so a stalled
-source becomes visible in the header immediately.
+**This is one of the method's founding rules.** The five terms arrive at different
+speeds: discharge hourly, precipitation and ET daily. Summing them is meaningful only
+when they all refer to the same day — part of yesterday's rainfall is still in the
+channel today, so pairing yesterday's precipitation with today's discharge is physically
+wrong.
 
-The system raises an error if the precipitation and ET dates diverge: the terms of one
-balance belong to one day.
+The balance is therefore built from the **most recent complete day**: the archive's daily
+row holds that day's mean of the hourly samples together with that day's atmospheric
+terms. Every row states its own date, and the panel states the balance date.
+
+**Hourly data remains visible**, but where it belongs: in the gauge strip and the Paks
+node, where the question is the present state. `data.json` also reports it separately as
+`pillanatkep_m3s`.
+
+**The three clocks in the header** report source freshness — hourly (stage, discharge,
+water temperature), daily (precipitation, ET), monthly (storage anomaly) — not the
+cadence of the balance. Each date is read from the data itself, so a stalled source
+becomes visible immediately. The hourly clock also states how many gauges sit at the
+newest timestamp.
 
 ---
 

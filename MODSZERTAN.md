@@ -288,6 +288,13 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 
 ## 13. Változásnapló
 
+**v1.1.0** — a mérleg egynapos konzisztenciája.
+
+A mérleg korábban a mai órás vízhozamot adta össze a tegnapi csapadékkal és
+párolgással. Ez formálisan lefutott, fizikailag viszont értelmetlen. A javítás után
+minden tag a legutóbbi teljes napból származik; a beérkező hozamnál ez 1 337 helyett
+1 034 m³/s-ot jelentett, a készletváltozásnál 1 679 helyett 1 392-t.
+
 **v1.0.0** — első nyilvános verzió.
 
 Öt javítás érdemel említést, mert mindegyik nagyságrendi vagy bizalmi hibát szüntetett

@@ -150,6 +150,16 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .rud2{grid-column:1/-1;position:relative;height:9px;background:var(--vonal-halk);margin-top:3px}
 .rud2 .nulla{position:absolute;left:50%;top:-2px;bottom:-2px;width:1.5px;background:var(--tinta)}
 .rud2 i{position:absolute;top:0;height:100%}
+/* A mozwás az adatot hordozza: a minta sebessége a tétel nagyságával
+   arányos, tehát a nagyobb hozam láthatóan gyorsabban folyik. */
+@keyframes aramlas{from{background-position:0 0}to{background-position:38px 0}}
+.rud2 i.aramlik{
+  background-image:repeating-linear-gradient(115deg,
+    rgba(255,255,255,.22) 0 8px, rgba(255,255,255,0) 8px 19px);
+  background-size:38px 100%;
+  animation:aramlas var(--ido,4s) linear infinite}
+.rud2 i.balra.aramlik{animation-direction:reverse}
+@media(prefers-reduced-motion:reduce){.rud2 i.aramlik{animation:none}}
 .rud2 i.jobbra{left:50%;background:var(--viz)}
 .rud2 i.balra{right:50%;background:var(--parolgas)}
 .rud2 i.dS{background:var(--ismeretlen)}
@@ -683,6 +693,13 @@ a{color:var(--viz)}
     const rud=el("div","rud2");
     const i=el("i", neg?"balra":"jobbra");
     i.style.width=(Math.abs(t.ertek)/maxAbs*50)+"%";
+    // A mozgás az adatot hordozza: a minta sebessége a tétel nagyságával arányos,
+    // tehát a nagyobb hozam láthatóan gyorsabban folyik. Nulla értéknél áll.
+    if(Math.abs(t.ertek) > 0){
+      const mp = Math.max(1.6, 9 - Math.abs(t.ertek)/maxAbs*7);
+      i.style.setProperty("--ido", mp.toFixed(2)+"s");
+      i.classList.add("aramlik");
+    }
     if(ossz) i.classList.add("dS");
     rud.appendChild(el("span","nulla")); rud.appendChild(i); r.appendChild(rud);
     // A napi tagok (csapadék, párolgás) egy NAPRA vonatkoznak, a folyótagok az
