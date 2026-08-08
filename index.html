@@ -318,8 +318,7 @@ a{color:var(--viz)}
   <div class="sz"><h2>A teljes medence</h2><span class="n">két szelvény</span></div>
   <p class="lead">A Középső-Duna-medence hidrológiailag majdnem zárt: a Duna Dévénynél
   belép, Baziásnál — a Tisza, a Száva és a Morava torkolata után — kilép. A Tisza, a
-  Dráva és a Száva vízgyűjtője teljes egészében belül marad, ezért a doboz mérlegéhez
-  mindössze két szelvény kell. Mindkettő nyilvános.</p>
+  Dráva és a Száva vízgyűjtője teljes egészében belül marad, ezért a medence <b>folyami határforgalmának</b> meghatározásához mindössze két szelvény kell: a Duna Dévénynél és Baziásnál. Mindkettő nyilvános. A teljes vízmérleghez ezen felül a csapadék, a párolgás és a készletváltozás is kell.</p>
   <div id="mdb"></div>
 </section>
 
@@ -338,7 +337,7 @@ a{color:var(--viz)}
 </section>
 
 <section>
-  <div class="sz"><h2>Négy panel</h2><span class="n">v2</span></div>
+  <div class="sz"><h2>Négy panel</h2><span class="n">a mérleg és a bizonytalansága</span></div>
   <div class="jelmagy">
     <span><b class="pr mert">helyszíni mérés</b> műszer mérte a helyszínen: vízállás, vízhő,
       talajnedvesség</span>
@@ -420,6 +419,8 @@ a{color:var(--viz)}
 <script>
 (function(){
   const D = window.BASIN_DATA;
+  const HONAPOK = ["január","február","március","április","május","június",
+  "július","augusztus","szeptember","október","november","december"];
   const $ = s => document.querySelector(s);
   const el = (t,c,h) => { const n=document.createElement(t); if(c)n.className=c;
                           if(h!=null)n.innerHTML=h; return n; };
@@ -484,7 +485,7 @@ a{color:var(--viz)}
     '<div class="warn">Nincs adat. Futtasd előbb: <code>python3 fetch_data.py</code></div>'; return; }
 
   /* figyelmeztetés + órák */
-  $("#warn").innerHTML = "<b>V1</b> — " + D.figyelmeztetes;
+  $("#warn").innerHTML = "<b>Adatlefedettség: 1. szint</b> — részben záródó mérleg — " + D.figyelmeztetes;
   const O = D.orak;
   const orak = [["Órás","el",O.oras],["Napi","",O.napi],["Havi","",O.havi]];
   orak.forEach(([cim,cls,o])=>{
@@ -800,8 +801,7 @@ a{color:var(--viz)}
             ${be.vizho_c!=null?"· "+dec(be.vizho_c,1)+" °C":""}<br>${be.forras}</div></div>
         <div class="mdbdb"><div class="u">Kilépő · ${ki.nev}</div>
           <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
-          <div class="m">${arany!=null?`A sokéves havi átlag <b>${dec(arany,0)}%</b>-a
-            (${num(ki.sokeves_atlag_m3s)} m³/s).<br>`:""}${ki.forras}</div></div>
+          <div class="m">${arany!=null?`A ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b>-a: ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>`:""}${ki.forras}</div></div>
         <div class="mdbdb kiemelt"><div class="u">A két szelvény különbsége</div>
           <div class="nagy">${sgn(MF.kulonbseg_m3s ?? MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
           <div class="m"><b>Ez nem napi hozzáfolyás.</b> A Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél: az átfolyási idő e szakaszon egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.</div></div>
@@ -893,9 +893,9 @@ a{color:var(--viz)}
           <div class="tlista">${sorok}</div>${terkep}
         </div>
         <div class="tblokk">
-          <div class="u">Mennyi eső pótolná</div>
+          <div class="u">Hány napnyi nedvesség hiányzik</div>
           ${napok ? `<div class="nagy">${dec(napok,0)}<span class="egys">&nbsp;nap</span></div>
-            <div class="m">A jelenlegi vízhiány ennyi napi párolgásnak felel meg a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos ütemmel. Ez pótlási időegyenérték, nem tartózkodási idő: azt mondja meg, mekkora csapadék töltené vissza a gyökérzónát.</div>` : ""}
+            <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>` : ""}
           <div class="trekesz">
             <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
             <div><b>hetek</b> <span>a talaj. A fenti hiány ennyi idő alatt épült fel, és ennyi alatt is tölthető vissza. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
