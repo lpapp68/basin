@@ -59,6 +59,12 @@ if [ "$MOD" = "napi" ]; then
   futtat "talaj vízhiány"    python aszaly.py       "$NAP"
   futtat "vízkivétel"        python kivetel.py      "$NAP"
 
+  # A teljes medence két fala: SHMÚ Dévény és INHGA Baziás. Napi ritmusú, esőd.
+  # A magyar doboz ettől függetlenül működik; kimaradása csak a medence-
+  # szekciót hagyja a korábbi állapotában.
+  futtat "teljes medence falai" python kulfold.py
+
+
   # A GRACE havi termék, 40–60 napos késéssel — havonta egyszer elég.
   if [ "$(cat "$GRACE_JELZO" 2>/dev/null)" != "$HONAP" ]; then
     if futtat "GRACE készlet-idősor" python grace.py; then
