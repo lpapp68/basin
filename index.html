@@ -862,7 +862,7 @@ a{color:var(--viz)}
             ${be.vizho_c!=null?"· "+dec(be.vizho_c,1)+" °C":""}<br>${be.forras}</div></div>
         <div class="mdbdb"><div class="u">Kilépő · ${ki.nev}</div>
           <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
-          <div class="m">${arany!=null?`A ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b>-a: ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>`:""}${ki.forras}</div></div>
+          <div class="m">${arany!=null?`${"aáeéiíoóöőuúüű".includes(HONAPOK[new Date().getMonth()][0]) ? "Az" : "A"} ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b>-a: ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>`:""}${ki.forras}</div></div>
         <div class="mdbdb kiemelt"><div class="u">A két szelvény különbsége</div>
           <div class="nagy">${sgn(MF.kulonbseg_m3s ?? MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
           <div class="m"><b>Ez nem napi hozzáfolyás.</b> A Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél: az átfolyási idő e szakaszon egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.</div></div>
@@ -946,7 +946,7 @@ a{color:var(--viz)}
           ${folyok}
           ${pontok}
         </svg>
-        <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország egészét lefedi, és a köztük lévő szórás nagyobb, mint az átlag: a szárazság nem országosan egyforma, hanem tájegységenként.</em>
+        <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország <b>különböző térségeiből ad mintát</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos átlagnak nem tekinthető.</em>
       </div>`;
     }
 
@@ -965,12 +965,12 @@ a{color:var(--viz)}
           <div class="tlista">${sorok}</div>${terkep}
         </div>
         <div class="tblokk">
-          <div class="u">Hány napnyi nedvesség hiányzik</div>
+          <div class="u">A mai párolgással számolva hány napnyi nedvesség hiányzik a talajból?</div>
           ${napok ? `<div class="nagy">${dec(napok,0)}<span class="egys">&nbsp;nap</span></div>
             <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>` : ""}
           <div class="trekesz">
             <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
-            <div><b>hetek</b> <span>a talaj. A fenti hiány ennyi idő alatt épült fel, és ennyi alatt is tölthető vissza. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
+            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
             <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
           <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol
@@ -1015,6 +1015,7 @@ $("#lab").innerHTML =
     `Doboz: ${D.doboz.nev}, ${num(D.doboz.terulet_km2)} km². ${D.doboz.megjegyzes}`+
     `<br><br><b>Nyitott falak</b> — amit a mérleg nem fog be, és ezért a maradéktagban `+
     `jelenik meg: ` + D.nyitott_falak.join(" · ") +
+    (D.belso_megjegyzes ? `<br><br>${D.belso_megjegyzes}` : "") +
     // A futási hibák technikai részletei a naplóba valók. A lapon annyi látszik,
     // hogy melyik rész frissült részlegesen — az aktuális adatok érvényessége
     // ettől függetlenül a fenti órákból olvasható.

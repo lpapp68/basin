@@ -85,12 +85,18 @@ MERCEK = [
 ]
 
 # Amit a doboz falai NEM fognak be. Ezek a hiányok a maradéktagban jelennek meg.
+# Nyitott fal = a doboz HATÁRÁN átlépő víz, amit nem mérünk. A belső vízfolyások
+# nem tartoznak ide: azok a kontrolltérfogaton belül mozgatják a vizet, tehát a
+# mérleget nem nyitják meg.
 NYITOTT_FALAK = [
     "Hernád (Szlovákia felől) — nincs bekötve",
     "Kraszna, Fekete-Körös, Berettyó (Románia felől) — nincs bekötve",
+    "Határon átnyúló felszín alatti vízáramlás — egyáltalán nem mérjük",
     "Mura külön szelvényben — az őrtilosi hozam már tartalmazza",
-    "Belső hozzáfolyás (Sió, Zagyva, Kettős-Körös stb.) — nem mérjük külön",
 ]
+BELSO_MEGJEGYZES = ("Belső vízfolyások (Sió, Zagyva, Kettős-Körös és a többi): ezeket "
+                    "külön nem bontjuk, mert a magyarországi kontrolltérfogaton belül "
+                    "mozgatják a vizet — a mérleget nem nyitják meg.")
 
 # Hőterhelési korlát: a melegvíz-csatorna torkolatától 500 m-re a Duna nem lehet
 # 30 C-nál melegebb. Ez a vízoldali második fal a vízszint mellett.
@@ -375,6 +381,7 @@ def main():
         "kivetel_modell": p.get("kivetel_modell"),
         "figyelmeztetes": p["_figyelmeztetes"],
         "nyitott_falak": NYITOTT_FALAK,
+        "belso_megjegyzes": BELSO_MEGJEGYZES,
         "hibak": hibak,
     }
 
