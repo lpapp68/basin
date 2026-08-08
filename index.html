@@ -158,6 +158,15 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 /* A mozgás az adatot hordozza: a minta sebessége a tétel nagyságával arányos.
    A blokk a background-rövidítések UTÁN áll, különben azok törölnék a mintát. */
 @keyframes aramlas{from{background-position:0 0}to{background-position:38px 0}}
+/* A párolgás felfelé száll: a minta függőlegesen mozog, és felfelé halványul —
+   a sebességet ugyanaz az érték adja, mint a vízszintes áramlásnál. */
+@keyframes parolog{from{background-position:0 0}to{background-position:0 -26px}}
+.rud2 i.parolog{
+  background-image:repeating-linear-gradient(0deg,
+    rgba(255,255,255,.30) 0 3px, rgba(255,255,255,0) 3px 13px);
+  background-size:100% 26px;
+  animation:parolog var(--ido,4s) linear infinite}
+@media(prefers-reduced-motion:reduce){.rud2 i.parolog{animation:none}}
 .rud2 i.aramlik{
   background-image:repeating-linear-gradient(115deg,
     rgba(255,255,255,.22) 0 8px, rgba(255,255,255,0) 8px 19px);
@@ -251,6 +260,11 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .tlista{margin-top:16px;padding-top:12px;border-top:1px solid var(--vonal-halk)}
 .tterkep{margin-top:16px;padding-top:14px;border-top:1px solid var(--vonal-halk)}
 .tterkep svg{display:block;max-width:420px;margin:0 auto}
+/* A folyó vonalán haladó szaggatás: az eltolás animálása kelti az áramlás
+   érzetét. A sebességet a mért kilépő vízhozam szabja meg. */
+@keyframes folyik{to{stroke-dashoffset:-64}}
+.folyo{stroke-dasharray:9 7;animation:folyik var(--folyoido,12s) linear infinite}
+@media(prefers-reduced-motion:reduce){.folyo{animation:none;stroke-dasharray:none}}
 .tterkep em{display:block;font-style:normal;font-size:11.5px;color:var(--halvany);
   margin-top:8px;line-height:1.5}
 .tsor{display:grid;grid-template-columns:9.5em 1fr 4.5em;gap:8px;align-items:center;
@@ -700,7 +714,8 @@ a{color:var(--viz)}
     if(Math.abs(t.ertek) > 0){
       const mp = Math.max(1.6, 9 - Math.abs(t.ertek)/maxAbs*7);
       i.style.setProperty("--ido", mp.toFixed(2)+"s");
-      i.classList.add("aramlik");
+      // A párolgás függőleges jelenség: ott a minta FELFELÉ száll, nem oldalra.
+      i.classList.add(k==="parolgas" ? "parolog" : "aramlik");
     }
     if(ossz) i.classList.add("dS");
     rud.appendChild(el("span","nulla")); rud.appendChild(i); r.appendChild(rud);
@@ -872,6 +887,16 @@ a{color:var(--viz)}
     // aszálymonitoring-hálózatának koordinátái.
     const TK = D.terkep;
     let terkep = "";
+    // A folyók vonala a Natural Earth 10m adatbázisából. Az áramlás sebességét a
+    // MÉRT kilépő vízhozam adja: kisvíznél lassan, árvíznél gyorsan halad a minta.
+    // Nulla hozamnál állna — a mozgás tehát adatot mutat, nem díszít.
+    const Qki = Math.abs((D.merleg_m3s.hozam_ki||{}).ertek || 0);
+    const ido = Math.max(2.2, 26 - Qki/90).toFixed(1);
+    const folyok = (TK && TK.folyok ? TK.folyok : []).map(f=>
+      `<path d="${f.path}" fill="none" stroke="var(--viz)"
+        stroke-width="${f.rang<=2?3.4:f.rang<=6?2.2:1.5}"
+        stroke-opacity="${f.rang<=2?0.55:0.34}" stroke-linecap="round"
+        class="folyo" style="--folyoido:${ido}s"/>`).join("");
     if(TK && TK.path){
       // Címkeelhelyezés tíz ponthoz. Minden címke a ponttól jobbra vagy balra
       // állhat; sorban haladva azt az oldalt választjuk, ahol a doboz még szabad,
@@ -918,6 +943,7 @@ a{color:var(--viz)}
           aria-label="Az aszálymonitoring-állomások elhelyezkedése Magyarországon">
           <path d="${TK.path}" fill="var(--vonal-halk)" stroke="var(--halvany)"
             stroke-width="2" stroke-linejoin="round"/>
+          ${folyok}
           ${pontok}
         </svg>
         <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország egészét lefedi, és a köztük lévő szórás nagyobb, mint az átlag: a szárazság nem országosan egyforma, hanem tájegységenként.</em>
