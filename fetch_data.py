@@ -16,6 +16,7 @@ Forrás:
 """
 
 import json
+import pathlib
 import re
 import sys
 import urllib.request
@@ -322,6 +323,8 @@ def main():
         "keszlet_idosor": p.get("keszlet_idosor"),
         "mdb_falak": p.get("mdb_falak"),
         "talaj_vizhiany": p.get("talaj_vizhiany"),
+        "terkep": (json.loads(pathlib.Path("terkep.json").read_text(encoding="utf-8"))
+                   if pathlib.Path("terkep.json").exists() else None),
         "ontozesigeny": p.get("ontozesigeny"),
         "kivetel_modell": p.get("kivetel_modell"),
         "figyelmeztetes": p["_figyelmeztetes"],
