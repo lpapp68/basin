@@ -288,4 +288,4 @@ the only data in the project that cannot be regenerated.
 
 > Papp, L. (2026). *Water balance of the Middle Danube Basin: an open,
 > provenance-labelled monitoring method.* EQUORA Institute. Zenodo.
-> https://doi.org/[concept DOI]
+> https://doi.org/10.5281/zenodo.21852060

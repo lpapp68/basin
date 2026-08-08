@@ -101,7 +101,7 @@ Gyors ellenőrzés:
 
 1. A koncepció-DOI beírása három helyre:
    - `MODSZERTAN.md` és `METHODOLOGY.md` hivatkozás-blokkja
-   - `levelek.md` három `[DOI: …]` helyőrzője
+   - `levelek.md` három `10.5281/zenodo.21852060` helyőrzője
    - `index.html` forrás-szekciója, „Módszertan" linkként
 2. A három adatigénylő levél kiküldése:
    - OVF — `adatszolgaltatas@ovf.hu` (magyar)

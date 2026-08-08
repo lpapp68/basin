@@ -1,5 +1,8 @@
 # basin.equora.institute — vízmérleg v2.1
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21852060.svg)](https://doi.org/10.5281/zenodo.21852060)
+[![Live](https://img.shields.io/badge/live-basin.equora.institute-blue)](https://basin.equora.institute/)
+
 Középső-Duna-medence vízmérleg. Egyetlen pipeline, egyetlen kimenet (`data.json`),
 két fogyasztó: az Institute-dashboard és — később — az iterators.org darab.
 

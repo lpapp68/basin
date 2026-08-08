@@ -22,7 +22,7 @@ kérdést, ami nélkül a lap egyik állítása nem tartható.
 > (ORCID 0009-0005-6329-5808). Egy nyilvános, nonprofit kutatási eszközt fejlesztünk,
 > amely a Középső-Duna-medence vízmérlegét mutatja be: mennyi víz érkezik a
 > határszelvényeken, mennyi párolog el, és mennyi távozik. A módszertan nyilvános és
-> hivatkozható \[DOI: …\], a forráskód szintén \[github.com/…\].
+> hivatkozható \10.5281/zenodo.21852060, a forráskód szintén \[github.com/…\].
 >
 > Az eszköz jelenleg 22 vízmérce nyilvánosan elérhető óras adatsorát használja a
 > vizugy.hu oldalról (vízállás, vízhozam, vízhőfok). Három kérdésben kérjük
@@ -78,7 +78,7 @@ Ez a doboz *belépő* fala. Egyetlen szelvény.
 > we do not need real-time data.
 >
 > The tool is public, free, and non-commercial. All data sources are named on the
-> page, and the methodology is openly documented \[DOI: …\]. The Hungarian side is
+> page, and the methodology is openly documented \10.5281/zenodo.21852060. The Hungarian side is
 > already built on 22 gauges published by the Hungarian water authority; your single
 > cross-section would close the upstream wall of the box.
 >
@@ -115,7 +115,7 @@ Ez a *kilépő* fal. Szintén egyetlen szelvény.
 > Our Hungarian segment is complete (22 gauges); your section would close the box.
 >
 > The tool is public, free and non-commercial; sources are named on the page and the
-> methodology is openly documented \[DOI: …\]. We would credit INHGA explicitly and
+> methodology is openly documented \10.5281/zenodo.21852060. We would credit INHGA explicitly and
 > are happy to share results and code.
 >
 > With thanks and best regards,
