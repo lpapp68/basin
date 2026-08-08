@@ -288,7 +288,14 @@ def main():
         "doboz": BOX, "dobozok": DOBOZOK, "aktiv_doboz": AKTIV_DOBOZ,
         "orak": {
             "oras": {"cimke": "vízállás · hozam · vízhő", "forras": "OVF / vizugy.hu",
-                     "utolso": mercek[0]["utolso_ido"]},
+                     # A mércék nem egyszerre frissülnek az OVF-nél: a legtöbb óránként,
+                     # néhány csak hat- vagy tizenét óránként. A fejléc a LEGFRISSEBBet
+                     # mutatja, és kiírja, hány mérce tart ott — így a késő mércék
+                     # láthatóak maradnak.
+                     "utolso": (max((m.get("utolso_ido") or "") for m in mercek) or None),
+                     "mercek_friss": sum(1 for m in mercek
+                         if (m.get("utolso_ido") or "") == max((n.get("utolso_ido") or "") for n in mercek)),
+                     "mercek_osszes": len(mercek)},
             "napi": {"cimke": "csapadék · párolgás",
                      "forras": (f"csapadék {d_csap or '?'} · párolgás {d_par or '?'}"
                                 if d_csap != d_par else p["_forrasok"]["napi"]),

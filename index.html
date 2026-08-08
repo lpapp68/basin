@@ -514,7 +514,8 @@ a{color:var(--viz)}
     const n = el("div","ora "+cls);
     n.appendChild(el("div","u",cim+" · "+o.cimke));
     n.appendChild(el("div","v",o.utolso||"—"));
-    n.appendChild(el("div","s",o.forras));
+    n.appendChild(el("div","s", o.forras +
+      (o.mercek_friss ? ` · ${o.mercek_friss}/${o.mercek_osszes} mérce tart itt` : "")));
     $("#orak").appendChild(n);
   });
 
