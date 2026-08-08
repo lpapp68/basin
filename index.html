@@ -130,7 +130,11 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .nagy{font-family:var(--mono);font-size:clamp(38px,6.2vw,60px);font-weight:600;line-height:1;
   letter-spacing:-.02em}
 .nagy.neg{color:var(--rekord)}
-.egys{font-family:var(--mono);font-size:14px;color:var(--halvany);margin-left:6px}
+.egys{font-family:var(--mono);font-size:14px;color:var(--halvany);margin-left:6px;
+  letter-spacing:normal}
+/* A negativ betukoz kiszamitott ertekkent oroklodik, ezert a kis egysegjelolokon
+   egymasra csusznanak a betuk. Minden ilyen helyen visszaallitjuk. */
+.nagy small, .szam small, .pk .v small, .res .ert small, .egys small{letter-spacing:normal}
 
 .rud2{grid-column:1/-1;position:relative;height:9px;background:var(--vonal-halk);margin-top:3px}
 .rud2 .nulla{position:absolute;left:50%;top:-2px;bottom:-2px;width:1.5px;background:var(--tinta)}
