@@ -286,9 +286,12 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
   text-decoration:none;border-bottom:1px solid transparent}
 .forrasok a:hover{border-bottom-color:var(--viz)}
 .forrasmegj{font-size:12px;color:var(--halvany);margin-top:18px}
-.logo{display:block;width:fit-content;color:var(--tinta);margin:0 0 18px}
-.logo img{display:block;height:64px;width:auto}
-@media(max-width:700px){.logo img{height:50px}}
+.fejcim{display:flex;align-items:center;gap:36px;margin-top:22px}
+.logo{display:block;flex:0 0 auto;color:var(--tinta);margin:0}
+.fejcim h1{margin:0}
+@media(max-width:780px){.fejcim{flex-direction:column;align-items:flex-start;gap:20px}}
+.logo img{display:block;height:92px;width:auto}
+@media(max-width:780px){.logo img{height:60px}}
 .alairas{display:flex;align-items:center;gap:14px;margin-top:56px;padding-top:20px;
   border-top:2px solid var(--tinta)}
 .alairas img{display:block;flex:0 0 auto;height:56px;width:auto}
@@ -315,10 +318,10 @@ a{color:var(--viz)}
 <div class="wrap">
 <header>
   <div class="eyebrow">EQUORA Institute · vízmérleg v2 · basin.equora.institute</div>
-  <a class="logo" href="https://equora.institute" target="_blank"
+  <div class="fejcim"><a class="logo" href="https://equora.institute" target="_blank"
     rel="noopener" aria-label="EQUORA Institute">
-    <img src="logo.png" alt="" width="221" height="100"></a>
-  <h1>Mennyi víz jön be, mennyi párolog el,<br>és mennyi folyik tovább</h1>
+    <img src="logo.png" alt="" width="204" height="92"></a>
+  <h1>Mennyi víz jön be, mennyi párolog el,<br>és mennyi folyik tovább</h1></div>
   <div class="fejracs">
   <p class="dek">Egy ország vízháztartását az dönti el, meddig marad itt a víz. A folyó vize egy hét alatt továbbmegy: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter mást ér a három helyen — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt doboz: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. A mérlege ezért felírható. Hogy melyik tagját tudjuk tényleg megmérni, az külön kérdés — és ez az oldal erről is beszámol.</p>
   <div class="osszefoglalo" id="osszefoglalo"></div>
