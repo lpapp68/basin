@@ -33,7 +33,7 @@ DOBOZOK = {
         "nev": "Magyarország",
         "terulet_km2": 93030,
         "allapot": "aktív",
-        "falak": "11 belépő + 3 kilépő magyar mérce, mind mért órás vízhozammal",
+        "falak": "11 belépő + 3 kilépő magyar mérce, órás vízhozammal. Nyitott falak: a Hernád, a Kraszna, a Fekete-Körös, a Berettyó, és a határon átnyúló felszín alatti vízáramlás - ezek a maradéktagban jelennek meg",
         "megjegyzes": "Nem a medence, hanem a medence magyar szelete. Ezt tudjuk MA mérni.",
     },
     "mdb": {

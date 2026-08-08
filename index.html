@@ -749,7 +749,14 @@ a{color:var(--viz)}
   hl.appendChild(el("div","res",
     `<div class="cim">Ennyi hiányzik a mérleg zárásához</div>`+
     `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
-    `<p>Ez a szám nem vízről szól, hanem tudásról: azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
+    `<p>Ez a szám nem vízről szól, hanem tudásról: azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
+     cseréje <b>a dobozon belüli átrendezés</b>: ami a Dunából elszivárog a magyar
+     szakaszon, az a dobozban marad, tehát ezt a számot nem növeli. A csere iránya
+     szakaszonként más — a Szigetközben a feliszapolódott meder majdnem elzárja,
+     Paksnál a mélyülő meder megnyitja. Ami viszont <b>tényleg hiányzik innen</b>:
+     a határon átnyúló felszín alatti vízáramlás, amit egyáltalán nem mérünk.</p>
+     <p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási
+     programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
      <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
      ebből veszteség ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
@@ -835,7 +842,11 @@ a{color:var(--viz)}
             <div><b>hetek</b> <span>a talaj. A fenti hiány ennyi idő alatt épült fel, és ennyi alatt is tölthető vissza. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
             <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
-          <p class="tmegj">A három rekesz között ezerszeres a különbség abban, meddig marad ott a víz. Ezért nem csővezeték-kérdés az aszály: a folyó vize a gyors rekeszben van, a szárazság a lassúban. Nem attól lesz nedves a talaj, hogy mellette folyik a Duna.</p>
+          <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol
+          megcsapolja a felszín alatti vizet, hol rátáplál, és ez a mederanyagtól meg a
+          vízszinttől függ. A Homokhátság viszont 40–60 kilométerre és magasabban van
+          mindkét folyótól — oda ez a kapcsolat el sem ér.
+          A három rekesz között ezerszeres a különbség abban, meddig marad ott a víz. Ezért nem csővezeték-kérdés az aszály: a folyó vize a gyors rekeszben van, a szárazság a lassúban. Nem attól lesz nedves a talaj, hogy mellette folyik a Duna.</p>
         </div>
       </div>` +
       (OI ? `<div class="oigeny">
