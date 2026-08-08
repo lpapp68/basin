@@ -13,3 +13,7 @@ archiv/log.txt
 data.json
 data.js
 grace/
+
+# Natural Earth folyoadatbazis: 7 MB, csak a folyok.py egyszeri futasahoz kell.
+# A kivagott vonalak a terkep.json-ben vannak, az megy a repoba.
+ne_rivers.geojson
