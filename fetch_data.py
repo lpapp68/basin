@@ -266,6 +266,37 @@ def main():
     fogyaszto = sum(k.get("fogyaszto_m3s") or 0 for k in kivetel)
     # Előjel-konvenció: ami a dobozba kerül, POZITÍV; ami elhagyja, NEGATÍV.
     # Az öt tag így összeadva adja ki a készletváltozást.
+    # ── A mérleg egyetlen naphoz tartozik ────────────────────────────────
+    # Az öt tag különböző sebességű forrásból jön: a hozam órás, a csapadék és a
+    # párolgás napi. Ezek összeadása csak akkor értelmes, ha MIND UGYANARRA A NAPRA
+    # vonatkozik — a tegnapi eső egy része ma is a mederben van, tehát a tegnapi
+    # csapadékot a mai hozammal összevetni fizikailag hibás.
+    #
+    # Ezért a mérleget a legutóbbi teljes napból számoljuk: az archívum napi sora
+    # tartalmazza az aznapi órás minták átlagát és az aznapi légköri tagokat.
+    # Az órás adat ettől függetlenül látszik a mércesorban és a paksi csomópontban.
+    Q_be_most, Q_ki_most = Q_be, Q_ki
+    merleg_nap = None
+    try:
+        _napok = archivum.napi_osszegzes(p)
+        for _r in reversed(_napok):
+            if all(_r.get(k) is not None for k in ("q_be", "q_ki", "csapadek_mm", "parolgas_mm")):
+                merleg_nap = _r
+                break
+    except Exception as e:
+        hibak.append(f"Napi mérleg: {e}")
+
+    if merleg_nap:
+        _T = BOX["terulet_km2"] * 1e6
+        _mm = lambda v: v / 1000 * _T / 86400          # mm/nap → m³/s
+        P     = _mm(merleg_nap["csapadek_mm"])
+        ET    = _mm(merleg_nap["parolgas_mm"])
+        Q_be  = merleg_nap["q_be"]
+        Q_ki  = abs(merleg_nap["q_ki"])
+        merleg_datum = merleg_nap["nap"]
+    else:
+        merleg_datum = None
+
     be_P, be_Q = P, Q_be
     ki_ET, ki_Q, ki_fogy = -ET, -Q_ki, -fogyaszto
     dS = be_P + be_Q + ki_ET + ki_Q + ki_fogy
@@ -310,14 +341,19 @@ def main():
         "mm_nap": {"csapadek": mm(be_P), "hozam_be": mm(be_Q), "parolgas": mm(ki_ET),
                    "hozam_ki": mm(ki_Q), "keszletvaltozas": mm(dS)},
         "elojel": ("Ami a dobozba kerül: pozitív, ami elhagyja: negatív. Az öt tag összege a ""készletváltozás — ez NEM megfigyelt országos készletcsökkenés, hanem MARADÉKTAG, ""amelyben a fenti tagok minden hibája összegyűlik. A tagok időléptéke eltér: órás, ""napi és havi adat kerül egyetlen egyenletbe."),
+        "merleg_datum": merleg_datum,
+        "pillanatkep_m3s": {"hozam_be": round(Q_be_most), "hozam_ki": round(Q_ki_most)},
         "merleg_m3s": {
             "csapadek": {"ertek": round(be_P), **meta_of(p["csapadek_mm_nap"])},
-            "hozam_be": {"ertek": round(be_Q), "provenance": "szarmaztatott", "kor_ora": 1,
-                         "forras": "OVF órás vízhozam (vízállásból, vízhozamgörbével): " + ", ".join(m["nev"] for m in be)},
+            "hozam_be": {"ertek": round(be_Q), "provenance": "szarmaztatott",
+                         "kor_ora": 24, "datum": merleg_datum,
+                         "forras": "OVF vízhozam napi átlaga az órás mintákból: " + ", ".join(m["nev"] for m in be)},
             "parolgas": {"ertek": round(ki_ET), **meta_of(p["parolgas_mm_nap"])},
-            "hozam_ki": {"ertek": round(ki_Q), "provenance": "szarmaztatott", "kor_ora": 1,
-                         "forras": "OVF órás vízhozam (vízállásból, vízhozamgörbével): " + ", ".join(m["nev"] for m in ki)},
-            "keszletvaltozas": {"ertek": round(dS), "provenance": "modellezett", "kor_ora": None,
+            "hozam_ki": {"ertek": round(ki_Q), "provenance": "szarmaztatott",
+                         "kor_ora": 24, "datum": merleg_datum,
+                         "forras": "OVF vízhozam napi átlaga az órás mintákból: " + ", ".join(m["nev"] for m in ki)},
+            "keszletvaltozas": {"ertek": round(dS), "provenance": "modellezett",
+                                "kor_ora": 24, "datum": merleg_datum,
                                 "forras": "maradéktag a fenti tételekből"},
         },
         "hova_lett_m3s": {
