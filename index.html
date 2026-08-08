@@ -916,11 +916,14 @@ a{color:var(--viz)}
         zárva vannak, nem is növekszik. A szárazság nem a hervadásnál kezdődik, hanem itt.</span>
         <span>Ahhoz, hogy a szántóföldeken ne legyen vízhiány, naponta
         <b>${num(Math.round(OI.tartomany.also.m3s*86400/1e6))}–${num(Math.round(OI.tartomany.felso.m3s*86400/1e6))} millió köbméter</b>
-        vízre lenne szükség. Ez nagyjából annyi, amennyi a Dunán, a Tiszán és a többi folyón
-        együtt <b>beérkezik az országba</b>. Öntözésre ténylegesen ennek körülbelül egy
-        századát használjuk.</span>
-        <span><b>Ez nem azt jelenti, hogy többet kellene öntözni — azt jelenti, hogy nem
-        lehetne.</b> Ennyi víz a megfelelő helyen és időben hiányzik az országos öntözéshez. A magyar növénytermesztés ezért csapadékfüggő,
+        vízre lenne szükség. A folyók jelenlegi hozama mellett — a Dunán, a Tiszán és a
+        többi vízfolyáson együtt <b>${num(M.hozam_be.ertek)} m³/s</b> érkezik az országba —
+        ennyi víz nagyjából
+        <b>${dec(OI.tartomany.also.m3s/M.hozam_be.ertek,1)}–${dec(OI.tartomany.felso.m3s/M.hozam_be.ertek,1)} nap</b>
+        alatt folyik be. Vagyis az ország egy-két napi teljes folyóvíz-behozatalát kellene
+        naponta a földekre juttatni. Öntözésre ténylegesen ennek körülbelül egy századát
+        használjuk.</span>
+        <span><b>Ez a szám a vízhiány méretét mutatja, nem öntözési célt.</b> Ekkora mennyiség a megfelelő helyen és időben hiányzik az országos öntözéshez — a magyar növénytermesztés ezért csapadékfüggő,
         és aszályban a hiányt nem öntözéssel pótolja, hanem terméskieséssel nyeli le.</span>
         <em>${pr(OI.provenance)} Nagyságrendi számítás, nem öntözési terv: a műholdas párolgás
         vegyes felszínborításra vonatkozik, és a szántóterület még helyőrző.</em></div>` : "") +
