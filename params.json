@@ -65,7 +65,7 @@
       "fogyaszto_hanyad": 0.9,
       "eves_millio_m3": 154.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 154 millió m³, ebből 24% esik erre a hónapra; a kivett vízből 90% véglegesen távozik. ÁSZ-jelentés a Nemzeti Vízstratégia végrehajtásáról, 2019–2023 átlag: a mezőgazdasági vízhasználat 30%-a, 154 millió m³. A KSH kimondja, hogy ebből kimaradnak az engedély nélküli vízkivételek, amelyeket tanulmányok a bejelentett mennyiség duplájára becsülnek."
+      "megjegyzes": "Éves 154 millió m³, ebből 24% esik erre a hónapra; a kivett vízből 90% nem tér vissza közvetlenül a magyar vízrendszerbe a vizsgált időszakon belül. ÁSZ-jelentés a Nemzeti Vízstratégia végrehajtásáról, 2019–2023 átlag: a mezőgazdasági vízhasználat 30%-a, 154 millió m³. A KSH kimondja, hogy ebből kimaradnak az engedély nélküli vízkivételek, amelyeket tanulmányok a bejelentett mennyiség duplájára becsülnek."
     },
     {
       "nev": "Halastavak",
@@ -75,7 +75,7 @@
       "fogyaszto_hanyad": 0.7,
       "eves_millio_m3": 356.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 356 millió m³, ebből 17% esik erre a hónapra; a kivett vízből 70% véglegesen távozik. ÁSZ-jelentés, 2019–2023 átlag: a mezőgazdasági vízhasználat (510 millió m³) kb. 70%-a. Ez bruttó szolgáltatott víz: egy része leeresztéskor visszatér a vízrendszerbe, más része talajvizet táplál."
+      "megjegyzes": "Éves 356 millió m³, ebből 17% esik erre a hónapra; a kivett vízből 70% nem tér vissza közvetlenül a magyar vízrendszerbe a vizsgált időszakon belül. ÁSZ-jelentés, 2019–2023 átlag: a mezőgazdasági vízhasználat (510 millió m³) kb. 70%-a. Ez bruttó szolgáltatott víz: egy része leeresztéskor visszatér a vízrendszerbe, más része talajvizet táplál."
     },
     {
       "nev": "Lakossági ivóvíz",
@@ -85,7 +85,7 @@
       "fogyaszto_hanyad": 0.25,
       "eves_millio_m3": 367.6,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 368 millió m³, ebből 9% esik erre a hónapra; a kivett vízből 25% véglegesen távozik. KSH: egy főre jutó éves lakossági közüzemi vízfogyasztás 38,7 m³ (2022); 2024-ben kb. 105 liter/fő/nap."
+      "megjegyzes": "Éves 368 millió m³, ebből 9% esik erre a hónapra; a kivett vízből 25% nem tér vissza közvetlenül a magyar vízrendszerbe a vizsgált időszakon belül. KSH: egy főre jutó éves lakossági közüzemi vízfogyasztás 38,7 m³ (2022); 2024-ben kb. 105 liter/fő/nap."
     },
     {
       "nev": "Ipar (erőművi hűtés nélkül)",
@@ -95,7 +95,7 @@
       "fogyaszto_hanyad": 0.15,
       "eves_millio_m3": 290.0,
       "provenance": "modellezett",
-      "megjegyzes": "Éves 290 millió m³, ebből 8% esik erre a hónapra; a kivett vízből 15% véglegesen távozik. SZÁRMAZTATOTT: a GKI szerinti 1 160 millió m³ teljes nettó vízkivételből (erőművek nélkül) levonva a fenti tételeket. ELLENŐRIZENDŐ a VGT3 ágazati bontásából."
+      "megjegyzes": "Éves 290 millió m³, ebből 8% esik erre a hónapra; a kivett vízből 15% nem tér vissza közvetlenül a magyar vízrendszerbe a vizsgált időszakon belül. SZÁRMAZTATOTT: a GKI szerinti 1 160 millió m³ teljes nettó vízkivételből (erőművek nélkül) levonva a fenti tételeket. ELLENŐRIZENDŐ a VGT3 ágazati bontásából."
     }
   ],
   "paks_hutoviz": {
@@ -1469,7 +1469,7 @@
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-08T12:25:28+00:00",
+    "lekerve": "2026-08-08T16:20:04+00:00",
     "datum": "2026-08-07",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -1484,7 +1484,7 @@
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "hozzafolyas_m3s": 419.0,
+    "kulonbseg_m3s": 419.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
@@ -1519,7 +1519,8 @@
         "vizho_c": 22.7
       }
     ],
-    "provenance": "szarmaztatott",
+    "provenance": "mert",
+    "kulonbseg_ertelmezes": "A két határszelvény AZONOS NAPI adatának különbsége. Ez NEM napi medence-hozzáfolyás: a Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél — az átfolyási idő a Duna e szakaszán jellemzően egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.",
     "figyelmeztetes": "Operatív, korrekció nélküli adatok. A baziási hozam a bulletin SZÖVEGÉBŐL származik, ezért a minta törékeny. Baziás a Tisza, a Száva és a Velika Morava torkolata után van, a Vaskapu előtt — a doboz kifolyásának jó közelítése."
   }
 }

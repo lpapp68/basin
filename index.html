@@ -333,7 +333,7 @@ a{color:var(--viz)}
 
 <section id="paks-sec">
   <div class="sz"><h2>Paks · a vízoldal</h2><span class="n">csomópont</span></div>
-  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet eldönti, hogy van-e áram. A mérleg többi tétele mennyiségről szól; ez küszöbökről.</p>
+  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet korlátozhatja a paksi blokkok termelését. A mérleg többi tétele mennyiségről szól; ez küszöbökről.</p>
   <div class="paksdoboz" id="paks"></div>
 </section>
 
@@ -802,11 +802,9 @@ a{color:var(--viz)}
           <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
           <div class="m">${arany!=null?`A sokéves havi átlag <b>${dec(arany,0)}%</b>-a
             (${num(ki.sokeves_atlag_m3s)} m³/s).<br>`:""}${ki.forras}</div></div>
-        <div class="mdbdb kiemelt"><div class="u">A medence hozzáfolyása</div>
-          <div class="nagy">${sgn(MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
-          <div class="m">Ennyit ad hozzá a Tisza, a Dráva, a Száva, a Morava és minden
-            belső hozzáfolyás <b>együttvéve</b>, nagyjából 446 ezer km²-ről —
-            kevesebbet, mint amennyi a Dunán Dévénynél belép.</div></div>
+        <div class="mdbdb kiemelt"><div class="u">A két szelvény különbsége</div>
+          <div class="nagy">${sgn(MF.kulonbseg_m3s ?? MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
+          <div class="m"><b>Ez nem napi hozzáfolyás.</b> A Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél: az átfolyási idő e szakaszon egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.</div></div>
       </div>` +
       (profil.length ? `<div class="mdbprofil"><b>A Duna a magyar szakasz előtt</b>` +
         profil.map(v=>`<span>${v.nev} <i>${dec(v.hozam_m3s,1)} m³/s</i></span>`).join("") +
@@ -930,18 +928,26 @@ a{color:var(--viz)}
   }
 
   /* lábjegyzet */
-  $("#lab").innerHTML =
-    `Vízállás, vízhozam és vízhő: OVF Országos Vízjelző Szolgálat (vizugy.hu), mércénkénti `+
-    `órás idősor. Az LKV/LNV a mércék hivatalos adatlapjáról származik. `+
-    `Paksi blokkteljesítmény: holadelej.hu /api/data (CC BY 4.0) — kizárólag a hűtővízkivétel `+
-    `üzemállapotához. A csapadék, a párolgás és a készletváltozás még helyőrző: `+
-    `ERA5-Land, LSA-SAF és GRACE-FO nincs bekötve. Egyetlen pipeline, egyetlen kimenet: `+
-    `<code>data.json</code> — `+
-    `ugyanezt olvassa az iterators.org darab is. Generálva: ${D.generalva}. `+
+$("#lab").innerHTML =
+    `<b>Mit mér a lap, és mit számít.</b> A vízállás, a vízhozam és a vízhő az OVF `+
+    `Országos Vízjelző Szolgálatától jön, mércénkénti órás idősorként; az LKV és az LNV `+
+    `a mércék hivatalos adatlapjáról. A csapadék, a párolgás és a készlet-anomália `+
+    `műholdas becslés. A paksi blokkteljesítmény kizárólag a hűtővízkivétel `+
+    `üzemállapotához szolgál. Az osztályok jelentése a lap tetején, a jelmagyarázatban `+
+    `olvasható.`+
+    `<br><br>Egyetlen pipeline, egyetlen kimenet: <code>data.json</code> — ugyanezt `+
+    `olvassa az iterators.org darab is. Generálva: ${D.generalva}. `+
     `Doboz: ${D.doboz.nev}, ${num(D.doboz.terulet_km2)} km². ${D.doboz.megjegyzes}`+
-    `<br><br><b>Nyitott falak</b> — amit a mérleg nem fog be, és ezért a maradéktagban jelenik meg: `+
-    D.nyitott_falak.join(" · ") +
-    (D.hibak && D.hibak.length ? `<br><br><b>Hibák a legutóbbi futásból:</b> ${D.hibak.join(" · ")}` : "");
+    `<br><br><b>Nyitott falak</b> — amit a mérleg nem fog be, és ezért a maradéktagban `+
+    `jelenik meg: ` + D.nyitott_falak.join(" · ") +
+    // A futási hibák technikai részletei a naplóba valók. A lapon annyi látszik,
+    // hogy melyik rész frissült részlegesen — az aktuális adatok érvényessége
+    // ettől függetlenül a fenti órákból olvasható.
+    (D.hibak && D.hibak.length
+      ? `<br><br>Egy-egy háttérfolyamat frissítése részben sikertelen volt `+
+        `(${D.hibak.map(e=>String(e).split(":")[0]).join(", ")}); `+
+        `a fent látható adatok ettől függetlenül érvényesek.`
+      : "");
 
   fogalmakat_jeloli();
 })();

@@ -35,7 +35,12 @@ NAPI_FEJLEC = ["nap", "mintak", "q_be", "q_ki", "paks_cm", "paks_q", "paks_c",
 
 def _nap(eszleles: str) -> str:
     """Az OVF időbélyege '2026.08.05. 14:00' alakú. Ebből a napot vágjuk ki."""
-    t = (eszleles or "").strip().split()[0].rstrip(".")
+    # Egy-egy mércesor időbélyeg nélkül érkezhet; ilyenkor a sor kimarad
+    # az összegzésből, ahelyett hogy az egész napi archívumot elrontaná.
+    darabok = (eszleles or "").strip().split()
+    if not darabok:
+        return None
+    t = darabok[0].rstrip(".")
     try:
         return dt.datetime.strptime(t, "%Y.%m.%d").date().isoformat()
     except ValueError:
@@ -71,7 +76,9 @@ def napi_osszegzes(params: dict) -> list[dict]:
     csoport = defaultdict(list)
     with ORAS.open(encoding="utf-8") as f:
         for r in csv.DictReader(f):
-            csoport[_nap(r["eszleles"])].append(r)
+            nap = _nap(r.get("eszleles"))
+            if nap:
+                csoport[nap].append(r)
 
     def atl(sorok, kulcs):
         ertekek = [float(s[kulcs]) for s in sorok if s.get(kulcs) not in (None, "")]

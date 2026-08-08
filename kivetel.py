@@ -114,7 +114,7 @@ def main():
             "provenance": "modellezett",
             "megjegyzes": (f"Éves {eves_m3/1e6:.0f} millió m³, ebből "
                            f"{t['profil'][ho-1]*100:.0f}% esik erre a hónapra; "
-                           f"a kivett vízből {t['fogyaszto_hanyad']*100:.0f}% véglegesen távozik. "
+                           f"a kivett vízből {t['fogyaszto_hanyad']*100:.0f}% nem tér vissza közvetlenül a magyar vízrendszerbe a vizsgált időszakon belül. "
                            f"{t['forras']}"),
         })
 

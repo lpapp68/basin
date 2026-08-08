@@ -123,9 +123,10 @@ def main():
         "kilepo": {"nev": ro["nev"], "hozam_m3s": ro["hozam_m3s"],
                    "sokeves_atlag_m3s": ro.get("sokeves_atlag_m3s"),
                    "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"},
-        "hozzafolyas_m3s": round(hozzafolyas, 1),
+        "kulonbseg_m3s": round(hozzafolyas, 1),
         "duna_profil": [v for v in sk.values() if v["szerep"] == "profil"],
         "provenance": "mert",
+        "kulonbseg_ertelmezes": ("A két határszelvény AZONOS NAPI adatának különbsége. Ez NEM napi medence-hozzáfolyás: a Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél — az átfolyási idő a Duna e szakaszán jellemzően egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető."),
         "figyelmeztetes": ("Operatív, korrekció nélküli adatok. A baziási hozam a bulletin "
                            "SZÖVEGÉBŐL származik, ezért a minta törékeny. Baziás a Tisza, a "
                            "Száva és a Velika Morava torkolata után van, a Vaskapu előtt — "
@@ -137,7 +138,7 @@ def main():
     print(f"  belépő  {be['nev']:<22}{be['hozam_m3s']:>8.1f} m³/s"
           f"   ({be['vizallas_cm']:.0f} cm, {be['vizho_c']:.1f} °C)")
     print(f"  kilépő  {ro['nev']:<22}{ro['hozam_m3s']:>8.1f} m³/s")
-    print(f"  a medence hozzáfolyása:      {hozzafolyas:>8.1f} m³/s")
+    print(f"  a két szelvény különbsége:   {hozzafolyas:>8.1f} m³/s")
     if ro.get("sokeves_atlag_m3s"):
         arany = ro["hozam_m3s"] / ro["sokeves_atlag_m3s"] * 100
         print(f"  a kilépő hozam a sokéves havi átlag {arany:.0f}%-a "
