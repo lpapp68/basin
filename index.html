@@ -829,15 +829,23 @@ a{color:var(--viz)}
     const TK = D.terkep;
     let terkep = "";
     if(TK && TK.path){
-      const pontok = a.map(([nev,v])=>{
-        const xy = TK.allomasok[nev];
-        if(!xy) return "";
-        const r = 4 + (v/maxV)*5;
-        return `<g><circle cx="${xy[0]}" cy="${xy[1]}" r="${r}"
-            fill="var(--rekord)" fill-opacity="${(0.35+v/maxV*0.5).toFixed(2)}"
+      // A címke alapból a ponttól jobbra áll. Ha viszont keletre, hasonló
+      // magasságban van másik állomás, a címke balra kerül — így a Dél-Alföld
+      // két egymás melletti állomása is olvasható marad.
+      const helyek = a.map(([nev,v])=>({nev, v, xy: TK.allomasok[nev]}))
+                      .filter(o=>o.xy);
+      const pontok = helyek.map(o=>{
+        const [cx,cy] = o.xy;
+        const r = 4 + (o.v/maxV)*5;
+        const utkozik = helyek.some(m => m!==o && m.xy[0] > cx &&
+                                    m.xy[0]-cx < 260 && Math.abs(m.xy[1]-cy) < 34);
+        const bal = utkozik;
+        return `<g><circle cx="${cx}" cy="${cy}" r="${r}"
+            fill="var(--rekord)" fill-opacity="${(0.35+o.v/maxV*0.5).toFixed(2)}"
             stroke="var(--rekord)" stroke-width="2"/>
-          <text x="${xy[0]+16}" y="${xy[1]+4}" font-size="26"
-            fill="var(--tinta)" font-family="var(--mono)">${nev}</text></g>`;
+          <text x="${bal ? cx-r-9 : cx+r+9}" y="${cy+9}" font-size="25"
+            text-anchor="${bal ? "end" : "start"}"
+            fill="var(--tinta)" font-family="var(--mono)">${o.nev}</text></g>`;
       }).join("");
       terkep = `<div class="tterkep">
         <svg viewBox="${TK.viewBox}" width="100%" role="img"
