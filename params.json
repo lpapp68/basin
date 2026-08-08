@@ -1448,15 +1448,20 @@
   },
   "talaj_vizhiany": {
     "datum": "2026-08-07",
-    "atlag_mm": 26.7,
-    "min_mm": 18.4,
-    "max_mm": 35.0,
+    "atlag_mm": 33.2,
+    "min_mm": 0.7,
+    "max_mm": 70.9,
     "allomasok": {
-      "Apaj": 34.8,
-      "Csólyospálos": 18.4,
-      "Fülöpháza": 25.1,
-      "Hódmezővásárhely": 20.0,
-      "Kiskunfélegyháza": 35.0
+      "Bernecebaráti": 0.7,
+      "Egyek": 41.2,
+      "Enying": 27.4,
+      "Felsőszentmárton": 28.5,
+      "Kölcse": 25.5,
+      "Nagykőrös": 16.7,
+      "Püski": 17.9,
+      "Röszke": 66.8,
+      "Sarkad": 70.9,
+      "Vasszentmihály": 36.0
     },
     "melyseg": "80 cm",
     "provenance": "mert",

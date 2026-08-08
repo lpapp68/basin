@@ -829,22 +829,44 @@ a{color:var(--viz)}
     const TK = D.terkep;
     let terkep = "";
     if(TK && TK.path){
-      // A címke alapból a ponttól jobbra áll. Ha viszont keletre, hasonló
-      // magasságban van másik állomás, a címke balra kerül — így a Dél-Alföld
-      // két egymás melletti állomása is olvasható marad.
+      // Címkeelhelyezés tíz ponthoz. Minden címke a ponttól jobbra vagy balra
+      // állhat; sorban haladva azt az oldalt választjuk, ahol a doboz még szabad,
+      // és szükség esetén függőlegesen elcsúsztatjuk. A pont és a felirat közti
+      // kapcsolat így akkor is megmarad, ha az állomások sűrűn állnak.
+      const BM = 15, KAR = 15;          // sormagasság és karakterszélesség
+      const foglalt = [];
+      const utkozik = (b) => foglalt.some(f =>
+        b.x1 > f.x0 && b.x0 < f.x1 && b.y1 > f.y0 && b.y0 < f.y1);
+
       const helyek = a.map(([nev,v])=>({nev, v, xy: TK.allomasok[nev]}))
-                      .filter(o=>o.xy);
+                      .filter(o=>o.xy)
+                      .sort((p,q)=>p.xy[1]-q.xy[1]);
+
       const pontok = helyek.map(o=>{
         const [cx,cy] = o.xy;
-        const r = 4 + (o.v/maxV)*5;
-        const utkozik = helyek.some(m => m!==o && m.xy[0] > cx &&
-                                    m.xy[0]-cx < 260 && Math.abs(m.xy[1]-cy) < 34);
-        const bal = utkozik;
+        const r = 4 + (o.v/maxV)*6;
+        const sz = o.nev.length * KAR;
+        let hely = null;
+        keres:
+        for(const dy of [0, -BM, BM, -2*BM, 2*BM, -3*BM, 3*BM]){
+          for(const bal of [false, true]){
+            const x0 = bal ? cx-r-8-sz : cx+r+8;
+            const b = {x0, x1:x0+sz, y0:cy+dy-BM/2, y1:cy+dy+BM/2};
+            if(b.x0 > 2 && b.x1 < 998 && !utkozik(b)){ hely = {b, bal, dy}; break keres; }
+          }
+        }
+        if(!hely){                       // végső eset: jobbra, ütközéssel együtt
+          const x0 = cx+r+8;
+          hely = {b:{x0, x1:x0+sz, y0:cy-BM/2, y1:cy+BM/2}, bal:false, dy:0};
+        }
+        foglalt.push(hely.b);
         return `<g><circle cx="${cx}" cy="${cy}" r="${r}"
-            fill="var(--rekord)" fill-opacity="${(0.35+o.v/maxV*0.5).toFixed(2)}"
+            fill="var(--rekord)" fill-opacity="${(0.25+o.v/maxV*0.6).toFixed(2)}"
             stroke="var(--rekord)" stroke-width="2"/>
-          <text x="${bal ? cx-r-9 : cx+r+9}" y="${cy+9}" font-size="25"
-            text-anchor="${bal ? "end" : "start"}"
+          ${hely.dy ? `<line x1="${cx}" y1="${cy}" x2="${hely.bal?hely.b.x1+4:hely.b.x0-4}"
+            y2="${cy+hely.dy}" stroke="var(--halvany)" stroke-width="1.2"/>` : ""}
+          <text x="${hely.bal ? cx-r-8 : cx+r+8}" y="${cy+hely.dy+5}" font-size="22"
+            text-anchor="${hely.bal ? "end" : "start"}"
             fill="var(--tinta)" font-family="var(--mono)">${o.nev}</text></g>`;
       }).join("");
       terkep = `<div class="tterkep">
@@ -854,8 +876,7 @@ a{color:var(--viz)}
             stroke-width="2" stroke-linejoin="round"/>
           ${pontok}
         </svg>
-        <em>A körlap mérete a vízhiánnyal nő. Mind az öt állomás a Duna–Tisza közén
-        és a Dél-Alföldön van — ott, ahol a talajvíz ötven éve süllyed.</em>
+        <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország egészét lefedi, és a köztük lévő szórás nagyobb, mint az átlag: a szárazság nem országosan egyforma, hanem tájegységenként.</em>
       </div>`;
     }
 

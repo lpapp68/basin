@@ -43,11 +43,18 @@ ALLOMASOK = pathlib.Path("aszaly_allomasok.json")
 
 # Kezdéshez néhány állomás. A hátságiak külön érdekesek, mert ott a legmélyebb a hiány.
 ALAP_ALLOMASOK = {
-    "Apaj":            "33F7067F-002B-4638-AA39-FB89D816FB25",
-    "Fülöpháza":       None,   # kitöltés az állomásjegyzékből
-    "Kiskunfélegyháza": None,
-    "Csólyospálos":    None,
-    "Hódmezővásárhely": None,
+    # Tíz állomás, az ország egészére elosztva (legtávolabbi-pont mintavétel).
+    # Az azonosítót futáskor az aszaly_allomasok.json adja, ezért itt None elég.
+    "Kölcse": None,
+    "Bernecebaráti": None,
+    "Püski": None,
+    "Egyek": None,
+    "Nagykőrös": None,
+    "Vasszentmihály": None,
+    "Enying": None,
+    "Sarkad": None,
+    "Röszke": None,
+    "Felsőszentmárton": None,
 }
 MEZOK = ["TalajNedv10", "TalajNedv20", "TalajNedv30", "TalajNedv45",
          "TalajNedv60", "TalajNedv75", "Csapadek60", "WD35", "WD80",
