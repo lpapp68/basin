@@ -8,11 +8,11 @@
     "havi": "GRACE-FO (még nincs bekötve)"
   },
   "csapadek_mm_nap": {
-    "ertek": 0.0,
-    "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-04, területsúlyozott átlag országhatár-maszkkal",
+    "ertek": 2.49,
+    "provenance": "mert",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-07, területsúlyozott átlag országhatár-maszkkal",
     "kor_ora": 24,
-    "datum": "2026-08-04",
+    "datum": "2026-08-07",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
@@ -107,30 +107,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-08-04",
-    "et_ref_mm": 5.3,
-    "et_act_mm": 1.92,
-    "vizstressz": 0.361,
+    "datum": "2026-08-07",
+    "et_ref_mm": 4.25,
+    "et_act_mm": 1.15,
+    "vizstressz": 0.271,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 2.32,
-        "m3s": 1157
+        "hiany_mm_nap": 2.25,
+        "m3s": 1120
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 3.38,
-        "m3s": 1684
+        "hiany_mm_nap": 3.1,
+        "m3s": 1542
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 4.44,
-        "m3s": 2212
+        "hiany_mm_nap": 3.95,
+        "m3s": 1965
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-08-04, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-07, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -140,7 +140,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-06",
+    "datum": "2026-08-07",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -149,7 +149,7 @@
     "figyelmeztetes": "Az éves mennyiségek hivatkozott statisztikák, a HAVI ELOSZLÁS és a FOGYASZTÓ HÁNYAD viszont feltételezés. A pontos adatot a vízkészletjárulék-bevallások és a VGT3 ágazati bontása adná — ezek az OVF-nél kérhetők."
   },
   "keszlet_idosor": {
-    "provenance": "muholdas",
+    "provenance": "mert",
     "forras": "NASA/JPL GRACE és GRACE-FO mascon (PO.DAAC), országhatár-maszkkal",
     "egyseg": "km³ anomália a termék sokéves átlagához képest",
     "terulet_km2": 94513,
@@ -157,7 +157,7 @@
     "veg": "2026-05",
     "pontok": 257,
     "trend_km3_ev": -1.3,
-    "figyelmeztetes": "ANOMÁLIA, nem abszolút készlet: a nulla a termék sokéves átlaga, nem a teli medence. Felbontás kb. 300 km — Magyarország néhány rácscella, a szomszédos területek beleszólnak. Havi, 40-60 napos késéssel. 2017 közepe és 2018 közepe között adathiány.",
+    "figyelmeztetes": "ANOMÁLIA, nem abszolút készlet: a nulla a termék sokéves átlagát jelenti, nem a teli medencét. Felbontás kb. 300 km, havi, 1–2 hónapos késéssel. 2017 közepe és 2018 közepe között adathiány a két műholdpár között.",
     "sorozat": [
       {
         "honap": "2002-04",
@@ -1447,15 +1447,15 @@
     ]
   },
   "talaj_vizhiany": {
-    "datum": "2026-08-05",
-    "atlag_mm": 26.6,
-    "min_mm": 18.3,
+    "datum": "2026-08-07",
+    "atlag_mm": 26.7,
+    "min_mm": 18.4,
     "max_mm": 35.0,
     "allomasok": {
-      "Apaj": 34.7,
-      "Csólyospálos": 18.3,
+      "Apaj": 34.8,
+      "Csólyospálos": 18.4,
       "Fülöpháza": 25.1,
-      "Hódmezővásárhely": 20.1,
+      "Hódmezővásárhely": 20.0,
       "Kiskunfélegyháza": 35.0
     },
     "melyseg": "80 cm",
