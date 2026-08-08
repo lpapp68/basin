@@ -214,13 +214,15 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 
 /* kivétel */
 .kiv{display:flex;flex-direction:column;gap:0}
-.kiv .s{display:grid;grid-template-columns:1fr 5.2em 5.6em;gap:2px 10px;padding:10px 0;
+.kiv .s{display:grid;grid-template-columns:1fr 6.4em 6.8em;gap:2px 10px;padding:10px 0;
   border-top:1px solid var(--vonal-halk)}
 .kiv .s:first-child{border-top:0}
 .kiv .s .n{font-size:14px;font-weight:500}
-.kiv .s .v{font-family:var(--mono);font-size:15px;font-weight:600;text-align:right}
+.kiv .s .v{font-family:var(--mono);font-size:15px;font-weight:600;text-align:right;white-space:nowrap}
+.kiv .s .v small{font-size:10px;font-weight:400;color:var(--halvany);letter-spacing:normal}
 .kiv .s .v.vf{color:var(--parolgas)}
-.kivfej{display:grid;grid-template-columns:1fr 5.2em 5.6em;gap:10px;padding-bottom:6px;
+.kivfej i{display:block;font-style:normal;font-size:8px;opacity:.72}
+.kivfej{display:grid;grid-template-columns:1fr 6.4em 6.8em;gap:10px;padding-bottom:6px;
   border-bottom:1px solid var(--vonal);font-family:var(--mono);font-size:9.5px;
   letter-spacing:.08em;text-transform:uppercase;color:var(--halvany);text-align:right}
 .kiv .s .v .tf{display:block;font-size:10.5px;font-weight:400;font-style:normal;color:var(--halvany);white-space:nowrap;margin-top:2px}
@@ -854,13 +856,13 @@ a{color:var(--viz)}
     `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
     `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi marad kívül a magyar vízrendszeren a vizsgált időszakon belül.</span></div>`);
   $("#kivetel").insertAdjacentHTML("beforeend",
-    `<div class="kivfej"><span></span><span>teljes kivétel</span>` +
-    `<span>ebből veszteség</span></div>`);
+    `<div class="kivfej"><span></span><span>teljes kivétel<i>m³/s</i></span>` +
+    `<span>ebből veszteség<i>m³/s</i></span></div>`);
   D.kivetel_m3s.forEach(k=>{
     const s2=el("div","s");
     s2.appendChild(el("div","n",k.nev));
-    s2.appendChild(el("div","v",dec(k.ertek,1)));
-    s2.appendChild(el("div","v vf",k.fogyaszto_m3s!=null?dec(k.fogyaszto_m3s,1):"—"));
+    s2.appendChild(el("div","v",dec(k.ertek,1)+'<small> m³/s</small>'));
+    s2.appendChild(el("div","v vf",k.fogyaszto_m3s!=null?dec(k.fogyaszto_m3s,1)+'<small> m³/s</small>':"—"));
     s2.appendChild(el("div","m",k.megjegyzes));
     $("#kivetel").appendChild(s2);
   });
