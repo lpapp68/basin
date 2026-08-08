@@ -182,7 +182,10 @@ def hutoviz(mw, p):
 
 
 def meta_of(d):
-    return {"provenance": d["provenance"], "forras": d["forras"], "kor_ora": d.get("kor_ora")}
+    # A dátum is átmegy: a napi tagok egy konkrét napra vonatkoznak, és ez
+    # a tételsoron is látszik, különben a néző mainak olvassa őket.
+    return {"provenance": d["provenance"], "forras": d["forras"],
+            "kor_ora": d.get("kor_ora"), "datum": d.get("datum")}
 
 
 def main():

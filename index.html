@@ -685,10 +685,14 @@ a{color:var(--viz)}
     i.style.width=(Math.abs(t.ertek)/maxAbs*50)+"%";
     if(ossz) i.classList.add("dS");
     rud.appendChild(el("span","nulla")); rud.appendChild(i); r.appendChild(rud);
+    // A napi tagok (csapadék, párolgás) egy NAPRA vonatkoznak, a folyótagok az
+    // aktuális órára. A dátum kiírása nélkül az olvasó mind a kettőt maikent olvassa.
     r.appendChild(el("div","meta",
       pr(t.provenance)+
-      `<span>${dec(MM[k],2)} mm/nap</span><span>· ${t.forras}</span>`+
-      (t.kor_ora?`<span>· ${t.kor_ora} órás</span>`:"")));
+      `<span>${dec(MM[k],2)} mm/nap</span>`+
+      (t.datum?`<span class="nap">· ${t.datum}</span>`
+        : (t.kor_ora===1?`<span>· most</span>`:""))+
+      `<span>· ${t.forras}</span>`+      (t.kor_ora && t.kor_ora>1?`<span>· ${t.kor_ora} órás</span>`:"")));
     $("#pulzus").appendChild(r);
   });
   $("#pulzus").appendChild(el("p","elojel",D.elojel));
