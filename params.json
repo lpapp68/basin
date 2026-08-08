@@ -149,7 +149,7 @@
     "figyelmeztetes": "Az éves mennyiségek hivatkozott statisztikák, a HAVI ELOSZLÁS és a FOGYASZTÓ HÁNYAD viszont feltételezés. A pontos adatot a vízkészletjárulék-bevallások és a VGT3 ágazati bontása adná — ezek az OVF-nél kérhetők."
   },
   "keszlet_idosor": {
-    "provenance": "mert",
+    "provenance": "muholdas",
     "forras": "NASA/JPL GRACE és GRACE-FO mascon (PO.DAAC), országhatár-maszkkal",
     "egyseg": "km³ anomália a termék sokéves átlagához képest",
     "terulet_km2": 94513,
@@ -1514,7 +1514,7 @@
         "vizho_c": 22.7
       }
     ],
-    "provenance": "mert",
+    "provenance": "szarmaztatott",
     "figyelmeztetes": "Operatív, korrekció nélküli adatok. A baziási hozam a bulletin SZÖVEGÉBŐL származik, ezért a minta törékeny. Baziás a Tisza, a Száva és a Velika Morava torkolata után van, a Vaskapu előtt — a doboz kifolyásának jó közelítése."
   }
 }

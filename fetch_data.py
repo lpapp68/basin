@@ -250,7 +250,7 @@ def main():
         hibak.append(f"Paks üzemállapot: {uzem['hiba']}")
     paks_hv = hutoviz(uzem["mw"], p)
 
-    kivetel = [dict(k, provenance="helyorzo") for k in p["kivetel_m3s"]]
+    kivetel = [dict(k) for k in p["kivetel_m3s"]]   # az osztályt a kivetel.py adja
     kivetel.append({
         "nev": "Paks hűtővíz", "ertek": paks_hv["ertek"], "fogyaszto": False,
         "fogyaszto_m3s": 0.0, "fogyaszto_hanyad": 0.0,
@@ -301,10 +301,10 @@ def main():
         "elojel": ("Ami a dobozba kerül: pozitív, ami elhagyja: negatív. Az öt tag összege a ""készletváltozás — ez NEM megfigyelt országos készletcsökkenés, hanem MARADÉKTAG, ""amelyben a fenti tagok minden hibája összegyűlik. A tagok időléptéke eltér: órás, ""napi és havi adat kerül egyetlen egyenletbe."),
         "merleg_m3s": {
             "csapadek": {"ertek": round(be_P), **meta_of(p["csapadek_mm_nap"])},
-            "hozam_be": {"ertek": round(be_Q), "provenance": "mert", "kor_ora": 1,
+            "hozam_be": {"ertek": round(be_Q), "provenance": "szarmaztatott", "kor_ora": 1,
                          "forras": "OVF órás vízhozam (vízállásból, vízhozamgörbével): " + ", ".join(m["nev"] for m in be)},
             "parolgas": {"ertek": round(ki_ET), **meta_of(p["parolgas_mm_nap"])},
-            "hozam_ki": {"ertek": round(ki_Q), "provenance": "mert", "kor_ora": 1,
+            "hozam_ki": {"ertek": round(ki_Q), "provenance": "szarmaztatott", "kor_ora": 1,
                          "forras": "OVF órás vízhozam (vízállásból, vízhozamgörbével): " + ", ".join(m["nev"] for m in ki)},
             "keszletvaltozas": {"ertek": round(dS), "provenance": "modellezett", "kor_ora": None,
                                 "forras": "maradéktag a fenti tételekből"},

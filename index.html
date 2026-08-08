@@ -116,6 +116,7 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .pr{font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;
   padding:1px 5px;border:1px solid currentColor;white-space:nowrap;vertical-align:2px}
 .pr.mert{color:var(--viz);background:rgba(43,92,119,.1)}
+.pr.szarmaztatott{color:var(--viz)}
 .pr.muholdas{color:var(--parolgas);background:rgba(169,119,47,.10)}
 .pr.modellezett{color:var(--halvany)}
 .pr.helyorzo{color:var(--ismeretlen);
@@ -273,6 +274,14 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .mdbprofil em{display:block;font-style:normal;color:var(--halvany);margin-top:10px;
   padding-top:9px;border-top:1px solid var(--vonal-halk)}
 .mdbforras{font-size:11.5px;color:var(--halvany);margin-top:14px}
+.forrasok{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.forrasok div{border-left:2px solid var(--vonal);padding-left:14px}
+.forrasok b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--halvany);margin-bottom:7px}
+.forrasok a{display:block;font-size:13px;padding:3px 0;color:var(--viz);
+  text-decoration:none;border-bottom:1px solid transparent}
+.forrasok a:hover{border-bottom-color:var(--viz)}
+.forrasmegj{font-size:12px;color:var(--halvany);margin-top:18px}
 footer{margin-top:56px;padding-top:20px;border-top:2px solid var(--tinta);font-size:12.5px;
   color:var(--halvany)}
 footer code{font-family:var(--mono);font-size:11.5px}
@@ -328,9 +337,11 @@ a{color:var(--viz)}
   <div class="sz"><h2>Négy panel</h2><span class="n">v2</span></div>
   <div class="jelmagy">
     <span><b class="pr mert">helyszíni mérés</b> műszer mérte a helyszínen: vízállás, vízhő,
-      talajnedvesség. A vízhozam ebből származik, vízhozamgörbével</span>
-    <span><b class="pr muholdas">műholdas becslés</b> műholdas mérésből modellel visszaszámítva:
-      csapadék, párolgás, készlet-anomália</span>
+      talajnedvesség</span>
+    <span><b class="pr szarmaztatott">helyszíni adatból számított</b> a folyók vízhozama:
+      a vízállásból, kalibrált vízhozamgörbével</span>
+    <span><b class="pr muholdas">műholdas becslés</b> műholdas mérésből modellel
+      visszaszámítva: csapadék, párolgás, készlet-anomália</span>
     <span><b class="pr modellezett">számított</b> más tételekből, feltételezésekkel</span>
     <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg a forrás bekötésre vár</span>
   </div>
@@ -372,6 +383,30 @@ a{color:var(--viz)}
   <div id="talaj"></div>
 </section>
 
+<section id="forras-sec">
+  <div class="sz"><h2>Források és módszertan</h2><span class="n">minden adat nyilvános</span></div>
+  <div class="forrasok">
+    <div><b>Folyók, talaj</b>
+      <a href="https://www.vizugy.hu/" target="_blank" rel="noopener">OVF Vízjelző Szolgálat</a>
+      <a href="https://aszalymonitoring.vizugy.hu/" target="_blank" rel="noopener">OVF Aszálymonitoring</a>
+      <a href="https://www.shmu.sk/sk/?page=110" target="_blank" rel="noopener">SHMÚ napi jelentés</a>
+      <a href="https://www.hidro.ro/en/bulletin_type/buletin-hidrologic-zilnic/" target="_blank" rel="noopener">INHGA napi bulletin</a></div>
+    <div><b>Légkör, készlet</b>
+      <a href="https://gpm.nasa.gov/data/imerg" target="_blank" rel="noopener">NASA GPM IMERG</a>
+      <a href="https://lsa-saf.eumetsat.int/en/data/products/evapotranspiration-and-turbulent-fluxes/" target="_blank" rel="noopener">EUMETSAT LSA SAF</a>
+      <a href="https://podaac.jpl.nasa.gov/" target="_blank" rel="noopener">NASA/JPL GRACE, PO.DAAC</a>
+      <a href="https://cds.climate.copernicus.eu/" target="_blank" rel="noopener">Copernicus ERA5-Land</a></div>
+    <div><b>Vízkivétel</b>
+      <a href="https://www.asz.hu/" target="_blank" rel="noopener">Állami Számvevőszék</a>
+      <a href="https://www.ksh.hu/" target="_blank" rel="noopener">KSH</a></div>
+    <div><b>Ez a lap</b>
+      <a href="data.json">A nyers adat (data.json)</a>
+      <a href="data.js">A megjelenített adat (data.js)</a></div>
+  </div>
+  <p class="forrasmegj">A módszertan, a feltételezések és a nyitott kérdések listája
+  a projekt dokumentációjában olvasható. A hivatkozható változat Zenodóra kerül, DOI-val.</p>
+</section>
+
 <footer id="lab"></footer>
 </div>
 
@@ -384,7 +419,7 @@ a{color:var(--viz)}
                           if(h!=null)n.innerHTML=h; return n; };
   const num = n => n==null ? "—" : n.toLocaleString("hu-HU");
   // Minden törtszám ezen megy át: magyar tizedesvessző, rögzített jegyszám.
-  const PR_NEV = {mert:"helyszíni mérés", muholdas:"műholdas becslés", modellezett:"számított", helyorzo:"helyőrző"};
+  const PR_NEV = {mert:"helyszíni mérés", szarmaztatott:"helyszíni adatból számított", muholdas:"műholdas becslés", modellezett:"számított", helyorzo:"helyőrző"};
   const pr = k => `<span class="pr ${k}">${PR_NEV[k] || k}</span>`;
   const dec = (n,j=1) => n==null ? "—"
     : n.toLocaleString("hu-HU",{minimumFractionDigits:j,maximumFractionDigits:j});
@@ -538,12 +573,11 @@ a{color:var(--viz)}
 
     if(IS2 && IS2.trend_km3_ev != null){
       const balaton = Math.abs(IS2.trend_km3_ev)*10/R2.terfogat_km3;
-      sorok += `<p><b>Tíz éve minden évben kevesebb víz marad az országban.</b>
+      sorok += `<p><b>A tárolt vízmennyiség tíz éve csökkenő trendet mutat.</b>
         A műholdas készlet-anomália <b>${sgn(IS2.sorozat[IS2.sorozat.length-1].km3)} km³</b>
         a sokéves átlaghoz képest, a tízéves trend
         <b>${dec(IS2.trend_km3_ev,2)} km³ évente</b> — nagyjából
-        ${dec(balaton,1)} ${R2.nev} tíz év alatt. Ez a lap legmegbízhatóbb száma:
-        huszonnégy év havi mérésén alapul.</p>`;
+        ${dec(balaton,1)} ${R2.nev} tíz év alatt. Ez a lap legstabilabb hosszú távú jelzése: 24 év havi műholdas becslésén alapul, körülbelül 300 km-es természetes felbontással.</p>`;
     }
 
     if(AR.allapot === "mert" && AR.teljes_napok){
@@ -598,7 +632,7 @@ a{color:var(--viz)}
       K.hokorlat_tartalek_c!=null && K.hokorlat_tartalek_c<3));
     P4.appendChild(kartya("A folyó",
       num(K.hozam_m3s)+'<small> m³/s</small>',
-      `Mért órás vízhozam a paksi szelvényben. ${pr("mert")}`, false));
+      `Órás vízhozam a paksi szelvényben, a vízállásból számítva. ${pr("szarmaztatott")}`, false));
     P4.appendChild(kartya("Hűtővízkivétel",
       dec(hv.ertek,1)+'<small> m³/s</small>',
       `${hv.allapot||"—"}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("hu-HU",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
@@ -724,7 +758,7 @@ a{color:var(--viz)}
   /* ── 4 Kivétel ── */
   $("#p-kivetel .alcim").insertAdjacentHTML("afterend",
     `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
-    `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi hagyja el a rendszert véglegesen.</span></div>`);
+    `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi marad kívül a magyar vízrendszeren a vizsgált időszakon belül.</span></div>`);
   $("#kivetel").insertAdjacentHTML("beforeend",
     `<div class="kivfej"><span></span><span>teljes kivétel</span>` +
     `<span>ebből veszteség</span></div>`);
