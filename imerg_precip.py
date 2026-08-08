@@ -105,7 +105,7 @@ def beir(mm: float, nap: dt.date) -> None:
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
     p["csapadek_mm_nap"] = {
         "ertek": round(mm, 2),
-        "provenance": "mert",
+        "provenance": "muholdas",
         "forras": f"GPM IMERG Early napi ({TERMEK} V{VERZIO}), {nap.isoformat()}, "
                   f"területsúlyozott átlag országhatár-maszkkal",
         "kor_ora": (dt.date.today() - nap).days * 24,

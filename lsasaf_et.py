@@ -86,7 +86,7 @@ def beir(mm: float, nap: dt.date, lefedettseg: float) -> None:
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
     p["parolgas_mm_nap"] = {
         "ertek": round(mm, 2),
-        "provenance": "mert",
+        "provenance": "muholdas",
         "forras": (f"EUMETSAT LSA SAF DMETv3 (MSG), {nap.isoformat()}, "
                    f"területsúlyozott átlag országhatár-maszkkal, minőségszűrve "
                    f"(missing_values_percent ≤ {MAX_HIANY_SZAZALEK:.0f}%)"),

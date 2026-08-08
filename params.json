@@ -9,7 +9,7 @@
   },
   "csapadek_mm_nap": {
     "ertek": 2.49,
-    "provenance": "mert",
+    "provenance": "muholdas",
     "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-07, területsúlyozott átlag országhatár-maszkkal",
     "kor_ora": 24,
     "datum": "2026-08-07",
@@ -18,7 +18,7 @@
   },
   "parolgas_mm_nap": {
     "ertek": 1.15,
-    "provenance": "mert",
+    "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-07, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
     "kor_ora": 24,
     "datum": "2026-08-07",

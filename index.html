@@ -176,11 +176,15 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 
 /* kivétel */
 .kiv{display:flex;flex-direction:column;gap:0}
-.kiv .s{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;
+.kiv .s{display:grid;grid-template-columns:1fr 5.2em 5.6em;gap:2px 10px;padding:10px 0;
   border-top:1px solid var(--vonal-halk)}
 .kiv .s:first-child{border-top:0}
 .kiv .s .n{font-size:14px;font-weight:500}
-.kiv .s .v{font-family:var(--mono);font-size:16px;font-weight:600;text-align:right}
+.kiv .s .v{font-family:var(--mono);font-size:15px;font-weight:600;text-align:right}
+.kiv .s .v.vf{color:var(--parolgas)}
+.kivfej{display:grid;grid-template-columns:1fr 5.2em 5.6em;gap:10px;padding-bottom:6px;
+  border-bottom:1px solid var(--vonal);font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--halvany);text-align:right}
 .kiv .s .v .tf{display:block;font-size:10.5px;font-weight:400;font-style:normal;color:var(--halvany);white-space:nowrap;margin-top:2px}
 .kiv .s .m{grid-column:1/-1;font-size:11.5px;color:var(--halvany)}
 .tag{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
@@ -199,6 +203,12 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .pk.riaszt .v{color:var(--rekord)}
 @media(max-width:820px){.paksdoboz{grid-template-columns:repeat(2,1fr)}
   .pk:nth-child(2n){border-right:0}.pk:nth-child(-n+2){border-bottom:1px solid var(--vonal)}}
+.osszefoglalo{margin-top:22px;max-width:68ch;border-left:3px solid var(--tinta);
+  padding:2px 0 2px 18px}
+.osszefoglalo .cim{display:block;font-family:var(--mono);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--halvany);margin-bottom:10px}
+.osszefoglalo p{margin:0 0 11px;font-size:14.5px;line-height:1.6}
+.osszefoglalo p:last-child{margin-bottom:0}
 .dobozjel{margin-top:18px;max-width:68ch;border:1px solid var(--ismeretlen);padding:11px 14px;
   background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(122,74,110,.07) 6px 12px);
   font-size:12.5px;line-height:1.5}
@@ -253,6 +263,7 @@ a{color:var(--viz)}
   <div class="eyebrow">EQUORA Institute · vízmérleg v2 · basin.equora.institute</div>
   <h1>Mennyi víz jön be, mennyi párolog el,<br>és mennyi folyik tovább</h1>
   <p class="dek">Egy ország vízháztartását az dönti el, meddig marad itt a víz. A folyó vize egy hét alatt továbbmegy: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter mást ér a három helyen — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt doboz: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. A mérlege ezért felírható. Hogy melyik tagját tudjuk tényleg megmérni, az külön kérdés — és ez az oldal erről is beszámol.</p>
+  <div class="osszefoglalo" id="osszefoglalo"></div>
   <div class="dobozjel" id="dobozjel"></div>
   <div class="orak" id="orak"></div>
 </header>
@@ -274,10 +285,12 @@ a{color:var(--viz)}
 <section>
   <div class="sz"><h2>Négy panel</h2><span class="n">v2</span></div>
   <div class="jelmagy">
-    <span><b class="pr mert">mért</b> műszer mérte a helyszínen. A vízhozam ebből: vízállásból, kalibrált vízhozamgörbével számítva — nem közvetlen hozammérés</span>
-    <span><b class="pr muholdas">műholdas</b> műholdas mérésből modellel visszaszámított becslés — párolgás, csapadék, készlet-anomália</span>
-    <span><b class="pr modellezett">modellezett</b> más tételekből számítva, feltételezésekkel</span>
-    <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg nincs bekötve a forrás</span>
+    <span><b class="pr mert">helyszíni mérés</b> műszer mérte a helyszínen: vízállás, vízhő,
+      talajnedvesség. A vízhozam ebből származik, vízhozamgörbével</span>
+    <span><b class="pr muholdas">műholdas becslés</b> műholdas mérésből modellel visszaszámítva:
+      csapadék, párolgás, készlet-anomália</span>
+    <span><b class="pr modellezett">számított</b> más tételekből, feltételezésekkel</span>
+    <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg a forrás bekötésre vár</span>
   </div>
   <div class="racs">
 
@@ -329,7 +342,7 @@ a{color:var(--viz)}
                           if(h!=null)n.innerHTML=h; return n; };
   const num = n => n==null ? "—" : n.toLocaleString("hu-HU");
   // Minden törtszám ezen megy át: magyar tizedesvessző, rögzített jegyszám.
-  const PR_NEV = {mert:"mért", muholdas:"műholdas", modellezett:"modellezett", helyorzo:"helyőrző"};
+  const PR_NEV = {mert:"helyszíni mérés", muholdas:"műholdas becslés", modellezett:"számított", helyorzo:"helyőrző"};
   const pr = k => `<span class="pr ${k}">${PR_NEV[k] || k}</span>`;
   const dec = (n,j=1) => n==null ? "—"
     : n.toLocaleString("hu-HU",{minimumFractionDigits:j,maximumFractionDigits:j});
@@ -474,6 +487,42 @@ a{color:var(--viz)}
   });
   const rek=D.mercek.filter(m=>m.rekord_alatt).length;
   $("#mercen").textContent = rek+" / "+D.mercek.length+" mérce a mindenkori kisvíz alatt";
+
+  /* ── nyitó összefoglaló ── */
+  {
+    const IS2 = D.keszlet_idosor, AR = D.archivum || {}, R2 = D.egyenleg.referencia;
+    const H2 = D.hova_lett_m3s;
+    let sorok = "";
+
+    if(IS2 && IS2.trend_km3_ev != null){
+      const balaton = Math.abs(IS2.trend_km3_ev)*10/R2.terfogat_km3;
+      sorok += `<p><b>Tíz éve minden évben kevesebb víz marad az országban.</b>
+        A műholdas készlet-anomália <b>${sgn(IS2.sorozat[IS2.sorozat.length-1].km3)} km³</b>
+        a sokéves átlaghoz képest, a tízéves trend
+        <b>${dec(IS2.trend_km3_ev,2)} km³ évente</b> — nagyjából
+        ${dec(balaton,1)} ${R2.nev} tíz év alatt. Ez a lap legmegbízhatóbb száma:
+        huszonnégy év havi mérésén alapul.</p>`;
+    }
+
+    if(AR.allapot === "mert" && AR.teljes_napok){
+      const mm = AR.kumulalt_km3 * 1e9 / (D.doboz.terulet_km2 * 1e6) * 1000;
+      sorok += `<p><b>Egy-egy nap ettől eltérhet.</b> ${AR.veg}-én például
+        ${AR.kumulalt_km3 > 0 ? "több víz érkezett, mint amennyi távozott" :
+        "több víz távozott, mint amennyi érkezett"}: a számított napi egyenleg
+        <b>${sgn(Math.round(mm*100)/100)} mm</b>. Egyetlen nap keveset mond a trendről,
+        és ez a szám nem közvetlen készletmérés, hanem maradéktag.</p>`;
+    }
+
+    if(H2 && H2.elteres){
+      sorok += `<p><b>A napi mérleg zárása még pontatlan.</b> A kétféle párolgásbecslés
+        között <b>${num(Math.abs(H2.elteres.ertek))} m³/s</b> az eltérés. A napi országos
+        egyenleg ezért tájékoztató szám; a trend és a mért folyóadatok viszont
+        megállnak önmagukban.</p>`;
+    }
+
+    $("#osszefoglalo").innerHTML =
+      `<b class="cim">Magyarország vízmérlege röviden</b>${sorok}`;
+  }
 
   /* ── melyik doboz ── */
   const DB=D.dobozok, A=DB[D.aktiv_doboz], T=DB.mdb;
@@ -620,7 +669,7 @@ a{color:var(--viz)}
     `<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>`+
     `<span><i>veszteség kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
   hl.appendChild(el("div","res",
-    `<div class="cim">Nem tudjuk, hova lett</div>`+
+    `<div class="cim">Ennyi hiányzik a mérleg zárásához</div>`+
     `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+
     `<p>Ez a szám nem vízről szól, hanem tudásról: azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
      <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
@@ -634,13 +683,16 @@ a{color:var(--viz)}
   $("#p-kivetel .alcim").insertAdjacentHTML("afterend",
     `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
     `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi hagyja el a rendszert véglegesen.</span></div>`);
+  $("#kivetel").insertAdjacentHTML("beforeend",
+    `<div class="kivfej"><span></span><span>teljes kivétel</span>` +
+    `<span>ebből veszteség</span></div>`);
   D.kivetel_m3s.forEach(k=>{
-    const s=el("div","s");
-    s.appendChild(el("div","n",k.nev+
-      `<span class="tag ${k.fogyaszto?"fogy":"vissza"}">${k.fogyaszto?"veszteség":"visszatér"}</span>`));
-    s.appendChild(el("div","v",dec(k.ertek,1)+"\u00a0m³/s"+(k.fogyaszto_m3s!=null?`<em class="tf">ebből veszteség ${dec(k.fogyaszto_m3s,1)}</em>`:"")));
-    s.appendChild(el("div","m",k.megjegyzes));
-    $("#kivetel").appendChild(s);
+    const s2=el("div","s");
+    s2.appendChild(el("div","n",k.nev));
+    s2.appendChild(el("div","v",dec(k.ertek,1)));
+    s2.appendChild(el("div","v vf",k.fogyaszto_m3s!=null?dec(k.fogyaszto_m3s,1):"—"));
+    s2.appendChild(el("div","m",k.megjegyzes));
+    $("#kivetel").appendChild(s2);
   });
 
   /* ── A talaj ── */
@@ -665,14 +717,12 @@ a{color:var(--viz)}
           <div class="tlista">${sorok}</div>
         </div>
         <div class="tblokk">
-          <div class="u">Mennyi ideig marad a víz</div>
+          <div class="u">Mennyi eső pótolná</div>
           ${napok ? `<div class="nagy">${dec(napok,0)}<span class="egys">&nbsp;nap</span></div>
-            <div class="m">Ennyi napi párolgásnak felel meg a hiány a mai
-              ${dec(Math.abs(MM.parolgas),2)} mm/napos ütemmel. Ennyi csapadék hiányzik
-              ahhoz, hogy a gyökérzóna feltöltődjön.</div>` : ""}
+            <div class="m">A jelenlegi vízhiány ennyi napi párolgásnak felel meg a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos ütemmel. Ez pótlási időegyenérték, nem tartózkodási idő: azt mondja meg, mekkora csapadék töltené vissza a gyökérzónát.</div>` : ""}
           <div class="trekesz">
             <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
-            <div><b>hetek</b> <span>a talaj. A fenti hiány ennyi idő alatt épült fel, és ennyi alatt is tölthető vissza — de csak esőből. Ide a folyóból nem lehet átemelni.</span></div>
+            <div><b>hetek</b> <span>a talaj. A fenti hiány ennyi idő alatt épült fel, és ennyi alatt is tölthető vissza. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
             <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
           <p class="tmegj">A három rekesz között ezerszeres a különbség abban, meddig marad ott a víz. Ezért nem csővezeték-kérdés az aszály: a folyó vize a gyors rekeszben van, a szárazság a lassúban. Nem attól lesz nedves a talaj, hogy mellette folyik a Duna.</p>
@@ -690,7 +740,7 @@ a{color:var(--viz)}
         együtt <b>beérkezik az országba</b>. Öntözésre ténylegesen ennek körülbelül egy
         századát használjuk.</span>
         <span><b>Ez nem azt jelenti, hogy többet kellene öntözni — azt jelenti, hogy nem
-        lehetne.</b> Ennyi víz fizikailag nincs. A magyar növénytermesztés ezért csapadékfüggő,
+        lehetne.</b> Ennyi víz a megfelelő helyen és időben hiányzik az országos öntözéshez. A magyar növénytermesztés ezért csapadékfüggő,
         és aszályban a hiányt nem öntözéssel pótolja, hanem terméskieséssel nyeli le.</span>
         <em>${pr(OI.provenance)} Nagyságrendi számítás, nem öntözési terv: a műholdas párolgás
         vegyes felszínborításra vonatkozik, és a szántóterület még helyőrző.</em></div>` : "") +

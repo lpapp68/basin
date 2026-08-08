@@ -122,7 +122,7 @@ def main():
 
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
     p["keszlet_idosor"] = {
-        "provenance": "mert",
+        "provenance": "muholdas",
         "forras": "NASA/JPL GRACE és GRACE-FO mascon (PO.DAAC), országhatár-maszkkal",
         "egyseg": "km³ anomália a termék sokéves átlagához képest",
         "terulet_km2": round(terulet),
