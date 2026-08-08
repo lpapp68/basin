@@ -183,9 +183,16 @@ def hutoviz(mw, p):
         "mw": mw,
         "allapot": "termel" if arany > 0.02 else "leállítva, fenntartó hűtés",
         "provenance": "modellezett",
-        "forras": f"{mw} MW / {h['nevleges_mw']} MW arányában — {h['forras']}",
+        "forras": (f"A blokkteljesítmény {dec_hu(mw)} MW a "
+                   f"{dec_hu(h['nevleges_mw'])} MW-os névlegesből. {h['forras']}"),
     }
 
+
+# A lapon mindenhol magyar tizedesvessző szerepel; a forrásszövegekben is.
+def dec_hu(v, tizedes=1):
+    if v is None:
+        return "—"
+    return f"{v:,.{tizedes}f}".replace(",", " ").replace(".", ",")
 
 def meta_of(d):
     # A dátum is átmegy: a napi tagok egy konkrét napra vonatkoznak, és ez
@@ -265,7 +272,8 @@ def main():
         "nev": "Paks hűtővíz", "ertek": paks_hv["ertek"], "fogyaszto": False,
         "fogyaszto_m3s": 0.0, "fogyaszto_hanyad": 0.0,
         "provenance": paks_hv["provenance"],
-        "megjegyzes": f"{paks_hv['allapot']} — felmelegítve visszatér. {paks_hv['forras']}",
+        "megjegyzes": f"{paks_hv['allapot'].capitalize()} — a hűtővíz felmelegítve "
+                       f"visszatér a Dunába. {paks_hv['forras']}",
     })
     # MINDEN tétel fogyasztó RÉSZE számít, nem a bruttó kivétele, és nem csak
     # azoké, amelyek 50% fölött fogyasztók.

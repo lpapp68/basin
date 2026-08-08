@@ -102,7 +102,7 @@
     "nevleges_mw": 2000,
     "nevleges_m3s": 100,
     "fenntarto_m3perc": 100,
-    "forras": "nagyságrendek: termelési kondenzátorhűtés ~100 m³/s, leállított blokkok fenntartó hűtése ~100 m³/perc",
+    "forras": "Nagyságrendek: a termelési kondenzátorhűtés ~100 m³/s, a leállított blokkok fenntartó hűtése pedig ~100 m³/perc",
     "provenance": "modellezett",
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },

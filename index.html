@@ -884,9 +884,9 @@ a{color:var(--viz)}
         <div class="mdbdb"><div class="u">Kilépő · ${ki.nev}</div>
           <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
           <div class="m">${arany!=null?`${"aáeéiíoóöőuúüű".includes(HONAPOK[new Date().getMonth()][0]) ? "Az" : "A"} ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b>-a: ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>`:""}${ki.forras}</div></div>
-        <div class="mdbdb kiemelt"><div class="u">A két szelvény különbsége</div>
+        <div class="mdbdb kiemelt"><div class="u">Baziásnál ennyivel több lép ki</div>
           <div class="nagy">${sgn(MF.kulonbseg_m3s ?? MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
-          <div class="m"><b>Ez nem napi hozzáfolyás.</b> A Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél: az átfolyási idő e szakaszon egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.</div></div>
+          <div class="m"><b>A pozitív szám azt jelenti, hogy több víz lép ki, mint amennyi belép.</b> Ez a medence normális működése: a Tisza, a Dráva, a Száva, a Morava és minden belső hozzáfolyás menet közben hozzáadja a magáét, ezért Baziásnál nagyobb a hozam, mint Dévénynél.<br><br><b>Napi hozzáfolyásnak viszont nem tekinthető.</b> A Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél: az átfolyási idő e szakaszon egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.</div></div>
       </div>` +
       (profil.length ? `<div class="mdbprofil"><b>A Duna a magyar szakasz előtt</b>` +
         profil.map(v=>`<span>${v.nev} <i>${dec(v.hozam_m3s,1)} m³/s</i></span>`).join("") +
