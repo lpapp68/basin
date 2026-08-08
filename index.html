@@ -569,11 +569,11 @@ a{color:var(--viz)}
   /* ── melyik doboz ── */
   const DB=D.dobozok, A=DB[D.aktiv_doboz], T=DB.mdb;
   $("#dobozjel").innerHTML =
-    `<b>Melyik doboz</b><br>Amit ma mérünk: <strong>${A.nev}</strong>, `+
-    `${num(A.terulet_km2)} km². ${A.falak}. `+
-    `A teljes ${T.nev} ${num(T.terulet_km2)} km², nagyjából ötször ekkora. ${T.falak} `+
-    `A csapadék és a párolgás területtel skálázódik, ezért amíg a magyar doboz az aktív, `+
-    `ezek a tagok is a magyar területre vonatkoznak. ${T.megjegyzes}`;
+    `<b>Melyik doboz</b><br>A mérleg jelenleg <strong>${A.nev}</strong> területére készül,
+    ${num(A.terulet_km2)} km²-re: ${A.falak}. A teljes ${T.nev} ${num(T.terulet_km2)} km²,
+    nagyjából ötször ekkora. ${T.falak} A hozzáfolyása a lap A teljes medence szekciójában
+    olvasható. ${T.megjegyzes} Addig a csapadék és a párolgás a magyar területre vonatkozik,
+    mert ezek a tagok területtel skálázódnak.`;
 
   /* ── Paks csomópont ── */
   const K=D.paks;
