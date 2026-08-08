@@ -261,6 +261,9 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .tblokk .u{font-family:var(--mono);font-size:10px;letter-spacing:.13em;
   text-transform:uppercase;color:var(--halvany)}
 .tblokk .m{font-size:12.5px;color:var(--halvany);margin-top:8px;line-height:1.5}
+.tmagy{font-size:12.5px;line-height:1.6;color:var(--halvany);margin:14px 0 0;
+  padding-top:12px;border-top:1px solid var(--vonal-halk)}
+.tmagy + .tmagy{border-top:none;padding-top:0;margin-top:9px}
 .tlista{margin-top:16px;padding-top:12px;border-top:1px solid var(--vonal-halk)}
 .tterkep{margin-top:16px;padding-top:14px;border-top:1px solid var(--vonal-halk)}
 .tterkep svg{display:block;max-width:420px;margin:0 auto}
@@ -488,6 +491,7 @@ a{color:var(--viz)}
 
   /* ── fogalmak ── */
   const FOGALOM = {
+    "szántóföldi vízkapacitás": "Az a vízmennyiség, amit a talaj a gravitációs elszivárgás után megtart. E fölött a víz lefelé szivárog, ez alatt a növény egyre nehezebben veszi fel. A vízhiányt ehhez az állapothoz mérjük.",
     "vízhozam": "Mennyi víz halad át a szelvényen másodpercenként (m³/s). Nem azonos a vízállással: alacsony vízálláshoz széles mederben is tartozhat nagy hozam.",
     "vízállás": "A vízfelszín magassága a mérce nullpontjához képest, centiméterben. Lehet negatív — az csak azt jelenti, hogy a nullpont alatt van.",
     "LKV": "Legkisebb vízállás: a mércénél valaha nyilvántartott legalacsonyabb érték. Hogy ez mikor frissült utoljára, az OVF-nél tisztázandó.",
@@ -983,6 +987,17 @@ a{color:var(--viz)}
           <div class="nagy neg">${dec(TV.atlag_mm,1)}<span class="egys">&nbsp;mm</span></div>
           <div class="m">${TV.melyseg}-es réteg, ${a.length} állomás átlaga · ${TV.datum}
             <br>${pr(TV.provenance)}</div>
+          <p class="tmagy"><b>Mit jelent ez a szám?</b> Ennyi víz hiányzik a talaj
+          felső ${TV.melyseg}-éből ahhoz, hogy megteljen — ahhoz az állapothoz képest,
+          amennyit a talaj a gravitáció ellenében megtartani képes
+          (szántóföldi vízkapacitás). A milliméter itt ugyanaz, mint a csapadéknál:
+          <b>${dec(TV.atlag_mm,1)} mm = ${dec(TV.atlag_mm,1)} liter hiány
+          négyzetméterenként</b>. Ennyi esőnek kellene beszivárognia, hogy a gyökérzóna
+          feltöltődjön.</p>
+          <p class="tmagy">A ${TV.melyseg} azért ez a mélység, mert a szántóföldi
+          növények gyökérzete jellemzően eddig hatol le — ami ez alatt van, a legtöbb
+          növény számára elérhetetlen. A talajnedvességet az OVF műszerei mérik a
+          helyszínen, hat mélységben.</p>
           <div class="tlista">${sorok}</div>${terkep}
         </div>
         <div class="tblokk">
