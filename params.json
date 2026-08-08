@@ -1462,5 +1462,59 @@
     "provenance": "mert",
     "forras": "OVF Aszálymonitoring — Operatív Vízhiány Értékelő és Előrejelző Rendszer (aszalymonitoring.vizugy.hu)",
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
+  },
+  "mdb_falak": {
+    "lekerve": "2026-08-08T12:06:06+00:00",
+    "datum": "2026-08-07",
+    "belepo": {
+      "nev": "Duna, Dévény",
+      "hozam_m3s": 981.0,
+      "vizallas_cm": 123.0,
+      "vizho_c": 24.0,
+      "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
+    },
+    "kilepo": {
+      "nev": "Duna, Baziás",
+      "hozam_m3s": 1400.0,
+      "sokeves_atlag_m3s": 3900.0,
+      "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
+    },
+    "hozzafolyas_m3s": 419.0,
+    "duna_profil": [
+      {
+        "nev": "Duna, Medve",
+        "szerep": "profil",
+        "forras_nev": "Medveďov - Dunaj",
+        "vizallas_cm": 18.0,
+        "hozam_m3s": 722.0,
+        "vizho_c": 25.3
+      },
+      {
+        "nev": "Duna, Komárom",
+        "szerep": "profil",
+        "forras_nev": "Komárno - Dunaj",
+        "vizallas_cm": 49.0,
+        "hozam_m3s": 761.0,
+        "vizho_c": 24.6
+      },
+      {
+        "nev": "Duna, Párkány",
+        "szerep": "profil",
+        "forras_nev": "Štúrovo - Dunaj",
+        "vizallas_cm": -19.0,
+        "hozam_m3s": 790.0,
+        "vizho_c": 25.9
+      },
+      {
+        "nev": "Ipoly, Ipolyszalka",
+        "szerep": "profil",
+        "forras_nev": "Salka - Ipeľ",
+        "vizallas_cm": 47.0,
+        "hozam_m3s": 0.753,
+        "vizho_c": 22.7
+      }
+    ],
+    "provenance": "mert",
+    "figyelmeztetes": "Operatív, korrekció nélküli adatok. A baziási hozam a bulletin SZÖVEGÉBŐL származik, ezért a minta törékeny. Baziás a Tisza, a Száva és a Velika Morava torkolata után van, a Vaskapu előtt — a doboz kifolyásának jó közelítése."
   }
 }

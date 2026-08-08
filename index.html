@@ -257,6 +257,22 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
   font-style:normal}
 .tforras{font-size:11.5px;color:var(--halvany);margin-top:16px}
 @media(max-width:820px){.talajracs{grid-template-columns:1fr}}
+.mdbracs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.mdbdb{border:1px solid var(--vonal);background:var(--papir-2);padding:18px}
+.mdbdb.kiemelt{border-color:var(--viz)}
+.mdbdb .u{font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--halvany)}
+.mdbdb .nagy{font-size:clamp(30px,4.4vw,42px);margin-top:4px}
+.mdbdb .m{font-size:12.5px;color:var(--halvany);margin-top:9px;line-height:1.5}
+.mdbprofil{margin-top:20px;padding:14px 16px;border:1px solid var(--vonal-halk);
+  background:var(--papir-2);font-size:12.5px}
+.mdbprofil b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--halvany);margin-bottom:8px}
+.mdbprofil span{display:inline-block;margin:0 22px 4px 0;color:var(--halvany)}
+.mdbprofil i{font-family:var(--mono);font-style:normal;font-weight:600;color:var(--tinta)}
+.mdbprofil em{display:block;font-style:normal;color:var(--halvany);margin-top:10px;
+  padding-top:9px;border-top:1px solid var(--vonal-halk)}
+.mdbforras{font-size:11.5px;color:var(--halvany);margin-top:14px}
 footer{margin-top:56px;padding-top:20px;border-top:2px solid var(--tinta);font-size:12.5px;
   color:var(--halvany)}
 footer code{font-family:var(--mono);font-size:11.5px}
@@ -284,6 +300,15 @@ a{color:var(--viz)}
   <div class="dobozjel" id="dobozjel"></div>
   <div class="orak" id="orak"></div>
 </header>
+
+<section id="mdb-sec">
+  <div class="sz"><h2>A teljes medence</h2><span class="n">két szelvény</span></div>
+  <p class="lead">A Középső-Duna-medence hidrológiailag majdnem zárt: a Duna Dévénynél
+  belép, Baziásnál — a Tisza, a Száva és a Morava torkolata után — kilép. A Tisza, a
+  Dráva és a Száva vízgyűjtője teljes egészében belül marad, ezért a doboz mérlegéhez
+  mindössze két szelvény kell. Mindkettő nyilvános.</p>
+  <div id="mdb"></div>
+</section>
 
 <section>
   <div class="sz"><h2>A mércék</h2><span class="n" id="mercen"></span></div>
@@ -711,6 +736,38 @@ a{color:var(--viz)}
     s2.appendChild(el("div","m",k.megjegyzes));
     $("#kivetel").appendChild(s2);
   });
+
+  /* ── A teljes medence két fala ── */
+  const MF = D.mdb_falak;
+  if(MF && MF.belepo && MF.kilepo){
+    const be = MF.belepo, ki = MF.kilepo;
+    const arany = ki.sokeves_atlag_m3s
+      ? ki.hozam_m3s / ki.sokeves_atlag_m3s * 100 : null;
+    const profil = (MF.duna_profil || []).filter(v=>v.hozam_m3s);
+
+    $("#mdb").innerHTML =
+      `<div class="mdbracs">
+        <div class="mdbdb"><div class="u">Belépő · ${be.nev}</div>
+          <div class="nagy">${dec(be.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
+          <div class="m">${be.vizallas_cm!=null?dec(be.vizallas_cm,0)+" cm":""}
+            ${be.vizho_c!=null?"· "+dec(be.vizho_c,1)+" °C":""}<br>${be.forras}</div></div>
+        <div class="mdbdb"><div class="u">Kilépő · ${ki.nev}</div>
+          <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
+          <div class="m">${arany!=null?`A sokéves havi átlag <b>${dec(arany,0)}%</b>-a
+            (${num(ki.sokeves_atlag_m3s)} m³/s).<br>`:""}${ki.forras}</div></div>
+        <div class="mdbdb kiemelt"><div class="u">A medence hozzáfolyása</div>
+          <div class="nagy">${sgn(MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
+          <div class="m">Ennyit ad hozzá a Tisza, a Dráva, a Száva, a Morava és minden
+            belső hozzáfolyás <b>együttvéve</b>, nagyjából 446 ezer km²-ről —
+            kevesebbet, mint amennyi a Dunán Dévénynél belép.</div></div>
+      </div>` +
+      (profil.length ? `<div class="mdbprofil"><b>A Duna a magyar szakasz előtt</b>` +
+        profil.map(v=>`<span>${v.nev} <i>${dec(v.hozam_m3s,1)} m³/s</i></span>`).join("") +
+        `<em>Dévény és Medve között a hozam a bősi vízlépcső üzemrendje miatt csökken:
+        a víz nagy része az üzemvízcsatornán halad. Ez üzemeltetési átrendezés,
+        nem vízveszteség.</em></div>` : "") +
+      `<p class="mdbforras">${pr(MF.provenance)} ${MF.datum ? MF.datum+" · " : ""}${MF.figyelmeztetes}</p>`;
+  }
 
   /* ── A talaj ── */
   const TV = D.talaj_vizhiany, OI = D.ontozesigeny;

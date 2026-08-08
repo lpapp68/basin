@@ -318,6 +318,7 @@ def main():
         "kivetel_m3s": kivetel,
         "egyenleg": p["egyenleg"],
         "keszlet_idosor": p.get("keszlet_idosor"),
+        "mdb_falak": p.get("mdb_falak"),
         "talaj_vizhiany": p.get("talaj_vizhiany"),
         "ontozesigeny": p.get("ontozesigeny"),
         "kivetel_modell": p.get("kivetel_modell"),
