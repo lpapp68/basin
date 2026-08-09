@@ -17,11 +17,11 @@
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 1.15,
+    "ertek": 1.07,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-07, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-08, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
     "kor_ora": 24,
-    "datum": "2026-08-07",
+    "datum": "2026-08-08",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -107,30 +107,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-08-07",
-    "et_ref_mm": 4.25,
-    "et_act_mm": 1.15,
-    "vizstressz": 0.271,
+    "datum": "2026-08-08",
+    "et_ref_mm": 4.37,
+    "et_act_mm": 1.07,
+    "vizstressz": 0.246,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 2.25,
-        "m3s": 1120
+        "hiany_mm_nap": 2.42,
+        "m3s": 1204
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 3.1,
-        "m3s": 1542
+        "hiany_mm_nap": 3.29,
+        "m3s": 1639
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 3.95,
-        "m3s": 1965
+        "hiany_mm_nap": 4.17,
+        "m3s": 2074
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-08-07, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-08, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -140,7 +140,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-07",
+    "datum": "2026-08-08",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -1469,8 +1469,8 @@
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-08T16:20:04+00:00",
-    "datum": "2026-08-07",
+    "lekerve": "2026-08-09T02:22:55+00:00",
+    "datum": "2026-08-08",
     "belepo": {
       "nev": "Duna, Dévény",
       "hozam_m3s": 981.0,
