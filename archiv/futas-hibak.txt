@@ -1,1 +1,0 @@
-IMERG csapadék (2026-08-10):     raise RuntimeError(f"Nincs {TERMEK} találat {nap}-ra. Az Early termék néhány " RuntimeError: Nincs GPM_3IMERGDE találat 2026-08-10-ra. Az Early termék néhány órás késéssel jön — próbáld a tegnapi nappal. 

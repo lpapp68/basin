@@ -109,7 +109,6 @@ if [ "$MOD" = "napi" ]; then
     fi
   fi
 
-  fi
 
   echo "$NAP" > "$JELZO"
 fi
