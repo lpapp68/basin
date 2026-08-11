@@ -140,7 +140,7 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
   letter-spacing:.06em}
 .lead{color:var(--halvany);font-size:14px;margin:10px 0 22px;max-width:min(78ch,100%)}
 
-/* ── mércék (signature) ─────────────────────── */
+/* ── gauges (signature) ─────────────────────── */
 .mercesor{display:flex;gap:0;overflow-x:auto;padding-bottom:6px;
   border:1px solid var(--vonal);background:var(--papir-2)}
 .folyocsop{display:flex;border-right:1px solid var(--tinta)}
@@ -648,7 +648,7 @@ a{color:var(--viz)}
     $("#orak").appendChild(n);
   });
 
-  /* ── frissítés-jelző ── */
+  /* ── freshness indicator ── */
   // A GitHub Actions ütemezett futásai torlódás esetén csúsznak: az óránkénti
   // kérésből a gyakorlatban 50–130 perc lesz. Ezért nem ígérünk óránkénti
   // frissítést — kiírjuk, mikor futott utoljára, és a néző eldönti, elég friss-e.
@@ -678,7 +678,7 @@ a{color:var(--viz)}
     });
   }
 
-  /* ── mércék ── */
+  /* ── gauges ── */
   const W=76, HT=132, HN=54, PAD=9;
   function plate(m){
     const box = el("div","merce"+(m.rekord_alatt?" rek":""));
@@ -714,14 +714,14 @@ a{color:var(--viz)}
     add("text",{x:2,y:yFull(m.lkv_cm)+3,"font-size":8,fill:"var(--halvany)",
       "font-family":"var(--mono)"}).textContent="LKV";
 
-    /* nagyító kerete a teljes oszlop alján */
+    /* magnifier frame at the base of the column */
     const yA=yFull(zhi), yB=yFull(zlo);
     add("rect",{x:24,y:Math.min(yA,yB),width:38,height:Math.max(3,Math.abs(yB-yA)),
       fill:"none",stroke:"var(--rekord)","stroke-width":1});
     add("line",{x1:24,y1:Math.min(yA,yB),x2:6,y2:HT+14,stroke:"var(--rekord)","stroke-width":.6});
     add("line",{x1:62,y1:Math.max(yA,yB),x2:W-6,y2:HT+14,stroke:"var(--rekord)","stroke-width":.6});
 
-    /* nagyított sáv */
+    /* magnified band */
     add("rect",{x:6,y:HT+14,width:W-12,height:HN-6,fill:"#fff",stroke:"var(--rekord)","stroke-width":1});
     if(m.lkv_cm>=zlo&&m.lkv_cm<=zhi)
       add("line",{x1:6,y1:yZoom(m.lkv_cm),x2:W-6,y2:yZoom(m.lkv_cm),
@@ -752,7 +752,7 @@ a{color:var(--viz)}
     csop.appendChild(plate(m));
   });
   const rek=D.mercek.filter(m=>m.rekord_alatt).length;
-  $("#mercen").textContent = rek+" / "+D.mercek.length+" mérce a mindenkori kisvíz alatt";
+  $("#mercen").textContent = rek+" / "+D.mercek.length+" gauges below the record low";
 
   /* ── vízstressz-sáv ── */
   // A növényzet tényleges párolgása a referenciához képest. This page
@@ -797,14 +797,14 @@ a{color:var(--viz)}
         The satellite storage anomaly stands at <b>${sgn(IS2.sorozat[IS2.sorozat.length-1].km3)} km³</b>
         relative to the long-term mean, with a ten-year trend of
         <b>${dec(IS2.trend_km3_ev,2)} km³ évente</b> — nagyjából
-        ${dec(balaton,1)} ${R2.nev} tíz év alatt. This is the page's most stable long-term signal: it rests on 24 years of monthly satellite estimates, at roughly 300 km native resolution.</p>`;
+        ${dec(balaton,1)} ${R2.nev} over ten years. This is the page's most stable long-term signal: it rests on 24 years of monthly satellite estimates, at roughly 300 km native resolution.</p>`;
     }
 
     if(AR.allapot === "mert" && AR.teljes_napok){
       const mm = AR.kumulalt_km3 * 1e9 / (D.doboz.terulet_km2 * 1e6) * 1000;
       sorok += `<p><b>Egy-egy nap ettől eltérhet.</b> ${AR.veg}-én például
-        ${AR.kumulalt_km3 > 0 ? "több víz érkezett, mint amennyi távozott" :
-        "több víz távozott, mint amennyi érkezett"}: a computed napi egyenleg
+        ${AR.kumulalt_km3 > 0 ? "more water arrived than left" :
+        "more water left than arrived"}: a computed napi egyenleg
         <b>${sgn(Math.round(mm*100)/100)} mm</b>. Egyetlen nap keveset mond a trendről,
         és ez a szám nem közvetlen készletmérés, hanem maradéktag.</p>`;
     }
@@ -824,12 +824,12 @@ a{color:var(--viz)}
   const DB=D.dobozok, A=DB[D.aktiv_doboz], T=DB.mdb;
   $("#dobozjel").innerHTML =
     `<b>Which box</b><br>The balance is currently drawn for <strong>${A.nev}</strong> területére készül,
-    ${num(A.terulet_km2)} km²-re: ${A.falak}. The full ${T.nev} ${num(T.terulet_km2)} km²,
+    ${num(A.terulet_km2)} km²: ${A.falak}. The full ${T.nev} ${num(T.terulet_km2)} km²,
     roughly five times as large. ${T.falak} Its contribution is given in the page's The full basin szekciójában
     olvasható. ${T.megjegyzes} Addig a csapadék és a párolgás a magyar területre vonatkozik,
     mert ezek a tagok területtel skálázódnak.`;
 
-  /* ── Paks csomópont ── */
+  /* ── Paks node ── */
   const K=D.paks;
   if(K){
     const hv=K.hutoviz||{};
@@ -843,20 +843,20 @@ a{color:var(--viz)}
       num(K.vizallas_cm)+'<small> cm</small>',
       K.lkv_alatt_cm>0
         ? `<b>${K.lkv_alatt_cm} cm-rel a mindenkori legkisebb vízállás alatt</b> (LKV ${num(K.lkv_cm)} cm). A szivattyúk szívócsonkja fix magasságban van.`
-        : `LKV ${num(K.lkv_cm)} cm. A szivattyúk szívócsonkja fix magasságban van.`,
+        : `Record low ${num(K.lkv_cm)} cm. The pump intakes sit at a fixed elevation.`,
       K.lkv_alatt_cm>0));
     P4.appendChild(kartya("2. fal · vízhő",
       dec(K.vizho_c,1)+'<small> °C</small>',
-      `A hőterhelési korlát ${dec(K.hokorlat_c,0)} °C a melegvíz-csatorna torkolatától 500 méterre. `+
-      `Tartalék: <b>${dec(K.hokorlat_tartalek_c,1)} °C</b>.`,
+      `The thermal load limit is ${dec(K.hokorlat_c,0)} °C 500 m downstream of the warm-water outfall. `+
+      `Margin: <b>${dec(K.hokorlat_tartalek_c,1)} °C</b>.`,
       K.hokorlat_tartalek_c!=null && K.hokorlat_tartalek_c<3));
     P4.appendChild(kartya("A folyó",
       num(K.hozam_m3s)+'<small> m³/s</small>',
-      `Hourly vízhozam a paksi szelvényben, a vízállásból számítva. ${pr("szarmaztatott")}`, false));
+      `Hourly discharge at the Paks cross-section, computed from stage. ${pr("szarmaztatott")}`, false));
     P4.appendChild(kartya("Hűtővízkivétel",
       dec(hv.ertek,1)+'<small> m³/s</small>',
-      `${hv.allapot||"—"}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
-      `és gyakorlatilag teljes egészében visszatér — felmelegítve. `+
+      `${hv.allapot||"—"}. The river <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
+      `and virtually all of it returns — warmed. `+
       `${pr("modelled")} ${hv.forras||""}`, false));
   }
 
@@ -879,8 +879,8 @@ a{color:var(--viz)}
   }
   const maxAbs=Math.max(...Object.values(M).map(t=>Math.abs(t.ertek)));
   [["csapadek","Precipitation · arriving"],["hozam_be","Arriving via rivers"],
-   ["parolgas","Evaporating · távozik"],["hozam_ki","Leaving via rivers"],
-   ["keszletvaltozas","= Storage change (maradéktag)"]].forEach(([k,cim])=>{
+   ["parolgas","Evaporating · leaving"],["hozam_ki","Leaving via rivers"],
+   ["keszletvaltozas","= Storage change (residual)"]].forEach(([k,cim])=>{
     const t=M[k], neg=t.ertek<0, ossz=(k==="keszletvaltozas");
     const r=el("div","tetel"+(ossz?" ossz":""));
     r.appendChild(el("div","cim",cim));
@@ -905,7 +905,7 @@ a{color:var(--viz)}
       `<span>${dec(MM[k],2)} mm/nap</span>`+
       (t.datum?`<span class="nap">· ${t.datum}</span>`
         : (t.kor_ora===1?`<span>· most</span>`:""))+
-      `<span>· ${t.forras}</span>`+      (t.kor_ora && t.kor_ora>1?`<span>· ${t.kor_ora} órás</span>`:"")));
+      `<span>· ${t.forras}</span>`+      (t.kor_ora && t.kor_ora>1?`<span>· ${t.kor_ora} h old</span>`:"")));
     $("#pulzus").appendChild(r);
   });
   $("#pulzus").appendChild(el("p","elojel",D.elojel));
@@ -944,7 +944,7 @@ a{color:var(--viz)}
       `<div class="nagy ${IS.sorozat[IS.sorozat.length-1].km3<0?"neg":""}">`+
       `${sgn(IS.sorozat[IS.sorozat.length-1].km3)}<span class="egys">&nbsp;km³</span></div>`+
       `<div style="margin-top:6px;font-size:12px;color:var(--halvany)">`+
-      `${pr(IS.provenance)} &nbsp;${IS.veg} · ${IS.pontok} havi pont ${IS.kezdet} óta</div>`+
+      `${pr(IS.provenance)} &nbsp;${IS.veg} · ${IS.pontok} monthly points ${IS.kezdet} onward</div>`+
       `<svg viewBox="0 0 ${W2} ${H2}" width="100%" style="margin-top:14px" role="img"
         aria-label="Vízkészlet-anomália idősora ${IS.kezdet} és ${IS.veg} között">
         ${racs}${evek}
@@ -954,11 +954,11 @@ a{color:var(--viz)}
           stroke="var(--rekord)" stroke-width="1.4" stroke-linejoin="round"/>`).join("")}
       </svg>`+
       `<p style="font-size:12.5px;color:var(--halvany);margin:6px 0 0">`+
-      `A nulla nem a teli medencét jelenti, hanem a termék sokéves átlagát. `+
-      `A görbe azt mutatja, hogy egy-egy aszály után <b>visszaáll-e a korábbi szint</b>. `+
-      `Tízéves trend: <b style="font-family:var(--mono);color:var(--rekord)">`+
-      `${dec(IS.trend_km3_ev,2)} km³/év</b> — kb. `+
-      `${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} tíz év alatt.</p>`+
+      `Zero does not mean a full basin; it is the product's long-term mean. `+
+      `The curve shows whether, after a drought, <b>the earlier level is restored</b>. `+
+      `Ten-year trend: <b style="font-family:var(--mono);color:var(--rekord)">`+
+      `${dec(IS.trend_km3_ev,2)} km³/yr</b> — about `+
+      `${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} over ten years.</p>`+
       `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0;padding-top:10px;`+
       `border-top:1px solid var(--vonal-halk)">${IS.figyelmeztetes}<br>Forrás: ${IS.forras}</p>`;
   } else {
@@ -966,9 +966,9 @@ a{color:var(--viz)}
     $("#egyenleg").innerHTML =
       `<div class="nagy neg">${sgn(E.kumulalt_km3)}<span class="egys">&nbsp;km³</span></div>`+
       `<div style="margin-top:10px;font-size:12px;color:var(--halvany)">`+
-      `${pr(E.provenance)} &nbsp;${E.kezdet} óta</div>`+
+      `${pr(E.provenance)} &nbsp;${E.kezdet} onward</div>`+
       `<p style="font-size:13px;margin:16px 0 0">${E.megjegyzes} `+
-      `A hiány jelenleg <b style="font-family:var(--mono)">${dec(db,1)}</b> ${R.nev}-nyi.</p>`+
+      `The deficit currently stands at <b style="font-family:var(--mono)">${dec(db,1)}</b> ${R.nev}-nyi.</p>`+
       `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0">Forrás: ${E.forras}</p>`;
   }
 
@@ -978,17 +978,17 @@ a{color:var(--viz)}
   /* ── 3 Where it went ── */
   const H=D.hova_lett_m3s, hl=el("div","hl");
   [["parolgas_muhold","Műholdas párolgásbecslés"],
-   ["parolgas_maradek","Párolgás mint maradéktag"]].forEach(([k,c])=>{
+   ["parolgas_maradek","Evapotranspiration as residual"]].forEach(([k,c])=>{
     const t=H[k];
     hl.appendChild(el("div","par",
       `<span>${c}<br><span style="font-size:11.5px;color:var(--halvany)">${t.forras}</span></span>`+
       `<b>${num(t.ertek)} m³/s</b>`));
   });
   hl.appendChild(el("div","kepletmagy",
-    `<b>A képlet tagjai</b>`+
-    `<span><i>P</i> csapadék — ami a dobozra hullik</span>`+
-    `<span><i>Q<sub>be</sub></i> folyókon beérkezik — 11 határszelvény mért vízhozama</span>`+
-    `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
+    `<b>Terms of the equation</b>`+
+    `<span><i>P</i> precipitation — what falls on the box</span>`+
+    `<span><i>Q<sub>be</sub></i> arriving via rivers — measured discharge at 11 boundary sections</span>`+
+    `<span><i>Q<sub>ki</sub></i> folyókon leaving — Mohács, Drávaszabolcs, Szeged</span>`+
     `<span><i>&Delta;S</i> storage change — how much more or less water is stored</span>`+
     `<span><i>consumptive abstraction</i> what is taken out and does not return (irrigation, watering)</span>`));
   hl.appendChild(el("div","res",
@@ -999,8 +999,8 @@ a{color:var(--viz)}
     // pozitív értéknél önellentmondás volt.
     `<p class="irany">${H.elteres.ertek > 0
       ? `A mérleg zárásához <b>ennyivel több</b> párolgás kellene, mint amennyit a műhold mér: a maradék ${num(H.parolgas_maradek.ertek)}, a mérés ${num(H.parolgas_muhold.ertek)} m³/s.`
-      : `A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a mérleg zárásához kellene: a mérés ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
-    `<p>Egyik becslés sem a helyes: az eltérés azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
+      : `The satellite measures <b>this much more</b> evapotranspiration than closing the balance would require: the measurement is ${num(H.parolgas_muhold.ertek)}, the residual is ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
+    `<p>Neither estimate is the true one: the difference measures what our observing system still cannot see. While it stays large, the rest of the balance is worth reading with reservation — which is why it is stated openly.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
      cseréje <b>a dobozon belüli átrendezés</b>: ami a Dunából elszivárog a magyar
      szakaszon, az a dobozban marad, tehát ezt a számot nem növeli. A csere iránya
      szakaszonként más — a in the Szigetköz a feliszapolódott meder majdnem elzárja,
@@ -1008,7 +1008,7 @@ a{color:var(--viz)}
      a határon átnyúló felszín alatti vízáramlás, amit egyáltalán nem mérünk.</p>
      <p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási
      programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
-     <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
+     <p><b>Abstraction is not the cause.</b> Total human abstraction is ${num(KIV_OSSZ)} m³/s,
      of which lost ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
      A különbség a storage change és a párolgás bizonytalanságából jön,
@@ -1018,7 +1018,7 @@ a{color:var(--viz)}
   /* ── 4 Abstraction ── */
   $("#p-kivetel .alcim").insertAdjacentHTML("afterend",
     `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
-    `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi marad kívül a magyar vízrendszeren a vizsgált időszakon belül.</span></div>`);
+    `of which <b>lost ${num(KIV_FOGY)} m³/s</b> — this much stays outside the Hungarian water system within the period considered.</span></div>`);
   $("#kivetel").insertAdjacentHTML("beforeend",
     `<div class="kivfej"><span></span><span>total abstraction<i>m³/s</i></span>` +
     `<span>of which lost<i>m³/s</i></span></div>`);
@@ -1047,7 +1047,7 @@ a{color:var(--viz)}
             ${be.vizho_c!=null?"· "+dec(be.vizho_c,1)+" °C":""}<br>${be.forras}</div></div>
         <div class="mdbdb"><div class="u">Outflow · ${ki.nev}</div>
           <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
-          <div class="m">${arany!=null?`${"aáeéiíoóöőuúüű".includes(HONAPOK[new Date().getMonth()][0]) ? "Az" : "A"} ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b> of the ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>`:""}${ki.forras}</div></div>
+          <div class="m">${arany!=null?`${"aáeéiíoóöőuúüű".includes(HONAPOK[new Date().getMonth()][0]) ? "Az" : "A"} ${HONAPOK[new Date().getMonth()]} long-term mean <b>${dec(arany,0)}%</b> of the ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os mean.<br>`:""}${ki.forras}</div></div>
         <div class="mdbdb kiemelt"><div class="u">Baziaş discharges this much more</div>
           <div class="nagy">${sgn(MF.kulonbseg_m3s ?? MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
           <div class="m"><b>A positive figure means more water leaves than enters.</b> This is the basin working normally: the Tisza, Drava, Sava, Morava and every internal tributary add their own along the way, so discharge at Baziaş exceeds that at Devín.<br><br><b>It cannot, however, be read as daily inflow.</b> The water leaving Baziaş today is not the water that entered at Devín today: travel time along this reach is one to two weeks, and storage within the basin changes meanwhile. The basin's actual contribution can be estimated from a longer-period average or with hydrological routing.</div></div>
@@ -1131,7 +1131,7 @@ a{color:var(--viz)}
           ${folyok}
           ${pontok}
         </svg>
-        <em>Disc size grows with the deficit. The ten stations <b>sample different regions of the country</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos átlagnak nem tekinthető.</em>
+        <em>Disc size grows with the deficit. The ten stations <b>sample different regions of the country</b>; the wide spread between them shows that dryness is spatially uneven. The figure cannot be taken as a national average.</em>
       </div>`;
     }
 
@@ -1145,7 +1145,7 @@ a{color:var(--viz)}
         <div class="tblokk">
           <div class="u">Water deficit in the root zone</div>
           <div class="nagy neg">${dec(TV.atlag_mm,1)}<span class="egys">&nbsp;mm</span></div>
-          <div class="m">${TV.melyseg}-es réteg, ${a.length} station mean · ${TV.datum}
+          <div class="m">${TV.melyseg} layer, ${a.length} station mean · ${TV.datum}
             <br>${pr(TV.provenance)}</div>
           <p class="tmagy"><b>What does this figure mean?</b> Ennyi víz hiányzik a talaj
           felső ${TV.melyseg}-éből ahhoz, hogy megteljen — ahhoz az állapothoz képest,
@@ -1161,7 +1161,7 @@ a{color:var(--viz)}
           <div class="tlista">${sorok}</div>${terkep}
         </div>
         <div class="tblokk">
-          <div class="u">A mai párolgással számolva hány napnyi nedvesség hiányzik a talajból?</div>
+          <div class="u">At today's evapotranspiration, how many days' moisture is missing from the soil?</div>
           ${napok ? `<div class="nagy">${dec(napok,0)}<span class="egys">&nbsp;nap</span></div>
             <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>` : ""}
           <div class="trekesz">
@@ -1193,7 +1193,7 @@ a{color:var(--viz)}
 $("#lab").innerHTML =
     `<b>What the page measures, and what it computes.</b> A vízállás, a vízhozam és a vízhő az OVF `+
     `Országos Vízjelző Szolgálatától jön, mércénkénti órás idősorként; az LKV és az LNV `+
-    `a mércék hivatalos adatlapjáról. A csapadék, a párolgás és a készlet-anomália `+
+    `a gauges hivatalos adatlapjáról. A csapadék, a párolgás és a készlet-anomália `+
     `satellite estimate. A paksi blokkteljesítmény kizárólag a cooling-water abstraction `+
     `üzemállapotához szolgál. Az osztályok jelentése a lap tetején, a jelmagyarázatban `+
     `olvasható.`+
