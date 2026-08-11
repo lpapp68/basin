@@ -15,7 +15,7 @@ cd "$(dirname "$0")"
 
 ELO="https://basin.equora.institute"
 mkdir -p _publish
-cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml _publish/
+cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml googled3302b927f898901.html _publish/
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.
