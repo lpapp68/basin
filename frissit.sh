@@ -92,11 +92,23 @@ if [ "$MOD" = "napi" ]; then
   futtat "teljes medence falai" python kulfold.py
 
 
-  # A GRACE havi termék, 40–60 napos késéssel — havonta egyszer elég.
-  if [ "$(cat "$GRACE_JELZO" 2>/dev/null)" != "$HONAP" ]; then
+  # A GRACE havi termék, a NASA-nál két-három hónapos feldolgozási késéssel.
+  # HETENTE ellenőrizzük, nem havonta: a kiadás dátuma kiszámíthatatlan, és egy
+  # havi kapuval hetekig nem vennénk észre az új szemcsét. A letöltés úgyis csak
+  # akkor történik meg, ha tényleg van új adat.
+  UTOLSO_GRACE=$(cat "$GRACE_JELZO" 2>/dev/null || echo "")
+  MA_NAP=$(date -u +%Y-%m-%d)
+  KELL_GRACE=1
+  if [ -n "$UTOLSO_GRACE" ]; then
+    HATAR=$(date -u -v-7d +%Y-%m-%d 2>/dev/null || date -u -d '7 days ago' +%Y-%m-%d)
+    if [ "$UTOLSO_GRACE" \> "$HATAR" ]; then KELL_GRACE=0; fi
+  fi
+  if [ "$KELL_GRACE" = "1" ]; then
     if futtat "GRACE készlet-idősor" python grace.py; then
-      echo "$HONAP" > "$GRACE_JELZO"
+      echo "$MA_NAP" > "$GRACE_JELZO"
     fi
+  fi
+
   fi
 
   echo "$NAP" > "$JELZO"
