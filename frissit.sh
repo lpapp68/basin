@@ -53,33 +53,35 @@ futtat() {                      # futtat <cimke> <parancs...>
 if [ "$MOD" = "napi" ]; then
   echo "== napi frissítés: $NAP"
 
-  # Csapadék: IMERG az elsődleges, mert néhány órás késésű.
-  # Ha elérhetetlen, az ERA5-Land ugyanarra a napra tartalékként beugrik.
-  # A csapadék és a párolgás egyetlen naphoz tartozik. Ha a csapadék nem
-  # szerezhető meg a kért napra, visszalépünk egy napot — a párolgás CSAK
-  # akkor fut, ha a csapadék is megvan ugyanarra a napra.
+  # A csapadék és a párolgás egyetlen naphoz tartozik. Az IMERG Early napi terméke
+  # 24 óránál többet késik, ezért a legfrissebb nap gyakran hiányzik — ilyenkor
+  # visszalépünk. A párolgás CSAK arra a napra fut, amelyikre a csapadék megvan.
+  #
+  # Az ERA5-Land tartalékot itt szándékosan mellőzzük: öt-hat napos késése miatt
+  # egy egy-két napos dátumhoz sosem tud segíteni, viszont minden futásban
+  # negyven másodperc CDS-sorbanállást emésztene fel. Visszamenőleges
+  # feltöltéshez az era5_precip.py továbbra is kézzel futtatható.
   CSAPNAP=""
-  for probal in "$NAP" "$(date -u -v-2d +%Y-%m-%d 2>/dev/null || date -u -d '2 days ago' +%Y-%m-%d)"; do
+  for eltol in 1 2 3; do
+    probal=$(date -u -v-${eltol}d +%Y-%m-%d 2>/dev/null \
+             || date -u -d "${eltol} days ago" +%Y-%m-%d)
     if futtat "IMERG csapadék ($probal)" python imerg_precip.py "$probal"; then
       CSAPNAP="$probal"; break
     fi
-    echo "-- tartalék: ERA5-Land ($probal)"
-    if python era5_precip.py "$probal"; then
-      echo "   ERA5-Land pótolta a csapadékot"
-      HIBAK="${HIBAK/ IMERG csapadék ($probal)/}"
-      CSAPNAP="$probal"; break
-    fi
-    echo "!! az ERA5-Land tartalék is elhasalt erre a napra"
   done
 
   if [ -n "$CSAPNAP" ]; then
     NAP="$CSAPNAP"
+    # a korábbi napok sikertelen próbái nem hibák, csak a termék késése
+    HIBAK=""
+    : > "$NAPLO"
     futtat "LSA SAF párolgás" python lsasaf_et.py "$NAP"
   else
-    echo "!! csapadék egyik napra sem szerezhető meg — a párolgás sem fut,"
+    echo "!! a csapadék három napra sem szerezhető meg — a párolgás sem fut,"
     echo "   hogy a mérleg egyetlen napon maradjon"
-    HIBAK="$HIBAK csapadék-minden-nap"
+    HIBAK="$HIBAK csapadék-három-napra-sem"
   fi
+
   futtat "öntözésigény"      python ontozesigeny.py "$NAP"
   futtat "talaj vízhiány"    python aszaly.py       "$NAP"
   futtat "vízkivétel"        python kivetel.py      "$NAP"
