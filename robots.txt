@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Az adatfájlok is szabadon indexelhetők — a lap nyílt kutatási felület.
+Sitemap: https://basin.equora.institute/sitemap.xml

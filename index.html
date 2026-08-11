@@ -5,6 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Középső-Duna-medence vízmérlege — EQUORA Institute</title>
 <link rel="canonical" href="https://basin.equora.institute/">
+
+<!-- Plausible: külön mérési egység, nem az equora.institute alatt. A data-domain
+     dönti el, melyik oldalhoz gyűlik az adat — ezért kell itt a saját aldomain. -->
+<script defer data-domain="basin.equora.institute"
+        src="https://plausible.io/js/script.js"></script>
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="EQUORA Institute">
+<meta name="citation_doi" content="10.5281/zenodo.21852060">
+<meta property="og:site_name" content="EQUORA Institute">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Középső-Duna-medence vízmérlege">
+<meta name="twitter:description"
+      content="Mért vízhozam 22 mércéről, műholdas párolgás és csapadék. Minden szám mellett ott, hogy mérés, modell vagy helyőrző.">
+
+<!-- Strukturált adat: a keresők és az adatkatalógusok ebből tudják, hogy ez egy
+     hivatkozható, nyílt licencű adatkészlet, nem egy szokásos weblap. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Középső-Duna-medence vízmérlege",
+  "alternateName": "Water balance of the Middle Danube Basin",
+  "description": "Óránként frissülő vízmérleg: mért vízhozam 22 magyar mércéről, műholdas párolgás és csapadék, talajnedvesség és készlet-anomália. Minden tag provenance-címkét kap.",
+  "url": "https://basin.equora.institute/",
+  "identifier": "https://doi.org/10.5281/zenodo.21852060",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "inLanguage": "hu",
+  "keywords": ["vízmérleg", "hidrológia", "aszály", "párolgás", "Duna", "Tisza", "GRACE", "water balance", "drought", "evapotranspiration"],
+  "creator": {
+    "@type": "Organization",
+    "name": "EQUORA Institute",
+    "url": "https://equora.institute"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Magyarország",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "45.7 16.0 48.6 22.9"
+    }
+  },
+  "distribution": [{
+    "@type": "DataDownload",
+    "encodingFormat": "application/json",
+    "contentUrl": "https://basin.equora.institute/data.json"
+  }],
+  "citation": "Papp L. (2026). Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method. EQUORA Institute. Zenodo. https://doi.org/10.5281/zenodo.21852060"
+}
+</script>
 <meta name="description" content="Mennyi víz érkezik a Középső-Duna-medencébe, mennyi párolog el és mennyi távozik — mért vízhozamból, műholdas párolgásból és csapadékból, óránként frissülve.">
 <meta property="og:title" content="Középső-Duna-medence vízmérlege">
 <meta property="og:description" content="Mért vízhozam 22 mércéről, műholdas párolgás és csapadék. Minden szám mellett ott, hogy mérés, modell vagy helyőrző.">
@@ -346,6 +397,14 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .alairas span{display:block;font-size:13px;color:var(--halvany)}
 .alairas a{color:var(--viz);text-decoration:none}
 .alairas a:hover{text-decoration:underline}
+.frissites{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  margin-top:12px;font-size:12.5px;color:var(--halvany)}
+.frissites .pont{width:8px;height:8px;border-radius:50%;flex:0 0 auto;
+  align-self:center}
+.frissites .pont.friss{background:var(--viz)}
+.frissites .pont.kesik{background:var(--parolgas)}
+.frissites .pont.regi{background:var(--rekord)}
+.frissites b{color:var(--tinta);font-weight:600}
 footer{margin-top:24px;padding-top:20px;border-top:2px solid var(--tinta);font-size:12.5px;
   color:var(--halvany)}
 footer code{font-family:var(--mono);font-size:11.5px}
@@ -376,6 +435,7 @@ a{color:var(--viz)}
     <div class="dobozjel" id="dobozjel"></div>
   </div>
   <div class="orak" id="orak"></div>
+  <div class="frissites" id="frissites"></div>
 </header>
 
 <section id="mdb-sec">
@@ -568,6 +628,24 @@ a{color:var(--viz)}
       (o.mercek_friss ? ` · ${o.mercek_friss}/${o.mercek_osszes} mérce tart itt` : "")));
     $("#orak").appendChild(n);
   });
+
+  /* ── frissítés-jelző ── */
+  // A GitHub Actions ütemezett futásai torlódás esetén csúsznak: az óránkénti
+  // kérésből a gyakorlatban 50–130 perc lesz. Ezért nem ígérünk óránkénti
+  // frissítést — kiírjuk, mikor futott utoljára, és a néző eldönti, elég friss-e.
+  {
+    const g = new Date(D.generalva);
+    const perc = Math.round((Date.now() - g) / 60000);
+    const kor = perc < 90 ? `${perc} perce`
+              : perc < 1440 ? `${Math.round(perc/60)} órája`
+              : `${Math.round(perc/1440)} napja`;
+    const allapot = perc < 180 ? "friss" : perc < 720 ? "kesik" : "regi";
+    $("#frissites").innerHTML =
+      `<span class="pont ${allapot}"></span>` +
+      `<b>Utolsó adatfrissítés: ${kor}</b>` +
+      `<span>${g.toLocaleString("hu-HU", {dateStyle:"short", timeStyle:"short"})} · ` +
+      `a gyűjtés óránként indul, a futás torlódáskor csúszhat</span>`;
+  }
 
   /* ── mércék ── */
   const W=76, HT=132, HN=54, PAD=9;

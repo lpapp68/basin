@@ -124,7 +124,7 @@ fi
 if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
   echo "== publikálás"
   mkdir -p _publish
-  cp index.html data.js data.json logo.png logo.svg _publish/
+  cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml _publish/
   npx --yes wrangler pages deploy _publish \
       --project-name "$BASIN_PAGES_PROJECT" --commit-dirty=true
 fi

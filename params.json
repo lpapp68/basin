@@ -1522,5 +1522,128 @@
     "provenance": "mert",
     "kulonbseg_ertelmezes": "A két határszelvény AZONOS NAPI adatának különbsége. Ez NEM napi medence-hozzáfolyás: a Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél — az átfolyási idő a Duna e szakaszán jellemzően egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.",
     "figyelmeztetes": "Operatív, korrekció nélküli adatok. A baziási hozam a bulletin SZÖVEGÉBŐL származik, ezért a minta törékeny. Baziás a Tisza, a Száva és a Velika Morava torkolata után van, a Vaskapu előtt — a doboz kifolyásának jó közelítése."
-  }
+  },
+  "parolgas_klima": {
+    "08-04": {
+      "arany_atlag": 0.772,
+      "arany_szoras": 0.193,
+      "et_act_atlag": 3.24,
+      "et_ref_atlag": 4.2,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-05": {
+      "arany_atlag": 0.732,
+      "arany_szoras": 0.217,
+      "et_act_atlag": 2.86,
+      "et_ref_atlag": 3.82,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-06": {
+      "arany_atlag": 0.744,
+      "arany_szoras": 0.203,
+      "et_act_atlag": 2.86,
+      "et_ref_atlag": 3.87,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-07": {
+      "arany_atlag": 0.792,
+      "arany_szoras": 0.243,
+      "et_act_atlag": 3.27,
+      "et_ref_atlag": 4.12,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-08": {
+      "arany_atlag": 0.782,
+      "arany_szoras": 0.216,
+      "et_act_atlag": 3.23,
+      "et_ref_atlag": 4.07,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-09": {
+      "arany_atlag": 0.78,
+      "arany_szoras": 0.207,
+      "et_act_atlag": 3.39,
+      "et_ref_atlag": 4.33,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-10": {
+      "arany_atlag": 0.764,
+      "arany_szoras": 0.189,
+      "et_act_atlag": 3.27,
+      "et_ref_atlag": 4.32,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-11": {
+      "arany_atlag": 0.726,
+      "arany_szoras": 0.2,
+      "et_act_atlag": 2.87,
+      "et_ref_atlag": 4.02,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-12": {
+      "arany_atlag": 0.737,
+      "arany_szoras": 0.22,
+      "et_act_atlag": 3.19,
+      "et_ref_atlag": 4.34,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-13": {
+      "arany_atlag": 0.725,
+      "arany_szoras": 0.225,
+      "et_act_atlag": 2.87,
+      "et_ref_atlag": 3.96,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-14": {
+      "arany_atlag": 0.699,
+      "arany_szoras": 0.203,
+      "et_act_atlag": 2.71,
+      "et_ref_atlag": 3.93,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-15": {
+      "arany_atlag": 0.729,
+      "arany_szoras": 0.21,
+      "et_act_atlag": 2.79,
+      "et_ref_atlag": 3.93,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-16": {
+      "arany_atlag": 0.727,
+      "arany_szoras": 0.226,
+      "et_act_atlag": 2.73,
+      "et_ref_atlag": 3.86,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-17": {
+      "arany_atlag": 0.707,
+      "arany_szoras": 0.224,
+      "et_act_atlag": 2.41,
+      "et_ref_atlag": 3.38,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    },
+    "08-18": {
+      "arany_atlag": 0.736,
+      "arany_szoras": 0.231,
+      "et_act_atlag": 2.66,
+      "et_ref_atlag": 3.71,
+      "evek": 10,
+      "tartomany": "2016–2025"
+    }
+  },
+  "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli."
 }
