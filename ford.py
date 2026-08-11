@@ -42,8 +42,16 @@ def main():
 
     talalt, hianyzik = 0, []
     for hu, en in parok:
-        if hu in x:
-            x = x.replace(hu, en)
+        # Szóhatáron cserélünk: enélkül egy rövid kulcs ("a talaj") belemar
+        # egy hosszabb mondatba, és félig magyar szöveget hagy maga után.
+        # A \b nem működik ékezetes betűkkel, ezért a szomszédos karaktert
+        # nézzük: betű vagy ékezet esetén NEM cserélünk.
+        minta = re.compile(
+            r"(?<![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])" + re.escape(hu) +
+            r"(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])")
+        x2, db = minta.subn(lambda m: en, x)
+        if db:
+            x = x2
             talalt += 1
         else:
             hianyzik.append(hu)
@@ -120,8 +128,10 @@ def adat(tabla):
         if isinstance(o, str):
             eredeti = o
             for hu, en in parok:
-                if hu in o:
-                    o = o.replace(hu, en)
+                minta = re.compile(
+                    r"(?<![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])" + re.escape(hu) +
+                    r"(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])")
+                o = minta.sub(lambda m: en, o)
             if o != eredeti:
                 szamlalo["csere"] += 1
             elif re.search(r"[áéíóöőúüűÁÉÍÓÖŐÚÜŰ]", o) and len(o) > 8:
