@@ -30,12 +30,23 @@ fi
 
 # Minden napi tag hibáját összegyűjtjük, hogy a futás végén egy helyen látszódjon.
 HIBAK=""
+NAPLO="archiv/futas-hibak.txt"
+: > "$NAPLO"
 futtat() {                      # futtat <cimke> <parancs...>
   local cimke="$1"; shift
   echo "-- $cimke"
-  if "$@"; then return 0; fi
+  local ki
+  # A hibaüzenetet is elkapjuk: enélkül az Actionsben csend van, és csak
+  # napokkal később derül ki, hogy egy tag megállt.
+  if ki=$("$@" 2>&1); then
+    echo "$ki"
+    return 0
+  fi
+  echo "$ki"
   echo "!! $cimke ELHASALT"
   HIBAK="$HIBAK $cimke"
+  # az utolsó két sor elég a diagnózishoz, és elfér a lapon
+  printf '%s: %s\n' "$cimke" "$(echo "$ki" | tail -2 | tr '\n' ' ')" >> "$NAPLO"
   return 1
 }
 
@@ -44,17 +55,31 @@ if [ "$MOD" = "napi" ]; then
 
   # Csapadék: IMERG az elsődleges, mert néhány órás késésű.
   # Ha elérhetetlen, az ERA5-Land ugyanarra a napra tartalékként beugrik.
-  if ! futtat "IMERG csapadék" python imerg_precip.py "$NAP"; then
-    echo "-- tartalék: ERA5-Land"
-    if python era5_precip.py "$NAP"; then
-      echo "   ERA5-Land pótolta a csapadékot"
-      HIBAK="${HIBAK/ IMERG csapadék/}"
-    else
-      echo "!! az ERA5-Land tartalék is elhasalt"
+  # A csapadék és a párolgás egyetlen naphoz tartozik. Ha a csapadék nem
+  # szerezhető meg a kért napra, visszalépünk egy napot — a párolgás CSAK
+  # akkor fut, ha a csapadék is megvan ugyanarra a napra.
+  CSAPNAP=""
+  for probal in "$NAP" "$(date -u -v-2d +%Y-%m-%d 2>/dev/null || date -u -d '2 days ago' +%Y-%m-%d)"; do
+    if futtat "IMERG csapadék ($probal)" python imerg_precip.py "$probal"; then
+      CSAPNAP="$probal"; break
     fi
-  fi
+    echo "-- tartalék: ERA5-Land ($probal)"
+    if python era5_precip.py "$probal"; then
+      echo "   ERA5-Land pótolta a csapadékot"
+      HIBAK="${HIBAK/ IMERG csapadék ($probal)/}"
+      CSAPNAP="$probal"; break
+    fi
+    echo "!! az ERA5-Land tartalék is elhasalt erre a napra"
+  done
 
-  futtat "LSA SAF párolgás"  python lsasaf_et.py    "$NAP"
+  if [ -n "$CSAPNAP" ]; then
+    NAP="$CSAPNAP"
+    futtat "LSA SAF párolgás" python lsasaf_et.py "$NAP"
+  else
+    echo "!! csapadék egyik napra sem szerezhető meg — a párolgás sem fut,"
+    echo "   hogy a mérleg egyetlen napon maradjon"
+    HIBAK="$HIBAK csapadék-minden-nap"
+  fi
   futtat "öntözésigény"      python ontozesigeny.py "$NAP"
   futtat "talaj vízhiány"    python aszaly.py       "$NAP"
   futtat "vízkivétel"        python kivetel.py      "$NAP"

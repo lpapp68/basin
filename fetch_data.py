@@ -390,7 +390,14 @@ def main():
         "figyelmeztetes": p["_figyelmeztetes"],
         "nyitott_falak": NYITOTT_FALAK,
         "belso_megjegyzes": BELSO_MEGJEGYZES,
-        "hibak": hibak,
+        "hibak": hibak + [
+            # A frissit.sh napi lépéseinek hibái: enélkül az Actionsben csend van,
+            # és csak napokkal később derül ki, hogy egy adatforrás megállt.
+            sor.strip() for sor in
+            (pathlib.Path("archiv/futas-hibak.txt").read_text(encoding="utf-8").splitlines()
+             if pathlib.Path("archiv/futas-hibak.txt").exists() else [])
+            if sor.strip()
+        ],
     }
 
     # Saját idősor: minden futás rögzül, a napi sorozat újraszámolódik.

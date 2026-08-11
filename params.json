@@ -8,11 +8,11 @@
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
-    "ertek": 2.49,
+    "ertek": 0.0,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-07, területsúlyozott átlag országhatár-maszkkal",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-09, területsúlyozott átlag országhatár-maszkkal",
     "kor_ora": 48,
-    "datum": "2026-08-07",
+    "datum": "2026-08-09",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
@@ -20,7 +20,7 @@
     "ertek": 1.29,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-09, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-08-09",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
