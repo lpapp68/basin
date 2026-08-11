@@ -639,16 +639,28 @@ a{color:var(--viz)}
   // frissítést — kiírjuk, mikor futott utoljára, és a néző eldönti, elég friss-e.
   {
     const g = new Date(D.generalva);
-    const perc = Math.round((Date.now() - g) / 60000);
-    const kor = perc < 90 ? `${perc} perce`
-              : perc < 1440 ? `${Math.round(perc/60)} órája`
-              : `${Math.round(perc/1440)} napja`;
-    const allapot = perc < 180 ? "friss" : perc < 720 ? "kesik" : "regi";
-    $("#frissites").innerHTML =
-      `<span class="pont ${allapot}"></span>` +
-      `<b>Utolsó adatfrissítés: ${kor}</b>` +
-      `<span>${g.toLocaleString("hu-HU", {dateStyle:"short", timeStyle:"short"})} · ` +
-      `a gyűjtés óránként indul, a futás torlódáskor csúszhat</span>`;
+    // Percenként újraszámoljuk: a szám különben megáll a betöltés pillanatán,
+    // és egy órán át tartott lapon félrevezetően frissnek látszik az adat.
+    const rajzol = () => {
+      const perc = Math.round((Date.now() - g) / 60000);
+      const kor = perc < 1 ? "épp most"
+                : perc < 90 ? `${perc} perce`
+                : perc < 1440 ? `${Math.round(perc/60)} órája`
+                : `${Math.round(perc/1440)} napja`;
+      const allapot = perc < 180 ? "friss" : perc < 720 ? "kesik" : "regi";
+      $("#frissites").innerHTML =
+        `<span class="pont ${allapot}"></span>` +
+        `<b>Utolsó adatfrissítés: ${kor}</b>` +
+        `<span>${g.toLocaleString("hu-HU", {dateStyle:"short", timeStyle:"short"})} · ` +
+        `a gyűjtés óránként indul, a futás torlódáskor csúszhat</span>`;
+    };
+    rajzol();
+    setInterval(rajzol, 60000);
+    // Ha a lap háttérbe kerül, a böngésző lassítja az időzítőt; visszatéréskor
+    // ezért azonnal frissítünk.
+    document.addEventListener("visibilitychange", () => {
+      if(!document.hidden) rajzol();
+    });
   }
 
   /* ── mércék ── */
