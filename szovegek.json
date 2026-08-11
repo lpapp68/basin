@@ -1,0 +1,582 @@
+[
+ {
+  "hol": "html",
+  "hu": "Középső-Duna-medence vízmérlege — EQUORA Institute"
+ },
+ {
+  "hol": "html",
+  "hu": "EQUORA Institute · vízmérleg v2 · basin.equora.institute"
+ },
+ {
+  "hol": "html",
+  "hu": "Mennyi víz jön be, mennyi párolog el,"
+ },
+ {
+  "hol": "html",
+  "hu": "és mennyi folyik tovább"
+ },
+ {
+  "hol": "html",
+  "hu": "Egy ország vízháztartását az dönti el, meddig marad itt a víz. A folyó vize egy hét alatt továbbmegy: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter mást ér a három helyen — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt doboz: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. A mérlege ezért felírható. Hogy melyik tagját tudjuk tényleg megmérni, az külön kérdés — és ez az oldal erről is beszámol."
+ },
+ {
+  "hol": "html",
+  "hu": "A teljes medence"
+ },
+ {
+  "hol": "html",
+  "hu": "két szelvény"
+ },
+ {
+  "hol": "html",
+  "hu": "A Középső-Duna-medence hidrológiailag majdnem zárt: a Duna Dévénynél\n  belép, Baziásnál — a Tisza, a Száva és a Morava torkolata után — kilép. A Tisza, a\n  Dráva és a Száva vízgyűjtője teljes egészében belül marad, ezért a medence"
+ },
+ {
+  "hol": "html",
+  "hu": "folyami határforgalmának"
+ },
+ {
+  "hol": "html",
+  "hu": "meghatározásához mindössze két szelvény kell: a Duna Dévénynél és Baziásnál. Mindkettő nyilvános. A teljes vízmérleghez ezen felül a csapadék, a párolgás és a készletváltozás is kell."
+ },
+ {
+  "hol": "html",
+  "hu": "Vízállás, vízhozam és vízhő, óránként, az OVF-től — mind mérés. Minden oszlop egy mérce\n  mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.\n  A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. Balról jobbra görgethető."
+ },
+ {
+  "hol": "html",
+  "hu": "Paks · a vízoldal"
+ },
+ {
+  "hol": "html",
+  "hu": "Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet korlátozhatja a paksi blokkok termelését. A mérleg többi tétele mennyiségről szól; ez küszöbökről."
+ },
+ {
+  "hol": "html",
+  "hu": "a mérleg és a bizonytalansága"
+ },
+ {
+  "hol": "html",
+  "hu": "helyszíni mérés"
+ },
+ {
+  "hol": "html",
+  "hu": "műszer mérte a helyszínen: vízállás, vízhő,\n      talajnedvesség"
+ },
+ {
+  "hol": "html",
+  "hu": "helyszíni adatból számított"
+ },
+ {
+  "hol": "html",
+  "hu": "a folyók vízhozama:\n      a vízállásból, kalibrált vízhozamgörbével"
+ },
+ {
+  "hol": "html",
+  "hu": "műholdas becslés"
+ },
+ {
+  "hol": "html",
+  "hu": "műholdas mérésből modellel\n      visszaszámítva: csapadék, párolgás, készlet-anomália"
+ },
+ {
+  "hol": "html",
+  "hu": "más tételekből, feltételezésekkel"
+ },
+ {
+  "hol": "html",
+  "hu": "nagyságrendi becslés, amíg a forrás bekötésre vár"
+ },
+ {
+  "hol": "html",
+  "hu": "a mérleg öt tagja"
+ },
+ {
+  "hol": "html",
+  "hu": "ugyanarról a napról"
+ },
+ {
+  "hol": "html",
+  "hu": ", mind azonos\n      mértékegységben. A mérleg csak akkor értelmes, ha minden tagja egyetlen naphoz\n      tartozik: a tegnapi eső egy része ma is a mederben van, ezért a tegnapi csapadékot\n      a mai hozammal összevetni hibás volna. Ezért a folyók hozama is aznapi átlag,\n      az órás mintákból."
+ },
+ {
+  "hol": "html",
+  "hu": "2 · Egyenleg"
+ },
+ {
+  "hol": "html",
+  "hu": "mennyivel van kevesebb"
+ },
+ {
+  "hol": "html",
+  "hu": "Bankszámla-logika, egyetlen futó egyenleggel."
+ },
+ {
+  "hol": "html",
+  "hu": "3 · Hova lett"
+ },
+ {
+  "hol": "html",
+  "hu": "amit nem tudunk elszámolni"
+ },
+ {
+  "hol": "html",
+  "hu": "Ugyanazt a párolgást kétféleképpen is meg lehet becsülni. Ha jól mérnénk, a két szám egyezne. Nem egyezik — és a különbségük megmutatja, mekkora a bizonytalanság az egész mérlegben."
+ },
+ {
+  "hol": "html",
+  "hu": "4 · Kivétel"
+ },
+ {
+  "hol": "html",
+  "hu": "amit az ember kivesz"
+ },
+ {
+  "hol": "html",
+  "hu": "Amit az ember kivesz a rendszerből. A nagy szám a teljes kivétel — de a víz egy része tisztítva vagy felmelegítve visszatér. Csak az számít veszteségnek, ami nem jön vissza: az elpárolgó öntözővíz, a locsolás, a halastavak felszíne."
+ },
+ {
+  "hol": "html",
+  "hu": "ahol az aszály zajlik"
+ },
+ {
+  "hol": "html",
+  "hu": "A folyó és a levegő mellett van egy harmadik hely, ahol a víz megfordul: a talaj. Itt marad napokig-hetekig, és itt dől el, mit ér a lehullott csapadék. Ez az a rekesz, amiről a hírek nem szólnak, pedig az aszály itt zajlik — nem a folyómederben."
+ },
+ {
+  "hol": "html",
+  "hu": "Források és módszertan"
+ },
+ {
+  "hol": "html",
+  "hu": "minden adat nyilvános"
+ },
+ {
+  "hol": "html",
+  "hu": "Folyók, talaj"
+ },
+ {
+  "hol": "html",
+  "hu": "OVF Vízjelző Szolgálat"
+ },
+ {
+  "hol": "html",
+  "hu": "OVF Aszálymonitoring"
+ },
+ {
+  "hol": "html",
+  "hu": "SHMÚ napi jelentés"
+ },
+ {
+  "hol": "html",
+  "hu": "INHGA napi bulletin"
+ },
+ {
+  "hol": "html",
+  "hu": "Légkör, készlet"
+ },
+ {
+  "hol": "html",
+  "hu": "Copernicus ERA5-Land"
+ },
+ {
+  "hol": "html",
+  "hu": "Állami Számvevőszék"
+ },
+ {
+  "hol": "html",
+  "hu": "A forráskód és a módszertan"
+ },
+ {
+  "hol": "html",
+  "hu": "Módszertan (Zenodo, DOI)"
+ },
+ {
+  "hol": "html",
+  "hu": "Minden nyitott kérdés"
+ },
+ {
+  "hol": "html",
+  "hu": "A nyers adat (data.json)"
+ },
+ {
+  "hol": "html",
+  "hu": "A módszertan, a feltételezések és a nyitott kérdések listája\n  a projekt dokumentációjában olvasható. A hivatkozható változat Zenodóra kerül, DOI-val."
+ },
+ {
+  "hol": "html",
+  "hu": "Kutatási felület · a módszertan hivatkozható:"
+ },
+ {
+  "hol": "html",
+  "hu": "10.5281/zenodo.21852060"
+ },
+ {
+  "hol": "js",
+  "hu": ") + num(n);   // num() adja a magyar mínuszjelet\n\n  /* ── fogalmak ── */\n  const FOGALOM = {"
+ },
+ {
+  "hol": "js",
+  "hu": "Az a vízmennyiség, amit a talaj a gravitációs elszivárgás után megtart. E fölött a víz lefelé szivárog, ez alatt a növény egyre nehezebben veszi fel. A vízhiányt ehhez az állapothoz mérjük."
+ },
+ {
+  "hol": "js",
+  "hu": "Mennyi víz halad át a szelvényen másodpercenként (m³/s). Nem azonos a vízállással: alacsony vízálláshoz széles mederben is tartozhat nagy hozam."
+ },
+ {
+  "hol": "js",
+  "hu": "A vízfelszín magassága a mérce nullpontjához képest, centiméterben. Lehet negatív — az csak azt jelenti, hogy a nullpont alatt van."
+ },
+ {
+  "hol": "js",
+  "hu": "Legkisebb vízállás: a mércénél valaha nyilvántartott legalacsonyabb érték. Hogy ez mikor frissült utoljára, az OVF-nél tisztázandó."
+ },
+ {
+  "hol": "js",
+  "hu": "Tényleges evapotranszspiráció: amit a talaj elpárologtat és a növényzet elpárologtat. Aszályban csökken, mert nincs mit elpárologtatni."
+ },
+ {
+  "hol": "js",
+  "hu": "Nem mérjük, hanem kiszámoljuk: ami a többi tag összeadása után marad. Minden fenti tag hibája ebben gyűlik össze."
+ },
+ {
+  "hol": "js",
+  "hu": "hőterhelési korlát"
+ },
+ {
+  "hol": "js",
+  "hu": "A melegvíz-csatorna torkolatától 500 méterre a Duna nem lehet 30 °C-nál melegebb. Ez az erőmű második vízoldali feltétele a vízszint mellett."
+ },
+ {
+  "hol": "js",
+  "hu": ">Nincs adat. Futtasd előbb: <code>python3 fetch_data.py</code></div>"
+ },
+ {
+  "hol": "js",
+  "hu": "<b>Adatlefedettség: 1. szint</b> — részben záródó mérleg —"
+ },
+ {
+  "hol": "js",
+  "hu": ").appendChild(n);\n  });\n\n  /* ── frissítés-jelző ── */\n\n\n\n  {\n    const g = new Date(D.generalva);\n\n\n    const rajzol = () => {\n      const perc = Math.round((Date.now() - g) / 60000);\n      const kor = perc < 1 ?"
+ },
+ {
+  "hol": "js",
+  "hu": "<b>Utolsó adatfrissítés: ${kor}</b>"
+ },
+ {
+  "hol": "js",
+  "hu": "a gyűjtés óránként indul, a futás torlódáskor csúszhat</span>"
+ },
+ {
+  "hol": "js",
+  "hu": ");\n    const add=(t,a)=>{const e=document.createElementNS(ns,t);\n      for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e;};\n\n    /* teljes vízjárás — a fehér oszlop az egész ismert vízjárás,\n       a kitöltött sáv az alján az, ahol most vagyunk */\n    add("
+ },
+ {
+  "hol": "js",
+  "hu": ";\n\n    /* nagyító kerete a teljes oszlop alján */\n    const yA=yFull(zhi), yB=yFull(zlo);\n    add("
+ },
+ {
+  "hol": "js",
+  "hu": ":.6});\n\n    /* nagyított sáv */\n    add("
+ },
+ {
+  "hol": "js",
+  "hu": ";\n\n  /* ── vízstressz-sáv ── */\n\n\n\n\n\n\n\n  {\n    const OI2 = D.ontozesigeny;\n    if(OI2 && OI2.vizstressz != null){\n      const v = Math.max(0, Math.min(1, OI2.vizstressz));\n\n\n      const szin ="
+ },
+ {
+  "hol": "js",
+  "hu": ">\n             <b>A növényzet a lehetséges párolgás ${dec(v*100,0)}%-át teljesíti.</b>\n             Vízbőség mellett ${dec(OI2.et_ref_mm,2)} mm/nap párologna el; a mérés\n             ${dec(OI2.et_act_mm,2)}. A növény ilyenkor lezárja a leveleit, és amíg\n             zárva vannak, nem is növekszik.\n             <em>A skála a lehetségeshez viszonyít, nem a sokéves augusztusi\n             átlaghoz — ahhoz több év adata kellene. ${OI2.datum}</em>\n           </div>\n         </div>"
+ },
+ {
+  "hol": "js",
+  "hu": "több víz érkezett, mint amennyi távozott"
+ },
+ {
+  "hol": "js",
+  "hu": "több víz távozott, mint amennyi érkezett"
+ },
+ {
+  "hol": "js",
+  "hu": ">Magyarország vízmérlege röviden</b>${sorok}"
+ },
+ {
+  "hol": "js",
+  "hu": ";\n\n  /* ── Paks csomópont ── */\n  const K=D.paks;\n  if(K){\n    const hv=K.hutoviz||{};\n    const kartya=(u,v,m,riaszt)=>{\n      const n=el("
+ },
+ {
+  "hol": "js",
+  "hu": "LKV ${num(K.lkv_cm)} cm. A szivattyúk szívócsonkja fix magasságban van."
+ },
+ {
+  "hol": "js",
+  "hu": "A hőterhelési korlát ${dec(K.hokorlat_c,0)} °C a melegvíz-csatorna torkolatától 500 méterre."
+ },
+ {
+  "hol": "js",
+  "hu": "Tartalék: <b>${dec(K.hokorlat_tartalek_c,1)} °C</b>."
+ },
+ {
+  "hol": "js",
+  "hu": "Órás vízhozam a paksi szelvényben, a vízállásból számítva. ${pr("
+ },
+ {
+  "hol": "js",
+  "hu": "}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("
+ },
+ {
+  "hol": "js",
+  "hu": "és gyakorlatilag teljes egészében visszatér — felmelegítve."
+ },
+ {
+  "hol": "js",
+  "hu": "Csapadék · érkezik"
+ },
+ {
+  "hol": "js",
+  "hu": "Folyókon beérkezik"
+ },
+ {
+  "hol": "js",
+  "hu": "Elpárolog · távozik"
+ },
+ {
+  "hol": "js",
+  "hu": "Folyókon távozik"
+ },
+ {
+  "hol": "js",
+  "hu": "= Készletváltozás (maradéktag)"
+ },
+ {
+  "hol": "js",
+  "hu": "<span>· ${t.kor_ora} órás</span>"
+ },
+ {
+  "hol": "js",
+  "hu": "${pr(IS.provenance)} &nbsp;${IS.veg} · ${IS.pontok} havi pont ${IS.kezdet} óta</div>"
+ },
+ {
+  "hol": "js",
+  "hu": "A nulla nem a teli medencét jelenti, hanem a termék sokéves átlagát."
+ },
+ {
+  "hol": "js",
+  "hu": "A görbe azt mutatja, hogy egy-egy aszály után <b>visszaáll-e a korábbi szint</b>."
+ },
+ {
+  "hol": "js",
+  "hu": "Tízéves trend: <b style="
+ },
+ {
+  "hol": "js",
+  "hu": "${dec(IS.trend_km3_ev,2)} km³/év</b> — kb."
+ },
+ {
+  "hol": "js",
+  "hu": "${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} tíz év alatt.</p>"
+ },
+ {
+  "hol": "js",
+  "hu": "${pr(E.provenance)} &nbsp;${E.kezdet} óta</div>"
+ },
+ {
+  "hol": "js",
+  "hu": "A hiány jelenleg <b style="
+ },
+ {
+  "hol": "js",
+  "hu": ";\n  }\n\n  const KIV_OSSZ = D.kivetel_m3s.reduce((a,k)=>a+(k.ertek||0),0);\n  const KIV_FOGY = D.kivetel_m3s.reduce((a,k)=>a+(k.fogyaszto_m3s||0),0);\n\n  /* ── 3 Hova lett ── */\n  const H=D.hova_lett_m3s, hl=el("
+ },
+ {
+  "hol": "js",
+  "hu": "Műholdas párolgásbecslés"
+ },
+ {
+  "hol": "js",
+  "hu": "Párolgás mint maradéktag"
+ },
+ {
+  "hol": "js",
+  "hu": "<b>A képlet tagjai</b>"
+ },
+ {
+  "hol": "js",
+  "hu": "<span><i>P</i> csapadék — ami a dobozra hullik</span>"
+ },
+ {
+  "hol": "js",
+  "hu": "<span><i>Q<sub>be</sub></i> folyókon beérkezik — 11 határszelvény mért vízhozama</span>"
+ },
+ {
+  "hol": "js",
+  "hu": "<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>"
+ },
+ {
+  "hol": "js",
+  "hu": "<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>"
+ },
+ {
+  "hol": "js",
+  "hu": "<span><i>veszteség kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>"
+ },
+ {
+  "hol": "js",
+  "hu": ">A két párolgásbecslés eltérése</div>"
+ },
+ {
+  "hol": "js",
+  "hu": "A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a mérleg zárásához kellene: a mérés ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s."
+ },
+ {
+  "hol": "js",
+  "hu": "<p>Egyik becslés sem a helyes: az eltérés azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="
+ },
+ {
+  "hol": "js",
+  "hu": "><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz\n     cseréje <b>a dobozon belüli átrendezés</b>: ami a Dunából elszivárog a magyar\n     szakaszon, az a dobozban marad, tehát ezt a számot nem növeli. A csere iránya\n     szakaszonként más — a Szigetközben a feliszapolódott meder majdnem elzárja,\n     Paksnál a mélyülő meder megnyitja. Ami viszont <b>tényleg hiányzik innen</b>:\n     a határon átnyúló felszín alatti vízáramlás, amit egyáltalán nem mérünk.</p>\n     <p class="
+ },
+ {
+  "hol": "js",
+  "hu": "><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási\n     programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>\n     <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,\n     ebből veszteség ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek\n     ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.\n     A különbség a készletváltozás és a párolgás bizonytalanságából jön,\n     nem az öntözésből.</p>"
+ },
+ {
+  "hol": "js",
+  "hu": ").appendChild(hl);\n\n  /* ── 4 Kivétel ── */\n  $("
+ },
+ {
+  "hol": "js",
+  "hu": "><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>,"
+ },
+ {
+  "hol": "js",
+  "hu": "ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi marad kívül a magyar vízrendszeren a vizsgált időszakon belül.</span></div>"
+ },
+ {
+  "hol": "js",
+  "hu": "><span></span><span>teljes kivétel<i>m³/s</i></span>"
+ },
+ {
+  "hol": "js",
+  "hu": "<span>ebből veszteség<i>m³/s</i></span></div>"
+ },
+ {
+  "hol": "js",
+  "hu": ").appendChild(s2);\n  });\n\n  /* ── A teljes medence két fala ── */\n  const MF = D.mdb_falak;\n  if(MF && MF.belepo && MF.kilepo){\n    const be = MF.belepo, ki = MF.kilepo;\n    const arany = ki.sokeves_atlag_m3s\n      ? ki.hozam_m3s / ki.sokeves_atlag_m3s * 100 : null;\n    const profil = (MF.duna_profil || []).filter(v=>v.hozam_m3s);\n\n    $("
+ },
+ {
+  "hol": "js",
+  "hu": ">Belépő · ${be.nev}</div>\n          <div class="
+ },
+ {
+  "hol": "js",
+  "hu": ">Kilépő · ${ki.nev}</div>\n          <div class="
+ },
+ {
+  "hol": "js",
+  "hu": "} ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b>-a: ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>"
+ },
+ {
+  "hol": "js",
+  "hu": ">Baziásnál ennyivel több lép ki</div>\n          <div class="
+ },
+ {
+  "hol": "js",
+  "hu": "><b>A pozitív szám azt jelenti, hogy több víz lép ki, mint amennyi belép.</b> Ez a medence normális működése: a Tisza, a Dráva, a Száva, a Morava és minden belső hozzáfolyás menet közben hozzáadja a magáét, ezért Baziásnál nagyobb a hozam, mint Dévénynél.<br><br><b>Napi hozzáfolyásnak viszont nem tekinthető.</b> A Baziásnál ma kilépő víz nem az, amelyik ma lépett be Dévénynél: az átfolyási idő e szakaszon egy-két hét, és közben a medencén belüli tározás is változik. A medence tényleges hozzájárulása hosszabb időszak átlagából vagy hidrológiai késleltetéssel becsülhető.</div></div>\n      </div>"
+ },
+ {
+  "hol": "js",
+  "hu": "><b>A Duna a magyar szakasz előtt</b>"
+ },
+ {
+  "hol": "js",
+  "hu": "<em>Dévény és Medve között a hozam a bősi vízlépcső üzemrendje miatt csökken:\n        a víz nagy része az üzemvízcsatornán halad. Ez üzemeltetési átrendezés,\n        nem vízveszteség.</em></div>"
+ },
+ {
+  "hol": "js",
+  "hu": ");\n    if(TK && TK.path){\n\n\n\n\n      const BM = 15, KAR = 15;          // sormagasság és karakterszélesség\n      const foglalt = [];\n      const utkozik = (b) => foglalt.some(f =>\n        b.x1 > f.x0 && b.x0 < f.x1 && b.y1 > f.y0 && b.y0 < f.y1);\n\n      const helyek = a.map(([nev,v])=>({nev, v, xy: TK.allomasok[nev]}))\n                      .filter(o=>o.xy)\n                      .sort((p,q)=>p.xy[1]-q.xy[1]);\n\n      const pontok = helyek.map(o=>{\n        const [cx,cy] = o.xy;\n        const r = 4 + (o.v/maxV)*6;\n        const sz = o.nev.length * KAR;\n        let hely = null;\n        keres:\n        for(const dy of [0, -BM, BM, -2*BM, 2*BM, -3*BM, 3*BM]){\n          for(const bal of [false, true]){\n            const x0 = bal ? cx-r-8-sz : cx+r+8;\n            const b = {x0, x1:x0+sz, y0:cy+dy-BM/2, y1:cy+dy+BM/2};\n            if(b.x0 > 2 && b.x1 < 998 && !utkozik(b)){ hely = {b, bal, dy}; break keres; }\n          }\n        }\n        if(!hely){                       // végső eset: jobbra, ütközéssel együtt\n          const x0 = cx+r+8;\n          hely = {b:{x0, x1:x0+sz, y0:cy-BM/2, y1:cy+BM/2}, bal:false, dy:0};\n        }\n        foglalt.push(hely.b);\n        return"
+ },
+ {
+  "hol": "js",
+  "hu": "/>\n          ${folyok}\n          ${pontok}\n        </svg>\n        <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország <b>különböző térségeiből ad mintát</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos átlagnak nem tekinthető.</em>\n      </div>"
+ },
+ {
+  "hol": "js",
+  "hu": ">Vízhiány a gyökérzónában</div>\n          <div class="
+ },
+ {
+  "hol": "js",
+  "hu": ">${TV.melyseg}-es réteg, ${a.length} állomás átlaga · ${TV.datum}\n            <br>${pr(TV.provenance)}</div>\n          <p class="
+ },
+ {
+  "hol": "js",
+  "hu": "><b>Mit jelent ez a szám?</b> Ennyi víz hiányzik a talaj\n          felső ${TV.melyseg}-éből ahhoz, hogy megteljen — ahhoz az állapothoz képest,\n          amennyit a talaj a gravitáció ellenében megtartani képes\n          (szántóföldi vízkapacitás). A milliméter itt ugyanaz, mint a csapadéknál:\n          <b>${dec(TV.atlag_mm,1)} mm = ${dec(TV.atlag_mm,1)} liter hiány\n          négyzetméterenként</b>. Ennyi esőnek kellene beszivárognia, hogy a gyökérzóna\n          feltöltődjön.</p>\n          <p class="
+ },
+ {
+  "hol": "js",
+  "hu": ">A ${TV.melyseg} azért ez a mélység, mert a szántóföldi\n          növények gyökérzete jellemzően eddig hatol le — ami ez alatt van, a legtöbb\n          növény számára elérhetetlen. A talajnedvességet az OVF műszerei mérik a\n          helyszínen, hat mélységben.</p>\n          <div class="
+ },
+ {
+  "hol": "js",
+  "hu": ">A mai párolgással számolva hány napnyi nedvesség hiányzik a talajból?</div>\n          ${napok ?"
+ },
+ {
+  "hol": "js",
+  "hu": ">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>"
+ },
+ {
+  "hol": "js",
+  "hu": ">\n            <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>\n            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>\n            <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>\n          </div>\n          <p class="
+ },
+ {
+  "hol": "js",
+  "hu": ">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol\n          megcsapolja a felszín alatti vizet, hol rátáplál, és ez a mederanyagtól meg a\n          vízszinttől függ. A Homokhátság viszont 40–60 kilométerre és magasabban van\n          mindkét folyótól — oda ez a kapcsolat el sem ér.\n          A három rekesz között ezerszeres a különbség abban, meddig marad ott a víz. Ezért nem csővezeték-kérdés az aszály: a folyó vize a gyors rekeszben van, a szárazság a lassúban. Nem attól lesz nedves a talaj, hogy mellette folyik a Duna.</p>\n        </div>\n      </div>"
+ },
+ {
+  "hol": "js",
+  "hu": ">\n        <b>Amennyi víz kellene, és amennyi van</b>\n        <span>A növényzet ma <b>${dec(OI.et_ref_mm,2)} milliméter</b> vizet párologtatna el,\n        ha jutna neki elég. Valójában <b>${dec(OI.et_act_mm,2)} millimétert</b> ad le — a\n        lehetségesnek alig több mint a harmadát. Ilyenkor a növény lezárja a leveleit, és amíg\n        zárva vannak, nem is növekszik. A szárazság nem a hervadásnál kezdődik, hanem itt.</span>\n        <span>Ahhoz, hogy a szántóföldeken ne legyen vízhiány, naponta\n        <b>${num(Math.round(OI.tartomany.also.m3s*86400/1e6))}–${num(Math.round(OI.tartomany.felso.m3s*86400/1e6))} millió köbméter</b>\n        vízre lenne szükség. A folyók jelenlegi hozama mellett — a Dunán, a Tiszán és a\n        többi vízfolyáson együtt <b>${num(M.hozam_be.ertek)} m³/s</b> érkezik az országba —\n        ennyi víz nagyjából\n        <b>${dec(OI.tartomany.also.m3s/M.hozam_be.ertek,1)}–${dec(OI.tartomany.felso.m3s/M.hozam_be.ertek,1)} nap</b>\n        alatt folyik be. Vagyis az ország egy-két napi teljes folyóvíz-behozatalát kellene\n        naponta a földekre juttatni. Öntözésre ténylegesen ennek körülbelül egy századát\n        használjuk.</span>\n        <span><b>Ez a szám a vízhiány méretét mutatja, nem öntözési célt.</b> Ekkora mennyiség a megfelelő helyen és időben hiányzik az országos öntözéshez — a magyar növénytermesztés ezért csapadékfüggő,\n        és aszályban a hiányt nem öntözéssel pótolja, hanem terméskieséssel nyeli le.</span>\n        <em>${pr(OI.provenance)} Nagyságrendi számítás, nem öntözési terv: a műholdas párolgás\n        vegyes felszínborításra vonatkozik, és a szántóterület még helyőrző.</em></div>"
+ },
+ {
+  "hol": "js",
+  "hu": ">${TV.figyelmeztetes}<br>Forrás: ${TV.forras}</p>"
+ },
+ {
+  "hol": "js",
+  "hu": "Országos Vízjelző Szolgálatától jön, mércénkénti órás idősorként; az LKV és az LNV"
+ },
+ {
+  "hol": "js",
+  "hu": "a mércék hivatalos adatlapjáról. A csapadék, a párolgás és a készlet-anomália"
+ },
+ {
+  "hol": "js",
+  "hu": "műholdas becslés. A paksi blokkteljesítmény kizárólag a hűtővízkivétel"
+ },
+ {
+  "hol": "js",
+  "hu": "üzemállapotához szolgál. Az osztályok jelentése a lap tetején, a jelmagyarázatban"
+ },
+ {
+  "hol": "js",
+  "hu": "olvassa az iterators.org darab is. Generálva: ${D.generalva}."
+ },
+ {
+  "hol": "js",
+  "hu": "<br><br><b>Nyitott falak</b> — amit a mérleg nem fog be, és ezért a maradéktagban"
+ },
+ {
+  "hol": "js",
+  "hu": "a fent látható adatok ettől függetlenül érvényesek."
+ },
+ {
+  "hol": "meta",
+  "hu": "Középső-Duna-medence vízmérlege"
+ },
+ {
+  "hol": "meta",
+  "hu": "Mért vízhozam 22 mércéről, műholdas párolgás és csapadék. Minden szám mellett ott, hogy mérés, modell vagy helyőrző."
+ },
+ {
+  "hol": "meta",
+  "hu": "Mennyi víz érkezik a Középső-Duna-medencébe, mennyi párolog el és mennyi távozik — mért vízhozamból, műholdas párolgásból és csapadékból, óránként frissülve."
+ }
+]
