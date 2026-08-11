@@ -590,7 +590,7 @@ a{color:var(--viz)}
     "LKV": "Record low stage: the lowest value ever registered at the gauge. When it was last updated is to be clarified with the OVF.",
     "párolgás": "Actual evapotranspiration: what the soil evaporates and the vegetation transpires. It falls in drought, because there is nothing left to evaporate.",
     "maradéktag": "Not measured but computed: what remains after summing the other terms. The error of every term above accumulates here.",
-    "hőterhelési korlát": "500 m downstream of the warm-water outfall the Danube may not exceed 30 °C. This is the plant's second water-side condition, alongside stage.",
+    "thermal load limit": "500 m downstream of the warm-water outfall the Danube may not exceed 30 °C. This is the plant's second water-side condition, alongside stage.",
   };
   function fogalmakat_jeloli(){
     const gyok = document.querySelectorAll(".lead, .alcim, .tetel .cim, .pk .m, .kiv .s .m, .res p, footer");
@@ -839,13 +839,13 @@ a{color:var(--viz)}
       n.appendChild(el("div","m",m)); return n;
     };
     const P4=$("#paks");
-    P4.appendChild(kartya("1. fal · vízszint",
+    P4.appendChild(kartya("1st limit · stage",
       num(K.vizallas_cm)+'<small> cm</small>',
       K.lkv_alatt_cm>0
         ? `<b>${K.lkv_alatt_cm} cm-rel a mindenkori legkisebb vízállás alatt</b> (LKV ${num(K.lkv_cm)} cm). A szivattyúk szívócsonkja fix magasságban van.`
         : `Record low ${num(K.lkv_cm)} cm. The pump intakes sit at a fixed elevation.`,
       K.lkv_alatt_cm>0));
-    P4.appendChild(kartya("2. fal · vízhő",
+    P4.appendChild(kartya("2nd limit · water temperature",
       dec(K.vizho_c,1)+'<small> °C</small>',
       `The thermal load limit is ${dec(K.hokorlat_c,0)} °C 500 m downstream of the warm-water outfall. `+
       `Margin: <b>${dec(K.hokorlat_tartalek_c,1)} °C</b>.`,
@@ -960,7 +960,7 @@ a{color:var(--viz)}
       `${dec(IS.trend_km3_ev,2)} km³/yr</b> — about `+
       `${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} over ten years.</p>`+
       `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0;padding-top:10px;`+
-      `border-top:1px solid var(--vonal-halk)">${IS.figyelmeztetes}<br>Forrás: ${IS.forras}</p>`;
+      `border-top:1px solid var(--vonal-halk)">${IS.figyelmeztetes}<br>Source: ${IS.forras}</p>`;
   } else {
     const db = Math.abs(E.kumulalt_km3)/R.terfogat_km3;
     $("#egyenleg").innerHTML =
@@ -969,7 +969,7 @@ a{color:var(--viz)}
       `${pr(E.provenance)} &nbsp;${E.kezdet} onward</div>`+
       `<p style="font-size:13px;margin:16px 0 0">${E.megjegyzes} `+
       `The deficit currently stands at <b style="font-family:var(--mono)">${dec(db,1)}</b> ${R.nev}-nyi.</p>`+
-      `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0">Forrás: ${E.forras}</p>`;
+      `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0">Source: ${E.forras}</p>`;
   }
 
   const KIV_OSSZ = D.kivetel_m3s.reduce((a,k)=>a+(k.ertek||0),0);
@@ -977,7 +977,7 @@ a{color:var(--viz)}
 
   /* ── 3 Where it went ── */
   const H=D.hova_lett_m3s, hl=el("div","hl");
-  [["parolgas_muhold","Műholdas párolgásbecslés"],
+  [["parolgas_muhold","Satellite evapotranspiration estimate"],
    ["parolgas_maradek","Evapotranspiration as residual"]].forEach(([k,c])=>{
     const t=H[k];
     hl.appendChild(el("div","par",
@@ -1007,9 +1007,9 @@ a{color:var(--viz)}
      Paksnál a mélyülő meder megnyitja. Ami viszont <b>tényleg hiányzik innen</b>:
      a határon átnyúló felszín alatti vízáramlás, amit egyáltalán nem mérünk.</p>
      <p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási
-     programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
+     programja.</b> The aim is to shrink the figure: every measurement connected and every assumption refined brings it down. The methodology and the list of open questions are public.</p>
      <p><b>Abstraction is not the cause.</b> Total human abstraction is ${num(KIV_OSSZ)} m³/s,
-     of which lost ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
+     of which lost ${num(KIV_FOGY)} m³/s — the discrepancy above is
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
      A különbség a storage change és a párolgás bizonytalanságából jön,
      nem az öntözésből.</p>`));
@@ -1163,11 +1163,11 @@ a{color:var(--viz)}
         <div class="tblokk">
           <div class="u">At today's evapotranspiration, how many days' moisture is missing from the soil?</div>
           ${napok ? `<div class="nagy">${dec(napok,0)}<span class="egys">&nbsp;nap</span></div>
-            <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>` : ""}
+            <div class="m">The root zone's ${dec(TV.atlag_mm,1)} mm deficit, at today's ${dec(Math.abs(MM.parolgas),2)} mm/day evapotranspiration, corresponds to this many days. <b>This is a comparative time-equivalent</b>: it shows the deficit relative to daily turnover — actual refilling depends on rainfall distribution and the soil's capacity to absorb.</div>` : ""}
           <div class="trekesz">
-            <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma at Devín belép, jövő héten at Mohács jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
-            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
-            <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
+            <div><b>napok</b> <span>the river. The Danube crosses the country in roughly a week: what enters today at Devín passes at Mohács next week. This is flow, not stock — it is not ours, it merely passes through.</span></div>
+            <div><b>hetek</b> <span>the soil. A deficit often builds over weeks, but the time to refill depends on how the rain falls and how it infiltrates. The day count above is <b>a comparative time-equivalent, not a forecast</b>. Nationally the root zone is replenished by rainfall; locally irrigation helps too.</span></div>
+            <div><b>évtizedek</b> <span>groundwater. On the Danube–Tisza ridge it has fallen by metres over fifty years. What is lost here is not restored by a single wet year.</span></div>
           </div>
           <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol
           megcsapolja a felszín alatti vizet, hol rátáplál, és ez a mederanyagtól meg a
@@ -1186,15 +1186,15 @@ a{color:var(--viz)}
         <span><b>This figure shows the size of the water deficit, not an irrigation target.</b> That is the volume missing in the right place and at the right time for national irrigation — which is why Hungarian crop production depends on rainfall, and in drought absorbs the shortfall as yield loss rather than making it up by irrigation.</span>
         <em>${pr(OI.provenance)} Nagyságrendi számítás, nem öntözési terv: a műholdas párolgás
         vegyes felszínborításra vonatkozik, és a szántóterület még placeholder.</em></div>` : "") +
-      `<p class="tforras">${TV.figyelmeztetes}<br>Forrás: ${TV.forras}</p>`;
+      `<p class="tforras">${TV.figyelmeztetes}<br>Source: ${TV.forras}</p>`;
   }
 
   /* lábjegyzet */
 $("#lab").innerHTML =
     `<b>What the page measures, and what it computes.</b> A vízállás, a vízhozam és a vízhő az OVF `+
-    `Országos Vízjelző Szolgálatától jön, mércénkénti órás idősorként; az LKV és az LNV `+
-    `a gauges hivatalos adatlapjáról. A csapadék, a párolgás és a készlet-anomália `+
-    `satellite estimate. A paksi blokkteljesítmény kizárólag a cooling-water abstraction `+
+    `National Hydrological Forecasting Service, as an hourly series per gauge; the record low and record high stages come `+
+    `a gauges from the gauges' official data sheets. Precipitation, evapotranspiration and the storage anomaly are `+
+    `satellite estimate. The Paks unit output serves the cooling-water abstraction `+
     `üzemállapotához szolgál. Az osztályok jelentése a lap tetején, a jelmagyarázatban `+
     `olvasható.`+
     `<br><br>One pipeline, one output: <code>data.json</code> — ugyanezt `+
