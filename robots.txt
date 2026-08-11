@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 
-# Az adatfájlok is szabadon indexelhetők — a lap nyílt kutatási felület.
+# Az angol változat félkész: a fordítás darabonként történt, és a szövegek
+# egy része magyarul maradt. Amíg nem teljes, nem indexeljük — egy félig
+# lefordított lap az egész munka hitelét viszi el.
+Disallow: /en/
+
 Sitemap: https://basin.equora.institute/sitemap.xml

@@ -16,10 +16,7 @@ cd "$(dirname "$0")"
 ELO="https://basin.equora.institute"
 # Az angol valtozat a magyar forrasbol generalodik, kozvetlenul publikalas elott,
           # igy a ket nyelv nem tud szetcsuszni.
-          python ford.py || echo "!! a forditas elhasalt, az en/ regi marad"
-          mkdir -p _publish/en
 cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
-cp en/index.html en/data.js en/data.json _publish/en/
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.

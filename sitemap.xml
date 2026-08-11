@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://basin.equora.institute/</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://basin.equora.institute/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://basin.equora.institute/en/"/>
-    <lastmod>2026-08-11</lastmod><changefreq>hourly</changefreq><priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://basin.equora.institute/en/</loc>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://basin.equora.institute/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://basin.equora.institute/en/"/>
-    <lastmod>2026-08-11</lastmod><changefreq>hourly</changefreq><priority>0.9</priority>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>
