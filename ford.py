@@ -62,9 +62,11 @@ def main():
 
     # A gyökérhez képest eggyel lejjebb vagyunk: az abszolút útvonalak maradnak,
     # a relatívakat viszont fel kell emelni.
-    x = re.sub(r'(src|href)="(data\.js|data\.json|logo\.png|logo\.svg)"',
+    # A logó a gyökérből jön, az adat viszont az en/ mappából: az angol
+    # data.json a lefordított mezőket tartalmazza.
+    x = re.sub(r'(src|href)="(logo\.png|logo\.svg|favicon[^"]*|apple[^"]*)"',
                r'\1="../\2"', x)
-    x = x.replace('fetch("data.json")', 'fetch("../data.json")')
+    
 
     # magyar dátum- és számformátum → nemzetközi
     x = x.replace('toLocaleString("hu-HU"', 'toLocaleString("en-GB"')
@@ -89,6 +91,61 @@ def main():
         print(f"\nA HTML-törzsben még {len(maradt)} magyar szó maradt, például:")
         print("   ", ", ".join(sorted(maradt)[:14]))
 
+    adat(tabla)
+
+
+
+
+def adat(tabla):
+    """A data.json angol párja: az en/ lap ezt olvassa.
+
+    A lap szövegeinek jó része nem a HTML-ben áll, hanem a data.json-ból jön —
+    mércenevek, forrásmegjelölések, jegyzetek. Ezeket ugyanazzal a táblával
+    fordítjuk, hogy egy helyen legyen minden.
+    """
+    import json
+    forras = pathlib.Path("data.json")
+    if not forras.exists():
+        print("data.json hiányzik — az angol adat kimarad")
+        return
+    parok = sorted(((hu, en) for hu, en in tabla.items() if en),
+                   key=lambda x: -len(x[0]))
+    szamlalo = {"csere": 0, "erintetlen": []}
+
+    def jar(o):
+        if isinstance(o, dict):
+            return {k: jar(v) for k, v in o.items()}
+        if isinstance(o, list):
+            return [jar(v) for v in o]
+        if isinstance(o, str):
+            eredeti = o
+            for hu, en in parok:
+                if hu in o:
+                    o = o.replace(hu, en)
+            if o != eredeti:
+                szamlalo["csere"] += 1
+            elif re.search(r"[áéíóöőúüűÁÉÍÓÖŐÚÜŰ]", o) and len(o) > 8:
+                szamlalo["erintetlen"].append(o)
+            return o
+        return o
+
+    d = jar(json.loads(forras.read_text(encoding="utf-8")))
+    pathlib.Path("en").mkdir(exist_ok=True)
+    pathlib.Path("en/data.json").write_text(
+        json.dumps(d, ensure_ascii=False, indent=2), encoding="utf-8")
+    # A lap a data.js-t tölti be (a data.json a letölthető változat).
+    # Mindkettőnek elő kell állnia az en/ mappában.
+    js = pathlib.Path("data.js")
+    if js.exists():
+        eleje = js.read_text(encoding="utf-8").split("=", 1)[0]
+        pathlib.Path("en/data.js").write_text(
+            eleje + "= " + json.dumps(d, ensure_ascii=False) + ";", encoding="utf-8")
+
+    print(f"en/data.json + en/data.js — {szamlalo['csere']} mező fordítva")
+    if szamlalo["erintetlen"]:
+        print(f"  {len(szamlalo['erintetlen'])} mező maradt magyarul, például:")
+        for e in szamlalo["erintetlen"][:6]:
+            print("   ", e[:66])
 
 if __name__ == "__main__":
     main()

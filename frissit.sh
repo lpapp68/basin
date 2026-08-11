@@ -127,7 +127,7 @@ if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
           # igy a ket nyelv nem tud szetcsuszni.
           python ford.py || echo "!! a forditas elhasalt, az en/ regi marad"
           mkdir -p _publish/en
-  cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/ && cp en/index.html _publish/en/
+  cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/ && cp en/index.html en/data.js en/data.json _publish/en/
   npx --yes wrangler pages deploy _publish \
       --project-name "$BASIN_PAGES_PROJECT" --commit-dirty=true
 fi

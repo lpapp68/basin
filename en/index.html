@@ -17,8 +17,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<!-- Plausible: könnyű, sütimentes mérés. A szkript URL-je tartalmazza az
-     oldal azonosítóját, ezért ez a felület külön mérési egység —
+<!-- Plausible: könnyű, sütimentes measurement. A szkript URL-je tartalmazza az
+     oldal azonosítóját, ezért ez a felület külön measurementi egység —
      függetlenül az equora.institute-tól. -->
 <script async src="https://plausible.io/js/pa-creL-lUfN_HIadFxCOqcn.js"></script>
 <script>
@@ -35,7 +35,7 @@
 <meta name="twitter:description"
       content="Measured discharge from 22 gauges, satellite evapotranspiration and precipitation. Every figure states whether it is measurement, model or placeholder.">
 
-<!-- Strukturált adat: a keresők és az adatkatalógusok ebből tudják, hogy ez egy
+<!-- Strukturált adat: a keresők és az adatkatalógusok of which tudják, hogy ez egy
      hivatkozható, nyílt licencű adatkészlet, nem egy szokásos weblap. -->
 <script type="application/ld+json">
 {
@@ -186,7 +186,7 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .pr.mert{color:var(--viz);background:rgba(43,92,119,.1)}
 .pr.szarmaztatott{color:var(--viz)}
 .pr.muholdas{color:var(--parolgas);background:rgba(169,119,47,.10)}
-.pr.modellezett{color:var(--halvany)}
+.pr.modelled{color:var(--halvany)}
 .pr.helyorzo{color:var(--ismeretlen);
   background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(122,74,110,.22) 3px 6px)}
 
@@ -467,7 +467,7 @@ a{color:var(--viz)}
 
 <section>
   <div class="sz"><h2>The gauges</h2><span class="n" id="mercen"></span></div>
-  <p class="lead">Stage, vízhozam és vízhő, óránként, az OVF-től — mind mérés. Minden oszlop egy mérce
+  <p class="lead">Stage, vízhozam és vízhő, óránként, az OVF-től — mind measurement. Minden oszlop egy mérce
   mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.
   A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. From left to right görgethető.</p>
   <div class="mercesor" id="mercesor"></div>
@@ -486,9 +486,9 @@ a{color:var(--viz)}
       talajnedvesség</span>
     <span><b class="pr szarmaztatott">derived from in-situ data</b> the riverk vízhozama:
       a vízállásból, kalibrált vízhozamgörbével</span>
-    <span><b class="pr muholdas">satellite estimate</b> műholdas mérésből modellel
+    <span><b class="pr muholdas">satellite estimate</b> műholdas measurementből modellel
       visszaszámítva: csapadék, párolgás, készlet-anomália</span>
-    <span><b class="pr modellezett">computed</b> más tételekből, feltételezésekkel</span>
+    <span><b class="pr modelled">computed</b> más tételekből, feltételezésekkel</span>
     <span><b class="pr helyorzo">placeholder</b> nagyságrendi becslés, amíg a forrás bekötésre vár</span>
   </div>
   <div class="racs">
@@ -498,7 +498,7 @@ a{color:var(--viz)}
       <p class="alcim">Five terms from <b>the same day</b>, mind azonos
       mértékegységben. A mérleg csak akkor értelmes, ha minden tagja egyetlen naphoz
       tartozik: a tegnapi eső egy része ma is a mederben van, ezért a tegnapi csapadékot
-      a mai hozammal összevetni hibás volna. Therefore the riverk hozama is aznapi átlag,
+      a mai hozammal összevetni hibás volna. Therefore the riverk hozama is aznapi mean,
       az órás mintákból.</p>
       <p class="alcim mert" id="mertekegyseg"></p>
       <div id="pulzus"></div>
@@ -518,7 +518,7 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-kivetel">
       <h3>4 · Abstraction <span class="pontos">amit az ember kivesz</span></h3>
-      <p class="alcim">Amit az ember kivesz a rendszerből. A nagy szám a total abstraction — de a víz egy része tisztítva vagy felmelegítve visszatér. Csak az számít veszteségnek, ami nem jön vissza: az elpárolgó öntözővíz, a locsolás, a halastavak felszíne.</p>
+      <p class="alcim">Amit az ember kivesz a rendszerből. A nagy szám a total abstraction — de a víz egy része tisztítva vagy returns warmed. Csak az számít veszteségnek, ami nem jön vissza: az elpárolgó öntözővíz, a locsolás, a halastavak felszíne.</p>
       <div class="kiv" id="kivetel"></div>
     </div>
 
@@ -551,7 +551,7 @@ a{color:var(--viz)}
       <a href="https://github.com/lpapp68/basin" target="_blank" rel="noopener">Source code and methodology</a>
       <a href="https://doi.org/10.5281/zenodo.21852060" target="_blank" rel="noopener">Methodology (Zenodo, DOI)</a>
       <a href="https://github.com/lpapp68/basin/blob/main/MODSZERTAN.md" target="_blank" rel="noopener">All open questions</a>
-      <a href="../data.json">The raw data (data.json)</a></div>
+      <a href="data.json">The raw data (data.json)</a></div>
   </div>
   <p class="forrasmegj">A módszertan, a feltételezések és a nyitott kérdések listája
   a projekt dokumentációjában olvasható. A hivatkozható változat Zenodóra kerül, DOI-val.</p>
@@ -565,7 +565,7 @@ a{color:var(--viz)}
   <footer id="lab"></footer>
 </div>
 
-<script src="../data.js"></script>
+<script src="data.js"></script>
 <script>
 (function(){
   const D = window.BASIN_DATA;
@@ -576,7 +576,7 @@ a{color:var(--viz)}
                           if(h!=null)n.innerHTML=h; return n; };
   const num = n => n==null ? "—" : n.toLocaleString("en-GB");
   // Minden törtszám ezen megy át: magyar tizedesvessző, rögzített jegyszám.
-  const PR_NEV = {mert:"in-situ measurement", szarmaztatott:"derived from in-situ data", muholdas:"satellite estimate", modellezett:"computed", helyorzo:"placeholder"};
+  const PR_NEV = {mert:"in-situ measurement", szarmaztatott:"derived from in-situ data", muholdas:"satellite estimate", modelled:"computed", helyorzo:"placeholder"};
   const pr = k => `<span class="pr ${k}">${PR_NEV[k] || k}</span>`;
   const dec = (n,j=1) => n==null ? "—"
     : n.toLocaleString("en-GB",{minimumFractionDigits:j,maximumFractionDigits:j});
@@ -759,7 +759,7 @@ a{color:var(--viz)}
   // legközvetlenebbül érthető száma: azt mondja meg, a felszín a lehetséges
   // teljesítményének hányad részén működik.
   //
-  // A színskála a LEHETSÉGESHEZ viszonyít, nem a sokéves augusztusi átlaghoz:
+  // A színskála a LEHETSÉGESHEZ viszonyít, nem a sokéves augusztusi meanhoz:
   // nyáron ez az arány természetszerűen 1 alatt van. „Normális augusztus”
   // állításhoz több év adata kellene — az még nincs meg.
   {
@@ -779,7 +779,7 @@ a{color:var(--viz)}
              ${dec(OI2.et_act_mm,2)}. A növény ilyenkor lezárja a leveleit, és amíg
              zárva vannak, nem is növekszik.
              <em>A skála a lehetségeshez viszonyít, nem a sokéves augusztusi
-             átlaghoz — ahhoz több év adata kellene. ${OI2.datum}</em>
+             meanhoz — ahhoz több év adata kellene. ${OI2.datum}</em>
            </div>
          </div>`;
     }
@@ -806,7 +806,7 @@ a{color:var(--viz)}
         ${AR.kumulalt_km3 > 0 ? "több víz érkezett, mint amennyi távozott" :
         "több víz távozott, mint amennyi érkezett"}: a computed napi egyenleg
         <b>${sgn(Math.round(mm*100)/100)} mm</b>. Egyetlen nap keveset mond a trendről,
-        és ez a szám nem közvetlen készletmérés, hanem maradéktag.</p>`;
+        és ez a szám nem közvetlen készletmeasurement, hanem maradéktag.</p>`;
     }
 
     if(H2 && H2.elteres){
@@ -857,7 +857,7 @@ a{color:var(--viz)}
       dec(hv.ertek,1)+'<small> m³/s</small>',
       `${hv.allapot||"—"}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
       `és gyakorlatilag teljes egészében visszatér — felmelegítve. `+
-      `${pr("modellezett")} ${hv.forras||""}`, false));
+      `${pr("modelled")} ${hv.forras||""}`, false));
   }
 
   /* ── 1 Pulse ── */
@@ -954,7 +954,7 @@ a{color:var(--viz)}
           stroke="var(--rekord)" stroke-width="1.4" stroke-linejoin="round"/>`).join("")}
       </svg>`+
       `<p style="font-size:12.5px;color:var(--halvany);margin:6px 0 0">`+
-      `A nulla nem a teli medencét jelenti, hanem a termék sokéves átlagát. `+
+      `A nulla nem a teli medencét jelenti, hanem a termék sokéves meanát. `+
       `A görbe azt mutatja, hogy egy-egy aszály után <b>visszaáll-e a korábbi szint</b>. `+
       `Tízéves trend: <b style="font-family:var(--mono);color:var(--rekord)">`+
       `${dec(IS.trend_km3_ev,2)} km³/év</b> — kb. `+
@@ -998,8 +998,8 @@ a{color:var(--viz)}
     // amennyit a műhold mér; negatívnál fordítva. A korábbi „hiányzik" szó
     // pozitív értéknél önellentmondás volt.
     `<p class="irany">${H.elteres.ertek > 0
-      ? `A mérleg zárásához <b>ennyivel több</b> párolgás kellene, mint amennyit a műhold mér: a maradék ${num(H.parolgas_maradek.ertek)}, a mérés ${num(H.parolgas_muhold.ertek)} m³/s.`
-      : `A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a mérleg zárásához kellene: a mérés ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
+      ? `A mérleg zárásához <b>ennyivel több</b> párolgás kellene, mint amennyit a műhold mér: a maradék ${num(H.parolgas_maradek.ertek)}, a measurement ${num(H.parolgas_muhold.ertek)} m³/s.`
+      : `A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a mérleg zárásához kellene: a measurement ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
     `<p>Egyik becslés sem a helyes: az eltérés azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
      cseréje <b>a dobozon belüli átrendezés</b>: ami a Dunából elszivárog a magyar
      szakaszon, az a dobozban marad, tehát ezt a számot nem növeli. A csere iránya
@@ -1007,7 +1007,7 @@ a{color:var(--viz)}
      Paksnál a mélyülő meder megnyitja. Ami viszont <b>tényleg hiányzik innen</b>:
      a határon átnyúló felszín alatti vízáramlás, amit egyáltalán nem mérünk.</p>
      <p class="kutatas"><b>Ennek a különbségnek a feltárása az EQUORA Institute kutatási
-     programja.</b> A cél a szám csökkentése: minden bekötött mérés és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
+     programja.</b> A cél a szám csökkentése: minden bekötött measurement és minden pontosított feltételezés lejjebb viszi. A módszertan és a nyitott kérdések listája nyilvános.</p>
      <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
      of which lost ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
@@ -1018,7 +1018,7 @@ a{color:var(--viz)}
   /* ── 4 Abstraction ── */
   $("#p-kivetel .alcim").insertAdjacentHTML("afterend",
     `<div class="kivosszeg"><span>Összesen <b>${num(KIV_OSSZ)} m³/s</b>, `+
-    `ebből <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi marad kívül a magyar vízrendszeren a vizsgált időszakon belül.</span></div>`);
+    `of which <b>veszteség ${num(KIV_FOGY)} m³/s</b> — ennyi marad kívül a magyar vízrendszeren a vizsgált időszakon belül.</span></div>`);
   $("#kivetel").insertAdjacentHTML("beforeend",
     `<div class="kivfej"><span></span><span>total abstraction<i>m³/s</i></span>` +
     `<span>of which lost<i>m³/s</i></span></div>`);
@@ -1047,7 +1047,7 @@ a{color:var(--viz)}
             ${be.vizho_c!=null?"· "+dec(be.vizho_c,1)+" °C":""}<br>${be.forras}</div></div>
         <div class="mdbdb"><div class="u">Outflow · ${ki.nev}</div>
           <div class="nagy">${dec(ki.hozam_m3s,1)}<span class="egys">&nbsp;m³/s</span></div>
-          <div class="m">${arany!=null?`${"aáeéiíoóöőuúüű".includes(HONAPOK[new Date().getMonth()][0]) ? "Az" : "A"} ${HONAPOK[new Date().getMonth()]}i sokéves átlag <b>${dec(arany,0)}%</b> of the ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os átlaghoz képest.<br>`:""}${ki.forras}</div></div>
+          <div class="m">${arany!=null?`${"aáeéiíoóöőuúüű".includes(HONAPOK[new Date().getMonth()][0]) ? "Az" : "A"} ${HONAPOK[new Date().getMonth()]}i sokéves mean <b>${dec(arany,0)}%</b> of the ${num(ki.hozam_m3s)} m³/s a ${num(ki.sokeves_atlag_m3s)} m³/s-os meanhoz képest.<br>`:""}${ki.forras}</div></div>
         <div class="mdbdb kiemelt"><div class="u">Baziaş discharges this much more</div>
           <div class="nagy">${sgn(MF.kulonbseg_m3s ?? MF.hozzafolyas_m3s)}<span class="egys">&nbsp;m³/s</span></div>
           <div class="m"><b>A positive figure means more water leaves than enters.</b> This is the basin working normally: the Tisza, Drava, Sava, Morava and every internal tributary add their own along the way, so discharge at Baziaş exceeds that at Devín.<br><br><b>It cannot, however, be read as daily inflow.</b> The water leaving Baziaş today is not the water that entered at Devín today: travel time along this reach is one to two weeks, and storage within the basin changes meanwhile. The basin's actual contribution can be estimated from a longer-period average or with hydrological routing.</div></div>
@@ -1131,7 +1131,7 @@ a{color:var(--viz)}
           ${folyok}
           ${pontok}
         </svg>
-        <em>Disc size grows with the deficit. The ten stations <b>sample different regions of the country</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos átlagnak nem tekinthető.</em>
+        <em>Disc size grows with the deficit. The ten stations <b>sample different regions of the country</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos meannak nem tekinthető.</em>
       </div>`;
     }
 
@@ -1203,7 +1203,7 @@ $("#lab").innerHTML =
     `<b>What the page measures, and what it computes.</b> A vízállás, a vízhozam és a vízhő az OVF `+
     `Országos Vízjelző Szolgálatától jön, mércénkénti órás idősorként; az LKV és az LNV `+
     `a mércék hivatalos adatlapjáról. A csapadék, a párolgás és a készlet-anomália `+
-    `satellite estimate. A paksi blokkteljesítmény kizárólag a hűtővízkivétel `+
+    `satellite estimate. A paksi blokkteljesítmény kizárólag a cooling-water abstraction `+
     `üzemállapotához szolgál. Az osztályok jelentése a lap tetején, a jelmagyarázatban `+
     `olvasható.`+
     `<br><br>One pipeline, one output: <code>data.json</code> — ugyanezt `+
