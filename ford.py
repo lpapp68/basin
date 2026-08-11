@@ -46,10 +46,18 @@ def main():
         # egy hosszabb mondatba, és félig magyar szöveget hagy maga után.
         # A \b nem működik ékezetes betűkkel, ezért a szomszédos karaktert
         # nézzük: betű vagy ékezet esetén NEM cserélünk.
-        minta = re.compile(
-            r"(?<![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])" + re.escape(hu) +
-            r"(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])")
-        x2, db = minta.subn(lambda m: en, x)
+        # A szóhatár csak akkor kell, ha a kulcs betűvel kezdődik ÉS végződik:
+        # egy HTML-részlet ("<a class=...>") esetén a \b-szerű feltétel sosem
+        # teljesülne, és a csere csendben elmaradna.
+        betuvel = (hu[0].isalpha() and hu[-1].isalpha())
+        if betuvel:
+            minta = re.compile(
+                r"(?<![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])" + re.escape(hu) +
+                r"(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])")
+            x2, db = minta.subn(lambda m: en, x)
+        else:
+            db = x.count(hu)
+            x2 = x.replace(hu, en)
         if db:
             x = x2
             talalt += 1
@@ -128,10 +136,13 @@ def adat(tabla):
         if isinstance(o, str):
             eredeti = o
             for hu, en in parok:
-                minta = re.compile(
-                    r"(?<![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])" + re.escape(hu) +
-                    r"(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])")
-                o = minta.sub(lambda m: en, o)
+                if hu[0].isalpha() and hu[-1].isalpha():
+                    minta = re.compile(
+                        r"(?<![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])" + re.escape(hu) +
+                        r"(?![A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű])")
+                    o = minta.sub(lambda m: en, o)
+                else:
+                    o = o.replace(hu, en)
             if o != eredeti:
                 szamlalo["csere"] += 1
             elif re.search(r"[áéíóöőúüűÁÉÍÓÖŐÚÜŰ]", o) and len(o) > 8:
