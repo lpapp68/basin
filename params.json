@@ -140,7 +140,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-10",
+    "datum": "2026-08-11",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -1447,21 +1447,21 @@
     ]
   },
   "talaj_vizhiany": {
-    "datum": "2026-08-09",
-    "atlag_mm": 33.4,
-    "min_mm": 0.8,
-    "max_mm": 70.9,
+    "datum": "2026-08-10",
+    "atlag_mm": 33.5,
+    "min_mm": 0.9,
+    "max_mm": 71.0,
     "allomasok": {
-      "Bernecebaráti": 0.8,
-      "Egyek": 41.6,
-      "Enying": 27.5,
-      "Felsőszentmárton": 28.9,
-      "Kölcse": 25.9,
-      "Nagykőrös": 16.8,
-      "Püski": 18.0,
-      "Röszke": 67.1,
-      "Sarkad": 70.9,
-      "Vasszentmihály": 36.5
+      "Bernecebaráti": 0.9,
+      "Egyek": 41.8,
+      "Enying": 27.6,
+      "Felsőszentmárton": 29.0,
+      "Kölcse": 26.1,
+      "Nagykőrös": 16.9,
+      "Püski": 18.1,
+      "Röszke": 67.2,
+      "Sarkad": 71.0,
+      "Vasszentmihály": 36.9
     },
     "melyseg": "80 cm",
     "provenance": "mert",
@@ -1469,8 +1469,8 @@
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-11T10:05:43+00:00",
-    "datum": "2026-08-10",
+    "lekerve": "2026-08-12T02:36:12+00:00",
+    "datum": "2026-08-11",
     "belepo": {
       "nev": "Duna, Dévény",
       "hozam_m3s": 787.0,
