@@ -123,8 +123,10 @@ fi
 # Publikálás. Csak akkor, ha be van állítva a Cloudflare Pages projekt.
 if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
   echo "== publikálás"
-  # Az angol valtozat a magyar forrasbol generalodik, kozvetlenul publikalas elott,
-          # igy a ket nyelv nem tud szetcsuszni.
+  # Minden publikálandó fájl egy helyen. Ami kimarad, azt a következő
+  # botfutás letörli a lapról — ez korábban a logóval megtörtént.
+  mkdir -p _publish
+  cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
   npx --yes wrangler pages deploy _publish \
       --project-name "$BASIN_PAGES_PROJECT" --commit-dirty=true
 fi
