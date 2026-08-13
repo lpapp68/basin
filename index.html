@@ -65,7 +65,7 @@
   "citation": "Papp L. (2026). Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method. EQUORA Institute. Zenodo. https://doi.org/10.5281/zenodo.21852060"
 }
 </script>
-<meta name="description" content="Mennyi víz érkezik a Középső-Duna-medencébe, mennyi párolog el és mennyi távozik — mért vízhozamból, műholdas párolgásból és csapadékból, óránként frissülve.">
+<meta name="description" content="Mennyi víz érkezik a Középső-Duna-medencébe, mennyi párolog el és mennyi távozik — mért vízhozamból, műholdas párolgásból és csapadékból, negyedórás felbontású adatból.">
 <meta property="og:title" content="Középső-Duna-medence vízmérlege">
 <meta property="og:description" content="Mért vízhozam 22 mércéről, műholdas párolgás és csapadék. Minden szám mellett ott, hogy mérés, modell vagy helyőrző.">
 <meta property="og:url" content="https://basin.equora.institute/">
@@ -461,7 +461,7 @@ a{color:var(--viz)}
 
 <section>
   <div class="sz"><h2>A mércék</h2><span class="n" id="mercen"></span></div>
-  <p class="lead">Vízállás, vízhozam és vízhő, óránként, az OVF-től — mind mérés. Minden oszlop egy mérce
+  <p class="lead">Vízállás, vízhozam és vízhő <b>negyedóránként</b>, az OVF nyílt adat-API-jából — mind mérés. Minden oszlop egy mérce
   mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.
   A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. Balról jobbra görgethető.</p>
   <div class="mercesor" id="mercesor"></div>
@@ -661,7 +661,7 @@ a{color:var(--viz)}
         `<span class="pont ${allapot}"></span>` +
         `<b>Utolsó adatfrissítés: ${kor}</b>` +
         `<span>${g.toLocaleString("hu-HU", {dateStyle:"short", timeStyle:"short"})} · ` +
-        `a gyűjtés óránként indul, a futás torlódáskor csúszhat</span>`;
+        `az adat negyedórás; a gyűjtés óránként indul, és torlódáskor csúszhat</span>`;
     };
     rajzol();
     setInterval(rajzol, 60000);
