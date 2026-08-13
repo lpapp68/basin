@@ -21,7 +21,7 @@ import pathlib
 import re
 import sys
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import archivum
 
@@ -412,14 +412,21 @@ def main():
         "generalva": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "doboz": BOX, "dobozok": DOBOZOK, "aktiv_doboz": AKTIV_DOBOZ,
         "orak": {
-            "oras": {"cimke": "vízállás · hozam · vízhő", "forras": "OVF / vizugy.hu",
+            "oras": {"cimke": "vízállás · hozam · vízhő",
+                 "forras": "OVF nyílt adat-API (data.vizugy.hu), negyedórás felbontás",
                      # A mércék nem egyszerre frissülnek az OVF-nél: a legtöbb óránként,
                      # néhány csak hat- vagy tizenét óránként. A fejléc a LEGFRISSEBBet
                      # mutatja, és kiírja, hány mérce tart ott — így a késő mércék
                      # láthatóak maradnak.
                      "utolso": (max((m.get("utolso_ido") or "") for m in mercek) or None),
-                     "mercek_friss": sum(1 for m in mercek
-                         if (m.get("utolso_ido") or "") == max((n.get("utolso_ido") or "") for n in mercek)),
+                     # Negyedórás rácson a mércék időbélyege szinte sosem esik egybe, ezért
+                     # nem az azonos bélyegűeket számoljuk, hanem azt, hány mérce frissült
+                     # az elmúlt órában — ez mutatja meg, él-e a gyűjtés.
+                     "mercek_friss": sum(
+                         1 for m in mercek
+                         if (m.get("utolso_ido") or "") >= (
+                             datetime.now() - timedelta(hours=1)
+                         ).strftime("%Y.%m.%d. %H:%M")),
                      "mercek_osszes": len(mercek)},
             "napi": {"cimke": "csapadék · párolgás",
                      "forras": (f"csapadék {d_csap or '?'} · párolgás {d_par or '?'}"

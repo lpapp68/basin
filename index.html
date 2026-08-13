@@ -632,13 +632,13 @@ a{color:var(--viz)}
   /* figyelmeztetés + órák */
   $("#warn").innerHTML = "<b>Adatlefedettség: 1. szint</b> — részben záródó mérleg — " + D.figyelmeztetes;
   const O = D.orak;
-  const orak = [["Órás","el",O.oras],["Napi","",O.napi],["Havi","",O.havi]];
+  const orak = [["Negyedórás","el",O.oras],["Napi","",O.napi],["Havi","",O.havi]];
   orak.forEach(([cim,cls,o])=>{
     const n = el("div","ora "+cls);
     n.appendChild(el("div","u",cim+" · "+o.cimke));
     n.appendChild(el("div","v",o.utolso||"—"));
     n.appendChild(el("div","s", o.forras +
-      (o.mercek_friss ? ` · ${o.mercek_friss}/${o.mercek_osszes} mérce tart itt` : "")));
+      (o.mercek_friss ? ` · ${o.mercek_friss}/${o.mercek_osszes} mérce frissült az utolsó órában` : "")));
     $("#orak").appendChild(n);
   });
 
@@ -846,7 +846,7 @@ a{color:var(--viz)}
       K.hokorlat_tartalek_c!=null && K.hokorlat_tartalek_c<3));
     P4.appendChild(kartya("A folyó",
       num(K.hozam_m3s)+'<small> m³/s</small>',
-      `Órás vízhozam a paksi szelvényben, a vízállásból számítva. ${pr("szarmaztatott")}`, false));
+      `Negyedórás vízhozam a paksi szelvényben, a vízállásból számítva. ${pr("szarmaztatott")}`, false));
     P4.appendChild(kartya("Hűtővízkivétel",
       dec(hv.ertek,1)+'<small> m³/s</small>',
       `${hv.allapot||"—"}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("hu-HU",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
