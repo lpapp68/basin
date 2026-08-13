@@ -15,6 +15,7 @@ Forrás:
   holadelej.hu /api/data (CC BY 4.0) — paksi blokkteljesítmény, kizárólag üzemállapotnak
 """
 
+import datetime as dt
 import json
 import pathlib
 import re
@@ -53,35 +54,37 @@ DOBOZOK = {
 AKTIV_DOBOZ = "hu"
 BOX = DOBOZOK[AKTIV_DOBOZ]
 
-# nev, VOA, folyo, szerep, jegyzet
+# nev, VOA, folyo, szerep, jegyzet, torzsszam
+# A VOA a regi HTML-felulet azonositoja; a torzsszam az OVF hivatalos
+# API-jae (data.vizugy.hu). A VOA-t tartaleknak megtartjuk.
 MERCEK = [
     # ── Duna ────────────────────────────────────────────────────────────
-    ("Nagybajcs",     "16495FDB-97AB-11D4-BB62-00508BA24287", "Duna",  "belepo",  "Ausztria / Szlovákia felől"),
-    ("Komárom",       "16495FDD-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", ""),
-    ("Budapest",      "16496059-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", ""),
-    ("Dunaújváros",   "164960A9-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", ""),
-    ("Paks",          "16496188-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", "hűtővízkivétel"),
-    ("Baja",          "164960C2-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", ""),
-    ("Mohács",        "16496283-97AB-11D4-BB62-00508BA24287", "Duna",  "kilepo",  "a doboz fő kifolyása"),
+    ("Nagybajcs",     "16495FDB-97AB-11D4-BB62-00508BA24287", "Duna",  "belepo",  "Ausztria / Szlovákia felől", 3),
+    ("Komárom",       "16495FDD-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", "", 5),
+    ("Budapest",      "16496059-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", "", 1026),
+    ("Dunaújváros",   "164960A9-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", "", 547),
+    ("Paks",          "16496188-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", "hűtővízkivétel", 549),
+    ("Baja",          "164960C2-97AB-11D4-BB62-00508BA24287", "Duna",  "atfolyo", "", 1344),
+    ("Mohács",        "16496283-97AB-11D4-BB62-00508BA24287", "Duna",  "kilepo",  "a doboz fő kifolyása", 831),
     # ── Duna bal parti mellékfolyói ─────────────────────────────────────
-    ("Ipolytarnóc",   "16496066-97AB-11D4-BB62-00508BA24287", "Ipoly", "belepo",  "Szlovákia felől"),
+    ("Ipolytarnóc",   "16496066-97AB-11D4-BB62-00508BA24287", "Ipoly", "belepo",  "Szlovákia felől", 1040),
     # ── Dráva ───────────────────────────────────────────────────────────
-    ("Őrtilos",       "16496285-97AB-11D4-BB62-00508BA24287", "Dráva", "belepo",  "Horvátország felől, a Mura után"),
-    ("Barcs",         "16496287-97AB-11D4-BB62-00508BA24287", "Dráva", "atfolyo", ""),
-    ("Drávaszabolcs", "16496288-97AB-11D4-BB62-00508BA24287", "Dráva", "kilepo",  "a Dráva a dobozon kívül torkollik a Dunába"),
+    ("Őrtilos",       "16496285-97AB-11D4-BB62-00508BA24287", "Dráva", "belepo",  "Horvátország felől, a Mura után", 833),
+    ("Barcs",         "16496287-97AB-11D4-BB62-00508BA24287", "Dráva", "atfolyo", "", 835),
+    ("Drávaszabolcs", "16496288-97AB-11D4-BB62-00508BA24287", "Dráva", "kilepo",  "a Dráva a dobozon kívül torkollik a Dunába", 836),
     # ── Rába ────────────────────────────────────────────────────────────
-    ("Szentgotthárd", "164962E8-97AB-11D4-BB62-00508BA24287", "Rába",  "belepo",  "Ausztria felől"),
+    ("Szentgotthárd", "164962E8-97AB-11D4-BB62-00508BA24287", "Rába",  "belepo",  "Ausztria felől", 342),
     # ── Tisza és mellékfolyói ───────────────────────────────────────────
-    ("Tiszabecs",     "16496327-97AB-11D4-BB62-00508BA24287", "Tisza", "belepo",  "Ukrajna felől"),
-    ("Záhony",        "1649632B-97AB-11D4-BB62-00508BA24287", "Tisza", "atfolyo", ""),
-    ("Szolnok",       "73F7E1F4-985C-11D4-BB62-00508BA24287", "Tisza", "atfolyo", ""),
-    ("Szeged",        "73F7E264-985C-11D4-BB62-00508BA24287", "Tisza", "kilepo",  "kilépés közeli, nem a határszelvény"),
-    ("Csenger",       "1649632F-97AB-11D4-BB62-00508BA24287", "Szamos", "belepo", "Románia felől"),
-    ("Felsőberecki",  "16496498-97AB-11D4-BB62-00508BA24287", "Bodrog", "belepo", "Szlovákia / Ukrajna felől"),
-    ("Sajópüspöki",   "1649649A-97AB-11D4-BB62-00508BA24287", "Sajó",  "belepo",  "Szlovákia felől"),
-    ("Makó",          "73F7E266-985C-11D4-BB62-00508BA24287", "Maros", "belepo",  "Románia felől"),
-    ("Körösszakál",   "73F7E29A-985C-11D4-BB62-00508BA24287", "Sebes-Körös", "belepo", "Románia felől"),
-    ("Gyula",         "73F7E2A5-985C-11D4-BB62-00508BA24287", "Fehér-Körös", "belepo", "Románia felől"),
+    ("Tiszabecs",     "16496327-97AB-11D4-BB62-00508BA24287", "Tisza", "belepo",  "Ukrajna felől", None),
+    ("Záhony",        "1649632B-97AB-11D4-BB62-00508BA24287", "Tisza", "atfolyo", "", 1518),
+    ("Szolnok",       "73F7E1F4-985C-11D4-BB62-00508BA24287", "Tisza", "atfolyo", "", 2046),
+    ("Szeged",        "73F7E264-985C-11D4-BB62-00508BA24287", "Tisza", "kilepo",  "kilépés közeli, nem a határszelvény", 2275),
+    ("Csenger",       "1649632F-97AB-11D4-BB62-00508BA24287", "Szamos", "belepo", "Románia felől", 1523),
+    ("Felsőberecki",  "16496498-97AB-11D4-BB62-00508BA24287", "Bodrog", "belepo", "Szlovákia / Ukrajna felől", 1724),
+    ("Sajópüspöki",   "1649649A-97AB-11D4-BB62-00508BA24287", "Sajó",  "belepo",  "Szlovákia felől", 1726),
+    ("Makó",          "73F7E266-985C-11D4-BB62-00508BA24287", "Maros", "belepo",  "Románia felől", 2278),
+    ("Körösszakál",   "73F7E29A-985C-11D4-BB62-00508BA24287", "Sebes-Körös", "belepo", "Románia felől", 2736),
+    ("Gyula",         "73F7E2A5-985C-11D4-BB62-00508BA24287", "Fehér-Körös", "belepo", "Románia felől", 2747),
 ]
 
 # Amit a doboz falai NEM fognak be. Ezek a hiányok a maradéktagban jelennek meg.
@@ -115,6 +118,60 @@ def sz(s):
         return float(s)
     except ValueError:
         return None
+
+
+
+# ── Az OVF hivatalos API-ja ─────────────────────────────────────────────
+# Az OVF maga javasolta ezt a felületet a HTML-elemzés helyett. Előnye a
+# negyedórás felbontás, a törzsadatból jövő LKV, és hogy nem terheljük
+# fölöslegesen a weboldalukat. A régi parse_allomas() tartalékként megmarad:
+# ha az API elérhetetlen, arra esünk vissza.
+try:
+    import vizapi
+    VAN_API = True
+except Exception as _e:
+    VAN_API = False
+    print(f"  vizapi nem elérhető ({_e}) — marad a HTML-elemzés")
+
+
+def api_merce(torzsszam: int, orak: int = 30):
+    """Egy mérce metaadata és idősora az API-ból, a parse_allomas formájában."""
+    most = dt.datetime.now(dt.timezone.utc)
+    kezd = most - dt.timedelta(hours=orak)
+    veg = most + dt.timedelta(hours=2)
+
+    sorozat = {}
+    # 85: vizho a vizfelszin kozeleben, 89: a mederfeneknel. Mindkettot
+    # kerjuk: a lap a mederfeneket reszesiti elonyben, az a hutoviz-srelevans.
+    for kod, mezo in ((vizapi.VIZALLAS, "cm"), (vizapi.VIZHOZAM, "q"),
+                      (vizapi.VIZHO, "t_felszin"), (89, "t_fenek")):
+        try:
+            d = vizapi.idosor(torzsszam, kod, kezd, veg).get(torzsszam) or []
+        except Exception:
+            d = []
+        for ido, ertek in d:
+            # helyi időben tároljuk, hogy a lap formátuma változatlan maradjon
+            kulcs = ido.astimezone().strftime("%Y.%m.%d. %H:%M")
+            sorozat.setdefault(kulcs, {"t": kulcs})[mezo] = ertek
+
+    sorok = sorted(sorozat.values(), key=lambda x: x["t"])
+    for r in sorok:
+        r.setdefault("cm", None); r.setdefault("q", None)
+        r.setdefault("t_felszin", None); r.setdefault("t_fenek", None)
+    return sorok
+
+
+def api_torzsadat():
+    """{törzsszám: {LKV, nullpont, fkm}} — egyszer kérjük le mind az 1193 mércét."""
+    ki = {}
+    for x in vizapi.allomasok(11):
+        ki[x["Tsz"]] = {
+            "lkv_cm": x.get("LKV"),
+            "nullpont_mBf": x.get("Mdr"),
+            "fkm": x.get("Fkm"),
+            "nev_forras": x["Nev"].strip(),
+        }
+    return ki
 
 
 def parse_allomas(html: str):
@@ -205,14 +262,34 @@ def main():
     p = json.load(open("params.json", encoding="utf-8"))
     mercek, hibak = [], []
 
-    for nev, voa, folyo, szerep, jegyzet in MERCEK:
+    # A törzsadatot (LKV, nullpont, folyamkilométer) egyszer kérjük le mind az
+    # 1193 mércére, nem mércénként — így egyetlen hívás elég hozzá.
+    torzs = {}
+    if VAN_API:
         try:
-            meta, sorok = parse_allomas(get(ALLOMAS.format(voa=voa)))
+            torzs = api_torzsadat()
         except Exception as e:
-            hibak.append(f"{nev}: lekérés sikertelen ({e})")
-            continue
+            hibak.append(f"API törzsadat sikertelen ({e}) — marad a HTML-elemzés")
+
+    for nev, voa, folyo, szerep, jegyzet, tsz in MERCEK:
+        meta, sorok = {}, []
+        # Elsődlegesen az OVF hivatalos API-ja. Ha az elérhetetlen, vagy a
+        # mércének nincs törzsszáma, a régi HTML-elemzés ugrik be tartaléknak.
+        if VAN_API and tsz and tsz in torzs:
+            try:
+                sorok = api_merce(tsz)
+                meta = dict(torzs[tsz], torzsszam=str(tsz))
+            except Exception as e:
+                hibak.append(f"{nev}: API-lekérés sikertelen ({e}) — HTML-tartalék")
+                sorok = []
+        if not sorok:
+            try:
+                meta, sorok = parse_allomas(get(ALLOMAS.format(voa=voa)))
+            except Exception as e:
+                hibak.append(f"{nev}: lekérés sikertelen ({e})")
+                continue
         if meta.get("nev_forras") and nev.lower() not in meta["nev_forras"].lower():
-            hibak.append(f"{nev}: az adatlap „{meta['nev_forras']}” nevet mutat — VOA ellenőrizendő")
+            hibak.append(f"{nev}: a forrás „{meta['nev_forras']}” nevet mutat — azonosító ellenőrizendő")
         cm, t_cm = utolso(sorok, "cm")
         q, t_q = utolso(sorok, "q")
         tv, _ = utolso(sorok, "t_fenek")
