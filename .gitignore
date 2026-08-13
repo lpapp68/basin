@@ -17,3 +17,7 @@ grace/
 # Natural Earth folyoadatbazis: 7 MB, csak a folyok.py egyszeri futasahoz kell.
 # A kivagott vonalak a terkep.json-ben vannak, az megy a repoba.
 ne_rivers.geojson
+
+# A Worker sajat wrangler-konfigja; a node_modules nem kell
+utemezo/node_modules/
+utemezo/.wrangler/

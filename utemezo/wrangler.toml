@@ -1,0 +1,8 @@
+name = "basin-utemezo"
+main = "worker.js"
+compatibility_date = "2026-08-13"
+
+# Félóránként, a 4. és a 34. percben. A kerek perceket kerüljük: a
+# Cloudflare oldalán is azok a legterheltebbek.
+[triggers]
+crons = ["4,34 * * * *"]
