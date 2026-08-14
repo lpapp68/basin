@@ -10,18 +10,18 @@
   "csapadek_mm_nap": {
     "ertek": 0.0,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-12, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 48,
-    "datum": "2026-08-12",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-13, területsúlyozott átlag országhatár-maszkkal",
+    "kor_ora": 24,
+    "datum": "2026-08-13",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 1.1,
+    "ertek": 1.13,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-12, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 48,
-    "datum": "2026-08-12",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-13, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 24,
+    "datum": "2026-08-13",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -107,30 +107,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-08-12",
-    "et_ref_mm": 4.74,
-    "et_act_mm": 1.1,
-    "vizstressz": 0.232,
+    "datum": "2026-08-13",
+    "et_ref_mm": 4.72,
+    "et_act_mm": 1.13,
+    "vizstressz": 0.239,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 2.69,
-        "m3s": 1341
+        "hiany_mm_nap": 2.65,
+        "m3s": 1318
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 3.64,
-        "m3s": 1813
+        "hiany_mm_nap": 3.59,
+        "m3s": 1788
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 4.59,
-        "m3s": 2284
+        "hiany_mm_nap": 4.54,
+        "m3s": 2258
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-08-12, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-13, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -140,7 +140,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-12",
+    "datum": "2026-08-13",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -1469,12 +1469,12 @@
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-14T02:36:08+00:00",
+    "lekerve": "2026-08-14T04:57:29+00:00",
     "datum": "2026-08-13",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 757.0,
-      "vizallas_cm": 76.0,
+      "hozam_m3s": 725.0,
+      "vizallas_cm": 68.0,
       "vizho_c": 23.3,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
@@ -1484,39 +1484,31 @@
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 593.0,
+    "kulonbseg_m3s": 625.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": 1.0,
-        "hozam_m3s": 673.0,
-        "vizho_c": 23.9
+        "vizallas_cm": -4.0,
+        "hozam_m3s": 661.0,
+        "vizho_c": 23.6
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 43.0,
-        "hozam_m3s": 736.0,
-        "vizho_c": 23.7
+        "vizallas_cm": 40.0,
+        "hozam_m3s": 724.0,
+        "vizho_c": 23.8
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -16.0,
-        "hozam_m3s": 803.0,
-        "vizho_c": 25.1
-      },
-      {
-        "nev": "Ipoly, Ipolyszalka",
-        "szerep": "profil",
-        "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 45.0,
-        "hozam_m3s": 0.745,
-        "vizho_c": 20.0
+        "vizallas_cm": -17.0,
+        "hozam_m3s": 799.0,
+        "vizho_c": 24.7
       }
     ],
     "provenance": "mert",
