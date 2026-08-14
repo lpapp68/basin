@@ -352,6 +352,15 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .tsor{display:grid;grid-template-columns:9.5em 1fr 4.5em;gap:8px;align-items:center;
   padding:4px 0;font-size:12.5px}
 .tsor .tb{height:8px;background:var(--vonal-halk)}
+.mjel{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:8px 22px;margin-top:14px;padding-top:12px;border-top:1px solid var(--vonal-halk);
+  font-size:12px;line-height:1.5;color:var(--halvany)}
+.mjel span{display:flex;gap:9px;align-items:flex-start}
+.mjel i.sz{flex:0 0 auto;width:15px;height:15px;margin-top:2px;border:1px solid var(--vonal)}
+.mjel i.kek{background:var(--viz)}
+.mjel i.voros{background:var(--rekord)}
+.mjel i.keret{background:transparent;border-color:var(--rekord)}
+.mjel i.nagyito{background:transparent;border-color:var(--rekord);height:8px;margin-top:5px}
 .tsor .tb i{display:block;height:100%;background:var(--rekord);opacity:.8}
 .tsor .tv{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600}
 .trekesz{margin-top:18px;padding-top:14px;border-top:1px solid var(--vonal-halk)}
@@ -465,6 +474,17 @@ a{color:var(--viz)}
   mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.
   A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. Balról jobbra görgethető.</p>
   <div class="mercesor" id="mercesor"></div>
+  <!-- A színek eddig magyarázat nélkül álltak: a vörös az egyik legfontosabb -->
+  <!-- jelzés a lapon, és a néző nem tudhatta, mit jelent. -->
+  <div class="mjel">
+    <span><i class="sz kek"></i>a víz jelenlegi szintje a mérce saját vízjárásán belül</span>
+    <span><i class="sz voros"></i><b>a mindenkori legkisebb vízállás (LKV) alatt</b> —
+      az LKV az OVF törzsadatából jön</span>
+    <span><i class="sz keret"></i>a fehér oszlop a teljes ismert vízjárás: fent az LNV,
+      lent az LKV</span>
+    <span><i class="sz nagyito"></i>a nagyító a legalsó sáv kibontva, mert a víz most
+      ott van; benne a görbe az utolsó 24 óra</span>
+  </div>
 </section>
 
 <section id="paks-sec">
