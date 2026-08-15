@@ -78,6 +78,12 @@ if [ "$MOD" = "napi" ]; then
     HIBAK=""
     : > "$NAPLO"
     futtat "LSA SAF párolgás" python lsasaf_et.py "$NAP"
+
+    # FUGGETLEN keresztellenorzes: az ERA5-Land parolgasa. Ot-hat napos
+    # kesessel jon, ezert het nappal ezelottre kerjuk - a lap kulon
+    # panelben mutatja, non a merleg napjatol elterhet.
+    ERA5_NAP=$(date -u -v-7d +%Y-%m-%d 2>/dev/null || date -u -d "7 days ago" +%Y-%m-%d)
+    futtat "ERA5-Land parolgas keresztellenorzes" python era5_et.py "$ERA5_NAP" || true
   else
     echo "!! a csapadék három napra sem szerezhető meg — a párolgás sem fut,"
     echo "   hogy a mérleg egyetlen napon maradjon"

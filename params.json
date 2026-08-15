@@ -2399,5 +2399,12 @@
       "tartomany": "2016–2025"
     }
   },
-  "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli."
+  "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli.",
+  "parolgas_era5_mm_nap": {
+    "ertek": 1.29,
+    "datum": "2026-08-10",
+    "provenance": "modellezett",
+    "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
+    "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
+  }
 }

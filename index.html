@@ -268,6 +268,13 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
   background:repeating-linear-gradient(45deg,transparent 0 5px,rgba(122,74,110,.07) 5px 10px)}
 .res .cim{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ismeretlen)}
+.kereszt{margin-top:18px;padding:16px 18px;border:1px solid var(--vonal);
+  background:color-mix(in oklab,var(--viz) 5%,transparent)}
+.kereszt .cim{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--viz);margin-bottom:8px}
+.kereszt p{margin:0;font-size:14px;line-height:1.65}
+.kereszt em{display:block;font-style:normal;font-size:11.5px;
+  color:var(--halvany);margin-top:10px}
 .res .irany{margin:6px 0 0;font-size:13px}
 .res .ert{font-family:var(--mono);font-size:30px;font-weight:600;color:var(--ismeretlen);
   line-height:1.1;margin-top:2px}
@@ -1028,6 +1035,26 @@ a{color:var(--viz)}
     `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
     `<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>`+
     `<span><i>veszteség kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
+  // Harmadik, FÜGGETLEN becslés: az ECMWF ERA5-Land reanalízise.
+  // Ha ez egyezik a műholdassal, akkor az eltérés nem a párolgásból jön —
+  // ez a lap egyik legfontosabb módszertani állítása.
+  if(H.parolgas_era5){
+    const e5 = H.parolgas_era5, mh = H.parolgas_muhold;
+    const kul = mh && mh.ertek ? (e5.ertek / mh.ertek - 1) * 100 : null;
+    hl.appendChild(el("div","kereszt",
+      `<div class="cim">Keresztellenőrzés · független becslés</div>` +
+      `<p>Az <b>ECMWF ERA5-Land</b> reanalízise ${e5.datum||""}-re ` +
+      `<b>${num(e5.ertek)} m³/s</b> párolgást ad; a műholdas becslés ${num(mh.ertek)}. ` +
+      ((kul !== null && Math.abs(kul) < 10)
+        ? `A két, <b>teljesen eltérő módszertanú</b> becslés ${dec(Math.abs(kul),0)}%-on belül ` +
+          `egyezik — az egyik műholdas sugárzási mérleg, a másik modell asszimilált ` +
+          `megfigyeléssel. Vagyis <b>a párolgás nem a mérleg hibaforrása</b>: a hiányzó víz ` +
+          `máshonnan ered, jó eséllyel a be nem kötött határszelvényekből.`
+        : `A két becslés ${dec(Math.abs(kul||0),0)}%-kal tér el.`) +
+      `<em>${e5.forras} Öt-hat napos késéssel érkezik, ezért visszamenőleges ` +
+      `ellenőrzésre való — a fenti mérleg napjától eltérhet.</em></p>`));
+  }
+  
   hl.appendChild(el("div","res",
     `<div class="cim">A két párolgásbecslés eltérése</div>`+
     `<div class="ert">${sgn(H.elteres.ertek)} m³/s</div>`+

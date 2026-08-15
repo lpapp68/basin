@@ -456,6 +456,13 @@ def main():
         },
         "hova_lett_m3s": {
             "parolgas_muhold": {"ertek": round(ET), **meta_of(p["parolgas_mm_nap"])},
+            # Harmadik, FÜGGETLEN becslés: az ECMWF ERA5-Land reanalízise.
+            # Teljesen más módszertan, mint a műholdas sugárzási mérleg — ezért
+            # alkalmas keresztellenőrzésre. Öt-hat napos késéssel érkezik.
+            "parolgas_era5": ({"ertek": round(p["parolgas_era5_mm_nap"]["ertek"]
+                                          / 1000 * BOX["terulet_km2"] * 1e6 / 86400),
+                               **meta_of(p["parolgas_era5_mm_nap"])}
+                              if p.get("parolgas_era5_mm_nap") else None),
             "parolgas_maradek": {"ertek": round(ET_maradek), "provenance": "modellezett",
                                  "kor_ora": None,
                                  "forras": "P + Q_be − Q_ki − ΔS − fogyasztó kivétel"},
