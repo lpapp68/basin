@@ -1100,7 +1100,12 @@ a{color:var(--viz)}
   /* ── A talaj ── */
   const TV = D.talaj_vizhiany, OI = D.ontozesigeny;
   if(TV){
-    const a = Object.entries(TV.allomasok).sort((x,y)=>y[1]-x[1]);
+    // Az állomáslista tömb: {nev, hiany_mm, lat, lon, sorozat}. A régi
+    // {nev: érték} alakot is elfogadjuk, hogy egy félbemaradt futás ne
+    // törje szét a lapot.
+    const a = Array.isArray(TV.allomasok)
+      ? TV.allomasok.map(s => [s.nev, s.hiany_mm]).sort((x,y)=>y[1]-x[1])
+      : Object.entries(TV.allomasok).sort((x,y)=>y[1]-x[1]);
     const maxV = Math.max(...a.map(r=>r[1]));
     const napok = M.parolgas && M.parolgas.ertek
       ? TV.atlag_mm / Math.abs(MM.parolgas) : null;
@@ -1129,7 +1134,10 @@ a{color:var(--viz)}
       const utkozik = (b) => foglalt.some(f =>
         b.x1 > f.x0 && b.x0 < f.x1 && b.y1 > f.y0 && b.y0 < f.y1);
 
-      const helyek = a.map(([nev,v])=>({nev, v, xy: TK.allomasok[nev]}))
+      const koord = Array.isArray(TV.allomasok)
+        ? Object.fromEntries(TV.allomasok.map(s => [s.nev, s.terkep_xy]))
+        : {};
+      const helyek = a.map(([nev,v])=>({nev, v, xy: TK.allomasok[nev] || koord[nev]}))
                       .filter(o=>o.xy)
                       .sort((p,q)=>p.xy[1]-q.xy[1]);
 
