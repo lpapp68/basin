@@ -107,30 +107,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-08-13",
-    "et_ref_mm": 4.72,
-    "et_act_mm": 1.13,
-    "vizstressz": 0.239,
+    "datum": "2026-08-14",
+    "et_ref_mm": 4.7,
+    "et_act_mm": 1.19,
+    "vizstressz": 0.254,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 2.65,
-        "m3s": 1318
+        "hiany_mm_nap": 2.57,
+        "m3s": 1277
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 3.59,
-        "m3s": 1788
+        "hiany_mm_nap": 3.51,
+        "m3s": 1745
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 4.54,
-        "m3s": 2258
+        "hiany_mm_nap": 4.45,
+        "m3s": 2212
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-08-13, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-14, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -140,7 +140,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-13",
+    "datum": "2026-08-14",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -1469,7 +1469,7 @@
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-15T02:59:57+00:00",
+    "lekerve": "2026-08-15T03:48:55+00:00",
     "datum": "2026-08-14",
     "belepo": {
       "nev": "Duna, Dévény",
