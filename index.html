@@ -685,10 +685,33 @@ a{color:var(--viz)}
     };
     rajzol();
     setInterval(rajzol, 60000);
+
+    // Az ADAT frissítése. A lap egyetlen menetben épül fel, ezért az adatot
+    // nem cseréljük helyben: megnézzük, van-e újabb, és ha igen, újratöltjük
+    // a lapot. Így a nyitva hagyott fül nem mutat órákig régi számokat.
+    let ellenoriz_fut = false;
+    async function frissit(){
+      if(ellenoriz_fut || document.hidden) return;
+      ellenoriz_fut = true;
+      try{
+        const v = await fetch("data.json?t=" + Date.now(), {cache: "no-store"});
+        if(v.ok){
+          const uj = await v.json();
+          if(uj.generalva && uj.generalva !== D.generalva) location.reload();
+        }
+      }catch(e){
+        // Hálózati hiba: marad a meglévő adat, a jelző mutatja a korát.
+      }finally{
+        ellenoriz_fut = false;
+      }
+    }
+    // Öt percenként nézünk rá. A gyűjtés félóránként indul, tehát ennél
+    // sűrűbben fölösleges; ritkábban viszont sokáig állna a lap.
+    setInterval(frissit, 300000);
     // Ha a lap háttérbe kerül, a böngésző lassítja az időzítőt; visszatéréskor
     // ezért azonnal frissítünk.
     document.addEventListener("visibilitychange", () => {
-      if(!document.hidden) rajzol();
+      if(!document.hidden){ rajzol(); frissit(); }
     });
   }
 
