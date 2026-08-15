@@ -11,7 +11,7 @@
     "ertek": 0.0,
     "provenance": "muholdas",
     "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-13, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-08-13",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
@@ -20,7 +20,7 @@
     "ertek": 1.13,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-13, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-08-13",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
@@ -1447,21 +1447,21 @@
     ]
   },
   "talaj_vizhiany": {
-    "datum": "2026-08-12",
-    "atlag_mm": 33.8,
-    "min_mm": 1.0,
-    "max_mm": 71.2,
+    "datum": "2026-08-13",
+    "atlag_mm": 33.9,
+    "min_mm": 1.1,
+    "max_mm": 71.3,
     "allomasok": {
-      "Bernecebaráti": 1.0,
-      "Egyek": 42.0,
-      "Enying": 27.6,
-      "Felsőszentmárton": 29.6,
-      "Kölcse": 26.5,
-      "Nagykőrös": 16.9,
+      "Bernecebaráti": 1.1,
+      "Egyek": 42.2,
+      "Enying": 27.8,
+      "Felsőszentmárton": 29.8,
+      "Kölcse": 26.7,
+      "Nagykőrös": 17.0,
       "Püski": 17.9,
-      "Röszke": 67.5,
-      "Sarkad": 71.2,
-      "Vasszentmihály": 37.3
+      "Röszke": 67.6,
+      "Sarkad": 71.3,
+      "Vasszentmihály": 37.6
     },
     "melyseg": "80 cm",
     "provenance": "mert",
@@ -1469,8 +1469,8 @@
     "figyelmeztetes": "Néhány állomás, nem országos átlag. A végpont nincs dokumentálva, a lap JavaScriptjéből visszafejtve — bármikor elromolhat."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-14T04:57:29+00:00",
-    "datum": "2026-08-13",
+    "lekerve": "2026-08-15T01:44:40+00:00",
+    "datum": "2026-08-14",
     "belepo": {
       "nev": "Duna, Dévény",
       "hozam_m3s": 725.0,
@@ -1480,11 +1480,11 @@
     },
     "kilepo": {
       "nev": "Duna, Baziás",
-      "hozam_m3s": 1350.0,
+      "hozam_m3s": 1400.0,
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 625.0,
+    "kulonbseg_m3s": 675.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
@@ -1509,6 +1509,14 @@
         "vizallas_cm": -17.0,
         "hozam_m3s": 799.0,
         "vizho_c": 24.7
+      },
+      {
+        "nev": "Ipoly, Ipolyszalka",
+        "szerep": "profil",
+        "forras_nev": "Salka - Ipeľ",
+        "vizallas_cm": 44.0,
+        "hozam_m3s": 0.346,
+        "vizho_c": 19.9
       }
     ],
     "provenance": "mert",
