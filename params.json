@@ -17,7 +17,7 @@
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 1.13,
+    "ertek": 1.19,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-13, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
     "kor_ora": 48,
@@ -1475,7 +1475,7 @@
       "nev": "Duna, Dévény",
       "hozam_m3s": 725.0,
       "vizallas_cm": 68.0,
-      "vizho_c": 23.3,
+      "vizho_c": 23.5,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -1490,24 +1490,24 @@
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -4.0,
-        "hozam_m3s": 661.0,
+        "vizallas_cm": -5.0,
+        "hozam_m3s": 659.0,
         "vizho_c": 23.6
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 40.0,
-        "hozam_m3s": 724.0,
-        "vizho_c": 23.8
+        "vizallas_cm": 34.0,
+        "hozam_m3s": 704.0,
+        "vizho_c": 23.6
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -17.0,
-        "hozam_m3s": 799.0,
+        "vizallas_cm": -22.0,
+        "hozam_m3s": null,
         "vizho_c": 24.7
       },
       {

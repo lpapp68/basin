@@ -51,6 +51,8 @@ futtat() {                      # futtat <cimke> <parancs...>
 }
 
 if [ "$MOD" = "napi" ]; then
+  # A visszalépés átírja a NAP-ot; a kapuhoz az EREDETI kért nap kell.
+  KERT_NAP="$NAP"
   echo "== napi frissítés: $NAP"
 
   # A csapadék és a párolgás egyetlen naphoz tartozik. Az IMERG Early napi terméke
@@ -110,7 +112,11 @@ if [ "$MOD" = "napi" ]; then
   fi
 
 
-  echo "$NAP" > "$JELZO"
+  # A jelzőbe a KÉRT nap kerül (ma mire próbálkoztunk), nem a feldolgozott.
+  # Enélkül a visszalépés beragasztja a ciklust: a kapu sosem látja
+  # teljesítettnek a mai napot, viszont a visszalépés mindig ugyanoda jut.
+  echo "$KERT_NAP" > "$JELZO"
+  echo "$NAP" > "archiv/.feldolgozott-napi"
 fi
 
 echo "== mércék"
