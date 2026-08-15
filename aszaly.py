@@ -43,6 +43,52 @@ def eov_wgs(x: float, y: float):
     return lat, lon
 
 
+def vetites():
+    """A terkep.json vetitese: WGS84 -> a terkep 1000 egyseg szeles doboza.
+
+    A kepletet a folyok.py-bol vesszuk at, hogy a pontok pontosan a
+    hatarvonalra illeszkedjenek. A korabbi sajat kozelites eltolta oket,
+    ezert a feluk a doboz melle esett es nem latszott.
+    """
+    gj = json.loads(pathlib.Path("hatar.geojson").read_text(encoding="utf-8"))
+    hu = next(f for f in gj["features"] if f["properties"].get("ADM0_A3") == "HUN")
+    g = hu["geometry"]
+    gyuruk = ([g["coordinates"][0]] if g["type"] == "Polygon"
+              else [pol[0] for pol in g["coordinates"]])
+    fo = max(gyuruk, key=len)
+    xs = [pt[0] for pt in fo]; ys = [pt[1] for pt in fo]
+    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+    kozep = math.radians((y0 + y1) / 2)
+    sx = 1000 / (x1 - x0)
+    return lambda lo, la: (round((lo - x0) * sx, 1),
+                           round((y1 - la) * sx / math.cos(kozep), 1))
+
+
+def racsos(pontok, oszlop=5, sor=4):
+    """Racsos mintavetel: az orszagot cellakra osztjuk, es minden cellabol a
+    LEGNAGYOBB hianyu allomast vesszuk.
+
+    Miert nem legtavolabbi-pont: az a peremet reszesiti elonyben, mert a
+    szeleken levo pontok mindig tavolabb esnek egymastol. Emiatt a korabbi
+    valasztasban Puski, Bernecebarati es Felsoszentmarton is szerepelt,
+    mikozben az Alfold kozepe uresen maradt.
+    """
+    if not pontok:
+        return []
+    lat = [q["lat"] for q in pontok]; lon = [q["lon"] for q in pontok]
+    la0, la1, lo0, lo1 = min(lat), max(lat), min(lon), max(lon)
+    dla = (la1 - la0) / sor or 1
+    dlo = (lo1 - lo0) / oszlop or 1
+    cellak = {}
+    for q in pontok:
+        i = min(int((q["lat"] - la0) / dla), sor - 1)
+        j = min(int((q["lon"] - lo0) / dlo), oszlop - 1)
+        cellak.setdefault((i, j), []).append(q)
+    ki = [max(c, key=lambda q: q["hiany_mm"]) for c in cellak.values()]
+    ki.sort(key=lambda q: -q["hiany_mm"])
+    return ki
+
+
 def legtavolabbi(pontok, db):
     """Legtávolabbi-pont mintavétel: a kiválasztottak jól szétszórtak legyenek."""
     if len(pontok) <= db:
@@ -60,6 +106,7 @@ def main():
            else dt.date.today() - dt.timedelta(days=1))
     kezd = veg - dt.timedelta(days=30)
 
+    vet = vetites()
     nevek = {x["statid"]: x["name"].strip() for x in API.allomasok()}
     eov = {x["statid"]: (float(x["eovx"]), float(x["eovy"])) for x in API.allomasok()}
 
@@ -80,12 +127,15 @@ def main():
             "datum": d,
             "lat": round(lat, 4), "lon": round(lon, 4),
             "sorozat": [round(v, 1) for _, v in pontok[-30:]],
+            # A terkep sajat vetulete - a hatarvonalhoz igazytva,
+            # hogy a pont pontosan odva keruljon, ahol az allomas van.
+            "terkep_xy": list(vet(lon, lat)),
         })
 
     allomasok.sort(key=lambda a: -a["hiany_mm"])
     atlag = sum(a["hiany_mm"] for a in allomasok) / len(allomasok)
     # A térképre szétszórt mintát választunk; az átlag mindegyikből számol.
-    terkepre = legtavolabbi(allomasok, TERKEPRE)
+    terkepre = racsos(allomasok, 5, 4)
 
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
     p["talaj_vizhiany"] = {
