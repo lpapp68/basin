@@ -1375,6 +1375,24 @@ a{color:var(--viz)}
             <div class="tvlista">${TVIZ.leginkabb.slice(0,5).map(w =>
               `<span><b>${w.nev.replace(/\s+\d+$/,"")}</b>
                <i>−${dec(w.cm/100,2)} m</i></span>`).join("")}</div>
+            ${(TVIZ.terkep && TK.path) ? (() => {
+              const mx = Math.max(...TVIZ.terkep.map(w => w.cm));
+              const kor = TVIZ.terkep.filter(w => w.terkep_xy).map(w => {
+                const [px, py] = w.terkep_xy;
+                const r = 4 + Math.sqrt(Math.max(w.cm, 0) / mx) * 13;
+                return `<circle cx="${px}" cy="${py}" r="${r.toFixed(1)}"
+                          fill="var(--rekord)" fill-opacity=".5"
+                          stroke="var(--rekord)" stroke-width="1"><title>${w.nev}: ` +
+                       `${dec(w.cm/100,2)} m</title></circle>`;
+              }).join("");
+              return `<svg viewBox="${TK.viewBox}" width="100%" style="margin-top:12px"
+                        role="img" aria-label="A talajvíz süllyedése tíz év alatt">
+                <path d="${TK.path}" fill="var(--vonal-halk)" stroke="var(--vonal)"
+                      stroke-width="1.5"/>${kor}</svg>
+              <p class="tvmegj" style="margin-top:6px">A körlap mérete a süllyedéssel nő.
+                Cellánként a legnagyobb süllyedésű kút látszik, hogy a térkép olvasható
+                maradjon — a Duna–Tisza köze és a Nagykunság a legérintettebb.</p>`;
+            })() : ""}
             <p class="tvmegj">${TVIZ.figyelmeztetes}</p>
           </div>` : ""}
           <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol

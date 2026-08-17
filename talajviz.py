@@ -53,11 +53,50 @@ def aug_szint(tsz, evekkel, most):
     return ki
 
 
+
+def vetites():
+    """A terkep.json vetitese: WGS84 -> a terkep 1000 egyseg szeles doboza."""
+    import json as _j, math
+    gj = _j.loads(pathlib.Path("hatar.geojson").read_text(encoding="utf-8"))
+    hu = next(f for f in gj["features"] if f["properties"].get("ADM0_A3") == "HUN")
+    g = hu["geometry"]
+    gyuruk = ([g["coordinates"][0]] if g["type"] == "Polygon"
+              else [pol[0] for pol in g["coordinates"]])
+    fo = max(gyuruk, key=len)
+    xs = [q[0] for q in fo]; ys = [q[1] for q in fo]
+    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+    kozep = math.radians((y0 + y1) / 2)
+    sx = 1000 / (x1 - x0)
+    return lambda lo, la: (round((lo - x0) * sx, 1),
+                           round((y1 - la) * sx / math.cos(kozep), 1))
+
+
+def racsos(pontok, oszlop=6, sor=5):
+    """Cellankent a LEGNAGYOBB sullyedesu kut - igy minden terseg a sajat
+    legrosszabb helyzetevel szerepel, es a terkep olvashato marad."""
+    if not pontok:
+        return []
+    lat = [q["lat"] for q in pontok]; lon = [q["lon"] for q in pontok]
+    la0, la1, lo0, lo1 = min(lat), max(lat), min(lon), max(lon)
+    dla = (la1 - la0) / sor or 1
+    dlo = (lo1 - lo0) / oszlop or 1
+    cellak = {}
+    for q in pontok:
+        i = min(int((q["lat"] - la0) / dla), sor - 1)
+        j = min(int((q["lon"] - lo0) / dlo), oszlop - 1)
+        cellak.setdefault((i, j), []).append(q)
+    ki = [max(c, key=lambda q: q["cm"]) for c in cellak.values()]
+    ki.sort(key=lambda q: -q["cm"])
+    return ki
+
+
 def main():
     most = dt.datetime.now(dt.timezone.utc)
     a = vizapi.allomasok(12)
     tsz = [x["Tsz"] for x in a]
     nev = {x["Tsz"]: x["Nev"].strip() for x in a}
+    hely = {x["Tsz"]: (x.get("Lat"), x.get("Lon")) for x in a}
+    vet = vetites()
 
     sys.stdout.write(f"mai szint ({len(tsz)} állomás)…\n")
     mai = aug_szint(tsz, 0, most)
@@ -77,6 +116,14 @@ def main():
     melyult = sum(1 for v in ertek if v > 5)
     emelkedett = sum(1 for v in ertek if v < -5)
 
+    # terkepi pontlista: minden kut, amelynek van koordinataja
+    pontlista = []
+    for k, v in kul.items():
+        la, lo = hely.get(k, (None, None))
+        if la and lo:
+            pontlista.append({"nev": nev.get(k, str(k)), "cm": round(v, 1),
+                              "lat": la, "lon": lo})
+
     # a leginkább érintett helyek
     rangsor = sorted(kul.items(), key=lambda z: -z[1])[:8]
 
@@ -92,6 +139,9 @@ def main():
         "felso_kvartilis": round(ertek[3*len(ertek)//4], 1),
         "leginkabb": [{"nev": nev.get(k, str(k)), "cm": round(v, 1)}
                       for k, v in rangsor],
+        # Terkepi pontok: cellankent a legnagyobb sullyedes, racsos mintaval.
+        "terkep": [dict(p, terkep_xy=list(vet(p["lon"], p["lat"])))
+                   for p in racsos(pontlista)],
         "provenance": "helyszini",
         "forras": (f"OVF nyílt adat-API, {len(kozos)} talajvízkút; a mai és a "
                    f"{EVEK} évvel ezelőtti azonos naptári időszak (±{ABLAK} nap) "

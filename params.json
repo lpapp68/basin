@@ -2411,19 +2411,19 @@
     "sullyedes_cm": 144.0,
     "evek": 10,
     "datum": "2026-08-17",
-    "kut_db": 487,
-    "melyult": 480,
+    "kut_db": 486,
+    "melyult": 479,
     "emelkedett": 5,
     "also_kvartilis": 87.5,
-    "felso_kvartilis": 215.5,
+    "felso_kvartilis": 216.0,
     "leginkabb": [
       {
         "nev": "Mesterszállás 004030",
-        "cm": 471.0
+        "cm": 470.5
       },
       {
         "nev": "Bugac",
-        "cm": 434.5
+        "cm": 435.0
       },
       {
         "nev": "Kunszentmárton",
@@ -2435,23 +2435,285 @@
       },
       {
         "nev": "Nyárlőrinc",
-        "cm": 407.5
+        "cm": 407.0
       },
       {
         "nev": "Lajosmizse",
         "cm": 407.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Biharnagybajom",
         "cm": 399.0
       },
       {
-        "nev": "Biharnagybajom",
+        "nev": "Bugac",
         "cm": 399.0
       }
     ],
+    "terkep": [
+      {
+        "nev": "Mesterszállás 004030",
+        "cm": 470.5,
+        "lat": 46.9245320328435,
+        "lon": 20.4639715092523,
+        "terkep_xy": [
+          644.2,
+          356.5
+        ]
+      },
+      {
+        "nev": "Bugac",
+        "cm": 435.0,
+        "lat": 46.7097933906164,
+        "lon": 19.7297588762172,
+        "terkep_xy": [
+          536.0,
+          403.1
+        ]
+      },
+      {
+        "nev": "Biharnagybajom",
+        "cm": 399.0,
+        "lat": 47.2094952204129,
+        "lon": 21.2346374356346,
+        "terkep_xy": [
+          757.8,
+          294.8
+        ]
+      },
+      {
+        "nev": "Kiskunhalas",
+        "cm": 395.5,
+        "lat": 46.4385433265687,
+        "lon": 19.3392689632591,
+        "terkep_xy": [
+          478.4,
+          461.9
+        ]
+      },
+      {
+        "nev": "Tiszaroff TR1",
+        "cm": 388.0,
+        "lat": 47.3922400782636,
+        "lon": 20.4661208159184,
+        "terkep_xy": [
+          644.5,
+          255.2
+        ]
+      },
+      {
+        "nev": "Kübekháza",
+        "cm": 364.0,
+        "lat": 46.1497350991783,
+        "lon": 20.2779227572877,
+        "terkep_xy": [
+          616.8,
+          524.5
+        ]
+      },
+      {
+        "nev": "Ballószög",
+        "cm": 346.0,
+        "lat": 46.8528604732686,
+        "lon": 19.5198393587516,
+        "terkep_xy": [
+          505.0,
+          372.1
+        ]
+      },
+      {
+        "nev": "Konyár",
+        "cm": 307.0,
+        "lat": 47.3180843741109,
+        "lon": 21.6727429529734,
+        "terkep_xy": [
+          822.4,
+          271.2
+        ]
+      },
+      {
+        "nev": "Kunbaja",
+        "cm": 297.0,
+        "lat": 46.0861995210745,
+        "lon": 19.4101281891767,
+        "terkep_xy": [
+          488.8,
+          538.3
+        ]
+      },
+      {
+        "nev": "Csót-4",
+        "cm": 295.0,
+        "lat": 47.3556829949672,
+        "lon": 17.6371868159393,
+        "terkep_xy": [
+          227.5,
+          263.1
+        ]
+      },
+      {
+        "nev": "Csanádpalota",
+        "cm": 293.5,
+        "lat": 46.2430155802294,
+        "lon": 20.7224271183979,
+        "terkep_xy": [
+          682.3,
+          504.3
+        ]
+      },
+      {
+        "nev": "Mezőkeresztes",
+        "cm": 289.5,
+        "lat": 47.8294175422055,
+        "lon": 20.6967648903727,
+        "terkep_xy": [
+          678.5,
+          160.4
+        ]
+      },
+      {
+        "nev": "Balkány Csiffi tanya (I)",
+        "cm": 288.5,
+        "lat": 47.7168648908944,
+        "lon": 21.8055405984449,
+        "terkep_xy": [
+          842.0,
+          184.8
+        ]
+      },
+      {
+        "nev": "Aba",
+        "cm": 261.5,
+        "lat": 47.0260617066066,
+        "lon": 18.5408629136489,
+        "terkep_xy": [
+          360.7,
+          334.5
+        ]
+      },
+      {
+        "nev": "Alsóújlak",
+        "cm": 261.0,
+        "lat": 47.0558566629553,
+        "lon": 16.8547349054333,
+        "terkep_xy": [
+          112.1,
+          328.1
+        ]
+      },
+      {
+        "nev": "Hajdúböszörmény (Kispródi út)",
+        "cm": 249.5,
+        "lat": 47.7014304044259,
+        "lon": 21.3167913787084,
+        "terkep_xy": [
+          769.9,
+          188.1
+        ]
+      },
+      {
+        "nev": "Medgyesbodzás",
+        "cm": 244.0,
+        "lat": 46.5168292837038,
+        "lon": 20.9608802368426,
+        "terkep_xy": [
+          717.4,
+          444.9
+        ]
+      },
+      {
+        "nev": "Nyírcsászári  (I)",
+        "cm": 228.5,
+        "lat": 47.8677318510759,
+        "lon": 22.1771958812587,
+        "terkep_xy": [
+          896.7,
+          152.1
+        ]
+      },
+      {
+        "nev": "Csoma I",
+        "cm": 216.0,
+        "lat": 46.3685287136547,
+        "lon": 18.0494984718759,
+        "terkep_xy": [
+          288.3,
+          477.1
+        ]
+      },
+      {
+        "nev": "Lad-Gyöngyöspuszta",
+        "cm": 207.0,
+        "lat": 46.1644092077622,
+        "lon": 17.602935201756,
+        "terkep_xy": [
+          222.4,
+          521.3
+        ]
+      },
+      {
+        "nev": "Fertőd",
+        "cm": 144.0,
+        "lat": 47.6127903966546,
+        "lon": 16.8631295080806,
+        "terkep_xy": [
+          113.4,
+          207.3
+        ]
+      },
+      {
+        "nev": "Cserhátsurány",
+        "cm": 123.0,
+        "lat": 47.9780696282504,
+        "lon": 19.4289904724613,
+        "terkep_xy": [
+          491.6,
+          128.2
+        ]
+      },
+      {
+        "nev": "Alsópáhok",
+        "cm": 110.0,
+        "lat": 46.7694705056718,
+        "lon": 17.1734658886747,
+        "terkep_xy": [
+          159.1,
+          390.2
+        ]
+      },
+      {
+        "nev": "Szurdokpüspöki",
+        "cm": 102.5,
+        "lat": 47.8520768156087,
+        "lon": 19.6929685197042,
+        "terkep_xy": [
+          530.5,
+          155.5
+        ]
+      },
+      {
+        "nev": "Soroksár",
+        "cm": 63.0,
+        "lat": 47.3950562146411,
+        "lon": 19.1115752826102,
+        "terkep_xy": [
+          444.8,
+          254.5
+        ]
+      },
+      {
+        "nev": "Darnózseli-Magyarkimle",
+        "cm": 44.0,
+        "lat": 47.8413137391859,
+        "lon": 17.415776034729,
+        "terkep_xy": [
+          194.8,
+          157.8
+        ]
+      }
+    ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 487 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 486 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   }
 }
