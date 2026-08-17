@@ -1295,6 +1295,7 @@ a{color:var(--viz)}
 
   /* ── A talaj ── */
   const TV = D.talaj_vizhiany, OI = D.ontozesigeny, TVIZ = D.talajviz;
+  const TK = D.terkep;  // kozos a terkep-rajnoloknak
 
   // Tajekozodasi pontok a talajviz-terkephez. A koordinatak ugyanabban a
   // vetuletben vannak, mint a kutake - a terkep.json 1000 egyseg szeles
@@ -1322,7 +1323,6 @@ a{color:var(--viz)}
     // Kis Magyarország-térkép: hol vannak az állomások, és mekkora ott a hiány.
     // A körvonal a Natural Earth 10m határából, egyszerűsítve; a pontok az OVF
     // aszálymonitoring-hálózatának koordinátái.
-    const TK = D.terkep;
     let terkep = "";
     // A folyók vonala a Natural Earth 10m adatbázisából. Az áramlás sebességét a
     // MÉRT kilépő vízhozam adja: kisvíznél lassan, árvíznél gyorsan halad a minta.
