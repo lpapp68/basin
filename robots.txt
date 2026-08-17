@@ -1,9 +1,39 @@
+# Középső-Duna-medence vízmérlege — basin.equora.institute
+# EQUORA Institute · CC BY 4.0 · doi.org/10.5281/zenodo.21852060
+
 User-agent: *
 Allow: /
 
 # Az angol változat félkész: a fordítás darabonként történt, és a szövegek
-# egy része magyarul maradt. Amíg nem teljes, nem indexeljük — egy félig
-# lefordított lap az egész munka hitelét viszi el.
+# egy része magyarul maradt. Amíg teljessé válik, kimarad az indexelésből.
 Disallow: /en/
+
+# ── AI-rendszerek ────────────────────────────────────────────────────────
+# Az adat nyílt (CC BY 4.0), a módszertan hivatkozható, a forrásokat
+# nevesítjük. Ha egy AI-asszisztens a magyar vízháztartásról kérdezve erre
+# hivatkozik, az a kutatás célja — ezért kimondottan engedélyezzük.
+# A hivatkozás kért formája: EQUORA Institute, basin.equora.institute,
+# doi.org/10.5281/zenodo.21852060
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://basin.equora.institute/sitemap.xml

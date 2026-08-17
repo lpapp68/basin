@@ -258,6 +258,34 @@ def meta_of(d):
             "kor_ora": d.get("kor_ora"), "datum": d.get("datum")}
 
 
+
+
+def seo_datumok(most_iso: str):
+    """A sitemap lastmod és a JSON-LD dateModified frissítése.
+
+    Enélkül befagy a dátum, és a keresők elavultnak látják a lapot, pedig
+    óránként frissül. A sitemap teljes egészében újraíródik — egyetlen URL,
+    nincs mit megőrizni benne.
+    """
+    nap = most_iso[:10]
+    pathlib.Path("sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '  <url>\n    <loc>https://basin.equora.institute/</loc>\n'
+        f'    <lastmod>{nap}</lastmod>\n'
+        '    <changefreq>hourly</changefreq>\n'
+        '    <priority>1.0</priority>\n  </url>\n</urlset>\n',
+        encoding="utf-8")
+
+    # A JSON-LD dateModified: a helyőrzőt vagy a korábbi értéket cseréljük.
+    ut = pathlib.Path("index.html")
+    h = ut.read_text(encoding="utf-8")
+    import re as _re
+    uj_h = _re.sub(r'"dateModified": "[^"]*"',
+                   f'"dateModified": "{most_iso}"', h, count=1)
+    if uj_h != h:
+        ut.write_text(uj_h, encoding="utf-8")
+
 def main():
     p = json.load(open("params.json", encoding="utf-8"))
     mercek, hibak = [], []
@@ -518,6 +546,9 @@ def main():
 
     hoz = [m["nev"] for m in mercek if m["hozam_m3s"] is not None]
     rek = [m["nev"] for m in mercek if m["rekord_alatt"]]
+    # A sitemap és a JSON-LD dátumai a generálással egyidőben frissülnek:
+    # befagyott dátumnal a keresők elavultnak látják a lapot.
+    seo_datumok(out.get("generalva") or "")
     print(f"kész — {len(mercek)} mérce, ebből {len(hoz)} ad vízhozamot")
     print(f"  Q_be={Q_be:.0f}  Q_ki={Q_ki:.0f} m³/s (mért)")
     if paks_csomopont:
