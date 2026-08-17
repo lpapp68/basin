@@ -1095,7 +1095,7 @@ a{color:var(--viz)}
       `<p style="font-size:12.5px;color:var(--halvany);margin:6px 0 0">`+
       `A nulla nem a teli medencét jelenti, hanem a termék sokéves átlagát. `+
       `A görbe azt mutatja, hogy egy-egy aszály után <b>visszaáll-e a korábbi szint</b>. `+
-      `<b>A két szaggatott vonal.</b> A halvány a teljes idősorra illesztett trend (2002-től), a sötét az utolsó tíz évre. Ha a sötét meredekebb, a csökkenés az utóbbi évtizedben <b>gyorsult</b> — ez a rosszabbik eset. Ha laposabb, a fogyás lassult. Az illesztés lineáris, a meglévő havi pontokra; a 2017–2018-as hézagot (a két műholdpár közti átállás) nem pótoljuk ki, mert az kitalált adat volna. `+
+      `<b>A négy szaggatott vonal.</b> Különböző hosszú időszakokra illesztett lineáris trend: a teljes idősor 2002-től, valamint a 10, 5 és 3 év. Nem a szint, hanem a <b>meredekségük sorrendje</b> a lényeg: ha a rövidebb időszaké meredekebb, a fogyás <b>gyorsul</b>, ha laposabb, lassul. A négy érték együtt azt mutatja meg, hogy a gyorsulás maga erősödik-e vagy mérséklődik. Az illesztés a meglévő havi pontokra megy, a 2017–2018-as hézagot (a két műholdpár közti átállás) nem pótoljuk ki, mert az kitalált adat volna. `+
       `Tízéves trend: <b style="font-family:var(--mono);color:var(--rekord)">`+
       `${dec(IS.trend_km3_ev,2)} km³/év</b> — kb. `+
       `${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} tíz év alatt.</p>`+
