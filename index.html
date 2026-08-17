@@ -388,6 +388,17 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .mjel i.nagyito{background:transparent;border-color:var(--rekord);height:8px;margin-top:5px}
 .tsor .tb i{display:block;height:100%;background:var(--rekord);opacity:.8}
 .tsor .tv{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600}
+.fogalmak{margin:14px 0 0;padding:14px 16px;border:1px solid var(--vonal);
+  background:color-mix(in oklab,var(--parolgas) 4%,transparent)}
+.fogalmak .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--parolgas);margin-bottom:8px}
+.fogalmak p{margin:0 0 10px;font-size:13px;line-height:1.6}
+.fsor{display:grid;grid-template-columns:6.6em 1fr;gap:4px 12px;
+  padding:5px 0;border-top:1px solid var(--vonal-halk);
+  font-size:12.5px;line-height:1.5}
+.fsor b{font-family:var(--mono);font-size:11.5px;color:var(--tinta)}
+.fmegj{margin:12px 0 0!important;padding-top:10px;
+  border-top:1px solid var(--vonal-halk);font-size:12.5px;color:var(--halvany)}
 .tvizdoboz{margin:16px 0 0;padding:14px 16px;border:1px solid var(--vonal);
   background:color-mix(in oklab,var(--rekord) 4%,transparent)}
 .tvizdoboz .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
@@ -1308,7 +1319,8 @@ a{color:var(--viz)}
     {nev:"Győr",      xy:[216, 170]},
     {nev:"Miskolc",   xy:[605, 100]},
     {nev:"Kecskemét", xy:[485, 330]},
-    {nev:"Szolnok",   xy:[561, 270]}
+    {nev:"Szolnok",   xy:[561, 270]},
+    {nev:"Zirc",      xy:[289, 243]}
   ];
   if(TV){
     // Az állomáslista tömb: {nev, hiany_mm, lat, lon, sorozat}. A régi
@@ -1384,6 +1396,11 @@ a{color:var(--viz)}
           <path d="${TK.path}" fill="var(--vonal-halk)" stroke="var(--halvany)"
             stroke-width="2" stroke-linejoin="round"/>
           ${folyok}
+          ${VAROS.map(v => `<g><circle cx="${v.xy[0]}" cy="${v.xy[1]}" r="2.2"
+              fill="var(--tinta)" fill-opacity=".5"/>
+              <text x="${v.xy[0]+5}" y="${v.xy[1]+3.5}" font-size="11"
+                fill="var(--tinta)" fill-opacity=".6"
+                font-family="var(--mono)">${v.nev}</text></g>`).join("")}
           ${pontok}
         </svg>
         <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország <b>különböző térségeiből ad mintát</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos átlagnak nem tekinthető.</em>
@@ -1464,6 +1481,28 @@ a{color:var(--viz)}
                 maradjon — a Duna–Tisza köze és a Nagykunság a legérintettebb.</p>`;
             })() : ""}
             <p class="tvmegj">${TVIZ.figyelmeztetes}</p>
+          </div>
+          <div class="fogalmak">
+            <div class="u">Mikor mondjuk, hogy szikes, félsivatagos vagy sivatagos?</div>
+            <p>Ezek a besorolások <b>sokéves éghajlati átlagon</b> nyugszanak, nem a
+              mai vízhiányon. A nemzetközi mérce (UNEP) a <b>csapadék és a lehetséges
+              párolgás hányadosa</b>:</p>
+            <div class="fsor"><b>0,65 fölött</b><span>nedves — Magyarország egésze
+              ebbe esik, országos átlagban 0,7–0,8 körül</span></div>
+            <div class="fsor"><b>0,50–0,65</b><span>száraz-nedves átmenet
+              (<i>dry subhumid</i>) — a Duna–Tisza köze aszályos években ide csúszik</span></div>
+            <div class="fsor"><b>0,20–0,50</b><span>félszáraz (<i>semi-arid</i>) — ez a
+              füves sztyepp, nem Magyarország; a legközelebbi ilyen terület a Dobrudzsa</span></div>
+            <div class="fsor"><b>0,03–0,20</b><span>száraz (<i>arid</i>) — félsivatag</span></div>
+            <div class="fsor"><b>0,03 alatt</b><span>rendkívül száraz — sivatag</span></div>
+            <p class="fmegj"><b>A szikesedés más kérdés.</b> Nem éghajlati besorolás,
+              hanem talajtani állapot: a magas sótartalmú talajvíz a párolgással
+              felhúzódik, és sót rak le a felszín közelében. Ehhez elég a sekély,
+              sós talajvíz és a száraz nyár — a Hortobágyon és a Duna-völgy déli
+              részén ez évszázadok óta így van. <b>Attól, hogy egy évben nagy a
+              vízhiány, egy terület nem lesz szikes, és attól sem sivatag, hogy
+              a talajvíz süllyed.</b> A süllyedés viszont a szikesedés irányába
+              hat ott, ahol a talajvíz eleve sós.</p>
           </div>` : ""}
           <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol
           megcsapolja a felszín alatti vizet, hol rátáplál, és ez a mederanyagtól meg a
