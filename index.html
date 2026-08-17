@@ -1096,6 +1096,40 @@ a{color:var(--viz)}
       vonal(reszlet(3),   "var(--rekord)",   2.2, "10 4", "3 év",    true);
 
 
+    // A kurzorkövetés a beillesztés UTÁN köthető be, mert addig nincsenek
+    // meg az elemek. A legközelebbi havi pontot keressük vízszintesen.
+    const kurzorBekot = () => {
+      const svg = $("#egyenleg").querySelector("svg");
+      const g = svg && svg.querySelector("#kurzor");
+      const fogo = svg && svg.querySelector("#fogo");
+      if(!g || !fogo) return;
+      const vonal = g.querySelector("line"), pont = g.querySelector("circle"),
+            felirat = g.querySelector("text");
+
+      const mozgat = (esemeny) => {
+        const p = svg.createSVGPoint();
+        const t = esemeny.touches ? esemeny.touches[0] : esemeny;
+        p.x = t.clientX; p.y = t.clientY;
+        const h = p.matrixTransform(svg.getScreenCTM().inverse());
+        let legjobb = null, tav = 1e9;
+        for(const r of S){
+          const d = Math.abs(px(r.honap) - h.x);
+          if(d < tav){ tav = d; legjobb = r; }
+        }
+        if(!legjobb) return;
+        const X = px(legjobb.honap), Y = py(legjobb.km3);
+        vonal.setAttribute("x1", X); vonal.setAttribute("x2", X);
+        pont.setAttribute("cx", X); pont.setAttribute("cy", Y);
+        felirat.setAttribute("x", Math.min(Math.max(X, BAL+40), W2-JOBB-40));
+        felirat.textContent = `${legjobb.honap} · ${sgn(legjobb.km3)} km³`;
+        g.style.opacity = 1;
+      };
+      fogo.addEventListener("mousemove", mozgat);
+      fogo.addEventListener("touchmove", (e) => { mozgat(e); e.preventDefault(); },
+                            {passive:false});
+      fogo.addEventListener("mouseleave", () => { g.style.opacity = 0; });
+    };
+
     $("#egyenleg").innerHTML =
       `<div class="nagy ${IS.sorozat[IS.sorozat.length-1].km3<0?"neg":""}">`+
       `${sgn(IS.sorozat[IS.sorozat.length-1].km3)}<span class="egys">&nbsp;km³</span></div>`+
@@ -1106,6 +1140,15 @@ a{color:var(--viz)}
         ${racs}${evek}
         <line x1="${BAL}" y1="${py(0)}" x2="${W2-JOBB}" y2="${py(0)}"
           stroke="var(--tinta)" stroke-width="1.5"/>
+        <g id="kurzor" style="pointer-events:none;opacity:0">
+          <line y1="14" y2="${H2-24}" stroke="var(--tinta)" stroke-width="1"
+                stroke-dasharray="2 3" opacity=".6"/>
+          <circle r="3.5" fill="var(--rekord)" stroke="var(--hatter)" stroke-width="1.5"/>
+          <text font-size="11" font-family="var(--mono)" fill="var(--tinta)"
+                text-anchor="middle" y="12"></text>
+        </g>
+        <rect id="fogo" x="${BAL}" y="10" width="${W2-BAL-JOBB}" height="${H2-34}"
+              fill="transparent" style="cursor:crosshair"/>
         ${utak.map(u=>`<polyline points="${u.join(" ")}" fill="none"
           stroke="var(--rekord)" stroke-width="1.4" stroke-linejoin="round"/>`).join("")}
         ${trendvonal}
@@ -1128,6 +1171,9 @@ a{color:var(--viz)}
       `${dec(Math.abs(IS.trend_km3_ev)/R.terfogat_km3*10,1)} ${R.nev} tíz év alatt.</p>`+
       `<p style="font-size:11.5px;color:var(--halvany);margin:12px 0 0;padding-top:10px;`+
       `border-top:1px solid var(--vonal-halk)">${IS.figyelmeztetes}<br>Forrás: ${IS.forras}</p>`;
+
+    // A kurzorkövetést csak a beillesztés után lehet bekötni.
+    kurzorBekot();
   } else {
     const db = Math.abs(E.kumulalt_km3)/R.terfogat_km3;
     $("#egyenleg").innerHTML =
@@ -1249,6 +1295,20 @@ a{color:var(--viz)}
 
   /* ── A talaj ── */
   const TV = D.talaj_vizhiany, OI = D.ontozesigeny, TVIZ = D.talajviz;
+
+  // Tajekozodasi pontok a talajviz-terkephez. A koordinatak ugyanabban a
+  // vetuletben vannak, mint a kutake - a terkep.json 1000 egyseg szeles
+  // dobozaban. Keves varos, hogy ne nyomja el a korlapokat.
+  const VAROS = [
+    {nev:"Budapest",  xy:[377, 203]},
+    {nev:"Debrecen",  xy:[760, 230]},
+    {nev:"Szeged",    xy:[567, 468]},
+    {nev:"Pécs",      xy:[344, 470]},
+    {nev:"Győr",      xy:[216, 170]},
+    {nev:"Miskolc",   xy:[605, 100]},
+    {nev:"Kecskemét", xy:[485, 330]},
+    {nev:"Szolnok",   xy:[561, 270]}
+  ];
   if(TV){
     // Az állomáslista tömb: {nev, hiany_mm, lat, lon, sorozat}. A régi
     // {nev: érték} alakot is elfogadjuk, hogy egy félbemaradt futás ne
@@ -1311,7 +1371,7 @@ a{color:var(--viz)}
         foglalt.push(hely.b);
         return `<g><circle cx="${cx}" cy="${cy}" r="${r}"
             fill="var(--rekord)" fill-opacity="${(0.25+o.v/maxV*0.6).toFixed(2)}"
-            stroke="var(--rekord)" stroke-width="2"/>
+            stroke="var(--rekord)" stroke-width="2"><title>${nev}: ${dec(v,1)} mm</title></circle>
           ${hely.dy ? `<line x1="${cx}" y1="${cy}" x2="${hely.bal?hely.b.x1+4:hely.b.x0-4}"
             y2="${cy+hely.dy}" stroke="var(--halvany)" stroke-width="1.2"/>` : ""}
           <text x="${hely.bal ? cx-r-8 : cx+r+8}" y="${cy+hely.dy+5}" font-size="22"
@@ -1388,7 +1448,17 @@ a{color:var(--viz)}
               return `<svg viewBox="${TK.viewBox}" width="100%" style="margin-top:12px"
                         role="img" aria-label="A talajvíz süllyedése tíz év alatt">
                 <path d="${TK.path}" fill="var(--vonal-halk)" stroke="var(--vonal)"
-                      stroke-width="1.5"/>${kor}</svg>
+                      stroke-width="1.5"/>
+                ${(TK.folyok||[]).map(f => `<path d="${f.path}" fill="none"
+                    stroke="var(--viz)" stroke-width="${f.rang<=1?1.6:1}"
+                    stroke-opacity=".5" stroke-linecap="round"
+                    stroke-linejoin="round"/>`).join("")}
+                ${VAROS.map(v => `<g><circle cx="${v.xy[0]}" cy="${v.xy[1]}" r="2"
+                    fill="var(--tinta)" fill-opacity=".55"/>
+                    <text x="${v.xy[0]+5}" y="${v.xy[1]+3.5}" font-size="11"
+                      fill="var(--tinta)" fill-opacity=".65"
+                      font-family="var(--mono)">${v.nev}</text></g>`).join("")}
+                ${kor}</svg>
               <p class="tvmegj" style="margin-top:6px">A körlap mérete a süllyedéssel nő.
                 Cellánként a legnagyobb süllyedésű kút látszik, hogy a térkép olvasható
                 maradjon — a Duna–Tisza köze és a Nagykunság a legérintettebb.</p>`;
