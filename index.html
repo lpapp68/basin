@@ -831,8 +831,7 @@ a{color:var(--viz)}
            <div class="ert" style="color:${szin}">${dec(v*100,0)}<span>%</span></div>
            <div class="mag">
              <b>A növényzet a lehetséges párolgás ${dec(v*100,0)}%-át teljesíti.</b>
-             Vízbőség mellett ${dec(OI2.et_ref_mm,2)} mm/nap párologna el; a mérés
-             ${dec(OI2.et_act_mm,2)}. A növény ilyenkor lezárja a leveleit, és amíg
+             A <b>referencia-párolgás ${dec(OI2.et_ref_mm,2)} mm/nap</b>: ennyi párologna el egy alacsonyra nyírt, <b>korlátlan vízellátású fűfelszínről</b> a mai sugárzás, hőmérséklet, páratartalom és szél mellett. Ez a hidrológia nemzetközi viszonyítási alapja — nem a maximum, hanem a <b>vízhiány nélküli állapot</b>. A mérés ${dec(OI2.et_act_mm,2)} mm/nap. A növény ilyenkor lezárja a leveleit, és amíg
              zárva vannak, nem is növekszik.
              <em>A skála a lehetségeshez viszonyít, nem a sokéves augusztusi
              átlaghoz — ahhoz több év adata kellene. ${OI2.datum}</em>
@@ -1065,11 +1064,19 @@ a{color:var(--viz)}
              `font-family="var(--mono)">${cimke} ${dec(f.m,2)} km³/év</text>`;
     };
 
-    const tizEve = ev(S[S.length-1].honap) - 10;
-    const utolso10 = S.filter(r => ev(r.honap) >= tizEve);
+    // Négy trendvonal: teljes idősor, 10, 5 és 3 év. Az egymáshoz mért
+    // meredekségük megmutatja, hogy a csökkenés gyorsulása maga hogyan
+    // változik — ha 3 < 5 < 10 év sorrendben meredekebbek, a romlás
+    // üteme is nő, nem csak a szint csökken.
+    const utolsoEv = ev(S[S.length-1].honap);
+    const reszlet = (ev_) => S.filter(r => ev(r.honap) >= utolsoEv - ev_);
+
     const trendvonal =
-      vonal(S, "var(--halvany)", 1.6, "4 4", "teljes idősor", false) +
-      vonal(utolso10, "var(--tinta)", 2, "7 5", "tíz év", true);
+      vonal(S,            "var(--halvany)",  1.4, "3 4",  "teljes",  false) +
+      vonal(reszlet(10),  "var(--tinta)",    1.8, "8 5",  "10 év",   false) +
+      vonal(reszlet(5),   "var(--parolgas)", 1.8, "8 5",  "5 év",    true)  +
+      vonal(reszlet(3),   "var(--rekord)",   2.2, "10 4", "3 év",    true);
+
 
     $("#egyenleg").innerHTML =
       `<div class="nagy ${IS.sorozat[IS.sorozat.length-1].km3<0?"neg":""}">`+
