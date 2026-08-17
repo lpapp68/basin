@@ -565,13 +565,12 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-pulzus">
       <h3>1 · Pulzus <span class="pontos" id="pulzusnap">a mérleg öt tagja</span></h3>
-      <p class="alcim">Öt tétel <b>ugyanarról a napról</b>, mind azonos
-      mértékegységben. A mérleg csak akkor értelmes, ha minden tagja egyetlen naphoz
-      tartozik: a tegnapi eső egy része ma is a mederben van, ezért a tegnapi csapadékot
-      a mai hozammal összevetni hibás volna. Ezért a folyók hozama is aznapi átlag,
-      az órás mintákból.</p>
+      <p class="alcim">Öt számadat <b>ugyanarról a napról</b>, mind azonos
+      mértékegységben. A modell akkor értelmezhető, ha minden adata egyetlen naphoz
+      tartozik: a tegnapi eső egy része ma is a mederben van, ezért a folyók hozama is
+      aznapi átlag, az órás mintákból számolva.</p>
       <p class="alcim mert" id="mertekegyseg"></p>
-      <p class="alcim skala"><b>Közös számegyenesen.</b> A nulla minden sorban ugyanott van: jobbra ami érkezik, balra ami távozik. A rácsvonalak m³/s-ben olvashatók le, tehát a tételek nemcsak egymáshoz, hanem abszzút mértékben is összevethetők — a két oldal különbsége adja a készletváltozást.</p>
+      <p class="alcim skala"><b>Közös számegyenesen.</b> A nulla minden sorban ugyanott van: jobbra ami érkezik, balra ami távozik. A rácsvonalak m³/s-ben olvashatók le, tehát az adatok abszolút mértékben is összevethetők — a két oldal különbsége adja a készletváltozást.</p>
       <div id="pulzus"></div>
     </div>
 
@@ -993,13 +992,13 @@ a{color:var(--viz)}
   /* ── 1 Pulzus ── */
   const M=D.merleg_m3s, MM=D.mm_nap;
   if(D.merleg_datum) $("#pulzusnap").textContent = D.merleg_datum + " · a legutóbbi teljes nap";
-  // Minden tétel két mértékegységben szerepel. A mm/nap a doboz TERÜLETÉRE szétterített
+  // Minden adat két formában jelenik meg. A mm/nap a terület egészére szétterített
   // változat — ez teszi összevethetővé a csapadékot és a párolgást (amelyeket eleve így
   // mérnek) a folyók hozamával.
   {
     const egymm = 0.001 * D.doboz.terulet_km2 * 1e6 / 86400;
     $("#mertekegyseg").innerHTML =
-      `Minden tétel <b>két számmal</b> szerepel. A <b>m³/s</b> a vízforgalom: egy köbméter
+      `Minden adat <b>két formában</b> jelenik meg. A <b>m³/s</b> a vízforgalom: egy köbméter
        másodpercenként annyi, mint egy ezerliteres kád minden másodpercben. A <b>mm/nap</b>
        ugyanaz az adat <b>Magyarország teljes területére</b> szétterítve, mintha aznap ilyen vastag vízréteg borítaná az egészet. ${D.doboz.nev} ${num(D.doboz.terulet_km2)} km²-én
        <b>1 mm/nap ≈ ${num(Math.round(egymm))} m³/s</b>. A mm/nap azért kell, mert a
