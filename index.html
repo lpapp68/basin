@@ -524,7 +524,7 @@ a{color:var(--viz)}
       a mai hozammal összevetni hibás volna. Ezért a folyók hozama is aznapi átlag,
       az órás mintákból.</p>
       <p class="alcim mert" id="mertekegyseg"></p>
-      <p class="alcim skala"><b>A sávok egymáshoz viszonyítanak.</b> A leghosszabb az öt tétel közül a legnagyobb; a többi ehhez arányos. Nincs mögötte külső viszonyítási alap — sem a maximálisan lehetséges párolgás, sem a valaha mért legnagyobb vízhozam. A sáv a tételek egymáshoz mért súlyát mutatja, nem azt, hogy egy tétel a saját szélsőértékéhez képest hol tart.</p>
+      <p class="alcim skala"><b>A sávok egymáshoz viszonyítanak.</b> A leghosszabb az öt mérlegtétel közül a legnagyobb, a többi ehhez arányos. Nincs mögötte külső viszonyítási alap — sem a maximálisan lehetséges párolgás, sem a valaha mért legnagyobb vízhozam. A sáv a tételek egymáshoz mért súlyát mutatja, nem azt, hogy egy tétel a saját szélsőértékéhez képest hol tart.</p>
       <div id="pulzus"></div>
     </div>
 
@@ -691,7 +691,7 @@ a{color:var(--viz)}
         `<span class="pont ${allapot}"></span>` +
         `<b>Utolsó adatfrissítés: ${kor}</b>` +
         `<span>${g.toLocaleString("hu-HU", {dateStyle:"short", timeStyle:"short"})} · ` +
-        `az adat negyedórás; a gyűjtés óránként indul, és torlódáskor csúszhat</span>`;
+        `az adat negyedórás — a gyűjtés óránként indul, és torlódáskor csúszhat</span>`;
     };
     rajzol();
     setInterval(rajzol, 60000);
@@ -1275,7 +1275,7 @@ a{color:var(--viz)}
             <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>` : ""}
           <div class="trekesz">
             <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
-            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja; helyileg öntözés is segít.</span></div>
+            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja, helyileg az öntözés is segít.</span></div>
             <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
           <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol
