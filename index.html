@@ -545,12 +545,12 @@ a{color:var(--viz)}
 
 <section id="paks-sec">
   <div class="sz"><h2>Paks · a vízoldal</h2><span class="n">csomópont</span></div>
-  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet korlátozhatja a paksi blokkok termelését. A mérleg többi tétele mennyiségről szól; ez küszöbökről.</p>
+  <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet korlátozhatja a paksi blokkok termelését. A modell többi adata mennyiségről szól, ez küszöbökről.</p>
   <div class="paksdoboz" id="paks"></div>
 </section>
 
 <section>
-  <div class="sz"><h2>Négy panel</h2><span class="n">a mérleg és a bizonytalansága</span></div>
+  <div class="sz"><h2>Négy panel</h2><span class="n">a modell és a bizonytalansága</span></div>
   <div class="jelmagy">
     <span><b class="pr mert">helyszíni mérés</b> műszer mérte a helyszínen: vízállás, vízhő,
       talajnedvesség</span>
@@ -558,13 +558,13 @@ a{color:var(--viz)}
       a vízállásból, kalibrált vízhozamgörbével</span>
     <span><b class="pr muholdas">műholdas becslés</b> műholdas mérésből modellel
       visszaszámítva: csapadék, párolgás, készlet-anomália</span>
-    <span><b class="pr modellezett">számított</b> más tételekből, feltételezésekkel</span>
+    <span><b class="pr modellezett">számított</b> más adatokból, feltételezésekkel</span>
     <span><b class="pr helyorzo">helyőrző</b> nagyságrendi becslés, amíg a forrás bekötésre vár</span>
   </div>
   <div class="racs">
 
     <div class="panel" id="p-pulzus">
-      <h3>1 · Pulzus <span class="pontos" id="pulzusnap">a mérleg öt tagja</span></h3>
+      <h3>1 · Pulzus <span class="pontos" id="pulzusnap">a modell öt adata</span></h3>
       <p class="alcim">Öt számadat <b>ugyanarról a napról</b>, mind azonos
       mértékegységben. A modell akkor értelmezhető, ha minden adata egyetlen naphoz
       tartozik: a tegnapi eső egy része ma is a mederben van, ezért a folyók hozama is
@@ -582,7 +582,7 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-hovalett">
       <h3>3 · Hova lett <span class="pontos">amit nem tudunk elszámolni</span></h3>
-      <p class="alcim">Ugyanazt a párolgást kétféleképpen is meg lehet becsülni. Ha jól mérnénk, a két szám egyezne. Nem egyezik — és a különbségük megmutatja, mekkora a bizonytalanság az egész mérlegben.</p>
+      <p class="alcim">Ugyanazt a párolgást kétféleképpen is meg lehet becsülni. Ha jól mérnénk, a két szám egyezne. Nem egyezik — és a különbségük megmutatja, mekkora a bizonytalanság az egész modellben.</p>
       <div id="hovalett"></div>
     </div>
 
@@ -706,7 +706,7 @@ a{color:var(--viz)}
     '<div class="warn">Nincs adat. Futtasd előbb: <code>python3 fetch_data.py</code></div>'; return; }
 
   /* figyelmeztetés + órák */
-  $("#warn").innerHTML = "<b>Adatlefedettség: 1. szint</b> — részben záródó mérleg — " + D.figyelmeztetes;
+  $("#warn").innerHTML = "<b>Adatlefedettség: 1. szint</b> — részben záródó modell — " + D.figyelmeztetes;
   const O = D.orak;
   const orak = [["Negyedórás","el",O.oras],["Napi","",O.napi],["Havi","",O.havi]];
   orak.forEach(([cim,cls,o])=>{
@@ -902,7 +902,7 @@ a{color:var(--viz)}
     }
 
     if(H2 && H2.elteres){
-      sorok += `<p><b>A napi mérleg zárása még pontatlan.</b> A kétféle párolgásbecslés
+      sorok += `<p><b>A napi modell zárása még pontatlan.</b> A kétféle párolgásbecslés
         között <b>${num(Math.abs(H2.elteres.ertek))} m³/s</b> az eltérés. A napi országos
         egyenleg ezért tájékoztató szám; a trend és a mért folyóadatok viszont
         megállnak önmagukban.</p>`;
@@ -915,7 +915,7 @@ a{color:var(--viz)}
   /* ── melyik doboz ── */
   const DB=D.dobozok, A=DB[D.aktiv_doboz], T=DB.mdb;
   $("#dobozjel").innerHTML =
-    `<b>Melyik területre készül a mérleg</b><br>Jelenleg <strong>${A.nev}</strong> területére, ${num(A.terulet_km2)} km²-re: ${A.falak}. A <strong>teljes ${T.nev}</strong> ${num(T.terulet_km2)} km², nagyjából ötször ekkora. ${T.falak} A hozzáfolyása a lap A teljes medence szekciójában olvasható. ${T.megjegyzes} Addig a csapadék és a párolgás a magyar területre vonatkozik, mert ezek a tényezők a területtel arányosan nőnek.`;
+    `<b>Melyik területre készül a modell</b><br>Jelenleg <strong>${A.nev}</strong> területére, ${num(A.terulet_km2)} km²-re: ${A.falak}. A <strong>teljes ${T.nev}</strong> ${num(T.terulet_km2)} km², nagyjából ötször ekkora. ${T.falak} A hozzáfolyása a lap A teljes medence szekciójában olvasható. ${T.megjegyzes} Addig a csapadék és a párolgás a magyar területre vonatkozik, mert ezek a tényezők a területtel arányosan nőnek.`;
 
   /* ── Térképi buborék ─────────────────────────────────────────────────
      A <title> elem a böngésző saját késleltetésével jelenik meg — nagyjából
@@ -1276,11 +1276,11 @@ a{color:var(--viz)}
       ((kul !== null && Math.abs(kul) < 10)
         ? `A két, <b>teljesen eltérő módszertanú</b> becslés ${dec(Math.abs(kul),0)}%-on belül ` +
           `egyezik — az egyik műholdas sugárzási mérleg, a másik modell asszimilált ` +
-          `megfigyeléssel. Vagyis <b>a párolgás nem a mérleg hibaforrása</b>: a hiányzó víz ` +
+          `megfigyeléssel. Vagyis <b>a párolgás nem a modell hibaforrása</b>: a hiányzó víz ` +
           `máshonnan ered, jó eséllyel a be nem kötött határszelvényekből.`
         : `A két becslés ${dec(Math.abs(kul||0),0)}%-kal tér el.`) +
       `<em>${e5.forras} Öt-hat napos késéssel érkezik, ezért visszamenőleges ` +
-      `ellenőrzésre való — a fenti mérleg napjától eltérhet.</em></p>`));
+      `ellenőrzésre való — a fenti modell napjától eltérhet.</em></p>`));
   }
   
   hl.appendChild(el("div","res",
@@ -1290,9 +1290,9 @@ a{color:var(--viz)}
     // amennyit a műhold mér; negatívnál fordítva. A korábbi „hiányzik" szó
     // pozitív értéknél önellentmondás volt.
     `<p class="irany">${H.elteres.ertek > 0
-      ? `A mérleg zárásához <b>ennyivel több</b> párolgás kellene, mint amennyit a műhold mér: a maradék ${num(H.parolgas_maradek.ertek)}, a mérés ${num(H.parolgas_muhold.ertek)} m³/s.`
-      : `A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a mérleg zárásához kellene: a mérés ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
-    `<p>Egyik becslés sem a helyes: az eltérés azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a mérleg többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
+      ? `A modell zárásához <b>ennyivel több</b> párolgás kellene, mint amennyit a műhold mér: a maradék ${num(H.parolgas_maradek.ertek)}, a mérés ${num(H.parolgas_muhold.ertek)} m³/s.`
+      : `A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a modell zárásához kellene: a mérés ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
+    `<p>Egyik becslés sem a helyes: az eltérés azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a modell többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
      cseréje <b>a dobozon belüli átrendezés</b>: ami a Dunából elszivárog a magyar
      szakaszon, az a dobozban marad, tehát ezt a számot nem növeli. A csere iránya
      szakaszonként más — a Szigetközben a feliszapolódott meder majdnem elzárja,
@@ -1587,7 +1587,7 @@ $("#lab").innerHTML =
     `<br><br>Egyetlen pipeline, egyetlen kimenet: <code>data.json</code> — ugyanezt `+
     `olvassa az iterators.org darab is. Generálva: ${D.generalva}. `+
     `Doboz: ${D.doboz.nev}, ${num(D.doboz.terulet_km2)} km². ${D.doboz.megjegyzes}`+
-    `<br><br><b>Nyitott falak</b> — amit a mérleg nem fog be, és ezért a maradéktagban `+
+    `<br><br><b>Nyitott falak</b> — amit a modell nem fog be, és ezért a maradéktagban `+
     `jelenik meg: ` + D.nyitott_falak.join(" · ") +
     (D.belso_megjegyzes ? `<br><br>${D.belso_megjegyzes}` : "") +
     // A futási hibák technikai részletei a naplóba valók. A lapon annyi látszik,
