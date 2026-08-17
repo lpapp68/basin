@@ -1371,7 +1371,7 @@ a{color:var(--viz)}
         foglalt.push(hely.b);
         return `<g><circle cx="${cx}" cy="${cy}" r="${r}"
             fill="var(--rekord)" fill-opacity="${(0.25+o.v/maxV*0.6).toFixed(2)}"
-            stroke="var(--rekord)" stroke-width="2"><title>${nev}: ${dec(v,1)} mm</title></circle>
+            stroke="var(--rekord)" stroke-width="2"><title>${o.nev}: ${dec(o.v,1)} mm</title></circle>
           ${hely.dy ? `<line x1="${cx}" y1="${cy}" x2="${hely.bal?hely.b.x1+4:hely.b.x0-4}"
             y2="${cy+hely.dy}" stroke="var(--halvany)" stroke-width="1.2"/>` : ""}
           <text x="${hely.bal ? cx-r-8 : cx+r+8}" y="${cy+hely.dy+5}" font-size="22"
