@@ -90,6 +90,38 @@ def racsos(pontok, oszlop=6, sor=5):
     return ki
 
 
+
+# Zirc és Budapest referenciapont: a Bakony csapadékos oldala és az ország
+# közepe. A hozzájuk legközelebbi mérőhely mindig szerepeljen a térképen, hogy
+# a néző két ismert ponthoz tudja viszonyítani a többit.
+REFERENCIA = {"Zirc": (47.262, 17.872), "Budapest": (47.497, 19.040)}
+
+
+def kotelezo_pontok(mind, valasztott, tavolsag=60):
+    """A referenciapontokhoz legközelebbi mérőhelyet hozzáadja a listához."""
+    import math
+    ki = list(valasztott)
+    benne = {q["nev"] for q in ki}
+    for nev, (la, lo) in REFERENCIA.items():
+        legjobb, tav = None, 1e9
+        for q in mind:
+            d = math.hypot((q["lat"] - la) * 111, (q["lon"] - lo) * 75)
+            if d < tav:
+                legjobb, tav = q, d
+        if not legjobb or tav >= tavolsag:
+            continue
+        # Ha mar benne van, csak megjeloljuk - igy a lapon latszik,
+        # hogy ez a referencia-pont.
+        if legjobb["nev"] in benne:
+            for q in ki:
+                if q["nev"] == legjobb["nev"]:
+                    q["referencia"] = nev
+        else:
+            ki.append(dict(legjobb, referencia=nev))
+            benne.add(legjobb["nev"])
+    return ki
+
+
 def main():
     most = dt.datetime.now(dt.timezone.utc)
     a = vizapi.allomasok(12)
@@ -141,7 +173,7 @@ def main():
                       for k, v in rangsor],
         # Terkepi pontok: cellankent a legnagyobb sullyedes, racsos mintaval.
         "terkep": [dict(p, terkep_xy=list(vet(p["lon"], p["lat"])))
-                   for p in racsos(pontlista)],
+                   for p in kotelezo_pontok(pontlista, racsos(pontlista))],
         "provenance": "helyszini",
         "forras": (f"OVF nyílt adat-API, {len(kozos)} talajvízkút; a mai és a "
                    f"{EVEK} évvel ezelőtti azonos naptári időszak (±{ABLAK} nap) "

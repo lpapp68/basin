@@ -388,6 +388,14 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .mjel i.nagyito{background:transparent;border-color:var(--rekord);height:8px;margin-top:5px}
 .tsor .tb i{display:block;height:100%;background:var(--rekord);opacity:.8}
 .tsor .tv{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600}
+.tbuborek{position:fixed;z-index:99;pointer-events:none;opacity:0;
+  padding:5px 9px;border:1px solid var(--vonal);background:var(--hatter);
+  font-family:var(--mono);font-size:11.5px;color:var(--tinta);
+  white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.12);
+  transition:opacity .08s}
+.tpont{cursor:pointer}
+.tpont:hover{fill-opacity:.85!important}
+.tpont.ref{stroke:var(--tinta);stroke-width:2.5}
 .fogalmak{margin:14px 0 0;padding:14px 16px;border:1px solid var(--vonal);
   background:color-mix(in oklab,var(--parolgas) 4%,transparent)}
 .fogalmak .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
@@ -910,6 +918,47 @@ a{color:var(--viz)}
   $("#dobozjel").innerHTML =
     `<b>Melyik területre készül a mérleg</b><br>Jelenleg <strong>${A.nev}</strong> területére, ${num(A.terulet_km2)} km²-re: ${A.falak}. A <strong>teljes ${T.nev}</strong> ${num(T.terulet_km2)} km², nagyjából ötször ekkora. ${T.falak} A hozzáfolyása a lap A teljes medence szekciójában olvasható. ${T.megjegyzes} Addig a csapadék és a párolgás a magyar területre vonatkozik, mert ezek a tényezők a területtel arányosan nőnek.`;
 
+  /* ── Térképi buborék ─────────────────────────────────────────────────
+     A <title> elem a böngésző saját késleltetésével jelenik meg — nagyjából
+     egy másodperc, ami interaktív ábránál sok. Saját elemmel azonnali. */
+  {
+    const bub = document.createElement("div");
+    bub.className = "tbuborek";
+    document.body.appendChild(bub);
+
+    const mutat = (e) => {
+      const c = e.target.dataset ? e.target.dataset.cimke : null;
+      if(!c) return;
+      bub.textContent = c;
+      bub.style.opacity = "1";
+      mozgat(e);
+    };
+    const mozgat = (e) => {
+      bub.style.left = (e.clientX + 14) + "px";
+      bub.style.top  = (e.clientY - 10) + "px";
+    };
+    const rejt = () => { bub.style.opacity = "0"; };
+
+    // Eseménydelegálás: a pontok később, adatfrissítéskor is újraépülnek.
+    document.addEventListener("mouseover", (e) => {
+      if(e.target.classList && e.target.classList.contains("tpont")) mutat(e);
+    });
+    document.addEventListener("mousemove", (e) => {
+      if(bub.style.opacity === "1") mozgat(e);
+    });
+    document.addEventListener("mouseout", (e) => {
+      if(e.target.classList && e.target.classList.contains("tpont")) rejt();
+    });
+    // Érintőképernyőn koppintásra jelenik meg, és marad három másodpercig.
+    document.addEventListener("touchstart", (e) => {
+      if(e.target.classList && e.target.classList.contains("tpont")){
+        const t = e.touches[0];
+        mutat({target: e.target, clientX: t.clientX, clientY: t.clientY});
+        setTimeout(rejt, 3000);
+      }
+    }, {passive: true});
+  }
+
   /* ── Paks csomópont ── */
   const K=D.paks;
   if(K){
@@ -1383,7 +1432,7 @@ a{color:var(--viz)}
         foglalt.push(hely.b);
         return `<g><circle cx="${cx}" cy="${cy}" r="${r}"
             fill="var(--rekord)" fill-opacity="${(0.25+o.v/maxV*0.6).toFixed(2)}"
-            stroke="var(--rekord)" stroke-width="2"><title>${o.nev}: ${dec(o.v,1)} mm</title></circle>
+            stroke="var(--rekord)" stroke-width="2" class="tpont${o.referencia?" ref":""}" data-cimke="${o.referencia?o.referencia+" közeleben · ":""}${o.nev}: ${dec(o.v,1)} mm"/>
           ${hely.dy ? `<line x1="${cx}" y1="${cy}" x2="${hely.bal?hely.b.x1+4:hely.b.x0-4}"
             y2="${cy+hely.dy}" stroke="var(--halvany)" stroke-width="1.2"/>` : ""}
           <text x="${hely.bal ? cx-r-8 : cx+r+8}" y="${cy+hely.dy+5}" font-size="22"
@@ -1396,11 +1445,6 @@ a{color:var(--viz)}
           <path d="${TK.path}" fill="var(--vonal-halk)" stroke="var(--halvany)"
             stroke-width="2" stroke-linejoin="round"/>
           ${folyok}
-          ${VAROS.map(v => `<g><circle cx="${v.xy[0]}" cy="${v.xy[1]}" r="2.2"
-              fill="var(--tinta)" fill-opacity=".5"/>
-              <text x="${v.xy[0]+5}" y="${v.xy[1]+3.5}" font-size="11"
-                fill="var(--tinta)" fill-opacity=".6"
-                font-family="var(--mono)">${v.nev}</text></g>`).join("")}
           ${pontok}
         </svg>
         <em>A körlap mérete a vízhiánnyal nő. A tíz állomás az ország <b>különböző térségeiből ad mintát</b>; a köztük lévő nagy eltérés azt mutatja, hogy a szárazság területileg egyenetlen. Az érték országos átlagnak nem tekinthető.</em>
@@ -1459,8 +1503,8 @@ a{color:var(--viz)}
                 const r = 4 + Math.sqrt(Math.max(w.cm, 0) / mx) * 13;
                 return `<circle cx="${px}" cy="${py}" r="${r.toFixed(1)}"
                           fill="var(--rekord)" fill-opacity=".5"
-                          stroke="var(--rekord)" stroke-width="1"><title>${w.nev}: ` +
-                       `${dec(w.cm/100,2)} m</title></circle>`;
+                          stroke="var(--rekord)" stroke-width="1" class="tpont${w.referencia?" ref":""}" data-cimke="${w.referencia?w.referencia+" közeleben · ":""}${w.nev.replace(/\s+\d+$/,"")}: ` +
+                       `−${dec(w.cm/100,2)} m"/>`;
               }).join("");
               return `<svg viewBox="${TK.viewBox}" width="100%" style="margin-top:12px"
                         role="img" aria-label="A talajvíz süllyedése tíz év alatt">

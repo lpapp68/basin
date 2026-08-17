@@ -101,6 +101,38 @@ def legtavolabbi(pontok, db):
     return ki
 
 
+
+# Zirc és Budapest referenciapont: a Bakony csapadékos oldala és az ország
+# közepe. A hozzájuk legközelebbi mérőhely mindig szerepeljen a térképen, hogy
+# a néző két ismert ponthoz tudja viszonyítani a többit.
+REFERENCIA = {"Zirc": (47.262, 17.872), "Budapest": (47.497, 19.040)}
+
+
+def kotelezo_pontok(mind, valasztott, tavolsag=35):
+    """A referenciapontokhoz legközelebbi mérőhelyet hozzáadja a listához."""
+    import math
+    ki = list(valasztott)
+    benne = {q["nev"] for q in ki}
+    for nev, (la, lo) in REFERENCIA.items():
+        legjobb, tav = None, 1e9
+        for q in mind:
+            d = math.hypot((q["lat"] - la) * 111, (q["lon"] - lo) * 75)
+            if d < tav:
+                legjobb, tav = q, d
+        if not legjobb or tav >= tavolsag:
+            continue
+        # Ha mar benne van, csak megjeloljuk - igy a lapon latszik,
+        # hogy ez a referencia-pont.
+        if legjobb["nev"] in benne:
+            for q in ki:
+                if q["nev"] == legjobb["nev"]:
+                    q["referencia"] = nev
+        else:
+            ki.append(dict(legjobb, referencia=nev))
+            benne.add(legjobb["nev"])
+    return ki
+
+
 def main():
     veg = (dt.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1
            else dt.date.today() - dt.timedelta(days=1))
@@ -135,7 +167,7 @@ def main():
     allomasok.sort(key=lambda a: -a["hiany_mm"])
     atlag = sum(a["hiany_mm"] for a in allomasok) / len(allomasok)
     # A térképre szétszórt mintát választunk; az átlag mindegyikből számol.
-    terkepre = racsos(allomasok, 5, 4)
+    terkepre = kotelezo_pontok(allomasok, racsos(allomasok, 5, 4))
 
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
     p["talaj_vizhiany"] = {
