@@ -474,6 +474,9 @@ def main():
         "keszlet_idosor": p.get("keszlet_idosor"),
         "mdb_falak": p.get("mdb_falak"),
         "talaj_vizhiany": p.get("talaj_vizhiany"),
+        # A talajvíz évtizedes süllyedése - a harmadik rekesz, amiről eddig
+        # csak beszéltünk. Most 487 kút mérése áll mögötte.
+        "talajviz": p.get("talajviz"),
         "terkep": (json.loads(pathlib.Path("terkep.json").read_text(encoding="utf-8"))
                    if pathlib.Path("terkep.json").exists() else None),
         "ontozesigeny": p.get("ontozesigeny"),

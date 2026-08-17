@@ -388,6 +388,18 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .mjel i.nagyito{background:transparent;border-color:var(--rekord);height:8px;margin-top:5px}
 .tsor .tb i{display:block;height:100%;background:var(--rekord);opacity:.8}
 .tsor .tv{font-family:var(--mono);font-size:12px;text-align:right;font-weight:600}
+.tvizdoboz{margin:16px 0 0;padding:14px 16px;border:1px solid var(--vonal);
+  background:color-mix(in oklab,var(--rekord) 4%,transparent)}
+.tvizdoboz .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--halvany);margin-bottom:6px}
+.tvizdoboz .nagy{font-size:38px;line-height:1;font-weight:700;color:var(--rekord)}
+.tvizdoboz .nagy .egys{font-size:15px;font-weight:400;color:var(--halvany)}
+.tvizdoboz .m{margin-top:8px;font-size:13px;line-height:1.6}
+.tvlista{display:flex;flex-wrap:wrap;gap:5px 16px;margin-top:11px;padding-top:9px;
+  border-top:1px solid var(--vonal-halk);font-family:var(--mono);font-size:11.5px}
+.tvlista span{display:flex;gap:6px;white-space:nowrap}
+.tvlista i{font-style:normal;color:var(--rekord)}
+.tvmegj{margin:11px 0 0;font-size:11.5px;line-height:1.55;color:var(--halvany)}
 .trekesz{margin-top:18px;padding-top:14px;border-top:1px solid var(--vonal-halk)}
 .trekesz div{display:grid;grid-template-columns:6.5em 1fr;gap:10px;padding:5px 0;
   font-size:12.5px;color:var(--halvany)}
@@ -1236,7 +1248,7 @@ a{color:var(--viz)}
   }
 
   /* ── A talaj ── */
-  const TV = D.talaj_vizhiany, OI = D.ontozesigeny;
+  const TV = D.talaj_vizhiany, OI = D.ontozesigeny, TVIZ = D.talajviz;
   if(TV){
     // Az állomáslista tömb: {nev, hiany_mm, lat, lon, sorozat}. A régi
     // {nev: érték} alakot is elfogadjuk, hogy egy félbemaradt futás ne
@@ -1352,6 +1364,19 @@ a{color:var(--viz)}
             <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja, helyileg az öntözés is segít.</span></div>
             <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
+          ${TVIZ ? `<div class="tvizdoboz">
+            <div class="u">Hol tart a talajvíz ${TVIZ.evek} évvel ezelőtthöz képest?</div>
+            <div class="nagy neg">−${dec(TVIZ.sullyedes_cm/100,2)}<span class="egys">&nbsp;m</span></div>
+            <div class="m">Ennyivel van <b>mélyebben</b> a talajvíz, mint ${TVIZ.evek} éve
+              ugyanebben a naptári időszakban. ${TVIZ.kut_db} kút közül
+              <b>${TVIZ.melyult} mélyült</b>, ${TVIZ.emelkedett} emelkedett.
+              A középső fele ${dec(TVIZ.also_kvartilis/100,2)} és
+              ${dec(TVIZ.felso_kvartilis/100,2)} méter közé esik.</div>
+            <div class="tvlista">${TVIZ.leginkabb.slice(0,5).map(w =>
+              `<span><b>${w.nev.replace(/\s+\d+$/,"")}</b>
+               <i>−${dec(w.cm/100,2)} m</i></span>`).join("")}</div>
+            <p class="tvmegj">${TVIZ.figyelmeztetes}</p>
+          </div>` : ""}
           <p class="tmegj">A folyó menti keskeny sávban a három rekesz átjár egymásba: a meder hol
           megcsapolja a felszín alatti vizet, hol rátáplál, és ez a mederanyagtól meg a
           vízszinttől függ. A Homokhátság viszont 40–60 kilométerre és magasabban van

@@ -2406,5 +2406,52 @@
     "provenance": "modellezett",
     "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
+  },
+  "talajviz": {
+    "sullyedes_cm": 144.0,
+    "evek": 10,
+    "datum": "2026-08-17",
+    "kut_db": 487,
+    "melyult": 480,
+    "emelkedett": 5,
+    "also_kvartilis": 87.5,
+    "felso_kvartilis": 215.5,
+    "leginkabb": [
+      {
+        "nev": "Mesterszállás 004030",
+        "cm": 471.0
+      },
+      {
+        "nev": "Bugac",
+        "cm": 434.5
+      },
+      {
+        "nev": "Kunszentmárton",
+        "cm": 416.0
+      },
+      {
+        "nev": "Szászberek",
+        "cm": 409.5
+      },
+      {
+        "nev": "Nyárlőrinc",
+        "cm": 407.5
+      },
+      {
+        "nev": "Lajosmizse",
+        "cm": 407.0
+      },
+      {
+        "nev": "Bugac",
+        "cm": 399.0
+      },
+      {
+        "nev": "Biharnagybajom",
+        "cm": 399.0
+      }
+    ],
+    "provenance": "helyszini",
+    "forras": "OVF nyílt adat-API, 487 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   }
 }
