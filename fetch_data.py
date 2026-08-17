@@ -481,7 +481,14 @@ def main():
         "figyelmeztetes": p["_figyelmeztetes"],
         "nyitott_falak": NYITOTT_FALAK,
         "belso_megjegyzes": BELSO_MEGJEGYZES,
-        "hibak": hibak + [
+        # Ha a mérleg napja két napnál régebbi, azt kimondjuk. Enélkül a lap
+        # csendben mutat elavult adatot: minden lépés "sikeres", a hibalista
+        # üres, a mérleg viszont napokig áll. Ez már kétszer megtörtént.
+        "hibak": ([
+            f"A mérleg napja ({merleg_datum}) {(datetime.now().date() - datetime.strptime(merleg_datum, '%Y-%m-%d').date()).days} napja nem frissült — "
+            "a napi adatforrások valamelyike elakadt."
+        ] if merleg_datum and (datetime.now().date()
+             - datetime.strptime(merleg_datum, "%Y-%m-%d").date()).days > 2 else []) + hibak + [
             # A frissit.sh napi lépéseinek hibái: enélkül az Actionsben csend van,
             # és csak napokkal később derül ki, hogy egy adatforrás megállt.
             sor.strip() for sor in

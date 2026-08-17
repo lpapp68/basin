@@ -10,18 +10,18 @@
   "csapadek_mm_nap": {
     "ertek": 0.1,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-14, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 48,
-    "datum": "2026-08-14",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-16, területsúlyozott átlag országhatár-maszkkal",
+    "kor_ora": 24,
+    "datum": "2026-08-16",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
     "ertek": 1.2,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-14, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 48,
-    "datum": "2026-08-14",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-16, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 24,
+    "datum": "2026-08-16",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -2223,13 +2223,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-17T01:50:04+00:00",
-    "datum": "2026-08-14",
+    "lekerve": "2026-08-17T09:45:39+00:00",
+    "datum": "2026-08-16",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 717.0,
-      "vizallas_cm": 66.0,
-      "vizho_c": 23.5,
+      "hozam_m3s": 685.0,
+      "vizallas_cm": 57.0,
+      "vizho_c": 23.8,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -2238,13 +2238,13 @@
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 683.0,
+    "kulonbseg_m3s": 715.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -12.0,
+        "vizallas_cm": -13.0,
         "hozam_m3s": null,
         "vizho_c": 23.7
       },
@@ -2252,15 +2252,15 @@
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 30.0,
-        "hozam_m3s": 690.0,
-        "vizho_c": 23.6
+        "vizallas_cm": 26.0,
+        "hozam_m3s": 678.0,
+        "vizho_c": 24.2
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -25.0,
+        "vizallas_cm": -29.0,
         "hozam_m3s": null,
         "vizho_c": 24.8
       },
@@ -2270,7 +2270,7 @@
         "forras_nev": "Salka - Ipeľ",
         "vizallas_cm": 44.0,
         "hozam_m3s": 0.346,
-        "vizho_c": 20.1
+        "vizho_c": 21.8
       }
     ],
     "provenance": "mert",
@@ -2401,8 +2401,8 @@
   },
   "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli.",
   "parolgas_era5_mm_nap": {
-    "ertek": 1.27,
-    "datum": "2026-08-09",
+    "ertek": 1.29,
+    "datum": "2026-08-10",
     "provenance": "modellezett",
     "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
