@@ -8,7 +8,7 @@
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
-    "ertek": 0.0,
+    "ertek": 0.1,
     "provenance": "muholdas",
     "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-14, területsúlyozott átlag országhatár-maszkkal",
     "kor_ora": 48,
@@ -17,7 +17,7 @@
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 1.19,
+    "ertek": 1.2,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-14, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
     "kor_ora": 48,
@@ -2262,7 +2262,7 @@
         "forras_nev": "Štúrovo - Dunaj",
         "vizallas_cm": -25.0,
         "hozam_m3s": null,
-        "vizho_c": 24.7
+        "vizho_c": 24.8
       },
       {
         "nev": "Ipoly, Ipolyszalka",
