@@ -1312,6 +1312,26 @@ a{color:var(--viz)}
     `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
     `<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>`+
     `<span><i>veszteség kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
+  // A CSAPADEK keresztellenorzese: foldi meres vs. muholdas becsles.
+  // Ez a lap egyik legfontosabb modszertani megallapitasa - az IMERG Early
+  // nyaron rendszeresen felulbecsul, es a foldi meresre valtas az egesz
+  // modell elteresét a harmadara vitte le.
+  if(M.csapadek_muhold && M.csapadek && Math.abs(M.csapadek_muhold.ertek - M.csapadek.ertek) > 100){
+    const f = M.csapadek, w = M.csapadek_muhold;
+    const kul = (w.ertek / Math.max(f.ertek, 1) - 1) * 100;
+    hl.appendChild(el("div","kereszt",
+      `<div class="cim">Keresztellenőrzés · csapadék</div>` +
+      `<p>A modell a <b>földi mérést</b> használja: ${num(f.ertek)} m³/s. ` +
+      `Ugyanerre a napra a <b>műholdas becslés</b> (GPM IMERG Early) ` +
+      `${num(w.ertek)} m³/s-ot adott — ${dec(Math.abs(kul),0)}%-kal ` +
+      `${w.ertek > f.ertek ? "többet" : "kevesebbet"}. ` +
+      `A műhold a magas, jeges felhőtetőket csapadékként azonosítja, akkor is, ` +
+      `ha a víz elpárolog, mielőtt leérne — ez nyáron, konvektív helyzetben ` +
+      `rendszeres. <b>A földi mérésre váltás az egész modell eltérését ` +
+      `a harmadára vitte le.</b>` +
+      `<em>${f.forras}</em></p>`));
+  }
+
   // Harmadik, FÜGGETLEN becslés: az ECMWF ERA5-Land reanalízise.
   // Ha ez egyezik a műholdassal, akkor az eltérés nem a párolgásból jön —
   // ez a lap egyik legfontosabb módszertani állítása.
