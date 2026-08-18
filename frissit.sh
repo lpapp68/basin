@@ -25,7 +25,15 @@ HONAP=$(date -u +%Y-%m)
 mkdir -p archiv
 
 if [ "$MOD" = "auto" ]; then
-  if [ "$(cat "$JELZO" 2>/dev/null)" = "$NAP" ]; then MOD=oras; else MOD=napi; fi
+  # A kapu a FELDOLGOZOTT napot nézi, nem a kértet. Az IMERG Early késése miatt
+  # a kért nap gyakran nincs meg; ilyenkor visszalépünk. Ha a kapu a kért napot
+  # nézné, minden futás újra feldolgozná ugyanazt a napot, és a mérleg tartósan
+  # két nappal lemaradna.
+  #
+  # Így viszont óránként újrapróbáljuk a friss napot, amíg a termék meg nem
+  # érkezik — és amint megvan, a mérleg egy napot lép előre.
+  FELDOLGOZOTT=$(cat archiv/.feldolgozott-napi 2>/dev/null || echo "")
+  if [ "$FELDOLGOZOTT" = "$NAP" ]; then MOD=oras; else MOD=napi; fi
 fi
 
 # Minden napi tag hibáját összegyűjtjük, hogy a futás végén egy helyen látszódjon.
@@ -121,6 +129,9 @@ if [ "$MOD" = "napi" ]; then
   # A jelzőbe a KÉRT nap kerül (ma mire próbálkoztunk), nem a feldolgozott.
   # Enélkül a visszalépés beragasztja a ciklust: a kapu sosem látja
   # teljesítettnek a mai napot, viszont a visszalépés mindig ugyanoda jut.
+  # A .utolso-napi a kért napot őrzi (mikor próbálkoztunk utoljára),
+  # a .feldolgozott-napi azt, ameddig ténylegesen eljutottunk. A kapu ez
+  # utóbbit nézi.
   echo "$KERT_NAP" > "$JELZO"
   echo "$NAP" > "archiv/.feldolgozott-napi"
 fi
