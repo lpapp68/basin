@@ -1625,10 +1625,13 @@ a{color:var(--viz)}
       </div>` +
       (OI ? `<div class="oigeny">
         <b>Amennyi víz kellene, és amennyi van</b>
-        <span>A növényzet ma <b>${dec(OI.et_ref_mm,2)} milliméter</b> vizet párologtatna el,
-        ha jutna neki elég. Valójában <b>${dec(OI.et_act_mm,2)} millimétert</b> ad le — a
-        lehetségesnek alig több mint a harmadát. Ilyenkor a növény lezárja a leveleit, és amíg
-        zárva vannak, nem is növekszik. A szárazság nem a hervadásnál kezdődik, hanem itt.</span>
+        <span>Vízhiány nélkül a növényzet ma <b>${dec(OI.et_ref_mm,2)} millimétert</b>
+        párologtatna el — vagyis <b>${dec(OI.et_ref_mm,2)} liter vizet minden négyzetméterről</b>,
+        egy hektárról ${num(Math.round(OI.et_ref_mm*10))} köbmétert. Valójában
+        <b>${dec(OI.et_act_mm,2)} millimétert</b> ad le: a lehetségesnek
+        <b>${dec(OI.et_act_mm/OI.et_ref_mm*100,0)} százalékát</b>. Ilyenkor a növény lezárja a
+        leveleit, és amíg zárva vannak, a növekedés is leáll. A szárazság itt kezdődik,
+        jóval a hervadás előtt.</span>
         <span>Ahhoz, hogy a szántóföldeken ne legyen vízhiány, naponta
         <b>${num(Math.round(OI.tartomany.also.m3s*86400/1e6))}–${num(Math.round(OI.tartomany.felso.m3s*86400/1e6))} millió köbméter</b>
         vízre lenne szükség. A folyók jelenlegi hozama mellett — a Dunán, a Tiszán és a
