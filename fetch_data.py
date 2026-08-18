@@ -355,11 +355,22 @@ def main():
     Q_be = sum(m["hozam_m3s"] for m in be)
     Q_ki = sum(m["hozam_m3s"] for m in ki)
 
-    P = mmps(p["csapadek_mm_nap"]["ertek"])
+    # A csapadék ELSŐDLEGES forrása az OMSZ földi mérőhálózata; az IMERG Early
+    # csak tartalék és keresztellenőrzés. Indok: 2026-08-17-re a műhold 3,92 mm-t
+    # adott, a 269 földi állomás 1,43-at — a különbség a mérleg maradéktagját
+    # 4186-ról 775 m³/s-ra vitte le.
+    _omsz = p.get("csapadek_omsz_mm_nap") or {}
+    _imerg = p.get("csapadek_mm_nap") or {}
+    # Az OMSZ csak akkor nyer, ha ugyanarra a napra vonatkozik, mint az IMERG:
+    # kölönben régi földi adat kerülne friss hozam mellé.
+    CSAP = (_omsz if (_omsz.get("ertek") is not None
+                      and _omsz.get("datum") == _imerg.get("datum"))
+            else _imerg)
+    P = mmps(CSAP["ertek"])
     ET = mmps(p["parolgas_mm_nap"]["ertek"])
 
     # Egy mérleg tagjai nem jöhetnek különböző napokról. Ha mégis, ki kell mondani.
-    d_csap = p["csapadek_mm_nap"].get("datum")
+    d_csap = CSAP.get("datum")
     d_par = p["parolgas_mm_nap"].get("datum")
     if d_csap and d_par and d_csap != d_par:
         hibak.append(f"DÁTUMELTÉRÉS: a csapadék {d_csap}-i, a párolgás {d_par}-i. "
@@ -470,7 +481,11 @@ def main():
         "merleg_datum": merleg_datum,
         "pillanatkep_m3s": {"hozam_be": round(Q_be_most), "hozam_ki": round(Q_ki_most)},
         "merleg_m3s": {
-            "csapadek": {"ertek": round(be_P), **meta_of(p["csapadek_mm_nap"])},
+            "csapadek": {"ertek": round(be_P), **meta_of(CSAP)},
+            # A műholdas becslés külön is megmarad: az eltérés maga is adat.
+            "csapadek_muhold": ({"ertek": round(mmps(p["csapadek_mm_nap"]["ertek"])),
+                                 **meta_of(p["csapadek_mm_nap"])}
+                                if p.get("csapadek_mm_nap") else None),
             "hozam_be": {"ertek": round(be_Q), "provenance": "szarmaztatott",
                          "kor_ora": 24, "datum": merleg_datum,
                          "forras": "OVF vízhozam napi átlaga az órás mintákból: " + ", ".join(m["nev"] for m in be)},

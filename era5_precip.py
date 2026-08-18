@@ -92,7 +92,9 @@ def terulet_atlag(path: str) -> float:
 
 def beir(mm: float, nap: dt.date) -> None:
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
-    p["csapadek_mm_nap"] = {
+    # Kölön mező: három forrás van a csapadékra (OMSZ földi, IMERG
+    # műholdas, ERA5 reanalízis), és mindehőrom külön értékes.
+    p["csapadek_era5_mm_nap"] = {
         "ertek": round(mm, 2),
         "provenance": "muholdas",
         "forras": f"ERA5-Land total_precipitation, {nap.isoformat()}, "

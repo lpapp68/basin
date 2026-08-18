@@ -84,7 +84,11 @@ def napi_osszegzes(params: dict) -> list[dict]:
         ertekek = [float(s[kulcs]) for s in sorok if s.get(kulcs) not in (None, "")]
         return round(statistics.fmean(ertekek), 1) if ertekek else None
 
-    csap = params.get("csapadek_mm_nap", {})
+    # Az OMSZ foldi merese az elsodleges forras; az IMERG Early csak tartalek.
+    # A muhold nyaron rendszeresen felulbecsul (lasd fetch_data.py).
+    _o = params.get("csapadek_omsz_mm_nap") or {}
+    _i = params.get("csapadek_mm_nap") or {}
+    csap = _o if (_o.get("ertek") is not None and _o.get("datum") == _i.get("datum")) else _i
     par = params.get("parolgas_mm_nap", {})
 
     napok = []
