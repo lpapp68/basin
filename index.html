@@ -48,7 +48,7 @@
       {"@type": "PropertyValue", "name": "Vízhozam", "unitText": "m3/s",
        "description": "22 magyar vízmérce negyedórás mért vízhozama (OVF)"},
       {"@type": "PropertyValue", "name": "Csapadék", "unitText": "mm/nap",
-       "description": "Területsúlyozott napi csapadékösszeg (GPM IMERG Early)"},
+       "description": "Területsúlyozott napi csapadékösszeg, OMSZ/HungaroMet földi mérőhálózat (269 automata állomás); keresztellenőrzés: GPM IMERG Early"},
       {"@type": "PropertyValue", "name": "Párolgás", "unitText": "mm/nap",
        "description": "Tényleges evapotranszspiráció (EUMETSAT LSA SAF DMETv3)"},
       {"@type": "PropertyValue", "name": "Készletváltozás", "unitText": "km3",
@@ -559,7 +559,7 @@ a{color:var(--viz)}
     <span class="ertek">Magyarország · 93 030 km²</span>
     <span class="megj">a teljes Középső-Duna-medence modellje építés alatt</span>
   </div>
-  <p class="dek">Egy ország vízháztartását, vízkészletét az határozza meg, meddig marad a víz az ország határain belül. Egy folyó vize egy hét alatt elhagyja az országot: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter vízmennyiség mást jelent a folyókban, a talajban és a mélybe szivárgott rétegekben — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt doboz: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. Az egyenlege ezért jól meghatározható. Hogy melyik tényezőt tudjuk ténylegesen jól mérni, az viszont másik kérdés — és ez az oldal erről is beszámol.</p>
+  <p class="dek">Egy ország vízháztartását, vízkészletét az határozza meg, meddig marad a víz az ország határain belül. Egy folyó vize egy hét alatt elhagyja az országot: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter vízmennyiség mást jelent a folyókban, a talajban és a mélybe szivárgott rétegekben — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt rendszer: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. Az egyenlege ezért jól meghatározható. Hogy melyik tényezőt tudjuk ténylegesen jól mérni, az viszont másik kérdés — és ez az oldal erről is beszámol.</p>
   <div class="stressz" id="stressz"></div>
   <div class="fejracs">
     <div class="osszefoglalo" id="osszefoglalo"></div>
@@ -664,6 +664,7 @@ a{color:var(--viz)}
       <a href="https://www.shmu.sk/sk/?page=110" target="_blank" rel="noopener">SHMÚ napi jelentés</a>
       <a href="https://www.hidro.ro/en/bulletin_type/buletin-hidrologic-zilnic/" target="_blank" rel="noopener">INHGA napi bulletin</a></div>
     <div><b>Légkör, készlet</b>
+      <a href="https://odp.met.hu/" target="_blank" rel="noopener">OMSZ nyílt adattár</a>
       <a href="https://gpm.nasa.gov/data/imerg" target="_blank" rel="noopener">NASA GPM IMERG</a>
       <a href="https://lsa-saf.eumetsat.int/en/data/products/evapotranspiration-and-turbulent-fluxes/" target="_blank" rel="noopener">EUMETSAT LSA SAF</a>
       <a href="https://podaac.jpl.nasa.gov/" target="_blank" rel="noopener">NASA/JPL GRACE, PO.DAAC</a>
@@ -1697,7 +1698,7 @@ $("#lab").innerHTML =
     `olvasható.`+
     `<br><br>Egyetlen pipeline, egyetlen kimenet: <code>data.json</code> — ugyanezt `+
     `olvassa az iterators.org darab is. Generálva: ${D.generalva}. `+
-    `Doboz: ${D.doboz.nev}, ${num(D.doboz.terulet_km2)} km². ${D.doboz.megjegyzes}`+
+    `Vizsgált terület: ${D.doboz.nev}, ${num(D.doboz.terulet_km2)} km². ${D.doboz.megjegyzes}`+
     `<br><br><b>Nyitott falak</b> — amit a modell nem fog be, és ezért a maradéktagban `+
     `jelenik meg: ` + D.nyitott_falak.join(" · ") +
     (D.belso_megjegyzes ? `<br><br>${D.belso_megjegyzes}` : "") +
