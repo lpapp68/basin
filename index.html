@@ -605,19 +605,19 @@ a{color:var(--viz)}
       tartozik: a tegnapi eső egy része ma is a mederben van, ezért a folyók hozama is
       aznapi átlag, az órás mintákból számolva.</p>
       <p class="alcim mert" id="mertekegyseg"></p>
-      <p class="alcim skala"><b>Közös számegyenesen.</b> A nulla minden sorban ugyanott van: jobbra ami érkezik, balra ami távozik. A rácsvonalak m³/s-ben olvashatók le, tehát az adatok abszolút mértékben is összevethetők — a két oldal különbsége adja a készletváltozást.</p>
+      <p class="alcim skala"><b>Közös számegyenesen.</b> A nulla minden sorban ugyanott van: jobbra ami érkezik, balra ami távozik. A rácsvonalak m³/s-ben olvashatók le, tehát az adatok abszolút mértékben is összevethetők — a két oldal különbsége adja a napi zárási maradékot.</p>
       <div id="pulzus"></div>
     </div>
 
     <div class="panel" id="p-egyenleg">
-      <h3>2 · Egyenleg <span class="pontos">mennyivel van kevesebb</span></h3>
-      <p class="alcim">Bankszámla-logika, egyetlen futó egyenleggel.</p>
+      <h3>2 · Készlet <span class="pontos">a sokéves átlaghoz mérve</span></h3>
+      <p class="alcim">A műholdas készletanomália havi sorozata és a belőle illesztett trendek. A futó egyenleg — hogy 2021 óta mennyivel lett kevesebb — <b>még nincs kiszámítva</b>: a GRACE havi és az OVF adatsorának összefésülése hátravan, ezért az alábbi kumulált szám <b>helyőrző</b>.</p>
       <div id="egyenleg"></div>
     </div>
 
     <div class="panel" id="p-hovalett">
       <h3>3 · Hova lett <span class="pontos">amit nem tudunk elszámolni</span></h3>
-      <p class="alcim">Ugyanazt a párolgást kétféleképpen is meg lehet becsülni. Ha jól mérnénk, a két szám egyezne. Nem egyezik — és a különbségük megmutatja, mekkora a bizonytalanság az egész modellben.</p>
+      <p class="alcim">Ugyanazt a párolgást kétféleképpen is meg lehet becsülni: műholdas mérésből és a mérleg maradékaként. A kettő különbsége azt mutatja meg, mennyi víz mozgását nem tudjuk elszámolni. Ez a becslések közti eltérés, nem a teljes modell bizonytalansága.</p>
       <div id="hovalett"></div>
     </div>
 
@@ -1069,7 +1069,7 @@ a{color:var(--viz)}
   }
   [["csapadek","Csapadék · érkezik"],["hozam_be","Folyókon beérkezik"],
    ["parolgas","Elpárolog · távozik"],["hozam_ki","Folyókon távozik"],
-   ["keszletvaltozas","= Készletváltozás (maradéktag)"]].forEach(([k,cim])=>{
+   ["keszletvaltozas","= Napi zárási maradék"]].forEach(([k,cim])=>{
     const t=M[k], neg=t.ertek<0, ossz=(k==="keszletvaltozas");
     const r=el("div","tetel"+(ossz?" ossz":""));
     r.appendChild(el("div","cim",cim));
@@ -1310,7 +1310,7 @@ a{color:var(--viz)}
     `<span><i>P</i> csapadék — ami a dobozra hullik</span>`+
     `<span><i>Q<sub>be</sub></i> folyókon beérkezik — 11 határszelvény mért vízhozama</span>`+
     `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
-    `<span><i>&Delta;S</i> készletváltozás — mennyivel lett több vagy kevesebb a tárolt víz</span>`+
+    `<span><i>&Delta;S*</i> napi zárási maradék — a mérleg zárásához hiányzó vagy fölös víz. Ez <b>nem mért</b> készletváltozás: a többi tag hibáját és a be nem kötött határszelvényeket is magába gyűjti. A ténylegesen mért, műholdas készletanomália a 2. panelen látható. Az eredeti jelentés szerint mennyivel lett több vagy kevesebb a tárolt víz</span>`+
     `<span><i>veszteség kivétel</i> amit kivesznek és nem tér vissza (öntözés, locsolás)</span>`));
   // A CSAPADEK keresztellenorzese: foldi meres vs. muholdas becsles.
   // Ez a lap egyik legfontosabb modszertani megallapitasa - az IMERG Early
@@ -1337,17 +1337,24 @@ a{color:var(--viz)}
   // ez a lap egyik legfontosabb módszertani állítása.
   if(H.parolgas_era5){
     const e5 = H.parolgas_era5, mh = H.parolgas_muhold;
-    const kul = mh && mh.ertek ? (e5.ertek / mh.ertek - 1) * 100 : null;
+    // Csak AZONOS napra van ertelme numerikusan osszevetni. Az ERA5-Land
+    // ot-hat napos kesessel erkezik, ezert gyakran mas naprol szol.
+    const egyNap = e5.datum && mh && mh.datum && e5.datum === mh.datum;
+    const kul = (egyNap && mh.ertek) ? (e5.ertek / mh.ertek - 1) * 100 : null;
     hl.appendChild(el("div","kereszt",
       `<div class="cim">Keresztellenőrzés · független becslés</div>` +
       `<p>Az <b>ECMWF ERA5-Land</b> reanalízise ${e5.datum||""}-re ` +
       `<b>${num(e5.ertek)} m³/s</b> párolgást ad; a műholdas becslés ${num(mh.ertek)}. ` +
-      ((kul !== null && Math.abs(kul) < 10)
-        ? `A két, <b>teljesen eltérő módszertanú</b> becslés ${dec(Math.abs(kul),0)}%-on belül ` +
-          `egyezik — az egyik műholdas sugárzási mérleg, a másik modell asszimilált ` +
-          `megfigyeléssel. Vagyis <b>a párolgás nem a modell hibaforrása</b>: a hiányzó víz ` +
-          `máshonnan ered, jó eséllyel a be nem kötött határszelvényekből.`
-        : `A két becslés ${dec(Math.abs(kul||0),0)}%-kal tér el.`) +
+      (!egyNap
+        ? `<b>A két szám különböző napról szól</b> (${mh.datum} és ${e5.datum}), ezért ` +
+          `most közvetlenül nem vethető össze. Az ERA5-Land öt-hat napos késéssel érkezik; ` +
+          `az összevetés akkor érvényes, amikor mindkét becslés ugyanarra a napra megvan.`
+        : (Math.abs(kul) < 10
+          ? `A két, <b>teljesen eltérő módszertanú</b> becslés ${dec(Math.abs(kul),0)}%-on belül ` +
+            `egyezik — az egyik műholdas sugárzási mérleg, a másik modell asszimilált ` +
+            `megfigyeléssel. Ez a <b>két becslés közti eltérést</b> méri, nem a teljes modell ` +
+            `bizonytalanságát.`
+          : `A két becslés ${dec(Math.abs(kul),0)}%-kal tér el egymástól.`)) +
       `<em>${e5.forras} Öt-hat napos késéssel érkezik, ezért visszamenőleges ` +
       `ellenőrzésre való — a fenti modell napjától eltérhet.</em></p>`));
   }
@@ -1372,7 +1379,7 @@ a{color:var(--viz)}
      <p><b>Nem a vízkivétel okozza.</b> Az összes emberi kivétel ${num(KIV_OSSZ)} m³/s,
      ebből veszteség ${num(KIV_FOGY)} m³/s — a fenti eltérés ennek
      ${Math.round(Math.abs(H.elteres.ertek)/Math.max(1,KIV_FOGY))}-szerese.
-     A különbség a készletváltozás és a párolgás bizonytalanságából jön,
+     A különbség a napi zárási maradék és a párolgás bizonytalanságából jön,
      nem az öntözésből.</p>`));
   $("#hovalett").appendChild(hl);
 
