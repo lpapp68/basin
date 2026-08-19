@@ -630,7 +630,8 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-egyenleg">
       <h3>2 · Készlet <span class="pontos">a sokéves átlaghoz mérve</span></h3>
-      <p class="alcim">A műholdas készletanomália havi sorozata és a belőle illesztett trendek. A futó egyenleg — hogy 2021 óta mennyivel lett kevesebb — <b>még nincs kiszámítva</b>: a GRACE havi és az OVF adatsorának összefésülése hátravan, ezért az alábbi kumulált szám <b>helyőrző</b>.</p>
+      <p class="alcim">Két műhold havonta megméri, mennyivel több vagy kevesebb víz van az országban, mint a sokéves átlagban — a felszíni vizet, a talajnedvességet és a mélyben lévő vizet együtt. A görbén ez a huszonnégy éves sorozat látszik, rajta a hosszú távú irányt mutató egyenesekkel.</p>
+      <p class="alcim">Egyetlen szám hiányzik még innen: hogy <b>2021 óta összesen</b> mennyivel lett kevesebb. Ehhez a műholdas sorozatot és a hazai méréseket kell összefésülni — ez a munka hátravan, ezért az alábbi összesített érték egyelőre <b>becslés, nem mérés</b>.</p>
       <div id="egyenleg"></div>
     </div>
 
@@ -1314,9 +1315,9 @@ a{color:var(--viz)}
       $("#egyenleg").innerHTML = (helyorzo
         ? `<div class="helyorzodoboz">` +
           `<div class="cim">Ez a szám még nincs kiszámítva</div>` +
-          `<p>A futó egyenleghez a GRACE havi sorozatát és az OVF adatsorát kell ` +
-          `összefésülni — ez a munka hátravan. Addig <b>nagyságrendi becslés</b> áll ` +
-          `itt, nem mérés:</p>` +
+          `<p>Ahhoz, hogy ez a szám mérés legyen, a műholdas sorozatot és a hazai ` +
+          `méréseket kell összefésülni — ez a munka hátravan. Addig <b>nagyságrendi ` +
+          `becslés</b> áll itt:</p>` +
           `<div class="szam">${sgn(E.kumulalt_km3)} km³</div></div>`
         : `<div class="nagy neg">${sgn(E.kumulalt_km3)}<span class="egys">&nbsp;km³</span></div>`)+
       `<div style="margin-top:10px;font-size:12px;color:var(--halvany)">`+
