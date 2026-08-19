@@ -1,5 +1,5 @@
 {
-  "title": "Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method",
+  "title": "A Középső-Duna-medence vízmérlege: nyílt, adateredet-jelölt módszer / Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method",
   "upload_type": "software",
   "language": "hun",
   "license": "MIT",
@@ -14,18 +14,26 @@
     "Danube",
     "GRACE",
     "Hungary",
+    "Magyarország",
     "Middle Danube Basin",
     "Pannonian Basin",
+    "adateredet",
+    "csapadék",
     "data provenance",
     "drought",
     "evapotranspiration",
     "ground measurement",
     "groundwater",
+    "hidrológia",
     "hydrology",
+    "nyílt adat",
     "open data",
     "precipitation",
     "provenance",
+    "párolgás",
     "satellite validation",
+    "talajvíz",
+    "vízmérleg",
     "water balance"
   ],
   "related_identifiers": [
@@ -36,5 +44,5 @@
     }
   ],
   "version": "1.2.0",
-  "description": "<p>An open water-balance monitoring method for Hungary, the measurable slice of the Middle Danube Basin. Every quantity carries a provenance label: measured, derived from measurement, satellite measurement, modelled, or placeholder.</p><p><b>What is new in v1.2.0.</b> Precipitation now comes from the Hungarian Meteorological Service (HungaroMet) ground network — 269 automatic stations, grid-weighted — instead of the satellite estimate. On 2026-08-17 the satellite product (GPM IMERG Early) reported 3.92 mm/day where the ground network measured 1.43: the switch reduced the unclosed term of the balance from 4186 to 1505 m³/s. The satellite estimate is retained as a cross-check.</p><p>Two further additions: groundwater depth from 487 wells, compared with the same calendar window ten years earlier (median decline 1.44 m, 480 of 487 wells deeper); and an independent evapotranspiration cross-check against ECMWF ERA5-Land, valid only when both estimates cover the same day.</p><p>Data sources: OVF (Hungarian water authority) open API, HungaroMet open data, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG.</p>"
+  "description": "<p><b>Nyílt vízmérleg-monitoring módszer Magyarországra</b>, a Középső-Duna-medence mérhető szeletére. Minden mennyiség adateredet-címkét visel: mért, mérésből számított, műholdas mérés, modellezett vagy helyőrző.</p><p><b>Ami új a v1.2.0-ban.</b> A csapadék elsődleges forrása mostantól az OMSZ (HungaroMet) földi mérőhálózata - 269 automata állomás, rácsos területi súlyozással - a műholdas becslés helyett. 2026-08-17-re a műholdas termék (GPM IMERG Early) 3,92 mm/napot jelzett, ahol a földi hálózat 1,43-at mért: a váltás a mérleg le nem zárt tagját 4186-ról 1505 m³/s-ra vitte le. A műholdas becslés keresztellenőrzésként megmarad.</p><p>Két további bővítés: talajvízmélység 487 kútból, a tíz évvel korábbi azonos naptári időszakhoz mérve (medián süllyedés 1,44 m; 487 kútból 480 mélyült); és független párolgás-keresztellenőrzés az ECMWF ERA5-Land reanalízisével, amely csak akkor érvényes, ha mindkét becslés ugyanarra a napra vonatkozik.</p><p><b>Adatforrások:</b> OVF nyílt API, OMSZ/HungaroMet nyílt adattár, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG.</p><p><b>Élő felület:</b> https://basin.equora.institute</p><hr><p>An open water-balance monitoring method for Hungary, the measurable slice of the Middle Danube Basin. Every quantity carries a provenance label: measured, derived from measurement, satellite measurement, modelled, or placeholder.</p><p><b>What is new in v1.2.0.</b> Precipitation now comes from the Hungarian Meteorological Service (HungaroMet) ground network — 269 automatic stations, grid-weighted — instead of the satellite estimate. On 2026-08-17 the satellite product (GPM IMERG Early) reported 3.92 mm/day where the ground network measured 1.43: the switch reduced the unclosed term of the balance from 4186 to 1505 m³/s. The satellite estimate is retained as a cross-check.</p><p>Two further additions: groundwater depth from 487 wells, compared with the same calendar window ten years earlier (median decline 1.44 m, 480 of 487 wells deeper); and an independent evapotranspiration cross-check against ECMWF ERA5-Land, valid only when both estimates cover the same day.</p><p>Data sources: OVF (Hungarian water authority) open API, HungaroMet open data, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG.</p>"
 }
