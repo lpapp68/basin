@@ -2311,13 +2311,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-19T04:45:55+00:00",
+    "lekerve": "2026-08-19T08:38:20+00:00",
     "datum": "2026-08-18",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 805.0,
-      "vizallas_cm": 87.0,
-      "vizho_c": 23.4,
+      "hozam_m3s": 836.0,
+      "vizallas_cm": 102.0,
+      "vizho_c": 22.9,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -2326,38 +2326,38 @@
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 545.0,
+    "kulonbseg_m3s": 514.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -29.0,
-        "hozam_m3s": null,
-        "vizho_c": 23.0
+        "vizallas_cm": 0.0,
+        "hozam_m3s": 670.0,
+        "vizho_c": 23.2
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 20.0,
-        "hozam_m3s": 661.0,
+        "vizallas_cm": 25.0,
+        "hozam_m3s": 676.0,
         "vizho_c": 22.6
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -32.0,
+        "vizallas_cm": -39.0,
         "hozam_m3s": null,
-        "vizho_c": 23.8
+        "vizho_c": 22.4
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 45.0,
-        "hozam_m3s": 0.406,
+        "vizallas_cm": 44.0,
+        "hozam_m3s": 0.346,
         "vizho_c": 19.8
       }
     ],
