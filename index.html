@@ -125,7 +125,13 @@ body{
 header{padding:38px 0 26px;border-bottom:2px solid var(--tinta)}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--halvany)}
-h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);line-height:1.08;
+/* A fix törés csak széles képernyőn: mobilon a cím magától tördelődik,
+   és a beszúrt törés árva szót hagyna. A text-wrap:balance a maradék
+   sorokat is kiegyensúlyozza, ahol a böngésző támogatja. */
+br.szeles{display:none}
+@media(min-width:760px){br.szeles{display:inline}}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,4.4vw,46px);line-height:1.1;
+  text-wrap:balance;hyphens:auto;
   margin:.32em 0 .18em;letter-spacing:-.015em}
 .scopesor{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
   margin:14px 0 4px;padding:9px 0;
@@ -541,6 +547,39 @@ a{color:var(--viz)}
   .merce svg .mark{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
   @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 }
+
+/* ── Keskeny képernyő ─────────────────────────────────────────────────────
+   A lapot 380 px-es szélességen néztük végig. Ami ott elromlott:
+   - a scopesor három eleme egymás mellé préselődött
+   - a trendjel és az időegyenérték sorai kilógtak
+   - a hosszú m³/s számok tördelés nélkül feszítették a dobozokat
+   - a mércesor buborékja a képernyő szélén levágódott */
+@media(max-width:520px){
+  .scopesor{flex-direction:column;gap:3px}
+  .scopesor .megj{font-size:12px}
+
+  /* A számadatok ne tördelődjenek szét, de a sor igen. */
+  .trendjel{gap:5px 0;flex-direction:column}
+  .trendjel span{width:100%}
+  .isor{grid-template-columns:5.4em 1fr;font-size:11.5px}
+  .fsor{grid-template-columns:5.6em 1fr;gap:3px 8px}
+
+  /* A nagy számok mobilon is elférjenek. */
+  .nagy{font-size:30px}
+  .tvizdoboz .nagy{font-size:30px}
+  .helyorzodoboz .szam{font-size:19px}
+
+  /* A dobozok padding-ja keskenyen sokat elvesz. */
+  .kereszt,.idoegyen,.tvizdoboz,.fogalmak,.helyorzodoboz{padding:12px 13px}
+  #rovid{padding:14px 15px}
+  #rovid p{font-size:14px}
+
+  /* A buborék ne lógjon ki a képernyőről. */
+  .tbuborek{max-width:calc(100vw - 24px);white-space:normal}
+
+  /* A hosszú forrás- és figyelmeztetés-szövegek tördelése. */
+  .par,.tvmegj,.imegj,.fmegj{overflow-wrap:anywhere}
+}
 </style>
 </head>
 <body>
@@ -553,7 +592,7 @@ a{color:var(--viz)}
   <div class="fejcim"><a class="logo" href="https://equora.institute" target="_blank"
     rel="noopener" aria-label="EQUORA Institute">
     <img src="logo.png" alt="" width="204" height="92"></a>
-  <h1>Mennyi víz jön be, mennyi párolog el,<br>és mennyi folyik tovább</h1></div>
+  <h1>Mennyi víz jön be, mennyi párolog el,<br class="szeles">és mennyi folyik tovább</h1></div>
   <div class="scopesor">
     <span class="cimke">Jelenleg mért terület</span>
     <span class="ertek">Magyarország · 93 030 km²</span>
