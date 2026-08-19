@@ -288,6 +288,28 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 
 ## 13. Változásnapló
 
+**v1.2.0** — a csapadék földi mérésre váltása, és két új keresztellenőrzés.
+
+- **A csapadék elsődleges forrása az OMSZ (HungaroMet) földi mérőhálózata**, 269
+  automata állomás, rácsos területi súlyozással. Korábban a GPM IMERG Early
+  műholdas becslése adta a fő értéket. Az indok mérhető: 2026-08-17-re a műhold
+  3,92 mm/nap-ot adott, a földi hálózat 1,43-at — a váltás a mérleg le nem zárt
+  tagját 4186-ról 1505 m³/s-ra vitte le. A műholdas becslés keresztellenőrzésként
+  megmarad, mert az eltérés maga is adat.
+- **Talajvíz-panel**: 487 kút, a mai szint és a tíz évvel korábbi azonos naptári
+  időszak (±15 nap) medián szintjének különbsége. Az eredmény 1,44 m medián
+  süllyedés; 487 kútból 480 mélyült, 5 emelkedett. Az adat előjelét független
+  forrással igazoltuk: az aszálymonitoring vízhiánya 46 párosított helyszínen
+  együtt mozog a kútadattal, hatban ellentétesen.
+- **Párolgás-keresztellenőrzés** az ECMWF ERA5-Land reanalízisével. Ez csak akkor
+  jelenik meg numerikusan, ha mindkét becslés ugyanarra a napra vonatkozik: az
+  ERA5-Land öt-hat napos késéssel érkezik, és két különböző nap összevetése a
+  becslések eltérése helyett az időbeli csúszást mérné.
+- **Fogalmi pontosítás.** A napi maradéktag neve *napi zárási maradék* (ΔS\*),
+  megkülönböztetve a GRACE műholdas készletanomáliájától. A kettő korábban
+  ugyanazt a nevet viselte, pedig az egyik a mérleg zárásának maradéka, a másik
+  mért mennyiség.
+
 **v1.1.0** — a mérleg egynapos konzisztenciája.
 
 A mérleg korábban a mai órás vízhozamot adta össze a tegnapi csapadékkal és
