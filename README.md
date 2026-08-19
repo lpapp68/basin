@@ -3,6 +3,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21852060.svg)](https://doi.org/10.5281/zenodo.21852060)
 [![Live](https://img.shields.io/badge/live-basin.equora.institute-blue)](https://basin.equora.institute/)
 
+*English: [README.en.md](README.en.md) · [METHODOLOGY.md](METHODOLOGY.md)*
+
 Középső-Duna-medence vízmérleg. Egyetlen pipeline, egyetlen kimenet (`data.json`),
 két fogyasztó: az Institute-dashboard és — később — az iterators.org darab.
 

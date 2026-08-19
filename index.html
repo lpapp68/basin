@@ -42,7 +42,7 @@
   "identifier": "https://doi.org/10.5281/zenodo.21852060",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isAccessibleForFree": true,
-    "dateModified": "2026-08-19T08:38:28+00:00",
+    "dateModified": "2026-08-19T12:08:47+00:00",
     "temporalCoverage": "2002-04/..",
     "variableMeasured": [
       {"@type": "PropertyValue", "name": "Vízhozam", "unitText": "m3/s",
@@ -768,7 +768,10 @@ a{color:var(--viz)}
     n.appendChild(el("div","u",cim+" · "+o.cimke));
     n.appendChild(el("div","v",o.utolso||"—"));
     n.appendChild(el("div","s", o.forras +
-      (o.mercek_friss ? ` · ${o.mercek_friss}/${o.mercek_osszes} mérce frissült az utolsó órában` : "")));
+      (o.mercek_friss ? ` · ${o.mercek_friss}/${o.mercek_osszes} mérce frissült az utolsó órában` : "") +
+      (o.mercek_keso && o.mercek_keso.length
+         ? ` · késik: ${o.mercek_keso.join(", ")}`
+         : "")));
     $("#orak").appendChild(n);
   });
 

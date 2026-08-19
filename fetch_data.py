@@ -466,7 +466,15 @@ def main():
                          if (m.get("utolso_ido") or "") >= (
                              datetime.now() - timedelta(hours=1)
                          ).strftime("%Y.%m.%d. %H:%M")),
-                     "mercek_osszes": len(mercek)},
+                     "mercek_osszes": len(mercek),
+                     # A "20/22 mérce frissült" olvasója joggal kérdezi, melyik
+                     # kettő hiányzik. Enélkül a szám bizalmatlanságot kelt; a
+                     # névsorral viszont a késés maga is átlátható adat.
+                     "mercek_keso": [
+                         m["nev"] for m in mercek
+                         if (m.get("utolso_ido") or "") < (
+                             datetime.now() - timedelta(hours=1)
+                         ).strftime("%Y.%m.%d. %H:%M")]},
             "napi": {"cimke": "csapadék · párolgás",
                      "forras": (f"csapadék {d_csap or '?'} · párolgás {d_par or '?'}"
                                 if d_csap != d_par else p["_forrasok"]["napi"]),
