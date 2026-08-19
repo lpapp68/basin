@@ -1340,7 +1340,7 @@ a{color:var(--viz)}
   });
   hl.appendChild(el("div","kepletmagy",
     `<b>A képlet tagjai</b>`+
-    `<span><i>P</i> csapadék — ami a dobozra hullik</span>`+
+    `<span><i>P</i> csapadék — ami a vizsgált területre hullik</span>`+
     `<span><i>Q<sub>be</sub></i> folyókon beérkezik — 11 határszelvény mért vízhozama</span>`+
     `<span><i>Q<sub>ki</sub></i> folyókon távozik — Mohács, Drávaszabolcs, Szeged</span>`+
     `<span><i>&Delta;S*</i> napi zárási maradék — a mérleg zárásához hiányzó vagy fölös víz. Ez <b>nem mért</b> készletváltozás: a többi tag hibáját és a be nem kötött határszelvényeket is magába gyűjti. A ténylegesen mért, műholdas készletanomália a 2. panelen látható. Az eredeti jelentés szerint mennyivel lett több vagy kevesebb a tárolt víz</span>`+
@@ -1402,8 +1402,8 @@ a{color:var(--viz)}
       ? `A modell zárásához <b>ennyivel több</b> párolgás kellene, mint amennyit a műhold mér: a maradék ${num(H.parolgas_maradek.ertek)}, a mérés ${num(H.parolgas_muhold.ertek)} m³/s.`
       : `A műhold <b>ennyivel több</b> párolgást mér, mint amennyi a modell zárásához kellene: a mérés ${num(H.parolgas_muhold.ertek)}, a maradék ${num(H.parolgas_maradek.ertek)} m³/s.`}</p>`+
     `<p>Egyik becslés sem a helyes: az eltérés azt méri, mennyi az, amit a mérőrendszerünk még nem lát. Amíg nagy, a modell többi számát is fenntartással érdemes olvasni — ezért szerepel kiírva.</p><p class="kutatas"><b>Amit ez a szám tartalmaz, és amit nem.</b> A meder és a felszín alatti víz
-     cseréje <b>a dobozon belüli átrendezés</b>: ami a Dunából elszivárog a magyar
-     szakaszon, az a dobozban marad, tehát ezt a számot nem növeli. A csere iránya
+     cseréje <b>a vizsgált területen belüli átrendezés</b>: ami a Dunából elszivárog a magyar
+     szakaszon, az a területen belül marad, tehát ezt a számot nem növeli. A csere iránya
      szakaszonként más — a Szigetközben a feliszapolódott meder majdnem elzárja,
      Paksnál a mélyülő meder megnyitja. Ami viszont <b>tényleg hiányzik innen</b>:
      a határon átnyúló felszín alatti vízáramlás, amit egyáltalán nem mérünk.</p>
