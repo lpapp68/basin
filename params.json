@@ -2,7 +2,7 @@
   "_olvasd_el": "Minden érték itt lakik, ami MÉG NEM ÉL. Amint egy feed bekötésre kerül, a fetch_data.py onnan tölti, és a 'provenance' 'mert'-re vagy 'modellezett'-re vált. A 'helyorzo' címke a dashboardon vonalkázott háttérrel jelenik meg — szándékosan csúnyán.",
   "_ervenyes": "2026-08-12",
   "_ervenyes_havi": "2026-06",
-  "_figyelmeztetes": "A folyók vízállása és vízhője mérés, óránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított érték. A csapadék és a párolgás műholdas becslés. A vízkivétel éves statisztikából modellezett. A készletváltozás maradéktag, nem megfigyelt országos készletcsökkenés.",
+  "_figyelmeztetes": "A folyók vízállása és vízhője mérés, negyedóránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított. A csapadék földi mérés: 269 automata állomás. A párolgás műholdas mérés, független forrással ellenőrizve. A talaj vízhiánya 127 állomásról, a talajvíz 487 kútból mért. A vízkivétel éves statisztikából modellezett. A napi zárási maradék nem megfigyelt készletcsökkenés, hanem az, ami a mérleg zárásához hiányzik.",
   "_forrasok": {
     "napi": "GPM IMERG Early + EUMETSAT LSA-SAF ET",
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
@@ -2821,6 +2821,5 @@
     "figyelmeztetes": "Földi mérés, pontszerű: az állomások között interpolálni kell. A rácsos súlyozás azt kezeli, hogy a hálózat egyenetlen — cellánként átlagolunk, majd a cellák átlagát vesszük, így a sűrűn műszerezett térségek nem nyomják el a ritkábbakat.",
     "hivatkozas": "odp.met.hu"
   },
-  "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk.",
-  "figyelmeztetes": "A folyók vízállása és vízhője mérés, negyedóránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított. A csapadék földi mérés: 269 automata állomás. A párolgás műholdas mérés, független forrással ellenőrizve. A talaj vízhiánya 127 állomásról, a talajvíz 487 kútból mért. A vízkivétel éves statisztikából modellezett. A napi zárási maradék nem megfigyelt készletcsökkenés, hanem az, ami a mérleg zárásához hiányzik."
+  "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk."
 }
