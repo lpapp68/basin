@@ -11,6 +11,31 @@
 # ./frissit.sh, ami maga is publikál.
 
 set -euo pipefail
+
+# ── Frissesség-ellenőrzés ────────────────────────────────────────────────
+# A publikal.sh a MEGLÉVŐ data.json-t viszi ki. Ha az régi — mert csak a
+# lapot szerkesztettük, és nem futott adatgenerálás —, akkor felülírja a bot
+# friss adatát az élő lapon. Ez 2026-08-19-én háromszor megtörtént: a bot
+# 07:48-kor kitette a friss mérleget, három kézi publikálás visszaírta a
+# tegnapit, és a lap 17 órásnak látszott.
+if [ -f data.json ]; then
+  KOR=$(( $(date +%s) - $(stat -f %m data.json 2>/dev/null || stat -c %Y data.json) ))
+  if [ "$KOR" -gt 10800 ]; then          # három óra
+    ORA=$(( KOR / 3600 ))
+    echo ""
+    echo "!! A data.json ${ORA} órája nem frissült."
+    echo "   Ha most publikálsz, a bot frissebb adatát írod felül az élő lapon."
+    echo "   Adatfrissítéshez:  ./frissit.sh"
+    echo ""
+    printf "   Mégis folytatod? [i/N] "
+    read -r VALASZ
+    case "$VALASZ" in
+      i|I|igen|y|Y) echo "   Rendben, folytatom." ;;
+      *) echo "   Kilépés."; exit 1 ;;
+    esac
+  fi
+fi
+
 cd "$(dirname "$0")"
 
 ELO="https://basin.equora.institute"
