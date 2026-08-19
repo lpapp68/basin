@@ -28,21 +28,24 @@
   },
   "hozam_be_m3s": {
     "ertek": 1420,
-    "provenance": "helyorzo",
-    "forras": "GloFAS napi hozam a belépő szelvényekben (Duna, Tisza, Dráva, Rába)",
-    "kor_ora": 24
+    "provenance": "modellezett",
+    "forras": "GloFAS napi hozam a belépő szelvényekben (Duna, Tisza, Dráva, Rába) — TARTALÉK: a lap a mércék ",
+    "kor_ora": 24,
+    "megjegyzes": "Ez az érték csak akkor kerül a lapra, ha a mércés számítás nem áll rendelkezésre. Rendes működésben a 22 vízmérce órás átlagából, illetve a mérleg zárásából származó szám jelenik meg."
   },
   "hozam_ki_m3s": {
     "ertek": 1810,
-    "provenance": "helyorzo",
-    "forras": "GloFAS napi hozam Mohács + Tisza-torkolat + Dráva-torkolat",
-    "kor_ora": 24
+    "provenance": "modellezett",
+    "forras": "GloFAS napi hozam Mohács + Tisza-torkolat + Dráva-torkolat — TARTALÉK: a lap a mércék ",
+    "kor_ora": 24,
+    "megjegyzes": "Ez az érték csak akkor kerül a lapra, ha a mércés számítás nem áll rendelkezésre. Rendes működésben a 22 vízmérce órás átlagából, illetve a mérleg zárásából származó szám jelenik meg."
   },
   "keszletvaltozas_m3s": {
     "ertek": -760,
-    "provenance": "helyorzo",
-    "forras": "GRACE-FO havi anomália, ~300 km — élőre alkalmatlan, trendre jó",
-    "kor_ora": 1400
+    "provenance": "modellezett",
+    "forras": "GRACE-FO havi anomália, ~300 km — élőre alkalmatlan, trendre jó — TARTALÉK: a lap a mércék ",
+    "kor_ora": 1400,
+    "megjegyzes": "Ez az érték csak akkor kerül a lapra, ha a mércés számítás nem áll rendelkezésre. Rendes működésben a 22 vízmérce órás átlagából, illetve a mérleg zárásából származó szám jelenik meg."
   },
   "egyenleg": {
     "kezdet": "2021-01-01",
@@ -2817,5 +2820,7 @@
     "forras": "OMSZ (HungaroMet) nyílt adattár, 269 automata állomás órás csapadékösszege, rácsos területi súlyozással",
     "figyelmeztetes": "Földi mérés, pontszerű: az állomások között interpolálni kell. A rácsos súlyozás azt kezeli, hogy a hálózat egyenetlen — cellánként átlagolunk, majd a cellák átlagát vesszük, így a sűrűn műszerezett térségek nem nyomják el a ritkábbakat.",
     "hivatkozas": "odp.met.hu"
-  }
+  },
+  "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk.",
+  "figyelmeztetes": "A folyók vízállása és vízhője mérés, negyedóránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított. A csapadék földi mérés: 269 automata állomás. A párolgás műholdas mérés, független forrással ellenőrizve. A talaj vízhiánya 127 állomásról, a talajvíz 487 kútból mért. A vízkivétel éves statisztikából modellezett. A napi zárási maradék nem megfigyelt készletcsökkenés, hanem az, ami a mérleg zárásához hiányzik."
 }
