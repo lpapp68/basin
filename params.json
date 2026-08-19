@@ -107,30 +107,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-08-17",
-    "et_ref_mm": 2.77,
-    "et_act_mm": 0.66,
-    "vizstressz": 0.24,
+    "datum": "2026-08-18",
+    "et_ref_mm": 3.34,
+    "et_act_mm": 0.62,
+    "vizstressz": 0.186,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 1.55,
-        "m3s": 773
+        "hiany_mm_nap": 2.05,
+        "m3s": 1020
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 2.11,
-        "m3s": 1050
+        "hiany_mm_nap": 2.72,
+        "m3s": 1353
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 2.66,
-        "m3s": 1326
+        "hiany_mm_nap": 3.39,
+        "m3s": 1685
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-08-17, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-18, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -140,7 +140,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-17",
+    "datum": "2026-08-18",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -1459,7 +1459,6 @@
         "lat": 46.4628,
         "lon": 18.9842,
         "sorozat": [
-          65.8,
           66.1,
           67.3,
           67.8,
