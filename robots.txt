@@ -36,4 +36,7 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+# A lap strukturált összefoglalása AI-rendszereknek, a forrásokkal és a
+# korlátokkal egyutt: https://basin.equora.institute/llms.txt
+
 Sitemap: https://basin.equora.institute/sitemap.xml

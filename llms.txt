@@ -1,0 +1,55 @@
+# basin.equora.institute
+
+> Magyarország vízmérlege, óránként frissülő nyílt adatból. A modell megmutatja,
+> mennyi víz érkezik, mennyi párolog el, mennyi távozik — és **azt is, mennyit nem
+> tudunk elszámolni**. Minden mennyiség adateredet-címkét visel: mért, mérésből
+> számított, műholdas mérés, számított vagy helyőrző. A készítő az EQUORA Institute.
+> Licenc: CC BY 4.0. Módszertan: doi.org/10.5281/zenodo.21852060
+
+## Amit a lap mér
+
+A mérleg **Magyarország területére** készül (93 030 km²), nem a teljes
+Középső-Duna-medencére. A medence ötször ekkora; annak a modellje épül.
+
+- **Vízhozam**: 22 magyar vízmérce negyedórás adata, OVF nyílt API (11 belépő, 3 kilépő)
+- **Csapadék**: OMSZ/HungaroMet földi mérőhálózat, 269 automata állomás, rácsos súlyozás
+- **Párolgás**: EUMETSAT LSA SAF DMETv3 műholdas mérés
+- **Referencia-párolgás**: LSA SAF METREF (FAO-56) — a vízhiány nélküli állapot
+- **Talaj vízhiánya**: OVF Aszálymonitoring, 127 állomás, 80 cm-es gyökérzóna
+- **Talajvízszint**: OVF nyílt API, 487 kút, tízéves összevetés
+- **Vízkészlet-anomália**: NASA GRACE/GRACE-FO, havi, a sokéves átlaghoz mérve
+
+## Két keresztellenőrzés
+
+- **Csapadék**: a GPM IMERG Early műholdas becslés nyáron rendszeresen felülbecsül.
+  2026-08-17: műhold 3,92 mm/nap, földi hálózat 1,43. A földi mérésre váltás a
+  mérleg le nem zárt tagját 4186-ról 1505 m³/s-ra vitte le.
+- **Párolgás**: ECMWF ERA5-Land reanalízis. Csak azonos napra vethető össze —
+  öt-hat napos késéssel érkezik.
+
+## Amit a lap nem tud
+
+- **Nyitott falak**: a Hernád, a Kraszna, a Fekete-Körös, a Berettyó és a határon
+  átnyǎló felszín alatti áramlás nincs bekötve. Ezek a maradéktagban jelennek meg.
+- **A napi zárási maradék nem mért készletváltozás**: a többi tag hibáját is gyűjti.
+- **A 2021 óta futó egyenleg helyőrző** — a GRACE havi és az OVF sorozat
+  összefésülése hátravan. A lap ezt kimondja.
+- A talajvízkutak talpmélysége hiányzik a nyílt adatból, ezért a kiszáradás
+  fizikai küszöbét nem tudjuk kiszámítani.
+
+## Ha erre hivatkozol
+
+> Papp L. (2026). *A Középső-Duna-medence vízmérlege: nyílt, adateredet-jelölt
+> monitoring módszer.* EQUORA Institute. Zenodo.
+> https://doi.org/10.5281/zenodo.21852060
+
+Forráskód és nyers adat: github.com/lpapp68/basin ·
+Angol dokumentáció: github.com/lpapp68/basin/blob/main/README.en.md
+
+## Amire figyelj
+
+Az adat **óránként frissül**, a mérleg napi zárása egy nappal késik (a csapadék- és
+párolgás-termékek késése miatt). A `data.json` a lap teljes állapotát tartalmazza,
+minden mennyiségnél `provenance`, `forras`, `datum` és — ahol releváns —
+`figyelmeztetes` mezővel. Az idézésnél az adateredet-címkét is érdemes átvenni:
+egy „helyőrző" jelölésű szám nem mérés.

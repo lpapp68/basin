@@ -42,7 +42,7 @@ ELO="https://basin.equora.institute"
 # Az angol valtozat a magyar forrasbol generalodik, kozvetlenul publikalas elott,
           # igy a ket nyelv nem tud szetcsuszni.
 mkdir -p _publish
-cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
+cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.
