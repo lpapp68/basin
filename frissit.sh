@@ -85,6 +85,11 @@ if [ "$MOD" = "napi" ]; then
     # a korábbi napok sikertelen próbái nem hibák, csak a termék késése
     HIBAK=""
     : > "$NAPLO"
+    # Az OMSZ földi mérőhálózata az elsődleges csapadék-forrás; az IMERG Early
+    # csak tartalék és keresztellenőrzés. Nélküle a műholdas (gyakran
+    # felülbecsülő) érték kerülne a mérlegbe.
+    futtat "OMSZ földi csapadék" python omsz.py "$NAP" || true
+
     futtat "LSA SAF párolgás" python lsasaf_et.py "$NAP"
 
     # FUGGETLEN keresztellenorzes: az ERA5-Land parolgasa. Ot-hat napos
