@@ -46,15 +46,18 @@
   },
   "egyenleg": {
     "kezdet": "2021-01-01",
-    "kumulalt_km3": -18.4,
-    "provenance": "helyorzo",
-    "forras": "GRACE-FO + OVF Integrált Vízháztartási Tájékoztató havi sorozatából számítandó",
-    "megjegyzes": "Mennyivel kevesebb víz van a dobozban, mint a kezdőnapon.",
+    "kumulalt_km3": -9.2,
+    "provenance": "muholdas",
+    "forras": "NASA GRACE/GRACE-FO havi sorozat, 65 hónap; az első és az utolsó 12 hónap átlagának különbsége (2021-01–2021-12 vs 2025-06–2026-05)",
+    "megjegyzes": "Mennyivel kevesebb víz van ma az országban, mint 2021 elején. A műhold a felszíni vizet, a talajnedvességet és a mélyben lévő vizet együtt méri.",
+    "modszer": "Két időpont puszta kivonása félrevezetne, mert az évszakos ingadozás beleszólna: egy nedves januárból egy száraz nyárba számolva túl nagy fogyás jönne ki. Ezért az első és az utolsó tizenkét hónap átlagát vetjük össze — így az évszak kiesik, és az marad, ami tartósan eltűnt.",
     "referencia": {
       "nev": "Balaton",
       "terfogat_km3": 1.9,
       "megjegyzes": "közepes vízállású átlagos térfogat, kerekítve — rögzített viszonyítási pont"
-    }
+    },
+    "also_becsles": -13.3,
+    "felso_becsles": -9.2
   },
   "kivetel_m3s": [
     {
