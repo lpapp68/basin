@@ -801,7 +801,7 @@ a{color:var(--viz)}
     '<div class="warn">Nincs adat. Futtasd előbb: <code>python3 fetch_data.py</code></div>'; return; }
 
   /* figyelmeztetés + órák */
-  $("#warn").innerHTML = "<b>Adatlefedettség: 1. szint</b> — részben záródó modell — " + D.figyelmeztetes;
+  $("#warn").innerHTML = "<b>Honnan jön a szám</b> — " + D.figyelmeztetes;
   const O = D.orak;
   const orak = [["Negyedórás","el",O.oras],["Napi","",O.napi],["Havi","",O.havi]];
   orak.forEach(([cim,cls,o])=>{
