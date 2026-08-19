@@ -48,13 +48,33 @@ ezek a tagok is a magyar területre vonatkoznak. A váltás egyetlen sor: `AKTIV
 
 ## Mi él, mi nem
 
-| Tétel | Állapot | Forrás | Kadencia |
+| Mennyiség | Állapot | Forrás | Kadencia |
 |---|---|---|---|
-| Vízállás, vízhozam, vízhő | **él** | OVF / vizugy.hu, mércénkénti idősor | óras |
+| Vízállás, vízhozam, vízhő | **mért** | OVF nyílt API (`data.vizugy.hu`), 22 mérce | negyedórás |
+| Csapadék | **mért** | OMSZ/HungaroMet nyílt adattár, 269 automata állomás | napi |
+| Csapadék (ellenőrzés) | **műholdas becslés** | GPM IMERG Early | napi |
+| Párolgás ET | **műholdas mérés** | EUMETSAT LSA SAF DMETv3 | napi |
+| Párolgás (ellenőrzés) | **reanalízis** | ECMWF ERA5-Land | napi, 5-6 nap késés |
+| Referencia-párolgás | **műholdas mérés** | LSA SAF METREF (FAO-56) | napi |
+| Talaj vízhiánya | **mért** | OVF Aszálymonitoring API, 127 állomás | napi |
+| Talajvízszint | **mért** | OVF nyílt API, 487 kút, tízéves összevetés | napi |
+| Vízkészlet-anomália | **műholdas mérés** | NASA GRACE/GRACE-FO | havi |
 | Paksi hűtővízkivétel | **származtatott** | blokkteljesítmény: holadelej.hu (CC BY 4.0) | 30 perc |
-| Csapadék | helyőrző | ERA5-Land — CDS API-kulcs kell | napi |
-| Párolgás ET | helyőrző | EUMETSAT LSA-SAF ET — regisztráció kell | fél óra |
-| Készletváltozás | helyőrző | GRACE-FO | havi |
+| Futó egyenleg (2021-től) | **helyőrző** | GRACE-FO + OVF sorozatból számítandó | — |
+| Napi zárási maradék | **maradéktag** | a mérleg többi tagjából, nem mérés | napi |
+
+### Két keresztellenőrzés
+
+**Csapadék.** 2026 augusztusában az IMERG Early **3,92 mm/nap**-ot adott, az OMSZ
+269 földi állomása **1,43-at** ugyanarra a napra. A műhold nyáron rendszeresen
+felülbecsül: a magas, jeges felhőtetőket csapadékként azonosítja, akkor is, ha a
+víz elpárolog, mielőtt leérne. A földi mérésre váltás a modell eltérését
+**4186-ról 1505 m³/s-ra** vitte le.
+
+**Párolgás.** Az LSA SAF műholdas becslése és az ERA5-Land reanalízis 2026-08-10-re
+két százalékon belül egyezett (1389 és 1389 m³/s). Ez a párolgást megerősíti —
+de csak azonos napra érvényes, és a becslések közti eltérést méri, nem a teljes
+modell bizonytalanságát.
 
 ## A doboz falai
 

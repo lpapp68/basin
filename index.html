@@ -161,6 +161,14 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,46px);lin
 .lead{color:var(--halvany);font-size:14px;margin:10px 0 22px;max-width:min(78ch,100%)}
 
 /* ── mércék (signature) ─────────────────────── */
+#rovid{margin:0 0 24px;padding:18px 20px;border:2px solid var(--tinta);
+  background:color-mix(in oklab,var(--viz) 4%,transparent)}
+#rovid .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--viz);margin-bottom:9px}
+#rovid p{margin:0;font-size:15px;line-height:1.65}
+#rovid p.k{margin-top:11px;padding-top:10px;font-size:13px;color:var(--halvany);
+  border-top:1px solid var(--vonal-halk)}
+#rovid a{color:var(--viz)}
 .mercesor{display:flex;gap:0;overflow-x:auto;padding-bottom:6px;
   border:1px solid var(--vonal);background:var(--papir-2)}
 .folyocsop{display:flex;border-right:1px solid var(--tinta)}
@@ -564,6 +572,7 @@ a{color:var(--viz)}
   <p class="lead">Vízállás, vízhozam és vízhő <b>negyedóránként</b>, az OVF nyílt adat-API-jából — mind mérés. Minden oszlop egy mérce
   mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.
   A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. Balról jobbra görgethető.</p>
+  <div id="rovid"></div>
   <div class="mercesor" id="mercesor"></div>
   <!-- A színek eddig magyarázat nélkül álltak: a vörös az egyik legfontosabb -->
   <!-- jelzés a lapon, és a néző nem tudhatta, mit jelent. -->
@@ -1106,6 +1115,31 @@ a{color:var(--viz)}
     $("#pulzus").appendChild(r);
   });
   $("#pulzus").appendChild(el("p","elojel",D.elojel));
+
+  // Rovid valasz: aki harminc masodpercet szan a lapra, ezt vigye el.
+  // A cim kerdest tesz fel - ez a doboz megvalaszolja, a tobbi kifejti.
+  {
+    const r = $("#rovid");
+    if(r && M && M.csapadek){
+      const be = M.csapadek.ertek + M.hozam_be.ertek;
+      const ki = Math.abs(M.parolgas.ertek) + Math.abs(M.hozam_ki.ertek);
+      const dS = M.keszletvaltozas.ertek;
+      r.innerHTML =
+        `<div class="u">Röviden${D.merleg_datum ? " · " + D.merleg_datum : ""}</div>` +
+        `<p>Ma <b>${num(be)} m³/s</b> víz érkezett az országba — esőből és a folyókon —, ` +
+        `és <b>${num(ki)} m³/s</b> távozott: elpárolgott vagy kifolyt. ` +
+        (Math.abs(dS) > 200
+          ? `A kettő különbsége <b>${num(Math.abs(dS))} m³/s</b>: ennyi ` +
+            `${dS > 0 ? "maradt itt" : "hiányzik"} — de ez a szám a mérés hibáit is ` +
+            `magába gyűjti.`
+          : `A kettő nagyjából egyensúlyban van.`) + `</p>` +
+        `<p class="k">A modell <b>Magyarország területére</b> készül: 22 vízmérce, ` +
+        `269 csapadékmérő állomás, műholdas párolgásmérés. A teljes Középső-Duna-medence ` +
+        `ötször ekkora — annak a mérlege fejlesztés alatt. ` +
+        `<a href="#p-hovalett">Mennyire pontos ez?</a></p>`;
+    }
+  }
+
 
   /* ── 2 Egyenleg ── */
   const E=D.egyenleg, R=E.referencia, IS=D.keszlet_idosor;
