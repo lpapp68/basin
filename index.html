@@ -42,7 +42,7 @@
   "identifier": "https://doi.org/10.5281/zenodo.21852060",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isAccessibleForFree": true,
-    "dateModified": "2026-08-20T16:27:29+00:00",
+    "dateModified": "2026-08-20T16:30:24+00:00",
     "temporalCoverage": "2002-04/..",
     "variableMeasured": [
       {"@type": "PropertyValue", "name": "Vízhozam", "unitText": "m3/s",
@@ -801,7 +801,7 @@ a{color:var(--viz)}
     '<div class="warn">Nincs adat. Futtasd előbb: <code>python3 fetch_data.py</code></div>'; return; }
 
   /* figyelmeztetés + órák */
-  $("#warn").innerHTML = "<b>Honnan jön a szám</b> — " + D.figyelmeztetes;
+  $("#warn").innerHTML = "<b>Forrásadatok</b> — " + D.figyelmeztetes;
   const O = D.orak;
   const orak = [["Negyedórás","el",O.oras],["Napi","",O.napi],["Havi","",O.havi]];
   orak.forEach(([cim,cls,o])=>{

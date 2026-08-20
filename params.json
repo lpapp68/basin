@@ -2,7 +2,7 @@
   "_olvasd_el": "Minden érték itt lakik, ami MÉG NEM ÉL. Amint egy feed bekötésre kerül, a fetch_data.py onnan tölti, és a 'provenance' 'mert'-re vagy 'modellezett'-re vált. A 'helyorzo' címke a dashboardon vonalkázott háttérrel jelenik meg — szándékosan csúnyán.",
   "_ervenyes": "2026-08-12",
   "_ervenyes_havi": "2026-06",
-  "_figyelmeztetes": "A folyók vízállása és vízhője mérés, negyedóránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított. A csapadék földi mérés: 269 automata állomás. A párolgás műholdas mérés, független forrással ellenőrizve. A talaj vízhiánya 127 állomásról, a talajvíz 487 kútból mért. A vízkivétel éves statisztikából modellezett. A napi zárási maradék nem megfigyelt készletcsökkenés, hanem az, ami a mérleg zárásához hiányzik.",
+  "_figyelmeztetes": "A folyók vízállása és vízhője mérés, negyedóránként. A vízhozam vízállásból, kalibrált vízhozamgörbével számított. A csapadék földi mérés: 269 automata állomás. A tényleges párolgás műholdas mérés — erre földi mérőhálózat nincs —, független forrással ellenőrizve. A referencia-párolgás 248 földi állomás adatából, FAO-56 szerint számított. A talaj vízhiánya 127 állomásról, a talajvíz 487 kútból mért. A vízkivétel éves statisztikából modellezett. A napi zárási maradék nem megfigyelt készletcsökkenés, hanem az, ami a mérleg zárásához hiányzik.",
   "_forrasok": {
     "napi": "GPM IMERG Early + EUMETSAT LSA-SAF ET",
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
