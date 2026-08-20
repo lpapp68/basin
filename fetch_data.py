@@ -530,7 +530,15 @@ def main():
         "talajviz": p.get("talajviz"),
         "terkep": (json.loads(pathlib.Path("terkep.json").read_text(encoding="utf-8"))
                    if pathlib.Path("terkep.json").exists() else None),
-        "ontozesigeny": p.get("ontozesigeny"),
+        # A referencia-párolgás elsődleges forrása a földi mérőhálózat; a
+        # műholdas METREF keresztellenőrzésként marad. Az OMSZ csak akkor nyer,
+        # ha ugyanarra a napra vonatkozik, mint a műholdas becslés.
+        "ontozesigeny": (lambda o, f: (
+            {**o, "et_ref_mm": f["ertek"], "et_ref_forras": f["forras"],
+             "et_ref_provenance": "helyszini",
+             "et_ref_muhold_mm": o.get("et_ref_mm")}
+            if o and f and f.get("datum") == o.get("datum") else o)
+        )(p.get("ontozesigeny"), p.get("et_ref_omsz_mm_nap")),
         "kivetel_modell": p.get("kivetel_modell"),
         "figyelmeztetes": p["_figyelmeztetes"],
         "nyitott_falak": NYITOTT_FALAK,

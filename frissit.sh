@@ -89,6 +89,10 @@ if [ "$MOD" = "napi" ]; then
     # csak tartalék és keresztellenőrzés. Nélküle a műholdas (gyakran
     # felülbecsülő) érték kerülne a mérlegbe.
     futtat "OMSZ földi csapadék" python omsz.py "$NAP" || true
+    # A referencia-párolgás is földi mérésből: 248 állomás, FAO-56.
+    # A sugárzást a többségen a hőmérséklet-ingásból becsüljük — a 39
+    # mérő állomáson ellenőrizve az eltérés 0,7%, rendszeres torzítás nélkül.
+    futtat "OMSZ referencia-párolgás" python omsz_et0.py "$NAP" || true
 
     futtat "LSA SAF párolgás" python lsasaf_et.py "$NAP"
 
