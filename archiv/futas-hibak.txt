@@ -1,1 +1,1 @@
-OMSZ földi csapadék:   342 üzemelő állomás lekérése… Túl kevés állomás adott adatot (0). 
+teljes medence falai:     raise RuntimeError("A dévényi hozam hiányzik a SHMÚ táblázatból.") RuntimeError: A dévényi hozam hiányzik a SHMÚ táblázatból. 
