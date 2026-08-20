@@ -2318,8 +2318,8 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-20T03:55:04+00:00",
-    "datum": "2026-08-18",
+    "lekerve": "2026-08-20T04:47:07+00:00",
+    "datum": "2026-08-19",
     "belepo": {
       "nev": "Duna, Dévény",
       "hozam_m3s": 836.0,
