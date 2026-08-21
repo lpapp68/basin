@@ -143,6 +143,25 @@ if [ "$MOD" = "napi" ]; then
   # utóbbit nézi.
   echo "$KERT_NAP" > "$JELZO"
   echo "$NAP" > "archiv/.feldolgozott-napi"
+
+  # A napi ag eredmenyenek naploja. Ha a merleg nem lep tovabb, innen derul ki,
+  # melyik termek hianyzott: a GitHub Actions naploja ezt nem mutatja, mert a
+  # futtat() elnyeli a hibat, hogy egy hianyzo termek ne allitsa meg az egeszet.
+  # 2026-08-19 es 08-21 kozott negyvennyolc futas jelezte magat sikeresnek,
+  # kozben a merleg egy napot sem lepett elore.
+  {
+    echo "kert_nap=$KERT_NAP"
+    echo "feldolgozott_nap=$NAP"
+    echo "ido=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    if [ -n "${GITHUB_ACTIONS:-}" ]; then echo "hol=bot"; else echo "hol=helyi"; fi
+    if [ "$KERT_NAP" != "$NAP" ]; then
+      echo "visszalepes=igen"
+    else
+      echo "visszalepes=nem"
+    fi
+    echo "--- naplo ---"
+    cat "$NAPLO" 2>/dev/null || echo "(ures)"
+  } > archiv/napi-diagnosztika.txt
 fi
 
 echo "== mércék"

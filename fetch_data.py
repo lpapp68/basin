@@ -106,6 +106,23 @@ BELSO_MEGJEGYZES = ("Belső vízfolyások (Sió, Zagyva, Kettős-Körös és a t
 HOKORLAT_C = 30.0
 
 
+
+def _visszalepes():
+    """A napi ág visszalépését jelzi. A GitHub Actions naplója ezt nem mutatja:
+    minden lépés sikeres, mert egy hiányzó termék nem állítja meg a futást.
+    A frissit.sh viszont fájlba írja, melyik napot kértük és meddig jutottunk."""
+    f = pathlib.Path("archiv/napi-diagnosztika.txt")
+    if not f.exists():
+        return []
+    adat = dict(
+        sor.split("=", 1) for sor in f.read_text(encoding="utf-8").splitlines()
+        if "=" in sor and not sor.startswith("---"))
+    if adat.get("visszalepes", "").strip() != "igen":
+        return []
+    return [f"A napi frissítés {adat.get('kert_nap','?').strip()} helyett "
+            f"{adat.get('feldolgozott_nap','?').strip()}-ig jutott: a kért napra "
+            "hiányzott a csapadékadat."]
+
 def get(url: str, timeout=35) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -550,14 +567,16 @@ def main():
             f"A mérleg napja ({merleg_datum}) {(datetime.now().date() - datetime.strptime(merleg_datum, '%Y-%m-%d').date()).days} napja nem frissült — "
             "a napi adatforrások valamelyike elakadt."
         ] if merleg_datum and (datetime.now().date()
-             - datetime.strptime(merleg_datum, "%Y-%m-%d").date()).days > 2 else []) + hibak + [
+             - datetime.strptime(merleg_datum, "%Y-%m-%d").date()).days > 1 else []) + hibak + [
             # A frissit.sh napi lépéseinek hibái: enélkül az Actionsben csend van,
             # és csak napokkal később derül ki, hogy egy adatforrás megállt.
+            # A napi-diagnosztika.txt mellette azt is megőrzi, melyik nap kellett
+            # volna és meddig jutottunk — ez a visszalépés néma esetét fogja meg.
             sor.strip() for sor in
             (pathlib.Path("archiv/futas-hibak.txt").read_text(encoding="utf-8").splitlines()
              if pathlib.Path("archiv/futas-hibak.txt").exists() else [])
             if sor.strip()
-        ],
+        ] + _visszalepes(),
     }
 
     # Saját idősor: minden futás rögzül, a napi sorozat újraszámolódik.
