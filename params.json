@@ -113,30 +113,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-08-20",
-    "et_ref_mm": 4.39,
-    "et_act_mm": 1.35,
-    "vizstressz": 0.307,
+    "datum": "2026-08-21",
+    "et_ref_mm": 3.47,
+    "et_act_mm": 0.97,
+    "vizstressz": 0.281,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 2.16,
-        "m3s": 1077
+        "hiany_mm_nap": 1.8,
+        "m3s": 898
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 3.04,
-        "m3s": 1515
+        "hiany_mm_nap": 2.5,
+        "m3s": 1243
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 3.92,
-        "m3s": 1952
+        "hiany_mm_nap": 3.19,
+        "m3s": 1589
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-08-20, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-08-21, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -146,7 +146,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-08-20",
+    "datum": "2026-08-21",
     "honap": 8,
     "osszes_m3s": 58.3,
     "fogyaszto_m3s": 32.8,
@@ -2319,7 +2319,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-21T20:39:07+00:00",
+    "lekerve": "2026-08-22T01:43:48+00:00",
     "datum": "2026-08-20",
     "belepo": {
       "nev": "Duna, Dévény",
