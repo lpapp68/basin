@@ -1,1 +1,1 @@
-OMSZ földi csapadék:   342 üzemelő állomás lekérése… Túl kevés állomás adott adatot (0). 
+OMSZ referencia-párolgás:   342 állomás lekérése… Túl kevés állomás adott ET0-t (0). 
