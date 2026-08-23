@@ -8,20 +8,20 @@
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
-    "ertek": 2.23,
+    "ertek": 6.13,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-20, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 24,
-    "datum": "2026-08-20",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-08-21, területsúlyozott átlag országhatár-maszkkal",
+    "kor_ora": 48,
+    "datum": "2026-08-21",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 1.35,
+    "ertek": 0.97,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-20, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 24,
-    "datum": "2026-08-20",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-08-21, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 48,
+    "datum": "2026-08-21",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -1453,15 +1453,15 @@
     ]
   },
   "talaj_vizhiany": {
-    "atlag_mm": 33.6,
+    "atlag_mm": 33.5,
     "melyseg": "80 cm",
-    "datum": "2026-08-20",
+    "datum": "2026-08-21",
     "allomas_db": 127,
     "allomasok": [
       {
         "nev": "Kalocsa",
         "hiany_mm": 94.9,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 46.4628,
         "lon": 18.9842,
         "sorozat": [
@@ -1487,6 +1487,7 @@
           94.7,
           94.8,
           94.9,
+          94.9,
           94.9
         ],
         "terkep_xy": [
@@ -1497,11 +1498,10 @@
       {
         "nev": "Katymár",
         "hiany_mm": 92.2,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 45.9609,
         "lon": 19.2117,
         "sorozat": [
-          90.1,
           90.3,
           90.4,
           90.5,
@@ -1530,6 +1530,7 @@
           91.8,
           91.9,
           92.1,
+          92.2,
           92.2
         ],
         "terkep_xy": [
@@ -1540,11 +1541,10 @@
       {
         "nev": "Tyukod",
         "hiany_mm": 78.4,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 47.8322,
         "lon": 22.4763,
         "sorozat": [
-          74.9,
           75.0,
           75.1,
           75.3,
@@ -1573,6 +1573,7 @@
           78.4,
           78.3,
           78.3,
+          78.4,
           78.4
         ],
         "terkep_xy": [
@@ -1583,11 +1584,10 @@
       {
         "nev": "Sarkad",
         "hiany_mm": 71.9,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 46.7299,
         "lon": 21.397,
         "sorozat": [
-          68.1,
           68.3,
           68.6,
           68.9,
@@ -1616,6 +1616,7 @@
           71.7,
           71.7,
           71.8,
+          71.9,
           71.9
         ],
         "terkep_xy": [
@@ -1625,12 +1626,11 @@
       },
       {
         "nev": "Ádánd",
-        "hiany_mm": 65.4,
-        "datum": "2026-08-20",
+        "hiany_mm": 65.3,
+        "datum": "2026-08-21",
         "lat": 46.8312,
         "lon": 18.191,
         "sorozat": [
-          60.3,
           60.5,
           60.8,
           61.2,
@@ -1659,7 +1659,8 @@
           65.2,
           65.2,
           65.3,
-          65.4
+          65.4,
+          65.3
         ],
         "terkep_xy": [
           309.1,
@@ -1669,11 +1670,10 @@
       {
         "nev": "Nádudvar",
         "hiany_mm": 56.0,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 47.3576,
         "lon": 21.1702,
         "sorozat": [
-          55.0,
           55.1,
           55.1,
           55.2,
@@ -1702,6 +1702,7 @@
           55.8,
           55.8,
           55.9,
+          56.0,
           56.0
         ],
         "terkep_xy": [
@@ -1712,11 +1713,10 @@
       {
         "nev": "Csókakő",
         "hiany_mm": 52.1,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 47.3013,
         "lon": 18.2653,
         "sorozat": [
-          51.6,
           51.7,
           51.9,
           52.0,
@@ -1745,6 +1745,7 @@
           51.9,
           52.0,
           52.1,
+          52.1,
           52.1
         ],
         "terkep_xy": [
@@ -1755,11 +1756,10 @@
       {
         "nev": "Létavértes",
         "hiany_mm": 51.6,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 47.3736,
         "lon": 21.8286,
         "sorozat": [
-          51.2,
           51.4,
           51.4,
           51.4,
@@ -1788,6 +1788,7 @@
           51.5,
           51.5,
           51.6,
+          51.6,
           51.6
         ],
         "terkep_xy": [
@@ -1798,11 +1799,10 @@
       {
         "nev": "Királyhegyes",
         "hiany_mm": 49.2,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 46.234,
         "lon": 20.6376,
         "sorozat": [
-          48.3,
           48.5,
           48.6,
           48.8,
@@ -1831,6 +1831,7 @@
           48.9,
           48.9,
           49.1,
+          49.2,
           49.2
         ],
         "terkep_xy": [
@@ -1840,12 +1841,11 @@
       },
       {
         "nev": "Oszkó",
-        "hiany_mm": 46.8,
-        "datum": "2026-08-20",
+        "hiany_mm": 46.7,
+        "datum": "2026-08-21",
         "lat": 47.0058,
         "lon": 16.8811,
         "sorozat": [
-          31.9,
           32.4,
           33.3,
           34.3,
@@ -1874,7 +1874,8 @@
           46.2,
           46.4,
           46.7,
-          46.8
+          46.8,
+          46.7
         ],
         "terkep_xy": [
           116.0,
@@ -1883,12 +1884,11 @@
       },
       {
         "nev": "Szolnok",
-        "hiany_mm": 45.9,
-        "datum": "2026-08-20",
+        "hiany_mm": 46.0,
+        "datum": "2026-08-21",
         "lat": 47.1615,
         "lon": 20.1359,
         "sorozat": [
-          41.6,
           41.9,
           42.2,
           42.5,
@@ -1917,7 +1917,8 @@
           45.6,
           45.6,
           45.8,
-          45.9
+          45.9,
+          46.0
         ],
         "terkep_xy": [
           595.8,
@@ -1926,12 +1927,11 @@
       },
       {
         "nev": "Gádoros",
-        "hiany_mm": 45.2,
-        "datum": "2026-08-20",
+        "hiany_mm": 45.3,
+        "datum": "2026-08-21",
         "lat": 46.6376,
         "lon": 20.6303,
         "sorozat": [
-          43.3,
           43.4,
           43.4,
           43.4,
@@ -1960,7 +1960,8 @@
           45.2,
           45.2,
           45.2,
-          45.2
+          45.2,
+          45.3
         ],
         "terkep_xy": [
           668.7,
@@ -1970,11 +1971,10 @@
       {
         "nev": "Bonyhád",
         "hiany_mm": 45.2,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 46.3292,
         "lon": 18.5404,
         "sorozat": [
-          43.5,
           43.5,
           43.7,
           43.8,
@@ -2003,6 +2003,7 @@
           45.2,
           45.1,
           45.1,
+          45.2,
           45.2
         ],
         "terkep_xy": [
@@ -2013,11 +2014,10 @@
       {
         "nev": "Alsóvadász",
         "hiany_mm": 43.4,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 48.2178,
         "lon": 20.8789,
         "sorozat": [
-          42.2,
           42.2,
           42.3,
           42.4,
@@ -2046,6 +2046,7 @@
           43.2,
           43.3,
           43.4,
+          43.4,
           43.4
         ],
         "terkep_xy": [
@@ -2055,12 +2056,11 @@
       },
       {
         "nev": "Sopronkövesd",
-        "hiany_mm": 40.6,
-        "datum": "2026-08-20",
+        "hiany_mm": 40.5,
+        "datum": "2026-08-21",
         "lat": 47.5312,
         "lon": 16.7409,
         "sorozat": [
-          35.6,
           35.6,
           35.6,
           35.7,
@@ -2089,7 +2089,8 @@
           40.4,
           40.5,
           40.6,
-          40.6
+          40.6,
+          40.5
         ],
         "terkep_xy": [
           95.4,
@@ -2099,11 +2100,10 @@
       {
         "nev": "Várbalog",
         "hiany_mm": 39.2,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 47.8132,
         "lon": 17.1227,
         "sorozat": [
-          37.3,
           37.4,
           37.6,
           37.8,
@@ -2132,6 +2132,7 @@
           38.9,
           39.0,
           39.2,
+          39.2,
           39.2
         ],
         "terkep_xy": [
@@ -2141,12 +2142,11 @@
       },
       {
         "nev": "Bodony",
-        "hiany_mm": 34.6,
-        "datum": "2026-08-20",
+        "hiany_mm": 34.5,
+        "datum": "2026-08-21",
         "lat": 47.9075,
         "lon": 20.0082,
         "sorozat": [
-          32.3,
           32.5,
           32.7,
           33.0,
@@ -2175,7 +2175,8 @@
           34.1,
           34.3,
           34.6,
-          34.6
+          34.6,
+          34.5
         ],
         "terkep_xy": [
           577.0,
@@ -2185,11 +2186,10 @@
       {
         "nev": "Berzence",
         "hiany_mm": 26.6,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 46.184,
         "lon": 17.1463,
         "sorozat": [
-          16.1,
           16.6,
           17.8,
           19.2,
@@ -2218,6 +2218,7 @@
           27.5,
           26.6,
           26.3,
+          26.6,
           26.6
         ],
         "terkep_xy": [
@@ -2228,11 +2229,10 @@
       {
         "nev": "Olaszfalu",
         "hiany_mm": 22.5,
-        "datum": "2026-08-20",
+        "datum": "2026-08-21",
         "lat": 47.2076,
         "lon": 17.9346,
         "sorozat": [
-          18.0,
           18.2,
           18.4,
           18.7,
@@ -2261,6 +2261,7 @@
           22.1,
           22.3,
           22.4,
+          22.5,
           22.5
         ],
         "terkep_xy": [
@@ -2271,12 +2272,11 @@
       },
       {
         "nev": "Sződ",
-        "hiany_mm": 28.0,
-        "datum": "2026-08-20",
+        "hiany_mm": 27.9,
+        "datum": "2026-08-21",
         "lat": 47.6624,
         "lon": 19.2051,
         "sorozat": [
-          28.9,
           28.9,
           29.0,
           29.0,
@@ -2305,7 +2305,8 @@
           27.8,
           27.8,
           27.9,
-          28.0
+          28.0,
+          27.9
         ],
         "terkep_xy": [
           458.6,
@@ -2319,54 +2320,54 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-08-22T01:43:48+00:00",
-    "datum": "2026-08-20",
+    "lekerve": "2026-08-23T01:54:57+00:00",
+    "datum": "2026-08-22",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 1065.0,
-      "vizallas_cm": 140.0,
-      "vizho_c": 22.8,
+      "hozam_m3s": 1016.0,
+      "vizallas_cm": 132.0,
+      "vizho_c": 22.2,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
       "nev": "Duna, Baziás",
-      "hozam_m3s": 1350.0,
+      "hozam_m3s": 1300.0,
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 285.0,
+    "kulonbseg_m3s": 284.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": 45.0,
-        "hozam_m3s": 820.0,
-        "vizho_c": 23.4
+        "vizallas_cm": 70.0,
+        "hozam_m3s": 925.0,
+        "vizho_c": 22.8
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 72.0,
-        "hozam_m3s": 869.0,
-        "vizho_c": 23.8
+        "vizallas_cm": 75.0,
+        "hozam_m3s": 885.0,
+        "vizho_c": 23.3
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": 2.0,
-        "hozam_m3s": 892.0,
-        "vizho_c": 24.1
+        "vizallas_cm": 13.0,
+        "hozam_m3s": 951.0,
+        "vizho_c": 23.9
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 45.0,
-        "hozam_m3s": 0.406,
-        "vizho_c": 22.1
+        "vizallas_cm": 47.0,
+        "hozam_m3s": 0.543,
+        "vizho_c": 21.6
       }
     ],
     "provenance": "mert",
@@ -2497,8 +2498,8 @@
   },
   "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli.",
   "parolgas_era5_mm_nap": {
-    "ertek": 1.03,
-    "datum": "2026-08-14",
+    "ertek": 1.04,
+    "datum": "2026-08-16",
     "provenance": "modellezett",
     "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
@@ -2825,11 +2826,11 @@
   },
   "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk.",
   "et_ref_omsz_mm_nap": {
-    "ertek": 6.38,
-    "datum": "2026-08-20",
-    "allomas_db": 247,
+    "ertek": 5.09,
+    "datum": "2026-08-21",
+    "allomas_db": 246,
     "provenance": "helyszini",
-    "forras": "OMSZ (HungaroMet) nyílt adattár, 247 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
+    "forras": "OMSZ (HungaroMet) nyílt adattár, 246 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   }
 }
