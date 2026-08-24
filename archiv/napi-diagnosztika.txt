@@ -1,7 +1,7 @@
 kert_nap=2026-08-23
-feldolgozott_nap=2026-08-22
-ido=2026-08-24T03:13:29Z
+feldolgozott_nap=2026-08-23
+ido=2026-08-24T04:56:21Z
 hol=bot
-visszalepes=igen
+visszalepes=nem
 --- naplo ---
-OMSZ földi csapadék:   342 üzemelő állomás lekérése… Túl kevés állomás adott adatot (0). 
+OMSZ referencia-párolgás:   342 állomás lekérése… Túl kevés állomás adott ET0-t (0). 
