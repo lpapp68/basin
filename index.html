@@ -320,7 +320,7 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .idoegyen .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--rekord);margin-bottom:8px}
 .idoegyen p{margin:0 0 8px;font-size:13px;line-height:1.6}
-.isor{display:grid;grid-template-columns:7em 1fr;gap:10px;padding:4px 0;
+.isor{display:grid;grid-template-columns:9.5em 1fr;gap:10px;padding:5px 0;
   border-top:1px solid var(--vonal-halk);font-family:var(--mono);font-size:12px}
 .isor b{color:var(--tinta)}
 .ifej{border-top:none;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
@@ -564,7 +564,7 @@ a{color:var(--viz)}
   /* A számadatok ne tördelődjenek szét, de a sor igen. */
   .trendjel{gap:5px 0;flex-direction:column}
   .trendjel span{width:100%}
-  .isor{grid-template-columns:5.4em 1fr;font-size:11.5px}
+  .isor{grid-template-columns:8.2em 1fr;font-size:11.5px;gap:6px}
   .fsor{grid-template-columns:5.6em 1fr;gap:3px 8px}
 
   /* A nagy számok mobilon is elférjenek. */
@@ -1328,9 +1328,9 @@ a{color:var(--viz)}
       `<div class="idoegyen"><div class="u">Mit jelent ez az ütem?</div>` +
       `<p>Ha a mért ütem változatlan maradna, ennyi idő alatt fogyna el annyi víz, ` +
       `amennyi <b>egy ${R.nev}</b> (${dec(R.terfogat_km3,1)} km³).</p>` +
-      `<div class="isor ifej"><b>melyik szakasz üteme</b><span>ennyi idő alatt</span></div>` +
+      `<div class="isor ifej"><b>melyik szakasz</b><span>ennyi idő alatt</span></div>` +
       jelmagy.filter(j => j.m < -0.01).map(j =>
-        `<div class="isor"><b>${j.cimke === "teljes" ? "a teljes idősoré" : "az utolsó " + j.cimke + "é"}</b>` +
+        `<div class="isor"><b>${j.cimke === "teljes" ? "teljes idősor" : "utolsó " + j.cimke}</b>` +
         `<span>${dec(R.terfogat_km3 / Math.abs(j.m), 1)} év</span></div>`
       ).join("") +
       `<p class="imegj"><b>Ez ütem-összevetés, nem előrejelzés.</b> A műholdas adat ` +
