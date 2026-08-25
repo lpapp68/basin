@@ -165,6 +165,13 @@ if [ "$MOD" = "napi" ]; then
 fi
 
 echo "== mércék"
+# A Hernad hatarszelvenye: nyitott fal, mert a magyar Sajopuspoki merce a
+# torkolat FOLOTT van, igy a Hernad hozama sehol nem szerepel a bejovo oldalon.
+# HTML-tablabol jon, ezert a modul minden futaskor ellenorzi a tabla
+# szerkezetet (fejlec, oszlopsorrend, allomas megléte); elteres eseten nem ad
+# erteket, es hibat jelez - ez a lapra es az Actions naplojaba is kikerul.
+python shmu.py || echo "!! a Hernád-szelvény nem elérhető (SHMÚ)"
+
 python fetch_data.py || { echo "!! a mérce-lekérés elhasalt"; exit 1; }
 
 if [ -n "$HIBAK" ]; then

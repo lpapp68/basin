@@ -444,6 +444,13 @@ def main():
     else:
         merleg_datum = None
 
+    # A Hernád határszelvénye (Ždaňa, SHMÚ): eddig hiányzó bejövő tag. A magyar
+    # Sajópüspöki mérce a Hernád torkolata FÖLÖTT van, ezért ez a víz sehol nem
+    # szerepelt a mérlegben — a le nem zárt tag egyik ismert forrása volt.
+    _hernad = p.get("hernad_hatarszelveny") or {}
+    _hernad_q = _hernad.get("ertek") if isinstance(_hernad.get("ertek"), (int, float)) else 0
+    Q_be = Q_be + _hernad_q
+
     be_P, be_Q = P, Q_be
     ki_ET, ki_Q, ki_fogy = -ET, -Q_ki, -fogyaszto
     dS = be_P + be_Q + ki_ET + ki_Q + ki_fogy
