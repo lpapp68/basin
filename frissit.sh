@@ -170,7 +170,16 @@ echo "== mércék"
 # HTML-tablabol jon, ezert a modul minden futaskor ellenorzi a tabla
 # szerkezetet (fejlec, oszlopsorrend, allomas megléte); elteres eseten nem ad
 # erteket, es hibat jelez - ez a lapra es az Actions naplojaba is kikerul.
-python shmu.py || echo "!! a Hernád-szelvény nem elérhető (SHMÚ)"
+python shmu.py; _shmu=$?
+if [ "$_shmu" -eq 2 ]; then
+  # Tartós hiba: három egymást követő futás sikertelen. Ezt továbbengedjük,
+  # hogy a workflow elbukjon, és a GitHub értesítést küldjön.
+  echo "!! a Hernád-szelvény TARTÓSAN nem olvasható — az SHMÚ oldala átalakulhatott"
+  exit 2
+elif [ "$_shmu" -ne 0 ]; then
+  # Átmeneti hiba: a frissítés megy tovább, a Hernád kimarad ebből a körből.
+  echo "!! a Hernád-szelvény most nem elérhető (SHMÚ) — folytatjuk nélküle"
+fi
 
 python fetch_data.py || { echo "!! a mérce-lekérés elhasalt"; exit 1; }
 

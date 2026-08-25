@@ -31,6 +31,12 @@ import urllib.request
 URL = "https://www.shmu.sk/sk/?page=110"
 FEJ = {"User-Agent": "equora-basin/2.6 (+https://basin.equora.institute)"}
 PARAMS = pathlib.Path("params.json")
+SZAMLALO = pathlib.Path("archiv/.shmu-hibak")
+
+# Ennyi egymást követő sikertelen futás után a modul megbuktatja a workflow-t,
+# hogy a GitHub értesítést küldjön. Egy-két hiba normális (az SHMÚ időnként
+# nem válaszol); három egymás után már tartós baj.
+TURESHATAR = 3
 
 # A tábla elvárt szerkezete. Ha ez változik, az oldal átalakult.
 VART_FEJLEC = ["Stanica - tok", "H", "∆H", "Q", "Tvo", "Tvz", "Z", "QM,N", "P", "L"]
@@ -105,7 +111,28 @@ def main():
             "forras": "SHMÚ napi hidrológiai jelentés, Ždaňa – Hornád",
         }
         PARAMS.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        # A sorozatos hibák számlálása. Egy-két kimaradás nem baj, de ha az
+        # oldal tartósan más, arról tudni kell — a 2-es kilépőkód megbuktatja
+        # a workflow-t, és a GitHub értesítést küld.
+        try:
+            db = int(SZAMLALO.read_text(encoding="utf-8").strip()) if SZAMLALO.exists() else 0
+        except ValueError:
+            db = 0
+        db += 1
+        SZAMLALO.parent.mkdir(parents=True, exist_ok=True)
+        SZAMLALO.write_text(str(db), encoding="utf-8")
+        if db >= TURESHATAR:
+            sys.stderr.write(
+                f"\nA Hernád-szelvény {db} egymást követő futáson át nem olvasható.\n"
+                f"Ez tartós hiba: az SHMÚ oldala ({URL}) valószínűleg átalakult.\n"
+                "A modul szerkezet-ellenőrzése pontosan megmondja, mi tér el.\n")
+            raise SystemExit(2)
+        sys.stderr.write(f"({db}. sikertelen futás, {TURESHATAR}-nál jelzünk)\n")
         raise SystemExit(1)
+
+    # Sikeres beolvasás: a hibaszámláló nullázódik.
+    SZAMLALO.unlink(missing_ok=True)
 
     sys.stdout.write(f"Hernád (Ždaňa, SK): {hozam} m³/s · {vizallas} cm")
     sys.stdout.write(f" · {vizho} °C\n" if vizho is not None else "\n")
