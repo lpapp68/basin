@@ -1,0 +1,1 @@
+OMSZ földi csapadék:   342 üzemelő állomás lekérése… Túl kevés állomás adott adatot (0). 
