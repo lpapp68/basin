@@ -144,6 +144,16 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,4.4vw,46px);lin
 /* A szövegblokkok ugyanabba az oszloprendszerbe kerülnek, mint a panelek.
    Széles nézetben egymás mellé rendeződnek — a sorhossz viszont marad
    olvasható mértéken, mert a hosszú sor rontja a visszatalálást. */
+/* ── Bevezető + frissesség ────────────────────────────────────────────────
+   A frissesség-dobozok eddig a bevezető alatt, teljes szélességben álltak —
+   aki a szöveget olvasta, csak lejjebb görgetve látta, mikori az adat.
+   Széles képernyőn most a szöveg mellett futnak, keskenyen alatta. */
+.bevracs{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
+@media(min-width:960px){.bevracs{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:34px}}
+.bevszoveg{min-width:0}
+.bevorak{min-width:0}
+.bevorak .orak{display:grid;grid-template-columns:1fr;gap:10px;margin:0}
+.bevorak .frissites{margin-top:12px}
 .fejracs{display:grid;grid-template-columns:1fr;gap:22px 28px;align-items:stretch;
   margin-top:24px}
 @media(min-width:1100px){
@@ -601,14 +611,21 @@ a{color:var(--viz)}
     <span class="ertek">Magyarország · 93 030 km²</span>
     <span class="megj">a teljes Középső-Duna-medence modellje építés alatt</span>
   </div>
+  <div class="bevracs">
+  <div class="bevszoveg">
   <p class="dek">Egy ország vízháztartását, vízkészletét az határozza meg, meddig marad a víz az ország határain belül. Egy folyó vize egy hét alatt elhagyja az országot: ami ma Dévénynél belép, jövő héten Mohácsnál jár. A talajba jutott víz hetekig marad. Ami a mélybe szivárog, évtizedekig. Ugyanaz a köbméter vízmennyiség mást jelent a folyókban, a talajban és a mélybe szivárgott rétegekben — ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. A Középső-Duna-medence ritka jó terep ehhez, mert hidrológiailag majdnem zárt rendszer: Dévénynél belép, a Vaskapunál kilép, és a Tisza, a Dráva meg a Száva vízgyűjtője teljes egészében belül van. Az egyenlege ezért jól meghatározható. Hogy melyik tényezőt tudjuk ténylegesen jól mérni, az viszont másik kérdés — és ez az oldal erről is beszámol.</p>
+  </div>
+  <aside class="bevorak">
+    <div class="orak" id="orak"></div>
+    <div class="frissites" id="frissites"></div>
+  </aside>
+  </div>
+
   <div class="stressz" id="stressz"></div>
   <div class="fejracs">
     <div class="osszefoglalo" id="osszefoglalo"></div>
     <div class="dobozjel" id="dobozjel"></div>
   </div>
-  <div class="orak" id="orak"></div>
-  <div class="frissites" id="frissites"></div>
 </header>
 
 <section id="mdb-sec">
