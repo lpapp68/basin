@@ -2839,9 +2839,9 @@
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
-    "ertek": 6.07,
-    "vizallas_cm": 63.0,
-    "vizho_c": 19.9,
+    "ertek": 7.24,
+    "vizallas_cm": 66.0,
+    "vizho_c": 19.3,
     "provenance": "helyszini",
     "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
     "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
