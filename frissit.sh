@@ -75,7 +75,14 @@ if [ "$MOD" = "napi" ]; then
   for eltol in 1 2 3; do
     probal=$(date -u -v-${eltol}d +%Y-%m-%d 2>/dev/null \
              || date -u -d "${eltol} days ago" +%Y-%m-%d)
-    if futtat "IMERG csapadék ($probal)" python imerg_precip.py "$probal"; then
+    # A kaput az OMSZ FÖLDI mérése nyitja, nem a műholdas IMERG. Az IMERG csak
+    # keresztellenőrzés, mégis ez döntötte el, melyik nap készül el — a v1
+    # maradványaként, amikor még ez volt az egyetlen csapadékforrás.
+    #
+    # 2026-08-24 óta a NASA Earthdata elérhetetlen a bot futójáról ("Network is
+    # unreachable"), és emiatt három napig állt a mérleg, pedig az OMSZ-adat
+    # végig megvolt.
+    if futtat "OMSZ földi csapadék ($probal)" python omsz.py "$probal"; then
       CSAPNAP="$probal"; break
     fi
   done
@@ -88,7 +95,9 @@ if [ "$MOD" = "napi" ]; then
     # Az OMSZ földi mérőhálózata az elsődleges csapadék-forrás; az IMERG Early
     # csak tartalék és keresztellenőrzés. Nélküle a műholdas (gyakran
     # felülbecsülő) érték kerülne a mérlegbe.
-    futtat "OMSZ földi csapadék" python omsz.py "$NAP" || true
+    # Az IMERG műholdas becslés: keresztellenőrzés, nem elsődleges forrás.
+    # Ha nem érhető el, a mérleg nélküle is zár — csak az összevetés marad ki.
+    futtat "IMERG műholdas csapadék" python imerg_precip.py "$NAP" || true
     # A referencia-párolgás is földi mérésből: 248 állomás, FAO-56.
     # A sugárzást a többségen a hőmérséklet-ingásból becsüljük — a 39
     # mérő állomáson ellenőrizve az eltérés 0,7%, rendszeres torzítás nélkül.
