@@ -1,8 +1,7 @@
 kert_nap=2026-08-28
-feldolgozott_nap=2026-08-27
-ido=2026-08-29T09:23:37Z
-hol=helyi
-visszalepes=igen
+feldolgozott_nap=2026-08-28
+ido=2026-08-29T14:25:39Z
+hol=bot
+visszalepes=nem
 --- naplo ---
-IMERG műholdas csapadék:     raise RuntimeError(f"Nincs {TERMEK} találat {nap}-ra. Az Early termék néhány " RuntimeError: Nincs GPM_3IMERGDE találat 2026-08-28-ra. Az Early termék néhány órás késéssel jön — próbáld a tegnapi nappal. 
-OMSZ referencia-párolgás:   342 állomás lekérése… Túl kevés állomás adott ET0-t (0). 
+IMERG műholdas csapadék:     raise ConnectionError(e, request=request) requests.exceptions.ConnectionError: HTTPSConnectionPool(host='urs.earthdata.nasa.gov', port=443): Max retries exceeded with url: /api/users/find_or_create_token (Caused by NewConnectionError("HTTPSConnection(host='urs.earthdata.nasa.gov', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable")) 
