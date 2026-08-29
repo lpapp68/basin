@@ -39,7 +39,7 @@ import sys
 import urllib.request
 import zipfile
 
-ALAP = "https://odp.met.hu/climate/observations_hungary/hourly/"
+ALAP = "https://odp.met.hu/climate/observations_hungary/daily/"
 FEJ = {"User-Agent": "equora-basin/2.6 (+https://basin.equora.institute)"}
 PARAMS = pathlib.Path("params.json")
 HIANYZO = -999
@@ -74,7 +74,7 @@ def allomasok() -> dict:
 def _egy_allomas(szam: str, nap: dt.date):
     """Egy állomás napi csapadékösszege mm-ben, vagy None."""
     try:
-        nyers = _get(f"{ALAP}now/HABP_1H_{szam}_now.zip", 30)
+        nyers = _get(f"{ALAP}recent/HABP_1D_{szam}_akt.zip", 30)
     except Exception:
         return None
     try:
@@ -89,12 +89,15 @@ def _egy_allomas(szam: str, nap: dt.date):
     if len(sorok) < 2:
         return None
     fejlec = [c.strip() for c in sorok[0].split(";")]
-    if "r" not in fejlec:
+    # Az rau a napi csapadékösszeg. A napi állományból olvassuk, nem az órásból:
+    # az órás "now" fájl csak két napot tart, a napi viszont hosszabb sorozatot,
+    # és ugyanez a fájl adja a referencia-párolgás bemenetét is — így a két
+    # mennyiség mindig ugyanarra a napra vonatkozik.
+    if "rau" not in fejlec:
         return None
-    i_ido, i_r = fejlec.index("Time"), fejlec.index("r")
+    i_ido, i_r = fejlec.index("Time"), fejlec.index("rau")
 
     kulcs = nap.strftime("%Y%m%d")
-    ossz, db = 0.0, 0
     for s in sorok[1:]:
         c = [x.strip() for x in s.split(";")]
         if len(c) <= max(i_ido, i_r) or not c[i_ido].startswith(kulcs):
@@ -102,13 +105,29 @@ def _egy_allomas(szam: str, nap: dt.date):
         try:
             v = float(c[i_r])
         except ValueError:
-            continue
-        if v > HIANYZO + 1:          # a -999 hiányzó
-            ossz += v
-            db += 1
-    # legalább 20 óra kell, hogy napi összegnek nevezhessük
-    return round(ossz, 2) if db >= 20 else None
+            return None
+        return round(v, 2) if v > HIANYZO + 1 else None
+    return None
 
+
+
+def _napi_kesz(nap: dt.date, minta: int = 3) -> bool:
+    """Kész-e már a napi OMSZ-állomány erre a napra? Néhány állomást
+    megnézünk: ha egyiknél sincs adat, a napi fájlok még nem frissültek."""
+    NAPI = "https://odp.met.hu/climate/observations_hungary/daily/recent/"
+    kulcs = nap.strftime("%Y%m%d")
+    for szam in ("13704", "12805", "16204")[:minta]:
+        try:
+            ny = _get(f"{NAPI}HABP_1D_{szam}_akt.zip", 25)
+            with zipfile.ZipFile(io.BytesIO(ny)) as z:
+                with z.open(z.namelist()[0]) as f:
+                    sz = io.TextIOWrapper(f, encoding="utf-8", errors="replace").read()
+            for s in sz.split("\n"):
+                if s and not s.lstrip().startswith("#") and f";{kulcs}" in s.replace(" ", ""):
+                    return True
+        except Exception:
+            continue
+    return False
 
 def napi_csapadek(nap: dt.date):
     """(területi átlag mm, állomásszám, részletek) — rácsos súlyozással."""
@@ -131,6 +150,7 @@ def napi_csapadek(nap: dt.date):
 
     if len(ertek) < 30:
         raise SystemExit(f"Túl kevés állomás adott adatot ({len(ertek)}).")
+
 
     # rácsos súlyozás: cellánként átlag, majd a cellák átlaga
     lat = [a[k][0] for k in ertek]; lon = [a[k][1] for k in ertek]

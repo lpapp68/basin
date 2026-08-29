@@ -47,6 +47,11 @@ HIANYZO = -999
 RACS_OSZLOP, RACS_SOR = 8, 6
 
 
+class ErtekHiany(Exception):
+    """A kért napra még nincs elég állomásadat — az OMSZ napi fájljai
+    később készülnek el, mint az órásak."""
+
+
 def _get(url: str, ido: int = 45) -> bytes:
     return urllib.request.urlopen(
         urllib.request.Request(url, headers=FEJ), timeout=ido).read()
@@ -175,7 +180,7 @@ def napi_et0(nap):
                 ertek[jovo[j]] = v
 
     if len(ertek) < 30:
-        raise SystemExit(f"Túl kevés állomás adott ET0-t ({len(ertek)}).")
+        raise ErtekHiany(f"Túl kevés állomás adott ET0-t ({len(ertek)}).")
 
     lat = [a[k][0] for k in ertek]; lon = [a[k][1] for k in ertek]
     dla = (max(lat) - min(lat)) / RACS_SOR or 1
@@ -192,8 +197,20 @@ def napi_et0(nap):
 def main():
     nap = (dt.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1
            else dt.date.today() - dt.timedelta(days=1))
-    sys.stdout.write(f"OMSZ referencia-párolgás (FAO-56), {nap}\n")
-    mm, db, cellak = napi_et0(nap)
+    # Ha a kért napra még nincs elég adat, visszalépünk. A napi OMSZ-fájlok
+    # később készülnek el, mint az órásak, ezért a csapadék napja már megvan,
+    # amikor az ET0-é még nem — enélkül a kettő szétcsúszna.
+    for eltol in (0, 1, 2):
+        probal = nap - dt.timedelta(days=eltol)
+        sys.stdout.write(f"OMSZ referencia-párolgás (FAO-56), {probal}\n")
+        try:
+            mm, db, cellak = napi_et0(probal)
+            nap = probal
+            break
+        except ErtekHiany as e:
+            sys.stdout.write(f"  {e} Visszalépés.\n")
+    else:
+        raise SystemExit("Három napra sem volt elég állomásadat.")
     sys.stdout.write(f"\n  ET0 = {mm:.2f} mm/nap · {db} állomás, {cellak} rácscella\n")
 
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
