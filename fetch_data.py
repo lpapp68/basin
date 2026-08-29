@@ -17,6 +17,7 @@ Forrás:
 
 import datetime as dt
 import json
+import ssl
 import pathlib
 import re
 import sys
@@ -107,6 +108,21 @@ HOKORLAT_C = 30.0
 
 
 
+
+# ── SSL-kontextus ────────────────────────────────────────────────────────
+# Néhány OVF-mérce (Tiszabecs) hiányos tanúsítványláncot ad: a köztes
+# tanúsítvány nincs a válaszban, ezért a rendszer gyökérkészletével nem
+# hitelesíthető. A certifi naprakész készlete a legtöbb ilyen esetet megoldja.
+def _ssl_kontextus():
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
+SSL_CTX = _ssl_kontextus()
+
 def _visszalepes():
     """A napi ág visszalépését jelzi. A GitHub Actions naplója ezt nem mutatja:
     minden lépés sikeres, mert egy hiányzó termék nem állítja meg a futást.
@@ -119,13 +135,23 @@ def _visszalepes():
         if "=" in sor and not sor.startswith("---"))
     if adat.get("visszalepes", "").strip() != "igen":
         return []
-    return [f"A napi frissítés {adat.get('kert_nap','?').strip()} helyett "
-            f"{adat.get('feldolgozott_nap','?').strip()}-ig jutott: a kért napra "
-            "hiányzott a csapadékadat."]
+    # A visszalépés önmagában NEM hiba: az OMSZ napi állománya két nap
+    # késéssel készül el, tehát a legfrissebb nap rendszerint hiányzik.
+    # Csak akkor jelezzük, ha kettőnél többet léptünk vissza.
+    try:
+        k = dt.date.fromisoformat(adat.get("kert_nap", "").strip())
+        f = dt.date.fromisoformat(adat.get("feldolgozott_nap", "").strip())
+    except ValueError:
+        return []
+    if (k - f).days <= 2:
+        return []
+    return [f"A napi frissítés {k} helyett {f}-ig jutott, {(k-f).days} napot "
+            "visszalépve. Az OMSZ napi állománya rendszerint két nap késéssel "
+            "készül el; ennél többet lépni vissza már elakadásra utal."]
 
 def get(url: str, timeout=35) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
+    with urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX) as r:
         return r.read().decode("utf-8", errors="replace")
 
 
@@ -574,7 +600,7 @@ def main():
             f"A mérleg napja ({merleg_datum}) {(datetime.now().date() - datetime.strptime(merleg_datum, '%Y-%m-%d').date()).days} napja nem frissült — "
             "a napi adatforrások valamelyike elakadt."
         ] if merleg_datum and (datetime.now().date()
-             - datetime.strptime(merleg_datum, "%Y-%m-%d").date()).days > 1 else []) + hibak + [
+             - datetime.strptime(merleg_datum, "%Y-%m-%d").date()).days > 2 else []) + hibak + [
             # A frissit.sh napi lépéseinek hibái: enélkül az Actionsben csend van,
             # és csak napokkal később derül ki, hogy egy adatforrás megállt.
             # A napi-diagnosztika.txt mellette azt is megőrzi, melyik nap kellett
