@@ -1,8 +1,8 @@
-kert_nap=2026-08-27
-feldolgozott_nap=2026-08-27
-ido=2026-08-28T05:16:58Z
+kert_nap=2026-08-28
+feldolgozott_nap=2026-08-28
+ido=2026-08-29T02:06:20Z
 hol=bot
 visszalepes=nem
 --- naplo ---
+IMERG műholdas csapadék:     raise RuntimeError(f"Nincs {TERMEK} találat {nap}-ra. Az Early termék néhány " RuntimeError: Nincs GPM_3IMERGDE találat 2026-08-28-ra. Az Early termék néhány órás késéssel jön — próbáld a tegnapi nappal. 
 OMSZ referencia-párolgás:   342 állomás lekérése… Túl kevés állomás adott ET0-t (0). 
-teljes medence falai:     raise RuntimeError("A dévényi hozam hiányzik a SHMÚ táblázatból.") RuntimeError: A dévényi hozam hiányzik a SHMÚ táblázatból. 

@@ -1,0 +1,2 @@
+IMERG műholdas csapadék:     raise RuntimeError(f"Nincs {TERMEK} találat {nap}-ra. Az Early termék néhány " RuntimeError: Nincs GPM_3IMERGDE találat 2026-08-28-ra. Az Early termék néhány órás késéssel jön — próbáld a tegnapi nappal. 
+OMSZ referencia-párolgás:   342 állomás lekérése… Túl kevés állomás adott ET0-t (0). 
