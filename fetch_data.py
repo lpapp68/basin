@@ -17,6 +17,7 @@ Forrás:
 
 import datetime as dt
 import json
+import os
 import ssl
 import pathlib
 import re
@@ -619,13 +620,21 @@ def main():
         out["archivum"] = archivum.kumulalt(napok, BOX["terulet_km2"])
         out["archivum"]["napok"] = napok[-30:]
     except Exception as e:
-        hibak.append(f"Archívum: {e}")
+        out["hibak"].append(f"Archívum: {e}")
 
-    json.dump(out, open("data.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-    with open("data.js", "w", encoding="utf-8") as f:
-        f.write("window.BASIN_DATA = ")
-        json.dump(out, f, ensure_ascii=False, indent=2)
-        f.write(";\n")
+    # Atomi írás: a lap ötpercenként újratölti a data.json-t, ezért egy
+    # megszakadt írás csonka fájlt adna neki. Ideiglenesbe írunk, ellenőrizzük,
+    # majd egyetlen os.replace() cseréli le — az a fájlrendszer szintjén atomi.
+    _nyers = json.dumps(out, ensure_ascii=False, indent=2)
+    json.loads(_nyers)          # ha ez elhasal, nem írunk ki semmit
+    for _cel, _tartalom in (("data.json", _nyers),
+                            ("data.js", "window.BASIN_DATA = " + _nyers + ";\n")):
+        _ideig = _cel + ".uj"
+        with open(_ideig, "w", encoding="utf-8") as f:
+            f.write(_tartalom)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(_ideig, _cel)
 
     hoz = [m["nev"] for m in mercek if m["hozam_m3s"] is not None]
     rek = [m["nev"] for m in mercek if m["rekord_alatt"]]
