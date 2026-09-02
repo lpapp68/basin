@@ -1,6 +1,6 @@
-kert_nap=2026-08-31
+kert_nap=2026-09-01
 feldolgozott_nap=2026-08-31
-ido=2026-09-01T13:28:24Z
+ido=2026-09-02T04:16:51Z
 hol=bot
-visszalepes=nem
+visszalepes=igen
 --- naplo ---
