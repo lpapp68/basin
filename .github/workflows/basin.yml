@@ -40,6 +40,9 @@ jobs:
           LSASAF_PASS: ${{ secrets.LSASAF_PASS }}
           EARTHDATA_USER: ${{ secrets.EARTHDATA_USER }}
           EARTHDATA_PASS: ${{ secrets.EARTHDATA_PASS }}
+          # Az OVF Adattári Osztálya adta egyedi token az OVSZ
+          # vízállás-előrejelzéséhez. Nélküle a lépés kimarad.
+          HYDROINFO_TOKEN: ${{ secrets.HYDROINFO_TOKEN }}
         run: |
           printf 'url: https://cds.climate.copernicus.eu/api\nkey: %s\n' \
             "$CDS_TOKEN" > ~/.cdsapirc

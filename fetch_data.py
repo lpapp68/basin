@@ -610,6 +610,9 @@ def main():
         # A referencia-párolgás elsődleges forrása a földi mérőhálózat; a
         # műholdas METREF keresztellenőrzésként marad. Az OMSZ csak akkor nyer,
         # ha ugyanarra a napra vonatkozik, mint a műholdas becslés.
+        # Az OVSZ vízállás-előrejelzése. Nem a mérleg része: cm-ben van,
+        # a mérleghez m³/s kellene. Külön panelben jelenik meg.
+        "elorejelzes": p.get("elorejelzes"),
         "ontozesigeny": (lambda o, f: (
             {**o, "et_ref_mm": f["ertek"], "et_ref_forras": f["forras"],
              "et_ref_provenance": "helyszini",

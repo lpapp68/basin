@@ -179,6 +179,13 @@ echo "== mércék"
 # HTML-tablabol jon, ezert a modul minden futaskor ellenorzi a tabla
 # szerkezetet (fejlec, oszlopsorrend, allomas megléte); elteres eseten nem ad
 # erteket, es hibat jelez - ez a lapra es az Actions naplojaba is kikerul.
+  # Vízállás-előrejelzés az OVSZ-től. A lap első előretekintő adata:
+  # nem a mi extrapolációnk, hanem a szolgálat hivatalos modellje,
+  # saját bizonytalansági sávval. Token nélkül kihagyjuk.
+  if [ -n "${HYDROINFO_TOKEN:-}" ]; then
+    futtat "OVSZ vízállás-előrejelzés" python hydroinfo.py || true
+  fi
+
 python shmu.py; _shmu=$?
 if [ "$_shmu" -eq 2 ]; then
   # Tartós hiba: három egymást követő futás sikertelen. Ezt továbbengedjük,
