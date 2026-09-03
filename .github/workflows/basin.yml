@@ -17,12 +17,16 @@ permissions:
 jobs:
   frissit:
     runs-on: ubuntu-latest
+    # Az actionök v7-en vannak: a GitHub 2025 szeptemberében kivezette a
+    # Node.js 20-at az Actions futókból, és a v4/v5 még azt célozta. A futó
+    # kényszerből Node 24-en indította őket — ez eleinte figyelmeztetés,
+    # később hiba lett volna.
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
