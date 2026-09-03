@@ -593,6 +593,30 @@ a{color:var(--viz)}
   /* A hosszú forrás- és figyelmeztetés-szövegek tördelése. */
   .par,.tvmegj,.imegj,.fmegj{overflow-wrap:anywhere}
 }
+/* ── Előrejelzés-panel ───────────────────────────────────────────────────
+   Szelvényenként egy sor: fejléc + görbe a bizonytalansági sávval + két
+   végpont. A sáv szürke, hogy a vonal maradjon a főszereplő. */
+.elosor{margin:0 0 4px;padding:12px 0 8px;border-top:1px solid var(--vonal-halk)}
+.elosor:first-of-type{border-top:none}
+.efej{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
+.efej b{font-size:14.5px;color:var(--tinta)}
+.efej .ef{font-family:var(--mono);font-size:11px;color:var(--viz)}
+.efej .em{font-size:12px;color:var(--halvany)}
+.efej .ev{margin-left:auto;font-family:var(--mono);font-size:13px;font-weight:600}
+.efej .ev.le{color:var(--parolgas)}
+.efej .ev.fel{color:var(--viz)}
+.elosor svg{width:100%;height:64px;display:block}
+.elab{display:flex;justify-content:space-between;font-family:var(--mono);
+  font-size:10.5px;color:var(--halvany);margin-top:2px}
+.emegj{margin-top:14px;padding-top:11px;border-top:1px solid var(--vonal);
+  font-size:12.5px;line-height:1.6;color:var(--halvany)}
+.emegj em{display:block;margin-top:6px;font-size:11px;font-style:normal;
+  font-family:var(--mono)}
+@media(max-width:520px){
+  .efej .em{display:none}
+  .efej .ev{margin-left:0}
+  .elosor svg{height:52px}
+}
 </style>
 </head>
 <body>
@@ -715,6 +739,11 @@ a{color:var(--viz)}
   <div id="talaj"></div>
 </section>
 
+<section id="elore-sec">
+  <div class="sz"><h2>Előrejelzés</h2><span class="n">hat napra</span></div>
+  <div id="elorejelzes"></div>
+</section>
+
 <section id="forras-sec">
   <div class="sz"><h2>Források és módszertan</h2><span class="n">minden adat nyilvános</span></div>
   <div class="forrasok">
@@ -835,6 +864,57 @@ a{color:var(--viz)}
          : "")));
     $("#orak").appendChild(n);
   });
+
+  /* elorejelzes-panel */
+  /* ── Előrejelzés ────────────────────────────────────────────────────────
+     A lap első előretekintő adata. NEM a mi extrapolációnk: az Országos
+     Vízjelző Szolgálat hivatalos modellje, saját bizonytalansági sávval.
+     A sáv maga is információ — hat óra múlva ±0,6 cm, hat nap múlva ±25. */
+  if(D.elorejelzes && (D.elorejelzes.szelvenyek || []).length){
+    const E = D.elorejelzes, szel = E.szelvenyek;
+    const cel = $("#elorejelzes");
+
+    cel.appendChild(el("p","alcim",
+      "Az Országos Vízjelző Szolgálat hatóránkénti vízállás-előrejelzése. " +
+      "A szürke sáv a szolgálat saját bizonytalansági becslése: minél messzebb " +
+      "nézünk, annál szélesebb. <b>Ez vízállás, nem vízhozam</b> — a mérlegbe " +
+      "nem számít bele, de megmutatja, merre tart a rendszer."));
+
+    szel.forEach(s => {
+      const p = s.pontok, min = Math.min(...p.map(v => v.cm - v.sav)),
+            max = Math.max(...p.map(v => v.cm + v.sav)),
+            teru = (max - min) || 1;
+      const X = i => 30 + i * (660 / (p.length - 1));
+      const Y = v => 80 - ((v - min) / teru) * 60;
+
+      // A bizonytalansági sáv: felül a felső határ, vissza az alsón.
+      const savUt = p.map((v,i) => `${i?"L":"M"}${X(i).toFixed(1)},${Y(v.cm+v.sav).toFixed(1)}`).join("") +
+        p.slice().reverse().map((v,i) =>
+          `L${X(p.length-1-i).toFixed(1)},${Y(v.cm-v.sav).toFixed(1)}`).join("") + "Z";
+      const vonal = p.map((v,i) => `${i?"L":"M"}${X(i).toFixed(1)},${Y(v.cm).toFixed(1)}`).join("");
+
+      const d = el("div","elosor");
+      d.innerHTML =
+        `<div class="efej"><b>${s.nev}</b> <span class="ef">${s.folyo}</span>` +
+        `<span class="em">${s.megjegyzes}</span>` +
+        `<span class="ev ${s.valtozas_cm < 0 ? "le" : "fel"}">` +
+        `${s.valtozas_cm > 0 ? "+" : ""}${dec(s.valtozas_cm,0)} cm</span></div>` +
+        `<svg viewBox="0 0 700 100" preserveAspectRatio="none" aria-hidden="true">` +
+        `<path d="${savUt}" fill="var(--halvany)" opacity=".16"/>` +
+        `<path d="${vonal}" fill="none" stroke="var(--viz)" stroke-width="2"/>` +
+        `<circle cx="${X(0)}" cy="${Y(p[0].cm)}" r="3.5" fill="var(--viz)"/>` +
+        `</svg>` +
+        `<div class="elab"><span>most ${dec(p[0].cm,0)} cm</span>` +
+        `<span>${dec(p[p.length-1].cm,0)} cm ±${dec(p[p.length-1].sav,0)}</span></div>`;
+      cel.appendChild(d);
+    });
+
+    cel.appendChild(el("p","emegj",
+      `<b>A négy alsó szelvény a mérleg nyitott falait jelzi előre.</b> ` +
+      `Ezeknek a folyóknak a hozama ma a napi zárási maradékban jelenik meg, ` +
+      `mert a határon túli szelvényük nincs bekötve. ` +
+      `<em>${E.forras} · készült: ${(E.keszult||"").replace("T"," ").slice(0,16)}</em>`));
+  }
 
   /* ── frissítés-jelző ── */
   // A GitHub Actions ütemezett futásai torlódás esetén csúsznak: az óránkénti
