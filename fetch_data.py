@@ -18,6 +18,7 @@ Forrás:
 import datetime as dt
 import json
 import os
+import time
 import ssl
 import pathlib
 import re
@@ -256,14 +257,23 @@ def utolso(sorok, mezo):
 def paks_uzem():
     """Csak az üzemallapot, hogy a hűtővízkivétel ne konstans legyen.
        Semmilyen egyéb energiaadatot nem veszünk át."""
-    try:
-        d = json.loads(get(DELEJ, timeout=25))
-        mw = d.get("paksUnits", {}).get("sum")
-        if mw is None:
-            mw = d.get("plants", {}).get("paks")
-        return {"mw": round(float(mw), 1), "forras": "holadelej.hu /api/data (CC BY 4.0)", "hiba": None}
-    except Exception as e:
-        return {"mw": None, "forras": "holadelej.hu /api/data (CC BY 4.0)", "hiba": str(e)}
+    # A szolgáltató Cloudflare mögött van, és a bot-védelme időnként megfog
+    # egy kérést (403). Ez átmeneti: a második próbálkozás rendszerint átmegy.
+    utolso = None
+    for probalkozas in range(2):
+        try:
+            d = json.loads(get(DELEJ, timeout=25))
+            mw = d.get("paksUnits", {}).get("sum")
+            if mw is None:
+                mw = d.get("plants", {}).get("paks")
+            return {"mw": round(float(mw), 1),
+                    "forras": "holadelej.hu /api/data (CC BY 4.0)", "hiba": None}
+        except Exception as e:
+            utolso = e
+            if probalkozas == 0:
+                time.sleep(2)
+    return {"mw": None, "forras": "holadelej.hu /api/data (CC BY 4.0)",
+            "hiba": f"{utolso} (két próbálkozás után)"}
 
 
 def hutoviz(mw, p):
