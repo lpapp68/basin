@@ -116,11 +116,27 @@ HOKORLAT_C = 30.0
 # tanúsítvány nincs a válaszban, ezért a rendszer gyökérkészletével nem
 # hitelesíthető. A certifi naprakész készlete a legtöbb ilyen esetet megoldja.
 def _ssl_kontextus():
-    try:
-        import certifi
-        return ssl.create_default_context(cafile=certifi.where())
-    except ImportError:
-        return ssl.create_default_context()
+    """A rendszer tanúsítványkészletét használjuk, nem a certifi-ét.
+
+    A www.vizugy.hu tanúsítványát a Microsec e-Szignó (magyar hitelesítő)
+    adta ki. Ez benne van a rendszer készletében — macOS-en és a Linux
+    ca-certificates csomagban is —, a certifi Mozilla-alapú készletében
+    viszont nincs. A certifi tehát itt rosszabb volt az alapértelmezésnél.
+
+    A GitHub Actions Ubuntu-futója tartalmazza a Microsec gyökeret, ezért
+    ott is működik."""
+    ctx = ssl.create_default_context()
+    # A macOS-Python nem a rendszer keychainjét használja, hanem a saját
+    # OpenSSL-készletét — abban a Microsec gyökér nincs benne. A repóban
+    # tartott láncot ezért külön hozzáadjuk. Linuxon (a bot futója) a
+    # rendszerkészlet már tartalmazza, de az extra betöltés ott sem árt.
+    lanc = pathlib.Path(__file__).parent / "tanusitvanyok" / "vizugy-lanc.pem"
+    if lanc.exists():
+        try:
+            ctx.load_verify_locations(cafile=str(lanc))
+        except Exception:
+            pass
+    return ctx
 
 
 SSL_CTX = _ssl_kontextus()
