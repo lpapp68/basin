@@ -594,28 +594,29 @@ a{color:var(--viz)}
   .par,.tvmegj,.imegj,.fmegj{overflow-wrap:anywhere}
 }
 /* ── Előrejelzés-panel ───────────────────────────────────────────────────
-   Szelvényenként egy sor: fejléc + görbe a bizonytalansági sávval + két
-   végpont. A sáv szürke, hogy a vonal maradjon a főszereplő. */
-.elosor{margin:0 0 4px;padding:12px 0 8px;border-top:1px solid var(--vonal-halk)}
-.elosor:first-of-type{border-top:none}
-.efej{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:4px}
-.efej b{font-size:14.5px;color:var(--tinta)}
-.efej .ef{font-family:var(--mono);font-size:11px;color:var(--viz)}
-.efej .em{font-size:12px;color:var(--halvany)}
-.efej .ev{margin-left:auto;font-family:var(--mono);font-size:13px;font-weight:600}
+   Rács, mert hét darab teljes szélességű grafikon fél képernyőt foglalna.
+   Széles képernyőn három oszlop, közepesen kettő, mobilon egy. A grafikon
+   alacsony: itt a változás iránya számít, nem a leolvasható érték. */
+.eloracs{display:grid;grid-template-columns:1fr;gap:14px 22px;margin-top:14px}
+@media(min-width:620px){.eloracs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:980px){.eloracs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.elosor{min-width:0;padding:10px 12px;border:1px solid var(--vonal-halk);
+  background:color-mix(in oklab,var(--viz) 2%,transparent)}
+.efej{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.efej b{font-size:13.5px;color:var(--tinta);white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.efej .ev{font-family:var(--mono);font-size:13px;font-weight:600;white-space:nowrap}
 .efej .ev.le{color:var(--parolgas)}
 .efej .ev.fel{color:var(--viz)}
-.elosor svg{width:100%;height:64px;display:block}
+.elosor .ef{font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--halvany);margin:1px 0 5px}
+.elosor svg{width:100%;height:38px;display:block}
 .elab{display:flex;justify-content:space-between;font-family:var(--mono);
-  font-size:10.5px;color:var(--halvany);margin-top:2px}
-.emegj{margin-top:14px;padding-top:11px;border-top:1px solid var(--vonal);
+  font-size:10px;color:var(--halvany);margin-top:2px}
+.emegj{margin-top:16px;padding-top:11px;border-top:1px solid var(--vonal);
   font-size:12.5px;line-height:1.6;color:var(--halvany)}
 .emegj em{display:block;margin-top:6px;font-size:11px;font-style:normal;
   font-family:var(--mono)}
-@media(max-width:520px){
-  .efej .em{display:none}
-  .efej .ev{margin-left:0}
-  .elosor svg{height:52px}
 }
 </style>
 </head>
@@ -880,6 +881,7 @@ a{color:var(--viz)}
       "nézünk, annál szélesebb. <b>Ez vízállás, nem vízhozam</b> — a mérlegbe " +
       "nem számít bele, de megmutatja, merre tart a rendszer."));
 
+    const racs = el("div","eloracs");
     szel.forEach(s => {
       const p = s.pontok, min = Math.min(...p.map(v => v.cm - v.sav)),
             max = Math.max(...p.map(v => v.cm + v.sav)),
@@ -894,20 +896,22 @@ a{color:var(--viz)}
       const vonal = p.map((v,i) => `${i?"L":"M"}${X(i).toFixed(1)},${Y(v.cm).toFixed(1)}`).join("");
 
       const d = el("div","elosor");
+      d.title = s.megjegyzes;
       d.innerHTML =
-        `<div class="efej"><b>${s.nev}</b> <span class="ef">${s.folyo}</span>` +
-        `<span class="em">${s.megjegyzes}</span>` +
+        `<div class="efej"><b>${s.nev}</b>` +
         `<span class="ev ${s.valtozas_cm < 0 ? "le" : "fel"}">` +
-        `${s.valtozas_cm > 0 ? "+" : ""}${dec(s.valtozas_cm,0)} cm</span></div>` +
+        `${s.valtozas_cm > 0 ? "+" : ""}${dec(s.valtozas_cm,0)}</span></div>` +
+        `<div class="ef">${s.folyo}</div>` +
         `<svg viewBox="0 0 700 100" preserveAspectRatio="none" aria-hidden="true">` +
         `<path d="${savUt}" fill="var(--halvany)" opacity=".16"/>` +
         `<path d="${vonal}" fill="none" stroke="var(--viz)" stroke-width="2"/>` +
         `<circle cx="${X(0)}" cy="${Y(p[0].cm)}" r="3.5" fill="var(--viz)"/>` +
         `</svg>` +
-        `<div class="elab"><span>most ${dec(p[0].cm,0)} cm</span>` +
-        `<span>${dec(p[p.length-1].cm,0)} cm ±${dec(p[p.length-1].sav,0)}</span></div>`;
-      cel.appendChild(d);
+        `<div class="elab"><span>${dec(p[0].cm,0)}</span>` +
+        `<span>${dec(p[p.length-1].cm,0)} ±${dec(p[p.length-1].sav,0)} cm</span></div>`;
+      racs.appendChild(d);
     });
+    cel.appendChild(racs);
 
     cel.appendChild(el("p","emegj",
       `<b>A négy alsó szelvény a mérleg nyitott falait jelzi előre.</b> ` +
