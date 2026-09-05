@@ -1,2 +1,1 @@
-talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
 OVSZ vízállás-előrejelzés:   Berettyóújfalu     — Berettyóújfalu: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)> Egyetlen szelvényre sem érkezett előrejelzés. 
