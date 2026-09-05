@@ -1,7 +1,7 @@
-kert_nap=2026-09-03
+kert_nap=2026-09-04
 feldolgozott_nap=2026-09-03
-ido=2026-09-04T14:13:10Z
+ido=2026-09-05T04:17:08Z
 hol=bot
-visszalepes=nem
+visszalepes=igen
 --- naplo ---
-IMERG műholdas csapadék:     raise ConnectionError(e, request=request) requests.exceptions.ConnectionError: HTTPSConnectionPool(host='urs.earthdata.nasa.gov', port=443): Max retries exceeded with url: /api/users/find_or_create_token (Caused by NewConnectionError("HTTPSConnection(host='urs.earthdata.nasa.gov', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable")) 
+talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
