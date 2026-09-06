@@ -1824,23 +1824,23 @@ a{color:var(--viz)}
       </div>` +
       (OI ? `<div class="oigeny">
         <b>Amennyi víz kellene, és amennyi van</b>
-        // A FAO-56 vizstressz-egyutthatoja (Ks) alapjan. A tenyleges es a
-        // referencia-parolgas aranya ennek KOZELITESE: a novenytenyezo (Kc)
-        // nincs benne, ezert a kuszobok tajekoztato jelleguek. A FAO-56
-        // gyakorlati tartomanyai: 0,8 folott enyhe, 0,5-0,8 mersekelt,
-        // 0,5 alatt sulyos vizstressz.
-        (() => {
+        ${(() => {
+          /* A FAO-56 vizstressz-egyutthatoja (Ks) alapjan. A tenyleges es a
+             referencia-parolgas aranya ennek KOZELITESE: a novenytenyezo (Kc)
+             nincs benne, ezert a kuszobok tajekoztato jelleguek. A FAO-56
+             gyakorlati tartomanyai: 0,8 folott enyhe, 0,5-0,8 mersekelt,
+             0,5 alatt sulyos vizstressz. */
           const r = OI.et_act_mm / OI.et_ref_mm;
           const [szin, cimke, mit] =
             r >= 0.8 ? ["zold", "Nincs vízstressz",
-                        "A növényzet közel annyit párologtat, amennyit vízhiány nélkül tudna."]
+                "A növényzet közel annyit párologtat, amennyit vízhiány nélkül tudna."]
             : r >= 0.5 ? ["sarga", "Mérsékelt vízstressz",
-                        "A növény részben zárja a leveleit: kevesebb vizet ad le, és lassabban növekszik."]
+                "A növény részben zárja a leveleit: kevesebb vizet ad le, és lassabban növekszik."]
             : ["piros", "Súlyos vízstressz",
-                        "A levelek nagyrészt zárva vannak. A növekedés leáll, a termésátlag csökken."];
+                "A levelek nagyrészt zárva vannak. A növekedés leáll, a termésátlag csökken."];
           return `<div class="lampa ${szin}"><span class="pont"></span>` +
                  `<b>${cimke}</b><span class="mit">${mit}</span></div>`;
-        })() +
+        })()}
         <span>Vízhiány nélkül a növényzet ma <b>${dec(OI.et_ref_mm,2)} millimétert</b>
         párologtatna el — vagyis <b>${dec(OI.et_ref_mm,2)} liter vizet minden négyzetméterről</b>,
         egy hektárról ${num(Math.round(OI.et_ref_mm*10))} köbmétert. Valójában
