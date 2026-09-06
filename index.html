@@ -403,6 +403,19 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
     color-mix(in oklab,var(--viz) 50%,var(--parolgas)) 50%, var(--viz) 100%)}
 .stressz .sav i{position:absolute;top:-5px;width:3px;height:18px;
   background:var(--tinta);transform:translateX(-1px)}
+/* ── Vízstressz-lámpa ────────────────────────────────────────────────────
+   A százalék önmagában szakmai. A FAO-56 vízstressz-együtthatójának (Ks)
+   gyakorlati tartományai adják a három fokozatot — közelítéssel, mert a
+   növénytényező (Kc) nincs az arányban. */
+.lampa{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;
+  margin:0 0 12px;padding:9px 13px;border-left:4px solid currentColor}
+.lampa .pont{width:11px;height:11px;border-radius:50%;background:currentColor;
+  flex:none;align-self:center}
+.lampa b{font-size:14.5px}
+.lampa .mit{font-size:13px;color:var(--tinta);opacity:.85;flex:1 1 100%}
+.lampa.zold{color:#2E6B4F;background:color-mix(in oklab,#2E6B4F 7%,transparent)}
+.lampa.sarga{color:#A9772F;background:color-mix(in oklab,#A9772F 8%,transparent)}
+.lampa.piros{color:#A33B2A;background:color-mix(in oklab,#A33B2A 8%,transparent)}
 .stressz .fej{display:flex;align-items:flex-start;gap:22px;margin-top:14px}
 .stressz .ert{font-family:var(--mono);font-size:clamp(44px,7vw,74px);
   font-weight:700;line-height:.9;letter-spacing:-.03em;flex:0 0 auto}
@@ -1811,6 +1824,23 @@ a{color:var(--viz)}
       </div>` +
       (OI ? `<div class="oigeny">
         <b>Amennyi víz kellene, és amennyi van</b>
+        // A FAO-56 vizstressz-egyutthatoja (Ks) alapjan. A tenyleges es a
+        // referencia-parolgas aranya ennek KOZELITESE: a novenytenyezo (Kc)
+        // nincs benne, ezert a kuszobok tajekoztato jelleguek. A FAO-56
+        // gyakorlati tartomanyai: 0,8 folott enyhe, 0,5-0,8 mersekelt,
+        // 0,5 alatt sulyos vizstressz.
+        (() => {
+          const r = OI.et_act_mm / OI.et_ref_mm;
+          const [szin, cimke, mit] =
+            r >= 0.8 ? ["zold", "Nincs vízstressz",
+                        "A növényzet közel annyit párologtat, amennyit vízhiány nélkül tudna."]
+            : r >= 0.5 ? ["sarga", "Mérsékelt vízstressz",
+                        "A növény részben zárja a leveleit: kevesebb vizet ad le, és lassabban növekszik."]
+            : ["piros", "Súlyos vízstressz",
+                        "A levelek nagyrészt zárva vannak. A növekedés leáll, a termésátlag csökken."];
+          return `<div class="lampa ${szin}"><span class="pont"></span>` +
+                 `<b>${cimke}</b><span class="mit">${mit}</span></div>`;
+        })() +
         <span>Vízhiány nélkül a növényzet ma <b>${dec(OI.et_ref_mm,2)} millimétert</b>
         párologtatna el — vagyis <b>${dec(OI.et_ref_mm,2)} liter vizet minden négyzetméterről</b>,
         egy hektárról ${num(Math.round(OI.et_ref_mm*10))} köbmétert. Valójában
