@@ -1140,10 +1140,15 @@ a{color:var(--viz)}
           : "color-mix(in oklab, #B03A28 " + Math.round((a-0.5)*200) + "%, #C8A032)";
 
         const folyok = (D.terkep.folyok || [])
-          .filter(f => f.rang >= 3)
-          .map(f => "<path d=\"" + f.path + "\" fill=\"none\" stroke=\"var(--viz)\" " +
-                    "stroke-width=\"" + (f.rang >= 5 ? 3 : 1.8) + "\" opacity=\".55\"/>")
-          .join("");
+          .map(f => {
+            /* A rang FORDÍTOTT: a Duna 2, a Sió 7 — a kisebb szám nagyobb
+               folyót jelent. Ezért a vastagság is fordítva skálázódik. */
+            const v = f.rang <= 2 ? 4.5 : f.rang <= 5 ? 2.8 : 1.8;
+            const o = f.rang <= 2 ? ".62" : ".45";
+            return "<path d=\"" + f.path + "\" fill=\"none\" stroke=\"var(--viz)\" " +
+                   "stroke-width=\"" + v + "\" opacity=\"" + o + "\" " +
+                   "stroke-linejoin=\"round\" stroke-linecap=\"round\"/>";
+          }).join("");
 
         const korok = pont.slice()
           .sort((a,b) => a.hiany_mm - b.hiany_mm)   // a nagyok felülre
@@ -1151,8 +1156,8 @@ a{color:var(--viz)}
             const a = (p.hiany_mm - mn) / tr;
             return "<circle cx=\"" + X(p.lon).toFixed(1) + "\" cy=\"" + Y(p.lat).toFixed(1) +
                    "\" r=\"" + (9 + a*13).toFixed(1) + "\" fill=\"" + szinez(a) +
-                   "\" opacity=\".82\" stroke=\"var(--papir)\" stroke-width=\"1.8\">" +
-                   "<title>" + p.nev + ": " + dec(p.hiany_mm,0) + " mm vízhiány</title></circle>";
+                   "\" opacity=\".82\" stroke=\"var(--papir)\" stroke-width=\"1.8\" class=\"tpont\">" +
+                   "data-cimke=\"" + p.nev + ": " + dec(p.hiany_mm,0) + " mm vízhiány\"/>";
           }).join("");
 
         return "<div class=\"stresszterkep\">" +
