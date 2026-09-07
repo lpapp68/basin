@@ -210,6 +210,18 @@ if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
   # botfutás letörli a lapról — ez korábban a logóval megtörtént.
   mkdir -p _publish
   cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
+# ── Lapteszt ─────────────────────────────────────────────────────────────
+# A node --check csak szintaxist néz. Egy nem létező változó vagy elrontott
+# blokkhatár szintaktikailag tökéletes, futáskor viszont megállítja az egész
+# szkriptet — és a lap üresen marad. 2026-09-07-én ez ötször fordult elő
+# egy nap alatt, ezért a publikálás előtt most lefut a teljes logika.
+if [ -f tesztlap.js ]; then
+  if ! node tesztlap.js; then
+    echo "!! A lap logikája futásidőben elhasal — a publikálás megállítva."
+    exit 1
+  fi
+fi
+
   npx --yes wrangler pages deploy _publish \
       --project-name "$BASIN_PAGES_PROJECT" --commit-dirty=true
 fi

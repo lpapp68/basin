@@ -55,5 +55,17 @@ for f in data.json data.js; do
   fi
 done
 
+# ── Lapteszt ─────────────────────────────────────────────────────────────
+# A node --check csak szintaxist néz. Egy nem létező változó vagy elrontott
+# blokkhatár szintaktikailag tökéletes, futáskor viszont megállítja az egész
+# szkriptet — és a lap üresen marad. 2026-09-07-én ez ötször fordult elő
+# egy nap alatt, ezért a publikálás előtt most lefut a teljes logika.
+if [ -f tesztlap.js ]; then
+  if ! node tesztlap.js; then
+    echo "!! A lap logikája futásidőben elhasal — a publikálás megállítva."
+    exit 1
+  fi
+fi
+
 npx --yes wrangler pages deploy _publish \
     --project-name "${BASIN_PAGES_PROJECT:-basin}" --commit-dirty=true
