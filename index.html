@@ -435,6 +435,10 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .lampa.sarga{color:#A9772F;background:color-mix(in oklab,#A9772F 8%,transparent)}
 .lampa.piros{color:#A33B2A;background:color-mix(in oklab,#A33B2A 8%,transparent)}
 .stressz .fej{display:flex;align-items:flex-start;gap:22px;margin-top:14px}
+/* A középső hasáb (magyarázat) alatt nagy üres folt maradt, mert a térkép
+   magas. A doboz-jelzés oda költözik, hogy a hely ne vesszen kárba. */
+.stressz .fej > .kozep{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+.stressz .fej > .kozep .dobozjel{margin-top:auto;padding-top:18px}
 .stressz .ert{font-family:var(--mono);font-size:clamp(44px,7vw,74px);
   font-weight:700;line-height:.9;letter-spacing:-.03em;flex:0 0 auto}
 .stressz .ert span{font-size:.42em;letter-spacing:normal;margin-left:2px}
@@ -680,7 +684,6 @@ a{color:var(--viz)}
   <div class="stressz" id="stressz"></div>
   <div class="fejracs">
     <div class="osszefoglalo" id="osszefoglalo"></div>
-    <div class="dobozjel" id="dobozjel"></div>
   </div>
 </header>
 
@@ -1110,13 +1113,15 @@ a{color:var(--viz)}
           return `<div class="lampa ${sz}"><span class="pont"></span><b>${c}</b></div>`;
         })()}
       </div>
-           <div class="mag">
+           <div class="kozep"><div class="mag">
              <b>A növényzet a lehetséges párolgás ${dec(v*100,0)}%-át teljesíti.</b>
              A <b>referencia-párolgás ${dec(OI2.et_ref_mm,2)} mm/nap</b>: ennyi párologna el egy alacsonyra nyírt, <b>korlátlan vízellátású fűfelszínről</b> a mai sugárzás, hőmérséklet, páratartalom és szél mellett. Ez a hidrológia nemzetközi viszonyítási alapja — nem a maximum, hanem a <b>vízhiány nélküli állapot</b>. A mérés ${dec(OI2.et_act_mm,2)} mm/nap. A növény ilyenkor lezárja a leveleit, és amíg
              zárva vannak, nem is növekszik.
              <em>A skála a lehetségeshez viszonyít, nem a sokéves augusztusi
              átlaghoz — ahhoz több év adata kellene. ${OI2.datum}</em>
            </div>
+      <div class="dobozjel" id="dobozjel"></div>
+      </div>
       ${(() => {
         /* Vízstressz-térkép. A talaj vízhiánya állomásonként — ez a legjobb
            területi közelítése a növény vízstresszének.
