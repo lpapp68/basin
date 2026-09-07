@@ -1123,11 +1123,11 @@ a{color:var(--viz)}
            zárja a leveleit. Az országhatár és a nagy folyók a terkep.json-ből
            jönnek, ugyanabban a vetületben, mint a lap többi térképe. */
         const TV = D.talaj_vizhiany, pont = (TV && TV.allomasok) || [];
-        if(!TERKEP || !TERKEP.path || pont.length < 10) return "";
+        if(!D.terkep || !D.terkep.path || pont.length < 10) return "";
         const hh = pont.map(p => p.hiany_mm).filter(v => typeof v === "number");
         const mn = Math.min(...hh), mx = Math.max(...hh), tr = (mx - mn) || 1;
 
-        const folyok = (TERKEP.folyok || [])
+        const folyok = (D.terkep.folyok || [])
           .filter(f => f.rang >= 4)
           .map(f => {
             const v = f.rang >= 6 ? 2.6 : 1.5;
@@ -1136,7 +1136,7 @@ a{color:var(--viz)}
           }).join("");
 
         const korok = pont.map(p => {
-          const xy = (TERKEP.allomasok || {})[p.nev];
+          const xy = (D.terkep.allomasok || {})[p.nev];
           if(!xy) return "";
           const a = (p.hiany_mm - mn) / tr;
           const sz = "color-mix(in oklab, var(--parolgas) " + Math.round(a*100) +
@@ -1149,8 +1149,8 @@ a{color:var(--viz)}
 
         return "<div class=\"stresszterkep\">" +
           "<div class=\"stcim\">Hol a legnagyobb a hiány</div>" +
-          "<svg viewBox=\"" + TERKEP.viewBox + "\">" +
-          "<path d=\"" + TERKEP.path + "\" fill=\"color-mix(in oklab,var(--tinta) 4%,transparent)\" " +
+          "<svg viewBox=\"" + D.terkep.viewBox + "\">" +
+          "<path d=\"" + D.terkep.path + "\" fill=\"color-mix(in oklab,var(--tinta) 4%,transparent)\" " +
           "stroke=\"var(--vonal)\" stroke-width=\"1.8\"/>" + folyok + korok + "</svg>" +
           "<div class=\"stlab\"><span>" + dec(mn,0) + " mm</span>" +
           "<span class=\"stsav\"></span><span>" + dec(mx,0) + " mm</span></div>" +
