@@ -437,8 +437,21 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .stressz .fej{display:flex;align-items:flex-start;gap:22px;margin-top:14px}
 /* A középső hasáb (magyarázat) alatt nagy üres folt maradt, mert a térkép
    magas. A doboz-jelzés oda költözik, hogy a hely ne vesszen kárba. */
-.stressz .fej > .kozep{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
-.stressz .fej > .kozep .dobozjel{margin-top:auto;padding-top:18px}
+/* Rács, nem flex: a doboz-jelzés így nyúlhat át a szám alá, a bal szélig.
+   A HTML szerkezete változatlan — csak az elrendezés más. */
+@media(min-width:980px){
+  .stressz .fej{display:grid;align-items:start;gap:14px 22px;
+    grid-template-columns:auto minmax(0,1fr) minmax(0,1.05fr)}
+  .stressz .fej > .ertblokk{grid-column:1;grid-row:1}
+  .stressz .fej > .kozep{grid-column:2;grid-row:1;min-width:0}
+  .stressz .fej > .stresszterkep{grid-column:3;grid-row:1 / span 2;
+    margin-top:0;padding-top:0;border-top:none}
+  .stressz .fej > .kozep .dobozjel{
+    /* a második sorba, az első két oszlop szélességében */
+    grid-column:1 / 3;grid-row:2}
+}
+.stressz .fej > .kozep{min-width:0}
+.stressz .fej > .kozep .dobozjel{margin-top:16px}
 .stressz .ert{font-family:var(--mono);font-size:clamp(44px,7vw,74px);
   font-weight:700;line-height:.9;letter-spacing:-.03em;flex:0 0 auto}
 .stressz .ert span{font-size:.42em;letter-spacing:normal;margin-left:2px}
