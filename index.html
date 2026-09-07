@@ -1119,44 +1119,52 @@ a{color:var(--viz)}
            </div>
       ${(() => {
         /* Vízstressz-térkép. A talaj vízhiánya állomásonként — ez a legjobb
-           területi közelítése a növény vízstresszének: ahol nagy a hiány, ott
-           zárja a leveleit. Az országhatár és a nagy folyók a terkep.json-ből
-           jönnek, ugyanabban a vetületben, mint a lap többi térképe. */
+           területi közelítése a növény vízstresszének.
+
+           A pontok helyét lat/lon-ból számoljuk, nem a terkep.json
+           állomáslistájából: az csak a régi, húszelemű mintavétel neveit
+           tartalmazza. Az illesztés a meglévő párokból jött, 3,6 ezrelék
+           hibával — a térkép léptékén ez láthatatlan. */
         const TV = D.talaj_vizhiany, pont = (TV && TV.allomasok) || [];
         if(!D.terkep || !D.terkep.path || pont.length < 10) return "";
+        const X = lon => 145.9774 * lon - 2344.22;
+        const Y = lat => -217.3505 * lat + 10548.25;
+
         const hh = pont.map(p => p.hiany_mm).filter(v => typeof v === "number");
         const mn = Math.min(...hh), mx = Math.max(...hh), tr = (mx - mn) || 1;
 
-        const folyok = (D.terkep.folyok || [])
-          .filter(f => f.rang >= 4)
-          .map(f => {
-            const v = f.rang >= 6 ? 2.6 : 1.5;
-            return "<path d=\"" + f.path + "\" fill=\"none\" stroke=\"var(--viz)\" " +
-                   "stroke-width=\"" + v + "\" opacity=\".32\"/>";
-          }).join("");
+        /* Zöld → sárga → piros: a vízstressz megszokott jelzésrendje.
+           A középső fokozat sárga, ezért két szakaszban keverünk. */
+        const szinez = a => a < 0.5
+          ? "color-mix(in oklab, #C8A032 " + Math.round(a*200) + "%, #2E7D4F)"
+          : "color-mix(in oklab, #B03A28 " + Math.round((a-0.5)*200) + "%, #C8A032)";
 
-        const korok = pont.map(p => {
-          const xy = (D.terkep.allomasok || {})[p.nev];
-          if(!xy) return "";
-          const a = (p.hiany_mm - mn) / tr;
-          const sz = "color-mix(in oklab, var(--parolgas) " + Math.round(a*100) +
-                     "%, var(--viz))";
-          return "<circle cx=\"" + xy[0] + "\" cy=\"" + xy[1] + "\" r=\"" +
-                 (7 + a*11).toFixed(1) + "\" fill=\"" + sz + "\" opacity=\".75\" " +
-                 "stroke=\"var(--papir)\" stroke-width=\"1.5\"><title>" + p.nev +
-                 ": " + dec(p.hiany_mm,0) + " mm vízhiány</title></circle>";
-        }).join("");
+        const folyok = (D.terkep.folyok || [])
+          .filter(f => f.rang >= 3)
+          .map(f => "<path d=\"" + f.path + "\" fill=\"none\" stroke=\"var(--viz)\" " +
+                    "stroke-width=\"" + (f.rang >= 5 ? 3 : 1.8) + "\" opacity=\".55\"/>")
+          .join("");
+
+        const korok = pont.slice()
+          .sort((a,b) => a.hiany_mm - b.hiany_mm)   // a nagyok felülre
+          .map(p => {
+            const a = (p.hiany_mm - mn) / tr;
+            return "<circle cx=\"" + X(p.lon).toFixed(1) + "\" cy=\"" + Y(p.lat).toFixed(1) +
+                   "\" r=\"" + (9 + a*13).toFixed(1) + "\" fill=\"" + szinez(a) +
+                   "\" opacity=\".82\" stroke=\"var(--papir)\" stroke-width=\"1.8\">" +
+                   "<title>" + p.nev + ": " + dec(p.hiany_mm,0) + " mm vízhiány</title></circle>";
+          }).join("");
 
         return "<div class=\"stresszterkep\">" +
           "<div class=\"stcim\">Hol a legnagyobb a hiány</div>" +
           "<svg viewBox=\"" + D.terkep.viewBox + "\">" +
-          "<path d=\"" + D.terkep.path + "\" fill=\"color-mix(in oklab,var(--tinta) 4%,transparent)\" " +
-          "stroke=\"var(--vonal)\" stroke-width=\"1.8\"/>" + folyok + korok + "</svg>" +
+          "<path d=\"" + D.terkep.path + "\" fill=\"color-mix(in oklab,var(--tinta) 5%,transparent)\" " +
+          "stroke=\"var(--vonal)\" stroke-width=\"2\"/>" + folyok + korok + "</svg>" +
           "<div class=\"stlab\"><span>" + dec(mn,0) + " mm</span>" +
           "<span class=\"stsav\"></span><span>" + dec(mx,0) + " mm</span></div>" +
           "<p class=\"stmegj\">A talaj vízhiánya " + TV.melyseg + " mélységig, " +
-          pont.length + " állomáson. A nagyobb, okkeresebb kör nagyobb hiányt jelöl — " +
-          "ott zárja a növény a leveleit. A körre mutatva megjelenik az állomás neve.</p></div>";
+          pont.length + " állomáson. A zöld a legkisebb, a piros a legnagyobb hiány. " +
+          "A körre mutatva megjelenik az állomás neve.</p></div>";
       })()}
          </div>`;
     }
