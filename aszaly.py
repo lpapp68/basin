@@ -167,7 +167,7 @@ def main():
     allomasok.sort(key=lambda a: -a["hiany_mm"])
     atlag = sum(a["hiany_mm"] for a in allomasok) / len(allomasok)
     # A térképre szétszórt mintát választunk; az átlag mindegyikből számol.
-    terkepre = kotelezo_pontok(allomasok, racsos(allomasok, 5, 4))
+    terkepre = kotelezo_pontok(allomasok, racsos(allomasok, 9, 7))
 
     p = json.loads(PARAMS.read_text(encoding="utf-8"))
     p["talaj_vizhiany"] = {
