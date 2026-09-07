@@ -42,7 +42,7 @@
   "identifier": "https://doi.org/10.5281/zenodo.21852060",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isAccessibleForFree": true,
-    "dateModified": "2026-09-07T19:36:46+00:00",
+    "dateModified": "2026-09-07T05:53:54+00:00",
     "temporalCoverage": "2002-04/..",
     "variableMeasured": [
       {"@type": "PropertyValue", "name": "Vízhozam", "unitText": "m3/s",
@@ -669,43 +669,6 @@ a{color:var(--viz)}
 .emegj em{display:block;margin-top:6px;font-size:11px;font-style:normal;
   font-family:var(--mono)}
 }
-/* ── Készletváltozás ─────────────────────────────────────────────────────
-   Két metszet: a változás időtávonként, és ugyanaz a hónap évről évre.
-   A sávok hossza a szokásos évszakos ingadozáshoz mért arányt mutatja —
-   négyszeres ingadozásnál telik meg a sáv. */
-#valt-sec{margin:30px 0 0}
-.valtfej{font-family:var(--mono);font-size:11px;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--halvany);margin-bottom:8px}
-.valtfej.masodik{margin-top:26px;padding-top:20px;border-top:1px solid var(--vonal)}
-.valtbe{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--tinta);
-  max-width:62ch}
-.valtsorok{display:flex;flex-direction:column;gap:5px}
-.valtsor{display:grid;grid-template-columns:5.5em 1fr 6em 3em;align-items:center;
-  gap:11px;padding:5px 0;border-top:1px solid var(--vonal-halk)}
-.valtsor:first-child{border-top:none}
-.valtsor b{font-size:13.5px;color:var(--tinta)}
-.vsav{height:9px;background:color-mix(in oklab,var(--tinta) 7%,transparent);
-  display:block}
-.vsav i{display:block;height:100%;background:var(--parolgas)}
-.vkm{font-family:var(--mono);font-size:13px;text-align:right;color:var(--parolgas);
-  font-weight:600}
-.vx{font-family:var(--mono);font-size:11.5px;text-align:right;color:var(--halvany)}
-
-/* Az évről évre oszlopok: az alap felül van, mert a lefelé nyúló oszlop
-   a hiányt mutatja — minél hosszabb, annál kevesebb a víz. */
-.evracs{display:flex;align-items:flex-start;gap:5px;margin-top:12px}
-.evoszlop{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
-.eok{width:100%;max-width:34px;background:var(--parolgas);opacity:.5;display:block}
-.evoszlop.szelso .eok{opacity:1}
-.evoszlop.szelso .ekm{color:var(--parolgas);font-weight:600}
-.eev{font-family:var(--mono);font-size:10.5px;color:var(--halvany)}
-.ekm{font-family:var(--mono);font-size:10.5px;color:var(--halvany)}
-.valtmegj{margin:10px 0 0;font-size:12px;line-height:1.55;color:var(--halvany)}
-@media(max-width:640px){
-  .valtsor{grid-template-columns:4.6em 1fr 5.2em;font-size:12px}
-  .vx{display:none}
-  .eev,.ekm{font-size:9px}
-}
 </style>
 </head>
 <body>
@@ -1005,55 +968,6 @@ a{color:var(--viz)}
       `Ezeknek a folyóknak a hozama ma a napi zárási maradékban jelenik meg, ` +
       `mert a határon túli szelvényük nincs bekötve. ` +
       `<em>${E.forras} · készült: ${(E.keszult||"").replace("T"," ").slice(0,16)}</em>`));
-  }
-
-  /* ── Készletváltozás ────────────────────────────────────────────────────
-     Két metszet, amit a nyers idősor nem mutat meg magától:
-     - mennyit változott a készlet különböző időtávokon, a szokásos évszakos
-       ingadozáshoz mérve (százalék helyett — a GRACE anomáliát ad);
-     - ugyanaz a hónap évről évre, ahol az évszak kiesik és a tartós irány
-       marad. Ez a sorozat legbeszédesebb metszete. */
-  if(D.keszlet_valtozas && (D.keszlet_valtozas.idotavok || []).length){
-    const V = D.keszlet_valtozas, ah = V.azonos_honap || [];
-    const HO = ["","január","február","március","április","május","június",
-                "július","augusztus","szeptember","október","november","december"];
-    const honev = HO[parseInt(V.honap_neve,10)] || V.honap_neve;
-
-    let h = `<div class="valtfej">Mennyit változott</div>` +
-      `<p class="valtbe">A készlet változása a szokásos évszakos ingadozáshoz ` +
-      `mérve. Ez a viszonyítás azért kell, mert a műholdas adat <b>eltérést</b> ` +
-      `mutat a sokéves átlaghoz képest, nem teljes készletet — nincs mihez ` +
-      `százalékot számolni. A szokásos ingadozás <b>±${dec(V.evszakos_ingadozas_km3,1)} km³</b>, ` +
-      `ennyivel tér el egy átlagos év tavasza a telétől.</p>` +
-      `<div class="valtsorok">`;
-
-    V.idotavok.forEach(t => {
-      const sz = Math.min(Math.abs(t.ingadozas_szorosa) / 4, 1) * 100;
-      h += `<div class="valtsor"><b>${t.cimke}</b>` +
-        `<span class="vsav"><i style="width:${sz.toFixed(0)}%"></i></span>` +
-        `<span class="vkm">${t.valtozas_km3 > 0 ? "+" : ""}${dec(t.valtozas_km3,1)} km³</span>` +
-        `<span class="vx">${dec(Math.abs(t.ingadozas_szorosa),1)}×</span></div>`;
-    });
-    h += `</div>`;
-
-    if(ah.length >= 5){
-      const km = ah.map(x => x.km3), mn = Math.min(...km), mx = Math.max(...km);
-      const teru = (mx - mn) || 1;
-      const legkisebb = km.indexOf(mn);
-      h += `<div class="valtfej masodik">Ugyanaz a hónap, évről évre</div>` +
-        `<p class="valtbe">Minden oszlop egy ${honev}i mérés. Így az évszakos ` +
-        `ingadozás kiesik, és a tartós irány marad.</p><div class="evracs">`;
-      ah.forEach((x, i) => {
-        const m = 12 + ((mx - x.km3) / teru) * 66;
-        h += `<div class="evoszlop${i === legkisebb ? " szelso" : ""}">` +
-          `<span class="eok" style="height:${m.toFixed(0)}px"></span>` +
-          `<span class="eev">${x.honap.slice(2,4)}</span>` +
-          `<span class="ekm">${dec(x.km3,0)}</span></div>`;
-      });
-      h += `</div><p class="valtmegj">A kiemelt oszlop a sorozat legalacsonyabb ` +
-        `${honev}i értéke. Az alsó szám km³ eltérés a sokéves átlagtól.</p>`;
-    }
-    $("#keszletvaltozas").innerHTML = h;
   }
 
   /* ── frissítés-jelző ── */
