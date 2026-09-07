@@ -1156,7 +1156,7 @@ a{color:var(--viz)}
             const a = (p.hiany_mm - mn) / tr;
             return "<circle cx=\"" + X(p.lon).toFixed(1) + "\" cy=\"" + Y(p.lat).toFixed(1) +
                    "\" r=\"" + (9 + a*13).toFixed(1) + "\" fill=\"" + szinez(a) +
-                   "\" opacity=\".82\" stroke=\"var(--papir)\" stroke-width=\"1.8\" class=\"tpont\">" +
+                   "\" opacity=\".82\" stroke=\"var(--papir)\" stroke-width=\"1.8\" class=\"tpont\" " +
                    "data-cimke=\"" + p.nev + ": " + dec(p.hiany_mm,0) + " mm vízhiány\"/>";
           }).join("");
 
