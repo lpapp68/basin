@@ -18,6 +18,7 @@ Forrás:
 import datetime as dt
 import json
 import os
+import statistics
 import time
 import ssl
 import pathlib
@@ -115,6 +116,45 @@ HOKORLAT_C = 30.0
 # Néhány OVF-mérce (Tiszabecs) hiányos tanúsítványláncot ad: a köztes
 # tanúsítvány nincs a válaszban, ezért a rendszer gyökérkészletével nem
 # hitelesíthető. A certifi naprakész készlete a legtöbb ilyen esetet megoldja.
+
+def _keszlet_valtozas(idosor):
+    """A készlet változásának mérőszámai a GRACE-idősorból.
+
+    Százalékot nem adunk: a GRACE ANOMÁLIÁT mér, nem abszolút készletet —
+    nincs mihez viszonyítani. Helyette a szokásos évszakos ingadozáshoz
+    mérünk, ami magából az adatból jön: az egyes évek szórásának átlaga.
+    Ha a tízéves csökkenés ennek háromszorosa, az értelmezhető állítás.
+
+    Az azonos hónap évről évre külön metszet: ott az évszakos ingadozás
+    kiesik, és a tartós irány marad."""
+    sor = (idosor or {}).get("sorozat") or []
+    if len(sor) < 24:
+        return None
+    km = [x["km3"] for x in sor]
+    ho = [x["honap"] for x in sor]
+
+    evek = {}
+    for h, k in zip(ho, km):
+        evek.setdefault(h[:4], []).append(k)
+    szoras = [statistics.pstdev(v) for v in evek.values() if len(v) >= 8]
+    ing = statistics.fmean(szoras) if szoras else 1.0
+
+    return {
+        "evszakos_ingadozas_km3": round(ing, 2),
+        "idotavok": [
+            {"cimke": c, "valtozas_km3": round(km[-1] - km[-1-n], 2),
+             "ingadozas_szorosa": round((km[-1] - km[-1-n]) / ing, 1)}
+            for n, c in ((12, "egy év"), (24, "két év"),
+                         (60, "öt év"), (120, "tíz év")) if len(km) > n],
+        "azonos_honap": [{"honap": h, "km3": round(k, 2)}
+                         for h, k in zip(ho, km) if h[5:] == ho[-1][5:]][-12:],
+        "honap_neve": ho[-1][5:],
+        "provenance": "muholdas",
+        "megjegyzes": ("A változás a legfrissebb ponthoz mérve. Százalék helyett "
+                       "a szokásos évszakos ingadozáshoz viszonyítunk, mert a "
+                       "GRACE anomáliát ad, nem abszolút készletet."),
+    }
+
 def _ssl_kontextus():
     """A rendszer tanúsítványkészletét használjuk, nem a certifi-ét.
 
@@ -599,6 +639,11 @@ def main():
         },
         "kivetel_m3s": kivetel,
         "egyenleg": p["egyenleg"],
+        # A készletváltozás mérőszámai. Százalék helyett a szokásos évszakos
+        # ingadozáshoz viszonyítunk: a GRACE anomáliát ad, nincs abszolút
+        # nevezője, ezért a százalékhoz kitalált szám kellene. Az ingadozás
+        # viszont magából az adatból jön.
+        "keszlet_valtozas": _keszlet_valtozas(p.get("keszlet_idosor")),
         "keszlet_idosor": p.get("keszlet_idosor"),
         "mdb_falak": p.get("mdb_falak"),
         "talaj_vizhiany": p.get("talaj_vizhiany"),
