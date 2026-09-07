@@ -408,6 +408,16 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
    gyakorlati tartományai adják a három fokozatot — közelítéssel, mert a
    növénytényező (Kc) nincs az arányban. */
 .ertblokk{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+/* ── Mini-térkép a vízstressz mellé ──────────────────────────────────────
+   A lámpa megmondja, mennyire baj; a térkép azt, hol. A pont színe és
+   mérete a vízhiányt kódolja: a víz kékjétől a párolgás okkeréig. */
+.minimap{flex:0 0 210px;margin-left:auto}
+.minimap svg{width:100%;height:auto;display:block}
+.mmlab{display:flex;align-items:center;gap:7px;margin-top:4px;
+  font-family:var(--mono);font-size:9.5px;color:var(--halvany)}
+.mmsav{flex:1;height:4px;background:linear-gradient(90deg,var(--viz),var(--parolgas))}
+.mmmegj{margin-top:3px;font-size:10px;line-height:1.4;color:var(--halvany)}
+@media(max-width:760px){.minimap{flex:1 1 100%;margin-left:0;max-width:260px}}
 .lampa{display:inline-flex;align-items:center;gap:7px;
   padding:5px 11px;border-radius:2px;border:1px solid currentColor;
   font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;
@@ -1102,6 +1112,34 @@ a{color:var(--viz)}
              <em>A skála a lehetségeshez viszonyít, nem a sokéves augusztusi
              átlaghoz — ahhoz több év adata kellene. ${OI2.datum}</em>
            </div>
+      ${(() => {
+        /* Mini-terkep: a lampa megmondja, MENNYIRE baj; ez azt, HOL.
+           A pont szine es merete a vizhianyt kodolja: a viz kekjetol a
+           parolgas okkerjeig. Szurke szandekosan nincs - az adatvizualizacioban
+           az hianyzo adatot jelent. */
+        const TV = D.talaj_vizhiany, pont = (TV && TV.allomasok) || [];
+        if(pont.length < 10) return "";
+        const hh = pont.map(p => p.hiany_mm).filter(v => typeof v === "number");
+        const mn = Math.min(...hh), mx = Math.max(...hh), tr = (mx - mn) || 1;
+        const la = pont.map(p => p.lat), lo = pont.map(p => p.lon);
+        const la0 = Math.min(...la), la1 = Math.max(...la),
+              lo0 = Math.min(...lo), lo1 = Math.max(...lo);
+        const X = v => 6 + (v - lo0) / ((lo1 - lo0) || 1) * 188;
+        const Y = v => 6 + (la1 - v) / ((la1 - la0) || 1) * 108;
+        const korok = pont.map(p => {
+          const a = (p.hiany_mm - mn) / tr;
+          const sz = `color-mix(in oklab, var(--parolgas) ${Math.round(a*100)}%, var(--viz))`;
+          const r = 2.6 + a * 3.4;
+          return `<circle cx="${X(p.lon).toFixed(1)}" cy="${Y(p.lat).toFixed(1)}" ` +
+                 `r="${r.toFixed(1)}" fill="${sz}" opacity=".82"><title>${p.nev}: ` +
+                 `${dec(p.hiany_mm,0)} mm</title></circle>`;
+        }).join("");
+        return `<div class="minimap"><svg viewBox="0 0 200 120">${korok}</svg>` +
+               `<div class="mmlab"><span>${dec(mn,0)}</span>` +
+               `<span class="mmsav"></span><span>${dec(mx,0)} mm</span></div>` +
+               `<div class="mmmegj">${pont.length} állomás a ${TV.allomas_db}-ból · ` +
+               `a nagyobb, okkeresebb pont nagyobb vízhiány</div></div>`;
+      })()}
          </div>`;
     }
   }
