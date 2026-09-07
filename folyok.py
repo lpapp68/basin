@@ -12,19 +12,30 @@ Futtatás:  python folyok.py
 
 import json, math, pathlib, urllib.request
 
-NE = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/"
-      "master/geojson/ne_10m_rivers_lake_centerlines.geojson")
+ALAP = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/"
+        "master/geojson/")
+# Két készlet: a világ nagy folyói, és külön az európai kiegészítés. Az első
+# adja a Dunát és a Tiszát, a második a Hernádot, az Ipolyt, a Sajót és a
+# Zagyvát — ezek a magyar vízrajz tájékozódási pontjai, nélkülük a térkép
+# pontfelhője nehezen olvasható.
+NE_FAJLOK = ("ne_10m_rivers_lake_centerlines.geojson",
+             "ne_10m_rivers_europe.geojson")
 DOBOZ = (16.0, 45.7, 22.9, 49.1)          # Ny, D, K, É
 GYORSITO = pathlib.Path("ne_rivers.geojson")
 
 
 def betolt():
+    """A két készlet egyesített jellemzőlistája."""
     if GYORSITO.exists():
         return json.loads(GYORSITO.read_text(encoding="utf-8"))
-    req = urllib.request.Request(NE, headers={"User-Agent": "equora-basin/2.3"})
-    nyers = urllib.request.urlopen(req, timeout=180).read().decode("utf-8")
-    GYORSITO.write_text(nyers, encoding="utf-8")
-    return json.loads(nyers)
+    egyben = {"type": "FeatureCollection", "features": []}
+    for f in NE_FAJLOK:
+        req = urllib.request.Request(ALAP + f,
+                                     headers={"User-Agent": "equora-basin/2.6"})
+        d = json.loads(urllib.request.urlopen(req, timeout=180).read().decode("utf-8"))
+        egyben["features"].extend(d.get("features") or [])
+    GYORSITO.write_text(json.dumps(egyben, ensure_ascii=False), encoding="utf-8")
+    return egyben
 
 
 def belul(p):
@@ -81,6 +92,8 @@ def main():
             if len(benn) < 4:
                 continue
             # csak a jelentősebb vízfolyások, hogy a térkép olvasható maradjon
+            # A névtelen apró vízfolyások kimaradnak, de a nevesek nem:
+            # a Hornád és az Ipoly rangja 8-as, mégis kellenek a térképre.
             if sr > 7 and not nev:
                 continue
             e = dp(benn, 0.008)
@@ -90,7 +103,16 @@ def main():
             ki.append({"nev": nev, "rang": sr, "path": d_attr, "pontok": len(e)})
 
     ki.sort(key=lambda r: (r["rang"], -r["pontok"]))
-    ki = ki[:24]
+    # A magyar vízrajz tájékozódási pontjai külön mennek: a rang szerinti
+    # levágás ezeket a lista végéről dobta le, pedig épp ezek segítik az
+    # olvasót eligazodni. Előbb kiemeljük őket, aztán töltjük fel a többivel.
+    KIEMELT = ("Hornád", "Ipel", "Zagyva", "Sebes Koros", "Hron", "Bodrog",
+               "Slana", "Rabca", "Raba", "Kapos", "Zala", "Koros", "Maros",
+               "Sajo", "Berettyo", "Kraszna", "Latorica", "Bodva")
+    kiemelt = [r for r in ki if any(k.lower() in (r["nev"] or "").lower()
+                                    for k in KIEMELT)]
+    tobbi = [r for r in ki if r not in kiemelt]
+    ki = (kiemelt + tobbi)[:34]
     tk["folyok"] = ki
     pathlib.Path("terkep.json").write_text(
         json.dumps(tk, ensure_ascii=False), encoding="utf-8")
