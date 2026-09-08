@@ -1,6 +1,7 @@
 kert_nap=2026-09-07
 feldolgozott_nap=2026-09-06
-ido=2026-09-08T04:23:50Z
+ido=2026-09-08T09:35:38Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
