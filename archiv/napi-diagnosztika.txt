@@ -1,6 +1,7 @@
 kert_nap=2026-09-10
-feldolgozott_nap=2026-09-09
-ido=2026-09-11T09:34:33Z
+feldolgozott_nap=2026-09-10
+ido=2026-09-11T14:18:40Z
 hol=bot
-visszalepes=igen
+visszalepes=nem
 --- naplo ---
+teljes medence falai:     raise URLError(err) urllib.error.URLError: <urlopen error [Errno 101] Network is unreachable> 
