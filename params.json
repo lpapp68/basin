@@ -3572,13 +3572,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-09-11T04:27:08+00:00",
+    "lekerve": "2026-09-11T09:34:33+00:00",
     "datum": "2026-09-08",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 712.0,
-      "vizallas_cm": 79.0,
-      "vizho_c": 20.7,
+      "hozam_m3s": 759.0,
+      "vizallas_cm": 88.0,
+      "vizho_c": 20.3,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3587,31 +3587,31 @@
       "sokeves_atlag_m3s": 3800.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 688.0,
+    "kulonbseg_m3s": 641.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -22.0,
-        "hozam_m3s": null,
-        "vizho_c": 20.5
+        "vizallas_cm": 1.0,
+        "hozam_m3s": 672.0,
+        "vizho_c": 20.4
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 14.0,
-        "hozam_m3s": 645.0,
-        "vizho_c": 21.1
+        "vizallas_cm": 37.0,
+        "hozam_m3s": 714.0,
+        "vizho_c": 20.1
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -41.0,
+        "vizallas_cm": -25.0,
         "hozam_m3s": null,
-        "vizho_c": 20.5
+        "vizho_c": 20.2
       },
       {
         "nev": "Ipoly, Ipolyszalka",
@@ -3619,7 +3619,7 @@
         "forras_nev": "Salka - Ipeľ",
         "vizallas_cm": 42.0,
         "hozam_m3s": 0.355,
-        "vizho_c": 18.0
+        "vizho_c": 16.8
       }
     ],
     "provenance": "mert",
@@ -4086,9 +4086,9 @@
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
-    "ertek": 13.0,
-    "vizallas_cm": 80.0,
-    "vizho_c": 18.9,
+    "ertek": 5.29,
+    "vizallas_cm": 61.0,
+    "vizho_c": 18.3,
     "provenance": "helyszini",
     "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
     "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
