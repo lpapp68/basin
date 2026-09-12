@@ -45,10 +45,22 @@ VARID_VIZALLAS = 4
 
 
 def _ssl_kontextus():
-    """A hydroinfo.hu tanúsítványát a Microsec e-Szignó adta ki — ez a magyar
-    hitelesítő nincs benne sem a certifi Mozilla-készletében, sem a
-    macOS-Python OpenSSL-készletében. A repóban tartott láncot adjuk hozzá."""
-    ctx = ssl.create_default_context()
+    """A magyar hitelesítő (Microsec e-Szignó) láncához mindkét rész kell.
+
+    A www.vizugy.hu és a hydroinfo.hu tanúsítványát a Microsec adta ki.
+    A szerver a köztes tanúsítványokat küldi, a GYÖKERET nem — azt sosem
+    küldik a láncban. A gyökér a certifi készletében megvan, a köztes
+    elemeket viszont a repóban tartjuk.
+
+    macOS-en a rendszerkészlet elfedte a hiányt, a bot Linux-futóján nem:
+    ott a hitelesítés elhasalt (CERTIFICATE_VERIFY_FAILED). Ezért kell
+    mindkét forrás."""
+    import ssl as _ssl
+    try:
+        import certifi
+        ctx = _ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx = _ssl.create_default_context()
     lanc = pathlib.Path(__file__).parent / "tanusitvanyok" / "vizugy-lanc.pem"
     if lanc.exists():
         try:
