@@ -156,29 +156,30 @@ def _keszlet_valtozas(idosor):
     }
 
 def _ssl_kontextus():
-    """A magyar hitelesítő (Microsec e-Szignó) láncához mindkét rész kell.
+    """Egyesített tanúsítvány-készlet: Mozilla gyökerek + magyar Microsec lánc.
 
-    A www.vizugy.hu és a hydroinfo.hu tanúsítványát a Microsec adta ki.
-    A szerver a köztes tanúsítványokat küldi, a GYÖKERET nem — azt sosem
-    küldik a láncban. A gyökér a certifi készletében megvan, a köztes
-    elemeket viszont a repóban tartjuk.
+    A www.vizugy.hu és a hydroinfo.hu tanúsítványát a Microsec e-Szignó adta
+    ki. A szerver a köztes elemeket küldi, a GYÖKERET nem — azt sosem küldik.
+    A gyökér a macOS rendszerkészletében megvan, a bot Linux-futóján nincs.
 
-    macOS-en a rendszerkészlet elfedte a hiányt, a bot Linux-futóján nem:
-    ott a hitelesítés elhasalt (CERTIFICATE_VERIFY_FAILED). Ezért kell
-    mindkét forrás."""
+    A rendszerkészlethez fűzés (load_verify_locations) nem oldotta meg: a
+    hitelesítés a futón továbbra is elhasalt. Ezért egyetlen, a repóban
+    tartott egyesített készletet használunk, ami mindenhez elég — a NASA-hoz
+    és az EUMETSAT-hoz is.
+
+    Frissítés: python tanusitvanyok/frissit.py"""
     import ssl as _ssl
-    try:
-        import certifi
-        ctx = _ssl.create_default_context(cafile=certifi.where())
-    except ImportError:
-        ctx = _ssl.create_default_context()
-    lanc = pathlib.Path(__file__).parent / "tanusitvanyok" / "vizugy-lanc.pem"
-    if lanc.exists():
+    bundle = pathlib.Path(__file__).parent / "tanusitvanyok" / "ca-bundle.pem"
+    if bundle.exists():
         try:
-            ctx.load_verify_locations(cafile=str(lanc))
+            return _ssl.create_default_context(cafile=str(bundle))
         except Exception:
             pass
-    return ctx
+    try:
+        import certifi
+        return _ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return _ssl.create_default_context()
 
 
 SSL_CTX = _ssl_kontextus()
