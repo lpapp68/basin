@@ -172,7 +172,13 @@ def _ssl_kontextus():
     bundle = pathlib.Path(__file__).parent / "tanusitvanyok" / "ca-bundle.pem"
     if bundle.exists():
         try:
-            return _ssl.create_default_context(cafile=str(bundle))
+            ctx = _ssl.create_default_context(cafile=str(bundle))
+            # A lánc a 2023-as e-Szignó CA-ig vezet; a fölötte lévő 2009-es
+            # gyökér sem a certifiben, sem itt nincs. A PARTIAL_CHAIN engedi,
+            # hogy a hitelesítés egy megbízhatóként betöltött köztes elemnél
+            # megálljon — enélkül az OpenSSL a teljes láncot követelné.
+            ctx.verify_flags |= _ssl.VERIFY_X509_PARTIAL_CHAIN
+            return ctx
         except Exception:
             pass
     try:
