@@ -46,6 +46,31 @@ MEZOK = "thematicId,nameText,localId,mediaWater,opActBegin,opActEnd"
 HATSAG = {"lat_min": 46.1, "lat_max": 47.3, "lon_min": 19.0, "lon_max": 20.2}
 
 
+
+def _ssl_kontextus():
+    """Egyesített tanúsítvány-készlet: Mozilla gyökerek + magyar Microsec lánc.
+
+    Az aszalymonitoring.vizugy.hu ugyanazt a hitelesítőt használja, mint a
+    többi OVF-felület. A szerver a köztes elemeket küldi, a gyökeret nem —
+    azt a macOS rendszerkészlete tartalmazza, a bot Linux-futója nem.
+
+    Frissítés lejáráskor: python tanusitvanyok/frissit.py"""
+    import ssl as _ssl
+    b = pathlib.Path(__file__).parent / "tanusitvanyok" / "ca-bundle.pem"
+    if b.exists():
+        try:
+            return _ssl.create_default_context(cafile=str(b))
+        except Exception:
+            pass
+    try:
+        import certifi
+        return _ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return _ssl.create_default_context()
+
+
+SSL_CTX = _ssl_kontextus()
+
 def kerdez(offset: int) -> dict:
     adat = urllib.parse.urlencode({
         "where": "1=1",
@@ -58,7 +83,7 @@ def kerdez(offset: int) -> dict:
     }).encode()
     req = urllib.request.Request(SZOLGALTATAS, data=adat,
                                  headers={"User-Agent": "equora-basin/2.1"})
-    with urllib.request.urlopen(req, timeout=120) as r:
+    with urllib.request.urlopen(req, timeout=120, context=SSL_CTX) as r:
         return json.loads(r.read().decode("utf-8"))
 
 

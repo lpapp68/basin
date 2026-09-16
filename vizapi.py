@@ -29,6 +29,7 @@ AMIT EZ AD A KORÁBBIHOZ KÉPEST
 
 import datetime as dt
 import json
+import pathlib
 import urllib.request
 
 TOKEN_URL = "https://data.vizugy.hu/AuthApi/auth/token"
@@ -43,13 +44,39 @@ CSAPADEK, TALAJNEDV, TALAJVIZ, RETEGVIZ = 71, 299, 69, 70
 _token = {"ertek": None, "lejar": None}
 
 
+
+def _ssl_kontextus():
+    """Egyesített tanúsítvány-készlet: Mozilla gyökerek + magyar Microsec lánc.
+
+    A data.vizugy.hu a Microsec e-Szignó hitelesítőt használja. A szerver a
+    köztes elemeket küldi, a gyökeret nem — azt a macOS rendszerkészlete
+    tartalmazza, a bot Linux-futója nem. Innen a CERTIFICATE_VERIFY_FAILED,
+    ami helyben láthatatlan volt, a boton viszont mindent megállított.
+
+    Frissítés lejáráskor: python tanusitvanyok/frissit.py"""
+    import ssl as _ssl
+    b = pathlib.Path(__file__).parent / "tanusitvanyok" / "ca-bundle.pem"
+    if b.exists():
+        try:
+            return _ssl.create_default_context(cafile=str(b))
+        except Exception:
+            pass
+    try:
+        import certifi
+        return _ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return _ssl.create_default_context()
+
+
+SSL_CTX = _ssl_kontextus()
+
 def token() -> str:
     """Gyorsítótárazott token. A JWT exp mezőjéből tudjuk, meddig él."""
     most = dt.datetime.now(dt.timezone.utc)
     if _token["ertek"] and _token["lejar"] and most < _token["lejar"]:
         return _token["ertek"]
     r = urllib.request.Request(TOKEN_URL, headers=FEJ)
-    t = json.loads(urllib.request.urlopen(r, timeout=45).read())["access_token"]
+    t = json.loads(urllib.request.urlopen(r, timeout=45, context=SSL_CTX).read())["access_token"]
     import base64
     resz = t.split(".")[1]
     resz += "=" * (-len(resz) % 4)
@@ -67,7 +94,7 @@ def _hivas(ut: str, adat=None):
         fej["Content-Type"] = "application/json"
         test = json.dumps(adat).encode()
     r = urllib.request.Request(API + ut, data=test, headers=fej)
-    return json.loads(urllib.request.urlopen(r, timeout=90).read())
+    return json.loads(urllib.request.urlopen(r, timeout=90, context=SSL_CTX).read())
 
 
 def allomasok(tipus: int = 11) -> list:

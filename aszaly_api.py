@@ -26,6 +26,7 @@ egyáltalán nem volt meg — abból valódi gyökérzóna-profil rajzolható.
 import datetime as dt
 import html
 import json
+import pathlib
 import urllib.parse
 import urllib.request
 
@@ -39,10 +40,35 @@ TALAJNEDV = {10: 8, 20: 9, 30: 10, 45: 11, 60: 12, 75: 13}
 ASZALYINDEX, VIZHIANY_35, VIZHIANY_80 = 16, 17, 18
 
 
+
+def _ssl_kontextus():
+    """Egyesített tanúsítvány-készlet: Mozilla gyökerek + magyar Microsec lánc.
+
+    Az aszalymonitoring.vizugy.hu ugyanazt a hitelesítőt használja, mint a
+    többi OVF-felület. A szerver a köztes elemeket küldi, a gyökeret nem —
+    azt a macOS rendszerkészlete tartalmazza, a bot Linux-futója nem.
+
+    Frissítés lejáráskor: python tanusitvanyok/frissit.py"""
+    import ssl as _ssl
+    b = pathlib.Path(__file__).parent / "tanusitvanyok" / "ca-bundle.pem"
+    if b.exists():
+        try:
+            return _ssl.create_default_context(cafile=str(b))
+        except Exception:
+            pass
+    try:
+        import certifi
+        return _ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return _ssl.create_default_context()
+
+
+SSL_CTX = _ssl_kontextus()
+
 def _hivas(mezok: dict):
     test = urllib.parse.urlencode(mezok).encode()
     r = urllib.request.Request(API, data=test, headers=FEJ)
-    nyers = urllib.request.urlopen(r, timeout=90).read().decode("utf-8", "replace")
+    nyers = urllib.request.urlopen(r, timeout=90, context=SSL_CTX).read().decode("utf-8", "replace")
     d = json.loads(html.unescape(nyers))
     return d.get("entries", d) if isinstance(d, dict) else d
 
