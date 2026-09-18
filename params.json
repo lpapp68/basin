@@ -20,7 +20,7 @@
     "ertek": 1.13,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-09-16, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-09-16",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
@@ -3579,7 +3579,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-09-17T13:22:30+00:00",
+    "lekerve": "2026-09-18T00:08:18+00:00",
     "datum": "2026-09-14",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3757,8 +3757,8 @@
   },
   "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli.",
   "parolgas_era5_mm_nap": {
-    "ertek": 0.97,
-    "datum": "2026-09-10",
+    "ertek": 1.5,
+    "datum": "2026-09-11",
     "provenance": "modellezett",
     "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
@@ -5015,7 +5015,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-09-17T22:04:19Z",
+    "keszult": "2026-09-18T00:08:21Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
