@@ -8,20 +8,20 @@
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
-    "ertek": 0.6,
+    "ertek": 0.52,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-09-17, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 48,
-    "datum": "2026-09-17",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-09-18, területsúlyozott átlag országhatár-maszkkal",
+    "kor_ora": 24,
+    "datum": "2026-09-18",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 0.59,
+    "ertek": 0.77,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-09-17, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 48,
-    "datum": "2026-09-17",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-09-18, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 24,
+    "datum": "2026-09-18",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -113,30 +113,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-09-17",
-    "et_ref_mm": 2.32,
-    "et_act_mm": 0.59,
-    "vizstressz": 0.256,
+    "datum": "2026-09-18",
+    "et_ref_mm": 2.68,
+    "et_act_mm": 0.77,
+    "vizstressz": 0.289,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 1.26,
-        "m3s": 628
+        "hiany_mm_nap": 1.37,
+        "m3s": 680
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 1.72,
-        "m3s": 858
+        "hiany_mm_nap": 1.9,
+        "m3s": 947
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 2.19,
-        "m3s": 1089
+        "hiany_mm_nap": 2.44,
+        "m3s": 1213
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-09-17, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-09-18, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -146,7 +146,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-09-17",
+    "datum": "2026-09-18",
     "honap": 9,
     "osszes_m3s": 44.6,
     "fogyaszto_m3s": 21.7,
@@ -3579,7 +3579,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-09-19T09:10:20+00:00",
+    "lekerve": "2026-09-19T10:49:26+00:00",
     "datum": "2026-09-18",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -4075,18 +4075,18 @@
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
-    "ertek": 1.02,
-    "datum": "2026-09-17",
-    "allomas_db": 268,
+    "ertek": 0.04,
+    "datum": "2026-09-18",
+    "allomas_db": 266,
     "provenance": "helyszini",
-    "forras": "OMSZ (HungaroMet) nyílt adattár, 268 automata állomás órás csapadékösszege, rácsos területi súlyozással",
+    "forras": "OMSZ (HungaroMet) nyílt adattár, 266 automata állomás órás csapadékösszege, rácsos területi súlyozással",
     "figyelmeztetes": "Földi mérés, pontszerű: az állomások között interpolálni kell. A rácsos súlyozás azt kezeli, hogy a hálózat egyenetlen — cellánként átlagolunk, majd a cellák átlagát vesszük, így a sűrűn műszerezett térségek nem nyomják el a ritkábbakat.",
     "hivatkozas": "odp.met.hu"
   },
   "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk.",
   "et_ref_omsz_mm_nap": {
-    "ertek": 3.3,
-    "datum": "2026-09-17",
+    "ertek": 2.9,
+    "datum": "2026-09-18",
     "allomas_db": 249,
     "provenance": "helyszini",
     "forras": "OMSZ (HungaroMet) nyílt adattár, 249 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
