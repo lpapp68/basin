@@ -1,7 +1,6 @@
 kert_nap=2026-09-23
-feldolgozott_nap=2026-09-22
-ido=2026-09-24T04:36:31Z
+feldolgozott_nap=2026-09-23
+ido=2026-09-24T09:54:02Z
 hol=bot
-visszalepes=igen
+visszalepes=nem
 --- naplo ---
-IMERG műholdas csapadék:     raise DownloadFailure(msg) earthaccess.exceptions.DownloadFailure: Download failed for https://data.gesdisc.earthdata.nasa.gov/data/GPM_L3/GPM_3IMERGDE.07/2026/09/3B-DAY-E.MS.MRG.3IMERG.20260922-S000000-E235959.V07C.nc4. Status code: 502 
