@@ -1,6 +1,7 @@
 kert_nap=2026-10-02
 feldolgozott_nap=2026-10-01
-ido=2026-10-03T00:25:15Z
+ido=2026-10-03T06:22:01Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+teljes medence falai:                                       ^^^^^^^^^^^^^^^^^^^ TypeError: unsupported format string passed to NoneType.__format__ 
