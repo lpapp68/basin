@@ -16,6 +16,22 @@ Két fájl:
 
 A napi.csv-t mindig újraszámoljuk az oras.csv-ből, ezért idempotens: kétszer
 futtatva sem duplázódik semmi.
+
+JAVÍTÁS, 2026-10-05 — két hiba, mindkettő a napi mérleget érintette:
+
+1. Visszacsatolás. A rogzit() a mérleg hozamát írta az órás sorba, a mérleg pedig,
+   mióta a legutóbbi teljes napból számol, épp ebből az archívumból veszi a hozamot.
+   A kör bezárult: a kilépő hozam hetekig ugyanaz az érték maradt, a belépő naponta
+   a Hernád-taggal kúszott felfelé. Mostantól a rogzit() a mércék pillanatnyi
+   összegét írja (pillanatkep_m3s, Hernád nélkül — azt a mérleg adja hozzá).
+   A hozamot csak a javítás utáni sorokból átlagoljuk: a szennyeződés kezdete a
+   mostani archívumból bizonytalan. A régi sorok a helyükön maradnak; az első
+   helyes rögzítés idejét az archiv/.hozam-javitas jelzőfájl őrzi.
+
+2. Elvesző légköri tagok. A napi.csv minden futáskor újraíródott, a csapadékot és
+   a párolgást pedig csak arra a napra töltöttük ki, amelyikre a params.json éppen
+   adatot hozott — a korábbi napokét az újraírás letörölte, a teljes napok száma
+   egyen ragadt. Mostantól a korábban tárolt értékek megmaradnak.
 """
 
 import csv
@@ -27,6 +43,9 @@ from collections import defaultdict
 ARCHIV = pathlib.Path("archiv")
 ORAS = ARCHIV / "oras.csv"
 NAPI = ARCHIV / "napi.csv"
+# Az első helyes, mércékből vett hozamrögzítés ideje. A korábbi sorok hozama
+# kimarad a napi átlagból (visszacsatolás, lásd fent); a Paks-adatuk marad.
+JAVITAS = ARCHIV / ".hozam-javitas"
 
 ORAS_FEJLEC = ["rogzitve", "eszleles", "q_be", "q_ki", "paks_cm", "paks_q", "paks_c"]
 NAPI_FEJLEC = ["nap", "mintak", "q_be", "q_ki", "paks_cm", "paks_q", "paks_c",
@@ -47,15 +66,34 @@ def _nap(eszleles: str) -> str:
         return dt.date.today().isoformat()
 
 
+def _javitas_kezdete():
+    """Az első helyes hozamrögzítés ideje (ISO, UTC), vagy None."""
+    try:
+        return JAVITAS.read_text(encoding="utf-8").strip() or None
+    except FileNotFoundError:
+        return None
+
+
 def rogzit(out: dict) -> None:
-    """Egy sor az aktuális futásból. Csak MÉRT tételeket tárolunk."""
+    """Egy sor az aktuális futásból. Csak MÉRT tételeket tárolunk.
+
+    A hozam a mércék pillanatnyi összege. A merleg_m3s hozama ebből az
+    archívumból számolt napi átlag: azt visszaírva az archívum a saját
+    kimenetét táplálná vissza.
+    """
     ARCHIV.mkdir(exist_ok=True)
     paks = out.get("paks") or {}
+    most = out.get("pillanatkep_m3s") or {}
+    q_ki = most.get("hozam_ki")
+    rogzitve = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    if not JAVITAS.exists():
+        JAVITAS.write_text(rogzitve + "\n", encoding="utf-8")
     sor = {
-        "rogzitve": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "rogzitve": rogzitve,
         "eszleles": out["orak"]["oras"]["utolso"],
-        "q_be": out["merleg_m3s"]["hozam_be"]["ertek"],
-        "q_ki": out["merleg_m3s"]["hozam_ki"]["ertek"],
+        "q_be": most.get("hozam_be"),
+        # A v2.1 előjel-konvenciója: a távozó hozam negatív.
+        "q_ki": -abs(q_ki) if q_ki is not None else None,
         "paks_cm": paks.get("vizallas_cm"),
         "paks_q": paks.get("hozam_m3s"),
         "paks_c": paks.get("vizho_c"),
@@ -80,6 +118,28 @@ def napi_osszegzes(params: dict) -> list[dict]:
             if nap:
                 csoport[nap].append(r)
 
+    # A korábban tárolt légköri tagok: a napi.csv újraírásakor megmaradnak.
+    korabbi = {}
+    if NAPI.exists():
+        with NAPI.open(encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                korabbi[r.get("nap")] = r
+
+    def tarolt(nap, kulcs):
+        v = (korabbi.get(nap) or {}).get(kulcs)
+        try:
+            return float(v) if v not in (None, "") else None
+        except ValueError:
+            return None
+
+    javitas = _javitas_kezdete()
+
+    def tiszta(sorok):
+        """A hozamátlaghoz csak a javítás utáni sorok számítanak."""
+        if javitas is None:
+            return []
+        return [s for s in sorok if (s.get("rogzitve") or "") >= javitas]
+
     def atl(sorok, kulcs):
         ertekek = [float(s[kulcs]) for s in sorok if s.get(kulcs) not in (None, "")]
         return round(statistics.fmean(ertekek), 1) if ertekek else None
@@ -94,14 +154,16 @@ def napi_osszegzes(params: dict) -> list[dict]:
     napok = []
     for nap in sorted(csoport):
         s = csoport[nap]
+        q = tiszta(s)
         napok.append({
-            "nap": nap, "mintak": len(s),
-            "q_be": atl(s, "q_be"), "q_ki": atl(s, "q_ki"),
+            "nap": nap, "mintak": len(q),
+            "q_be": atl(q, "q_be"), "q_ki": atl(q, "q_ki"),
             "paks_cm": atl(s, "paks_cm"), "paks_q": atl(s, "paks_q"),
             "paks_c": atl(s, "paks_c"),
-            # A légköri tag csak akkor tartozik ehhez a naphoz, ha a dátuma egyezik.
-            "csapadek_mm": csap.get("ertek") if csap.get("datum") == nap else None,
-            "parolgas_mm": par.get("ertek") if par.get("datum") == nap else None,
+            # A légköri tag ahhoz a naphoz tartozik, amelyikre a forrás dátuma szól;
+            # a többi nap korábban tárolt értéke megmarad.
+            "csapadek_mm": csap.get("ertek") if csap.get("datum") == nap else tarolt(nap, "csapadek_mm"),
+            "parolgas_mm": par.get("ertek") if par.get("datum") == nap else tarolt(nap, "parolgas_mm"),
             "csapadek_datum": csap.get("datum"), "parolgas_datum": par.get("datum"),
         })
 

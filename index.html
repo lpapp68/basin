@@ -297,6 +297,47 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,4.4vw,46px);lin
 .tetel.ossz{border-top:1.5px solid var(--tinta);margin-top:4px}
 .tetel.ossz .cim{font-weight:600}
 .tetel.ossz .szam{color:var(--ismeretlen)}
+/* 1. panel · állítható időablak (pilot, 2026-10) */
+.ablak{margin:0 0 18px;padding:12px 14px 10px;border:1px solid var(--vonal);background:var(--papir)}
+.ablak-fej{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.ablak-fej .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--halvany)}
+.ablak-fej b{font-family:var(--mono);font-size:15px;font-weight:600}
+.sokapcs{margin-left:auto;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;background:none;border:1px solid var(--vonal);color:var(--tinta);
+  padding:2px 8px;cursor:pointer}
+.sokapcs[aria-pressed="false"]{color:var(--halvany);border-style:dashed}
+.ablak input[type=range]{width:100%;margin:6px 0 0;accent-color:var(--viz)}
+.ablak-skala{position:relative;height:15px;font-family:var(--mono);font-size:10px;color:var(--halvany)}
+.ablak-skala span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.ablak-skala span:first-child{transform:none}
+.ablak-skala span:last-child{transform:translateX(-100%)}
+.ablak-ora{margin-top:8px;font-size:12.5px;color:var(--halvany)}
+.ablak-ora b{font-family:var(--mono);font-weight:600;color:var(--tinta)}
+.sogorbe{margin-top:10px}
+.sogorbe svg{display:block;width:100%;height:auto;overflow:visible}
+.sogorbe svg text{font-family:var(--mono);font-size:10px;fill:var(--halvany)}
+.sogorbe .tengely{stroke:var(--tinta);stroke-width:1}
+.sogorbe .racs{stroke:var(--vonal-halk);stroke-width:1}
+.sogorbe .nativ{stroke:var(--tinta);stroke-width:1;stroke-dasharray:3 3}
+.sogorbe .g{fill:none;stroke:var(--ismeretlen);stroke-width:2}
+.sogorbe .gy{fill:rgba(122,74,110,.10)}
+.sogorbe .akt{fill:var(--ismeretlen);stroke:var(--papir);stroke-width:2}
+.sogorbe line.akt{stroke:var(--ismeretlen);stroke-width:2}
+.sogorbe p{margin:6px 0 0;font-size:11.5px;line-height:1.5;color:var(--halvany)}
+/* a só: a bizonytalan jegyek halványak, a biztosak teltek */
+.tetel .szam i.so{font-style:normal;opacity:.42}
+.tetel .szam.nincs{font-size:13px;font-weight:500;color:var(--halvany)}
+.rud2 b.sav{position:absolute;top:-3px;bottom:-3px;
+  border-left:1px solid rgba(22,38,43,.45);border-right:1px solid rgba(22,38,43,.45);
+  background-image:radial-gradient(rgba(22,38,43,.38) .8px,transparent 1.1px);background-size:4px 4px}
+.pr.kitoltes{color:var(--ismeretlen);
+  background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(122,74,110,.16) 3px 6px)}
+.tetel .meta .gyanus{color:var(--rekord)}
+p.elojel.pilot{margin-top:8px;border-top:0;padding-top:0}
+@media(prefers-reduced-motion:reduce){.tetel .szam i.so{opacity:.55}}
+/* keskeny kijelzőn az „1 hét” felirat rácsúszna az „1 hó”-ra; a kiválasztott ablak neve fent amúgy is látszik */
+@media(max-width:520px){.ablak-skala span:nth-child(5){display:none}}
 p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
   border-top:1px solid var(--vonal-halk)}
 .balsor{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 0}
@@ -793,12 +834,28 @@ a{color:var(--viz)}
 
     <div class="panel" id="p-pulzus">
       <h3>1 · Pulzus <span class="pontos" id="pulzusnap">a modell öt adata</span></h3>
-      <p class="alcim">Öt számadat <b>ugyanarról a napról</b>, mind azonos
-      mértékegységben. A modell akkor értelmezhető, ha minden adata egyetlen naphoz
-      tartozik: a tegnapi eső egy része ma is a mederben van, ezért a folyók hozama is
-      aznapi átlag, az órás mintákból számolva.</p>
+      <p class="alcim">Öt számadat <b>ugyanarra az időablakra</b>, mind azonos
+      mértékegységben. Az ablak a legutóbbi teljes naphoz van horgonyozva, mert a modell
+      akkor értelmezhető, ha minden adata ugyanahhoz az időszakhoz tartozik: a tegnapi eső
+      egy része ma is a mederben van. Az ablak hossza állítható, egy másodperctől egy hónapig.</p>
+      <div class="ablak" id="ablak">
+        <div class="ablak-fej">
+          <span class="u">Időablak</span><b id="ablakfelirat">1 nap</b>
+          <button type="button" class="sokapcs" id="sokapcs" aria-pressed="true"
+            title="A bizonytalan jegyek villódzása: a 90%-os tartományon belül húzott minták">só: be</button>
+        </div>
+        <input type="range" id="ablakcsuszka" min="0" max="22" step="1" value="15"
+          aria-label="Az időablak hossza, egy másodperctől egy hónapig">
+        <div class="ablak-skala" id="ablakskala"></div>
+        <div class="ablak-ora" id="ablakora" hidden>
+          <label for="oracsuszka">A horgonynapon belül: <b id="orafelirat">—</b></label>
+          <input type="range" id="oracsuszka" min="1" max="1440" step="1" value="720"
+            aria-label="Az ablak vége a napon belül">
+        </div>
+        <div class="sogorbe" id="sogorbe"></div>
+      </div>
       <p class="alcim mert" id="mertekegyseg"></p>
-      <p class="alcim skala"><b>Érkezik és távozik.</b> A felső két sor hozza a vizet, a következő kettő elviszi. A sáv hossza az arányt mutatja: a leghosszabb a legnagyobb adat. A pontos értéket minden sor végén kiírjuk, m³/s-ben és mm/nap-ban is.</p>
+      <p class="alcim skala"><b>Érkezik és távozik.</b> A felső két sor hozza a vizet, a következő kettő elviszi. A sáv hossza az arányt mutatja: a leghosszabb a legnagyobb adat, a szemcsés sáv a 90%-os tartomány. A halvány, villódzó jegyek a bizonytalanok: a tartományon belül húzott minták, így a pontatlanság mindkét irányba téved, és az átlaguk a középérték.</p>
       <div id="pulzus"></div>
     </div>
 
@@ -1414,61 +1471,436 @@ a{color:var(--viz)}
 
   /* ── 1 Pulzus ── */
   const M=D.merleg_m3s, MM=D.mm_nap;
-  if(D.merleg_datum) $("#pulzusnap").textContent = D.merleg_datum + " · a legutóbbi teljes nap";
-  // Minden adat két formában jelenik meg. A mm/nap a terület egészére szétterített
-  // változat — ez teszi összevethetővé a csapadékot és a párolgást (amelyeket eleve így
-  // mérnek) a folyók hozamával.
+  // PILOT (2026-10): az 1. panel időablaka állítható, egy másodperctől egy hónapig.
+  //
+  // A mérleg natív felbontása EGY NAP: a csapadék és a párolgás napi adat, a
+  // hozam napi átlag. Ettől két irányba térünk el, és mindkét irányban
+  // kitöltésre van szükség:
+  //   • napon belül (1 mp – 12 óra): a napi összegből egy napon belüli
+  //     eloszlással számolunk (a párolgás a napjárást követi, a hozam sima),
+  //     és a még fel nem bontott ingadozást frakcionális Brown-hídként
+  //     kezeljük — a napi összeghez kötve, tehát 1 napnál eltűnik;
+  //   • több napra (2 nap – 1 hónap): az archívum napi soraiból összegzünk,
+  //     a hiányzó napokat a megfigyelt napok átlagával töltjük ki.
+  // A bizonytalanságot "sózva" mutatjuk: a biztos jegyek állnak, a
+  // bizonytalanok a 90%-os tartományon belül húzott mintákat követik, így a
+  // hiba mindkét irányba téved. A minta magja az adat generálási ideje + a tag
+  // + az ablak + a képkocka sorszáma: ugyanaz a kép bárhol újragenerálható.
   {
-    const egymm = 0.001 * D.doboz.terulet_km2 * 1e6 / 86400;
-    $("#mertekegyseg").innerHTML =
-      `Minden adat <b>két formában</b> jelenik meg. A <b>m³/s</b> a vízforgalom: egy köbméter
-       másodpercenként annyi, mint egy ezerliteres kád minden másodpercben. A <b>mm/nap</b>
-       ugyanaz az adat <b>Magyarország teljes területére</b> szétterítve, mintha aznap ilyen vastag vízréteg borítaná az egészet. ${D.doboz.nev} ${num(D.doboz.terulet_km2)} km²-én
-       <b>1 mm/nap ≈ ${num(Math.round(egymm))} m³/s</b>. A mm/nap azért kell, mert a
-       csapadékot és a párolgást eleve így mérik, és így válik összevethetővé a folyók
-       hozamával.`;
-  }
-  // A sávok hossza EGYMÁSHOZ viszonyít: a leghosszabb az öt tétel közül a
-  // legnagyobb, a többi ehhez arányos. Nincs külső viszonyítási alap —
-  // sem a lehetséges párolgás, sem a valaha mért legnagyobb hozam. Ezt a
-  // panel alatt ki is mondjuk, mert a sáv látványa mást sugallhat.
-  const maxAbs=Math.max(...Object.values(M).map(t=>Math.abs(t.ertek)));
+    const W = window;
+    const NAP = 86400;
+    const TERULET_M2 = D.doboz.terulet_km2 * 1e6;
+    const MM2M3S = 0.001 * TERULET_M2 / NAP;              // 1 mm/nap → m³/s
+    const REF = D.merleg_datum || null;                    // horgony: a legutóbbi teljes nap
+    const TAGOK = [["csapadek","Csapadék · érkezik"],["hozam_be","Folyókon beérkezik"],
+                   ["parolgas","Elpárolog · távozik"],["hozam_ki","Folyókon távozik"]];
+    // Mérési bizonytalanság (1σ, relatív) — pilot-feltevés forrástípusonként.
+    const MERESI = {csapadek:0.10, hozam_be:0.05, parolgas:0.20, hozam_ki:0.05};
+    // Napon belüli, fel nem bontott ingadozás: σ egy órás ablakra, Hurst-kitevő.
+    const NAPON_BELUL = {hozam_be:{s:0.02,H:0.95}, parolgas:{s:0.10,H:0.95},
+                         hozam_ki:{s:0.02,H:0.95}};
+    const CSAP_NEDVES = 0.25;     // esős napon az órák ennyied részében esik
+    const ET_EJJEL = 0.05;        // a napi párolgás éjszakai alapszintje
+    const KITOLT_CSAP_MM = 0.3;   // hiányzó nap csapadékának napi σ-ja, mm
+    const KITOLT_ET = 0.30;       // hiányzó nap párolgásának relatív napi σ-ja
+    const LAT = 47.16, LON = 19.50;                        // az ország középpontja
+    const LEPCSOK = [[1,"1 mp"],[2,"2 mp"],[5,"5 mp"],[10,"10 mp"],[30,"30 mp"],
+      [60,"1 perc"],[120,"2 perc"],[300,"5 perc"],[600,"10 perc"],[1800,"30 perc"],
+      [3600,"1 óra"],[7200,"2 óra"],[10800,"3 óra"],[21600,"6 óra"],[43200,"12 óra"],
+      [86400,"1 nap"],[172800,"2 nap"],[259200,"3 nap"],[432000,"5 nap"],[604800,"1 hét"],
+      [1209600,"2 hét"],[1814400,"3 hét"],[2592000,"1 hónap"]];
+    const FOCIMKEK = [[0,"1 mp"],[5,"1 perc"],[10,"1 óra"],[15,"1 nap"],[19,"1 hét"],[22,"1 hó"]];
+    const NAP_INDEX = 15;
+    const ROVID_HO = ["jan.","febr.","márc.","ápr.","máj.","jún.","júl.","aug.","szept.","okt.","nov.","dec."];
 
-  // A skálafeliratokat és a rácsvonalakat elhagytuk: a sávok fölé írt
-  // osztások egymásra csúsztak, és a kétirányú tengely nehezen volt
-  // olvasható. Minden sor a saját értékét mutatja számmal; a sáv csak
-  // az arányt érzékelteti.
-  [["csapadek","Csapadék · érkezik"],["hozam_be","Folyókon beérkezik"],
-   ["parolgas","Elpárolog · távozik"],["hozam_ki","Folyókon távozik"],
-   ["keszletvaltozas","= Napi zárási maradék"]].forEach(([k,cim])=>{
-    const t=M[k], neg=t.ertek<0, ossz=(k==="keszletvaltozas");
-    const r=el("div","tetel"+(ossz?" ossz":""));
-    r.appendChild(el("div","cim",cim));
-    r.appendChild(el("div","szam "+(neg?"neg":"poz"), sgn(t.ertek)+'<small> m³/s</small>'));
-    const rud=el("div","rud2");
-    const i=el("i", neg?"balra":"jobbra");
-    i.style.width=(Math.abs(t.ertek)/maxAbs*50)+"%";
-    // A mozgás az adatot hordozza: a minta sebessége a tétel nagyságával arányos,
-    // tehát a nagyobb hozam láthatóan gyorsabban folyik. Nulla értéknél áll.
-    if(Math.abs(t.ertek) > 0){
-      const mp = Math.max(1.6, 9 - Math.abs(t.ertek)/maxAbs*7);
-      i.style.setProperty("--ido", mp.toFixed(2)+"s");
-      // A párolgás függőleges jelenség: ott a minta FELFELÉ száll, nem oldalra.
-      i.classList.add(k==="parolgas" ? "parolog" : "aramlik");
+    // ── naptár és napjárás ──
+    const napMs = s => { const [y,m,d] = s.split("-").map(Number); return Date.UTC(y,m-1,d); };
+    const napStr = ms => new Date(ms).toISOString().slice(0,10);
+    const leptet = (s,n) => napStr(napMs(s) + n*NAP*1000);
+    const rovidNap = s => { const d = new Date(napMs(s)); return `${ROVID_HO[d.getUTCMonth()]} ${d.getUTCDate()}.`; };
+    const utolsoVasarnap = (y,h) => { const d = new Date(Date.UTC(y,h+1,0)); return d.getUTCDate() - d.getUTCDay(); };
+    const eltolas = s => {                                 // a budapesti idő eltolása UTC-hez, percben
+      const d = new Date(napMs(s)), y = d.getUTCFullYear(), h = d.getUTCMonth(), n = d.getUTCDate();
+      const nyari = (h>2 && h<9) || (h===2 && n>=utolsoVasarnap(y,2)) || (h===9 && n<utolsoVasarnap(y,9));
+      return nyari ? 120 : 60;
+    };
+    const ma = () => new Date().toISOString().slice(0,10);
+    const HORGONY = REF || ma();
+    const NAPJARAS = (() => {                              // napkelte, napnyugta helyi időben, percben
+      const N = Math.round((napMs(HORGONY) - Date.UTC(new Date(napMs(HORGONY)).getUTCFullYear(),0,1)) / 864e5) + 1;
+      const g = 2*Math.PI/365*(N-1);
+      const eqt = 229.18*(0.000075+0.001868*Math.cos(g)-0.032077*Math.sin(g)
+                  -0.014615*Math.cos(2*g)-0.040849*Math.sin(2*g));
+      const dek = 0.006918-0.399912*Math.cos(g)+0.070257*Math.sin(g)-0.006758*Math.cos(2*g)
+                  +0.000907*Math.sin(2*g)-0.002697*Math.cos(3*g)+0.00148*Math.sin(3*g);
+      const fi = LAT*Math.PI/180;
+      const x = Math.cos(90.833*Math.PI/180)/(Math.cos(fi)*Math.cos(dek)) - Math.tan(fi)*Math.tan(dek);
+      const ha = Math.acos(Math.max(-1, Math.min(1, x)))*180/Math.PI;
+      const ofs = eltolas(HORGONY);
+      const kel = 720 - 4*(LON+ha) - eqt + ofs, nyug = 720 - 4*(LON-ha) - eqt + ofs;
+      return {kel, nyug, L: nyug-kel};
+    })();
+    // A párolgás napjárása: éjszakai alapszint + szinuszos nappali ív, a napi
+    // átlag 1. Az ablakra eső átlagos szorzót zárt alakban számoljuk.
+    const etSzorzo = (t1,t2) => {
+      const {kel, L} = NAPJARAS, A = 1440*Math.PI/(2*L);
+      const u1 = Math.max(t1,kel), u2 = Math.min(t2,kel+L);
+      const nappal = u2>u1 ? A*(L/Math.PI)*(Math.cos(Math.PI*(u1-kel)/L) - Math.cos(Math.PI*(u2-kel)/L)) : 0;
+      return ET_EJJEL + (1-ET_EJJEL)*nappal/(t2-t1);
+    };
+    // Frakcionális Brown-híd: a napi összeghez kötött, fel nem bontott ingadozás
+    // relatív σ-ja egy dt hosszú ablakra. 1 napnál nulla.
+    const hid = (s,H,dt) => { const v = Math.pow(dt/3600,2*H-2) - Math.pow(NAP/3600,2*H-2); return v>0 ? s*Math.sqrt(v) : 0; };
+
+    // ── ismételhető só ──
+    const hash = str => { let h = 2166136261; for(let i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h,16777619); } return h>>>0; };
+    const vel = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a>>>15, 1|a);
+                             t = t + Math.imul(t ^ t>>>7, 61|t) ^ t; return ((t ^ t>>>14)>>>0)/4294967296; };
+    const huz = mag => { const r = vel(hash(mag)); for(let i=0;i<12;i++){ const u = r()||1e-9, v = r();
+                           const z = Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); if(Math.abs(z)<=1.645) return z; } return 0; };
+
+    // ── adatok ──
+    const NAPOK = new Map((((D.archivum||{}).napok)||[]).map(n=>[n.nap,n]));
+    const rata = k => (M[k] && M[k].ertek!=null) ? M[k].ertek : 0;
+    const K_RATA = (M.keszletvaltozas && M.keszletvaltozas.ertek!=null ? M.keszletvaltozas.ertek : 0)
+                   - TAGOK.reduce((s,[k])=>s+rata(k),0);   // fogyasztó kivétel, előjelesen
+    const refSor = REF ? NAPOK.get(REF) : null;
+    const HERNAD = (refSor && refSor.q_be!=null && M.hozam_be) ? M.hozam_be.ertek - refSor.q_be : 0;
+    const napiErtek = (k,d) => {                           // m³/s, előjelesen; null, ha nincs adat
+      if(REF && d===REF && M[k] && M[k].ertek!=null) return M[k].ertek;
+      if(!REF && d===HORGONY && M[k] && M[k].ertek!=null) return M[k].ertek;   // nincs teljes nap: a vegyes idejű értékek
+      const r = NAPOK.get(d); if(!r) return null;
+      if(k==="hozam_be") return r.q_be==null ? null : r.q_be + HERNAD;
+      if(k==="hozam_ki") return r.q_ki==null ? null : r.q_ki;
+      if(k==="csapadek") return r.csapadek_mm==null ? null : r.csapadek_mm*MM2M3S;
+      if(k==="parolgas") return r.parolgas_mm==null ? null : -r.parolgas_mm*MM2M3S;
+      return null;
+    };
+    // Megbízhatóság: ha egy hozamsor napok óta pontosan ugyanazt az értéket adja,
+    // az természetes folyónál nem fordul elő. Ilyenkor a sor bizonytalanságát
+    // háromszorozzuk, és a sorban jelezzük.
+    const allando = kulcs => {
+      if(!REF) return 0; let n = 0, elozo = null;
+      for(let i=0;i<90;i++){ const r = NAPOK.get(leptet(REF,-i)); if(!r || r[kulcs]==null) break;
+        if(elozo===null || Math.abs(r[kulcs]-elozo) < 0.05){ n++; elozo = r[kulcs]; } else break; }
+      return n;
+    };
+    const GYANUS = {};
+    [["hozam_be","q_be"],["hozam_ki","q_ki"]].forEach(([k,a])=>{ const n = allando(a); if(n>=5) GYANUS[k] = n; });
+    const szorzo = k => GYANUS[k] ? 3 : 1;
+    // A mércék mostani állása: ha jelentősen eltér a horgonynap átlagától, kiírjuk.
+    // Két forrásból a konfliktus ténye látszik — hogy melyik a pontosabb, azt nem ez dönti el.
+    const PK = D.pillanatkep_m3s || {};
+    const utkozes = k => {
+      const nap = Math.abs(rata(k)), most = PK[k];
+      if(most==null || !nap) return "";
+      const e = (most-nap)/nap;
+      return Math.abs(e) > 0.15 ? `<span class="gyanus">· a mércék most ${num(Math.round(most))} m³/s-ot mutatnak (${e>0?"+":"−"}${Math.round(Math.abs(e)*100)} %)</span>` : "";
+    };
+    const csapSzoras = (P, horgonynap) => {                // a csapadék napi σ-ja, m³/s
+      if(Math.abs(P) < 0.5) return 0;                      // száraz nap: az állomások nullát mértek
+      let s = MERESI.csapadek*Math.abs(P);
+      const pm = M.csapadek_muhold;
+      if(horgonynap && pm && M.csapadek && pm.datum && pm.datum===M.csapadek.datum && pm.ertek!=null)
+        s = Math.max(s, Math.abs(P-pm.ertek)/Math.SQRT2);
+      return s;
+    };
+
+    // ── egy ablak kiszámítása ──
+    // Eredmény tagonként: mu (m³, előjelesen), meres és kitolt (1σ, m³), lefedés.
+    const szamol = (idx, vegPerc) => {
+      const dt = LEPCSOK[idx][0], sor = {};
+      if(dt < NAP){
+        const t2 = Math.max(dt/60, Math.min(1440, vegPerc)), t1 = t2 - dt/60;
+        TAGOK.forEach(([k])=>{
+          const r = rata(k), szorz = k==="parolgas" ? etSzorzo(t1,t2) : 1;
+          const mu = r*szorz*dt;
+          let meres, kitolt = 0;
+          if(k==="csapadek"){
+            meres = csapSzoras(r, true)*szorz*dt;
+            if(Math.abs(r) >= 0.5) kitolt = Math.abs(mu)*Math.sqrt((1/CSAP_NEDVES-1)*(1-dt/NAP));
+          } else {
+            meres = Math.abs(mu)*MERESI[k]*szorzo(k);
+            kitolt = Math.abs(mu)*hid(NAPON_BELUL[k].s, NAPON_BELUL[k].H, dt);
+          }
+          sor[k] = {mu, meres, kitolt, rata: r*szorz,
+                    lefed: k.startsWith("hozam") ? "napi átlag, napon belül modell" : "napi adat, napon belül modell",
+                    kitoltes: false};
+        });
+        sor.ablak = {t1, t2, nap: HORGONY};
+        sor.K = K_RATA*dt;
+      } else {
+        const n = Math.round(dt/NAP), napok = [];
+        for(let i=n-1;i>=0;i--) napok.push(leptet(HORGONY,-i));
+        TAGOK.forEach(([k])=>{
+          const ert = napok.map(d=>napiErtek(k,d)), megf = ert.filter(v=>v!=null);
+          const megfNap = napok.filter((d,j)=>ert[j]!=null);
+          const nM = megf.length, nH = n - nM;
+          if(nM/n < 0.5){ sor[k] = {nincs:true, nM, n}; return; }
+          const ossz = megf.reduce((s,v)=>s+v,0), atl = ossz/nM;
+          const mu = (ossz + nH*atl)*NAP;
+          // A forrás rendszeres hibája napról napra együtt mozog: összegződik.
+          const meres = (k==="csapadek" ? megf.reduce((s,v,j)=>s+csapSzoras(v, megfNap[j]===REF),0)
+                                        : Math.abs(ossz)*MERESI[k]*szorzo(k))*NAP;
+          let napiS;
+          if(k==="csapadek"){
+            const mm = megf.map(v=>v/MM2M3S), mmAtl = mm.reduce((s,v)=>s+v,0)/nM;
+            const sd = nM>1 ? Math.sqrt(mm.reduce((s,v)=>s+(v-mmAtl)**2,0)/(nM-1)) : 0;
+            napiS = Math.max(sd, KITOLT_CSAP_MM)*MM2M3S;
+          } else if(k==="parolgas"){
+            napiS = KITOLT_ET*Math.abs(atl);
+          } else {
+            const sd = nM>1 ? Math.sqrt(megf.reduce((s,v)=>s+(v-atl)**2,0)/(nM-1)) : MERESI[k]*Math.abs(atl);
+            napiS = sd;
+          }
+          const kitolt = nH>0 ? napiS*Math.sqrt(nH)*NAP : 0;
+          sor[k] = {mu, meres, kitolt, rata: (ossz+nH*atl)/n,
+                    lefed: n===1 ? "a horgonynap adata" : `${nM}/${n} nap megfigyelt`, kitoltes: nH>0};
+        });
+        sor.ablak = {n, napok};
+        sor.K = K_RATA*dt;
+      }
+      // A zárási maradék: a négy tag + a fogyasztó kivétel. Csak akkor, ha mind megvan.
+      if(TAGOK.some(([k])=>sor[k].nincs)) sor.keszletvaltozas = {nincs:true};
+      else {
+        const mu = TAGOK.reduce((s,[k])=>s+sor[k].mu,0) + sor.K;
+        const meres = Math.sqrt(TAGOK.reduce((s,[k])=>s+sor[k].meres**2,0));
+        const kitolt = Math.sqrt(TAGOK.reduce((s,[k])=>s+sor[k].kitolt**2,0));
+        sor.keszletvaltozas = {mu, meres, kitolt, rata: mu/dt,
+          lefed: "maradéktag a fenti tételekből", kitoltes: TAGOK.some(([k])=>sor[k].kitoltes)};
+      }
+      // 90%-os tartomány, a fizikai előjelhez szorítva.
+      Object.entries(sor).forEach(([k,t])=>{
+        if(!t || t.mu==null) return;
+        t.s = Math.sqrt(t.meres**2 + t.kitolt**2);
+        t.lo = t.mu - 1.645*t.s; t.hi = t.mu + 1.645*t.s;
+        if(k==="csapadek" || k==="hozam_be"){ t.lo = Math.max(0,t.lo); }
+        if(k==="parolgas" || k==="hozam_ki"){ t.hi = Math.min(0,t.hi); }
+        t.soArany = t.s>0 ? t.kitolt**2/t.s**2 : 0;
+      });
+      return sor;
+    };
+
+    // ── sózott szám ──
+    const EGYSEGEK = [[1,1e-3,"liter"],[1e4,1,"m³"],[1e6,1e3,"ezer m³"],[1e9,1e6,"millió m³"],[Infinity,1e9,"km³"]];
+    const egyseg = U => { for(const [hatar,oszto,nev] of EGYSEGEK) if(U < hatar) return [oszto,nev]; return [1e9,"km³"]; };
+    const KESKENY = "\u202F", ABRA = "\u2007";
+    // A biztos jegyek a tartomány két végének közös előtagja (csonkolással) —
+    // ugyanaz a definíció, mint egy lánctört ismert jegyeié.
+    const elokeszit = t => {
+      const U = Math.max(Math.abs(t.lo), Math.abs(t.hi), Math.abs(t.mu));
+      if(U === 0) return {oszto:1, nev:"m³", elojel:"", A:0, B:0, eg:1, d:0, kElso:null};
+      const [oszto, nev] = egyseg(U);
+      const l = t.lo/oszto, h = t.hi/oszto;
+      const elojel = l >= 0 ? "+" : (h <= 0 ? "−" : "?");
+      const A = elojel==="?" ? 0 : Math.min(Math.abs(l),Math.abs(h));
+      const B = Math.max(Math.abs(l),Math.abs(h));
+      const eg = B >= 1 ? Math.floor(Math.log10(B)+1e-12)+1 : 1;
+      let kElso = null;
+      if(elojel==="?") kElso = eg-1;
+      else for(let k=eg-1;k>=-3;k--){ if(Math.floor(A/10**k+1e-9) !== Math.floor(B/10**k+1e-9)){ kElso = k; break; } }
+      const dCap = Math.max(0, 3-eg);
+      const d = kElso===null ? dCap : Math.min(dCap, Math.max(0, 1-kElso));
+      return {oszto, nev, elojel, A, B, eg, d, kElso};
+    };
+    const rajzolSzam = (p, v) => {                         // v: m³, előjelesen
+      const x = Math.abs(v)/p.oszto;
+      const egesz = Math.floor(x*10**p.d + 1e-9);
+      let s = String(egesz).padStart(p.eg+p.d, "0");
+      if(s.length > p.eg+p.d) s = s.slice(-(p.eg+p.d));
+      let html = "", elo = "", vezeto = true;
+      for(let i=0;i<s.length;i++){
+        const hely = p.eg-1-i;                             // helyiérték
+        const bizonytalan = p.kElso!==null && hely <= p.kElso;
+        if(vezeto && s[i]==="0" && hely>0){                 // hiányzó vezető jegy: azonos szélességű üres hely
+          elo += bizonytalan ? `<i class="so">${ABRA}</i>` : ABRA; continue;
+        }
+        vezeto = false;
+        if(i===p.eg) html += ",";
+        else if(hely>=0 && i>0 && (hely+1)%3===0 && p.eg>=5) html += KESKENY;
+        html += bizonytalan ? `<i class="so">${s[i]}</i>` : s[i];
+      }
+      const jel = p.elojel==="?" ? `<i class="so">${v<0?"−":"+"}</i>` : (v===0 && p.elojel!=="−" ? "" : p.elojel);
+      return elo + jel + html;
+    };
+
+    // ── felület ──
+    const csuszka = $("#ablakcsuszka"), oraCs = $("#oracsuszka"), soGomb = $("#sokapcs");
+    const mostPerc = () => {
+      try{
+        const r = new Intl.DateTimeFormat("hu-HU",{timeZone:"Europe/Budapest",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date());
+        return (+r.find(x=>x.type==="hour").value)*60 + (+r.find(x=>x.type==="minute").value);
+      }catch(e){ return 720; }
+    };
+    let idx = NAP_INDEX, vegPerc = mostPerc(), soBe = true, kocka = 0, lathato = true, aktualis = null;
+    const csendes = !!(W.matchMedia && W.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    if(csuszka) csuszka.value = String(idx);
+    if(oraCs) oraCs.value = String(Math.max(1,vegPerc));
+    const ido = (p, mp) => { const t = Math.round(p*60); const o = Math.floor(t/3600)%24, m = Math.floor(t/60)%60, s = t%60;
+      return String(o).padStart(2,"0")+":"+String(m).padStart(2,"0")+(mp?":"+String(s).padStart(2,"0"):""); };
+    const reteg = m3 => {                                  // rétegvastagság az ország területén
+      const mm = Math.abs(m3)/TERULET_M2*1000;
+      if(mm === 0) return "0 mm";
+      if(mm >= 0.1) return dec(mm, mm>=10?0:2)+" mm";
+      if(mm >= 1e-4) return dec(mm*1000, mm*1000>=10?0:1)+" µm";
+      return dec(mm*1e6, mm*1e6>=10?0:1)+" nm";
+    };
+    const skala = $("#ablakskala");
+    if(skala) skala.innerHTML = FOCIMKEK.map(([i,t])=>`<span style="left:${(i/(LEPCSOK.length-1)*100).toFixed(2)}%">${t}</span>`).join("");
+
+    const gorbe = (pontok, aktiv) => {
+      const SZ = 600, MA = 74, bal = 30, jobb = 6, fent = 8, lent = 18;
+      const x = i => bal + i/(LEPCSOK.length-1)*(SZ-bal-jobb);
+      const y = a => fent + (1-a)*(MA-fent-lent);
+      let ut = "", toll = false;
+      pontok.forEach((a,i)=>{ if(a==null){ toll = false; return; } ut += (toll?"L":"M")+x(i).toFixed(1)+","+y(a).toFixed(1); toll = true; });
+      const hiany = pontok.map((a,i)=>a==null ? `<rect class="gy" x="${(x(i)-7).toFixed(1)}" y="${fent}" width="14" height="${MA-fent-lent}"/>` : "").join("");
+      const a = pontok[aktiv];
+      const jel = a!=null ? `<circle class="akt" cx="${x(aktiv).toFixed(1)}" cy="${y(a).toFixed(1)}" r="4.5"/>`
+                          : `<line class="akt" x1="${x(aktiv).toFixed(1)}" x2="${x(aktiv).toFixed(1)}" y1="${fent}" y2="${MA-lent}"/>`;
+      const cimkek = FOCIMKEK.map(([i,t])=>`<text x="${x(i).toFixed(1)}" y="${MA-4}" text-anchor="${i===0?"start":(i===LEPCSOK.length-1?"end":"middle")}">${t}</text>`).join("");
+      return `<svg viewBox="0 0 ${SZ} ${MA}" role="img" aria-label="Só-arány az időablak hosszának függvényében">`+
+        `<line class="tengely" x1="${bal}" x2="${SZ-jobb}" y1="${y(0)}" y2="${y(0)}"/>`+
+        `<line class="racs" x1="${bal}" x2="${SZ-jobb}" y1="${y(1)}" y2="${y(1)}"/>`+
+        `<text x="${bal-4}" y="${y(0)+3}" text-anchor="end">0%</text><text x="${bal-4}" y="${y(1)+3}" text-anchor="end">100%</text>`+
+        `<line class="nativ" x1="${x(NAP_INDEX)}" x2="${x(NAP_INDEX)}" y1="${fent}" y2="${MA-lent}"/>`+
+        hiany + `<path class="g" d="${ut}"/>` + jel + cimkek + `</svg>`;
+    };
+
+    const SOROK = [...TAGOK, ["keszletvaltozas","= Zárási maradék"]];
+    let elokeszitve = {};
+    const rajzol = () => {
+      const sor = szamol(idx, vegPerc); aktualis = sor;
+      const dt = LEPCSOK[idx][0];
+      $("#ablakfelirat").textContent = LEPCSOK[idx][1];
+      if(csuszka) csuszka.setAttribute("aria-valuetext", LEPCSOK[idx][1]);
+      const oraSor = $("#ablakora"); if(oraSor) oraSor.hidden = dt >= NAP;
+      if(dt < NAP){
+        const {t1,t2} = sor.ablak, mp = dt < 60;
+        $("#orafelirat").textContent = `${ido(t1,mp)}–${ido(t2,mp)}`;
+        $("#pulzusnap").textContent = `${HORGONY} · ${ido(t1,mp)}–${ido(t2,mp)}`;
+      } else if(dt === NAP){
+        $("#pulzusnap").textContent = REF ? `${REF} · a legutóbbi teljes nap` : "a modell öt adata";
+      } else {
+        const {napok} = sor.ablak;
+        $("#pulzusnap").textContent = `${rovidNap(napok[0])} – ${rovidNap(napok[napok.length-1])} · ${napok.length} nap`;
+      }
+      const P = $("#pulzus"); P.innerHTML = "";
+      const ervenyes = SOROK.map(([k])=>sor[k]).filter(t=>t && !t.nincs);
+      const maxAbs = Math.max(1e-9, ...ervenyes.map(t=>Math.max(Math.abs(t.lo),Math.abs(t.hi))));
+      elokeszitve = {};
+      SOROK.forEach(([k,cim])=>{
+        const t = sor[k], ossz = k==="keszletvaltozas";
+        const r = el("div","tetel"+(ossz?" ossz":""));
+        r.appendChild(el("div","cim",cim));
+        if(!t || t.nincs){
+          r.appendChild(el("div","szam nincs","gyűjtés alatt"));
+          r.appendChild(el("div","meta", ossz
+            ? "A négy tag közül valamelyiknek kevés a megfigyelt napja ehhez az ablakhoz."
+            : `Az archívum ${t.nM} napra őrzi ezt a tagot a ${t.n} napból; az ablakhoz legalább a felük kell. Ahogy a napok gyűlnek, az ablak magától megnyílik.`));
+          P.appendChild(r); return;
+        }
+        const p = elokeszit(t); elokeszitve[k] = p;
+        const szam = el("div","szam "+(t.mu<0?"neg":"poz"));
+        szam.dataset.tag = k;
+        szam.setAttribute("aria-label", `${t.mu<0?"mínusz ":""}${num(Math.round(Math.abs(t.mu)/p.oszto*10**p.d)/10**p.d)} ${p.nev}, 90%-os tartomány ${dec(t.lo/p.oszto,p.d)} és ${dec(t.hi/p.oszto,p.d)} között`);
+        szam.innerHTML = `<span aria-hidden="true">${rajzolSzam(p,t.mu)}</span><small> ${p.nev}</small>`;
+        r.appendChild(szam);
+        const rud = el("div","rud2");
+        const neg = t.mu < 0;
+        const i = el("i", neg ? "balra" : "jobbra");
+        i.style.width = (Math.abs(t.mu)/maxAbs*50)+"%";
+        if(Math.abs(t.mu) > 0){
+          const mp = Math.max(1.6, 9 - Math.abs(t.mu)/maxAbs*7);
+          i.style.setProperty("--ido", mp.toFixed(2)+"s");
+          i.classList.add(k==="parolgas" ? "parolog" : "aramlik");
+        }
+        if(ossz) i.classList.add("dS");
+        const x = v => 50 + v/maxAbs*50;
+        const sav = el("b","sav");
+        sav.style.left = Math.min(x(t.lo),x(t.hi)).toFixed(2)+"%";
+        sav.style.width = Math.max(0.4, Math.abs(x(t.hi)-x(t.lo))).toFixed(2)+"%";
+        rud.appendChild(el("span","nulla")); rud.appendChild(i); rud.appendChild(sav); r.appendChild(rud);
+        const forras = ossz ? "" : (M[k] ? M[k].forras : "");
+        const prov = ossz ? "modellezett" : (M[k] ? M[k].provenance : "modellezett");
+        const so = Math.round(t.soArany*100);
+        r.appendChild(el("div","meta",
+          pr(prov) + (t.kitoltes ? `<span class="pr kitoltes">kitöltés</span>` : "") +
+          `<span>≈ ${reteg(t.mu)}</span>` +
+          `<span>· átlag ${num(Math.round(t.rata))} m³/s</span>` +
+          `<span>· ${t.lefed}</span>` +
+          (so>0 ? `<span>· só ${so} %</span>` : "") +
+          (GYANUS[k] ? `<span class="gyanus">· ${GYANUS[k]} napja pontosan azonos napi érték — gyanús sor, a bizonytalansága háromszoros</span>` : "") +
+          (k.startsWith("hozam") ? utkozes(k) : "") +
+          (forras ? `<span>· ${forras}</span>` : "")));
+        P.appendChild(r);
+      });
+      P.appendChild(el("p","elojel",D.elojel));
+      P.appendChild(el("p","elojel pilot",
+        `<b>Pilot.</b> Az ablak a legutóbbi teljes naphoz van horgonyozva. Napon belül a párolgás a napjárást követi ` +
+        `(napkelte ${ido(NAPJARAS.kel)}, napnyugta ${ido(NAPJARAS.nyug)}), a hozam sima; több napnál az archívum napi sorai ` +
+        `összegződnek, a hiányzó napokat a megfigyeltek átlaga tölti ki. A bizonytalanság forrástípusonként rögzített ` +
+        `feltevés: hozam 5 %, párolgás 20 %, csapadék 10 %. A halvány jegyek a 90%-os tartományon belül húzott, ` +
+        `ismételhető minták.`));
+      // Só-arány görbe a zárási maradékra, minden ablakhosszra.
+      const pontok = LEPCSOK.map((_,j)=>{ const s = j===idx ? sor : szamol(j, vegPerc); const t = s.keszletvaltozas; return (!t || t.nincs) ? null : t.soArany; });
+      const G = $("#sogorbe");
+      if(G){
+        const most = pontok[idx];
+        G.innerHTML = gorbe(pontok, idx) +
+          `<p>Só-arány a zárási maradékban: a bizonytalanság hányad része jön a kitöltésből — a napon belüli ` +
+          `eloszlásból vagy a hiányzó napokból. ${most==null ? "Ebben az ablakban a maradék még gyűjtés alatt van." : `Most: <b>${Math.round(most*100)} %</b>.`} ` +
+          `A szaggatott vonal az egy nap: a mérleg natív felbontása, ott csak a mérési hiba marad.</p>`;
+      }
+      sozas();
+    };
+
+    // Képkockánként új minta a tartományon belül. A biztos jegyek állnak.
+    const sozas = () => {
+      if(!aktualis) return;
+      SOROK.forEach(([k])=>{
+        const t = aktualis[k], p = elokeszitve[k];
+        if(!t || t.nincs || !p) return;
+        const cel = document.querySelector(`#pulzus .szam[data-tag="${k}"] span`);
+        if(!cel) return;
+        let v = t.mu;
+        if(soBe && !csendes && t.s > 0){
+          const z = huz(`${D.generalva}|${k}|${idx}|${Math.round(vegPerc)}|${kocka}`);
+          v = Math.max(t.lo, Math.min(t.hi, t.mu + t.s*z));
+        }
+        cel.innerHTML = rajzolSzam(p, v);
+      });
+    };
+    W.setInterval(() => {
+      if(!soBe || csendes || !lathato || document.hidden) return;
+      kocka++; sozas();
+    }, 520);
+    if(typeof IntersectionObserver !== "undefined"){
+      const fig = new IntersectionObserver(es => { lathato = es.some(e=>e.isIntersecting); });
+      const panel = $("#p-pulzus"); if(panel && fig.observe) fig.observe(panel);
     }
-    if(ossz) i.classList.add("dS");
-    rud.appendChild(el("span","nulla")); rud.appendChild(i); r.appendChild(rud);
-    // A napi tagok (csapadék, párolgás) egy NAPRA vonatkoznak, a folyótagok az
-    // aktuális órára. A dátum kiírása nélkül az olvasó mind a kettőt maikent olvassa.
-    r.appendChild(el("div","meta",
-      pr(t.provenance)+
-      `<span>${dec(MM[k],2)} mm/nap</span>`+
-      (t.datum?`<span class="nap">· ${t.datum}</span>`
-        : (t.kor_ora===1?`<span>· most</span>`:""))+
-      `<span>· ${t.forras}</span>`+      (t.kor_ora && t.kor_ora>1?`<span>· ${t.kor_ora} órás</span>`:"")));
-    $("#pulzus").appendChild(r);
-  });
-  $("#pulzus").appendChild(el("p","elojel",D.elojel));
+    if(csuszka) csuszka.addEventListener("input", () => { const v = parseInt(csuszka.value,10); idx = isNaN(v) ? NAP_INDEX : v; kocka = 0; rajzol(); });
+    if(oraCs) oraCs.addEventListener("input", () => { const v = parseInt(oraCs.value,10); vegPerc = isNaN(v) ? 720 : v; kocka = 0; rajzol(); });
+    if(soGomb){
+      if(csendes){ soGomb.setAttribute("aria-pressed","false"); soGomb.textContent = "só: áll"; }
+      soGomb.addEventListener("click", () => {
+        soBe = !soBe;
+        soGomb.setAttribute("aria-pressed", String(soBe));
+        soGomb.textContent = soBe ? "só: be" : "só: ki";
+        sozas();
+      });
+    }
+    {
+      const egymm = TERULET_M2 * 0.001;
+      $("#mertekegyseg").innerHTML =
+        `Minden adat <b>két formában</b> jelenik meg. A nagy szám a választott ablakban mozgó víz
+         <b>térfogata</b>; alatta ugyanez <b>rétegvastagságként</b>, mintha az egész víztömeg
+         <b>Magyarország teljes területén</b> egyenletesen terülne szét. ${D.doboz.nev} ${num(D.doboz.terulet_km2)} km²-én
+         <b>1 mm ≈ ${num(Math.round(egymm/1e6))} millió m³</b>, és 1 m³/s egy nap alatt 86 400 m³. A csapadékot és a
+         párolgást eleve milliméterben mérik — ezért kell a második forma.`;
+    }
+    rajzol();
+  }
 
   // Rovid valasz: aki harminc masodpercet szan a lapra, ezt vigye el.
   // A cim kerdest tesz fel - ez a doboz megvalaszolja, a tobbi kifejti.

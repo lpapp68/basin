@@ -112,3 +112,7 @@ if (baj) {
   console.error(`  (${baj} panel üres — aszinkron töltés lehet)`);
 }
 console.log(`Lapteszt OK — ${KELL.length} panel megtelt, futásidejű hiba nincs.`);
+
+// A lap valódi időzítői (órajel, frissítés-ellenőrzés) a node-ot életben tartanák,
+// és a publikal.sh itt állna meg. A teszt ezen a ponton kész.
+process.exit(0);
