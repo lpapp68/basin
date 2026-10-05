@@ -337,7 +337,25 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,4.4vw,46px);lin
 p.elojel.pilot{margin-top:8px;border-top:0;padding-top:0}
 @media(prefers-reduced-motion:reduce){.tetel .szam i.so{opacity:.55}}
 /* keskeny kijelzőn az „1 hét” felirat rácsúszna az „1 hó”-ra; a kiválasztott ablak neve fent amúgy is látszik */
-@media(max-width:520px){.ablak-skala span:nth-child(5){display:none}}
+@media(max-width:520px){#ablakskala span:nth-child(5){display:none}}
+/* 2. panel · "most" blokk és időablak (pilot, 2026-10) */
+.most-sor{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px;padding-bottom:12px;
+  border-bottom:1px solid var(--vonal-halk)}
+@media(max-width:520px){.most-sor{grid-template-columns:1fr;gap:12px}}
+.most-sor .u,.ablak2-ki .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--halvany)}
+.szam2{font-family:var(--mono);font-size:24px;font-weight:600;white-space:nowrap;margin-top:2px;
+  font-variant-numeric:tabular-nums}
+.szam2.neg{color:var(--rekord)} .szam2.poz{color:var(--viz)}
+.szam2 small{font-size:12px;font-weight:500;color:var(--halvany)}
+.szam2 i.so{font-style:normal;opacity:.42}
+.szam2.nincs{font-size:14px;font-weight:500;color:var(--halvany)}
+.most-sor .meta,.ablak2-ki .meta{font-size:11.5px;line-height:1.5;color:var(--halvany);margin-top:3px}
+.ablak2-ki{margin-top:10px;padding-top:10px;border-top:1px solid var(--vonal-halk)}
+.ablak-skala span.nativ{color:var(--tinta);font-weight:600}
+@media(prefers-reduced-motion:reduce){.szam2 i.so{opacity:.55}}
+/* keskeny kijelzőn a 2. panel skálájáról az „1 óra” és az „5 év” felirat lekerül, hogy a többi elférjen */
+@media(max-width:520px){#ablak2skala span:nth-child(2),#ablak2skala span:nth-child(6){display:none}}
 p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
   border-top:1px solid var(--vonal-halk)}
 .balsor{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 0}
@@ -863,6 +881,26 @@ a{color:var(--viz)}
       <h3>2 · Készlet <span class="pontos">a sokéves átlaghoz mérve</span></h3>
       <p class="alcim">Két műhold havonta megméri, mennyivel több vagy kevesebb víz van az országban, mint a sokéves átlagban — a felszíni vizet, a talajnedvességet és a mélyben lévő vizet együtt. A görbén ez a huszonnégy éves sorozat látszik, rajta a hosszú távú irányt mutató egyenesekkel.</p>
       <p class="alcim">Alatta egyetlen szám: mennyivel kevesebb víz van ma, mint 2021 elején. Ezt az első és az utolsó tizenkét hónap átlagának különbsége adja — így az évszakos ingadozás kiesik, és az marad, ami tartósan eltűnt.</p>
+      <p class="alcim">Felül a mostani állapot: a műhold utolsó havi értékéből és az azóta eltelt hónapok szokásos változásából becsült készlet, mellette egy számláló, amely a napi mérleg mostani ütemével fut. Az időablakkal kiválasztod, mekkora időszak változását mutassa: rövid ablakban a napi mérleg beszél, hosszúban a műhold.</p>
+      <div class="ablak" id="most2">
+        <div class="most-sor">
+          <div><span class="u">Becsült készlet most</span>
+            <div class="szam2 neg" id="most-szint">—</div>
+            <div class="meta" id="most-szint-meta"></div></div>
+          <div><span class="u">Amióta ezt a lapot nézed</span>
+            <div class="szam2 neg" id="most-fogy">0<small> m³</small></div>
+            <div class="meta" id="most-fogy-meta"></div></div>
+        </div>
+        <div class="ablak-fej">
+          <span class="u">Időablak</span><b id="ablak2felirat">1 év</b>
+          <button type="button" class="sokapcs" id="sokapcs2" aria-pressed="true"
+            title="A bizonytalan jegyek villódzása: a 90%-os tartományon belül húzott minták">só: be</button>
+        </div>
+        <input type="range" id="ablak2csuszka" min="0" max="12" step="1" value="8"
+          aria-label="A készletváltozás időablaka, egy másodperctől a teljes műholdas sorig">
+        <div class="ablak-skala" id="ablak2skala"></div>
+        <div class="ablak2-ki" id="ablak2ki"></div>
+      </div>
       <div id="egyenleg"></div>
     </div>
 
@@ -1469,6 +1507,8 @@ a{color:var(--viz)}
       `${pr("modellezett")} ${hv.forras||""}`, false));
   }
 
+  // Közös időablak-eszközök: az 1. panel adja, a 2. panel is ebből dolgozik.
+  const IA = {};
   /* ── 1 Pulzus ── */
   const M=D.merleg_m3s, MM=D.mm_nap;
   // PILOT (2026-10): az 1. panel időablaka állítható, egy másodperctől egy hónapig.
@@ -1899,6 +1939,7 @@ a{color:var(--viz)}
          <b>1 mm ≈ ${num(Math.round(egymm/1e6))} millió m³</b>, és 1 m³/s egy nap alatt 86 400 m³. A csapadékot és a
          párolgást eleve milliméterben mérik — ezért kell a második forma.`;
     }
+    Object.assign(IA, {szamol, elokeszit, rajzolSzam, huz, mostPerc, reteg});
     rajzol();
   }
 
@@ -1929,6 +1970,182 @@ a{color:var(--viz)}
 
   /* ── 2 Egyenleg ── */
   const E=D.egyenleg, R=E.referencia, IS=D.keszlet_idosor;
+  // PILOT (2026-10): a 2. panel "most" blokkja és időablaka.
+  // A készletnek két natív felbontása van: a napi mérleg (1 nap — az 1. panel
+  // zárási maradéka) és a műhold (1 hónap). Rövid ablakban a napi mérleg beszél,
+  // hosszúban a műhold; a kettő közti sávot (napok–hetek) a napi archívum tölti
+  // fel, ahogy a teljes napok gyűlnek. Minden forrás a saját legutóbbi teljes
+  // időszakához van horgonyozva.
+  {
+    const SOR = (IS && IS.sorozat) || [];
+    const DOBOZ = $("#most2");
+    if(SOR.length > 24 && IA.szamol){
+      const W = window;
+      const GRACE_S = 1.5;      // km³ — egy havi műholdas érték 1σ hibája (pilot-feltevés, ≈ 16 mm vízréteg)
+      const MEDENCE = 2500;     // m³ — egy olimpiai úszómedence (50 × 25 × 2 m)
+      const hIdx = h => (+h.slice(0,4))*12 + (+h.slice(5,7)) - 1;
+      const hNev = i => `${Math.floor(i/12)}-${String(i%12+1).padStart(2,"0")}`;
+      const HAVI = new Map(SOR.map(r=>[hIdx(r.honap), r.km3]));
+      const UTOLSO = SOR[SOR.length-1], U_IDX = hIdx(UTOLSO.honap);
+      const keres = i => { for(const d of [0,-1,1,-2,2]) if(HAVI.has(i+d)) return {i:i+d, km3:HAVI.get(i+d)}; return null; };
+      // Naptári hónaponként a szokásos havi változás: átlag és szórás a teljes sorból.
+      const KLIM = Array.from({length:12}, (_,m) => {
+        const v = SOR.map(r=>hIdx(r.honap)).filter(i=>i%12===m && HAVI.has(i-1)).map(i=>HAVI.get(i)-HAVI.get(i-1));
+        const a = v.reduce((s,x)=>s+x,0)/(v.length||1);
+        const sd = v.length>1 ? Math.sqrt(v.reduce((s,x)=>s+(x-a)**2,0)/(v.length-1)) : GRACE_S;
+        return {a, sd};
+      });
+      // Becsült készlet most: az utolsó havi műholdas érték, plusz az azóta eltelt
+      // hónapok szokásos változása. A havi érték a hónap közepére vonatkozik.
+      const kozep = i => Date.UTC(Math.floor(i/12), i%12, 15);
+      const MOST = Date.now();
+      let kitMu = 0, kitVar = 0, hoKit = 0;
+      for(let i=U_IDX+1; kozep(i-1) < MOST; i++){
+        const f = Math.min(1, (MOST - kozep(i-1)) / (kozep(i) - kozep(i-1)));
+        kitMu += f*KLIM[i%12].a; kitVar += (f*KLIM[i%12].sd)**2; hoKit += f;
+      }
+      const SZINT = {mu:(UTOLSO.km3 + kitMu)*1e9, s:Math.sqrt(GRACE_S**2 + kitVar)*1e9};
+      SZINT.lo = SZINT.mu - 1.645*SZINT.s; SZINT.hi = SZINT.mu + 1.645*SZINT.s;
+      const pSzint = IA.elokeszit(SZINT);
+
+      // Számláló: a napi mérleg mostani üteme, a napjárással együtt (éjjel lassabb,
+      // délben gyorsabb). Egyetlen lehetséges ütemet húzunk a tartományon belül, és
+      // azzal fut, amíg az adat frissül: így a lefutás folytonos, a halvány jegyek
+      // pedig jelzik, mely helyiértékek bizonytalanok.
+      const zSz = IA.huz(`${D.generalva}|szamlalo`);
+      const utem = () => {
+        const t = IA.szamol(5, IA.mostPerc()).keszletvaltozas;   // egyperces ablak a mostani percre
+        return (!t || t.nincs) ? null : {mu:t.mu/60, s:t.s/60};
+      };
+      const C = {mu:0, lo:0, hi:0, v:0};
+      let elozoT = Date.now();
+      const leptet = () => {
+        const u = utem(), t = Date.now(), dt = (t - elozoT)/1000; elozoT = t;
+        if(!u || dt <= 0) return u;
+        C.mu += u.mu*dt; C.lo += (u.mu - 1.645*u.s)*dt; C.hi += (u.mu + 1.645*u.s)*dt; C.v += (u.mu + zSz*u.s)*dt;
+        return u;
+      };
+      const m3Elok = (lo, hi, v) => {                       // rögzített m³-egység a számlálónak
+        const B = Math.max(Math.abs(lo), Math.abs(hi), Math.abs(v));
+        if(B < 1) return null;
+        const elojel = lo >= 0 ? "+" : (hi <= 0 ? "−" : "?");
+        const A = elojel==="?" ? 0 : Math.min(Math.abs(lo), Math.abs(hi));
+        const eg = Math.floor(Math.log10(B)+1e-12)+1;
+        let kElso = null;
+        if(elojel==="?") kElso = eg-1;
+        else for(let k=eg-1;k>=0;k--){ if(Math.floor(A/10**k+1e-9) !== Math.floor(B/10**k+1e-9)){ kElso = k; break; } }
+        return {oszto:1, nev:"m³", elojel, eg, d:0, kElso};
+      };
+
+      // Időablak: rövid ablakban a napi mérleg (az 1. panel lépcsői), hosszúban a műhold.
+      const L2 = [{c:"1 mp",p1:0},{c:"1 perc",p1:5},{c:"1 óra",p1:10},{c:"1 nap",p1:15},{c:"1 hét",p1:19},
+                  {c:"1 hó",h:1},{c:"3 hó",h:3},{c:"6 hó",h:6},{c:"1 év",h:12},{c:"3 év",h:36},
+                  {c:"5 év",h:60},{c:"10 év",h:120},{c:"teljes",h:0}];
+      const CIMKEK2 = [[0,"1 mp"],[2,"1 óra"],[3,"1 nap",1],[5,"1 hó",1],[8,"1 év"],[10,"5 év"],[12,"teljes"]];
+      const ablakErtek = i => {
+        const st = L2[i];
+        if(st.p1 != null) return {st, forras:"napi", t:IA.szamol(st.p1, IA.mostPerc()).keszletvaltozas};
+        const kezd = st.h ? keres(U_IDX - st.h) : {i:hIdx(SOR[0].honap), km3:SOR[0].km3};
+        if(!kezd) return {st, forras:"muhold", t:{nincs:true}};
+        const mu = (UTOLSO.km3 - kezd.km3)*1e9, s = Math.SQRT2*GRACE_S*1e9;
+        return {st, forras:"muhold", kezd, t:{mu, s, lo:mu-1.645*s, hi:mu+1.645*s, soArany:0}};
+      };
+
+      const cs2 = $("#ablak2csuszka"), gomb2 = $("#sokapcs2");
+      const csendes2 = !!(W.matchMedia && W.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      let idx2 = 8, soBe2 = !csendes2, kocka2 = 0, lathato2 = true, akt2 = null;
+      if(cs2) cs2.value = String(idx2);
+      const sk2 = $("#ablak2skala");
+      if(sk2) sk2.innerHTML = CIMKEK2.map(([i,t,n])=>`<span class="${n?"nativ":""}" style="left:${(i/(L2.length-1)*100).toFixed(2)}%">${t}</span>`).join("");
+
+      const rajzol2 = () => {
+        const e = ablakErtek(idx2); akt2 = e;
+        $("#ablak2felirat").textContent = e.st.c;
+        if(cs2) cs2.setAttribute("aria-valuetext", e.st.c);
+        const ki = $("#ablak2ki");
+        if(!e.t || e.t.nincs){
+          ki.innerHTML = `<div class="u">Készletváltozás · ${e.st.c}</div><div class="szam2 nincs">gyűjtés alatt</div>` +
+            `<div class="meta">${e.forras==="napi"
+              ? "A napok és a hetek közötti sávhoz napi csapadék- és párolgássor kell. A napi archívum ezt most gyűjti, és ahogy a teljes napok összeállnak, az ablak magától megnyílik."
+              : "Ehhez az ablakhoz a műholdas sorban hiányzik a kezdőhónap."}</div>`;
+          return;
+        }
+        e.p = IA.elokeszit(e.t);
+        const fej = e.forras==="napi"
+          ? `Készletváltozás · ${e.st.c} · a mostani napi mérleg ütemével`
+          : `Készletváltozás · ${e.st.c} · ${hNev(e.kezd.i)} → ${UTOLSO.honap}`;
+        const bal = Math.abs(e.t.mu)/1e9/R.terfogat_km3;
+        ki.innerHTML = `<div class="u">${fej}</div>` +
+          `<div class="szam2 ${e.t.mu<0?"neg":"poz"}" id="ablak2szam" aria-label="${e.t.mu<0?"mínusz ":""}${dec(Math.abs(e.t.mu)/e.p.oszto, e.p.d)} ${e.p.nev}, 90%-os tartomány ${dec(e.t.lo/e.p.oszto, e.p.d)} és ${dec(e.t.hi/e.p.oszto, e.p.d)} között">` +
+          `<span aria-hidden="true">${IA.rajzolSzam(e.p, e.t.mu)}</span><small> ${e.p.nev}</small></div>` +
+          `<div class="meta">` + (e.forras==="napi"
+            ? `${pr("modellezett")} <span>≈ ${IA.reteg(e.t.mu)}</span> <span>· az 1. panel zárási maradéka, napjárással</span>` +
+              (e.t.soArany>0 ? ` <span>· só ${Math.round(e.t.soArany*100)} %</span>` : "")
+            : `${pr(IS.provenance)} <span>≈ ${dec(bal, bal>=10?0:1)} ${R.nev}-nyi</span> ` +
+              `<span>· két havi műholdas érték különbsége; egy havi érték ±${dec(GRACE_S,1)} km³ (pilot-feltevés)</span>`) +
+          `</div>`;
+      };
+
+      const szintKi = (v) => {
+        $("#most-szint").innerHTML = `<span aria-hidden="true">${IA.rajzolSzam(pSzint, v)}</span><small> ${pSzint.nev}</small>`;
+      };
+      $("#most-szint").setAttribute("aria-label", `becsült készlet most: ${SZINT.mu<0?"mínusz ":""}${dec(Math.abs(SZINT.mu)/1e9,1)} köbkilométer, 90%-os tartomány ${dec(SZINT.lo/1e9,1)} és ${dec(SZINT.hi/1e9,1)} között`);
+      $("#most-szint-meta").innerHTML =
+        `<span class="pr kitoltes">kitöltés</span> a ${UTOLSO.honap} műholdas érték (${sgn(UTOLSO.km3)} km³) ` +
+        `és az azóta eltelt ${dec(hoKit,1)} hónap szokásos változása (${sgn(Math.round(kitMu*10)/10)} km³). ` +
+        `90%: ${dec(SZINT.lo/1e9,1)} … ${dec(SZINT.hi/1e9,1)} km³.`;
+
+      const szamlaloKi = (u) => {
+        const lo = Math.min(C.lo, C.hi), hi = Math.max(C.lo, C.hi), v = soBe2 ? C.v : C.mu;
+        const p = m3Elok(lo, hi, v);
+        $("#most-fogy").className = "szam2 " + (v<0 ? "neg" : "poz");
+        $("#most-fogy").innerHTML = p ? `<span aria-hidden="true">${IA.rajzolSzam(p, v)}</span><small> m³</small>` : `0<small> m³</small>`;
+        if(u){
+          const a = Math.abs(u.mu), lo90 = Math.abs(u.mu) - 1.645*u.s, hi90 = Math.abs(u.mu) + 1.645*u.s;
+          const tart = lo90 > 0 ? `90%: ${num(Math.round(lo90))}–${num(Math.round(hi90))}` : "a 90%-os tartomány a nullát is átfogja";
+          $("#most-fogy-meta").innerHTML =
+            `A készlet most ${u.mu<0?"fogy":"nő"}: ≈ <b>${num(Math.round(a))} m³</b> másodpercenként (${tart}), ` +
+            `az 1. panel zárási maradéka a napjárással. Eddig ≈ ${dec(Math.abs(v)/MEDENCE,1)} olimpiai úszómedence.`;
+        }
+      };
+
+      const sozas2 = () => {
+        const ze = soBe2 ? IA.huz(`${D.generalva}|szint|${kocka2}`) : 0;
+        szintKi(Math.max(SZINT.lo, Math.min(SZINT.hi, SZINT.mu + SZINT.s*ze)));
+        const e = akt2;
+        const cel = document.querySelector("#ablak2szam span");
+        if(e && e.p && cel && e.t && !e.t.nincs){
+          const z = soBe2 ? IA.huz(`${D.generalva}|ablak2|${idx2}|${kocka2}`) : 0;
+          cel.innerHTML = IA.rajzolSzam(e.p, Math.max(e.t.lo, Math.min(e.t.hi, e.t.mu + (e.t.s||0)*z)));
+        }
+      };
+
+      let tikk = 0;
+      W.setInterval(() => {
+        const u = leptet();
+        if(!lathato2 || document.hidden) return;
+        szamlaloKi(u);
+        if(++tikk % 2 === 0 && soBe2){ kocka2++; sozas2(); }
+      }, csendes2 ? 1000 : 260);
+      if(typeof IntersectionObserver !== "undefined"){
+        const fig2 = new IntersectionObserver(es => { lathato2 = es.some(x=>x.isIntersecting); });
+        const p2 = $("#p-egyenleg"); if(p2 && fig2.observe) fig2.observe(p2);
+      }
+      if(cs2) cs2.addEventListener("input", () => { const v = parseInt(cs2.value,10); idx2 = isNaN(v) ? 8 : v; kocka2 = 0; rajzol2(); sozas2(); });
+      if(gomb2){
+        if(csendes2){ gomb2.setAttribute("aria-pressed","false"); gomb2.textContent = "só: áll"; }
+        gomb2.addEventListener("click", () => {
+          soBe2 = !soBe2;
+          gomb2.setAttribute("aria-pressed", String(soBe2));
+          gomb2.textContent = soBe2 ? "só: be" : "só: ki";
+          sozas2(); szamlaloKi(utem());
+        });
+      }
+      rajzol2(); sozas2(); szamlaloKi(utem());
+    } else if(DOBOZ){
+      DOBOZ.hidden = true;
+    }
+  }
 
   if(IS && IS.sorozat && IS.sorozat.length > 24){
     const S=IS.sorozat, W2=520, H2=190, BAL=44, JOBB=10, FENT=16, LENT=26;
