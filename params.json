@@ -4099,7 +4099,7 @@
   "hernad_hatarszelveny": {
     "ertek": 5.68,
     "vizallas_cm": 62.0,
-    "vizho_c": 13.8,
+    "vizho_c": 13.7,
     "provenance": "helyszini",
     "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
     "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
@@ -5019,7 +5019,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-10-05T00:46:07Z",
+    "keszult": "2026-10-05T06:52:27Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
