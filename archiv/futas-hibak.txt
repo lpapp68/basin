@@ -1,1 +1,0 @@
-talaj vízhiány: Az aszály-API nem adott vízhiány-adatot erre az időszakra. 
