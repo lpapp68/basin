@@ -1,7 +1,7 @@
 kert_nap=2026-10-05
-feldolgozott_nap=2026-10-04
-ido=2026-10-06T02:54:33Z
+feldolgozott_nap=2026-10-05
+ido=2026-10-06T10:06:05Z
 hol=bot
-visszalepes=igen
+visszalepes=nem
 --- naplo ---
-teljes medence falai:     raise RuntimeError("A dévényi hozam hiányzik a SHMÚ táblázatból.") RuntimeError: A dévényi hozam hiányzik a SHMÚ táblázatból. 
+talaj vízhiány: Az aszály-API nem adott vízhiány-adatot erre az időszakra. 
