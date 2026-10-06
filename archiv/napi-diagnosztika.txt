@@ -1,7 +1,7 @@
-kert_nap=2026-10-04
+kert_nap=2026-10-05
 feldolgozott_nap=2026-10-04
-ido=2026-10-05T13:53:54Z
+ido=2026-10-06T02:54:33Z
 hol=bot
-visszalepes=nem
+visszalepes=igen
 --- naplo ---
 teljes medence falai:     raise RuntimeError("A dévényi hozam hiányzik a SHMÚ táblázatból.") RuntimeError: A dévényi hozam hiányzik a SHMÚ táblázatból. 
