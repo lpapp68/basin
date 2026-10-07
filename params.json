@@ -3583,13 +3583,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 126 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-10-07T01:26:00+00:00",
+    "lekerve": "2026-10-07T08:33:25+00:00",
     "datum": "2026-10-04",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 597.0,
-      "vizallas_cm": 53.0,
-      "vizho_c": 16.2,
+      "hozam_m3s": 628.0,
+      "vizallas_cm": 61.0,
+      "vizho_c": 15.8,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3598,15 +3598,15 @@
       "sokeves_atlag_m3s": 3800.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 703.0,
+    "kulonbseg_m3s": 672.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -48.0,
-        "hozam_m3s": null,
-        "vizho_c": 16.2
+        "vizallas_cm": -52.0,
+        "hozam_m3s": 530.3,
+        "vizho_c": 16.1
       },
       {
         "nev": "Duna, Komárom",
@@ -3620,17 +3620,17 @@
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -46.0,
+        "vizallas_cm": -48.0,
         "hozam_m3s": null,
-        "vizho_c": 13.3
+        "vizho_c": 13.0
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 53.0,
-        "hozam_m3s": 1.07,
-        "vizho_c": 11.9
+        "vizallas_cm": 44.0,
+        "hozam_m3s": 0.402,
+        "vizho_c": 11.5
       }
     ],
     "provenance": "mert",
@@ -4099,7 +4099,7 @@
   "hernad_hatarszelveny": {
     "ertek": 5.29,
     "vizallas_cm": 61.0,
-    "vizho_c": 13.7,
+    "vizho_c": 13.8,
     "provenance": "helyszini",
     "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
     "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
@@ -4115,127 +4115,127 @@
         "megjegyzes": "a főváros szelvénye",
         "pontok": [
           {
-            "ido": "2026-10-06 11:00:00",
-            "cm": 2.0,
-            "sav": 0.6
-          },
-          {
-            "ido": "2026-10-06 17:00:00",
-            "cm": 1.0,
-            "sav": 1.1
-          },
-          {
-            "ido": "2026-10-06 23:00:00",
-            "cm": 1.0,
-            "sav": 1.7
-          },
-          {
-            "ido": "2026-10-07 05:00:00",
-            "cm": 0.0,
-            "sav": 2.3
-          },
-          {
             "ido": "2026-10-07 11:00:00",
-            "cm": 0.0,
-            "sav": 3.5
+            "cm": -1.0,
+            "sav": 0.6
           },
           {
             "ido": "2026-10-07 17:00:00",
             "cm": -1.0,
-            "sav": 4.8
+            "sav": 1.1
           },
           {
             "ido": "2026-10-07 23:00:00",
             "cm": -1.0,
-            "sav": 6.0
+            "sav": 1.7
           },
           {
             "ido": "2026-10-08 05:00:00",
-            "cm": -1.0,
-            "sav": 7.2
+            "cm": -2.0,
+            "sav": 2.3
           },
           {
             "ido": "2026-10-08 11:00:00",
-            "cm": -1.0,
-            "sav": 8.6
+            "cm": -2.0,
+            "sav": 3.5
           },
           {
             "ido": "2026-10-08 17:00:00",
-            "cm": -1.0,
-            "sav": 10.0
+            "cm": -3.0,
+            "sav": 4.8
           },
           {
             "ido": "2026-10-08 23:00:00",
-            "cm": 0.0,
-            "sav": 11.4
+            "cm": -4.0,
+            "sav": 6.0
           },
           {
             "ido": "2026-10-09 05:00:00",
-            "cm": 0.0,
-            "sav": 12.7
+            "cm": -4.0,
+            "sav": 7.2
           },
           {
             "ido": "2026-10-09 11:00:00",
-            "cm": 1.0,
-            "sav": 13.9
+            "cm": -4.0,
+            "sav": 8.6
           },
           {
             "ido": "2026-10-09 17:00:00",
-            "cm": 3.0,
-            "sav": 15.0
+            "cm": -2.0,
+            "sav": 10.0
           },
           {
             "ido": "2026-10-09 23:00:00",
-            "cm": 6.0,
-            "sav": 16.1
+            "cm": 1.0,
+            "sav": 11.4
           },
           {
             "ido": "2026-10-10 05:00:00",
-            "cm": 9.0,
-            "sav": 17.3
+            "cm": 6.0,
+            "sav": 12.7
           },
           {
             "ido": "2026-10-10 11:00:00",
-            "cm": 16.0,
-            "sav": 18.4
+            "cm": 13.0,
+            "sav": 13.9
           },
           {
             "ido": "2026-10-10 17:00:00",
-            "cm": 23.0,
-            "sav": 19.5
+            "cm": 19.0,
+            "sav": 15.0
           },
           {
             "ido": "2026-10-10 23:00:00",
+            "cm": 24.0,
+            "sav": 16.1
+          },
+          {
+            "ido": "2026-10-11 05:00:00",
+            "cm": 27.0,
+            "sav": 17.3
+          },
+          {
+            "ido": "2026-10-11 11:00:00",
+            "cm": 30.0,
+            "sav": 18.4
+          },
+          {
+            "ido": "2026-10-11 17:00:00",
+            "cm": 30.0,
+            "sav": 19.5
+          },
+          {
+            "ido": "2026-10-11 23:00:00",
             "cm": 30.0,
             "sav": 20.6
           },
           {
-            "ido": "2026-10-11 05:00:00",
-            "cm": 35.0,
+            "ido": "2026-10-12 05:00:00",
+            "cm": 27.0,
             "sav": 21.8
           },
           {
-            "ido": "2026-10-11 11:00:00",
-            "cm": 39.0,
+            "ido": "2026-10-12 11:00:00",
+            "cm": 26.0,
             "sav": 22.7
           },
           {
-            "ido": "2026-10-11 17:00:00",
-            "cm": 42.0,
+            "ido": "2026-10-12 17:00:00",
+            "cm": 23.0,
             "sav": 23.7
           },
           {
-            "ido": "2026-10-11 23:00:00",
-            "cm": 43.0,
+            "ido": "2026-10-12 23:00:00",
+            "cm": 20.0,
             "sav": 24.6
           },
           {
-            "ido": "2026-10-12 05:00:00",
-            "cm": 43.0,
+            "ido": "2026-10-13 05:00:00",
+            "cm": 17.0,
             "sav": 25.5
           }
         ],
-        "valtozas_cm": 41.0,
+        "valtozas_cm": 18.0,
         "orak": 144
       },
       {
@@ -4245,127 +4245,127 @@
         "megjegyzes": "az ország alsó kapuja",
         "pontok": [
           {
-            "ido": "2026-10-06 11:00:00",
-            "cm": -29.0,
-            "sav": 0.5
-          },
-          {
-            "ido": "2026-10-06 17:00:00",
-            "cm": -30.0,
-            "sav": 1.0
-          },
-          {
-            "ido": "2026-10-06 23:00:00",
-            "cm": -30.0,
-            "sav": 1.6
-          },
-          {
-            "ido": "2026-10-07 05:00:00",
-            "cm": -31.0,
-            "sav": 2.1
-          },
-          {
             "ido": "2026-10-07 11:00:00",
             "cm": -30.0,
-            "sav": 2.8
+            "sav": 0.5
           },
           {
             "ido": "2026-10-07 17:00:00",
             "cm": -30.0,
-            "sav": 3.5
+            "sav": 1.0
           },
           {
             "ido": "2026-10-07 23:00:00",
-            "cm": -30.0,
-            "sav": 4.2
+            "cm": -31.0,
+            "sav": 1.6
           },
           {
             "ido": "2026-10-08 05:00:00",
             "cm": -31.0,
-            "sav": 4.9
+            "sav": 2.1
           },
           {
             "ido": "2026-10-08 11:00:00",
-            "cm": -30.0,
-            "sav": 5.5
+            "cm": -31.0,
+            "sav": 2.8
           },
           {
             "ido": "2026-10-08 17:00:00",
-            "cm": -30.0,
-            "sav": 6.2
+            "cm": -31.0,
+            "sav": 3.5
           },
           {
             "ido": "2026-10-08 23:00:00",
-            "cm": -31.0,
-            "sav": 6.9
+            "cm": -32.0,
+            "sav": 4.2
           },
           {
             "ido": "2026-10-09 05:00:00",
-            "cm": -31.0,
-            "sav": 7.6
+            "cm": -32.0,
+            "sav": 4.9
           },
           {
             "ido": "2026-10-09 11:00:00",
-            "cm": -31.0,
-            "sav": 8.7
+            "cm": -33.0,
+            "sav": 5.5
           },
           {
             "ido": "2026-10-09 17:00:00",
-            "cm": -31.0,
-            "sav": 9.7
+            "cm": -34.0,
+            "sav": 6.2
           },
           {
             "ido": "2026-10-09 23:00:00",
-            "cm": -31.0,
-            "sav": 10.8
+            "cm": -34.0,
+            "sav": 6.9
           },
           {
             "ido": "2026-10-10 05:00:00",
-            "cm": -30.0,
-            "sav": 11.8
+            "cm": -35.0,
+            "sav": 7.6
           },
           {
             "ido": "2026-10-10 11:00:00",
-            "cm": -30.0,
-            "sav": 13.0
+            "cm": -35.0,
+            "sav": 8.7
           },
           {
             "ido": "2026-10-10 17:00:00",
+            "cm": -35.0,
+            "sav": 9.7
+          },
+          {
+            "ido": "2026-10-10 23:00:00",
+            "cm": -35.0,
+            "sav": 10.8
+          },
+          {
+            "ido": "2026-10-11 05:00:00",
+            "cm": -34.0,
+            "sav": 11.8
+          },
+          {
+            "ido": "2026-10-11 11:00:00",
+            "cm": -33.0,
+            "sav": 13.0
+          },
+          {
+            "ido": "2026-10-11 17:00:00",
             "cm": -30.0,
             "sav": 14.2
           },
           {
-            "ido": "2026-10-10 23:00:00",
-            "cm": -29.0,
+            "ido": "2026-10-11 23:00:00",
+            "cm": -25.0,
             "sav": 15.4
           },
           {
-            "ido": "2026-10-11 05:00:00",
-            "cm": -29.0,
+            "ido": "2026-10-12 05:00:00",
+            "cm": -19.0,
             "sav": 16.6
           },
           {
-            "ido": "2026-10-11 11:00:00",
-            "cm": -27.0,
+            "ido": "2026-10-12 11:00:00",
+            "cm": -14.0,
             "sav": 17.9
           },
           {
-            "ido": "2026-10-11 17:00:00",
-            "cm": -24.0,
+            "ido": "2026-10-12 17:00:00",
+            "cm": -9.0,
             "sav": 19.2
           },
           {
-            "ido": "2026-10-11 23:00:00",
-            "cm": -20.0,
+            "ido": "2026-10-12 23:00:00",
+            "cm": -5.0,
             "sav": 20.5
           },
           {
-            "ido": "2026-10-12 05:00:00",
-            "cm": -14.0,
+            "ido": "2026-10-13 05:00:00",
+            "cm": -2.0,
             "sav": 21.8
           }
         ],
-        "valtozas_cm": 15.0,
+        "valtozas_cm": 28.0,
         "orak": 144
       },
       {
@@ -5019,7 +5019,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-10-07T01:26:11Z",
+    "keszult": "2026-10-07T08:33:30Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
