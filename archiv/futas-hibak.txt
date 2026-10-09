@@ -1,3 +1,0 @@
-OMSZ földi csapadék (2026-10-08):     raise URLError(err) urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> 
-OMSZ földi csapadék (2026-10-07):     raise URLError(err) urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> 
-OMSZ földi csapadék (2026-10-06):     raise URLError(err) urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> 
