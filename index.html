@@ -2585,7 +2585,7 @@ a{color:var(--viz)}
         <div class="tblokk">
           <div class="u">Vízhiány a gyökérzónában</div>
           <div class="nagy neg">${dec(TV.atlag_mm,1)}<span class="egys">&nbsp;mm</span></div>
-          <div class="m">${TV.melyseg}-es réteg, ${a.length} állomás átlaga · ${TV.datum}
+          <div class="m">${TV.melyseg}-es réteg, ${TV.allomas_db || a.length} állomás átlaga · ${TV.datum}
             <br>${pr(TV.provenance)}</div>
           <p class="tmagy"><b>Mit jelent ez a szám?</b> Ennyi víz hiányzik a talaj
           felső ${TV.melyseg}-éből ahhoz, hogy megteljen — ahhoz az állapothoz képest,
