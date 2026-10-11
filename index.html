@@ -389,6 +389,7 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
 .idoegyen .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--rekord);margin-bottom:8px}
 .idoegyen p{margin:0 0 8px;font-size:13px;line-height:1.6}
+.idoegyen p.iszel{margin-top:10px}
 .isor{display:grid;grid-template-columns:9.5em 1fr;gap:10px;padding:5px 0;
   border-top:1px solid var(--vonal-halk);font-family:var(--mono);font-size:12px}
 .isor b{color:var(--tinta)}
@@ -2601,12 +2602,22 @@ a{color:var(--viz)}
           <div class="tlista">${sorok}</div>${terkep}
         </div>
         <div class="tblokk">
-          <div class="u">A mai párolgással számolva hány napnyi nedvesség hiányzik a talajból?</div>
+          <div class="u">Hány napi mai párolgásnak felel meg a hiány?</div>
           ${napok ? `<div class="nagy">${dec(napok,0)}<span class="egys">&nbsp;nap</span></div>
-            <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgással számolva ennyi napnak felel meg. <b>Ez összehasonlító időegyenérték</b>: azt mutatja, mekkora a hiány a napi forgalomhoz képest — a tényleges feltöltődés a csapadék eloszlásától és a talaj befogadóképességétől függ.</div>` : ""}
+            <div class="m">A gyökérzóna ${dec(TV.atlag_mm,1)} mm-es vízhiánya annyi víz, amennyit a mai ${dec(Math.abs(MM.parolgas),2)} mm/napos párolgás ennyi nap alatt vinne el. <b>Ez a fogyás üteme</b>, összehasonlító időegyenérték. A pótlás ütemét az eső adja, ezt mutatja a következő doboz.</div>` : ""}
+          ${TV && TV.atlag_mm ? (() => {
+            const h = TV.atlag_mm, top = (TV.allomasok || [])[0];
+            const sor = (r) => `<div class="isor"><b>napi ${r} mm</b><span>${Math.ceil(h / r)} nap</span></div>`;
+            return `<div class="idoegyen"><div class="u">Hány nap eső pótolja?</div>
+              <p>Ugyanazt a ${dec(h,1)} mm-t két ütemmel lehet elosztani. A fogyás üteme a mai párolgás, napi ${dec(Math.abs(MM.parolgas),2)} mm${napok ? `: ebből jön ki a ${dec(napok,0)} nap` : ""}. A pótlás üteme a beszivárgó eső, amely egy esős napon ennek a sokszorosát hozza:</p>
+              <div class="isor ifej"><b>beszivárgó eső</b><span>a gyökérzóna feltöltése</span></div>
+              ${[2, 5, 10].map(sor).join("")}
+              ${top ? `<p class="iszel">A leginkább kiszáradt állomáson (${top.nev}, ${dec(top.hiany_mm,1)} mm) napi 5 mm-rel ${Math.ceil(top.hiany_mm / 5)} nap.</p>` : ""}
+              <p>A lehullott esőből a beszivárgó rész számít: a kiszáradt, kérges talajról sok lefolyik, egy részét a növényzet felfogja, és közben a párolgás is folytatódik. A szükséges csapadék ezért több a hiánynál. A talajvíz a gyökérzóna feltöltése után, ennél jóval lassabban pótlódik.</p></div>`;
+          })() : ""}
           <div class="trekesz">
             <div><b>napok</b> <span>a folyó. A Duna nagyjából egy hét alatt halad át az országon: ami ma Dévénynél belép, jövő héten Mohácsnál jár. Ez forgalom, nem készlet — nem a miénk, csak átmegy rajtunk.</span></div>
-            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja, helyileg az öntözés is segít.</span></div>
+            <div><b>hetek</b> <span>a talaj. A vízhiány gyakran hetek alatt alakul ki, a visszatöltődés ideje viszont a csapadék eloszlásától és a beszivárgástól függ. A fenti napszám <b>összehasonlító időegyenérték, nem előrejelzés</b>. Országos léptékben a gyökérzóna vizét a csapadék pótolja, helyileg az öntözés is segít.</span></div>
             <div><b>évtizedek</b> <span>a talajvíz. A Duna–Tisza közi hátságon métereket süllyedt ötven év alatt. Amit itt elveszítünk, azt nem egy csapadékos év hozza vissza.</span></div>
           </div>
           ${TVIZ ? `<div class="tvizdoboz">
