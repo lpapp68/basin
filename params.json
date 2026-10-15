@@ -3578,13 +3578,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-10-15T04:25:46+00:00",
+    "lekerve": "2026-10-15T09:51:53+00:00",
     "datum": "2026-10-14",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 668.0,
-      "vizallas_cm": 70.0,
-      "vizho_c": 14.4,
+      "hozam_m3s": 717.0,
+      "vizallas_cm": 80.0,
+      "vizho_c": 14.5,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3593,39 +3593,39 @@
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 532.0,
+    "kulonbseg_m3s": 483.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -44.0,
-        "hozam_m3s": 541.0,
+        "vizallas_cm": -36.0,
+        "hozam_m3s": 563.0,
         "vizho_c": 14.9
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 7.0,
-        "hozam_m3s": 579.0,
+        "vizallas_cm": 18.0,
+        "hozam_m3s": 614.0,
         "vizho_c": 14.6
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -47.0,
-        "hozam_m3s": 669.0,
-        "vizho_c": 9.7
+        "vizallas_cm": -34.0,
+        "hozam_m3s": 720.0,
+        "vizho_c": 12.8
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 40.0,
-        "hozam_m3s": 0.319,
-        "vizho_c": 9.5
+        "vizallas_cm": 39.0,
+        "hozam_m3s": 0.305,
+        "vizho_c": 10.5
       }
     ],
     "provenance": "mert",
