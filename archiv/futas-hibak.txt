@@ -1,1 +1,2 @@
-OVSZ vízállás-előrejelzés:   Berettyóújfalu     — Berettyóújfalu: Remote end closed connection without response Egyetlen szelvényre sem érkezett előrejelzés. 
+LSA SAF párolgás:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+öntözésigény:     raise URLError(err) urllib.error.URLError: <urlopen error [Errno 110] Connection timed out> 
