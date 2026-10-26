@@ -5013,7 +5013,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-10-26T17:03:41Z",
+    "keszult": "2026-10-26T17:15:51Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
