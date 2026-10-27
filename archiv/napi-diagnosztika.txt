@@ -1,6 +1,10 @@
 kert_nap=2026-10-26
-feldolgozott_nap=2026-10-25
-ido=2026-10-27T07:41:31Z
+feldolgozott_nap=2026-10-26
+ido=2026-10-27T13:50:24Z
 hol=bot
-visszalepes=igen
+visszalepes=nem
 --- naplo ---
+LSA SAF párolgás:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+öntözésigény:     raise URLError(err) urllib.error.URLError: <urlopen error [Errno 110] Connection timed out> 
+talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+teljes medence falai:     raise URLError(err) urllib.error.URLError: <urlopen error _ssl.c:993: The handshake operation timed out> 
