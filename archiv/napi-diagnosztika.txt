@@ -1,7 +1,7 @@
 kert_nap=2026-10-29
-feldolgozott_nap=2026-10-28
-ido=2026-10-30T08:32:12Z
+feldolgozott_nap=2026-10-29
+ido=2026-10-30T15:49:13Z
 hol=bot
-visszalepes=igen
+visszalepes=nem
 --- naplo ---
-talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+IMERG műholdas csapadék:     raise RuntimeError(f"Nincs {TERMEK} találat {nap}-ra. Az Early termék néhány " RuntimeError: Nincs GPM_3IMERGDE találat 2026-10-29-ra. Az Early termék néhány órás késéssel jön — próbáld a tegnapi nappal. 
