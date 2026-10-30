@@ -1,7 +1,6 @@
-kert_nap=2026-10-28
+kert_nap=2026-10-29
 feldolgozott_nap=2026-10-28
-ido=2026-10-29T16:51:49Z
+ido=2026-10-30T01:54:15Z
 hol=bot
-visszalepes=nem
+visszalepes=igen
 --- naplo ---
-IMERG műholdas csapadék:     raise RuntimeError(f"Nincs {TERMEK} találat {nap}-ra. Az Early termék néhány " RuntimeError: Nincs GPM_3IMERGDE találat 2026-10-28-ra. Az Early termék néhány órás késéssel jön — próbáld a tegnapi nappal. 
