@@ -2,7 +2,21 @@ name = "basin-utemezo"
 main = "worker.js"
 compatibility_date = "2026-08-13"
 
-# Félóránként, a 4. és a 34. percben. A kerek perceket kerüljük: a
-# Cloudflare oldalán is azok a legterheltebbek.
+# Óránként, a 4. percben (UTC) — de nem cronnal. A fiók ingyenes Workers-
+# csomagjában az 5 cron-hely foglalt, ezért egy Durable Object riasztása
+# lépteti a láncot (lásd worker.js). Az üres lista a korábbi cron-kísérletet is
+# törli. A félórás ütem napi 48 futás lenne, ami a privát repó Actions-keretét
+# (2 000 perc/hó) megközelítené; 2026-10-31 óta óránkénti.
 [triggers]
-crons = ["4,34 * * * *"]
+crons = []
+
+[[durable_objects.bindings]]
+name = "UTEMEZO"
+class_name = "BasinUtemezo"
+
+[[migrations]]
+tag = "v1-basin-utemezo"
+new_sqlite_classes = ["BasinUtemezo"]
+
+[observability]
+enabled = true

@@ -4,7 +4,10 @@ name: basin
 # A gépedtől függetlenül fut — nem kell, hogy a Mac ébren legyen.
 on:
   schedule:
-    - cron: "7 * * * *"      # minden óra 7. percében (UTC)
+    # Tartalék. Az óránkénti indítást a Cloudflare-ütemező (utemezo/) adja, mert a
+    # GitHub saját cronja torlódáskor órákat csúszik. Hatóránként fut, hogy a
+    # Worker kiesésekor (pl. lejárt token) is menjen tovább a gyűjtés.
+    - cron: "37 */6 * * *"
   workflow_dispatch:          # kézi indítás is
 
 concurrency:                  # ne fusson két példány egyszerre az archívumra
