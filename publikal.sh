@@ -46,12 +46,12 @@ cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt goog
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.
-for f in data.json data.js; do
+for f in data.json data.js duna.json; do
   if curl -fsSL -m 30 "$ELO/$f" -o "_publish/$f"; then
     echo "  $f: az élő példány marad"
   else
     echo "  !! $f nem tölthető le, a helyi másolat megy ki"
-    cp "$f" "_publish/$f"
+    if [ -f "$f" ]; then cp "$f" "_publish/$f"; else echo "  !! $f helyben is hiányzik, kimarad"; fi
   fi
 done
 

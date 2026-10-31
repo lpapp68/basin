@@ -119,6 +119,9 @@ if [ "$MOD" = "napi" ]; then
   futtat "öntözésigény"      python ontozesigeny.py "$NAP"
   futtat "talaj vízhiány"    python aszaly.py       "$NAP"
   futtat "vízkivétel"        python kivetel.py      "$NAP"
+  # A Duna napi hozama és a paksi vízhő 1991-től (öntözővíz-szekció). Az utolsó
+  # tíz napot frissíti az OVF API-ból; a teljes idősor az archiv/-ban marad.
+  futtat "Duna-idősor (öntözővíz)" python ontozoviz.py
 
   # A teljes medence két fala: SHMÚ Dévény és INHGA Baziás. Napi ritmusú, esőd.
   # A magyar doboz ettől függetlenül működik; kimaradása csak a medence-
@@ -199,6 +202,10 @@ fi
 
 python fetch_data.py || { echo "!! a mérce-lekérés elhasalt"; exit 1; }
 
+# A duna.json minden futásban elkészül a gyorsítótárból, hálózat nélkül:
+# a publikálás minden fájlt cserél, ami kimarad, az a lapról is eltűnik.
+python ontozoviz.py --json || echo "!! a duna.json most nem készült el"
+
 if [ -n "$HIBAK" ]; then
   echo "== FIGYELEM, kimaradt tagok:$HIBAK"
 fi
@@ -210,6 +217,7 @@ if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
   # botfutás letörli a lapról — ez korábban a logóval megtörtént.
   mkdir -p _publish
   cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
+  if [ -f duna.json ]; then cp duna.json _publish/; fi
 # ── Lapteszt ─────────────────────────────────────────────────────────────
 # A node --check csak szintaxist néz. Egy nem létező változó vagy elrontott
 # blokkhatár szintaktikailag tökéletes, futáskor viszont megállítja az egész

@@ -90,5 +90,7 @@ jobs:
           cp index.html data.js data.json logo.png logo.svg terkep.json \
              robots.txt sitemap.xml llms.txt googled3302b927f898901.html \
              favicon.ico favicon-32.png apple-touch-icon.png _publish/
+          # Az öntözővíz-szekció idősora; a frissit.sh minden futásban előállítja.
+          if [ -f duna.json ]; then cp duna.json _publish/; fi
           npx --yes wrangler pages deploy _publish \
             --project-name basin --commit-dirty=true

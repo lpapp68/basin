@@ -62,6 +62,7 @@ ezek a tagok is a magyar területre vonatkoznak. A váltás egyetlen sor: `AKTIV
 | Talajvízszint | **mért** | OVF nyílt API, 487 kút, tízéves összevetés | napi |
 | Vízkészlet-anomália | **műholdas mérés** | NASA GRACE/GRACE-FO | havi |
 | Paksi hűtővízkivétel | **származtatott** | blokkteljesítmény: holadelej.hu (CC BY 4.0) | 30 perc |
+| Duna-idősor 1991-től (öntözővíz-szekció) | **mért** | OVF nyílt API: Dunaújváros vízhozam, Paks vízhő (`ontozoviz.py`) | napi |
 | Futó egyenleg (2021-től) | **helyőrző** | GRACE-FO + OVF sorozatból számítandó | — |
 | Napi zárási maradék | **maradéktag** | a mérleg többi tagjából, nem mérés | napi |
 

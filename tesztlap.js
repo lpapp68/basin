@@ -17,6 +17,9 @@ const fs = require("fs");
 
 const html = fs.readFileSync("index.html", "utf8");
 const adat = JSON.parse(fs.readFileSync("data.json", "utf8"));
+// Az „Öntözővíz a Dunából” szekció a duna.json-ből számol. Ha a fájl megvan,
+// előre betöltjük, így a szekció logikája is szinkron lefut a tesztben.
+const duna = fs.existsSync("duna.json") ? JSON.parse(fs.readFileSync("duna.json", "utf8")) : null;
 
 // A lap utolsó <script> blokkja tartalmazza a logikát.
 const blokkok = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
@@ -56,7 +59,7 @@ global.document = {
   documentElement: ujElem("html"),
 };
 global.window = {
-  BASIN_DATA: adat, addEventListener() {}, matchMedia: () => ({ matches:false,
+  BASIN_DATA: adat, BASIN_DUNA: duna, addEventListener() {}, matchMedia: () => ({ matches:false,
     addEventListener(){}, addListener(){} }),
   innerWidth: 1400, innerHeight: 900, scrollY: 0, location: { href: "" },
   requestAnimationFrame: f => f(), setTimeout: () => 0, setInterval: () => 0,
@@ -95,6 +98,9 @@ const KELL = [
   ["egyenleg",      "egyenleg"],
   ["hovalett",      "hova lett"],
 ];
+if (duna) {
+  KELL.push(["ov-a-graf", "öntözővíz A grafikon"], ["ov-b-ki", "öntözővíz B összegzés"]);
+}
 let baj = 0;
 for (const [id, nev] of KELL) {
   const e = elemek.get(id);

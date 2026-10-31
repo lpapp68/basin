@@ -463,6 +463,39 @@ p.elojel{font-size:11.5px;color:var(--halvany);margin:14px 0 0;padding-top:10px;
     color-mix(in oklab,var(--viz) 50%,var(--parolgas)) 50%, var(--viz) 100%)}
 .stressz .sav i{position:absolute;top:-5px;width:3px;height:18px;
   background:var(--tinta);transform:translateX(-1px)}
+/* ── Öntözővíz a Dunából ─────────────────────────────────────────────────
+   Egy szivattyútelep két üzemmódban, 1991-től napi léptékben. A számítás a
+   böngészőben fut a duna.json-ből, hogy a három csúszka azonnal hasson. */
+.ov-vezer{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0}
+.ov-vezer .ablak{margin:0}
+.ov-meta{font-size:12px;color:var(--halvany);margin-top:5px;line-height:1.4;min-height:2.8em}
+.ov-most{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--vonal);
+  background:var(--papir);margin:0 0 16px}
+.ov-most>div{padding:10px 12px;border-right:1px solid var(--vonal-halk)}
+.ov-most>div:last-child{border-right:0}
+.ov-most .u{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--halvany)}
+.ov-most .v{font-family:var(--mono);font-size:18px;font-weight:600;margin-top:3px}
+.ov-most .v small{font-size:11px;font-weight:400;color:var(--halvany)}
+.ov-most .m{font-size:11.5px;color:var(--halvany);margin-top:3px;line-height:1.35}
+.ov-graf svg{width:100%;height:auto;display:block}
+.ov-graf .tg{font-family:var(--mono);font-size:10px;fill:var(--halvany)}
+.ov-graf .tgv{stroke:var(--vonal-halk);stroke-width:1}
+.ov-ki{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 18px}
+.ov-ki .u{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--halvany)}
+.ov-ki .szam2{font-size:21px}
+.ov-ki .m{font-size:12px;color:var(--halvany);line-height:1.4;margin-top:2px}
+.ov-ki .teljes{grid-column:1/-1;font-size:13.5px;line-height:1.55;color:var(--tinta);
+  border-top:1px solid var(--vonal-halk);padding-top:10px}
+.ov-labjegy{margin-top:18px;padding:12px 14px;border-left:2px solid var(--vonal);
+  font-size:12px;color:var(--halvany);line-height:1.5;max-width:118ch}
+.ov-labjegy ol{margin:6px 0 0;padding-left:18px}
+.ov-labjegy li{margin:3px 0}
+@media(max-width:820px){.ov-vezer{grid-template-columns:1fr}
+  .ov-most{grid-template-columns:1fr 1fr}.ov-most>div:nth-child(2){border-right:0}
+  .ov-most>div:nth-child(3){grid-column:1/-1;border-top:1px solid var(--vonal-halk)}
+  .ov-ki{grid-template-columns:1fr}}
 /* ── Vízstressz-lámpa ────────────────────────────────────────────────────
    A százalék önmagában szakmai. A FAO-56 vízstressz-együtthatójának (Ks)
    gyakorlati tartományai adják a három fokozatot — közelítéssel, mert a
@@ -836,6 +869,45 @@ a{color:var(--viz)}
   <p class="lead">Az erőmű a Duna vizével hűt: kiveszi, átvezeti, felmelegítve visszaengedi — a víz nem fogy el. Paks mégis külön szekciót kap, mert ez az egyetlen pont az országban, ahol néhány centiméter vízszint és néhány tizedfok hőmérséklet korlátozhatja a paksi blokkok termelését. A modell többi adata mennyiségről szól, ez küszöbökről.</p>
   <div class="paksdoboz" id="paks"></div>
 </section>
+
+<section id="ontozo-sec">
+  <div class="sz"><h2>Öntözővíz a Dunából</h2><span class="n">mikor és kinek a rovására</span></div>
+  <p class="lead">Egy elképzelt szivattyútelep a Mezőföldnél, a dunaújvárosi szelvény fölött. A modell 1991 óta minden napra lefut két üzemmódban. <b>A</b>: a telep akkor szív, amikor a növénynek kell. <b>B</b>: csak akkor szív, amikor a Duna a küszöb fölött jár, és a többletet nyárig tárolja. Mindkét esetben ugyanaz a kérdés: mennyi víz jut a földekre, és mennyi marad Paks hűtésére a kisvizes, meleg napokon. A három csúszka ugyanazt a telepet állítja mindkét üzemmódban.</p>
+  <div class="ov-vezer">
+    <div class="ablak">
+      <div class="ablak-fej"><span class="u">Éves öntözési igény</span><b id="ov-cel-f">700 millió m³</b></div>
+      <input type="range" id="ov-cel" min="100" max="1500" step="50" value="700" aria-label="Éves öntözési igény, millió köbméter">
+      <div class="ov-meta" id="ov-cel-m"></div>
+    </div>
+    <div class="ablak">
+      <div class="ablak-fej"><span class="u">Szivattyú-kapacitás</span><b id="ov-kap-f">81 m³/s</b></div>
+      <input type="range" id="ov-kap" min="10" max="300" step="1" value="81" aria-label="Szivattyú-kapacitás, köbméter per másodperc">
+      <div class="ov-meta" id="ov-kap-m"></div>
+    </div>
+    <div class="ablak">
+      <div class="ablak-fej"><span class="u">Küszöb a B üzemmódhoz</span><b id="ov-kusz-f">Q50</b></div>
+      <input type="range" id="ov-kusz" min="10" max="90" step="5" value="50" aria-label="Küszöb a dunaújvárosi hozam percentilisében">
+      <div class="ov-meta" id="ov-kusz-m"></div>
+    </div>
+  </div>
+  <div class="racs">
+    <div class="panel" id="p-ov-a">
+      <h3>A · Kivétel az igény szerint <span class="pontos">nyári csúcs, folyamatos szívás</span></h3>
+      <p class="alcim">A havi igény a lap kivételmodelljének vegetációs profilját követi: április 3%, május 12%, június 22%, július 28%, augusztus 24%, szeptember 9%, október 2%. A napi kivétel legfeljebb a kapacitás. A grafikon évente a <b>Paks-napokat</b> számolja: a paksi vízhő legalább 25 °C, és a dunaújvárosi hozam a sokéves alsó ötödében jár.</p>
+      <div class="ov-most" id="ov-a-most"></div>
+      <div class="ov-graf" id="ov-a-graf"></div>
+      <div class="ov-ki" id="ov-a-ki"></div>
+    </div>
+    <div class="panel" id="p-ov-b">
+      <h3>B · Csak a küszöb fölötti vízből <span class="pontos">tavaszi áradás, tározással</span></h3>
+      <p class="alcim">A telep csak akkor szív, amikor a dunaújvárosi hozam a küszöb fölött jár, legfeljebb a kapacitásig; amit a növény még nem kér, azt tárolja. A vízgazdálkodási év november 1-jén indul, üres tárolóval. Az oszlop a havonta kivehető víz mediánéve, a sötétebb mag a száraz év (alsó ötöd), a pontsor az igény.</p>
+      <div class="ov-graf" id="ov-b-graf"></div>
+      <div class="ov-ki" id="ov-b-ki"></div>
+    </div>
+  </div>
+  <div class="ov-labjegy" id="ov-labjegy"></div>
+</section>
+
 
 <section>
   <div class="sz"><h2>Négy panel</h2><span class="n">a modell és a bizonytalansága</span></div>
@@ -1506,6 +1578,284 @@ a{color:var(--viz)}
       `${hv.allapot||"—"}. A folyó <b>${K.hutoviz_a_folyo_szazalekaban!=null?K.hutoviz_a_folyo_szazalekaban.toLocaleString("hu-HU",{minimumFractionDigits:2,maximumFractionDigits:2})+" %":"—"}</b>-a, `+
       `és gyakorlatilag teljes egészében visszatér — felmelegítve. `+
       `${pr("modellezett")} ${hv.forras||""}`, false));
+  }
+
+  /* ── Öntözővíz a Dunából ────────────────────────────────────────────────
+     Egy elképzelt mezőföldi szivattyútelep két üzemmódban, 1991-től napi
+     léptékben. Az idősor a duna.json-ből jön (ontozoviz.py), a számítás itt
+     fut, hogy a három csúszka azonnal hasson. Minden szám forrása és képlete
+     a szekció lábjegyzetében áll. */
+  {
+    // A havi igényprofil a kivetel.py feltevése (mezőgazdasági öntözés).
+    const PROF = [0,0,0,0.03,0.12,0.22,0.28,0.24,0.09,0.02,0,0];
+    const HO_ROVID = ["jan","febr","márc","ápr","máj","jún","júl","aug","szept","okt","nov","dec"];
+    const HO_BAN = ["januárban","februárban","márciusban","áprilisban","májusban","júniusban",
+                    "júliusban","augusztusban","szeptemberben","októberben","novemberben","decemberben"];
+    // Évszám + -ban/-ben a kiejtett utolsó szó szerint (2026-ban, 2025-ben).
+    const evBan = y => { const e = y % 10, t = Math.floor(y/10) % 10;
+      const mely = e ? [3,6,8].includes(e) : (y % 100 === 0 ? false : [2,3,6,8].includes(t));
+      return y + (mely ? "-ban" : "-ben"); };
+    const vizEv = vy => `${vy-1}/${String(vy).slice(2)}`;
+    const MEZOFOLD_M2 = 350000 * 1e4;            // 350 000 ha — FELTÉTELEZÉS
+    const P_NEVLEGES = 2000e6, ETA = 0.33, RHO_C = 4.186e6;
+    const T_PAKS = 25, HOKORLAT = 30;
+    const ir = (s, h) => { const e = $(s); if(e) e.innerHTML = h; };
+    const szazalek = (x, j=1) => dec(x*100, j) + " %";
+    const millio = x => num(Math.round(x/1e6));
+    const median = a => { const s=[...a].sort((x,y)=>x-y), n=s.length;
+                          return n ? (s[(n-1)>>1] + s[n>>1]) / 2 : null; };
+    const kvantilis = (a, p) => { const s=[...a].sort((x,y)=>x-y);
+                                  return s.length ? s[Math.round(p*(s.length-1))] : null; };
+    const csuszka = (s, alap) => { const e = $(s); const v = e ? parseFloat(e.value) : NaN;
+                                   return isFinite(v) ? v : alap; };
+
+    const ovIndit = (J) => {
+      if(!J || !Array.isArray(J.q) || !Array.isArray(J.t) || J.q.length < 3000 || !J.kezdo){
+        ir("#ov-a-graf", '<p class="ov-meta">Az idősor betöltése most elakadt (duna.json); a következő frissítéskor újra próbálja.</p>');
+        ir("#ov-b-graf", '');
+        return;
+      }
+      const N = J.q.length, Q = J.q, T = J.t;
+      const t0 = Date.parse(J.kezdo + "T00:00:00Z");
+      const EV = new Int16Array(N), HO = new Int8Array(N), NAP = new Int8Array(N), HN = new Int8Array(N);
+      for(let i=0; i<N; i++){
+        const d = new Date(t0 + i*864e5);
+        EV[i] = d.getUTCFullYear(); HO[i] = d.getUTCMonth(); NAP[i] = d.getUTCDate();
+        HN[i] = new Date(Date.UTC(EV[i], HO[i]+1, 0)).getUTCDate();
+      }
+      const EV0 = EV[0], EV1 = EV[N-1];
+      // A percentilisek a lezárt naptári évekből jönnek, hogy a küszöb ne
+      // mozogjon a folyó év napjaival.
+      const hist = [];
+      for(let i=0; i<N; i++) if(EV[i] < EV1 && Q[i] != null) hist.push(Q[i]);
+      hist.sort((a,b)=>a-b);
+      const pct = p => hist[Math.round(p/100*(hist.length-1))];
+      const Q20 = pct(20);
+      const SZONDA = new Uint8Array(N);          // 89-es mederfenéki szonda napjai
+      for(const [a,b] of (J.t89 || [])){
+        const ia = Math.round((Date.parse(a+"T00:00:00Z")-t0)/864e5);
+        const ib = Math.round((Date.parse(b+"T00:00:00Z")-t0)/864e5);
+        for(let i=Math.max(0,ia); i<=Math.min(N-1,ib); i++) SZONDA[i] = 1;
+      }
+      const PAKSNAP = new Uint8Array(N);
+      for(let i=0; i<N; i++)
+        PAKSNAP[i] = (T[i] != null && T[i] >= T_PAKS && Q[i] != null && Q[i] < Q20) ? 1 : 0;
+      // Melyik hónapokra esnek a Paks-napok — a szövegbe az adatból kerül.
+      const pHo = new Array(12).fill(0);
+      for(let i=0; i<N; i++) if(PAKSNAP[i]) pHo[HO[i]]++;
+      const pOssz = pHo.reduce((x,v) => x+v, 0);
+      const pFo = pHo.map((v,h) => [v,h]).sort((a,b) => b[0]-a[0]);
+      const pKetto = pFo[0][0] + pFo[1][0];
+      const HO_RA = ["januárra","februárra","márciusra","áprilisra","májusra","júniusra","júliusra",
+                     "augusztusra","szeptemberre","októberre","novemberre","decemberre"];
+      const PAKS_MONDAT = pOssz
+        ? ` A Paks-napok ${szazalek(pKetto/pOssz, 0)}-a ${[pFo[0][1], pFo[1][1]].sort((a,b)=>a-b).map(h => HO_RA[h]).join(" és ")} esik, az öntözési igény csúcsára.`
+        : "";
+      const HO_W = P_NEVLEGES * (1/ETA - 1);    // a Dunába jutó hő, W
+      const melegedes = (q, w, hw) => (w > 0 && q > w) ? hw/RHO_C*(1/(q-w) - 1/q) : 0;
+
+      const szamol = (cel, kap, kuszP) => {
+        const V = cel*1e6, K = pct(kuszP);
+        const igeny = i => V*PROF[HO[i]]/HN[i]/86400;          // m³/s
+        // A üzemmód: naptári évenként a Paks-napok
+        const A = [];
+        for(let y=EV0; y<=EV1; y++) A.push({ev:y, nap:0, reszOssz:0, reszMax:0, dtMax:0, szonda:0});
+        let hianyA = 0;
+        for(let i=0; i<N; i++){
+          const d = igeny(i);
+          if(d > kap) hianyA += (d - kap)*86400;
+          if(!PAKSNAP[i]) continue;
+          const w = Math.min(kap, d), r = A[EV[i]-EV0];
+          r.nap++; r.reszOssz += w/Q[i]; r.reszMax = Math.max(r.reszMax, w/Q[i]);
+          r.dtMax = Math.max(r.dtMax, melegedes(Q[i], w, HO_W));
+          if(SZONDA[i]) r.szonda++;
+        }
+        // B üzemmód: vízgazdálkodási évenként (november 1. – október 31.)
+        const B = [];
+        const ujEv = i => HO[i] === 10 && NAP[i] === 1;
+        let i0 = 0; while(i0 < N && !ujEv(i0)) i0++;
+        while(i0 < N){
+          let i1 = i0 + 1; while(i1 < N && !ujEv(i1)) i1++;
+          const n = i1 - i0, v = new Float64Array(n), dd = new Float64Array(n);
+          const honapV = new Array(12).fill(0), honapD = new Array(12).fill(0);
+          let S = 0, hiany = 0, kozvetlen = 0, paksKivet = 0, osszes = 0, tavasz = 0;
+          for(let i=i0; i<i1; i++){
+            const vi = Q[i] == null ? 0 : Math.min(kap, Math.max(0, Q[i] - K))*86400;
+            const di = igeny(i)*86400;
+            v[i-i0] = vi; dd[i-i0] = di; honapV[HO[i]] += vi; honapD[HO[i]] += di;
+            S += vi; const vesz = Math.min(S, di); S -= vesz; hiany += di - vesz;
+            kozvetlen += Math.min(vi, di); osszes += vi;
+            if(HO[i] >= 2 && HO[i] <= 5) tavasz += vi;
+            if(PAKSNAP[i]) paksKivet += vi;
+          }
+          // Hátrafelé: mekkora készlet kell ahhoz, hogy a későbbi hiányok fedezve legyenek.
+          let kell = 0, tarolo = 0;
+          for(let k=n-1; k>=0; k--){ kell = Math.max(0, kell + dd[k] - v[k]); if(kell > tarolo) tarolo = kell; }
+          const teljes = i1 < N || (HO[N-1] === 9 && NAP[N-1] === 31);
+          B.push({vy: EV[i0]+1, teljes, honapV, honapD, hiany, kozvetlen, tarolo, paksKivet, osszes, tavasz});
+          i0 = i1;
+        }
+        return {V, K, kap, kuszP, A, B, hianyA};
+      };
+
+      const rajzolA = (R) => {
+        // „most” sor a lap élő mércéiből
+        const DU = (D.mercek || []).find(m => m.nev === "Dunaújváros") || {};
+        const PK = D.paks || {};
+        const ma = new Date(), ho = ma.getMonth();
+        const hn = new Date(ma.getFullYear(), ho+1, 0).getDate();
+        const dMost = R.V*PROF[ho]/hn/86400, wMost = Math.min(R.kap, dMost);
+        const mw = PK.hutoviz && typeof PK.hutoviz.mw === "number" ? PK.hutoviz.mw*1e6 : null;
+        const hwMost = (mw != null ? mw : P_NEVLEGES) * (1/ETA - 1);
+        const qMost = DU.hozam_m3s;
+        ir("#ov-a-most",
+          `<div><div class="u">Dunaújváros most</div><div class="v">${num(qMost != null ? Math.round(qMost) : null)}<small> m³/s</small></div>`+
+          `<div class="m">${DU.utolso_ido || ""}</div></div>`+
+          `<div><div class="u">A telep most</div><div class="v">${dec(wMost,1)}<small> m³/s</small></div>`+
+          `<div class="m">${wMost > 0 && qMost ? "a folyó " + szazalek(wMost/qMost) + "-a; teljes elkeveredéssel +" +
+              dec(melegedes(qMost, wMost, hwMost), 2) + " °C Paksnál" + (mw != null ? "" : " (névleges teljesítménnyel)")
+            : HO_BAN[ho] + " az igényprofil szerint szünetel"}</div></div>`+
+          `<div><div class="u">Paks vízhője</div><div class="v">${dec(PK.vizho_c,1)}<small> °C</small></div>`+
+          `<div class="m">tartalék a ${HOKORLAT} °C-os korlátig: ${dec(PK.hokorlat_tartalek_c,1)} °C</div></div>`);
+
+        // évenkénti oszlopok
+        const W = 640, H = 200, L = 30, Rj = 6, F = 16, Al = 24;
+        const n = R.A.length, sav = (W-L-Rj)/n, bw = Math.max(4, sav*0.68);
+        const maxNap = Math.max(10, ...R.A.map(a => a.nap));
+        const ymax = Math.ceil(maxNap/10)*10, ph = H - F - Al;
+        let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Paks-napok évenként, ${EV0}–${EV1}">`;
+        for(const g of [0, ymax/2, ymax]){
+          const y = F + ph - g/ymax*ph;
+          s += `<line class="tgv" x1="${L}" x2="${W-Rj}" y1="${y}" y2="${y}"/>`+
+               `<text class="tg" x="${L-5}" y="${y+3}" text-anchor="end">${num(g)}</text>`;
+        }
+        R.A.forEach((a, k) => {
+          const x = L + k*sav + (sav-bw)/2, h = a.nap/ymax*ph, y = F + ph - h;
+          const atl = a.nap ? a.reszOssz/a.nap : 0;
+          const erosseg = a.nap ? 0.35 + 0.65*Math.min(1, a.reszMax/0.12) : 0;
+          const cim = a.nap
+            ? `${a.ev}: ${a.nap} Paks-nap. A telep ezeken a Duna átlag ${szazalek(atl)}-át, legfeljebb ${szazalek(a.reszMax)}-át vitte volna el; teljes elkeveredéssel legfeljebb +${dec(a.dtMax,2)} °C.` +
+              (a.szonda ? ` A vízhő ${a.szonda} napon a mederfenéki szondából.` : "")
+            : `${a.ev}: Paks-nap a kritériumok szerint 0.`;
+          s += `<g><title>${cim}</title>`+
+               `<rect x="${x}" y="${a.nap ? y : F+ph-1}" width="${bw}" height="${a.nap ? h : 1}" fill="${a.nap ? "var(--rekord)" : "var(--vonal)"}" opacity="${a.nap ? erosseg : 1}"/>`+
+               (a.nap ? `<text class="tg" x="${x+bw/2}" y="${y-4}" text-anchor="middle">${a.nap}</text>` : "")+
+               `</g>`;
+          if((a.ev - EV0) % 5 === 0 || a.ev === EV1)
+            s += `<text class="tg" x="${x+bw/2}" y="${H-7}" text-anchor="middle">${a.ev}</text>`;
+        });
+        s += `</svg>`;
+        ir("#ov-a-graf", s);
+
+        const fel = Math.floor((EV0 + EV1)/2);
+        const elso = R.A.filter(a => a.ev <= fel).reduce((x,a) => x + a.nap, 0);
+        const masod = R.A.filter(a => a.ev > fel).reduce((x,a) => x + a.nap, 0);
+        const ut = R.A[n-1], atlUt = ut.nap ? ut.reszOssz/ut.nap : 0;
+        const csucs = R.V*0.28/31/86400;
+        ir("#ov-a-ki",
+          `<div><div class="u">Paks-nap ${evBan(ut.ev)}</div><div class="szam2 ${ut.nap ? "neg" : ""}">${ut.nap}</div>`+
+          `<div class="m">${ut.nap ? `a telep ezeken a Duna átlag ${szazalek(atlUt)}-át, legfeljebb ${szazalek(ut.reszMax)}-át vinné el; teljes elkeveredéssel legfeljebb +${dec(ut.dtMax,2)} °C` : "a kritériumok szerint"}</div></div>`+
+          `<div><div class="u">Paks-nap összesen</div><div class="szam2">${elso} → ${masod}</div>`+
+          `<div class="m">${EV0}–${fel} és ${fel+1}–${EV1}</div></div>`+
+          `<div class="teljes">A júliusi igénycsúcs ${dec(csucs,1)} m³/s. ` +
+          (R.hianyA > 1e5
+            ? `A ${num(R.kap)} m³/s-os kapacitással évente átlagosan ${millio(R.hianyA/(EV1-EV0+1))} millió m³ igény marad fedezetlen.`
+            : `A ${num(R.kap)} m³/s-os kapacitás ezt fedezi.`) +
+          PAKS_MONDAT + `</div>`);
+      };
+
+      const rajzolB = (R) => {
+        // A legutóbbi lezárt vízgazdálkodási évet külön mutatjuk; a folyamatban lévő
+        // év addig kimarad, amíg le nem zárul.
+        const teljesek = R.B.filter(b => b.teljes);
+        const utolso = teljesek[teljesek.length-1];
+        const lezart = teljesek.slice(0, -1);
+        const SOR = [10,11,0,1,2,3,4,5,6,7,8,9];
+        const med = SOR.map(h => median(lezart.map(b => b.honapV[h]))/1e6);
+        const szaraz = SOR.map(h => kvantilis(lezart.map(b => b.honapV[h]), 0.2)/1e6);
+        const igeny = SOR.map(h => median(lezart.map(b => b.honapD[h]))/1e6);
+        const idei = SOR.map(h => utolso.honapV[h]/1e6);
+        const W = 640, H = 210, L = 40, Rj = 6, F = 14, Al = 24, ph = H - F - Al;
+        const maxv = Math.max(10, ...med, ...igeny, ...idei);
+        const lep = maxv > 400 ? 100 : maxv > 160 ? 50 : 20;
+        const ymax = Math.ceil(maxv*1.08/lep)*lep, sav = (W-L-Rj)/12, bw = sav*0.6;
+        const Y = v => F + ph - v/ymax*ph;
+        let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Havonta kivehető víz és igény, millió köbméter">`;
+        for(const g of [0, ymax/2, ymax])
+          s += `<line class="tgv" x1="${L}" x2="${W-Rj}" y1="${Y(g)}" y2="${Y(g)}"/>`+
+               `<text class="tg" x="${L-5}" y="${Y(g)+3}" text-anchor="end">${num(g)}</text>`;
+        let vonal = "";
+        SOR.forEach((h, k) => {
+          const x = L + k*sav + (sav-bw)/2, cx = x + bw/2;
+          s += `<g><title>${HO_ROVID[h]}: mediánév ${num(Math.round(med[k]))}, száraz év ${num(Math.round(szaraz[k]))}, `+
+               `${vizEv(utolso.vy)} ${num(Math.round(idei[k]))} millió m³ kivehető; igény ${num(Math.round(igeny[k]))} millió m³</title>`+
+               `<rect x="${x}" y="${Y(med[k])}" width="${bw}" height="${F+ph-Y(med[k])}" fill="var(--viz)" opacity=".32"/>`+
+               `<rect x="${x}" y="${Y(szaraz[k])}" width="${bw}" height="${F+ph-Y(szaraz[k])}" fill="var(--viz)" opacity=".85"/>`+
+               `<line x1="${x-3}" x2="${x+bw+3}" y1="${Y(idei[k])}" y2="${Y(idei[k])}" stroke="var(--tinta)" stroke-width="2"/>`+
+               `<circle cx="${cx}" cy="${Y(igeny[k])}" r="3.6" fill="var(--parolgas)"/></g>`+
+               `<text class="tg" x="${cx}" y="${H-7}" text-anchor="middle">${HO_ROVID[h]}</text>`;
+          vonal += (k ? " L" : "M") + cx + " " + Y(igeny[k]);
+        });
+        s += `<path d="${vonal}" fill="none" stroke="var(--parolgas)" stroke-width="1.2" stroke-dasharray="3 3"/>`;
+        s += `</svg><div class="ov-meta">` +
+             `<i style="display:inline-block;width:10px;height:10px;background:var(--viz);opacity:.32"></i> mediánév &nbsp; ` +
+             `<i style="display:inline-block;width:10px;height:10px;background:var(--viz);opacity:.85"></i> száraz év (alsó ötöd) &nbsp; ` +
+             `<i style="display:inline-block;width:12px;height:2px;background:var(--tinta);vertical-align:middle"></i> ${vizEv(utolso.vy)} &nbsp; ` +
+             `<i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--parolgas)"></i> igény · millió m³ havonta</div>`;
+        ir("#ov-b-graf", s);
+
+        const jo = lezart.filter(b => b.hiany < 1e5).length;
+        const tar = lezart.map(b => b.tarolo), koz = lezart.map(b => b.kozvetlen);
+        const tMed = median(tar), t80 = kvantilis(tar, 0.8), kMed = median(koz);
+        const paks = lezart.reduce((x,b) => x + b.paksKivet, 0);
+        const ev0 = lezart.length ? lezart[0].vy : null, ev1 = lezart.length ? lezart[lezart.length-1].vy : null;
+        const mm = v => dec(v/MEZOFOLD_M2*1000, 0);
+        ir("#ov-b-ki",
+          `<div><div class="u">Teljesül</div><div class="szam2 ${jo === lezart.length ? "poz" : ""}">${jo} / ${lezart.length}<small> évben</small></div>`+
+          `<div class="m">ennyi vízgazdálkodási évben fedezi a telep a teljes igényt (${vizEv(ev0)} – ${vizEv(ev1)})</div></div>`+
+          `<div><div class="u">Szükséges tároló</div><div class="szam2">${millio(tMed)}<small> millió m³</small></div>`+
+          `<div class="m">mediánév, a 350 000 ha-on ${mm(tMed)} mm; minden ötödik évben legalább ${millio(t80)} millió m³</div></div>`+
+          `<div><div class="u">Tárolás nélkül</div><div class="szam2">${millio(kMed)}<small> millió m³</small></div>`+
+          `<div class="m">mediánév: ennyi jut a földekre közvetlenül, az igény ${szazalek(kMed/R.V, 0)}-a</div></div>`+
+          `<div><div class="u">Kivét Paks-napon</div><div class="szam2 ${paks > 0 ? "neg" : "poz"}">${paks > 0 ? millio(paks/lezart.length) : "0"}<small> ${paks > 0 ? "millió m³/év" : "m³"}</small></div>`+
+          `<div class="m">${paks > 0 ? "a küszöb a kisvíz-határ (" + num(Q20) + " m³/s) alatt jár, ezért a telep a kisvizes, meleg napokon is szív" : "a küszöb (" + num(R.K) + " m³/s) a kisvíz-határ (" + num(Q20) + " m³/s) fölött jár, a kisvizes, meleg napokon a telep áll"}</div></div>`+
+          `<div class="teljes"><b>${vizEv(utolso.vy)}:</b> ` +
+          `a telep ${millio(utolso.osszes)} millió m³-t vehetett volna ki, ebből ${szazalek(utolso.osszes ? utolso.tavasz/utolso.osszes : 0, 0)}-ot március–júniusban. ` +
+          (utolso.hiany < 1e5
+            ? `Az igény teljesül, ha ${millio(utolso.tarolo)} millió m³ tárolható.`
+            : `Korlátlan tárolóval is ${millio(utolso.hiany)} millió m³ hiányzik.`) + `</div>`);
+      };
+
+      const rajz = () => {
+        const cel = csuszka("#ov-cel", 700), kap = csuszka("#ov-kap", 81), kusz = csuszka("#ov-kusz", 50);
+        const R = szamol(cel, kap, kusz);
+        ir("#ov-cel-f", `${num(cel)} millió m³`);
+        ir("#ov-cel-m", `A 350 000 ha-os Mezőföldön ${dec(cel*1e6/MEZOFOLD_M2*1000,0)} mm; 100 napra elosztva ${dec(cel*1e6/(100*86400),0)} m³/s.`);
+        ir("#ov-kap-f", `${num(kap)} m³/s`);
+        ir("#ov-kap-m", `A júliusi igénycsúcs ${dec(R.V*0.28/31/86400,1)} m³/s; a kapacitás egy nap alatt ${dec(kap*86400/1e6,1)} millió m³.`);
+        ir("#ov-kusz-f", `${num(R.K)} m³/s`);
+        ir("#ov-kusz-m", `A dunaújvárosi napi hozam a napok ${100-kusz} %-ában magasabb ennél (${EV0}–${EV1-1}). Kisvíz-határ: ${num(Q20)} m³/s.`);
+        rajzolA(R); rajzolB(R);
+      };
+      for(const s of ["#ov-cel", "#ov-kap", "#ov-kusz"]){ const e = $(s); if(e) e.addEventListener("input", rajz); }
+      rajz();
+
+      const szondaNap = SZONDA.reduce((x,v) => x + v, 0);
+      const utolsoNap = new Date(t0 + (N-1)*864e5).toISOString().slice(0,10);
+      ir("#ov-labjegy", `<b>Források és számítás</b><ol>`+
+        `<li>Vízhozam: OVF nyílt adat-API (data.vizugy.hu), Duna–Dunaújváros (törzsszám 547), a negyedórás és órás vízhozam napi átlaga, ${J.kezdo} – ${utolsoNap}. A vízhozam vízállásból, kalibrált vízhozamgörbével számított érték. ${pr("szarmaztatott")}</li>`+
+        `<li>Vízhő: OVF, Duna–Paks (549), a reggeli felszíni észlelés. Ahol hiányzik (${num(szondaNap)} nap, főként ${EV1}), a mederfenéki szonda napi átlaga áll; ez a 2002–2025-ös közös napok szerint a 23 °C fölötti napokon átlagosan 0,4 °C-kal alacsonyabb, így ezekben az években a Paks-napok számát inkább alulbecsüli. ${pr("mert")}</li>`+
+        `<li>Paks-nap: a paksi vízhő legalább ${T_PAKS} °C, vagyis 5 °C-on belül van a ${HOKORLAT} °C-os hőterhelési korláthoz, amely a melegvíz-csatorna torkolatától 500 m-re érvényes; és a dunaújvárosi napi hozam ${num(Q20)} m³/s alatt jár, ami az ${EV0}–${EV1-1} közötti napi hozamok 20 %-os percentilise (kisvíz-határ).</li>`+
+        `<li>Melegedés: ΔT = H/(ρc) · (1/(Q − w) − 1/Q), ahol w a telep kivétele, H = P · (1/η − 1) a Dunába jutó hő, P = 2 000 MW névleges villamos teljesítmény (a múltbeli napi teljesítmény itt ismeretlen; a „most” sor az élő blokkteljesítménnyel számol, ha elérhető), η = 0,33 és ρc = 4,19 MJ/(m³·K). Teljes elkeveredést feltételez; a hatósági pont a csóván belül van, ott a hatás nagyobb lehet. ${pr("modellezett")}</li>`+
+        `<li>Igény: az éves mennyiség (alapérték 700 millió m³ = 350 000 ha × 200 mm, mindkettő feltételezés) a lap kivételmodelljének havi profilja szerint oszlik el, hónapon belül egyenletesen. ${pr("modellezett")}</li>`+
+        `<li>B üzemmód: napi mérleg korlátlan tárolóval. A „szükséges tároló” az a legnagyobb, előre feltöltendő készlet, amely a későbbi hiányokat fedezi (hátrafelé haladó szekvens-csúcs számítás). Párolgási és szivárgási veszteség nélkül, ezért alsó becslés; a száraz év a havi értékek 20 %-os percentilise. ${pr("modellezett")}</li>`+
+        `<li>A „most” sor a lap élő mércéiből jön (Dunaújváros, Paks), a hőtartalék a paksi szelvény vízhőjéből.</li></ol>`);
+    };
+
+    if(window.BASIN_DUNA) ovIndit(window.BASIN_DUNA);
+    else if(typeof fetch === "function")
+      fetch("duna.json", {cache: "no-cache"}).then(r => r.ok ? r.json() : null)
+        .then(ovIndit).catch(() => ovIndit(null));
   }
 
   // Közös időablak-eszközök: az 1. panel adja, a 2. panel is ebből dolgozik.

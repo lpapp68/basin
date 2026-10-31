@@ -222,6 +222,61 @@ országba.
 Figyelemre méltó egybeesés: a vízstressz-index 36%, és a baziási hozam is a sokéves
 augusztusi átlag 36%-a. Két független mérés, azonos irány.
 
+### Öntözővíz a Dunából: egy szivattyútelep forgatókönyve
+
+A szekció egy elképzelt mezőföldi szivattyútelepet tesztel a dunaújvárosi szelvény
+fölött, 1991. január 1-jétől napi léptékben. Három paraméter állítható: az éves
+öntözési igény (alapérték 700 millió m³ = 350 000 ha × 200 mm, mindkettő
+feltételezés), a szivattyú-kapacitás (alapérték 81 m³/s = 700 millió m³ / 100 nap)
+és a B üzemmód küszöbe (alapérték a napi hozamok mediánja).
+
+**Adat.** `ontozoviz.py` → `archiv/duna_napi.csv` (gyorsítótár) és `duna.json` (a lap ebből számol).
+
+- Vízhozam: OVF nyílt adat-API, Duna–Dunaújváros (547), a negyedórás és órás hozam
+  napi átlaga, CET-napra. A paksi szelvény hozama 2021–2025-ben hiányos az API-ban,
+  ezért Dunaújváros a referencia; ez a mezőföldi szakasz maga.
+- Vízhő: OVF, Duna–Paks (549). Elsődleges a reggeli felszíni észlelés (85-ös
+  adatfajta, 1991-től); ahol hiányzik — 2026-ban teljes egészében —, a mederfenéki
+  szonda (89-es, 2002-től) napi átlaga. A 2002–2025-ös közös napokon a két sor
+  átlagos eltérése 0,01 °C, a 23 °C fölötti napokon viszont a szonda napi átlaga
+  0,4 °C-kal alacsonyabb; a pótolt napok a meleg napokat inkább alulbecsülik.
+
+**Igény.** Az éves mennyiség a `kivetel.py` havi profilja szerint oszlik el (április
+3%, május 12%, június 22%, július 28%, augusztus 24%, szeptember 9%, október 2%),
+hónapon belül egyenletesen.
+
+**A üzemmód — kivétel az igény szerint.** A napi kivétel `w = min(kapacitás, igény)`.
+Paks-nap: a paksi vízhő legalább 25 °C, és a dunaújvárosi hozam a Q20 alatt jár (az
+1991–2025-ös napi hozamok 20%-os percentilise, 1 480 m³/s). A melegedés teljes
+elkeveredéssel:
+
+    ΔT = H/(ρc) · (1/(Q − w) − 1/Q),   H = P · (1/η − 1)
+
+ahol P = 2 000 MW névleges villamos teljesítmény, η = 0,33 (feltételezés),
+ρc = 4,19 MJ/(m³·K). Alsó becslés: a hatósági pont (500 m) a csóván belül van.
+
+**B üzemmód — csak a küszöb fölötti vízből.** A napi kivétel
+`v = min(kapacitás, max(0, Q − küszöb))`, egész évben; a vízgazdálkodási év
+november 1-jén indul üres tárolóval. A szükséges tároló hátrafelé haladó
+szekvens-csúcs számításból jön: a legnagyobb előre feltöltendő készlet, amely a
+későbbi hiányokat fedezi. Párolgási és szivárgási veszteség nélkül.
+
+**Eredmény az alapértékekkel (a 2026-10-31-i futás).**
+
+- Dunaújváros havi medián hozama március–júliusban 2 230–2 665 m³/s,
+  október–januárban 1 585–1 760 m³/s. A szabad víz ablaka az alpesi olvadás;
+  a tél a szárazabb időszak.
+- Paks-napok: 1991–2008 között 27, 2009–2026 között 114, ebből 2026-ban 44. Ezeken
+  a napokon az A üzemmód 2026-ban a Duna átlag 7,8%-át, legfeljebb 11,2%-át vinné el,
+  teljes elkeveredéssel legfeljebb +0,19 °C-kal. A Paks-napok 91%-a júliusra és
+  augusztusra esik.
+- B üzemmód, 1991/92–2024/25: 31/34 évben teljesül az igény; tárolás nélkül medián
+  463 millió m³ jut a földekre; a szükséges tároló medián 209 millió m³ (350 000 ha-on
+  60 mm), minden ötödik évben legalább 372 millió m³. Paks-napon a telep áll, amíg a
+  küszöb a Q20 fölött van.
+- 2025/26-ban a B üzemmódban kivehető víz 122 millió m³, korlátlan tárolóval is
+  578 millió m³ hiányzik: a küszöbszabály a száraz években a tavaszi ablakban is szűkös.
+
 ---
 
 ## 10. A számok érvényességi köre
@@ -276,6 +331,7 @@ vagy egyenként:
     python ontozesigeny.py     # referencia-párolgás, vízstressz
     python aszaly.py           # talaj vízhiánya
     python kivetel.py          # vízkivétel modell
+    python ontozoviz.py        # Duna-idősor 1991-től → duna.json (öntözővíz)
     python kulfold.py          # a teljes medence két fala
     python grace.py            # készlet-anomália idősor, havonta
     python fetch_data.py       # mércék és mérleg → data.json
@@ -287,6 +343,10 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 ---
 
 ## 13. Változásnapló
+
+**Fejlesztés, 2026-10-31** — Öntözővíz a Dunából: egy mezőföldi szivattyútelep két
+üzemmódban, 35 év napi adatán (`ontozoviz.py`, `duna.json`). Új adatsor: a dunaújvárosi
+vízhozam és a paksi vízhő 1991-től, az OVF nyílt API-jából. Részletek a 9. szakasz végén.
 
 **v1.2.0** — a csapadék földi mérésre váltása, és két új keresztellenőrzés.
 

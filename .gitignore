@@ -21,3 +21,5 @@ ne_rivers.geojson
 # A Worker sajat wrangler-konfigja; a node_modules nem kell
 utemezo/node_modules/
 utemezo/.wrangler/
+# Generált: ontozoviz.py --json, minden futásban újra előáll.
+duna.json
