@@ -46,8 +46,19 @@ cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt goog
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.
+#
+# A letöltött példányt tartalom szerint is ellenőrizzük. A Cloudflare Pages egy
+# hiányzó fájlra az index.html-t adja, 200-as kóddal: a curl ezt sikernek látja.
+# 2026-10-31-én így került HTML a duna.json helyére az első kitételnél.
+ervenyes() {
+  case "$1" in
+    *.json) /usr/bin/python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$1" 2>/dev/null ;;
+    *.js)   head -c 40 "$1" | grep -q '^window.BASIN_DATA' ;;
+    *)      true ;;
+  esac
+}
 for f in data.json data.js duna.json; do
-  if curl -fsSL -m 30 "$ELO/$f" -o "_publish/$f"; then
+  if curl -fsSL -m 30 "$ELO/$f" -o "_publish/$f" && ervenyes "_publish/$f"; then
     echo "  $f: az élő példány marad"
   else
     echo "  !! $f nem tölthető le, a helyi másolat megy ki"
