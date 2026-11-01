@@ -3578,13 +3578,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-01T05:10:14+00:00",
+    "lekerve": "2026-11-01T06:48:50+00:00",
     "datum": "2026-10-30",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 967.0,
-      "vizallas_cm": 124.0,
-      "vizho_c": 11.2,
+      "hozam_m3s": 859.0,
+      "vizallas_cm": 106.0,
+      "vizho_c": 11.0,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3593,39 +3593,39 @@
       "sokeves_atlag_m3s": 3900.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 433.0,
+    "kulonbseg_m3s": 541.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": 64.0,
-        "hozam_m3s": 903.0,
+        "vizallas_cm": 20.0,
+        "hozam_m3s": 736.0,
         "vizho_c": 11.1
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 103.0,
-        "hozam_m3s": 1026.0,
-        "vizho_c": 11.5
+        "vizallas_cm": 76.0,
+        "hozam_m3s": 880.0,
+        "vizho_c": 11.2
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": 30.0,
-        "hozam_m3s": 1048.0,
-        "vizho_c": 11.7
+        "vizallas_cm": 25.0,
+        "hozam_m3s": 1019.0,
+        "vizho_c": 11.3
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 53.0,
-        "hozam_m3s": 1.07,
-        "vizho_c": 10.9
+        "vizallas_cm": 52.0,
+        "hozam_m3s": 0.975,
+        "vizho_c": 10.7
       }
     ],
     "provenance": "mert",
@@ -5014,7 +5014,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-01T06:10:45Z",
+    "keszult": "2026-11-01T06:48:54Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
