@@ -1,0 +1,17 @@
+# basin.equora.institute — biztonsági fejlécek (2026-11-01). A lap minden fájlja a saját domainről jön; a
+# beépített szkript és stílus miatt az 'unsafe-inline' marad, külső forrás viszont egyik irányban sincs.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'self' https://iterators.org https://*.iterators.org https://equora.institute https://*.equora.institute
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+
+# A nyílt adatot más oldal is olvassa (az iterators.org darabja is).
+/data.json
+  Access-Control-Allow-Origin: *
+/duna.json
+  Access-Control-Allow-Origin: *
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

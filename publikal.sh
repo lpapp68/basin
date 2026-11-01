@@ -43,6 +43,7 @@ ELO="https://basin.equora.institute"
           # igy a ket nyelv nem tud szetcsuszni.
 mkdir -p _publish
 cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
+cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.

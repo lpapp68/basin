@@ -1,41 +1,69 @@
-# basin.equora.institute
+# A Középső-Duna-medence vízmérlege — basin.equora.institute
 
-> Magyarország vízmérlege, óránként frissülő nyílt adatból. A modell megmutatja,
-> mennyi víz érkezik, mennyi párolog el, mennyi távozik — és **azt is, mennyit nem
-> tudunk elszámolni**. Minden mennyiség adateredet-címkét visel: mért, mérésből
-> számított, műholdas mérés, számított vagy helyőrző. A készítő az EQUORA Institute.
-> Licenc: CC BY 4.0. Módszertan: doi.org/10.5281/zenodo.21852060
+> Magyarország vízmérlege óránként frissülő nyílt adatból: mennyi víz érkezik,
+> mennyi párolog el, mennyi távozik, és mekkora a mérlegben elszámolatlan rész.
+> Minden mennyiség adateredet-címkét visel: mért, mérésből számított, műholdas
+> mérés, modellezett vagy helyőrző. Készítő: EQUORA Institute (i-Tango Tanácsadó
+> Kft.), az EQUORA Természetfigyelő része. Licenc: CC BY 4.0.
+> Hivatkozható módszertan: https://doi.org/10.5281/zenodo.21852060
+
+## Gépi adat
+
+- [data.json](https://basin.equora.institute/data.json): a lap teljes állapota, óránként; minden mennyiségnél `provenance`, `forras`, `datum` és szükség szerint `figyelmeztetes` mező
+- [duna.json](https://basin.equora.institute/duna.json): a Duna napi vízhozama Dunaújvárosnál (OVF 547) és a paksi vízhő (OVF 549) 1991. január 1-jétől, napi tömbökben; a `t89` mező jelöli a mederfenéki szonda napjait
+- [Forráskód és módszertan](https://github.com/lpapp68/basin): nyilvános repó, MODSZERTAN.md
 
 ## Amit a lap mér
 
-A mérleg **Magyarország területére** készül (93 030 km²), nem a teljes
-Középső-Duna-medencére. A medence ötször ekkora; annak a modellje épül.
+A mérleg Magyarország területére készül (93 030 km²); a teljes Középső-Duna-medence
+(445 900 km²) nagyjából ötször ekkora, annak a modellje épül.
 
-- **Vízhozam**: 22 magyar vízmérce negyedórás adata, OVF nyílt API (11 belépő, 3 kilépő)
-- **Csapadék**: OMSZ/HungaroMet földi mérőhálózat, 269 automata állomás, rácsos súlyozás
-- **Párolgás**: EUMETSAT LSA SAF DMETv3 műholdas mérés
-- **Referencia-párolgás**: LSA SAF METREF (FAO-56) — a vízhiány nélküli állapot
-- **Talaj vízhiánya**: OVF Aszálymonitoring, 127 állomás, 80 cm-es gyökérzóna
-- **Talajvízszint**: OVF nyílt API, 487 kút, tízéves összevetés
-- **Vízkészlet-anomália**: NASA GRACE/GRACE-FO, havi, a sokéves átlaghoz mérve
+- Vízhozam: 22 magyar vízmérce negyedórás adata, OVF nyílt API (11 belépő, 3 kilépő)
+- Csapadék: HungaroMet földi mérőhálózat, 269 automata állomás, rácsos súlyozás
+- Párolgás: EUMETSAT LSA SAF DMETv3 műholdas mérés
+- Referencia-párolgás: LSA SAF METREF (FAO-56), a vízhiány nélküli állapot
+- Talaj vízhiánya: OVF Aszálymonitoring, 127 állomás, 80 cm-es gyökérzóna
+- Talajvízszint: OVF nyílt API, 487 kút, tízéves összevetés
+- Vízkészlet-anomália: NASA GRACE/GRACE-FO, havi, a sokéves átlaghoz mérve
+
+## Öntözővíz a Dunából (a számok a 2026-10-31-i futásból)
+
+Egy elképzelt mezőföldi szivattyútelep a dunaújvárosi szelvény fölött, 1991-től
+napi léptékben, két üzemmódban. A: kivétel az öntözési igény szerint. B: kivétel
+csak a küszöb fölötti vízből, tározással. Alapértékek: évi 700 millió m³ igény
+(350 000 ha × 200 mm, feltételezés), 81 m³/s kapacitás, küszöb a napi hozamok
+mediánja (Dunaújváros, 1991–2025: 2 020 m³/s).
+
+- Dunaújváros havi medián hozama március–júliusban 2 230–2 665 m³/s,
+  október–januárban 1 585–1 760 m³/s: a szabad víz ablaka az alpesi olvadás.
+- Paks-nap: a paksi vízhő legalább 25 °C, és a dunaújvárosi hozam 1 480 m³/s
+  (a napi hozamok 20%-os percentilise) alatt jár. Számuk 1991–2008 között 27,
+  2009–2026 között 114, ebből 2026-ban 44; 91%-uk júliusra és augusztusra esik.
+- 2026 Paks-napjain az igénykövető telep a Duna átlag 7,8%-át, legfeljebb
+  11,2%-át vinné el; teljes elkeveredéssel legfeljebb +0,19 °C melegedéssel
+  (2 000 MW névleges teljesítmény, η = 0,33 feltételezés).
+- B üzemmód 1991/92–2024/25: 31/34 évben teljesül az igény; tárolás nélkül
+  medián 463 millió m³ jut a földekre; a szükséges tároló medián 209 millió m³
+  (350 000 ha-on 60 mm). 2025/26-ban a küszöb fölött 122 millió m³ volt kivehető.
 
 ## Két keresztellenőrzés
 
-- **Csapadék**: a GPM IMERG Early műholdas becslés nyáron rendszeresen felülbecsül.
+- Csapadék: a GPM IMERG Early műholdas becslés nyáron rendszeresen felülbecsül.
   2026-08-17: műhold 3,92 mm/nap, földi hálózat 1,43. A földi mérésre váltás a
-  mérleg le nem zárt tagját 4186-ról 1505 m³/s-ra vitte le.
-- **Párolgás**: ECMWF ERA5-Land reanalízis. Csak azonos napra vethető össze —
-  öt-hat napos késéssel érkezik.
+  mérleg lezáratlan tagját 4186-ról 1505 m³/s-ra vitte le.
+- Párolgás: ECMWF ERA5-Land reanalízis, azonos napra vetve; öt-hat napos késéssel érkezik.
 
-## Amit a lap nem tud
+## A modell határai
 
-- **Nyitott falak**: a Hernád, a Kraszna, a Fekete-Körös, a Berettyó és a határon
-  átnyǎló felszín alatti áramlás nincs bekötve. Ezek a maradéktagban jelennek meg.
-- **A napi zárási maradék nem mért készletváltozás**: a többi tag hibáját is gyűjti.
-- **A 2021 óta futó egyenleg helyőrző** — a GRACE havi és az OVF sorozat
-  összefésülése hátravan. A lap ezt kimondja.
+- Nyitott falak: a Hernád, a Kraszna, a Fekete-Körös, a Berettyó és a határon
+  átnyúló felszín alatti áramlás bekötése hátravan; ezek a maradéktagban jelennek meg.
+- A napi zárási maradék a többi tag hibáját is gyűjti; készletváltozásként csak
+  óvatosan olvasható.
+- A 2021 óta futó egyenleg helyőrző: a GRACE havi és az OVF sorozat összefésülése hátravan.
 - A talajvízkutak talpmélysége hiányzik a nyílt adatból, ezért a kiszáradás
-  fizikai küszöbét nem tudjuk kiszámítani.
+  fizikai küszöbe kiszámítatlan.
+- A paksi blokkteljesítmény (holadelej.hu, CC BY 4.0) kizárólag a hűtővízkivétel
+  üzemállapotához szolgál.
 
 ## Ha erre hivatkozol
 
@@ -43,13 +71,11 @@ Középső-Duna-medencére. A medence ötször ekkora; annak a modellje épül.
 > monitoring módszer.* EQUORA Institute. Zenodo.
 > https://doi.org/10.5281/zenodo.21852060
 
-Forráskód és nyers adat: github.com/lpapp68/basin ·
-Angol dokumentáció: github.com/lpapp68/basin/blob/main/README.en.md
+Az idézésnél az adateredet-címkét is érdemes átvenni: egy „helyőrző” jelölésű
+szám becslés, a „mért” jelölésű szám mérés.
 
-## Amire figyelj
+## Kapcsolódó
 
-Az adat **óránként frissül**, a mérleg napi zárása egy nappal késik (a csapadék- és
-párolgás-termékek késése miatt). A `data.json` a lap teljes állapotát tartalmazza,
-minden mennyiségnél `provenance`, `forras`, `datum` és — ahol releváns —
-`figyelmeztetes` mezővel. Az idézésnél az adateredet-címkét is érdemes átvenni:
-egy „helyőrző" jelölésű szám nem mérés.
+- [EQUORA Természetfigyelő](https://nature.equora.institute/): a környezetfigyelő modulok ernyőoldala
+- [Erdőfigyelő](https://forest.equora.institute/): műholdas erdőriasztások és lakossági bejelentések
+- [Impresszum](https://basin.equora.institute/impresszum) · [Adatkezelés](https://basin.equora.institute/adatkezeles)

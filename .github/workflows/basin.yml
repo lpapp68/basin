@@ -95,5 +95,7 @@ jobs:
              favicon.ico favicon-32.png apple-touch-icon.png _publish/
           # Az öntözővíz-szekció idősora; a frissit.sh minden futásban előállítja.
           if [ -f duna.json ]; then cp duna.json _publish/; fi
+          # Saját betűtípus, fejlécek, útvonalak (functions/), jogi lapok, 404, megosztási kép.
+          cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
           npx --yes wrangler pages deploy _publish \
             --project-name basin --commit-dirty=true

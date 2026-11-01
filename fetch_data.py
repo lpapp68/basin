@@ -32,6 +32,9 @@ import archivum
 UA = "Mozilla/5.0 (compatible; equora-basin/2.0; +https://basin.equora.institute)"
 ALLOMAS = "https://www.vizugy.hu/?mapModule=OpGrafikon&AllomasVOA={voa}&mapData=OrasIdosor"
 DELEJ = "https://holadelej.hu/api/data"
+# A holadelej.hu Cloudflare-védelme a GitHub-futtatók IP-címeit tartósan elutasítja (403, 2026-10-31 óta).
+# A basin-utemezo Worker ugyanezt a végpontot kérdezi, és csak a paksi mezőket adja tovább (utemezo/worker.js).
+DELEJ_KOZVETITO = "https://basin-utemezo.lpapp-14a.workers.dev/paks"
 
 # Két doboz. Az AKTÍV az, amelyikhez ma mért falaink vannak.
 DOBOZOK = {
@@ -325,20 +328,22 @@ def paks_uzem():
     # A szolgáltató Cloudflare mögött van, és a bot-védelme időnként megfog
     # egy kérést (403). Ez átmeneti: a második próbálkozás rendszerint átmegy.
     utolso = None
-    for probalkozas in range(2):
+    for probalkozas, (cim, forras) in enumerate((
+            (DELEJ, "holadelej.hu /api/data (CC BY 4.0)"),
+            (DELEJ, "holadelej.hu /api/data (CC BY 4.0)"),
+            (DELEJ_KOZVETITO, "holadelej.hu /api/data (CC BY 4.0), a basin-utemezo közvetítésével"))):
         try:
-            d = json.loads(get(DELEJ, timeout=25))
-            mw = d.get("paksUnits", {}).get("sum")
+            d = json.loads(get(cim, timeout=25))
+            mw = (d.get("paksUnits") or {}).get("sum")
             if mw is None:
-                mw = d.get("plants", {}).get("paks")
-            return {"mw": round(float(mw), 1),
-                    "forras": "holadelej.hu /api/data (CC BY 4.0)", "hiba": None}
+                mw = (d.get("plants") or {}).get("paks")
+            return {"mw": round(float(mw), 1), "forras": forras, "hiba": None}
         except Exception as e:
             utolso = e
             if probalkozas == 0:
                 time.sleep(2)
     return {"mw": None, "forras": "holadelej.hu /api/data (CC BY 4.0)",
-            "hiba": f"{utolso} (két próbálkozás után)"}
+            "hiba": f"{utolso} (két közvetlen és egy közvetített próbálkozás után)"}
 
 
 def hutoviz(mw, p):

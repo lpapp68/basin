@@ -11,14 +11,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<!-- Plausible: könnyű, sütimentes mérés. A szkript URL-je tartalmazza az
-     oldal azonosítóját, ezért ez a felület külön mérési egység —
-     függetlenül az equora.institute-tól. -->
-<script async src="https://plausible.io/js/pa-creL-lUfN_HIadFxCOqcn.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
+<!-- Látogatottsági statisztika: a szerveren készül (functions/_middleware.js), a böngészőben
+     mérőszkript nincs. A lap minden fájlja a saját domainről jön (2026-11-01). -->
 
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="EQUORA Institute">
@@ -42,7 +36,6 @@
   "identifier": "https://doi.org/10.5281/zenodo.21852060",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isAccessibleForFree": true,
-    "dateModified": "2026-09-16T15:18:45+00:00",
     "temporalCoverage": "2002-04/..",
     "variableMeasured": [
       {"@type": "PropertyValue", "name": "Vízhozam", "unitText": "m3/s",
@@ -76,28 +69,36 @@
   "distribution": [{
     "@type": "DataDownload",
     "encodingFormat": "application/json",
-    "contentUrl": "https://basin.equora.institute/data.json"
+    "contentUrl": "https://basin.equora.institute/data.json",
+    "description": "A lap teljes állapota, óránként; minden mennyiség adateredet-címkével"
+  }, {
+    "@type": "DataDownload",
+    "encodingFormat": "application/json",
+    "contentUrl": "https://basin.equora.institute/duna.json",
+    "description": "A Duna napi vízhozama Dunaújvárosnál és a paksi vízhő 1991-től (OVF)"
   }],
+  "inLanguage": "hu",
+  "isPartOf": {"@type": "WebSite", "name": "EQUORA Természetfigyelő", "url": "https://nature.equora.institute/"},
+  "keywords": ["vízmérleg", "Duna", "Kárpát-medence", "párolgás", "aszály", "öntözés", "nyílt adat"],
   "citation": "Papp L. (2026). Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method. EQUORA Institute. Zenodo. https://doi.org/10.5281/zenodo.21852060"
 }
 </script>
 <meta name="description" content="Mennyi víz érkezik a Középső-Duna-medencébe, mennyi párolog el és mennyi távozik — mért vízhozamból, műholdas párolgásból és csapadékból, negyedórás felbontású adatból.">
 <!-- Megosztási kép: enélkül Slacken, WhatsAppon és LinkedInen csak szöveg
-       jelenik meg. A logó a legstabilabb választás, mert a lap tartalma óránként
+       jelenik meg. Állandó kártya (1200×630), mert a lap tartalma óránként
        változik, egy pillanatkép pedig gyorsan elavulna. -->
-  <meta property="og:image" content="https://basin.equora.institute/logo.png">
-  <meta property="og:image:width" content="1308">
-  <meta property="og:image:height" content="591">
-  <meta property="og:image:alt" content="EQUORA Institute">
-  <meta name="twitter:image" content="https://basin.equora.institute/logo.png">
+  <meta property="og:image" content="https://basin.equora.institute/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A Középső-Duna-medence vízmérlege — EQUORA Institute">
+  <meta name="twitter:image" content="https://basin.equora.institute/og.png">
   <meta property="og:title" content="Középső-Duna-medence vízmérlege">
 <meta property="og:description" content="Mért vízhozam 22 mércéről, műholdas párolgás és csapadék. Minden szám mellett ott, hogy mérés, modell vagy helyőrző.">
 <meta property="og:url" content="https://basin.equora.institute/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="hu_HU">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Bitter, IBM Plex Sans, IBM Plex Mono (SIL OFL 1.1), saját tárhelyről — ugyanaz a készlet, mint az Erdőfigyelőé. -->
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root{
   --papir:#E2E7E2; --papir-2:#EDF0EC; --tinta:#16262B; --halvany:#5C7075;
@@ -1035,7 +1036,10 @@ a{color:var(--viz)}
       <a href="https://github.com/lpapp68/basin" target="_blank" rel="noopener">A forráskód és a módszertan</a>
       <a href="https://doi.org/10.5281/zenodo.21852060" target="_blank" rel="noopener">Módszertan (Zenodo, DOI)</a>
       <a href="https://github.com/lpapp68/basin/blob/main/MODSZERTAN.md" target="_blank" rel="noopener">Minden nyitott kérdés</a>
-      <a href="data.json">A nyers adat (data.json)</a></div>
+      <a href="data.json">A nyers adat (data.json)</a>
+      <a href="duna.json">A Duna-idősor 1991-től (duna.json)</a>
+      <a href="/impresszum">Impresszum</a>
+      <a href="/adatkezeles">Adatkezelés</a></div>
   </div>
   <p class="forrasmegj">A módszertan, a feltételezések és a nyitott kérdések listája
   a projekt dokumentációjában olvasható. A hivatkozható változat Zenodóra kerül, DOI-val.</p>

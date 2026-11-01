@@ -218,6 +218,7 @@ if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
   mkdir -p _publish
   cp index.html data.js data.json logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
   if [ -f duna.json ]; then cp duna.json _publish/; fi
+  cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
 # ── Lapteszt ─────────────────────────────────────────────────────────────
 # A node --check csak szintaxist néz. Egy nem létező változó vagy elrontott
 # blokkhatár szintaktikailag tökéletes, futáskor viszont megállítja az egész
