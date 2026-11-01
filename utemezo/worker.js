@@ -22,9 +22,11 @@
  *
  * /paks — A PAKSI ÜZEMÁLLAPOT KÖZVETÍTÉSE (2026-11-01)
  * A holadelej.hu Cloudflare-védelme a GitHub-futtatók IP-címeit tartósan
- * elutasítja (403). A bot ezért ezen a végponton keresztül is lekérheti a
- * blokkteljesítményt. Csak a paksi mezőket adjuk tovább, öt percig gyorsítótárazva.
- * Forrás: holadelej.hu /api/data, CC BY 4.0.
+ * elutasítja (403), a Worker kéréseit pedig időnként. Ezért minden riasztáskor,
+ * MÉG a bot indítása előtt lekérjük a paksi mezőket, és az utolsó sikeres
+ * értéket eltároljuk. A /paks a 15 percnél frissebb tárolt értéket adja; ha az
+ * régebbi, újrapróbál, és ha ez is elakad, a tárolt értéket adja a korával
+ * (kor_perc) együtt, legfeljebb 6 óráig. Forrás: holadelej.hu /api/data, CC BY 4.0.
  *
  * TITKOK
  *   GITHUB_TOKEN — finomhangolt PAT, csak erre a repóra, Actions: read+write
@@ -41,6 +43,9 @@ const PERCEK = [4, 34];
 // tíz percen belül legfeljebb egy kézi indítás megy ki.
 const KEZI_SZUNET = 10 * 60 * 1000;
 const DELEJ = "https://holadelej.hu/api/data";
+const PAKS_FRISS = 15 * 60 * 1000;
+const PAKS_MAX_KOR = 6 * 60 * 60 * 1000;
+const FORRAS = "holadelej.hu /api/data (CC BY 4.0), a basin-utemezo közvetítésével";
 
 async function inditas(env) {
   const valasz = await fetch(
@@ -66,6 +71,34 @@ async function inditas(env) {
   return "elindítva";
 }
 
+// A paksi mezők a holadelej.hu-ról; két próbálkozás, köztük rövid szünet.
+async function paksLekeres() {
+  let utolso = "";
+  for (let i = 0; i < 2; i++) {
+    try {
+      const v = await fetch(DELEJ, {
+        headers: {
+          "User-Agent": "basin-utemezo (+https://basin.equora.institute) — paksi üzemállapot",
+          Accept: "application/json",
+        },
+      });
+      if (v.status === 200) {
+        const d = await v.json();
+        return {
+          paksUnits: d.paksUnits ?? null,
+          plants: { paks: d.plants ? d.plants.paks ?? null : null },
+          generatedAt: d.generatedAt ?? null,
+        };
+      }
+      utolso = `holadelej.hu ${v.status}`;
+    } catch (e) {
+      utolso = String((e && e.message) || e);
+    }
+    await new Promise((r) => setTimeout(r, 1500));
+  }
+  throw new Error(utolso);
+}
+
 // A következő indítási perc (UTC): a PERCEK közül az első, ami még előttünk van.
 function kovetkezo(most = Date.now()) {
   for (let ora = 0; ora < 2; ora++) {
@@ -79,11 +112,42 @@ function kovetkezo(most = Date.now()) {
 }
 
 export class BasinUtemezo extends DurableObject {
+  async paksFrissit() {
+    try {
+      const adat = await paksLekeres();
+      await this.ctx.storage.put("paks", { adat, ido: Date.now() });
+      return null;
+    } catch (e) {
+      const uzenet = String((e && e.message) || e);
+      await this.ctx.storage.put("paks_hiba", { ido: new Date().toISOString(), hiba: uzenet });
+      return uzenet;
+    }
+  }
+
+  async paksValasz() {
+    let t = await this.ctx.storage.get("paks");
+    let hiba = null;
+    if (!t || Date.now() - t.ido > PAKS_FRISS) {
+      hiba = await this.paksFrissit();
+      t = await this.ctx.storage.get("paks");
+    }
+    if (!t || Date.now() - t.ido > PAKS_MAX_KOR) {
+      return Response.json({ hiba: hiba || "nincs tárolt érték" }, { status: 502 });
+    }
+    return Response.json({
+      ...t.adat,
+      frissitve: new Date(t.ido).toISOString(),
+      kor_perc: Math.round((Date.now() - t.ido) / 60000),
+      forras: FORRAS,
+    });
+  }
+
   async fetch(request) {
     const ut = new URL(request.url).pathname;
     const most = await this.ctx.storage.getAlarm();
     // A riasztást az új ütemhez igazítjuk, ha a korábbi kód távolabbi időpontra tette.
     if (!most || most > kovetkezo()) await this.ctx.storage.setAlarm(kovetkezo());
+    if (ut === "/paks") return this.paksValasz();
     if (ut === "/most") {
       const utolso = await this.ctx.storage.get("utolso");
       const kezi = await this.ctx.storage.get("kezi");
@@ -94,14 +158,19 @@ export class BasinUtemezo extends DurableObject {
         utolso.megjegyzes = "a kézi indítás tíz percen belül megismételve — kimaradt";
       }
     }
+    const paks = await this.ctx.storage.get("paks");
     return Response.json({
       kovetkezo: new Date(await this.ctx.storage.getAlarm()).toISOString(),
       utolso: (await this.ctx.storage.get("utolso")) || null,
+      paks_frissitve: paks ? new Date(paks.ido).toISOString() : null,
+      paks_hiba: (await this.ctx.storage.get("paks_hiba")) || null,
     });
   }
 
   async alarm() {
     const ido = new Date().toISOString();
+    // Előbb a paksi érték, hogy a bot már a friss tárolt értéket kapja.
+    await this.paksFrissit();
     try {
       const m = await inditas(this.env);
       await this.ctx.storage.put("utolso", { ido, eredmeny: m });
@@ -120,43 +189,15 @@ export class BasinUtemezo extends DurableObject {
 
 const peldany = (env) => env.UTEMEZO.get(env.UTEMEZO.idFromName("basin"));
 
-async function paks(ctx) {
-  const tar = caches.default;
-  const kulcs = new Request("https://basin-utemezo.cache/paks");
-  const tarolt = await tar.match(kulcs);
-  if (tarolt) return tarolt;
-  const v = await fetch(DELEJ, {
-    headers: {
-      "User-Agent": "basin-utemezo (+https://basin.equora.institute) — paksi üzemállapot",
-      Accept: "application/json",
-    },
-  });
-  if (v.status !== 200) {
-    return Response.json({ hiba: `holadelej.hu ${v.status}` }, { status: 502 });
-  }
-  const d = await v.json();
-  const ki = Response.json(
-    {
-      paksUnits: d.paksUnits ?? null,
-      plants: { paks: d.plants ? d.plants.paks ?? null : null },
-      generatedAt: d.generatedAt ?? null,
-      forras: "holadelej.hu /api/data (CC BY 4.0), a basin-utemezo közvetítésével",
-    },
-    { headers: { "Cache-Control": "public, max-age=300" } }
-  );
-  ctx.waitUntil(tar.put(kulcs, ki.clone()));
-  return ki;
-}
-
 export default {
   // /inditas — kézi próba: azonnal indít (tízpercenként legfeljebb egyszer).
-  // /allapot — a következő indítás ideje és az utolsó eredmény.
+  // /allapot — a következő indítás ideje, az utolsó eredmény és a paksi érték frissessége.
   // /paks    — a paksi blokkteljesítmény a holadelej.hu-ról, a botnak.
-  async fetch(keres, env, ctx) {
+  async fetch(keres, env) {
     const ut = new URL(keres.url).pathname;
     if (ut === "/inditas") return peldany(env).fetch("https://utemezo/most");
     if (ut === "/allapot") return peldany(env).fetch("https://utemezo/allapot");
-    if (ut === "/paks") return paks(ctx);
+    if (ut === "/paks") return peldany(env).fetch("https://utemezo/paks");
     return new Response(
       "basin ütemező — /allapot: a lánc állapota, /inditas: azonnali indítás, /paks: paksi üzemállapot.\n",
       { headers: { "Content-Type": "text/plain; charset=utf-8" } }
