@@ -59,7 +59,7 @@ ezek a tagok is a magyar területre vonatkoznak. A váltás egyetlen sor: `AKTIV
 | Párolgás (ellenőrzés) | **reanalízis** | ECMWF ERA5-Land | napi, 5-6 nap késés |
 | Referencia-párolgás | **műholdas mérés** | LSA SAF METREF (FAO-56) | napi |
 | Talaj vízhiánya | **mért** | OVF Aszálymonitoring API, 127 állomás | napi |
-| Talajvízszint | **mért** | OVF nyílt API, 487 kút, tízéves összevetés | napi |
+| Talajvízszint | **mért** | OVF nyílt API, mintegy 500 kút, tízéves összevetés (`talajviz.py`) | napi |
 | Vízkészlet-anomália | **műholdas mérés** | NASA GRACE/GRACE-FO | havi |
 | Paksi hűtővízkivétel | **származtatott** | blokkteljesítmény: holadelej.hu (CC BY 4.0) | 30 perc |
 | Duna-idősor 1991-től (öntözővíz-szekció) | **mért** | OVF nyílt API: Dunaújváros vízhozam, Paks vízhő (`ontozoviz.py`) | napi |

@@ -344,9 +344,14 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 
 ## 13. Változásnapló
 
-**Fejlesztés, 2026-10-31** — Öntözővíz a Dunából: egy mezőföldi szivattyútelep két
-üzemmódban, 35 év napi adatán (`ontozoviz.py`, `duna.json`). Új adatsor: a dunaújvárosi
-vízhozam és a paksi vízhő 1991-től, az OVF nyílt API-jából. Részletek a 9. szakasz végén.
+**v1.3.0 (2026-11-01)** — Öntözővíz a Dunából: egy mezőföldi szivattyútelep két
+üzemmódban, 35 év napi adatán (`ontozoviz.py`, `duna.json`); új adatsor a dunaújvárosi
+vízhozamról és a paksi vízhőről 1991-től, az OVF nyílt API-jából (részletek a 9. szakasz
+végén). A talajvíz tízéves összevetése naponta újraszámolódik, a panel dátummal. Félórás
+indítás Durable Object riasztással; a paksi blokkteljesítmény közvetítővel. Saját tárhelyes
+betűtípus, szerveroldali álnevesített statisztika, CSP és HSTS, impresszum és adatkezelési
+tájékoztató, valódi 404, strukturált adat mindkét adatfájllal. Kiadási jegyzet:
+`RELEASE-v1.3.0.md`.
 
 **v1.2.0** — a csapadék földi mérésre váltása, és két új keresztellenőrzés.
 

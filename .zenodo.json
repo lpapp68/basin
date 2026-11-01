@@ -1,5 +1,5 @@
 {
-  "title": "A Középső-Duna-medence vízmérlege: nyílt, adateredet-jelölt módszer / Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method",
+  "title": "Water balance of the Middle Danube Basin: an open, provenance-labelled monitoring method",
   "upload_type": "software",
   "language": "hun",
   "license": "MIT",
@@ -12,11 +12,13 @@
   ],
   "keywords": [
     "Danube",
+    "Danube discharge",
     "GRACE",
     "Hungary",
     "Magyarország",
     "Middle Danube Basin",
     "Pannonian Basin",
+    "Paks",
     "adateredet",
     "csapadék",
     "data provenance",
@@ -26,23 +28,33 @@
     "groundwater",
     "hidrológia",
     "hydrology",
+    "irrigation",
     "nyílt adat",
     "open data",
     "precipitation",
     "provenance",
     "párolgás",
+    "river temperature",
     "satellite validation",
     "talajvíz",
     "vízmérleg",
-    "water balance"
+    "water balance",
+    "water storage",
+    "öntözés"
   ],
   "related_identifiers": [
     {
       "identifier": "https://basin.equora.institute",
       "relation": "isDocumentedBy",
       "resource_type": "other"
+    },
+    {
+      "identifier": "https://nature.equora.institute",
+      "relation": "isPartOf",
+      "resource_type": "other"
     }
   ],
-  "version": "1.2.0",
-  "description": "<p><b>Nyílt vízmérleg-monitoring módszer Magyarországra</b>, a Középső-Duna-medence mérhető szeletére. Minden mennyiség adateredet-címkét visel: mért, mérésből számított, műholdas mérés, modellezett vagy helyőrző.</p><p><b>Ami új a v1.2.0-ban.</b> A csapadék elsődleges forrása mostantól az OMSZ (HungaroMet) földi mérőhálózata - 269 automata állomás, rácsos területi súlyozással - a műholdas becslés helyett. 2026-08-17-re a műholdas termék (GPM IMERG Early) 3,92 mm/napot jelzett, ahol a földi hálózat 1,43-at mért: a váltás a mérleg le nem zárt tagját 4186-ról 1505 m³/s-ra vitte le. A műholdas becslés keresztellenőrzésként megmarad.</p><p>Két további bővítés: talajvízmélység 487 kútból, a tíz évvel korábbi azonos naptári időszakhoz mérve (medián süllyedés 1,44 m; 487 kútból 480 mélyült); és független párolgás-keresztellenőrzés az ECMWF ERA5-Land reanalízisével, amely csak akkor érvényes, ha mindkét becslés ugyanarra a napra vonatkozik.</p><p><b>Adatforrások:</b> OVF nyílt API, OMSZ/HungaroMet nyílt adattár, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG.</p><p><b>Élő felület:</b> https://basin.equora.institute</p><hr><p>An open water-balance monitoring method for Hungary, the measurable slice of the Middle Danube Basin. Every quantity carries a provenance label: measured, derived from measurement, satellite measurement, modelled, or placeholder.</p><p><b>What is new in v1.2.0.</b> Precipitation now comes from the Hungarian Meteorological Service (HungaroMet) ground network — 269 automatic stations, grid-weighted — instead of the satellite estimate. On 2026-08-17 the satellite product (GPM IMERG Early) reported 3.92 mm/day where the ground network measured 1.43: the switch reduced the unclosed term of the balance from 4186 to 1505 m³/s. The satellite estimate is retained as a cross-check.</p><p>Two further additions: groundwater depth from 487 wells, compared with the same calendar window ten years earlier (median decline 1.44 m, 480 of 487 wells deeper); and an independent evapotranspiration cross-check against ECMWF ERA5-Land, valid only when both estimates cover the same day.</p><p>Data sources: OVF (Hungarian water authority) open API, HungaroMet open data, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG.</p>"
+  "version": "1.3.0",
+  "notes": "Kód / code: MIT. A lap adatkimenetei / data outputs (data.json, duna.json): CC BY 4.0.",
+  "description": "<p><b>Nyílt vízmérleg-monitoring módszer Magyarországra</b>, a Középső-Duna-medence mérhető szeletére. Minden mennyiség adateredet-címkét visel: mért, mérésből számított, műholdas mérés, modellezett vagy helyőrző. Élő felület: https://basin.equora.institute</p><p><b>Ami új a v1.3.0-ban.</b></p><p><b>Öntözővíz a Dunából.</b> Egy elképzelt mezőföldi szivattyútelep a dunaújvárosi szelvény fölött, 1991. január 1-jétől napi adaton, két üzemmódban: (A) kivétel az öntözési igény szerint, (B) kivétel csak a küszöb fölötti vízből, tározással. Új adatsor: a Duna napi vízhozama Dunaújvárosnál (OVF 547) és a paksi vízhő (OVF 549; reggeli felszíni észlelés, ahol hiányzik, a mederfenéki szonda napi átlaga), nyílt fájlként is (duna.json). Paks-nap: a vízhő legalább 25 °C, és a hozam a napi hozamok 20%-os percentilise (1 480 m³/s) alatt jár. Az alapértékekkel (évi 700 millió m³, 81 m³/s, küszöb a medián): a Paks-napok száma 1991–2008 között 27, 2009–2026 között 114, ebből 2026-ban 44; ezeken a napokon az igénykövető telep 2026-ban a Duna átlag 7,8%-át, legfeljebb 11,2%-át vinné el, teljes elkeveredéssel legfeljebb +0,19 °C-kal. A küszöbszabály 1991/92–2024/25 között 31/34 évben fedezi az igényt, medián 209 millió m³ tárolóval; 2025/26-ban a küszöb fölött csak 122 millió m³ volt kivehető. A szabad víz ablaka az alpesi olvadás: a havi medián hozam március–júliusban 2 230–2 665, október–januárban 1 585–1 760 m³/s.</p><p><b>Talajvíz-panel.</b> A tízéves összevetés mostantól naponta újraszámolódik, a lap dátummal mutatja.</p><p><b>Üzem.</b> Félórás indítás egy Cloudflare Durable Object riasztásával; a paksi blokkteljesítmény közvetítővel érkezik, mert a forrás a GitHub-futtatók címeit elutasítja.</p><p><b>Adatvédelem és biztonság.</b> Saját tárhelyes betűtípus, szerveroldali, álnevesített statisztika, CSP és HSTS, impresszum és adatkezelési tájékoztató, valódi 404; strukturált adat (Dataset) és llms.txt.</p><p><b>Adatforrások:</b> OVF nyílt API, OMSZ/HungaroMet nyílt adattár, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG, holadelej.hu (CC BY 4.0).</p><hr><p>An open water-balance monitoring method for Hungary, the measurable slice of the Middle Danube Basin. Every quantity carries a provenance label: measured, derived from measurement, satellite measurement, modelled, or placeholder. Live: https://basin.equora.institute</p><p><b>What is new in v1.3.0.</b></p><p><b>Irrigation water from the Danube.</b> A hypothetical pumping station on the Mezőföld, above the Dunaújváros gauge, tested on daily data from 1 January 1991 in two modes: (A) abstraction following irrigation demand, (B) abstraction only from flow above a threshold, with storage. New series: daily Danube discharge at Dunaújváros (OVF 547) and river temperature at Paks (OVF 549; morning surface reading, the bottom probe's daily mean where missing), also published as an open file (duna.json). A Paks day: water temperature at least 25 °C and discharge below the 20th percentile of daily flows (1,480 m³/s). With the defaults (700 million m³ per year, 81 m³/s, threshold at the median), Paks days numbered 27 in 1991–2008 and 114 in 2009–2026, 44 of them in 2026; on those days a demand-following station would have taken on average 7.8% and at most 11.2% of the Danube in 2026, warming it by at most +0.19 °C under full mixing. The threshold rule meets the demand in 31 of 34 water years (1991/92–2024/25) with a median storage of 209 million m³; in 2025/26 only 122 million m³ was available above the threshold. The free-water window is the Alpine melt: monthly median discharge is 2,230–2,665 m³/s in March–July and 1,585–1,760 m³/s in October–January.</p><p><b>Groundwater panel.</b> The ten-year comparison is now recomputed daily and dated on the page.</p><p><b>Operations.</b> Half-hourly runs triggered by a Cloudflare Durable Object alarm; the Paks unit output is relayed, because the source rejects GitHub runner addresses.</p><p><b>Privacy and security.</b> Self-hosted fonts, server-side pseudonymised analytics, CSP and HSTS, imprint and privacy notice, a real 404; structured data (Dataset) and llms.txt.</p><p><b>Data sources:</b> OVF open API, HungaroMet open data, EUMETSAT LSA SAF, NASA GRACE/GRACE-FO, ECMWF ERA5-Land, GPM IMERG, holadelej.hu (CC BY 4.0).</p><p><b>Licences:</b> code MIT; data outputs (data.json, duna.json) CC BY 4.0.</p>"
 }

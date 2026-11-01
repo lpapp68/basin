@@ -23,7 +23,7 @@ A mérleg Magyarország területére készül (93 030 km²); a teljes Középső
 - Párolgás: EUMETSAT LSA SAF DMETv3 műholdas mérés
 - Referencia-párolgás: LSA SAF METREF (FAO-56), a vízhiány nélküli állapot
 - Talaj vízhiánya: OVF Aszálymonitoring, 127 állomás, 80 cm-es gyökérzóna
-- Talajvízszint: OVF nyílt API, 487 kút, tízéves összevetés
+- Talajvízszint: OVF nyílt API, mintegy 500 kút, tízéves összevetés, naponta újraszámolva
 - Vízkészlet-anomália: NASA GRACE/GRACE-FO, havi, a sokéves átlaghoz mérve
 
 ## Öntözővíz a Dunából (a számok a 2026-10-31-i futásból)
@@ -67,9 +67,10 @@ mediánja (Dunaújváros, 1991–2025: 2 020 m³/s).
 
 ## Ha erre hivatkozol
 
-> Papp L. (2026). *A Középső-Duna-medence vízmérlege: nyílt, adateredet-jelölt
-> monitoring módszer.* EQUORA Institute. Zenodo.
-> https://doi.org/10.5281/zenodo.21852060
+> Papp L. (2026). *Water balance of the Middle Danube Basin: an open,
+> provenance-labelled monitoring method* (A Középső-Duna-medence vízmérlege: nyílt,
+> adateredet-jelölt monitoring módszer). EQUORA Institute. Zenodo.
+> https://doi.org/10.5281/zenodo.21852060 (fogalmi DOI, mindig a legfrissebb változatra mutat)
 
 Az idézésnél az adateredet-címkét is érdemes átvenni: egy „helyőrző” jelölésű
 szám becslés, a „mért” jelölésű szám mérés.

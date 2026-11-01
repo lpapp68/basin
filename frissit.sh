@@ -118,6 +118,8 @@ if [ "$MOD" = "napi" ]; then
 
   futtat "öntözésigény"      python ontozesigeny.py "$NAP"
   futtat "talaj vízhiány"    python aszaly.py       "$NAP"
+  # A talajvíz tízéves összevetése (2026-11-01 óta naponta; előtte kézi futás volt, ezért állt meg augusztus 17-én).
+  futtat "talajvíz, tízéves összevetés" python talajviz.py
   futtat "vízkivétel"        python kivetel.py      "$NAP"
   # A Duna napi hozama és a paksi vízhő 1991-től (öntözővíz-szekció). Az utolsó
   # tíz napot frissíti az OVF API-ból; a teljes idősor az archiv/-ban marad.

@@ -1,0 +1,24 @@
+name: kiadás
+
+# Címke (v*) → GitHub-kiadás a RELEASE-<címke>.md szövegével. A kiadásból a Zenodo GitHub-integrációja
+# új verziót archivál a 10.5281/zenodo.21852060 fogalmi DOI alatt; a metaadat a .zenodo.json.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  kiadas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kiadás a jegyzetből
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          jegyzet="RELEASE-${GITHUB_REF_NAME}.md"
+          test -f "$jegyzet" || { echo "hiányzik: $jegyzet"; exit 1; }
+          python3 -c "import json; json.load(open('.zenodo.json'))"
+          gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes-file "$jegyzet" --verify-tag
