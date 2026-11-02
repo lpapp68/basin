@@ -3578,7 +3578,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-02T04:36:09+00:00",
+    "lekerve": "2026-11-02T05:06:27+00:00",
     "datum": "2026-11-01",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3988,7 +3988,7 @@
       },
       {
         "nev": "Röjtökmuzsaj",
-        "cm": 195.4,
+        "cm": 195.5,
         "lat": 47.5571404750939,
         "lon": 16.8354241999483,
         "terkep_xy": [
@@ -5024,7 +5024,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-02T04:36:12Z",
+    "keszult": "2026-11-02T05:06:31Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
