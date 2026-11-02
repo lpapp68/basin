@@ -3578,7 +3578,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-02T09:06:38+00:00",
+    "lekerve": "2026-11-02T09:36:41+00:00",
     "datum": "2026-11-01",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3763,11 +3763,11 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 133.0,
+    "sullyedes_cm": 133.5,
     "evek": 10,
     "datum": "2026-11-02",
-    "kut_db": 537,
-    "melyult": 511,
+    "kut_db": 538,
+    "melyult": 512,
     "emelkedett": 14,
     "also_kvartilis": 88.0,
     "felso_kvartilis": 201.0,
@@ -3797,11 +3797,11 @@
         "cm": 391.0
       },
       {
-        "nev": "Kunszentmárton",
+        "nev": "Kecskemét",
         "cm": 384.0
       },
       {
-        "nev": "Kecskemét",
+        "nev": "Kunszentmárton",
         "cm": 384.0
       }
     ],
@@ -3888,7 +3888,7 @@
       },
       {
         "nev": "Röszke",
-        "cm": 304.5,
+        "cm": 304.0,
         "lat": 46.1872312002458,
         "lon": 20.0380159180563,
         "terkep_xy": [
@@ -3948,7 +3948,7 @@
       },
       {
         "nev": "Aba",
-        "cm": 247.5,
+        "cm": 248.0,
         "lat": 47.0260617066066,
         "lon": 18.5408629136489,
         "terkep_xy": [
@@ -4080,7 +4080,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 537 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 538 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5024,7 +5024,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-02T09:06:43Z",
+    "keszult": "2026-11-02T09:36:45Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
