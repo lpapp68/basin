@@ -3763,14 +3763,14 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 134.0,
+    "sullyedes_cm": 136.0,
     "evek": 10,
     "datum": "2026-11-03",
-    "kut_db": 553,
-    "melyult": 526,
-    "emelkedett": 16,
-    "also_kvartilis": 88.0,
-    "felso_kvartilis": 201.0,
+    "kut_db": 546,
+    "melyult": 525,
+    "emelkedett": 11,
+    "also_kvartilis": 89.0,
+    "felso_kvartilis": 202.0,
     "leginkabb": [
       {
         "nev": "Tázlár",
@@ -3789,19 +3789,19 @@
         "cm": 399.0
       },
       {
-        "nev": "Bugac",
-        "cm": 392.0
-      },
-      {
         "nev": "Szászberek",
         "cm": 392.0
       },
       {
-        "nev": "Kecskemét",
-        "cm": 384.0
+        "nev": "Bugac",
+        "cm": 392.0
       },
       {
         "nev": "Kunszentmárton",
+        "cm": 384.0
+      },
+      {
+        "nev": "Kecskemét",
         "cm": 384.0
       }
     ],
@@ -3838,22 +3838,12 @@
       },
       {
         "nev": "Fülöpháza",
-        "cm": 380.0,
+        "cm": 380.5,
         "lat": 46.8926004877422,
         "lon": 19.4424275194305,
         "terkep_xy": [
           493.6,
           363.5
-        ]
-      },
-      {
-        "nev": "Vasszilvágy",
-        "cm": 354.5,
-        "lat": 47.3023740109057,
-        "lon": 16.7488351762277,
-        "terkep_xy": [
-          96.5,
-          274.6
         ]
       },
       {
@@ -3918,7 +3908,7 @@
       },
       {
         "nev": "Csoma I",
-        "cm": 281.5,
+        "cm": 280.5,
         "lat": 46.3685287136547,
         "lon": 18.0494984718759,
         "terkep_xy": [
@@ -3997,6 +3987,16 @@
         ]
       },
       {
+        "nev": "Celldömölk",
+        "cm": 194.0,
+        "lat": 47.2507362110043,
+        "lon": 17.1678369675169,
+        "terkep_xy": [
+          158.3,
+          285.8
+        ]
+      },
+      {
         "nev": "Biharkeresztes",
         "cm": 172.0,
         "lat": 47.1308889827353,
@@ -4018,7 +4018,7 @@
       },
       {
         "nev": "Győrújbarát-Kisbarát",
-        "cm": 107.5,
+        "cm": 108.0,
         "lat": 47.6229283117284,
         "lon": 17.6452437161174,
         "terkep_xy": [
@@ -4028,7 +4028,7 @@
       },
       {
         "nev": "Cserhátsurány",
-        "cm": 101.0,
+        "cm": 102.0,
         "lat": 47.9780696282504,
         "lon": 19.4289904724613,
         "terkep_xy": [
@@ -4080,7 +4080,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 553 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 546 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5024,7 +5024,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-03T08:09:09Z",
+    "keszult": "2026-11-03T08:38:00Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
