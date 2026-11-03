@@ -3578,7 +3578,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-03T03:36:27+00:00",
+    "lekerve": "2026-11-03T04:06:29+00:00",
     "datum": "2026-11-02",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3789,19 +3789,19 @@
         "cm": 399.0
       },
       {
+        "nev": "Szászberek",
+        "cm": 392.0
+      },
+      {
         "nev": "Bugac",
         "cm": 392.0
       },
       {
-        "nev": "Szászberek",
-        "cm": 391.5
-      },
-      {
-        "nev": "Kecskemét",
+        "nev": "Kunszentmárton",
         "cm": 384.0
       },
       {
-        "nev": "Kunszentmárton",
+        "nev": "Kecskemét",
         "cm": 384.0
       }
     ],
@@ -3848,7 +3848,7 @@
       },
       {
         "nev": "Vasszilvágy",
-        "cm": 354.0,
+        "cm": 354.5,
         "lat": 47.3023740109057,
         "lon": 16.7488351762277,
         "terkep_xy": [
@@ -3918,7 +3918,7 @@
       },
       {
         "nev": "Csoma I",
-        "cm": 283.5,
+        "cm": 283.0,
         "lat": 46.3685287136547,
         "lon": 18.0494984718759,
         "terkep_xy": [
@@ -3958,7 +3958,7 @@
       },
       {
         "nev": "Magyarbóly",
-        "cm": 221.5,
+        "cm": 222.0,
         "lat": 45.8362852324481,
         "lon": 18.485593394306,
         "terkep_xy": [
@@ -5024,7 +5024,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-03T03:36:32Z",
+    "keszult": "2026-11-03T04:06:33Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
