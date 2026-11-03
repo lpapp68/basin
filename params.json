@@ -3578,13 +3578,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-03T05:37:17+00:00",
+    "lekerve": "2026-11-03T06:36:20+00:00",
     "datum": "2026-11-02",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 786.0,
-      "vizallas_cm": 93.0,
-      "vizho_c": 10.6,
+      "hozam_m3s": 819.0,
+      "vizallas_cm": 99.0,
+      "vizho_c": 10.4,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3593,38 +3593,38 @@
       "sokeves_atlag_m3s": 4700.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 814.0,
+    "kulonbseg_m3s": 781.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": 12.0,
-        "hozam_m3s": 710.0,
-        "vizho_c": 11.0
+        "vizallas_cm": -3.0,
+        "hozam_m3s": 662.0,
+        "vizho_c": 10.6
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 53.0,
-        "hozam_m3s": 761.0,
+        "vizallas_cm": 44.0,
+        "hozam_m3s": 715.0,
         "vizho_c": 11.0
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": 1.0,
-        "hozam_m3s": 886.0,
-        "vizho_c": 11.2
+        "vizallas_cm": -8.0,
+        "hozam_m3s": 840.0,
+        "vizho_c": 11.0
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 50.0,
-        "hozam_m3s": 0.79,
+        "vizallas_cm": 49.0,
+        "hozam_m3s": 0.7,
         "vizho_c": 11.0
       }
     ],
@@ -3797,11 +3797,11 @@
         "cm": 392.0
       },
       {
-        "nev": "Kunszentmárton",
+        "nev": "Kecskemét",
         "cm": 384.0
       },
       {
-        "nev": "Kecskemét",
+        "nev": "Kunszentmárton",
         "cm": 384.0
       }
     ],
@@ -5024,7 +5024,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-03T06:07:04Z",
+    "keszult": "2026-11-03T06:36:24Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
