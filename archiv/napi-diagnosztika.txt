@@ -1,6 +1,8 @@
 kert_nap=2026-11-02
 feldolgozott_nap=2026-11-01
-ido=2026-11-03T07:38:21Z
+ido=2026-11-03T08:09:04Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+talajvíz, tízéves összevetés:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
