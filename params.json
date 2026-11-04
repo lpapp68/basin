@@ -3583,7 +3583,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-04T06:36:33+00:00",
+    "lekerve": "2026-11-04T06:59:26+00:00",
     "datum": "2026-11-02",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3771,8 +3771,8 @@
     "sullyedes_cm": 140.0,
     "evek": 10,
     "datum": "2026-11-04",
-    "kut_db": 591,
-    "melyult": 570,
+    "kut_db": 601,
+    "melyult": 580,
     "emelkedett": 12,
     "also_kvartilis": 91.5,
     "felso_kvartilis": 203.0,
@@ -3859,6 +3859,16 @@
         "terkep_xy": [
           493.6,
           363.5
+        ]
+      },
+      {
+        "nev": "Kup-2",
+        "cm": 344.5,
+        "lat": 47.251231191448,
+        "lon": 17.4745767220833,
+        "terkep_xy": [
+          203.5,
+          285.7
         ]
       },
       {
@@ -3982,6 +3992,16 @@
         ]
       },
       {
+        "nev": "Lovászpatona",
+        "cm": 218.5,
+        "lat": 47.4307031975603,
+        "lon": 17.6268114889549,
+        "terkep_xy": [
+          226.0,
+          246.8
+        ]
+      },
+      {
         "nev": "Kálmánháza  (I)",
         "cm": 202.5,
         "lat": 47.8810793666645,
@@ -3989,16 +4009,6 @@
         "terkep_xy": [
           808.9,
           149.2
-        ]
-      },
-      {
-        "nev": "Celldömölk",
-        "cm": 197.0,
-        "lat": 47.2507362110043,
-        "lon": 17.1678369675169,
-        "terkep_xy": [
-          158.3,
-          285.8
         ]
       },
       {
@@ -4019,16 +4029,6 @@
         "terkep_xy": [
           209.0,
           471.8
-        ]
-      },
-      {
-        "nev": "Győrújbarát-Kisbarát",
-        "cm": 108.0,
-        "lat": 47.6229283117284,
-        "lon": 17.6452437161174,
-        "terkep_xy": [
-          228.7,
-          205.1
         ]
       },
       {
@@ -4073,19 +4073,19 @@
         ]
       },
       {
-        "nev": "Sárszentmihály",
-        "cm": 131.0,
-        "lat": 47.1663655110122,
-        "lon": 18.3116494223041,
+        "nev": "Csót-1",
+        "cm": 56.0,
+        "lat": 47.3598301776411,
+        "lon": 17.5846183826616,
         "referencia": "Zirc",
         "terkep_xy": [
-          326.9,
-          304.1
+          219.7,
+          262.2
         ]
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 591 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 601 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5029,7 +5029,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-04T06:36:37Z",
+    "keszult": "2026-11-04T06:59:31Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
