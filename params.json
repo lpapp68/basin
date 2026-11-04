@@ -3583,13 +3583,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-04T05:36:30+00:00",
+    "lekerve": "2026-11-04T06:36:33+00:00",
     "datum": "2026-11-02",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 819.0,
-      "vizallas_cm": 99.0,
-      "vizho_c": 10.4,
+      "hozam_m3s": 877.0,
+      "vizallas_cm": 109.0,
+      "vizho_c": 10.1,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3598,39 +3598,39 @@
       "sokeves_atlag_m3s": 4700.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 781.0,
+    "kulonbseg_m3s": 723.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": -3.0,
-        "hozam_m3s": 662.0,
-        "vizho_c": 10.6
+        "vizallas_cm": 35.0,
+        "hozam_m3s": 789.0,
+        "vizho_c": 10.4
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 44.0,
-        "hozam_m3s": 715.0,
-        "vizho_c": 11.0
+        "vizallas_cm": 53.0,
+        "hozam_m3s": 761.0,
+        "vizho_c": 10.6
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": -8.0,
-        "hozam_m3s": 840.0,
-        "vizho_c": 11.0
+        "vizallas_cm": -14.0,
+        "hozam_m3s": 810.0,
+        "vizho_c": 10.5
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 49.0,
-        "hozam_m3s": 0.7,
-        "vizho_c": 11.0
+        "vizallas_cm": 50.0,
+        "hozam_m3s": 0.79,
+        "vizho_c": 10.4
       }
     ],
     "provenance": "mert",
@@ -3771,10 +3771,10 @@
     "sullyedes_cm": 140.0,
     "evek": 10,
     "datum": "2026-11-04",
-    "kut_db": 590,
-    "melyult": 569,
+    "kut_db": 591,
+    "melyult": 570,
     "emelkedett": 12,
-    "also_kvartilis": 92.0,
+    "also_kvartilis": 91.5,
     "felso_kvartilis": 203.0,
     "leginkabb": [
       {
@@ -4085,7 +4085,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 590 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 591 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5029,7 +5029,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-04T06:06:01Z",
+    "keszult": "2026-11-04T06:36:37Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
