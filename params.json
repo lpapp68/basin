@@ -3583,7 +3583,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-04T02:36:14+00:00",
+    "lekerve": "2026-11-04T03:06:16+00:00",
     "datum": "2026-11-02",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3773,16 +3773,16 @@
     "datum": "2026-11-04",
     "kut_db": 590,
     "melyult": 569,
-    "emelkedett": 11,
+    "emelkedett": 12,
     "also_kvartilis": 92.0,
     "felso_kvartilis": 203.0,
     "leginkabb": [
       {
-        "nev": "Tázlár",
+        "nev": "Bugac",
         "cm": 430.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Tázlár",
         "cm": 430.0
       },
       {
@@ -5029,7 +5029,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-04T02:36:18Z",
+    "keszult": "2026-11-04T03:06:19Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
