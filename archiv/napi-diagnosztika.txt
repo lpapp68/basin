@@ -1,7 +1,8 @@
 kert_nap=2026-11-04
 feldolgozott_nap=2026-11-03
-ido=2026-11-05T06:06:20Z
+ido=2026-11-05T06:40:57Z
 hol=bot
 visszalepes=igen
 --- naplo ---
-teljes medence falai:     raise RuntimeError("A dévényi hozam hiányzik a SHMÚ táblázatból.") RuntimeError: A dévényi hozam hiányzik a SHMÚ táblázatból. 
+LSA SAF párolgás:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+öntözésigény:     raise URLError(err) urllib.error.URLError: <urlopen error [Errno 110] Connection timed out> 
