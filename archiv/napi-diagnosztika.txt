@@ -1,6 +1,9 @@
 kert_nap=2026-11-04
 feldolgozott_nap=2026-11-03
-ido=2026-11-05T03:36:08Z
+ido=2026-11-05T04:10:17Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+talajvíz, tízéves összevetés:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
+Duna-idősor (öntözővíz):     raise RuntimeError(f"OVF API, adatfajta {kod}: {e}") RuntimeError: OVF API, adatfajta 87: <urlopen error timed out> 
