@@ -4628,136 +4628,6 @@
         "orak": 144
       },
       {
-        "statid": 48,
-        "nev": "Ágerdőmajor",
-        "folyo": "Kraszna",
-        "megjegyzes": "nyitott fal: Románia felől",
-        "pontok": [
-          {
-            "ido": "2026-11-05 12:00:00",
-            "cm": 115.0,
-            "sav": 1.3
-          },
-          {
-            "ido": "2026-11-05 18:00:00",
-            "cm": 116.0,
-            "sav": 2.6
-          },
-          {
-            "ido": "2026-11-06 00:00:00",
-            "cm": 117.0,
-            "sav": 3.9
-          },
-          {
-            "ido": "2026-11-06 06:00:00",
-            "cm": 117.0,
-            "sav": 5.2
-          },
-          {
-            "ido": "2026-11-06 12:00:00",
-            "cm": 116.0,
-            "sav": 7.1
-          },
-          {
-            "ido": "2026-11-06 18:00:00",
-            "cm": 117.0,
-            "sav": 9.0
-          },
-          {
-            "ido": "2026-11-07 00:00:00",
-            "cm": 117.0,
-            "sav": 10.9
-          },
-          {
-            "ido": "2026-11-07 06:00:00",
-            "cm": 116.0,
-            "sav": 12.7
-          },
-          {
-            "ido": "2026-11-07 12:00:00",
-            "cm": 116.0,
-            "sav": 15.2
-          },
-          {
-            "ido": "2026-11-07 18:00:00",
-            "cm": 116.0,
-            "sav": 17.7
-          },
-          {
-            "ido": "2026-11-08 00:00:00",
-            "cm": 116.0,
-            "sav": 20.2
-          },
-          {
-            "ido": "2026-11-08 06:00:00",
-            "cm": 116.0,
-            "sav": 22.6
-          },
-          {
-            "ido": "2026-11-08 12:00:00",
-            "cm": 116.0,
-            "sav": 24.3
-          },
-          {
-            "ido": "2026-11-08 18:00:00",
-            "cm": 116.0,
-            "sav": 26.0
-          },
-          {
-            "ido": "2026-11-09 00:00:00",
-            "cm": 116.0,
-            "sav": 27.7
-          },
-          {
-            "ido": "2026-11-09 06:00:00",
-            "cm": 116.0,
-            "sav": 29.3
-          },
-          {
-            "ido": "2026-11-09 12:00:00",
-            "cm": 115.0,
-            "sav": 30.2
-          },
-          {
-            "ido": "2026-11-09 18:00:00",
-            "cm": 115.0,
-            "sav": 31.1
-          },
-          {
-            "ido": "2026-11-10 00:00:00",
-            "cm": 115.0,
-            "sav": 32.0
-          },
-          {
-            "ido": "2026-11-10 06:00:00",
-            "cm": 115.0,
-            "sav": 33.0
-          },
-          {
-            "ido": "2026-11-10 12:00:00",
-            "cm": 115.0,
-            "sav": 33.7
-          },
-          {
-            "ido": "2026-11-10 18:00:00",
-            "cm": 115.0,
-            "sav": 34.5
-          },
-          {
-            "ido": "2026-11-11 00:00:00",
-            "cm": 115.0,
-            "sav": 35.3
-          },
-          {
-            "ido": "2026-11-11 06:00:00",
-            "cm": 115.0,
-            "sav": 36.1
-          }
-        ],
-        "valtozas_cm": 0.0,
-        "orak": 144
-      },
-      {
         "statid": 99,
         "nev": "Sarkad-Malomfok",
         "folyo": "Fekete-Körös",
@@ -5018,11 +4888,13 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-05T18:34:33Z",
+    "keszult": "2026-11-05T19:05:15Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
     "figyelmeztetes": "Vízállás, nem vízhozam: a mérlegbe nem számít bele. A cm-ből m³/s-ba váltáshoz vízhozamgörbe kellene, ami a nyilvános adatban nincs benne.",
-    "hibak": []
+    "hibak": [
+      "Ágerdőmajor: The read operation timed out"
+    ]
   }
 }
