@@ -8,20 +8,20 @@
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
-    "ertek": 0.06,
+    "ertek": 0.0,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-11-04, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 48,
-    "datum": "2026-11-04",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-11-05, területsúlyozott átlag országhatár-maszkkal",
+    "kor_ora": 24,
+    "datum": "2026-11-05",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 0.38,
+    "ertek": 0.46,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-11-04, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 48,
-    "datum": "2026-11-04",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-11-05, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 24,
+    "datum": "2026-11-05",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -113,30 +113,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-11-04",
-    "et_ref_mm": 0.85,
-    "et_act_mm": 0.38,
-    "vizstressz": 0.443,
+    "datum": "2026-11-05",
+    "et_ref_mm": 0.88,
+    "et_act_mm": 0.46,
+    "vizstressz": 0.521,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 0.3,
-        "m3s": 151
+        "hiany_mm_nap": 0.25,
+        "m3s": 122
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 0.47,
-        "m3s": 236
+        "hiany_mm_nap": 0.42,
+        "m3s": 209
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 0.64,
-        "m3s": 320
+        "hiany_mm_nap": 0.6,
+        "m3s": 297
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-11-04, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-11-05, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -146,7 +146,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-11-04",
+    "datum": "2026-11-05",
     "honap": 11,
     "osszes_m3s": 24.5,
     "fogyaszto_m3s": 7.0,
@@ -3583,7 +3583,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-06T09:36:13+00:00",
+    "lekerve": "2026-11-06T10:06:12+00:00",
     "datum": "2026-11-05",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3790,11 +3790,11 @@
         "cm": 431.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Tázlár",
         "cm": 430.0
       },
       {
-        "nev": "Tázlár",
+        "nev": "Bugac",
         "cm": 430.0
       },
       {
@@ -4100,20 +4100,20 @@
   },
   "csapadek_omsz_mm_nap": {
     "ertek": 0.0,
-    "datum": "2026-11-04",
-    "allomas_db": 265,
+    "datum": "2026-11-05",
+    "allomas_db": 264,
     "provenance": "helyszini",
-    "forras": "OMSZ (HungaroMet) nyílt adattár, 265 automata állomás órás csapadékösszege, rácsos területi súlyozással",
+    "forras": "OMSZ (HungaroMet) nyílt adattár, 264 automata állomás órás csapadékösszege, rácsos területi súlyozással",
     "figyelmeztetes": "Földi mérés, pontszerű: az állomások között interpolálni kell. A rácsos súlyozás azt kezeli, hogy a hálózat egyenetlen — cellánként átlagolunk, majd a cellák átlagát vesszük, így a sűrűn műszerezett térségek nem nyomják el a ritkábbakat.",
     "hivatkozas": "odp.met.hu"
   },
   "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk.",
   "et_ref_omsz_mm_nap": {
-    "ertek": 1.03,
-    "datum": "2026-11-04",
-    "allomas_db": 245,
+    "ertek": 0.7,
+    "datum": "2026-11-05",
+    "allomas_db": 248,
     "provenance": "helyszini",
-    "forras": "OMSZ (HungaroMet) nyílt adattár, 245 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
+    "forras": "OMSZ (HungaroMet) nyílt adattár, 248 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
@@ -5039,7 +5039,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-06T09:36:18Z",
+    "keszult": "2026-11-06T10:06:17Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
