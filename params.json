@@ -3583,7 +3583,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-06T06:36:22+00:00",
+    "lekerve": "2026-11-06T07:06:25+00:00",
     "datum": "2026-11-05",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3768,34 +3768,34 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 140.0,
+    "sullyedes_cm": 137.2,
     "evek": 10,
     "datum": "2026-11-06",
-    "kut_db": 676,
-    "melyult": 642,
-    "emelkedett": 21,
+    "kut_db": 688,
+    "melyult": 654,
+    "emelkedett": 22,
     "also_kvartilis": 83.0,
     "felso_kvartilis": 206.0,
     "leginkabb": [
       {
         "nev": "Tiszajenő Cs 56/2",
-        "cm": 568.0
+        "cm": 560.0
       },
       {
         "nev": "Tiszajenő Cs 56/3",
-        "cm": 528.0
+        "cm": 518.5
       },
       {
-        "nev": "Tázlár",
-        "cm": 430.0
+        "nev": "Mesterszállás 003951",
+        "cm": 431.0
       },
       {
         "nev": "Bugac",
         "cm": 430.0
       },
       {
-        "nev": "Mesterszállás 003951",
-        "cm": 429.0
+        "nev": "Tázlár",
+        "cm": 430.0
       },
       {
         "nev": "Biharnagybajom",
@@ -3806,14 +3806,14 @@
         "cm": 403.0
       },
       {
-        "nev": "Szászberek",
+        "nev": "Jászszentlászló",
         "cm": 398.0
       }
     ],
     "terkep": [
       {
         "nev": "Tiszajenő Cs 56/2",
-        "cm": 568.0,
+        "cm": 560.0,
         "lat": 47.0065736259553,
         "lon": 20.1617199709414,
         "terkep_xy": [
@@ -3952,6 +3952,26 @@
         ]
       },
       {
+        "nev": "Aba",
+        "cm": 251.0,
+        "lat": 47.0260617066066,
+        "lon": 18.5408629136489,
+        "terkep_xy": [
+          360.7,
+          334.5
+        ]
+      },
+      {
+        "nev": "Nagyigmánd",
+        "cm": 250.0,
+        "lat": 47.5955784292324,
+        "lon": 18.1276165774803,
+        "terkep_xy": [
+          299.8,
+          211.1
+        ]
+      },
+      {
         "nev": "Zsarolyán (I)",
         "cm": 249.5,
         "lat": 47.9500274926194,
@@ -3962,18 +3982,8 @@
         ]
       },
       {
-        "nev": "Aba",
-        "cm": 248.0,
-        "lat": 47.0260617066066,
-        "lon": 18.5408629136489,
-        "terkep_xy": [
-          360.7,
-          334.5
-        ]
-      },
-      {
         "nev": "Fertőrákos",
-        "cm": 242.0,
+        "cm": 242.5,
         "lat": 47.7100936633579,
         "lon": 16.6608281220053,
         "terkep_xy": [
@@ -3989,17 +3999,6 @@
         "terkep_xy": [
           352.6,
           592.5
-        ]
-      },
-      {
-        "nev": "Lovászpatona",
-        "cm": 217.5,
-        "lat": 47.4307031975603,
-        "lon": 17.6268114889549,
-        "referencia": "Zirc",
-        "terkep_xy": [
-          226.0,
-          246.8
         ]
       },
       {
@@ -4033,6 +4032,16 @@
         ]
       },
       {
+        "nev": "Esztergom",
+        "cm": 105.0,
+        "lat": 47.7794862305968,
+        "lon": 18.7292229283979,
+        "terkep_xy": [
+          388.5,
+          171.2
+        ]
+      },
+      {
         "nev": "Cserhátsurány",
         "cm": 103.0,
         "lat": 47.9780696282504,
@@ -4053,6 +4062,27 @@
         ]
       },
       {
+        "nev": "Eger",
+        "cm": 22.0,
+        "lat": 47.8946522620158,
+        "lon": 20.3886224017715,
+        "terkep_xy": [
+          633.1,
+          146.2
+        ]
+      },
+      {
+        "nev": "Lovászpatona",
+        "cm": 217.5,
+        "lat": 47.4307031975603,
+        "lon": 17.6268114889549,
+        "referencia": "Zirc",
+        "terkep_xy": [
+          226.0,
+          246.8
+        ]
+      },
+      {
         "nev": "Soroksár",
         "cm": 47.0,
         "lat": 47.3950562146411,
@@ -4062,20 +4092,10 @@
           444.8,
           254.5
         ]
-      },
-      {
-        "nev": "Eger",
-        "cm": 22.0,
-        "lat": 47.8946522620158,
-        "lon": 20.3886224017715,
-        "terkep_xy": [
-          633.1,
-          146.2
-        ]
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 676 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 688 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5019,7 +5039,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-06T06:36:27Z",
+    "keszult": "2026-11-06T07:06:30Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
