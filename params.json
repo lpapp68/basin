@@ -3583,7 +3583,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-06T05:06:11+00:00",
+    "lekerve": "2026-11-06T05:36:10+00:00",
     "datum": "2026-11-05",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3786,11 +3786,11 @@
         "cm": 528.0
       },
       {
-        "nev": "Tázlár",
+        "nev": "Bugac",
         "cm": 430.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Tázlár",
         "cm": 430.0
       },
       {
@@ -3806,7 +3806,7 @@
         "cm": 403.0
       },
       {
-        "nev": "Jászszentlászló",
+        "nev": "Szászberek",
         "cm": 398.0
       }
     ],
@@ -3822,16 +3822,6 @@
         ]
       },
       {
-        "nev": "Bugac",
-        "cm": 430.0,
-        "lat": 46.7097933906164,
-        "lon": 19.7297588762172,
-        "terkep_xy": [
-          536.0,
-          403.1
-        ]
-      },
-      {
         "nev": "Tázlár",
         "cm": 430.0,
         "lat": 46.5606028482933,
@@ -3839,6 +3829,16 @@
         "terkep_xy": [
           504.7,
           435.4
+        ]
+      },
+      {
+        "nev": "Bugac",
+        "cm": 430.0,
+        "lat": 46.7097933906164,
+        "lon": 19.7297588762172,
+        "terkep_xy": [
+          536.0,
+          403.1
         ]
       },
       {
@@ -5019,7 +5019,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-06T05:06:16Z",
+    "keszult": "2026-11-06T05:36:15Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
