@@ -3584,7 +3584,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-07T06:38:28+00:00",
+    "lekerve": "2026-11-07T07:05:59+00:00",
     "datum": "2026-11-06",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3772,8 +3772,8 @@
     "sullyedes_cm": 140.0,
     "evek": 10,
     "datum": "2026-11-07",
-    "kut_db": 690,
-    "melyult": 656,
+    "kut_db": 689,
+    "melyult": 655,
     "emelkedett": 22,
     "also_kvartilis": 84.0,
     "felso_kvartilis": 206.0,
@@ -3791,11 +3791,11 @@
         "cm": 431.0
       },
       {
-        "nev": "Tázlár",
+        "nev": "Bugac",
         "cm": 430.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Tázlár",
         "cm": 430.0
       },
       {
@@ -3873,16 +3873,6 @@
         ]
       },
       {
-        "nev": "Tiszafüred",
-        "cm": 318.0,
-        "lat": 47.6026938013839,
-        "lon": 20.7495349740375,
-        "terkep_xy": [
-          686.3,
-          209.5
-        ]
-      },
-      {
         "nev": "Kübekháza",
         "cm": 317.0,
         "lat": 46.1497350991783,
@@ -3953,23 +3943,33 @@
         ]
       },
       {
-        "nev": "Nagyigmánd",
-        "cm": 252.5,
-        "lat": 47.5955784292324,
-        "lon": 18.1276165774803,
+        "nev": "Mezőkeresztes",
+        "cm": 262.0,
+        "lat": 47.8294175422055,
+        "lon": 20.6967648903727,
         "terkep_xy": [
-          299.8,
-          211.1
+          678.5,
+          160.4
         ]
       },
       {
         "nev": "Aba",
-        "cm": 251.0,
+        "cm": 254.0,
         "lat": 47.0260617066066,
         "lon": 18.5408629136489,
         "terkep_xy": [
           360.7,
           334.5
+        ]
+      },
+      {
+        "nev": "Nagyigmánd",
+        "cm": 253.0,
+        "lat": 47.5955784292324,
+        "lon": 18.1276165774803,
+        "terkep_xy": [
+          299.8,
+          211.1
         ]
       },
       {
@@ -4024,7 +4024,7 @@
       },
       {
         "nev": "Alsópáhok",
-        "cm": 126.5,
+        "cm": 132.5,
         "lat": 46.7694705056718,
         "lon": 17.1734658886747,
         "terkep_xy": [
@@ -4096,7 +4096,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 690 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 689 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5040,7 +5040,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-07T06:38:33Z",
+    "keszult": "2026-11-07T07:06:04Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
