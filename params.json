@@ -3585,7 +3585,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-08T09:06:30+00:00",
+    "lekerve": "2026-11-08T09:35:52+00:00",
     "datum": "2026-11-07",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3773,8 +3773,8 @@
     "sullyedes_cm": 140.0,
     "evek": 10,
     "datum": "2026-11-08",
-    "kut_db": 691,
-    "melyult": 657,
+    "kut_db": 692,
+    "melyult": 658,
     "emelkedett": 22,
     "also_kvartilis": 85.0,
     "felso_kvartilis": 207.0,
@@ -4097,7 +4097,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 691 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 692 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5041,7 +5041,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-08T09:06:36Z",
+    "keszult": "2026-11-08T09:35:57Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
