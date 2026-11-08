@@ -3585,7 +3585,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-08T03:36:47+00:00",
+    "lekerve": "2026-11-08T04:06:40+00:00",
     "datum": "2026-11-07",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3789,7 +3789,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 431.0
+        "cm": 431.5
       },
       {
         "nev": "Mesterszállás 003951",
@@ -3825,7 +3825,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 431.0,
+        "cm": 431.5,
         "lat": 46.5606028482933,
         "lon": 19.517643147905,
         "terkep_xy": [
@@ -3915,7 +3915,7 @@
       },
       {
         "nev": "Csoma I",
-        "cm": 276.5,
+        "cm": 275.5,
         "lat": 46.3685287136547,
         "lon": 18.0494984718759,
         "terkep_xy": [
@@ -4025,7 +4025,7 @@
       },
       {
         "nev": "Alsópáhok",
-        "cm": 131.0,
+        "cm": 130.5,
         "lat": 46.7694705056718,
         "lon": 17.1734658886747,
         "terkep_xy": [
@@ -5041,7 +5041,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-08T03:36:53Z",
+    "keszult": "2026-11-08T04:06:46Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
