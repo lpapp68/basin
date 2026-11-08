@@ -3585,7 +3585,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-08T06:41:31+00:00",
+    "lekerve": "2026-11-08T07:06:29+00:00",
     "datum": "2026-11-07",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3776,8 +3776,8 @@
     "kut_db": 691,
     "melyult": 657,
     "emelkedett": 22,
-    "also_kvartilis": 84.6,
-    "felso_kvartilis": 206.0,
+    "also_kvartilis": 85.0,
+    "felso_kvartilis": 207.0,
     "leginkabb": [
       {
         "nev": "Tiszajenő Cs 56/2",
@@ -3788,12 +3788,12 @@
         "cm": 518.5
       },
       {
-        "nev": "Tázlár",
-        "cm": 431.5
+        "nev": "Mesterszállás 003951",
+        "cm": 433.5
       },
       {
-        "nev": "Mesterszállás 003951",
-        "cm": 431.0
+        "nev": "Tázlár",
+        "cm": 431.5
       },
       {
         "nev": "Bugac",
@@ -3955,7 +3955,7 @@
       },
       {
         "nev": "Nagyigmánd",
-        "cm": 254.0,
+        "cm": 255.0,
         "lat": 47.5955784292324,
         "lon": 18.1276165774803,
         "terkep_xy": [
@@ -4075,7 +4075,7 @@
       },
       {
         "nev": "Lovászpatona",
-        "cm": 215.5,
+        "cm": 235.0,
         "lat": 47.4307031975603,
         "lon": 17.6268114889549,
         "referencia": "Zirc",
@@ -5041,7 +5041,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-08T06:41:36Z",
+    "keszult": "2026-11-08T07:06:35Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
