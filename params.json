@@ -3586,7 +3586,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-09T03:36:07+00:00",
+    "lekerve": "2026-11-09T04:06:00+00:00",
     "datum": "2026-11-08",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3856,7 +3856,7 @@
       },
       {
         "nev": "Fülöpháza",
-        "cm": 387.0,
+        "cm": 387.5,
         "lat": 46.8926004877422,
         "lon": 19.4424275194305,
         "terkep_xy": [
@@ -3916,7 +3916,7 @@
       },
       {
         "nev": "Csoma I",
-        "cm": 273.0,
+        "cm": 272.5,
         "lat": 46.3685287136547,
         "lon": 18.0494984718759,
         "terkep_xy": [
@@ -3976,7 +3976,7 @@
       },
       {
         "nev": "Zsarolyán (I)",
-        "cm": 249.0,
+        "cm": 249.5,
         "lat": 47.9500274926194,
         "lon": 22.590630088471,
         "terkep_xy": [
@@ -4006,7 +4006,7 @@
       },
       {
         "nev": "Tiszadada",
-        "cm": 189.0,
+        "cm": 188.5,
         "lat": 48.036468399627,
         "lon": 21.2667018812023,
         "terkep_xy": [
@@ -4066,7 +4066,7 @@
       },
       {
         "nev": "Eger",
-        "cm": 22.0,
+        "cm": 21.5,
         "lat": 47.8946522620158,
         "lon": 20.3886224017715,
         "terkep_xy": [
@@ -5042,7 +5042,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-09T03:36:11Z",
+    "keszult": "2026-11-09T04:06:04Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
