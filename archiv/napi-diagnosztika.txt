@@ -1,8 +1,6 @@
 kert_nap=2026-11-09
 feldolgozott_nap=2026-11-08
-ido=2026-11-10T02:40:51Z
+ido=2026-11-10T03:06:13Z
 hol=bot
 visszalepes=igen
 --- naplo ---
-LSA SAF párolgás:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
-öntözésigény:     raise URLError(err) urllib.error.URLError: <urlopen error [Errno 110] Connection timed out> 
