@@ -3587,7 +3587,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-10T03:36:11+00:00",
+    "lekerve": "2026-11-10T04:06:11+00:00",
     "datum": "2026-11-09",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3779,7 +3779,7 @@
     "melyult": 673,
     "emelkedett": 22,
     "also_kvartilis": 85.0,
-    "felso_kvartilis": 209.0,
+    "felso_kvartilis": 209.5,
     "leginkabb": [
       {
         "nev": "Tiszajenő Cs 56/2",
@@ -3803,7 +3803,7 @@
       },
       {
         "nev": "Biharnagybajom",
-        "cm": 413.5
+        "cm": 414.0
       },
       {
         "nev": "Lajosmizse",
@@ -3847,7 +3847,7 @@
       },
       {
         "nev": "Biharnagybajom",
-        "cm": 413.5,
+        "cm": 414.0,
         "lat": 47.2094952204129,
         "lon": 21.2346374356346,
         "terkep_xy": [
@@ -3857,7 +3857,7 @@
       },
       {
         "nev": "Fülöpháza",
-        "cm": 388.0,
+        "cm": 388.5,
         "lat": 46.8926004877422,
         "lon": 19.4424275194305,
         "terkep_xy": [
@@ -3877,7 +3877,7 @@
       },
       {
         "nev": "Konyár",
-        "cm": 319.0,
+        "cm": 320.0,
         "lat": 47.3180843741109,
         "lon": 21.6727429529734,
         "terkep_xy": [
@@ -3937,7 +3937,7 @@
       },
       {
         "nev": "Csoma I",
-        "cm": 270.0,
+        "cm": 269.5,
         "lat": 46.3685287136547,
         "lon": 18.0494984718759,
         "terkep_xy": [
@@ -3957,7 +3957,7 @@
       },
       {
         "nev": "Mezőkeresztes",
-        "cm": 260.0,
+        "cm": 260.5,
         "lat": 47.8294175422055,
         "lon": 20.6967648903727,
         "terkep_xy": [
@@ -4017,7 +4017,7 @@
       },
       {
         "nev": "Tiszadada",
-        "cm": 188.0,
+        "cm": 187.5,
         "lat": 48.036468399627,
         "lon": 21.2667018812023,
         "terkep_xy": [
@@ -4027,7 +4027,7 @@
       },
       {
         "nev": "Alsópáhok",
-        "cm": 134.5,
+        "cm": 134.0,
         "lat": 46.7694705056718,
         "lon": 17.1734658886747,
         "terkep_xy": [
@@ -4077,7 +4077,7 @@
       },
       {
         "nev": "Lovászpatona",
-        "cm": 236.0,
+        "cm": 235.5,
         "lat": 47.4307031975603,
         "lon": 17.6268114889549,
         "referencia": "Zirc",
@@ -5043,7 +5043,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-10T03:36:16Z",
+    "keszult": "2026-11-10T04:06:16Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
