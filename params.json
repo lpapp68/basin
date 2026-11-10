@@ -3587,7 +3587,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-10T06:06:14+00:00",
+    "lekerve": "2026-11-10T06:37:29+00:00",
     "datum": "2026-11-09",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3627,6 +3627,14 @@
         "vizallas_cm": -13.0,
         "hozam_m3s": 815.0,
         "vizho_c": 8.7
+      },
+      {
+        "nev": "Ipoly, Ipolyszalka",
+        "szerep": "profil",
+        "forras_nev": "Salka - Ipeľ",
+        "vizallas_cm": 52.0,
+        "hozam_m3s": 0.61,
+        "vizho_c": 9.2
       }
     ],
     "provenance": "mert",
@@ -4113,10 +4121,14 @@
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
-    "ertek": null,
-    "hiba": "Az SHMÚ tábla 19 sort ad, várt legalább 20 — az oldal szerkezete megváltozhatott.",
-    "provenance": "hianyzik",
-    "forras": "SHMÚ napi hidrológiai jelentés, Ždaňa – Hornád"
+    "ertek": 5.68,
+    "vizallas_cm": 62.0,
+    "vizho_c": 5.5,
+    "provenance": "helyszini",
+    "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
+    "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
+    "figyelmeztetes": "HTML-táblából olvasva, nem API-ból. A modul minden futáskor ellenőrzi a tábla szerkezetét; eltérés esetén nem ad értéket.",
+    "hivatkozas": "https://www.shmu.sk/sk/?page=110"
   },
   "elorejelzes": {
     "szelvenyek": [
@@ -5031,7 +5043,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-10T06:06:19Z",
+    "keszult": "2026-11-10T06:37:34Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
