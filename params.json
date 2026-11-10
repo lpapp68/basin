@@ -3587,7 +3587,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-10T08:07:53+00:00",
+    "lekerve": "2026-11-10T08:36:30+00:00",
     "datum": "2026-11-09",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3772,14 +3772,14 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 140.0,
+    "sullyedes_cm": 141.0,
     "evek": 10,
     "datum": "2026-11-10",
-    "kut_db": 678,
-    "melyult": 646,
+    "kut_db": 669,
+    "melyult": 637,
     "emelkedett": 21,
-    "also_kvartilis": 85.0,
-    "felso_kvartilis": 206.0,
+    "also_kvartilis": 86.0,
+    "felso_kvartilis": 207.5,
     "leginkabb": [
       {
         "nev": "Mesterszállás 003951",
@@ -3787,7 +3787,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 432.0
+        "cm": 432.5
       },
       {
         "nev": "Bugac",
@@ -3827,7 +3827,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 432.0,
+        "cm": 432.5,
         "lat": 46.5606028482933,
         "lon": 19.517643147905,
         "terkep_xy": [
@@ -3857,7 +3857,7 @@
       },
       {
         "nev": "Fülöpháza",
-        "cm": 388.5,
+        "cm": 389.0,
         "lat": 46.8926004877422,
         "lon": 19.4424275194305,
         "terkep_xy": [
@@ -3867,7 +3867,7 @@
       },
       {
         "nev": "Kup-2",
-        "cm": 345.0,
+        "cm": 345.5,
         "lat": 47.251231191448,
         "lon": 17.4745767220833,
         "terkep_xy": [
@@ -3917,7 +3917,7 @@
       },
       {
         "nev": "Jászszentandrás",
-        "cm": 292.0,
+        "cm": 291.0,
         "lat": 47.5841689950968,
         "lon": 20.1730627520489,
         "terkep_xy": [
@@ -3937,7 +3937,7 @@
       },
       {
         "nev": "Csoma I",
-        "cm": 269.5,
+        "cm": 269.0,
         "lat": 46.3685287136547,
         "lon": 18.0494984718759,
         "terkep_xy": [
@@ -4056,13 +4056,13 @@
         ]
       },
       {
-        "nev": "Hegyeshalom",
-        "cm": 88.0,
-        "lat": 47.9548441571295,
-        "lon": 17.1107651282127,
+        "nev": "Levél",
+        "cm": 41.0,
+        "lat": 47.8895472357856,
+        "lon": 17.2293488844056,
         "terkep_xy": [
-          149.9,
-          133.2
+          167.4,
+          147.3
         ]
       },
       {
@@ -4077,7 +4077,7 @@
       },
       {
         "nev": "Lovászpatona",
-        "cm": 235.5,
+        "cm": 235.0,
         "lat": 47.4307031975603,
         "lon": 17.6268114889549,
         "referencia": "Zirc",
@@ -4099,7 +4099,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 678 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 669 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -4139,127 +4139,127 @@
         "megjegyzes": "a főváros szelvénye",
         "pontok": [
           {
-            "ido": "2026-11-09 12:00:00",
-            "cm": 40.0,
+            "ido": "2026-11-10 12:00:00",
+            "cm": 36.0,
             "sav": 0.6
           },
           {
-            "ido": "2026-11-09 18:00:00",
-            "cm": 39.0,
-            "sav": 1.1
-          },
-          {
-            "ido": "2026-11-10 00:00:00",
-            "cm": 38.0,
-            "sav": 1.7
-          },
-          {
-            "ido": "2026-11-10 06:00:00",
-            "cm": 37.0,
-            "sav": 2.3
-          },
-          {
-            "ido": "2026-11-10 12:00:00",
-            "cm": 35.0,
-            "sav": 3.5
-          },
-          {
             "ido": "2026-11-10 18:00:00",
-            "cm": 34.0,
-            "sav": 4.8
+            "cm": 35.0,
+            "sav": 1.1
           },
           {
             "ido": "2026-11-11 00:00:00",
             "cm": 34.0,
-            "sav": 6.0
+            "sav": 1.7
           },
           {
             "ido": "2026-11-11 06:00:00",
-            "cm": 33.0,
-            "sav": 7.2
+            "cm": 34.0,
+            "sav": 2.3
           },
           {
             "ido": "2026-11-11 12:00:00",
             "cm": 33.0,
-            "sav": 8.6
+            "sav": 3.5
           },
           {
             "ido": "2026-11-11 18:00:00",
-            "cm": 34.0,
-            "sav": 10.0
+            "cm": 32.0,
+            "sav": 4.8
           },
           {
             "ido": "2026-11-12 00:00:00",
-            "cm": 34.0,
-            "sav": 11.4
+            "cm": 31.0,
+            "sav": 6.0
           },
           {
             "ido": "2026-11-12 06:00:00",
-            "cm": 34.0,
-            "sav": 12.7
+            "cm": 31.0,
+            "sav": 7.2
           },
           {
             "ido": "2026-11-12 12:00:00",
-            "cm": 35.0,
-            "sav": 13.9
+            "cm": 32.0,
+            "sav": 8.6
           },
           {
             "ido": "2026-11-12 18:00:00",
-            "cm": 37.0,
-            "sav": 15.0
+            "cm": 35.0,
+            "sav": 10.0
           },
           {
             "ido": "2026-11-13 00:00:00",
-            "cm": 40.0,
-            "sav": 16.1
+            "cm": 41.0,
+            "sav": 11.4
           },
           {
             "ido": "2026-11-13 06:00:00",
-            "cm": 44.0,
-            "sav": 17.3
+            "cm": 47.0,
+            "sav": 12.7
           },
           {
             "ido": "2026-11-13 12:00:00",
-            "cm": 48.0,
-            "sav": 18.4
+            "cm": 54.0,
+            "sav": 13.9
           },
           {
             "ido": "2026-11-13 18:00:00",
-            "cm": 53.0,
-            "sav": 19.5
+            "cm": 61.0,
+            "sav": 15.0
           },
           {
             "ido": "2026-11-14 00:00:00",
-            "cm": 58.0,
-            "sav": 20.6
+            "cm": 67.0,
+            "sav": 16.1
           },
           {
             "ido": "2026-11-14 06:00:00",
-            "cm": 64.0,
-            "sav": 21.8
+            "cm": 72.0,
+            "sav": 17.3
           },
           {
             "ido": "2026-11-14 12:00:00",
-            "cm": 70.0,
-            "sav": 22.7
+            "cm": 77.0,
+            "sav": 18.4
           },
           {
             "ido": "2026-11-14 18:00:00",
-            "cm": 77.0,
-            "sav": 23.7
+            "cm": 82.0,
+            "sav": 19.5
           },
           {
             "ido": "2026-11-15 00:00:00",
-            "cm": 85.0,
-            "sav": 24.6
+            "cm": 88.0,
+            "sav": 20.6
           },
           {
             "ido": "2026-11-15 06:00:00",
-            "cm": 93.0,
+            "cm": 94.0,
+            "sav": 21.8
+          },
+          {
+            "ido": "2026-11-15 12:00:00",
+            "cm": 101.0,
+            "sav": 22.7
+          },
+          {
+            "ido": "2026-11-15 18:00:00",
+            "cm": 106.0,
+            "sav": 23.7
+          },
+          {
+            "ido": "2026-11-16 00:00:00",
+            "cm": 111.0,
+            "sav": 24.6
+          },
+          {
+            "ido": "2026-11-16 06:00:00",
+            "cm": 114.0,
             "sav": 25.5
           }
         ],
-        "valtozas_cm": 53.0,
+        "valtozas_cm": 78.0,
         "orak": 144
       },
       {
@@ -4269,127 +4269,127 @@
         "megjegyzes": "az ország alsó kapuja",
         "pontok": [
           {
-            "ido": "2026-11-09 12:00:00",
-            "cm": 19.0,
-            "sav": 0.5
-          },
-          {
-            "ido": "2026-11-09 18:00:00",
-            "cm": 20.0,
-            "sav": 1.0
-          },
-          {
-            "ido": "2026-11-10 00:00:00",
-            "cm": 21.0,
-            "sav": 1.6
-          },
-          {
-            "ido": "2026-11-10 06:00:00",
-            "cm": 22.0,
-            "sav": 2.1
-          },
-          {
             "ido": "2026-11-10 12:00:00",
             "cm": 23.0,
-            "sav": 2.8
+            "sav": 0.5
           },
           {
             "ido": "2026-11-10 18:00:00",
             "cm": 24.0,
-            "sav": 3.5
+            "sav": 1.0
           },
           {
             "ido": "2026-11-11 00:00:00",
             "cm": 24.0,
-            "sav": 4.2
+            "sav": 1.6
           },
           {
             "ido": "2026-11-11 06:00:00",
             "cm": 24.0,
-            "sav": 4.9
+            "sav": 2.1
           },
           {
             "ido": "2026-11-11 12:00:00",
-            "cm": 23.0,
-            "sav": 5.5
+            "cm": 24.0,
+            "sav": 2.8
           },
           {
             "ido": "2026-11-11 18:00:00",
             "cm": 23.0,
-            "sav": 6.2
+            "sav": 3.5
           },
           {
             "ido": "2026-11-12 00:00:00",
             "cm": 22.0,
-            "sav": 6.9
+            "sav": 4.2
           },
           {
             "ido": "2026-11-12 06:00:00",
             "cm": 21.0,
-            "sav": 7.6
+            "sav": 4.9
           },
           {
             "ido": "2026-11-12 12:00:00",
             "cm": 20.0,
-            "sav": 8.7
+            "sav": 5.5
           },
           {
             "ido": "2026-11-12 18:00:00",
             "cm": 19.0,
-            "sav": 9.7
+            "sav": 6.2
           },
           {
             "ido": "2026-11-13 00:00:00",
             "cm": 18.0,
-            "sav": 10.8
+            "sav": 6.9
           },
           {
             "ido": "2026-11-13 06:00:00",
-            "cm": 18.0,
-            "sav": 11.8
+            "cm": 17.0,
+            "sav": 7.6
           },
           {
             "ido": "2026-11-13 12:00:00",
-            "cm": 18.0,
-            "sav": 13.0
+            "cm": 16.0,
+            "sav": 8.7
           },
           {
             "ido": "2026-11-13 18:00:00",
-            "cm": 18.0,
-            "sav": 14.2
+            "cm": 15.0,
+            "sav": 9.7
           },
           {
             "ido": "2026-11-14 00:00:00",
-            "cm": 18.0,
-            "sav": 15.4
+            "cm": 15.0,
+            "sav": 10.8
           },
           {
             "ido": "2026-11-14 06:00:00",
-            "cm": 20.0,
-            "sav": 16.6
+            "cm": 17.0,
+            "sav": 11.8
           },
           {
             "ido": "2026-11-14 12:00:00",
-            "cm": 21.0,
-            "sav": 17.9
+            "cm": 20.0,
+            "sav": 13.0
           },
           {
             "ido": "2026-11-14 18:00:00",
             "cm": 24.0,
-            "sav": 19.2
+            "sav": 14.2
           },
           {
             "ido": "2026-11-15 00:00:00",
-            "cm": 28.0,
-            "sav": 20.5
+            "cm": 29.0,
+            "sav": 15.4
           },
           {
             "ido": "2026-11-15 06:00:00",
-            "cm": 32.0,
+            "cm": 35.0,
+            "sav": 16.6
+          },
+          {
+            "ido": "2026-11-15 12:00:00",
+            "cm": 42.0,
+            "sav": 17.9
+          },
+          {
+            "ido": "2026-11-15 18:00:00",
+            "cm": 49.0,
+            "sav": 19.2
+          },
+          {
+            "ido": "2026-11-16 00:00:00",
+            "cm": 56.0,
+            "sav": 20.5
+          },
+          {
+            "ido": "2026-11-16 06:00:00",
+            "cm": 64.0,
             "sav": 21.8
           }
         ],
-        "valtozas_cm": 13.0,
+        "valtozas_cm": 41.0,
         "orak": 144
       },
       {
@@ -5043,7 +5043,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-10T08:07:58Z",
+    "keszult": "2026-11-10T08:36:36Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
