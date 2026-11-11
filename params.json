@@ -3593,7 +3593,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-11T07:36:11+00:00",
+    "lekerve": "2026-11-11T08:06:00+00:00",
     "datum": "2026-11-10",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3778,22 +3778,22 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 141.0,
+    "sullyedes_cm": 140.8,
     "evek": 10,
     "datum": "2026-11-11",
-    "kut_db": 665,
-    "melyult": 633,
+    "kut_db": 650,
+    "melyult": 618,
     "emelkedett": 21,
     "also_kvartilis": 87.0,
     "felso_kvartilis": 207.0,
     "leginkabb": [
       {
-        "nev": "Mesterszállás 003951",
+        "nev": "Tázlár",
         "cm": 433.5
       },
       {
-        "nev": "Tázlár",
-        "cm": 433.0
+        "nev": "Mesterszállás 003951",
+        "cm": 433.5
       },
       {
         "nev": "Bugac",
@@ -3822,6 +3822,16 @@
     ],
     "terkep": [
       {
+        "nev": "Tázlár",
+        "cm": 433.5,
+        "lat": 46.5606028482933,
+        "lon": 19.517643147905,
+        "terkep_xy": [
+          504.7,
+          435.4
+        ]
+      },
+      {
         "nev": "Mesterszállás 003951",
         "cm": 433.5,
         "lat": 47.0102443931986,
@@ -3829,16 +3839,6 @@
         "terkep_xy": [
           639.1,
           338.0
-        ]
-      },
-      {
-        "nev": "Tázlár",
-        "cm": 433.0,
-        "lat": 46.5606028482933,
-        "lon": 19.517643147905,
-        "terkep_xy": [
-          504.7,
-          435.4
         ]
       },
       {
@@ -3863,7 +3863,7 @@
       },
       {
         "nev": "Lajosmizse-Felsőlajos 004480 törzsszámú monitoring kút",
-        "cm": 353.0,
+        "cm": 354.0,
         "lat": 47.0645507834715,
         "lon": 19.5099588790054,
         "terkep_xy": [
@@ -3872,13 +3872,13 @@
         ]
       },
       {
-        "nev": "Kup-2",
-        "cm": 346.0,
-        "lat": 47.251231191448,
-        "lon": 17.4745767220833,
+        "nev": "Konyár",
+        "cm": 325.0,
+        "lat": 47.3180843741109,
+        "lon": 21.6727429529734,
         "terkep_xy": [
-          203.5,
-          285.7
+          822.4,
+          271.2
         ]
       },
       {
@@ -3889,16 +3889,6 @@
         "terkep_xy": [
           682.3,
           504.3
-        ]
-      },
-      {
-        "nev": "Konyár",
-        "cm": 322.5,
-        "lat": 47.3180843741109,
-        "lon": 21.6727429529734,
-        "terkep_xy": [
-          822.4,
-          271.2
         ]
       },
       {
@@ -3922,16 +3912,6 @@
         ]
       },
       {
-        "nev": "Medgyesbodzás",
-        "cm": 291.0,
-        "lat": 46.5168292837038,
-        "lon": 20.9608802368426,
-        "terkep_xy": [
-          717.4,
-          444.9
-        ]
-      },
-      {
         "nev": "Jászszentandrás",
         "cm": 291.0,
         "lat": 47.5841689950968,
@@ -3939,6 +3919,16 @@
         "terkep_xy": [
           601.3,
           213.5
+        ]
+      },
+      {
+        "nev": "Medgyesbodzás",
+        "cm": 291.0,
+        "lat": 46.5168292837038,
+        "lon": 20.9608802368426,
+        "terkep_xy": [
+          717.4,
+          444.9
         ]
       },
       {
@@ -3972,6 +3962,16 @@
         ]
       },
       {
+        "nev": "Alsóújlak",
+        "cm": 258.0,
+        "lat": 47.0558566629553,
+        "lon": 16.8547349054333,
+        "terkep_xy": [
+          112.1,
+          328.1
+        ]
+      },
+      {
         "nev": "Nagyigmánd",
         "cm": 257.0,
         "lat": 47.5955784292324,
@@ -3993,7 +3993,7 @@
       },
       {
         "nev": "Zsarolyán (I)",
-        "cm": 252.0,
+        "cm": 252.5,
         "lat": 47.9500274926194,
         "lon": 22.590630088471,
         "terkep_xy": [
@@ -4012,23 +4012,23 @@
         ]
       },
       {
-        "nev": "Gyarmat",
-        "cm": 225.0,
-        "lat": 47.4604054025085,
-        "lon": 17.4887951732272,
-        "terkep_xy": [
-          205.6,
-          240.4
-        ]
-      },
-      {
         "nev": "Tiszadada",
-        "cm": 187.0,
+        "cm": 186.5,
         "lat": 48.036468399627,
         "lon": 21.2667018812023,
         "terkep_xy": [
           762.5,
           115.5
+        ]
+      },
+      {
+        "nev": "Fertőd",
+        "cm": 138.5,
+        "lat": 47.6127903966546,
+        "lon": 16.8631295080806,
+        "terkep_xy": [
+          113.4,
+          207.3
         ]
       },
       {
@@ -4083,7 +4083,7 @@
       },
       {
         "nev": "Lovászpatona",
-        "cm": 235.5,
+        "cm": 236.0,
         "lat": 47.4307031975603,
         "lon": 17.6268114889549,
         "referencia": "Zirc",
@@ -4105,7 +4105,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 665 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 650 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5049,7 +5049,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-11T07:36:18Z",
+    "keszult": "2026-11-11T08:06:04Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
