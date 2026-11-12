@@ -3592,7 +3592,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-12T03:36:45+00:00",
+    "lekerve": "2026-11-12T04:06:04+00:00",
     "datum": "2026-11-11",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3800,7 +3800,7 @@
       },
       {
         "nev": "Biharnagybajom",
-        "cm": 417.0
+        "cm": 417.5
       },
       {
         "nev": "Lajosmizse",
@@ -3852,7 +3852,7 @@
       },
       {
         "nev": "Biharnagybajom",
-        "cm": 417.0,
+        "cm": 417.5,
         "lat": 47.2094952204129,
         "lon": 21.2346374356346,
         "terkep_xy": [
@@ -3931,23 +3931,23 @@
         ]
       },
       {
-        "nev": "Nyírkáta (I)",
-        "cm": 288.0,
-        "lat": 47.8654107552202,
-        "lon": 22.2477764821979,
-        "terkep_xy": [
-          907.2,
-          152.6
-        ]
-      },
-      {
         "nev": "Alsóújlak",
-        "cm": 281.0,
+        "cm": 289.0,
         "lat": 47.0558566629553,
         "lon": 16.8547349054333,
         "terkep_xy": [
           112.1,
           328.1
+        ]
+      },
+      {
+        "nev": "Balkány Csiffi tanya (I)",
+        "cm": 278.0,
+        "lat": 47.7168648908944,
+        "lon": 21.8055405984449,
+        "terkep_xy": [
+          842.0,
+          184.8
         ]
       },
       {
@@ -3971,6 +3971,16 @@
         ]
       },
       {
+        "nev": "Zsarolyán (I)",
+        "cm": 254.5,
+        "lat": 47.9500274926194,
+        "lon": 22.590630088471,
+        "terkep_xy": [
+          957.7,
+          134.2
+        ]
+      },
+      {
         "nev": "Aba",
         "cm": 254.0,
         "lat": 47.0260617066066,
@@ -3978,16 +3988,6 @@
         "terkep_xy": [
           360.7,
           334.5
-        ]
-      },
-      {
-        "nev": "Zsarolyán (I)",
-        "cm": 254.0,
-        "lat": 47.9500274926194,
-        "lon": 22.590630088471,
-        "terkep_xy": [
-          957.7,
-          134.2
         ]
       },
       {
@@ -4002,7 +4002,7 @@
       },
       {
         "nev": "Tiszadada",
-        "cm": 186.0,
+        "cm": 185.5,
         "lat": 48.036468399627,
         "lon": 21.2667018812023,
         "terkep_xy": [
@@ -4032,7 +4032,7 @@
       },
       {
         "nev": "Győrszemere",
-        "cm": 130.5,
+        "cm": 131.0,
         "lat": 47.5523346937851,
         "lon": 17.5675775285734,
         "terkep_xy": [
@@ -5048,7 +5048,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-12T03:36:52Z",
+    "keszult": "2026-11-12T04:06:08Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
