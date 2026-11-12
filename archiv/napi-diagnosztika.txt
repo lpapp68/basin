@@ -1,7 +1,6 @@
 kert_nap=2026-11-11
 feldolgozott_nap=2026-11-10
-ido=2026-11-12T04:36:40Z
+ido=2026-11-12T05:06:11Z
 hol=bot
 visszalepes=igen
 --- naplo ---
-teljes medence falai:     raise HTTPError(req.full_url, code, msg, hdrs, fp) urllib.error.HTTPError: HTTP Error 500: Internal Server Error 
