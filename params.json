@@ -3591,7 +3591,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-13T08:36:27+00:00",
+    "lekerve": "2026-11-13T09:06:03+00:00",
     "datum": "2026-11-12",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3776,15 +3776,19 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 150.8,
+    "sullyedes_cm": 152.0,
     "evek": 10,
     "datum": "2026-11-13",
-    "kut_db": 506,
-    "melyult": 495,
+    "kut_db": 516,
+    "melyult": 505,
     "emelkedett": 6,
     "also_kvartilis": 99.5,
-    "felso_kvartilis": 220.0,
+    "felso_kvartilis": 222.0,
     "leginkabb": [
+      {
+        "nev": "Hajdúbagos",
+        "cm": 472.5
+      },
       {
         "nev": "Tázlár",
         "cm": 436.5
@@ -3802,23 +3806,29 @@
         "cm": 404.0
       },
       {
-        "nev": "Jászszentlászló",
+        "nev": "Bugac",
         "cm": 398.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Jászszentlászló",
         "cm": 398.0
       },
       {
         "nev": "Szászberek",
         "cm": 397.0
-      },
-      {
-        "nev": "Kunszentmárton",
-        "cm": 387.5
       }
     ],
     "terkep": [
+      {
+        "nev": "Hajdúbagos",
+        "cm": 472.5,
+        "lat": 47.3985527789362,
+        "lon": 21.6637463006382,
+        "terkep_xy": [
+          821.1,
+          253.8
+        ]
+      },
       {
         "nev": "Tázlár",
         "cm": 436.5,
@@ -3937,16 +3947,6 @@
         "terkep_xy": [
           717.4,
           444.9
-        ]
-      },
-      {
-        "nev": "Balkány Csiffi tanya (I)",
-        "cm": 278.0,
-        "lat": 47.7168648908944,
-        "lon": 21.8055405984449,
-        "terkep_xy": [
-          842.0,
-          184.8
         ]
       },
       {
@@ -4083,7 +4083,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 506 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 516 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5027,7 +5027,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-13T08:36:32Z",
+    "keszult": "2026-11-13T09:06:07Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
