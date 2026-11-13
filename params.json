@@ -3591,13 +3591,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-13T05:35:58+00:00",
+    "lekerve": "2026-11-13T06:36:08+00:00",
     "datum": "2026-11-12",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 925.0,
-      "vizallas_cm": 117.0,
-      "vizho_c": 7.9,
+      "hozam_m3s": 1047.0,
+      "vizallas_cm": 137.0,
+      "vizho_c": 8.2,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3606,39 +3606,39 @@
       "sokeves_atlag_m3s": 4700.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 875.0,
+    "kulonbseg_m3s": 753.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": 39.0,
-        "hozam_m3s": 804.0,
-        "vizho_c": 8.3
+        "vizallas_cm": 69.0,
+        "hozam_m3s": 923.0,
+        "vizho_c": 8.1
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 70.0,
-        "hozam_m3s": 849.0,
-        "vizho_c": 8.6
+        "vizallas_cm": 90.0,
+        "hozam_m3s": 955.0,
+        "vizho_c": 8.7
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": 1.0,
-        "hozam_m3s": 886.0,
-        "vizho_c": 8.3
+        "vizallas_cm": 22.0,
+        "hozam_m3s": 1002.0,
+        "vizho_c": 8.7
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 57.0,
-        "hozam_m3s": 1.47,
-        "vizho_c": 9.3
+        "vizallas_cm": 64.0,
+        "hozam_m3s": 2.41,
+        "vizho_c": 9.7
       }
     ],
     "provenance": "mert",
@@ -3802,11 +3802,11 @@
         "cm": 404.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Jászszentlászló",
         "cm": 398.0
       },
       {
-        "nev": "Jászszentlászló",
+        "nev": "Bugac",
         "cm": 398.0
       },
       {
@@ -4020,16 +4020,6 @@
         ]
       },
       {
-        "nev": "Győrszemere",
-        "cm": 131.0,
-        "lat": 47.5523346937851,
-        "lon": 17.5675775285734,
-        "terkep_xy": [
-          217.2,
-          220.4
-        ]
-      },
-      {
         "nev": "Alsópáhok",
         "cm": 131.0,
         "lat": 46.7694705056718,
@@ -4037,6 +4027,16 @@
         "terkep_xy": [
           159.1,
           390.2
+        ]
+      },
+      {
+        "nev": "Győrszemere",
+        "cm": 131.0,
+        "lat": 47.5523346937851,
+        "lon": 17.5675775285734,
+        "terkep_xy": [
+          217.2,
+          220.4
         ]
       },
       {
@@ -5027,7 +5027,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-13T06:06:23Z",
+    "keszult": "2026-11-13T06:36:13Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
