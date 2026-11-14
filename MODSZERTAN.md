@@ -245,6 +245,41 @@ profil állomásonként); `archiv/beszivargas_esemenyek.json` (esemény-összegz
 A modul hatóránként dolgozik; a Hátság állomáslistája munkadefiníció (a hátság
 és peremei), a talajtípust az adat mutatja meg.
 
+### Tanuló réteg (2026-11-14)
+
+Három mennyiséget saját fejlesztésű tanuló algoritmus becsül (az i-Tango Tanácsadó
+Kft. szellemi tulajdona). A tanulás a nyilvános repón kívül fut; a repóba és a lapra
+csak az eredmény kerül (`tanulo.json`). Itt a bemenetek, a kimenetek és az
+érvényesítés szabálya áll.
+
+- **Párolgási állapot.** Bemenet: az aszálymonitoring 0–75 cm-es tárolt vize és
+  felső rétege (állomásonként a saját 5–95%-os tartományában), az évszak és a
+  referencia-párolgás; cél: a tényleges / referencia-párolgás aránya (LSA SAF
+  DMETv3 és METREF, az állomás cellájában). A tanult összefüggésből állomásonként:
+  a mért arány, az ugyanerre az évszakra nedves talajjal várható arány, és a kettő
+  hányadosa, vagyis amennyit a víz hiánya elvesz. Négy állapot: vízkorlátozott,
+  nyugalmi (évszak-korlátozott), aktív, mélyről táplált. Kiinduló tanítókészlet:
+  augusztusi napok 2016–2025, 2025 tavasz–nyár és ősz ritkított mintája, 2026 ősze;
+  utána naponta bővül. **Érvényességi feltétel:** a vízkorlátozott és a mélyről
+  táplált állapot, valamint a víz miatti levonás százaléka csak akkor kerül a lapra,
+  ha a július közepére számolt tanult görbe a száraz és a nedves vég között
+  legalább 0,10-dal emelkedik. Amíg ez nem teljesül, csak a nyugalmi és az aktív
+  állapot különül el.
+- **Hőmérséklet-korrekció.** A kapacitív szondák értéke a talaj hőmérsékletével
+  együtt mozog. Szondánként és szintenként az esőmentes órák napi ciklusából
+  (24 órás mozgóátlagtól való eltérés) becsüljük az érzékenységet (V/V% / °C),
+  elfelejtő súlyozással folyamatosan frissítve; 0,3 alatti korrelációnál nem
+  korrigálunk. Ezzel az esemény ΔS-e korrigálva is megjelenik.
+- **Vízállás-előrejelzés.** Az OVSZ minden kiadott előrejelzését (a `params.json`
+  git-történetéből 2026-09-04-től, utána minden futásból) összevetjük a mért
+  vízállással (OVF nyílt adat-API). Mércénként a hibát tanuljuk az
+  előretekintés, az előrejelzett változás és a megelőző 24 óra trendje
+  függvényében. **Érvényesítés:** időrendi szétválasztás, a legutóbbi 20% kiadás a
+  tanításból kimarad. A javítás csak akkor kerül a lapra, ha ezen a részen a
+  négyzetes középhibája legalább 5%-kal kisebb a szolgálatinál. A tanult sáv a
+  kihagyott részen mért hibák 10–90%-a; mellé kerül, hogy a mért érték az esetek
+  hány százalékában esett a szolgálat saját sávjába.
+
 ## 9. Öntözésigény kontra tényleges kivétel
 
 `ETc = Kc × ET_ref`, `hiány = max(0, ETc − ET_act)`, Kc tartományként (0,8–1,2).
@@ -378,6 +413,11 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 ---
 
 ## 13. Változásnapló
+
+**Tanuló réteg (2026-11-14)** — Párolgási állapot (vízkorlátozott / nyugalmi /
+aktív / mélyről táplált) a talajnedvesség és a párolgási arány tanult összefüggéséből;
+a vízstressz-lámpa ezt követi. Hőmérséklet-korrekció szondánként. Az OVSZ
+vízállás-előrejelzésének tanult hibája, javítás csak kimutatott javulásnál (8. szakasz).
 
 **Beszivárgás-modul (2026-11-14)** — Az aszálymonitoring órás, hatszintű
 talajnedvességéből eseményenként: nedvesedési front és sebessége, a 0–75 cm-ben

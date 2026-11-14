@@ -667,6 +667,11 @@ def main():
         # A beszivárgás: az aszálymonitoring órás talajprofiljából számolt
         # nedvesedési front, tárolt víz és zárási arány (beszivargas.py).
         "beszivargas": p.get("beszivargas"),
+        # A tanuló réteg eredményei (párolgási állapot, hőmérséklet-korrekció,
+        # előrejelzés-javítás). A tanulás a repón kívül fut; ide csak az eredmény
+        # kerül, a tanulo.json fájlban.
+        "tanulo": (json.loads(pathlib.Path("tanulo.json").read_text(encoding="utf-8"))
+                   if pathlib.Path("tanulo.json").exists() else None),
         "terkep": (json.loads(pathlib.Path("terkep.json").read_text(encoding="utf-8"))
                    if pathlib.Path("terkep.json").exists() else None),
         # A referencia-párolgás elsődleges forrása a földi mérőhálózat; a
