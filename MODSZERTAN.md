@@ -210,6 +210,41 @@ azt mondja meg, mekkora csapadék töltené vissza a gyökérzónát.
 
 ---
 
+### Beszivárgás: nedvesedési front és zárási teszt (`beszivargas.py`, 2026-11-14)
+
+Forrás: az OVF aszálymonitoring hivatalos API-ja (`api.php`, `getmeas`), órás
+adatok minden állomásra — talajnedvesség 10, 20, 30, 45, 60 és 75 cm-en (varid 8–13,
+V/V %, kalibrált), csapadék (varid 15). Az időbélyegek helyi idő szerintiek.
+
+- **Esemény:** a 0,2 mm/óra feletti esős órák, 24 óránál rövidebb szünetekkel
+  összefűzve; legalább 10 mm.
+- **Alapállapot:** szintenként az első esős óra előtti hat óra átlaga.
+- **Front-érkezés:** az első óra, amikor a szint legalább 0,4 százalékponttal az
+  alap fölé megy, és utána négy órán át 0,3 pont fölött marad. Sebesség: a
+  szomszédos szintek érkezési idejének különbségéből, cm/nap.
+- **Tárolt víz:** ΔS = Σ Δθ × rétegvastagság, a szondák köré osztott
+  rétegekkel: 0–15, 15–25, 25–37,5, 37,5–52,5, 52,5–67,5, 67,5–75 cm
+  (150/100/125/150/150/75 mm, összesen 750 mm). Ahol a front két szonda között
+  jár, a réteg egésze a szonda értékét kapja — a frissen nedvesedő rétegnél
+  ez felfelé torzít.
+- **Zárási arány:** ΔS / lehullott eső. Osztályok: záró (50–110%), többlet
+  (110% fölött), hiány (50% alatt). Az arány a szondát és a mellette álló
+  csapadékmérőt együtt teszteli; az események sorozata állomásonkénti
+  megbízhatósági jelet ad.
+- **Talajvíz:** a hátsági állomások 10 km-es körzetében a legközelebbi
+  működő kutak (OVF nyílt adat-API, adatfajta 69). Távolság EOV-koordinátában.
+  Emelkedés az eső kezdete óta, és ugyanez a megelőző tíz nap Theil–Sen-trendjéhez
+  mérve. A 15 cm-nél nagyobb egylépéses ugrást mutató kutak kimaradnak
+  (adatszakadás, új nullpont).
+- **Előzetes rögzítés:** `elozetes_rogzites.json`. A várakozás SHA-256 hash-t kap
+  a tartalmából; a modul minden futáskor ellenőrzi, a célidő után kiértékeli, az
+  eredményt az `archiv/beszivargas_rogzites_eredmeny.json` őrzi.
+
+Kimenet: `params.json` → `beszivargas`; `archiv/beszivargas_napi.csv` (napi
+profil állomásonként); `archiv/beszivargas_esemenyek.json` (esemény-összegzések).
+A modul hatóránként dolgozik; a Hátság állomáslistája munkadefiníció (a hátság
+és peremei), a talajtípust az adat mutatja meg.
+
 ## 9. Öntözésigény kontra tényleges kivétel
 
 `ETc = Kc × ET_ref`, `hiány = max(0, ETc − ET_act)`, Kc tartományként (0,8–1,2).
@@ -343,6 +378,12 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 ---
 
 ## 13. Változásnapló
+
+**Beszivárgás-modul (2026-11-14)** — Az aszálymonitoring órás, hatszintű
+talajnedvességéből eseményenként: nedvesedési front és sebessége, a 0–75 cm-ben
+tárolt víz, zárási arány minden állomásra; a hátságon a közeli talajvízkutak
+trendhez mért mozgása; előzetesen rögzített, hash-elt várakozások automatikus
+kiértékeléssel (8. szakasz vége, `beszivargas.py`).
 
 **v1.3.0 (2026-11-01)** — Öntözővíz a Dunából: egy mezőföldi szivattyútelep két
 üzemmódban, 35 év napi adatán (`ontozoviz.py`, `duna.json`); új adatsor a dunaújvárosi

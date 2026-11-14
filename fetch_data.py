@@ -664,6 +664,9 @@ def main():
         # A talajvíz évtizedes süllyedése - a harmadik rekesz, amiről eddig
         # csak beszéltünk. Most 487 kút mérése áll mögötte.
         "talajviz": p.get("talajviz"),
+        # A beszivárgás: az aszálymonitoring órás talajprofiljából számolt
+        # nedvesedési front, tárolt víz és zárási arány (beszivargas.py).
+        "beszivargas": p.get("beszivargas"),
         "terkep": (json.loads(pathlib.Path("terkep.json").read_text(encoding="utf-8"))
                    if pathlib.Path("terkep.json").exists() else None),
         # A referencia-párolgás elsődleges forrása a földi mérőhálózat; a

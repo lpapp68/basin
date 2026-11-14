@@ -202,6 +202,12 @@ elif [ "$_shmu" -ne 0 ]; then
   echo "!! a Hernád-szelvény most nem elérhető (SHMÚ) — folytatjuk nélküle"
 fi
 
+# Beszivárgás: az aszálymonitoring órás talajnedvessége (hat szint) és csapadéka,
+# minden állomásra. A modul maga kapuz: hatóránként dolgozik, közben azonnal
+# kilép — ezért itt, az órás ágban hívjuk, a fetch_data.py előtt, hogy a
+# params.json új tagja már ugyanebben a körben a lapra kerüljön.
+futtat "beszivárgás (órás talajprofil)" python beszivargas.py || true
+
 python fetch_data.py || { echo "!! a mérce-lekérés elhasalt"; exit 1; }
 
 # A duna.json minden futásban elkészül a gyorsítótárból, hálózat nélkül:

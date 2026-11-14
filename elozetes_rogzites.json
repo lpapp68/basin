@@ -1,0 +1,143 @@
+{
+ "leiras": "Előzetesen rögzített várakozások a basin.equora.institute beszivárgás-paneljéhez. Minden rögzítés SHA-256 hash-t kap a tartalmából (a hash, a repóba rögzítés ideje és a rögzítéskor ismert állapot nélkül). A beszivargas.py minden futáskor ellenőrzi a hash-t, a célidő után kiértékeli az állításokat, és az eredményt az archiv/beszivargas_rogzites_eredmeny.json fájlba írja. Rögzítést utólag módosítani nem lehet úgy, hogy a lap ne jelezze; új várakozás új rögzítésként kerül be.",
+ "allitas_tipusok": {
+  "reagal": "a szint V/V%-a a célidőben legalább 0,5 ponttal az alap fölött van",
+  "nem_reagal": "a szint V/V%-a a célidőben 0,5 pontnál kevesebbel van az alap fölött",
+  "dS_tartomany": "a 0–75 cm többlete (Σ Δθ × rétegvastagság az alaphoz képest) a megadott sávban van",
+  "novekmeny_arany": "(többlet a célidőben − többlet a rögzítéskor) / a forgatókönyv kezdete óta hullott eső a sávban van"
+ },
+ "rogzitesek": [
+  {
+   "azonosito": "2026-11-14a-csolyospalos",
+   "allomas": "Csólyospálos",
+   "megfogalmazva": "2026-11-14, a basin-munkamenetben, a 2026-11-13 07 óráig elérhető órás adatokból (a csevegésben közölve, a repóba rögzítés előtt)",
+   "adat_eddig": "2026-11-13 07",
+   "esemeny_kezd": "2026-11-10 09",
+   "alap": {
+    "10": 9.4,
+    "20": 6.47,
+    "30": 1.7,
+    "45": 1.73,
+    "60": 3.37,
+    "75": 3.0
+   },
+   "alap_leiras": "a 2026-11-10 03–08 órák átlaga, az esemény első esős órája előtt",
+   "cel_ido": "2026-11-20 12",
+   "forgatokonyv_tol": "2026-11-13 08",
+   "forgatokonyv_kuszob_mm": 15,
+   "forgatokonyvek": {
+    "esos": {
+     "leiras": "Ha 2026-11-13 08 és a célidő között legalább 15 mm esik (az ECMWF nov. 16–18-ra ~32 mm-t adott): a 45 és a 60 cm reagál, a 75 cm határeset, a 0–75 cm többlete 50–55 mm.",
+     "allitasok": [
+      {
+       "tipus": "reagal",
+       "szint": 45
+      },
+      {
+       "tipus": "reagal",
+       "szint": 60
+      },
+      {
+       "tipus": "dS_tartomany",
+       "min": 50,
+       "max": 55
+      }
+     ]
+    },
+    "szaraz": {
+     "leiras": "Ha 15 mm-nél kevesebb esik: a felső rétegekből lecsorgó ~7 mm a frontot ~8 cm-rel viszi lejjebb; a 45 cm gyenge jelet ad, a 60 cm változatlan, a többlet 30–32 mm.",
+     "allitasok": [
+      {
+       "tipus": "reagal",
+       "szint": 45
+      },
+      {
+       "tipus": "nem_reagal",
+       "szint": 60
+      },
+      {
+       "tipus": "dS_tartomany",
+       "min": 30,
+       "max": 32
+      }
+     ]
+    }
+   },
+   "feltevesek": [
+    "A megnedvesedett felső rétegek ~13–14%-ot tartanak meg (a 10 cm 2026-11-10 22 és 11-11 12 között, esőszünetben, 13,0–13,2%-on állt).",
+    "A frissen nedvesedő réteg ~10–12%-ra emelkedik.",
+    "A lehulló esőből ~70% látszik a szondákon."
+   ],
+   "hash_sha256": "da856153128393e502cd4c0386eee52eb0871ba4c957b0a33252f605816b8d77",
+   "repoba_rogzitve_utc": "2026-11-14T15:33:24+00:00",
+   "rogziteskor_ismert": {
+    "adat_eddig": "2026-11-14 13",
+    "megjegyzes": "A repóba rögzítés pillanatában a 45 cm már reagált (2026-11-13 09), a 60 cm is (2026-11-14 07); 2026-11-13 08 óta 5,0 mm esett. A száraz ág 60 cm-es állítása így már a rögzítéskor teljesületlen. A front a vártnál gyorsabban haladt: a mélyebb rétegek kisebb lépéssel nedvesedtek (45 cm: +5,6, 60 cm: +2,4 pont), mint a feltételezett 8–10 pont, így ugyanannyi víz mélyebbre vitte a frontot."
+   }
+  },
+  {
+   "azonosito": "2026-11-14b-csolyospalos",
+   "allomas": "Csólyospálos",
+   "megfogalmazva": "2026-11-14, a basin-munkamenetben, a 2026-11-14 13 óráig elérhető órás adatokból",
+   "adat_eddig": "2026-11-14 13",
+   "esemeny_kezd": "2026-11-10 09",
+   "alap": {
+    "10": 9.4,
+    "20": 6.47,
+    "30": 1.7,
+    "45": 1.73,
+    "60": 3.37,
+    "75": 3.0
+   },
+   "alap_leiras": "a 2026-11-10 03–08 órák átlaga, az esemény első esős órája előtt",
+   "cel_ido": "2026-11-20 12",
+   "forgatokonyv_tol": "2026-11-14 14",
+   "forgatokonyv_kuszob_mm": 15,
+   "forgatokonyvek": {
+    "esos": {
+     "leiras": "Ha a célidőig legalább 15 mm esik: a 75 cm reagál, és az új esőnek a 40–90%-a többletként látszik a 0–75 cm-ben a rögzítéskori állapothoz képest.",
+     "allitasok": [
+      {
+       "tipus": "reagal",
+       "szint": 75
+      },
+      {
+       "tipus": "novekmeny_arany",
+       "min": 0.4,
+       "max": 0.9,
+       "dS_rogzites": 40.9
+      }
+     ]
+    },
+    "szaraz": {
+     "leiras": "Ha 15 mm-nél kevesebb esik: a 75 cm reagál, a 0–75 cm többlete 35–45 mm.",
+     "allitasok": [
+      {
+       "tipus": "reagal",
+       "szint": 75
+      },
+      {
+       "tipus": "dS_tartomany",
+       "min": 35,
+       "max": 45
+      }
+     ]
+    }
+   },
+   "feltevesek": [
+    "A front 30→45 és 45→60 cm között egyaránt 22 óra alatt haladt (~16 cm/nap); a 60 cm 2026-11-14 07-kor reagált.",
+    "A mélyebb rétegek 2–6 százalékpontos lépéssel nedvesednek.",
+    "A novemberi párolgás ~0,5 mm/nap; ami a 75 cm alá jut, kilép a vizsgált szelvényből.",
+    "A rögzítéskori többlet 40,9 mm (ebben a frissen nedvesedő 60 cm-es réteg a szondaértékkel szerepel, ami felfelé torzít)."
+   ],
+   "hash_sha256": "2fbfedbd0bb4ce2e822d858ce72e88b46a60a7e8226ea42a37cd8568db8374ed",
+   "repoba_rogzitve_utc": "2026-11-14T15:33:24+00:00",
+   "rogziteskor_ismert": {
+    "adat_eddig": "2026-11-14 13",
+    "theta75": 2.9,
+    "dS_mm": 40.9,
+    "megjegyzes": "Rögzítéskor a 75 cm 2,9 V/V%-on állt (alap: 3,0), a 0–75 cm többlete 40,9 mm."
+   }
+  }
+ ]
+}

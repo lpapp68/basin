@@ -232,6 +232,36 @@ time: it states how much rainfall would refill the root zone.
 
 ---
 
+### Infiltration: wetting front and closure test (`beszivargas.py`, 2026-11-14)
+
+Source: the official OVF drought-monitoring API (`api.php`, `getmeas`), hourly data
+for every station — soil moisture at 10, 20, 30, 45, 60 and 75 cm (varid 8–13,
+V/V %, calibrated) and precipitation (varid 15). Timestamps are local time.
+
+- **Event:** rainy hours above 0.2 mm/h, merged across gaps shorter than 24 h;
+  at least 10 mm.
+- **Baseline:** per level, the mean of the six hours before the first rainy hour.
+- **Front arrival:** the first hour at which a level rises at least 0.4 percentage
+  points above baseline and stays above 0.3 points for the next four hours.
+  Speed: difference of arrival times between adjacent levels, cm/day.
+- **Stored water:** ΔS = Σ Δθ × layer thickness, with layers centred on the
+  probes: 0–15, 15–25, 25–37.5, 37.5–52.5, 52.5–67.5, 67.5–75 cm
+  (150/100/125/150/150/75 mm, 750 mm in total). Where the front lies between two
+  probes, the whole layer takes the probe value — an upward bias for a freshly
+  wetting layer.
+- **Closure ratio:** ΔS / rainfall. Classes: closing (50–110%), surplus (above
+  110%), deficit (below 50%). The ratio tests the probe and its rain gauge
+  together; the sequence of events gives a per-station reliability signal.
+- **Groundwater:** for stations on the Danube–Tisza sand ridge, the nearest
+  operating wells within 10 km (OVF open-data API, data type 69), distance in
+  EOV. Rise since the start of rain, and the same relative to the Theil–Sen trend
+  of the preceding ten days. Wells with a single-step jump above 15 cm are
+  excluded (data break, new datum).
+- **Pre-registration:** `elozetes_rogzites.json`. Each expectation is hashed
+  (SHA-256) from its content; the module checks the hash on every run, evaluates
+  the claims after the target time, and keeps the result in
+  `archiv/beszivargas_rogzites_eredmeny.json`.
+
 ## 9. Irrigation demand versus actual abstraction
 
 `ETc = Kc × ET_ref`, `deficit = max(0, ETc − ET_act)`, with Kc treated as a range

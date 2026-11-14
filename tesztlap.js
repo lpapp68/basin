@@ -97,6 +97,8 @@ const KELL = [
   ["osszefoglalo",  "összefoglaló"],
   ["egyenleg",      "egyenleg"],
   ["hovalett",      "hova lett"],
+  // Adat nélkül is megtelik: ilyenkor a modul állapotát írja ki.
+  ["beszivargas",   "beszivárgás"],
 ];
 if (duna) {
   KELL.push(["ov-a-graf", "öntözővíz A grafikon"], ["ov-b-ki", "öntözővíz B összegzés"]);
