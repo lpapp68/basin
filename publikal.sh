@@ -12,6 +12,17 @@
 
 set -euo pipefail
 
+# A wrangler rögzített verzióval fut, a ~/node_modules megkerülésével. Ott egy
+# régebbi telepítés ül, amelynek esbuildja ezen a gépen a macOS indítás előtti
+# ellenőrzésén megakad (a folyamat a dyld indulásánál áll). Az üres --prefix miatt
+# az npm a saját gyorsítótárából futtatja a megadott verziót; a munkakönyvtár
+# marad, így a functions/ mappa is a helyén van.
+WRANGLER_VERZIO="4.162.0"
+wrangler_futtat() {
+  mkdir -p "$HOME/.basin-npx"
+  npm exec --prefix "$HOME/.basin-npx" --yes --package="wrangler@$WRANGLER_VERZIO" -- wrangler "$@"
+}
+
 # ── Frissesség-ellenőrzés ────────────────────────────────────────────────
 # A publikal.sh a MEGLÉVŐ data.json-t viszi ki. Ha az régi — mert csak a
 # lapot szerkesztettük, és nem futott adatgenerálás —, akkor felülírja a bot
@@ -79,5 +90,5 @@ if [ -f tesztlap.js ]; then
   fi
 fi
 
-npx --yes wrangler pages deploy _publish \
+wrangler_futtat pages deploy _publish \
     --project-name "${BASIN_PAGES_PROJECT:-basin}" --commit-dirty=true

@@ -40,6 +40,14 @@ fi
 HIBAK=""
 NAPLO="archiv/futas-hibak.txt"
 : > "$NAPLO"
+# A wrangler rögzített verzióval fut, a ~/node_modules megkerülésével (részletek a
+# publikal.sh-ban). Csak a helyi publikálás használja; a boton a workflow publikál.
+WRANGLER_VERZIO="4.162.0"
+wrangler_futtat() {
+  mkdir -p "$HOME/.basin-npx"
+  npm exec --prefix "$HOME/.basin-npx" --yes --package="wrangler@$WRANGLER_VERZIO" -- wrangler "$@"
+}
+
 futtat() {                      # futtat <cimke> <parancs...>
   local cimke="$1"; shift
   echo "-- $cimke"
@@ -239,6 +247,6 @@ if [ -f tesztlap.js ]; then
   fi
 fi
 
-  npx --yes wrangler pages deploy _publish \
+  wrangler_futtat pages deploy _publish \
       --project-name "$BASIN_PAGES_PROJECT" --commit-dirty=true
 fi
