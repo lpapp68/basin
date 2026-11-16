@@ -3590,7 +3590,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-16T07:36:21+00:00",
+    "lekerve": "2026-11-16T08:06:30+00:00",
     "datum": "2026-11-15",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3775,7 +3775,7 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 154.0,
+    "sullyedes_cm": 154.2,
     "evek": 10,
     "datum": "2026-11-16",
     "kut_db": 532,
@@ -4000,7 +4000,7 @@
       },
       {
         "nev": "Tiszadob",
-        "cm": 171.0,
+        "cm": 171.5,
         "lat": 48.0000248283835,
         "lon": 21.1621448622796,
         "terkep_xy": [
@@ -4050,7 +4050,7 @@
       },
       {
         "nev": "Soroksár",
-        "cm": 45.5,
+        "cm": 45.0,
         "lat": 47.3950562146411,
         "lon": 19.1115752826102,
         "referencia": "Budapest",
@@ -5026,7 +5026,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-16T07:36:25Z",
+    "keszult": "2026-11-16T08:06:36Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
