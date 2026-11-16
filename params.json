@@ -3590,7 +3590,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-16T03:36:11+00:00",
+    "lekerve": "2026-11-16T04:06:00+00:00",
     "datum": "2026-11-15",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3782,7 +3782,7 @@
     "melyult": 521,
     "emelkedett": 6,
     "also_kvartilis": 101.5,
-    "felso_kvartilis": 222.5,
+    "felso_kvartilis": 223.0,
     "leginkabb": [
       {
         "nev": "Mezőfalva",
@@ -3793,11 +3793,11 @@
         "cm": 477.0
       },
       {
-        "nev": "Bugac",
-        "cm": 440.5
+        "nev": "Tázlár",
+        "cm": 441.0
       },
       {
-        "nev": "Tázlár",
+        "nev": "Bugac",
         "cm": 440.5
       },
       {
@@ -3840,7 +3840,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 440.5,
+        "cm": 441.0,
         "lat": 46.5606028482933,
         "lon": 19.517643147905,
         "terkep_xy": [
@@ -3880,7 +3880,7 @@
       },
       {
         "nev": "Konyár",
-        "cm": 328.0,
+        "cm": 330.0,
         "lat": 47.3180843741109,
         "lon": 21.6727429529734,
         "terkep_xy": [
@@ -4000,7 +4000,7 @@
       },
       {
         "nev": "Tiszadob",
-        "cm": 171.5,
+        "cm": 171.0,
         "lat": 48.0000248283835,
         "lon": 21.1621448622796,
         "terkep_xy": [
@@ -4050,7 +4050,7 @@
       },
       {
         "nev": "Soroksár",
-        "cm": 45.0,
+        "cm": 45.5,
         "lat": 47.3950562146411,
         "lon": 19.1115752826102,
         "referencia": "Budapest",
@@ -5026,7 +5026,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-16T03:36:17Z",
+    "keszult": "2026-11-16T04:06:04Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
