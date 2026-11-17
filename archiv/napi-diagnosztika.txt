@@ -1,6 +1,7 @@
 kert_nap=2026-11-16
 feldolgozott_nap=2026-11-15
-ido=2026-11-17T03:07:50Z
+ido=2026-11-17T03:37:00Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+IMERG műholdas csapadék: </body> </html> 
