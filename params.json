@@ -3590,13 +3590,13 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-18T06:06:41+00:00",
+    "lekerve": "2026-11-18T06:35:59+00:00",
     "datum": "2026-11-17",
     "belepo": {
       "nev": "Duna, Dévény",
-      "hozam_m3s": 836.0,
-      "vizallas_cm": 102.0,
-      "vizho_c": 6.7,
+      "hozam_m3s": 943.0,
+      "vizallas_cm": 120.0,
+      "vizho_c": 7.0,
       "forras": "SHMÚ napi jelentés (shmu.sk), operatív, korrekció nélküli adat"
     },
     "kilepo": {
@@ -3605,39 +3605,39 @@
       "sokeves_atlag_m3s": 4700.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 1264.0,
+    "kulonbseg_m3s": 1157.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
         "szerep": "profil",
         "forras_nev": "Medveďov - Dunaj",
-        "vizallas_cm": 48.0,
-        "hozam_m3s": 838.0,
-        "vizho_c": 7.2
+        "vizallas_cm": 43.0,
+        "hozam_m3s": 819.0,
+        "vizho_c": 7.1
       },
       {
         "nev": "Duna, Komárom",
         "szerep": "profil",
         "forras_nev": "Komárno - Dunaj",
-        "vizallas_cm": 87.0,
-        "hozam_m3s": 939.0,
-        "vizho_c": 7.5
+        "vizallas_cm": 74.0,
+        "hozam_m3s": 870.0,
+        "vizho_c": 7.8
       },
       {
         "nev": "Duna, Párkány",
         "szerep": "profil",
         "forras_nev": "Štúrovo - Dunaj",
-        "vizallas_cm": 29.0,
-        "hozam_m3s": 1042.0,
-        "vizho_c": 7.5
+        "vizallas_cm": 20.0,
+        "hozam_m3s": 990.0,
+        "vizho_c": 7.8
       },
       {
         "nev": "Ipoly, Ipolyszalka",
         "szerep": "profil",
         "forras_nev": "Salka - Ipeľ",
-        "vizallas_cm": 74.0,
-        "hozam_m3s": 4.17,
-        "vizho_c": 8.1
+        "vizallas_cm": 69.0,
+        "hozam_m3s": 3.19,
+        "vizho_c": 8.8
       }
     ],
     "provenance": "mert",
@@ -3778,8 +3778,8 @@
     "sullyedes_cm": 149.0,
     "evek": 10,
     "datum": "2026-11-18",
-    "kut_db": 551,
-    "melyult": 542,
+    "kut_db": 555,
+    "melyult": 546,
     "emelkedett": 4,
     "also_kvartilis": 100.0,
     "felso_kvartilis": 221.0,
@@ -3880,7 +3880,7 @@
       },
       {
         "nev": "Konyár",
-        "cm": 329.0,
+        "cm": 328.0,
         "lat": 47.3180843741109,
         "lon": 21.6727429529734,
         "terkep_xy": [
@@ -4092,7 +4092,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 551 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 555 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -4116,7 +4116,7 @@
   "hernad_hatarszelveny": {
     "ertek": 5.29,
     "vizallas_cm": 61.0,
-    "vizho_c": 6.4,
+    "vizho_c": 6.5,
     "provenance": "helyszini",
     "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
     "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
@@ -5036,7 +5036,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-18T06:06:46Z",
+    "keszult": "2026-11-18T06:36:03Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
