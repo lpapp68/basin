@@ -3590,7 +3590,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-18T07:56:05+00:00",
+    "lekerve": "2026-11-18T08:05:52+00:00",
     "datum": "2026-11-17",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3775,11 +3775,11 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 149.0,
+    "sullyedes_cm": 149.8,
     "evek": 10,
     "datum": "2026-11-18",
-    "kut_db": 555,
-    "melyult": 546,
+    "kut_db": 544,
+    "melyult": 535,
     "emelkedett": 4,
     "also_kvartilis": 100.0,
     "felso_kvartilis": 221.0,
@@ -3801,10 +3801,6 @@
         "cm": 442.0
       },
       {
-        "nev": "Biharnagybajom",
-        "cm": 419.0
-      },
-      {
         "nev": "Bugac",
         "cm": 409.5
       },
@@ -3815,6 +3811,10 @@
       {
         "nev": "Jászszentlászló",
         "cm": 398.5
+      },
+      {
+        "nev": "Szászberek",
+        "cm": 392.0
       }
     ],
     "terkep": [
@@ -3859,16 +3859,6 @@
         ]
       },
       {
-        "nev": "Biharnagybajom",
-        "cm": 419.0,
-        "lat": 47.2094952204129,
-        "lon": 21.2346374356346,
-        "terkep_xy": [
-          757.8,
-          294.8
-        ]
-      },
-      {
         "nev": "Lajosmizse",
         "cm": 404.0,
         "lat": 47.0000030067525,
@@ -3876,6 +3866,16 @@
         "terkep_xy": [
           523.4,
           340.2
+        ]
+      },
+      {
+        "nev": "Derecske",
+        "cm": 331.0,
+        "lat": 47.3627037653385,
+        "lon": 21.5809811963145,
+        "terkep_xy": [
+          808.9,
+          261.6
         ]
       },
       {
@@ -3930,7 +3930,7 @@
       },
       {
         "nev": "Katymár",
-        "cm": 308.0,
+        "cm": 307.5,
         "lat": 46.0339250557379,
         "lon": 19.2078838579046,
         "terkep_xy": [
@@ -3970,7 +3970,7 @@
       },
       {
         "nev": "Mezőkeresztes",
-        "cm": 260.0,
+        "cm": 259.5,
         "lat": 47.8294175422055,
         "lon": 20.6967648903727,
         "terkep_xy": [
@@ -3980,7 +3980,7 @@
       },
       {
         "nev": "Magyarbóly",
-        "cm": 242.0,
+        "cm": 241.5,
         "lat": 45.8362852324481,
         "lon": 18.485593394306,
         "terkep_xy": [
@@ -3990,7 +3990,7 @@
       },
       {
         "nev": "Nyíribrony  (I)",
-        "cm": 211.0,
+        "cm": 211.5,
         "lat": 48.0173460992336,
         "lon": 21.9654788902382,
         "terkep_xy": [
@@ -4020,7 +4020,7 @@
       },
       {
         "nev": "Tiszadob",
-        "cm": 171.5,
+        "cm": 172.0,
         "lat": 48.0000248283835,
         "lon": 21.1621448622796,
         "terkep_xy": [
@@ -4060,7 +4060,7 @@
       },
       {
         "nev": "Eger",
-        "cm": 18.0,
+        "cm": 17.5,
         "lat": 47.8946522620158,
         "lon": 20.3886224017715,
         "terkep_xy": [
@@ -4092,7 +4092,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 555 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 544 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5036,7 +5036,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-18T07:56:10Z",
+    "keszult": "2026-11-18T08:05:56Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
