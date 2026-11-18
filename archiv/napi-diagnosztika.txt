@@ -1,7 +1,6 @@
-kert_nap=2026-11-16
+kert_nap=2026-11-17
 feldolgozott_nap=2026-11-16
-ido=2026-11-17T10:06:36Z
+ido=2026-11-18T00:09:41Z
 hol=bot
-visszalepes=nem
+visszalepes=igen
 --- naplo ---
-teljes medence falai:     raise HTTPError(req.full_url, code, msg, hdrs, fp) urllib.error.HTTPError: HTTP Error 522: <none> 
