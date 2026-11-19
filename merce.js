@@ -226,12 +226,13 @@
     }
     let m = 'Saját fejlesztésű állapotbecslés: minden új mérés frissíti a mérce becsült értékét és változási sebességét; ' +
       'két mérés között a becslés a sebességgel lép tovább, és a bizonytalansága az eltelt idővel nő. A 90%-os sáv ezt ' +
-      'a bizonytalanságot mutatja: a modell szerint 10 esetből 9-ben ezen belül van a valódi érték. Hogy ez valóban így ' +
-      'van-e, azt egy előre rögzített teszt 2026. december 3-ig ellenőrzi.';
+      'a bizonytalanságot mutatja: a modell szerint 10 esetből 9-ben ezen belül van a valódi érték. A vízállás-sávot egy ' +
+      'előre rögzített teszt 2026. december 3-ig ellenőrzi az összes mércén.';
     if (all.af === 87 && a && a.szarmaztatott) {
       m += ` Az operatív vízhozam a vízállásból, a mérce vízhozamgörbéjével adódik, ezért a bizonytalansága a vízállásé, ` +
         `szorozva a görbe helyi meredekségével: itt ${fmt(a.szarmaztatott.meredekseg, 1)} m³/s minden centiméterre ` +
-        `(az elmúlt 14 nap ${a.szarmaztatott.par} órás párjából, mediánmeredekséggel).`;
+        `(az elmúlt 14 nap ${a.szarmaztatott.par} órás párjából, mediánmeredekséggel). Ez a vízhozam-sáv a vízállás-sávból ` +
+        'származik; saját ellenőrző tesztje a későbbi lépések egyike.';
     }
     modszer.textContent = m;
   }
