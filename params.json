@@ -3589,7 +3589,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-19T06:36:01+00:00",
+    "lekerve": "2026-11-19T07:05:51+00:00",
     "datum": "2026-11-18",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3898,16 +3898,6 @@
         ]
       },
       {
-        "nev": "Darvas",
-        "cm": 320.0,
-        "lat": 47.0872160672144,
-        "lon": 21.3399638839532,
-        "terkep_xy": [
-          773.3,
-          321.3
-        ]
-      },
-      {
         "nev": "Alsóújlak",
         "cm": 320.0,
         "lat": 47.0558566629553,
@@ -3915,6 +3905,16 @@
         "terkep_xy": [
           112.1,
           328.1
+        ]
+      },
+      {
+        "nev": "Darvas",
+        "cm": 320.0,
+        "lat": 47.0872160672144,
+        "lon": 21.3399638839532,
+        "terkep_xy": [
+          773.3,
+          321.3
         ]
       },
       {
@@ -3939,7 +3939,7 @@
       },
       {
         "nev": "Jászszentandrás",
-        "cm": 288.5,
+        "cm": 288.0,
         "lat": 47.5841689950968,
         "lon": 20.1730627520489,
         "terkep_xy": [
@@ -4069,7 +4069,7 @@
       },
       {
         "nev": "Ászár",
-        "cm": 118.7,
+        "cm": 119.2,
         "lat": 47.5099087767115,
         "lon": 18.0044193677648,
         "referencia": "Zirc",
@@ -4113,10 +4113,14 @@
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
-    "ertek": null,
-    "hiba": "A(z) Ždaňa - Hornád állomás nincs a táblában — megszűnt vagy átnevezték.",
-    "provenance": "hianyzik",
-    "forras": "SHMÚ napi hidrológiai jelentés, Ždaňa – Hornád"
+    "ertek": 5.68,
+    "vizallas_cm": 62.0,
+    "vizho_c": 7.3,
+    "provenance": "helyszini",
+    "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
+    "megjegyzes": "A Hernád a Sajóba torkollik, a magyar Sajópüspöki mérce a torkolat fölött van — enélkül ez a hozam kimaradna a bejövő oldalról.",
+    "figyelmeztetes": "HTML-táblából olvasva, nem API-ból. A modul minden futáskor ellenőrzi a tábla szerkezetét; eltérés esetén nem ad értéket.",
+    "hivatkozas": "https://www.shmu.sk/sk/?page=110"
   },
   "elorejelzes": {
     "szelvenyek": [
@@ -5031,7 +5035,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-19T06:36:05Z",
+    "keszult": "2026-11-19T07:05:56Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
