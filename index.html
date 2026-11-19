@@ -97,6 +97,7 @@
 <meta property="og:locale" content="hu_HU">
 <!-- Bitter, IBM Plex Sans, IBM Plex Mono (SIL OFL 1.1), saját tárhelyről — ugyanaz a készlet, mint az Erdőfigyelőé. -->
 <link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/merce.css">
 <style>
 :root{
   --papir:#E2E7E2; --papir-2:#EDF0EC; --tinta:#16262B; --halvany:#5C7075;
@@ -902,7 +903,8 @@ a{color:var(--viz)}
   <div class="sz"><h2>A mércék</h2><span class="n" id="mercen"></span></div>
   <p class="lead">Vízállás, vízhozam és vízhő <b>negyedóránként</b>, az OVF nyílt adat-API-jából — mind mérés. Minden oszlop egy mérce
   mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.
-  A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. Balról jobbra görgethető.</p>
+  A nagyító a legalsó sávot mutatja, mert a víz jelenleg ott van. Balról jobbra görgethető.
+  Egy oszlopra kattintva a mérce alább közelről is megnyílik: becsléssel, bizonytalansággal, a nézethez illő bontásban.</p>
   <div id="rovid"></div>
   <div class="mercesor" id="mercesor"></div>
   <!-- A színek eddig magyarázat nélkül álltak: a vörös az egyik legfontosabb -->
@@ -916,6 +918,8 @@ a{color:var(--viz)}
     <span><i class="sz nagyito"></i>a nagyító a legalsó sáv kibontva, mert a víz most
       ott van; benne a görbe az utolsó 24 óra</span>
   </div>
+  <!-- Egy mérce közelről (merce.js, 2026-11-19): az adat a lap saját címéről jön (/motor/*). -->
+  <div class="mnezet" id="mnezet"><p class="mn-uzenet">A mérce-nézet betöltése…</p></div>
 </section>
 
 <section id="paks-sec">
@@ -3462,5 +3466,6 @@ $("#lab").innerHTML =
   fogalmakat_jeloli();
 })();
 </script>
+<script src="/merce.js" defer></script>
 </body>
 </html>

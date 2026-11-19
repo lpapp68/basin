@@ -29,7 +29,9 @@ wrangler_futtat() {
 # friss adatát az élő lapon. Ez 2026-08-19-én háromszor megtörtént: a bot
 # 07:48-kor kitette a friss mérleget, három kézi publikálás visszaírta a
 # tegnapit, és a lap 17 órásnak látszott.
-if [ -f data.json ]; then
+# Előnézeti kitételnél (BASIN_AG=elonezet ./publikal.sh, lásd elonezet.sh) az éles lap adata érintetlen marad,
+# ezért ott a kérdés elmarad.
+if [ -f data.json ] && [ -z "${BASIN_AG:-}" ]; then
   KOR=$(( $(date +%s) - $(stat -f %m data.json 2>/dev/null || stat -c %Y data.json) ))
   if [ "$KOR" -gt 10800 ]; then          # három óra
     ORA=$(( KOR / 3600 ))
@@ -55,6 +57,8 @@ ELO="https://basin.equora.institute"
 mkdir -p _publish
 cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt googled3302b927f898901.html favicon.ico favicon-32.png apple-touch-icon.png _publish/
 cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
+# Egy mérce közelről (2026-11-19): a nézet szkriptje, stílusa és a lapok név → törzsszám táblája.
+cp merce.js merce.css mercek_tsz.json _publish/
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.
@@ -83,6 +87,12 @@ done
 # blokkhatár szintaktikailag tökéletes, futáskor viszont megállítja az egész
 # szkriptet — és a lap üresen marad. 2026-09-07-én ez ötször fordult elő
 # egy nap alatt, ezért a publikálás előtt most lefut a teljes logika.
+# A mérce-nézet külön fájlban él (merce.js), a továbbító függvény a functions/motor alatt: mindkettőt
+# ellenőrizzük, a továbbítót álkérésekkel le is futtatjuk.
+if ! node --check merce.js || ! node tesztmotor.mjs; then
+  echo "!! A mérce-nézet vagy a /motor továbbító hibás — a publikálás megállítva."
+  exit 1
+fi
 if [ -f tesztlap.js ]; then
   if ! node tesztlap.js; then
     echo "!! A lap logikája futásidőben elhasal — a publikálás megállítva."
@@ -91,4 +101,4 @@ if [ -f tesztlap.js ]; then
 fi
 
 wrangler_futtat pages deploy _publish \
-    --project-name "${BASIN_PAGES_PROJECT:-basin}" --commit-dirty=true
+    --project-name "${BASIN_PAGES_PROJECT:-basin}" --commit-dirty=true ${BASIN_AG:+--branch "$BASIN_AG"}
