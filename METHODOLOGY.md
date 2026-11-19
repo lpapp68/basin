@@ -249,9 +249,25 @@ V/V %, calibrated) and precipitation (varid 15). Timestamps are local time.
   (150/100/125/150/150/75 mm, 750 mm in total). Where the front lies between two
   probes, the whole layer takes the probe value — an upward bias for a freshly
   wetting layer.
-- **Closure ratio:** ΔS / rainfall. Classes: closing (50–110%), surplus (above
-  110%), deficit (below 50%). The ratio tests the probe and its rain gauge
-  together; the sequence of events gives a per-station reliability signal.
+- **Share retained in the soil** (*talajban maradt hányad*; called *closure
+  ratio* until 2026-11-19): ΔS / P, where P is the rainfall since the start of
+  the event. Example: 14 mm of extra water in the 0–75 cm layer after 20 mm of
+  rain is 70%. It is the soil-side counterpart of the runoff coefficient
+  (runoff / precipitation). Classes (internal key in brackets):
+  - 50–110%: probe and rain gauge consistent (`zaro`);
+  - above 110%: the soil shows more water than fell (`tobblet`). Possible causes:
+    lateral inflow, a local hollow, water running down the probe tube,
+    wind-induced gauge undercatch, the upward bias of a freshly wetting layer;
+  - below 50%: most of the water moved on (`hiany`). Possible causes: drainage
+    below 75 cm, flow paths bypassing the probe, evapotranspiration, surface
+    runoff, canopy interception.
+- **Closure test:** the retained share tests the probe and its rain gauge
+  together; the sequence of events gives a per-station reliability signal. The
+  name refers to water balance closure, the matching of independently
+  determined balance terms (see e.g. Pan et al. 2017, HESS 21, 5401,
+  doi:10.5194/hess-21-5401-2017). This test compares the precipitation and
+  storage-change terms; the width of the 50–110% band absorbs
+  evapotranspiration and drainage below 75 cm.
 - **Groundwater:** for stations on the Danube–Tisza sand ridge, the nearest
   operating wells within 10 km (OVF open-data API, data type 69), distance in
   EOV. Rise since the start of rain, and the same relative to the Theil–Sen trend

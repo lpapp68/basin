@@ -9,7 +9,8 @@ Egy esőeseménynél ebből három mennyiség jön ki:
 
   1. a nedvesedési front — melyik szint mikor reagált, milyen gyorsan halad
   2. a talajba került víz — rétegenként Δθ × rétegvastagság, mm-ben
-  3. a zárási arány — a talajba került víz osztva a lehullott esővel
+  3. a talajban maradt hányad (ΔS / P) — a talajba került víz osztva a lehullott
+     esővel; a szondát és a csapadékmérőt együtt teszteli (zárási teszt)
 
 A harmadik egyben a szonda tesztje. A bemenő csapadékkal minden szondának el
 kell számolnia. 100% fölött a szonda vagy a csapadékmérő helyi viszonyai
@@ -91,8 +92,8 @@ KUT_SUGAR_KM = 10     # ennyi km-en belüli kutakat nézünk
 KUT_MAX = 3           # állomásonként legfeljebb ennyit
 
 # A Duna–Tisza közi hátság állomásai. MUNKADEFINÍCIÓ: a hátság és peremei, név
-# szerint. A talajtextúrát nem a lista, hanem az adat mutatja meg — a zárási
-# arány és a front sebessége állomásonként külön látszik.
+# szerint. A talajtextúrát nem a lista, hanem az adat mutatja meg — a talajban
+# maradt hányad és a front sebessége állomásonként külön látszik.
 HATSAG = [
     "Csólyospálos", "Csengele", "Fülöpháza", "Homokmégy", "Izsák",
     "Jakabszállás", "Kecel", "Kiskunfélegyháza", "Kiskunhalas", "Kisszállás",
@@ -716,8 +717,8 @@ def main():
         "figyelmeztetes": ("A tárolt víz a szondák köré osztott rétegekből számol (0–15, 15–25, "
                            "25–37,5, 37,5–52,5, 52,5–67,5, 67,5–75 cm). Ahol a front két szonda "
                            "között jár, a réteg egésze a szonda értékét kapja, ezért a frissen "
-                           "nedvesedő rétegnél a becslés felfelé torzít. A zárási arány a szonda "
-                           "és a csapadékmérő helyi viszonyait együtt teszteli."),
+                           "nedvesedő rétegnél a becslés felfelé torzít. A talajban maradt hányad "
+                           "(ΔS / P) a szonda és a csapadékmérő helyi viszonyait együtt teszteli."),
     }
     PARAMS.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -727,10 +728,10 @@ def main():
           f"napi archív +{uj_nap} sor")
     if h:
         print(f"  hátság: {h['allomas_db']} állomás, eső átl. {h['P_atlag']} mm, "
-              f"talajban átl. {h['dS_atlag']} mm, zárási medián {h['arany_median']}")
+              f"talajban átl. {h['dS_atlag']} mm, maradt hányad medián {h['arany_median']}")
     if o:
-        print(f"  országos: medián zárás {o['arany_median']}, záró {o['zaro_db']}, "
-              f"többlet {o['tobblet_db']}, hiány {o['hiany_db']}")
+        print(f"  országos: maradt hányad medián {o['arany_median']}, összhangban {o['zaro_db']}, "
+              f"110% fölött {o['tobblet_db']}, 50% alatt {o['hiany_db']}")
     for e in hatsag:
         if e["nev"] == KIEMELT:
             print(f"  {KIEMELT}: {e['P_mm']} mm eső, {e['dS_mm']} mm a talajban, "

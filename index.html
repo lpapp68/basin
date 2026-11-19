@@ -1054,7 +1054,7 @@ a{color:var(--viz)}
 
 <section id="beszivargas-sec">
   <div class="sz"><h2>Beszivárgás</h2><span class="n">hová jut a lehullott eső</span></div>
-  <p class="lead">Az eső a talajfelszínen még csak bevétel. Az aszálymonitoring-állomások hat mélységben, óránként rögzítik a talajnedvességet: ebből látszik, meddig jutott le a víz, mennyi maradt belőle a talajban, és mekkora a zárási arány, vagyis mennyit lát a szonda a lehullott esőből. A nedvesedési front útját a Duna–Tisza közi hátság állomásain mutatjuk részletesen; a zárási arány az ország minden állomására elkészül.</p>
+  <p class="lead">Az eső a talajfelszínen még csak bevétel. Az aszálymonitoring-állomások hat mélységben, óránként rögzítik a talajnedvességet: ebből látszik, meddig jutott le a víz, és mekkora a talajban maradt hányad: a lehullott eső hány százaléka jelenik meg többletként a felső 75 cm-ben. A nedvesedési front útját a Duna–Tisza közi hátság állomásain mutatjuk részletesen; a talajban maradt hányad az ország minden állomására elkészül.</p>
   <div id="beszivargas"></div>
 </section>
 
@@ -1139,7 +1139,7 @@ a{color:var(--viz)}
     "maradéktag": "Nem mérjük, hanem kiszámoljuk: ami a többi tag összeadása után marad. Minden fenti tag hibája ebben gyűlik össze.",
     "hőterhelési korlát": "A melegvíz-csatorna torkolatától 500 méterre a Duna nem lehet 30 °C-nál melegebb. Ez az erőmű második vízoldali feltétele a vízszint mellett.",
     "nedvesedési front": "A száraz és a frissen megnedvesedett talaj határa, amely eső után lefelé halad. Homokban éles: a szonda értéke néhány óra alatt ugrik meg. A lap akkor veszi megérkezettnek, ha a szint legalább 0,4 százalékponttal az eső előtti fölé megy, és utána négy órán át ott marad.",
-    "zárási arány": "A talaj felső 75 cm-ébe került víz osztva a lehullott esővel. 100% körül a szonda és a mellette álló csapadékmérő együtt elszámol az esővel. Fölötte a helyi viszonyok torzítanak (víz a szondacső mentén, mélyedés, széllel alulfogott eső); mélyen alatta a víz a szondát megkerülő utakon jár, vagy a felszín közelében, a növényzeten és a párolgásban marad.",
+    "talajban maradt hányad": "A talaj felső 75 cm-ében az eső kezdete óta megjelent többletvíz osztva a lehullott esővel, képlettel ΔS / P. Példa: 20 mm esőből 14 mm többlet a talajban, ez 70%. 50–110% között a szonda és a mellette álló csapadékmérő összhangban van. 110% fölött a talaj többet mutat, mint amennyi esett: víz folyt oda oldalról, mélyedésből vagy a szondacső mentén, a szél miatt keveset fogott az esőmérő, vagy a frissen nedvesedő rétegnél felfelé torzít a becslés. 50% alatt a víz nagyobb része továbbment: a szondát megkerülve vagy 75 cm alá szivárgott, elpárolgott, lefolyt, vagy a növényzet felfogta.",
   };
   function fogalmakat_jeloli(){
     const gyok = document.querySelectorAll(".lead, .alcim, .tetel .cim, .pk .m, .kiv .s .m, .res p, footer");
@@ -3185,7 +3185,7 @@ a{color:var(--viz)}
 
   /* ── Beszivárgás ── */
   // Az aszálymonitoring órás talajprofiljából: meddig jutott le az eső, mennyi
-  // maradt a talajban, és mennyit lát belőle a szonda (zárási arány). A blokk
+  // maradt a talajban, és mennyit lát belőle a szonda (talajban maradt hányad). A blokk
   // saját try-ja miatt egy hibás mező csak ezt a részt érinti, a lap többi
   // része kirajzolódik.
   (function(){
@@ -3230,14 +3230,14 @@ a{color:var(--viz)}
           <div class="nagy">${dec(HS.dS_atlag,0)}<span class="egys">&nbsp;mm</span></div>
           <div class="m">ennyi víz került átlagosan a talaj felső 75 cm-ébe ${HS.allomas_db} hátsági állomáson,
           <b>${dec(HS.P_atlag,0)} mm</b> lehullott esőből (az eső kezdete: ${idoszak}).
-          A ${fog("zárási arány")} mediánja <b>${szaz(HS.arany_median)}</b>.</div></div>
+          A ${fog("talajban maradt hányad")} mediánja <b>${szaz(HS.arany_median)}</b>.</div></div>
         <div class="tblokk"><div class="u">Meddig ért le a víz</div>
           <div class="bsz-mely">${frSor}</div>
           <div class="m">A legmélyebb szint állomásonként, ahol a nedvességtartalom legalább ${dec(RP,1)} százalékponttal az eső előtti fölé ment.</div></div>
-        <div class="tblokk"><div class="u">Országos zárási teszt</div>
+        <div class="tblokk"><div class="u">Szonda és esőmérő, országosan</div>
           <div class="nagy">${szaz(O.arany_median)}</div>
-          <div class="m">${O.allomas_db} állomás mediánja. Záró (50–110%): <b>${O.zaro_db}</b> · többlet: <b>${O.tobblet_db}</b> · hiány: <b>${O.hiany_db}</b>.
-          Az arány a talajszondát és a mellette álló csapadékmérőt együtt teszteli: minden eső egy ingyenes kalibrációs kör.</div></div>
+          <div class="m">A talajban maradt hányad mediánja ${O.allomas_db} állomáson. Összhangban (50–110%): <b>${O.zaro_db}</b> · többet mutat, mint amennyi esett (110% fölött): <b>${O.tobblet_db}</b> · a víz nagyobb része továbbment (50% alatt): <b>${O.hiany_db}</b>.
+          A hányad a talajszondát és a mellette álló csapadékmérőt együtt teszteli: minden eső egy ingyenes kalibrációs kör.</div></div>
       </div>`;
 
       /* hátság-térkép: a terkep.json vetülete, a hátságra nagyítva */
@@ -3282,20 +3282,20 @@ a{color:var(--viz)}
             aria-label="A Duna–Tisza közi hátság aszálymonitoring-állomásai: meddig jutott le a víz">
           <path d="${TK.path}" fill="var(--vonal-halk)" stroke="var(--halvany)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
           ${folyok}${tobbi}${cs}</svg>
-          <em>A kör mérete a legmélyebb reagáló szinttel nő, a színe a zárási arányt mutatja:
-          <b style="color:var(--viz)">záró</b> · <b style="color:var(--parolgas)">többlet</b> · <b style="color:var(--ismeretlen)">hiány</b>.
+          <em>A kör mérete a legmélyebb reagáló szinttel nő, a színe a talajban maradt hányadot mutatja:
+          <b style="color:var(--viz)">50–110%: összhangban</b> · <b style="color:var(--parolgas)">110% fölött: többet mutat, mint amennyi esett</b> · <b style="color:var(--ismeretlen)">50% alatt: a víz nagyobb része továbbment</b>.
           A halvány pontok a környék többi állomásai. Egy kör vagy sor kiválasztásával lent az állomás részletei jelennek meg.</em></div>`;
       }
 
       /* állomástábla */
       const MAXA = 1.6;
-      const tabla = `<div class="bsz-tabla"><div class="bsz-sor fej"><span>állomás</span><span class="bsz-num">eső</span><span class="bsz-num">talaj</span><span style="padding-left:6px">zárási arány</span><span class="bsz-num"></span><span class="bsz-num">mélység</span></div>` +
+      const tabla = `<div class="bsz-tabla"><div class="bsz-sor fej"><span>állomás</span><span class="bsz-num">eső</span><span class="bsz-num">talaj</span><span style="padding-left:6px">talajban maradt</span><span class="bsz-num"></span><span class="bsz-num">mélység</span></div>` +
         H.slice().sort((a,b)=>(b.arany??-1)-(a.arany??-1)).map(e=>
           `<div class="bsz-sor" data-bsz="${e.nev}"><span class="tn">${potty(e.nev)}${e.nev}</span>
            <span class="bsz-num">${dec(e.P_mm,0)}</span><span class="bsz-num">${dec(e.dS_mm,0)}</span>
            <span class="bsz-sav"><i style="width:${(Math.min(Math.max(e.arany||0,0),MAXA)/MAXA*100).toFixed(0)}%;background:${SZIN[e.osztaly]||"var(--halvany)"}"></i><em style="left:${(100/MAXA).toFixed(1)}%"></em></span>
            <span class="bsz-num">${szaz(e.arany)}</span><span class="bsz-num">${e.legmelyebb_reagalo ? e.legmelyebb_reagalo+"&nbsp;cm" : "—"}</span></div>`).join("") +
-        `<p class="m">Eső: a lehullott csapadék, talaj: a 0–75 cm-be került víz, mindkettő mm-ben, az eső kezdetétől. A függőleges vonal a 100%: ott a talajba került víz pontosan annyi, amennyi esett.</p></div>`;
+        `<p class="m">Eső: a lehullott csapadék, talaj: a 0–75 cm-ben megjelent többletvíz, mindkettő mm-ben, az eső kezdetétől. A sáv és a százalék a talajban maradt hányad (talaj / eső). A függőleges vonal a 100%: ott a talajban pontosan annyi víz jelent meg, amennyi esett.</p></div>`;
 
       /* egy állomás részletei */
       function reszlet(nev){
@@ -3341,12 +3341,12 @@ a{color:var(--viz)}
           `<p class="m">A front most ${e.legmelyebb_reagalo || "—"} cm-nél jár, a talajvíz ${dec(Math.min(...kutak.map(k=>k.melyseg_m)),1)}–${dec(Math.max(...kutak.map(k=>k.melyseg_m)),1)} m mélyen. A kutak mostani mozgását ezért a légnyomás, a térség felszín alatti áramlása és az évszakos trend is alakítja; ennek az esőnek a jele akkor várható, amikor a víz a gyökérzóna alá jut.</p></div>` : "";
         const ta = TPn[e.nev], hk = THK[e.nev];
         const tanBlokk = (ta || hk) ? `<div class="bsz-tan">` +
-          (hk ? `<div><b>Hőmérséklet-korrekcióval:</b> ${dec(hk.dS_korr_mm,1)} mm a talajban, zárás ${szaz(hk.arany_korr)}. A szondák a talaj hűlésével és melegedésével is mozdulnak; az érzékenységüket szondánként és szintenként a napi ciklusból tanuljuk.</div>` : "") +
+          (hk ? `<div><b>Hőmérséklet-korrekcióval:</b> ${dec(hk.dS_korr_mm,1)} mm a talajban (talajban maradt hányad: ${szaz(hk.arany_korr)}). A szondák a talaj hűlésével és melegedésével is mozdulnak; az érzékenységüket szondánként és szintenként a napi ciklusból tanuljuk.</div>` : "") +
           (ta ? `<div><b>Párolgási állapot (${napja(TP.nap + " 00")}):</b> ${ALLN[ta.allapot]}. A növényzet a lehetséges párolgás ${dec(ta.r_mert*100,0)}%-át adja${ta.vizhatas != null ? `; a tanult összefüggés szerint nedves talajjal ${dec(ta.r_nedves*100,0)}% volna, a víz hiánya tehát ${dec(Math.max(0, 1 - ta.vizhatas)*100,0)}%-ot vesz el` : ""}.</div>` : "") +
           `</div>` : "";
         const allapot = e.allapot === "folyik" ? "az eső folyamatban" : "az eső véget ért, a víz tovább mozog";
         return `<div class="u">${e.nev} · eső ${ido(e.kezd)}-tól · ${allapot}</div>
-          <div class="bsz-szamok"><span><b>${dec(e.P_mm,1)}</b> mm eső</span><span><b>${dec(e.dS_mm,1)}</b> mm a talajban</span><span><b>${szaz(e.arany)}</b> zárás</span>
+          <div class="bsz-szamok"><span><b>${dec(e.P_mm,1)}</b> mm eső</span><span><b>${dec(e.dS_mm,1)}</b> mm a talajban</span><span><b>${szaz(e.arany)}</b> maradt a talajban</span>
           <span><b>${e.legmelyebb_reagalo ? e.legmelyebb_reagalo+" cm" : "—"}</b> legmélyebb reagáló szint</span></div>
           ${tanBlokk}
           ${diag}

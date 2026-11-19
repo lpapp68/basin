@@ -227,10 +227,29 @@ V/V %, kalibrált), csapadék (varid 15). Az időbélyegek helyi idő szerintiek
   (150/100/125/150/150/75 mm, összesen 750 mm). Ahol a front két szonda között
   jár, a réteg egésze a szonda értékét kapja — a frissen nedvesedő rétegnél
   ez felfelé torzít.
-- **Zárási arány:** ΔS / lehullott eső. Osztályok: záró (50–110%), többlet
-  (110% fölött), hiány (50% alatt). Az arány a szondát és a mellette álló
+- **Talajban maradt hányad:** ΔS / P, ahol P az eső kezdete óta lehullott
+  csapadék. Példa: 20 mm esőből 14 mm többlet a 0–75 cm-ben, ez 70%. A lefolyási
+  tényező (lefolyt víz / csapadék) párja a talaj oldalán. Osztályok (zárójelben
+  a belső kulcs):
+  - 50–110%: a szonda és az esőmérő összhangban van (`zaro`);
+  - 110% fölött: a talaj többet mutat, mint amennyi esett (`tobblet`). Lehetséges
+    okok: oldalról befolyó víz, mélyedés, víz a szondacső mentén, a szél miatt
+    keveset fogó esőmérő, a frissen nedvesedő réteg felfelé torzító becslése;
+  - 50% alatt: a víz nagyobb része továbbment (`hiany`). Lehetséges okok:
+    75 cm alá szivárgás, a szondát megkerülő áramlás, párolgás, felszíni
+    lefolyás, a növényzet által felfogott víz.
+- **Zárási teszt:** a talajban maradt hányad a szondát és a mellette álló
   csapadékmérőt együtt teszteli; az események sorozata állomásonkénti
-  megbízhatósági jelet ad.
+  megbízhatósági jelet ad. A név a vízmérleg zárásának (water balance closure)
+  gondolatára utal, amely a mérleg egymástól függetlenül meghatározott tagjait
+  illeszti egymáshoz (lásd pl. Pan et al. 2017, HESS 21, 5401,
+  doi:10.5194/hess-21-5401-2017). Ez a teszt a mérlegnek a csapadék- és a
+  készletváltozás-tagját veti össze; a párolgást és a 75 cm alá szivárgást az
+  50–110%-os sáv szélessége fogadja be.
+- **Szóhasználat:** a hidrogeológiában a „tárolási tényező” a víztartó réteg
+  tárolási tényezőjét (S), a „beszivárgási tényező” a csapadék talajvízig jutó
+  hányadát jelöli. Ez a mutató ezért leíró nevet kapott: talajban maradt
+  hányad (2026-11-19-ig a lapon: zárási arány).
 - **Talajvíz:** a hátsági állomások 10 km-es körzetében a legközelebbi
   működő kutak (OVF nyílt adat-API, adatfajta 69). Távolság EOV-koordinátában.
   Emelkedés az eső kezdete óta, és ugyanez a megelőző tíz nap Theil–Sen-trendjéhez
@@ -413,6 +432,14 @@ A ciklus GitHub Actionsben óránként fut. Az `archiv/` mappa a saját napi id�
 ---
 
 ## 13. Változásnapló
+
+**Fogalmi pontosítás (2026-11-19)** — A beszivárgás-modul ΔS / P mutatójának
+neve a lapon *talajban maradt hányad* (korábban: zárási arány), az osztályok
+leíró nevet kaptak: összhangban (50–110%), többet mutat, mint amennyi esett
+(110% fölött), a víz nagyobb része továbbment (50% alatt). A *zárási teszt*
+név a szonda és a csapadékmérő együttes megbízhatósági vizsgálatát jelöli
+(8. szakasz vége). Az adatmezők neve (`arany`, `osztaly`: `zaro` / `tobblet` /
+`hiany`) változatlan.
 
 **Tanuló réteg (2026-11-14)** — Párolgási állapot (vízkorlátozott / nyugalmi /
 aktív / mélyről táplált) a talajnedvesség és a párolgási arány tanult összefüggéséből;

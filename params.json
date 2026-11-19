@@ -8369,6 +8369,6 @@
     },
     "provenance": "szarmaztatott",
     "forras": "OVF Aszálymonitoring hivatalos API (api.php), órás talajnedvesség 10–75 cm és csapadék; talajvízkutak: OVF nyílt adat-API (adatfajta 69)",
-    "figyelmeztetes": "A tárolt víz a szondák köré osztott rétegekből számol (0–15, 15–25, 25–37,5, 37,5–52,5, 52,5–67,5, 67,5–75 cm). Ahol a front két szonda között jár, a réteg egésze a szonda értékét kapja, ezért a frissen nedvesedő rétegnél a becslés felfelé torzít. A zárási arány a szonda és a csapadékmérő helyi viszonyait együtt teszteli."
+    "figyelmeztetes": "A tárolt víz a szondák köré osztott rétegekből számol (0–15, 15–25, 25–37,5, 37,5–52,5, 52,5–67,5, 67,5–75 cm). Ahol a front két szonda között jár, a réteg egésze a szonda értékét kapja, ezért a frissen nedvesedő rétegnél a becslés felfelé torzít. A talajban maradt hányad (ΔS / P) a szonda és a csapadékmérő helyi viszonyait együtt teszteli."
   }
 }
