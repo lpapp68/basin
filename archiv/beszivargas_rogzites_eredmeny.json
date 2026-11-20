@@ -1,0 +1,53 @@
+{
+ "2026-11-14a-csolyospalos": {
+  "allapot": "teljesult",
+  "ertekelve_ekkor": "2026-11-20 13",
+  "eso_mm": 22.3,
+  "forgatokonyv": "esos",
+  "allitasok": [
+   {
+    "tipus": "reagal",
+    "szint": 45,
+    "mert_dtheta": 5.97,
+    "teljesult": true
+   },
+   {
+    "tipus": "reagal",
+    "szint": 60,
+    "mert_dtheta": 5.63,
+    "teljesult": true
+   },
+   {
+    "tipus": "dS_tartomany",
+    "min": 50,
+    "max": 55,
+    "mert_dS_mm": 52.1,
+    "teljesult": true
+   }
+  ],
+  "dS_mm": 52.1
+ },
+ "2026-11-14b-csolyospalos": {
+  "allapot": "teljesult",
+  "ertekelve_ekkor": "2026-11-20 13",
+  "eso_mm": 17.3,
+  "forgatokonyv": "esos",
+  "allitasok": [
+   {
+    "tipus": "reagal",
+    "szint": 75,
+    "mert_dtheta": 5.0,
+    "teljesult": true
+   },
+   {
+    "tipus": "novekmeny_arany",
+    "min": 0.4,
+    "max": 0.9,
+    "dS_rogzites": 40.9,
+    "mert_arany": 0.647,
+    "teljesult": true
+   }
+  ],
+  "dS_mm": 52.1
+ }
+}
