@@ -3588,7 +3588,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-20T06:36:04+00:00",
+    "lekerve": "2026-11-20T07:06:49+00:00",
     "datum": "2026-11-19",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3787,27 +3787,27 @@
         "cm": 600.0
       },
       {
+        "nev": "Bugac",
+        "cm": 444.0
+      },
+      {
         "nev": "Tázlár",
         "cm": 444.0
       },
       {
         "nev": "Bugac",
-        "cm": 444.0
-      },
-      {
-        "nev": "Bugac",
-        "cm": 409.5
+        "cm": 412.0
       },
       {
         "nev": "Lajosmizse",
         "cm": 403.0
       },
       {
-        "nev": "Jászszentlászló",
+        "nev": "Kiskunhalas",
         "cm": 397.0
       },
       {
-        "nev": "Kiskunhalas",
+        "nev": "Jászszentlászló",
         "cm": 397.0
       },
       {
@@ -3867,6 +3867,16 @@
         ]
       },
       {
+        "nev": "Tápé",
+        "cm": 325.5,
+        "lat": 46.2662950268528,
+        "lon": 20.2269137969653,
+        "terkep_xy": [
+          609.2,
+          499.2
+        ]
+      },
+      {
         "nev": "Csanádpalota",
         "cm": 323.5,
         "lat": 46.2430155802294,
@@ -3874,16 +3884,6 @@
         "terkep_xy": [
           682.3,
           504.3
-        ]
-      },
-      {
-        "nev": "Tápé",
-        "cm": 322.0,
-        "lat": 46.2662950268528,
-        "lon": 20.2269137969653,
-        "terkep_xy": [
-          609.2,
-          499.2
         ]
       },
       {
@@ -5034,7 +5034,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-20T06:36:08Z",
+    "keszult": "2026-11-20T07:06:54Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
