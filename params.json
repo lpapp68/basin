@@ -3588,7 +3588,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-20T08:06:36+00:00",
+    "lekerve": "2026-11-20T08:36:41+00:00",
     "datum": "2026-11-19",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3787,11 +3787,11 @@
         "cm": 600.0
       },
       {
-        "nev": "Tázlár",
+        "nev": "Bugac",
         "cm": 444.0
       },
       {
-        "nev": "Bugac",
+        "nev": "Tázlár",
         "cm": 444.0
       },
       {
@@ -3803,15 +3803,15 @@
         "cm": 404.0
       },
       {
-        "nev": "Kiskunhalas",
-        "cm": 397.0
-      },
-      {
         "nev": "Jászszentlászló",
         "cm": 397.0
       },
       {
-        "nev": "Kecskemét",
+        "nev": "Kiskunhalas",
+        "cm": 397.0
+      },
+      {
+        "nev": "Kunszentmárton",
         "cm": 388.0
       }
     ],
@@ -3887,16 +3887,6 @@
         ]
       },
       {
-        "nev": "Darvas",
-        "cm": 320.0,
-        "lat": 47.0872160672144,
-        "lon": 21.3399638839532,
-        "terkep_xy": [
-          773.3,
-          321.3
-        ]
-      },
-      {
         "nev": "Alsóújlak",
         "cm": 320.0,
         "lat": 47.0558566629553,
@@ -3904,6 +3894,16 @@
         "terkep_xy": [
           112.1,
           328.1
+        ]
+      },
+      {
+        "nev": "Darvas",
+        "cm": 320.0,
+        "lat": 47.0872160672144,
+        "lon": 21.3399638839532,
+        "terkep_xy": [
+          773.3,
+          321.3
         ]
       },
       {
@@ -3928,7 +3928,7 @@
       },
       {
         "nev": "Jászszentandrás",
-        "cm": 287.5,
+        "cm": 287.0,
         "lat": 47.5841689950968,
         "lon": 20.1730627520489,
         "terkep_xy": [
@@ -5034,7 +5034,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-20T08:06:42Z",
+    "keszult": "2026-11-20T08:36:46Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
