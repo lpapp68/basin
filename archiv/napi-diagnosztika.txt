@@ -1,6 +1,7 @@
 kert_nap=2026-11-20
 feldolgozott_nap=2026-11-19
-ido=2026-11-21T05:06:36Z
+ido=2026-11-21T05:36:34Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+teljes medence falai:     raise HTTPError(req.full_url, code, msg, hdrs, fp) urllib.error.HTTPError: HTTP Error 520: <none> 
