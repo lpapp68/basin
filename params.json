@@ -3859,16 +3859,6 @@
         ]
       },
       {
-        "nev": "Konyár",
-        "cm": 326.0,
-        "lat": 47.3180843741109,
-        "lon": 21.6727429529734,
-        "terkep_xy": [
-          822.4,
-          271.2
-        ]
-      },
-      {
         "nev": "Tápé",
         "cm": 325.5,
         "lat": 46.2662950268528,
@@ -3876,6 +3866,16 @@
         "terkep_xy": [
           609.2,
           499.2
+        ]
+      },
+      {
+        "nev": "Konyár",
+        "cm": 325.0,
+        "lat": 47.3180843741109,
+        "lon": 21.6727429529734,
+        "terkep_xy": [
+          822.4,
+          271.2
         ]
       },
       {
@@ -3889,16 +3889,6 @@
         ]
       },
       {
-        "nev": "Alsóújlak",
-        "cm": 320.0,
-        "lat": 47.0558566629553,
-        "lon": 16.8547349054333,
-        "terkep_xy": [
-          112.1,
-          328.1
-        ]
-      },
-      {
         "nev": "Darvas",
         "cm": 320.0,
         "lat": 47.0872160672144,
@@ -3906,6 +3896,16 @@
         "terkep_xy": [
           773.3,
           321.3
+        ]
+      },
+      {
+        "nev": "Alsóújlak",
+        "cm": 320.0,
+        "lat": 47.0558566629553,
+        "lon": 16.8547349054333,
+        "terkep_xy": [
+          112.1,
+          328.1
         ]
       },
       {
@@ -3950,7 +3950,7 @@
       },
       {
         "nev": "Hajdúnánás",
-        "cm": 254.0,
+        "cm": 253.5,
         "lat": 47.7709449162053,
         "lon": 21.4063554991631,
         "terkep_xy": [
@@ -5036,7 +5036,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-21T06:06:24Z",
+    "keszult": "2026-11-21T06:36:01Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
