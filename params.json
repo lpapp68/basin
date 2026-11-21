@@ -3813,7 +3813,7 @@
         "cm": 396.0
       },
       {
-        "nev": "Kecskemét",
+        "nev": "Kunszentmárton",
         "cm": 388.0
       }
     ],
@@ -4114,8 +4114,8 @@
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
-    "ertek": 10.0,
-    "vizallas_cm": 74.0,
+    "ertek": 7.52,
+    "vizallas_cm": 67.0,
     "vizho_c": 7.6,
     "provenance": "helyszini",
     "forras": "SHMÚ (Szlovák Hidrometeorológiai Intézet) napi hidrológiai jelentés, Ždaňa – Hornád, az utolsó szlovák szelvény a határ előtt",
@@ -5036,7 +5036,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-21T05:36:39Z",
+    "keszult": "2026-11-21T06:06:24Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
