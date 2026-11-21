@@ -1,5 +1,5 @@
 {
- "futas_utc": "2026-11-21T16:19:47+00:00",
+ "futas_utc": "2026-11-21T22:38:15+00:00",
  "jelleg": "saját fejlesztésű tanuló algoritmus (i-Tango Tanácsadó Kft.); a lapra csak az eredmény kerül",
  "parolgas": {
   "nap": "2026-11-20",
@@ -1700,27 +1700,27 @@
   "minta_db": 20388
  },
  "homerseklet": {
-  "szonda_db": 309,
+  "szonda_db": 303,
   "hatsag": {
    "Csengele|10": {
-    "beta": 0.0446,
-    "r": 0.34,
-    "n": 55
+    "beta": 0.0456,
+    "r": 0.35,
+    "n": 48
    },
    "Csólyospálos|10": {
-    "beta": 0.0584,
-    "r": 0.78,
-    "n": 55
+    "beta": 0.0581,
+    "r": 0.8,
+    "n": 53
    },
    "Csólyospálos|20": {
-    "beta": 0.0689,
+    "beta": 0.067,
     "r": 0.71,
-    "n": 55
+    "n": 53
    },
    "Csólyospálos|30": {
-    "beta": 0.0634,
-    "r": 0.45,
-    "n": 55
+    "beta": 0.0601,
+    "r": 0.41,
+    "n": 53
    },
    "Fülöpháza|10": {
     "beta": -0.0682,
@@ -1739,113 +1739,113 @@
    },
    "Homokmégy|10": {
     "beta": 0.0,
-    "r": 0.1,
-    "n": 47
+    "r": -0.01,
+    "n": 46
    },
    "Izsák|10": {
     "beta": 0.0,
-    "r": -0.0,
-    "n": 58
+    "r": 0.06,
+    "n": 55
    },
    "Izsák|20": {
-    "beta": 0.0483,
-    "r": 0.35,
-    "n": 58
+    "beta": 0.0452,
+    "r": 0.34,
+    "n": 55
    },
    "Izsák|30": {
     "beta": 0.0,
-    "r": 0.13,
-    "n": 58
+    "r": 0.12,
+    "n": 55
    },
    "Jakabszállás|10": {
     "beta": 0.0,
-    "r": -0.0,
-    "n": 54
+    "r": -0.06,
+    "n": 52
    },
    "Jakabszállás|20": {
     "beta": 0.0,
-    "r": -0.14,
-    "n": 54
+    "r": -0.1,
+    "n": 52
    },
    "Jakabszállás|30": {
     "beta": 0.0,
-    "r": -0.06,
-    "n": 54
+    "r": -0.11,
+    "n": 52
    },
    "Kecel|10": {
     "beta": 0.0,
-    "r": 0.21,
-    "n": 56
+    "r": 0.3,
+    "n": 53
    },
    "Kecel|20": {
-    "beta": 0.0514,
-    "r": 0.59,
-    "n": 56
+    "beta": 0.0467,
+    "r": 0.56,
+    "n": 53
    },
    "Kecel|30": {
     "beta": 0.0,
-    "r": 0.25,
-    "n": 56
+    "r": 0.26,
+    "n": 53
    },
    "Kiskunfélegyháza|10": {
     "beta": 0.0,
     "r": -0.27,
-    "n": 62
+    "n": 63
    },
    "Kiskunfélegyháza|20": {
     "beta": 0.0,
-    "r": -0.11,
-    "n": 62
+    "r": -0.16,
+    "n": 63
    },
    "Kiskunhalas|10": {
     "beta": 0.0,
-    "r": -0.06,
-    "n": 51
+    "r": -0.05,
+    "n": 49
    },
    "Kiskunhalas|20": {
     "beta": 0.0,
-    "r": 0.23,
-    "n": 51
+    "r": 0.21,
+    "n": 49
    },
    "Kisszállás|10": {
     "beta": 0.0,
-    "r": -0.1,
-    "n": 55
+    "r": -0.13,
+    "n": 58
    },
    "Kisszállás|20": {
-    "beta": -0.0453,
-    "r": -0.37,
-    "n": 55
+    "beta": -0.0532,
+    "r": -0.41,
+    "n": 58
    },
    "Kisszállás|30": {
     "beta": 0.0,
-    "r": -0.25,
-    "n": 55
+    "r": -0.28,
+    "n": 58
    },
    "Kunpeszér|10": {
-    "beta": -0.0596,
-    "r": -0.33,
-    "n": 71
+    "beta": 0.0,
+    "r": -0.3,
+    "n": 67
    },
    "Kunpeszér|20": {
-    "beta": -0.1338,
-    "r": -0.41,
-    "n": 71
+    "beta": -0.1304,
+    "r": -0.38,
+    "n": 67
    },
    "Lajosmizse|10": {
     "beta": 0.0,
-    "r": 0.12,
-    "n": 68
+    "r": 0.1,
+    "n": 64
    },
    "Lajosmizse|20": {
-    "beta": 0.0444,
-    "r": 0.38,
-    "n": 68
+    "beta": 0.0484,
+    "r": 0.4,
+    "n": 64
    },
    "Lajosmizse|30": {
     "beta": 0.0,
-    "r": 0.16,
-    "n": 68
+    "r": 0.15,
+    "n": 64
    },
    "Mélykút|10": {
     "beta": -0.0388,
@@ -1863,80 +1863,80 @@
     "n": 49
    },
    "Nagykőrös|10": {
-    "beta": -0.0421,
-    "r": -0.36,
-    "n": 72
+    "beta": -0.0391,
+    "r": -0.35,
+    "n": 68
    },
    "Nagykőrös|20": {
-    "beta": -0.0482,
-    "r": -0.44,
-    "n": 72
+    "beta": -0.0451,
+    "r": -0.41,
+    "n": 68
    },
    "Nagykőrös|30": {
     "beta": 0.0,
-    "r": -0.19,
-    "n": 72
+    "r": -0.17,
+    "n": 68
    },
    "Pálmonostora|10": {
-    "beta": 0.0645,
+    "beta": 0.0629,
     "r": 0.64,
-    "n": 56
+    "n": 53
    },
    "Pálmonostora|20": {
-    "beta": 0.0797,
+    "beta": 0.0785,
     "r": 0.4,
-    "n": 56
+    "n": 53
    },
    "Pálmonostora|30": {
-    "beta": 0.1137,
-    "r": 0.46,
-    "n": 56
+    "beta": 0.1064,
+    "r": 0.41,
+    "n": 53
    },
    "Ruzsa|10": {
     "beta": 0.0,
     "r": 0.18,
-    "n": 62
+    "n": 59
    },
    "Ruzsa|20": {
     "beta": 0.0,
-    "r": 0.25,
-    "n": 62
+    "r": 0.22,
+    "n": 59
    },
    "Tázlár|10": {
     "beta": 0.0,
-    "r": 0.23,
-    "n": 57
+    "r": 0.25,
+    "n": 54
    },
    "Tázlár|20": {
     "beta": 0.0,
-    "r": -0.01,
-    "n": 57
+    "r": 0.09,
+    "n": 54
    },
    "Tázlár|30": {
     "beta": 0.0,
-    "r": 0.03,
-    "n": 57
+    "r": 0.07,
+    "n": 54
    },
    "Városföld|10": {
-    "beta": -0.0446,
-    "r": -0.34,
-    "n": 72
+    "beta": -0.0415,
+    "r": -0.32,
+    "n": 68
    },
    "Városföld|20": {
     "beta": 0.0,
-    "r": -0.09,
-    "n": 72
+    "r": -0.08,
+    "n": 68
    }
   },
   "esemeny": {
    "Csengele": {
-    "dS_mm": 3.7,
-    "dS_korr_mm": 3.8,
-    "arany_korr": 0.263,
+    "dS_mm": 3.9,
+    "dS_korr_mm": 4.0,
+    "arany_korr": 0.279,
     "szintek": {
      "10": {
-      "beta": 0.0446,
-      "dT": -1.18,
+      "beta": 0.0456,
+      "dT": -1.08,
       "dtheta_korr": 0.05
      },
      "20": {
@@ -1946,45 +1946,45 @@
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.42,
+      "dT": -0.52,
       "dtheta_korr": 0.27
      },
      "45": {
       "beta": 0.0,
-      "dT": -0.08,
+      "dT": -0.18,
       "dtheta_korr": 0.7
      },
      "60": {
       "beta": 0.0,
       "dT": 0.0,
-      "dtheta_korr": 1.4
+      "dtheta_korr": 1.5
      },
      "75": {
       "beta": 0.0,
       "dT": 0.08,
-      "dtheta_korr": 0.0
+      "dtheta_korr": 0.1
      }
     }
    },
    "Csólyospálos": {
-    "dS_mm": 43.5,
-    "dS_korr_mm": 43.3,
-    "arany_korr": 0.778,
+    "dS_mm": 43.2,
+    "dS_korr_mm": 43.0,
+    "arany_korr": 0.773,
     "szintek": {
      "10": {
-      "beta": 0.0584,
-      "dT": 1.57,
-      "dtheta_korr": 1.39
+      "beta": 0.0581,
+      "dT": 0.87,
+      "dtheta_korr": 1.23
      },
      "20": {
-      "beta": 0.0689,
-      "dT": 0.6,
-      "dtheta_korr": 5.26
+      "beta": 0.067,
+      "dT": 1.2,
+      "dtheta_korr": 5.22
      },
      "30": {
-      "beta": 0.0634,
-      "dT": -0.03,
-      "dtheta_korr": 10.8
+      "beta": 0.0601,
+      "dT": 0.37,
+      "dtheta_korr": 10.68
      },
      "45": {
       "beta": 0.0,
@@ -1993,13 +1993,13 @@
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.55,
+      "dT": 0.45,
       "dtheta_korr": 5.73
      },
      "75": {
       "beta": 0.0,
-      "dT": 0.12,
-      "dtheta_korr": 6.7
+      "dT": 0.02,
+      "dtheta_korr": 6.9
      }
     }
    },
@@ -2041,140 +2041,140 @@
     }
    },
    "Homokmégy": {
-    "dS_mm": 14.0,
-    "dS_korr_mm": 14.0,
-    "arany_korr": 0.552,
+    "dS_mm": 13.3,
+    "dS_korr_mm": 13.3,
+    "arany_korr": 0.525,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -1.07,
-      "dtheta_korr": 0.23
+      "dT": -0.67,
+      "dtheta_korr": 0.13
      },
      "20": {
       "beta": 0.0,
-      "dT": -0.67,
+      "dT": -0.57,
       "dtheta_korr": 0.4
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.2,
+      "dT": -0.3,
       "dtheta_korr": 0.33
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.1,
-      "dtheta_korr": 1.83
+      "dT": 0.0,
+      "dtheta_korr": 1.63
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.2,
-      "dtheta_korr": 3.92
+      "dT": 0.1,
+      "dtheta_korr": 3.82
      },
      "75": {
       "beta": 0.0,
       "dT": 0.1,
-      "dtheta_korr": 5.65
+      "dtheta_korr": 5.55
      }
     }
    },
    "Izsák": {
-    "dS_mm": 7.6,
-    "dS_korr_mm": 7.7,
-    "arany_korr": 0.262,
+    "dS_mm": 6.8,
+    "dS_korr_mm": 6.9,
+    "arany_korr": 0.234,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -1.97,
-      "dtheta_korr": 1.27
+      "dT": -2.27,
+      "dtheta_korr": 0.97
      },
      "20": {
-      "beta": 0.0483,
-      "dT": -1.52,
-      "dtheta_korr": 0.27
+      "beta": 0.0452,
+      "dT": -1.22,
+      "dtheta_korr": 0.25
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.88,
-      "dtheta_korr": 1.2
+      "dT": -0.78,
+      "dtheta_korr": 1.1
      },
      "45": {
       "beta": 0.0,
-      "dT": -0.25,
+      "dT": -0.35,
       "dtheta_korr": 0.95
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.08,
-      "dtheta_korr": 0.98
+      "dT": -0.02,
+      "dtheta_korr": 0.88
      },
      "75": {
       "beta": 0.0,
-      "dT": 0.3,
-      "dtheta_korr": 1.5
+      "dT": 0.2,
+      "dtheta_korr": 1.4
      }
     }
    },
    "Jakabszállás": {
-    "dS_mm": 11.2,
-    "dS_korr_mm": 11.2,
-    "arany_korr": 0.387,
+    "dS_mm": 9.8,
+    "dS_korr_mm": 9.8,
+    "arany_korr": 0.339,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -1.62,
-      "dtheta_korr": 1.73
+      "dT": -3.62,
+      "dtheta_korr": 1.43
      },
      "20": {
       "beta": 0.0,
-      "dT": -1.9,
-      "dtheta_korr": 1.8
+      "dT": -1.5,
+      "dtheta_korr": 1.5
      },
      "30": {
       "beta": 0.0,
-      "dT": -1.47,
-      "dtheta_korr": 0.82
+      "dT": -1.07,
+      "dtheta_korr": 0.72
      },
      "45": {
       "beta": 0.0,
       "dT": -0.7,
-      "dtheta_korr": 1.65
+      "dtheta_korr": 1.55
      },
      "60": {
       "beta": 0.0,
-      "dT": -0.2,
-      "dtheta_korr": 1.75
+      "dT": -0.4,
+      "dtheta_korr": 1.55
      },
      "75": {
       "beta": 0.0,
-      "dT": 0.0,
-      "dtheta_korr": 0.85
+      "dT": -0.1,
+      "dtheta_korr": 0.75
      }
     }
    },
    "Kecel": {
-    "dS_mm": 7.4,
-    "dS_korr_mm": 7.5,
-    "arany_korr": 0.335,
+    "dS_mm": 6.2,
+    "dS_korr_mm": 6.3,
+    "arany_korr": 0.28,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -0.7,
-      "dtheta_korr": 1.65
+      "dT": -1.4,
+      "dtheta_korr": 1.15
      },
      "20": {
-      "beta": 0.0514,
-      "dT": -1.2,
-      "dtheta_korr": 1.26
+      "beta": 0.0467,
+      "dT": -0.8,
+      "dtheta_korr": 1.14
      },
      "30": {
       "beta": 0.0,
-      "dT": -1.03,
-      "dtheta_korr": 0.88
+      "dT": -0.73,
+      "dtheta_korr": 0.78
      },
      "45": {
       "beta": 0.0,
       "dT": -0.55,
-      "dtheta_korr": 0.67
+      "dtheta_korr": 0.57
      },
      "60": {
       "beta": 0.0,
@@ -2183,40 +2183,40 @@
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.08,
-      "dtheta_korr": 1.38
+      "dT": -0.18,
+      "dtheta_korr": 1.28
      }
     }
    },
    "Kiskunfélegyháza": {
-    "dS_mm": 26.5,
-    "dS_korr_mm": 26.5,
-    "arany_korr": 1.078,
+    "dS_mm": 25.3,
+    "dS_korr_mm": 25.3,
+    "arany_korr": 1.028,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -1.07,
-      "dtheta_korr": 3.12
+      "dT": -0.67,
+      "dtheta_korr": 2.72
      },
      "20": {
       "beta": 0.0,
       "dT": -0.47,
-      "dtheta_korr": 3.2
+      "dtheta_korr": 2.8
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.1,
-      "dtheta_korr": 3.47
+      "dT": -0.3,
+      "dtheta_korr": 3.17
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.1,
+      "dT": -0.1,
       "dtheta_korr": 9.42
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.1,
-      "dtheta_korr": 0.1
+      "dT": 0.0,
+      "dtheta_korr": 0.2
      },
      "75": {
       "beta": 0.0,
@@ -2226,34 +2226,34 @@
     }
    },
    "Kiskunhalas": {
-    "dS_mm": 12.7,
-    "dS_korr_mm": 12.7,
-    "arany_korr": 0.579,
+    "dS_mm": 12.2,
+    "dS_korr_mm": 12.2,
+    "arany_korr": 0.557,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -0.55,
-      "dtheta_korr": 0.8
+      "dT": -0.15,
+      "dtheta_korr": 0.4
      },
      "20": {
       "beta": 0.0,
-      "dT": 0.12,
-      "dtheta_korr": 1.92
+      "dT": 0.52,
+      "dtheta_korr": 1.72
      },
      "30": {
       "beta": 0.0,
       "dT": 0.68,
-      "dtheta_korr": 1.58
+      "dtheta_korr": 1.48
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.8,
-      "dtheta_korr": 5.05
+      "dT": 0.7,
+      "dtheta_korr": 5.25
      },
      "60": {
       "beta": 0.0,
       "dT": 0.5,
-      "dtheta_korr": 0.0
+      "dtheta_korr": 0.1
      },
      "75": {
       "beta": 0.0,
@@ -2263,70 +2263,70 @@
     }
    },
    "Kisszállás": {
-    "dS_mm": 13.1,
-    "dS_korr_mm": 13.1,
-    "arany_korr": 0.774,
+    "dS_mm": 10.9,
+    "dS_korr_mm": 10.9,
+    "arany_korr": 0.647,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -2.13,
-      "dtheta_korr": 1.42
+      "dT": -1.03,
+      "dtheta_korr": 0.92
      },
      "20": {
-      "beta": -0.0453,
-      "dT": -0.45,
-      "dtheta_korr": 1.75
+      "beta": -0.0532,
+      "dT": -0.15,
+      "dtheta_korr": 1.26
      },
      "30": {
       "beta": 0.0,
-      "dT": 0.38,
-      "dtheta_korr": 2.03
+      "dT": 0.18,
+      "dtheta_korr": 1.43
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.78,
-      "dtheta_korr": 1.82
+      "dT": 0.48,
+      "dtheta_korr": 1.52
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.6,
-      "dtheta_korr": 2.62
+      "dT": 0.4,
+      "dtheta_korr": 2.82
      },
      "75": {
       "beta": 0.0,
-      "dT": 0.38,
+      "dT": 0.28,
       "dtheta_korr": 0.0
      }
     }
    },
    "Kunpeszér": {
-    "dS_mm": 6.0,
-    "dS_korr_mm": 5.8,
-    "arany_korr": 0.288,
+    "dS_mm": 5.6,
+    "dS_korr_mm": 5.5,
+    "arany_korr": 0.275,
     "szintek": {
      "10": {
-      "beta": -0.0596,
-      "dT": -1.22,
-      "dtheta_korr": 0.8
+      "beta": 0.0,
+      "dT": -1.42,
+      "dtheta_korr": 0.87
      },
      "20": {
-      "beta": -0.1338,
-      "dT": -0.73,
-      "dtheta_korr": 0.82
+      "beta": -0.1304,
+      "dT": -0.63,
+      "dtheta_korr": 0.74
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.2,
-      "dtheta_korr": 0.57
+      "dT": -0.3,
+      "dtheta_korr": 0.47
      },
      "45": {
       "beta": 0.0,
       "dT": 0.1,
-      "dtheta_korr": 0.98
+      "dtheta_korr": 0.88
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.22,
+      "dT": 0.12,
       "dtheta_korr": 0.77
      },
      "75": {
@@ -2337,34 +2337,34 @@
     }
    },
    "Lajosmizse": {
-    "dS_mm": 18.4,
-    "dS_korr_mm": 18.4,
-    "arany_korr": 0.752,
+    "dS_mm": 19.5,
+    "dS_korr_mm": 19.5,
+    "arany_korr": 0.796,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -0.85,
-      "dtheta_korr": 4.0
+      "dT": -1.45,
+      "dtheta_korr": 3.6
      },
      "20": {
-      "beta": 0.0444,
-      "dT": -0.93,
-      "dtheta_korr": 3.34
+      "beta": 0.0484,
+      "dT": -0.53,
+      "dtheta_korr": 3.23
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.48,
+      "dT": -0.28,
       "dtheta_korr": 2.32
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.05,
+      "dT": -0.15,
       "dtheta_korr": 3.95
      },
      "60": {
       "beta": 0.0,
       "dT": 0.08,
-      "dtheta_korr": 0.15
+      "dtheta_korr": 1.35
      },
      "75": {
       "beta": 0.0,
@@ -2374,33 +2374,33 @@
     }
    },
    "Mélykút": {
-    "dS_mm": 23.5,
-    "dS_korr_mm": 23.4,
-    "arany_korr": 1.22,
+    "dS_mm": 22.7,
+    "dS_korr_mm": 22.5,
+    "arany_korr": 1.173,
     "szintek": {
      "10": {
       "beta": -0.0388,
-      "dT": -0.67,
-      "dtheta_korr": 0.8
+      "dT": -3.07,
+      "dtheta_korr": 0.41
      },
      "20": {
       "beta": -0.0485,
-      "dT": -0.78,
-      "dtheta_korr": 1.86
+      "dT": -0.48,
+      "dtheta_korr": 1.68
      },
      "30": {
       "beta": 0.0,
-      "dT": 0.12,
-      "dtheta_korr": 0.57
+      "dT": 0.42,
+      "dtheta_korr": 0.47
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.72,
+      "dT": 0.62,
       "dtheta_korr": 2.2
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.73,
+      "dT": 0.53,
       "dtheta_korr": 10.87
      },
      "75": {
@@ -2411,34 +2411,34 @@
     }
    },
    "Nagykőrös": {
-    "dS_mm": 12.8,
-    "dS_korr_mm": 12.8,
-    "arany_korr": 0.56,
+    "dS_mm": 11.2,
+    "dS_korr_mm": 11.1,
+    "arany_korr": 0.485,
     "szintek": {
      "10": {
-      "beta": -0.0421,
-      "dT": -0.62,
-      "dtheta_korr": 1.4
+      "beta": -0.0391,
+      "dT": -1.82,
+      "dtheta_korr": 1.06
      },
      "20": {
-      "beta": -0.0482,
-      "dT": -0.87,
-      "dtheta_korr": 1.51
+      "beta": -0.0451,
+      "dT": -0.57,
+      "dtheta_korr": 1.32
      },
      "30": {
       "beta": 0.0,
-      "dT": -0.62,
-      "dtheta_korr": 2.07
+      "dT": -0.22,
+      "dtheta_korr": 1.87
      },
      "45": {
       "beta": 0.0,
-      "dT": -0.2,
-      "dtheta_korr": 1.57
+      "dT": -0.1,
+      "dtheta_korr": 1.27
      },
      "60": {
       "beta": 0.0,
-      "dT": 0.1,
-      "dtheta_korr": 1.3
+      "dT": 0.0,
+      "dtheta_korr": 1.1
      },
      "75": {
       "beta": 0.0,
@@ -2448,34 +2448,34 @@
     }
    },
    "Pálmonostora": {
-    "dS_mm": 11.3,
-    "dS_korr_mm": 11.5,
-    "arany_korr": 0.612,
+    "dS_mm": 11.5,
+    "dS_korr_mm": 11.7,
+    "arany_korr": 0.623,
     "szintek": {
      "10": {
-      "beta": 0.0645,
-      "dT": -0.65,
-      "dtheta_korr": 0.94
+      "beta": 0.0629,
+      "dT": -0.75,
+      "dtheta_korr": 0.75
      },
      "20": {
-      "beta": 0.0797,
-      "dT": -0.82,
-      "dtheta_korr": 2.07
+      "beta": 0.0785,
+      "dT": -0.52,
+      "dtheta_korr": 1.94
      },
      "30": {
-      "beta": 0.1137,
+      "beta": 0.1064,
       "dT": -0.38,
-      "dtheta_korr": 1.84
+      "dtheta_korr": 1.74
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.0,
-      "dtheta_korr": 2.3
+      "dT": -0.2,
+      "dtheta_korr": 2.2
      },
      "60": {
       "beta": 0.0,
       "dT": 0.02,
-      "dtheta_korr": 1.48
+      "dtheta_korr": 2.08
      },
      "75": {
       "beta": 0.0,
@@ -2485,18 +2485,18 @@
     }
    },
    "Ruzsa": {
-    "dS_mm": 18.1,
-    "dS_korr_mm": 18.1,
-    "arany_korr": 0.247,
+    "dS_mm": 18.0,
+    "dS_korr_mm": 18.0,
+    "arany_korr": 0.246,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": 0.63,
-      "dtheta_korr": 1.05
+      "dT": 0.93,
+      "dtheta_korr": 0.95
      },
      "20": {
       "beta": 0.0,
-      "dT": 0.75,
+      "dT": 0.95,
       "dtheta_korr": 0.93
      },
      "30": {
@@ -2506,92 +2506,92 @@
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.7,
+      "dT": 0.6,
       "dtheta_korr": 4.4
      },
      "60": {
       "beta": 0.0,
-      "dT": -0.1,
+      "dT": -0.2,
       "dtheta_korr": 1.5
      },
      "75": {
       "beta": 0.0,
       "dT": -0.7,
-      "dtheta_korr": 0.4
+      "dtheta_korr": 0.5
      }
     }
    },
    "Tázlár": {
-    "dS_mm": 5.0,
-    "dS_korr_mm": 5.0,
-    "arany_korr": 0.228,
+    "dS_mm": 4.0,
+    "dS_korr_mm": 4.0,
+    "arany_korr": 0.183,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -1.2,
-      "dtheta_korr": 0.5
+      "dT": -1.1,
+      "dtheta_korr": 0.3
      },
      "20": {
       "beta": 0.0,
-      "dT": -1.67,
-      "dtheta_korr": 0.33
+      "dT": -0.77,
+      "dtheta_korr": 0.23
      },
      "30": {
       "beta": 0.0,
-      "dT": -1.38,
-      "dtheta_korr": 0.5
+      "dT": -0.88,
+      "dtheta_korr": 0.4
      },
      "45": {
       "beta": 0.0,
-      "dT": -0.5,
-      "dtheta_korr": 0.8
+      "dT": -0.7,
+      "dtheta_korr": 0.6
      },
      "60": {
       "beta": 0.0,
-      "dT": -0.2,
-      "dtheta_korr": 1.02
+      "dT": -0.4,
+      "dtheta_korr": 0.92
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.02,
+      "dT": -0.12,
       "dtheta_korr": 0.73
      }
     }
    },
    "Városföld": {
-    "dS_mm": 41.7,
-    "dS_korr_mm": 41.6,
-    "arany_korr": 1.289,
+    "dS_mm": 41.1,
+    "dS_korr_mm": 41.0,
+    "arany_korr": 1.269,
     "szintek": {
      "10": {
-      "beta": -0.0446,
-      "dT": -0.67,
-      "dtheta_korr": 2.35
+      "beta": -0.0415,
+      "dT": -0.87,
+      "dtheta_korr": 1.94
      },
      "20": {
       "beta": 0.0,
-      "dT": -0.57,
-      "dtheta_korr": 2.92
+      "dT": -0.27,
+      "dtheta_korr": 2.62
      },
      "30": {
       "beta": 0.0,
       "dT": -0.12,
-      "dtheta_korr": 3.15
+      "dtheta_korr": 2.95
      },
      "45": {
       "beta": 0.0,
-      "dT": 0.18,
-      "dtheta_korr": 3.05
+      "dT": 0.08,
+      "dtheta_korr": 2.85
      },
      "60": {
       "beta": 0.0,
       "dT": 0.2,
-      "dtheta_korr": 16.42
+      "dtheta_korr": 16.22
      },
      "75": {
       "beta": 0.0,
       "dT": 0.1,
-      "dtheta_korr": 2.73
+      "dtheta_korr": 4.23
      }
     }
    }
@@ -2602,27 +2602,27 @@
    "Berettyóújfalu": {
     "allapot": "javit",
     "kiadas_db": 68,
-    "par_db": 1548,
+    "par_db": 1554,
     "teszt_tol": "2026-11-08 12:00:00",
-    "rmse_ovsz_cm": 30.3,
-    "rmse_javitott_cm": 20.0,
-    "ovsz_sav_lefedettseg": 0.54,
+    "rmse_ovsz_cm": 30.4,
+    "rmse_javitott_cm": 20.9,
+    "ovsz_sav_lefedettseg": 0.53,
     "tanult_sav": {
      "0-24": [
-      -8.8,
-      8.7
+      -8.7,
+      8.6
      ],
      "24-48": [
-      -11.3,
-      18.8
+      -11.1,
+      18.7
      ],
      "48-96": [
-      -22.5,
-      29.5
+      -22.3,
+      32.0
      ],
      "96-200": [
-      -45.2,
-      22.3
+      -44.9,
+      24.0
      ]
     },
     "pontok": [
@@ -2630,203 +2630,203 @@
       "ido": "2026-11-21 12:00:00",
       "ovsz_cm": -59.0,
       "sav_ovsz": 1.3,
-      "javitott_cm": -58.5,
-      "also": -67.3,
-      "felso": -49.8
+      "javitott_cm": -53.4,
+      "also": -62.1,
+      "felso": -44.8
      },
      {
       "ido": "2026-11-21 18:00:00",
       "ovsz_cm": -57.0,
       "sav_ovsz": 2.6,
-      "javitott_cm": -56.6,
-      "also": -65.4,
-      "felso": -47.9
+      "javitott_cm": -51.5,
+      "also": -60.2,
+      "felso": -42.9
      },
      {
       "ido": "2026-11-22 00:00:00",
       "ovsz_cm": -57.0,
       "sav_ovsz": 3.8,
-      "javitott_cm": -56.5,
-      "also": -65.3,
-      "felso": -47.8
+      "javitott_cm": -51.7,
+      "also": -60.4,
+      "felso": -43.1
      },
      {
       "ido": "2026-11-22 06:00:00",
       "ovsz_cm": -56.0,
       "sav_ovsz": 5.1,
-      "javitott_cm": -55.6,
-      "also": -64.4,
-      "felso": -46.9
+      "javitott_cm": -51.5,
+      "also": -60.2,
+      "felso": -42.9
      },
      {
       "ido": "2026-11-22 12:00:00",
       "ovsz_cm": -56.0,
       "sav_ovsz": 6.7,
-      "javitott_cm": -55.6,
-      "also": -66.9,
-      "felso": -36.8
+      "javitott_cm": -52.2,
+      "also": -63.3,
+      "felso": -33.5
      },
      {
       "ido": "2026-11-22 18:00:00",
       "ovsz_cm": -55.0,
       "sav_ovsz": 8.3,
-      "javitott_cm": -54.8,
-      "also": -66.1,
-      "felso": -36.0
+      "javitott_cm": -52.1,
+      "also": -63.2,
+      "felso": -33.4
      },
      {
       "ido": "2026-11-23 00:00:00",
       "ovsz_cm": -53.0,
       "sav_ovsz": 9.9,
-      "javitott_cm": -53.1,
-      "also": -64.4,
-      "felso": -34.3
+      "javitott_cm": -51.1,
+      "also": -62.2,
+      "felso": -32.4
      },
      {
       "ido": "2026-11-23 06:00:00",
       "ovsz_cm": -52.0,
       "sav_ovsz": 11.5,
-      "javitott_cm": -52.4,
-      "also": -63.7,
-      "felso": -33.6
+      "javitott_cm": -50.8,
+      "also": -61.9,
+      "felso": -32.1
      },
      {
       "ido": "2026-11-23 12:00:00",
       "ovsz_cm": -52.0,
       "sav_ovsz": 13.0,
-      "javitott_cm": -52.5,
-      "also": -75.0,
-      "felso": -23.0
+      "javitott_cm": -51.3,
+      "also": -73.6,
+      "felso": -19.3
      },
      {
       "ido": "2026-11-23 18:00:00",
       "ovsz_cm": -51.0,
       "sav_ovsz": 14.5,
-      "javitott_cm": -51.7,
-      "also": -74.2,
-      "felso": -22.2
+      "javitott_cm": -51.6,
+      "also": -73.9,
+      "felso": -19.6
      },
      {
       "ido": "2026-11-24 00:00:00",
       "ovsz_cm": -52.0,
       "sav_ovsz": 16.0,
-      "javitott_cm": -52.7,
-      "also": -75.2,
-      "felso": -23.2
+      "javitott_cm": -53.9,
+      "also": -76.2,
+      "felso": -21.9
      },
      {
       "ido": "2026-11-24 06:00:00",
       "ovsz_cm": -52.0,
       "sav_ovsz": 17.5,
-      "javitott_cm": -52.8,
-      "also": -75.3,
-      "felso": -23.3
+      "javitott_cm": -56.4,
+      "also": -78.7,
+      "felso": -24.4
      },
      {
       "ido": "2026-11-24 12:00:00",
       "ovsz_cm": -52.0,
       "sav_ovsz": 18.6,
-      "javitott_cm": -53.0,
-      "also": -75.5,
-      "felso": -23.5
+      "javitott_cm": -59.3,
+      "also": -81.6,
+      "felso": -27.3
      },
      {
       "ido": "2026-11-24 18:00:00",
       "ovsz_cm": -53.0,
       "sav_ovsz": 19.8,
-      "javitott_cm": -54.1,
-      "also": -76.6,
-      "felso": -24.6
+      "javitott_cm": -62.7,
+      "also": -85.0,
+      "felso": -30.7
      },
      {
       "ido": "2026-11-25 00:00:00",
       "ovsz_cm": -52.0,
       "sav_ovsz": 20.9,
-      "javitott_cm": -53.9,
-      "also": -76.4,
-      "felso": -24.4
+      "javitott_cm": -63.5,
+      "also": -85.8,
+      "felso": -31.5
      },
      {
       "ido": "2026-11-25 06:00:00",
       "ovsz_cm": -50.0,
       "sav_ovsz": 22.1,
-      "javitott_cm": -53.5,
-      "also": -76.0,
-      "felso": -24.0
+      "javitott_cm": -60.5,
+      "also": -82.8,
+      "felso": -28.5
      },
      {
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": -46.0,
       "sav_ovsz": 22.8,
       "javitott_cm": -53.4,
-      "also": -98.6,
-      "felso": -31.1
+      "also": -98.3,
+      "felso": -29.4
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": -42.0,
       "sav_ovsz": 23.6,
-      "javitott_cm": -56.4,
-      "also": -101.6,
-      "felso": -34.1
+      "javitott_cm": -46.7,
+      "also": -91.6,
+      "felso": -22.7
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": -37.0,
       "sav_ovsz": 24.3,
-      "javitott_cm": -62.0,
-      "also": -107.2,
-      "felso": -39.7
+      "javitott_cm": -40.8,
+      "also": -85.7,
+      "felso": -16.8
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": -33.0,
       "sav_ovsz": 25.0,
-      "javitott_cm": -68.3,
-      "also": -113.5,
-      "felso": -46.0
+      "javitott_cm": -36.8,
+      "also": -81.7,
+      "felso": -12.8
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": -30.0,
       "sav_ovsz": 25.9,
-      "javitott_cm": -77.2,
-      "also": -122.4,
-      "felso": -54.9
+      "javitott_cm": -34.2,
+      "also": -79.1,
+      "felso": -10.2
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": -28.0,
       "sav_ovsz": 26.9,
-      "javitott_cm": -86.8,
-      "also": -132.0,
-      "felso": -64.5
+      "javitott_cm": -31.1,
+      "also": -76.0,
+      "felso": -7.1
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": -27.0,
       "sav_ovsz": 27.8,
-      "javitott_cm": -91.0,
-      "also": -136.2,
-      "felso": -68.7
+      "javitott_cm": -26.0,
+      "also": -70.9,
+      "felso": -2.0
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": -29.0,
       "sav_ovsz": 28.8,
-      "javitott_cm": -92.0,
-      "also": -137.2,
-      "felso": -69.7
+      "javitott_cm": -26.5,
+      "also": -71.4,
+      "felso": -2.5
      }
     ]
    },
    "Budapest": {
     "allapot": "javit",
     "kiadas_db": 68,
-    "par_db": 1476,
+    "par_db": 1482,
     "teszt_tol": "2026-11-08 12:00:00",
-    "rmse_ovsz_cm": 19.5,
-    "rmse_javitott_cm": 17.4,
+    "rmse_ovsz_cm": 19.7,
+    "rmse_javitott_cm": 17.6,
     "ovsz_sav_lefedettseg": 0.49,
     "tanult_sav": {
      "0-24": [
@@ -2835,15 +2835,15 @@
      ],
      "24-48": [
       -8.8,
-      11.5
+      11.2
      ],
      "48-96": [
-      -25.4,
-      15.2
+      -24.7,
+      14.9
      ],
      "96-200": [
-      -40.1,
-      29.7
+      -43.5,
+      29.5
      ]
     },
     "pontok": [
@@ -2851,220 +2851,220 @@
       "ido": "2026-11-21 12:00:00",
       "ovsz_cm": 85.0,
       "sav_ovsz": 0.6,
-      "javitott_cm": 82.8,
-      "also": 76.6,
-      "felso": 86.3
+      "javitott_cm": 84.4,
+      "also": 78.2,
+      "felso": 87.9
      },
      {
       "ido": "2026-11-21 18:00:00",
       "ovsz_cm": 86.0,
       "sav_ovsz": 1.1,
-      "javitott_cm": 83.7,
-      "also": 77.5,
-      "felso": 87.2
+      "javitott_cm": 85.9,
+      "also": 79.7,
+      "felso": 89.4
      },
      {
       "ido": "2026-11-22 00:00:00",
       "ovsz_cm": 86.0,
       "sav_ovsz": 1.7,
-      "javitott_cm": 84.6,
-      "also": 78.4,
-      "felso": 88.1
+      "javitott_cm": 86.3,
+      "also": 80.1,
+      "felso": 89.8
      },
      {
       "ido": "2026-11-22 06:00:00",
       "ovsz_cm": 85.0,
       "sav_ovsz": 2.3,
-      "javitott_cm": 85.1,
-      "also": 78.9,
-      "felso": 88.6
+      "javitott_cm": 86.0,
+      "also": 79.8,
+      "felso": 89.5
      },
      {
       "ido": "2026-11-22 12:00:00",
       "ovsz_cm": 86.0,
       "sav_ovsz": 3.5,
-      "javitott_cm": 87.7,
-      "also": 78.9,
-      "felso": 99.2
+      "javitott_cm": 86.6,
+      "also": 77.8,
+      "felso": 97.8
      },
      {
       "ido": "2026-11-22 18:00:00",
       "ovsz_cm": 87.0,
       "sav_ovsz": 4.8,
-      "javitott_cm": 88.8,
-      "also": 80.0,
-      "felso": 100.3
+      "javitott_cm": 87.8,
+      "also": 79.0,
+      "felso": 99.0
      },
      {
       "ido": "2026-11-23 00:00:00",
       "ovsz_cm": 88.0,
       "sav_ovsz": 6.0,
-      "javitott_cm": 88.2,
-      "also": 79.4,
-      "felso": 99.7
+      "javitott_cm": 89.7,
+      "also": 80.9,
+      "felso": 100.9
      },
      {
       "ido": "2026-11-23 06:00:00",
       "ovsz_cm": 89.0,
       "sav_ovsz": 7.2,
-      "javitott_cm": 88.4,
-      "also": 79.6,
-      "felso": 99.9
+      "javitott_cm": 92.0,
+      "also": 83.2,
+      "felso": 103.2
      },
      {
       "ido": "2026-11-23 12:00:00",
       "ovsz_cm": 91.0,
       "sav_ovsz": 8.6,
-      "javitott_cm": 93.1,
-      "also": 67.7,
-      "felso": 108.3
+      "javitott_cm": 95.3,
+      "also": 70.6,
+      "felso": 110.2
      },
      {
       "ido": "2026-11-23 18:00:00",
       "ovsz_cm": 93.0,
       "sav_ovsz": 10.0,
-      "javitott_cm": 99.5,
-      "also": 74.1,
-      "felso": 114.7
+      "javitott_cm": 98.5,
+      "also": 73.8,
+      "felso": 113.4
      },
      {
       "ido": "2026-11-24 00:00:00",
       "ovsz_cm": 94.0,
       "sav_ovsz": 11.4,
-      "javitott_cm": 103.1,
-      "also": 77.7,
-      "felso": 118.3
+      "javitott_cm": 100.2,
+      "also": 75.5,
+      "felso": 115.1
      },
      {
       "ido": "2026-11-24 06:00:00",
       "ovsz_cm": 95.0,
       "sav_ovsz": 12.7,
-      "javitott_cm": 105.5,
-      "also": 80.1,
-      "felso": 120.7
+      "javitott_cm": 101.3,
+      "also": 76.6,
+      "felso": 116.2
      },
      {
       "ido": "2026-11-24 12:00:00",
       "ovsz_cm": 96.0,
       "sav_ovsz": 13.9,
-      "javitott_cm": 107.5,
-      "also": 82.1,
-      "felso": 122.7
+      "javitott_cm": 101.8,
+      "also": 77.1,
+      "felso": 116.7
      },
      {
       "ido": "2026-11-24 18:00:00",
       "ovsz_cm": 97.0,
       "sav_ovsz": 15.0,
-      "javitott_cm": 109.1,
-      "also": 83.7,
-      "felso": 124.3
+      "javitott_cm": 101.8,
+      "also": 77.1,
+      "felso": 116.7
      },
      {
       "ido": "2026-11-25 00:00:00",
       "ovsz_cm": 97.0,
       "sav_ovsz": 16.1,
-      "javitott_cm": 109.0,
-      "also": 83.6,
-      "felso": 124.2
+      "javitott_cm": 100.6,
+      "also": 75.9,
+      "felso": 115.5
      },
      {
       "ido": "2026-11-25 06:00:00",
       "ovsz_cm": 96.0,
       "sav_ovsz": 17.3,
-      "javitott_cm": 107.3,
-      "also": 81.9,
-      "felso": 122.5
+      "javitott_cm": 98.7,
+      "also": 74.0,
+      "felso": 113.6
      },
      {
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": 97.0,
       "sav_ovsz": 18.4,
-      "javitott_cm": 108.6,
-      "also": 68.5,
-      "felso": 138.3
+      "javitott_cm": 97.1,
+      "also": 53.6,
+      "felso": 126.6
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": 96.0,
       "sav_ovsz": 19.5,
-      "javitott_cm": 106.9,
-      "also": 66.8,
-      "felso": 136.6
+      "javitott_cm": 95.0,
+      "also": 51.5,
+      "felso": 124.5
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": 96.0,
       "sav_ovsz": 20.6,
-      "javitott_cm": 106.1,
-      "also": 66.0,
-      "felso": 135.8
+      "javitott_cm": 93.1,
+      "also": 49.6,
+      "felso": 122.6
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": 95.0,
       "sav_ovsz": 21.8,
-      "javitott_cm": 103.7,
-      "also": 63.6,
-      "felso": 133.4
+      "javitott_cm": 91.9,
+      "also": 48.4,
+      "felso": 121.4
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": 95.0,
       "sav_ovsz": 22.7,
-      "javitott_cm": 100.1,
-      "also": 60.0,
-      "felso": 129.8
+      "javitott_cm": 91.5,
+      "also": 48.0,
+      "felso": 121.0
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": 94.0,
       "sav_ovsz": 23.7,
-      "javitott_cm": 96.7,
-      "also": 56.6,
-      "felso": 126.4
+      "javitott_cm": 90.5,
+      "also": 47.0,
+      "felso": 120.0
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": 93.0,
       "sav_ovsz": 24.6,
-      "javitott_cm": 95.2,
-      "also": 55.1,
-      "felso": 124.9
+      "javitott_cm": 89.6,
+      "also": 46.1,
+      "felso": 119.1
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": 91.0,
       "sav_ovsz": 25.5,
-      "javitott_cm": 97.2,
-      "also": 57.1,
-      "felso": 126.9
+      "javitott_cm": 89.8,
+      "also": 46.3,
+      "felso": 119.3
      }
     ]
    },
    "Hidasnémeti": {
     "allapot": "javit",
     "kiadas_db": 68,
-    "par_db": 1549,
+    "par_db": 1555,
     "teszt_tol": "2026-11-08 12:00:00",
-    "rmse_ovsz_cm": 22.5,
-    "rmse_javitott_cm": 14.3,
-    "ovsz_sav_lefedettseg": 0.74,
+    "rmse_ovsz_cm": 22.3,
+    "rmse_javitott_cm": 14.1,
+    "ovsz_sav_lefedettseg": 0.75,
     "tanult_sav": {
      "0-24": [
       -4.0,
       6.7
      ],
      "24-48": [
-      -5.5,
-      10.7
+      -5.4,
+      10.6
      ],
      "48-96": [
-      -12.9,
-      11.8
+      -12.5,
+      11.6
      ],
      "96-200": [
-      -25.6,
-      14.0
+      -25.3,
+      13.9
      ]
     },
     "pontok": [
@@ -3072,40 +3072,40 @@
       "ido": "2026-11-21 12:00:00",
       "ovsz_cm": -105.0,
       "sav_ovsz": 2.2,
-      "javitott_cm": -104.8,
-      "also": -108.8,
-      "felso": -98.1
+      "javitott_cm": -104.3,
+      "also": -108.3,
+      "felso": -97.6
      },
      {
       "ido": "2026-11-21 18:00:00",
       "ovsz_cm": -104.0,
       "sav_ovsz": 4.5,
-      "javitott_cm": -104.2,
-      "also": -108.2,
-      "felso": -97.5
+      "javitott_cm": -103.4,
+      "also": -107.4,
+      "felso": -96.7
      },
      {
       "ido": "2026-11-22 00:00:00",
       "ovsz_cm": -104.0,
       "sav_ovsz": 6.7,
-      "javitott_cm": -104.4,
-      "also": -108.4,
-      "felso": -97.7
+      "javitott_cm": -104.0,
+      "also": -108.0,
+      "felso": -97.3
      },
      {
       "ido": "2026-11-22 06:00:00",
       "ovsz_cm": -105.0,
       "sav_ovsz": 9.0,
-      "javitott_cm": -105.3,
-      "also": -109.3,
-      "felso": -98.6
+      "javitott_cm": -105.0,
+      "also": -109.0,
+      "felso": -98.3
      },
      {
       "ido": "2026-11-22 12:00:00",
       "ovsz_cm": -105.0,
       "sav_ovsz": 10.3,
-      "javitott_cm": -106.0,
-      "also": -111.5,
+      "javitott_cm": -105.9,
+      "also": -111.3,
       "felso": -95.3
      },
      {
@@ -3113,174 +3113,174 @@
       "ovsz_cm": -105.0,
       "sav_ovsz": 11.7,
       "javitott_cm": -106.7,
-      "also": -112.2,
-      "felso": -96.0
+      "also": -112.1,
+      "felso": -96.1
      },
      {
       "ido": "2026-11-23 00:00:00",
       "ovsz_cm": -106.0,
       "sav_ovsz": 13.0,
-      "javitott_cm": -107.6,
-      "also": -113.1,
-      "felso": -96.9
+      "javitott_cm": -107.9,
+      "also": -113.3,
+      "felso": -97.3
      },
      {
       "ido": "2026-11-23 06:00:00",
       "ovsz_cm": -106.0,
       "sav_ovsz": 14.4,
-      "javitott_cm": -108.9,
-      "also": -114.4,
-      "felso": -98.2
+      "javitott_cm": -110.1,
+      "also": -115.5,
+      "felso": -99.5
      },
      {
       "ido": "2026-11-23 12:00:00",
       "ovsz_cm": -106.0,
       "sav_ovsz": 15.1,
-      "javitott_cm": -110.0,
-      "also": -122.9,
-      "felso": -98.2
+      "javitott_cm": -111.2,
+      "also": -123.7,
+      "felso": -99.6
      },
      {
       "ido": "2026-11-23 18:00:00",
       "ovsz_cm": -107.0,
       "sav_ovsz": 15.8,
-      "javitott_cm": -110.1,
-      "also": -123.0,
-      "felso": -98.3
+      "javitott_cm": -110.0,
+      "also": -122.5,
+      "felso": -98.4
      },
      {
       "ido": "2026-11-24 00:00:00",
       "ovsz_cm": -107.0,
       "sav_ovsz": 16.5,
-      "javitott_cm": -109.2,
-      "also": -122.1,
-      "felso": -97.4
+      "javitott_cm": -108.0,
+      "also": -120.5,
+      "felso": -96.4
      },
      {
       "ido": "2026-11-24 06:00:00",
       "ovsz_cm": -108.0,
       "sav_ovsz": 17.2,
-      "javitott_cm": -108.5,
-      "also": -121.4,
-      "felso": -96.7
+      "javitott_cm": -106.3,
+      "also": -118.8,
+      "felso": -94.7
      },
      {
       "ido": "2026-11-24 12:00:00",
       "ovsz_cm": -108.0,
       "sav_ovsz": 17.6,
-      "javitott_cm": -107.8,
-      "also": -120.7,
-      "felso": -96.0
+      "javitott_cm": -105.5,
+      "also": -118.0,
+      "felso": -93.9
      },
      {
       "ido": "2026-11-24 18:00:00",
       "ovsz_cm": -108.0,
       "sav_ovsz": 18.0,
-      "javitott_cm": -107.3,
-      "also": -120.2,
-      "felso": -95.5
+      "javitott_cm": -105.3,
+      "also": -117.8,
+      "felso": -93.7
      },
      {
       "ido": "2026-11-25 00:00:00",
       "ovsz_cm": -109.0,
       "sav_ovsz": 18.4,
-      "javitott_cm": -107.6,
-      "also": -120.5,
-      "felso": -95.8
+      "javitott_cm": -105.5,
+      "also": -118.0,
+      "felso": -93.9
      },
      {
       "ido": "2026-11-25 06:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 18.8,
-      "javitott_cm": -107.8,
-      "also": -120.7,
-      "felso": -96.0
+      "javitott_cm": -105.6,
+      "also": -118.1,
+      "felso": -94.0
      },
      {
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 19.0,
-      "javitott_cm": -107.7,
-      "also": -133.3,
-      "felso": -93.7
+      "javitott_cm": -105.9,
+      "also": -131.2,
+      "felso": -92.0
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 19.3,
-      "javitott_cm": -107.2,
-      "also": -132.8,
-      "felso": -93.2
+      "javitott_cm": -105.1,
+      "also": -130.4,
+      "felso": -91.2
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 19.5,
-      "javitott_cm": -106.9,
-      "also": -132.5,
-      "felso": -92.9
+      "javitott_cm": -105.9,
+      "also": -131.2,
+      "felso": -92.0
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 19.7,
-      "javitott_cm": -106.3,
-      "also": -131.9,
-      "felso": -92.3
+      "javitott_cm": -105.9,
+      "also": -131.2,
+      "felso": -92.0
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 20.5,
-      "javitott_cm": -105.5,
-      "also": -131.1,
-      "felso": -91.5
+      "javitott_cm": -105.7,
+      "also": -131.0,
+      "felso": -91.8
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 21.2,
-      "javitott_cm": -104.6,
-      "also": -130.2,
-      "felso": -90.6
+      "javitott_cm": -105.4,
+      "also": -130.7,
+      "felso": -91.5
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 22.0,
-      "javitott_cm": -103.7,
-      "also": -129.3,
-      "felso": -89.7
+      "javitott_cm": -104.6,
+      "also": -129.9,
+      "felso": -90.7
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": -110.0,
       "sav_ovsz": 22.7,
-      "javitott_cm": -103.0,
-      "also": -128.6,
-      "felso": -89.0
+      "javitott_cm": -103.6,
+      "also": -128.9,
+      "felso": -89.7
      }
     ]
    },
    "Mohács": {
     "allapot": "ovsz_jobb",
     "kiadas_db": 68,
-    "par_db": 1536,
+    "par_db": 1542,
     "teszt_tol": "2026-11-08 12:00:00",
-    "rmse_ovsz_cm": 11.6,
-    "rmse_javitott_cm": 12.8,
-    "ovsz_sav_lefedettseg": 0.57,
+    "rmse_ovsz_cm": 11.5,
+    "rmse_javitott_cm": 12.7,
+    "ovsz_sav_lefedettseg": 0.58,
     "tanult_sav": {
      "0-24": [
       -1.0,
       2.0
      ],
      "24-48": [
-      -4.2,
+      -4.1,
       5.0
      ],
      "48-96": [
-      -14.0,
+      -13.6,
       12.0
      ],
      "96-200": [
@@ -3326,7 +3326,7 @@
       "ovsz_cm": 76.0,
       "sav_ovsz": 2.8,
       "javitott_cm": 76.0,
-      "also": 71.8,
+      "also": 71.9,
       "felso": 81.0
      },
      {
@@ -3334,7 +3334,7 @@
       "ovsz_cm": 78.0,
       "sav_ovsz": 3.5,
       "javitott_cm": 78.0,
-      "also": 73.8,
+      "also": 73.9,
       "felso": 83.0
      },
      {
@@ -3342,7 +3342,7 @@
       "ovsz_cm": 80.0,
       "sav_ovsz": 4.2,
       "javitott_cm": 80.0,
-      "also": 75.8,
+      "also": 75.9,
       "felso": 85.0
      },
      {
@@ -3350,7 +3350,7 @@
       "ovsz_cm": 81.0,
       "sav_ovsz": 4.9,
       "javitott_cm": 81.0,
-      "also": 76.8,
+      "also": 76.9,
       "felso": 86.0
      },
      {
@@ -3358,7 +3358,7 @@
       "ovsz_cm": 82.0,
       "sav_ovsz": 5.5,
       "javitott_cm": 82.0,
-      "also": 68.0,
+      "also": 68.4,
       "felso": 94.0
      },
      {
@@ -3366,7 +3366,7 @@
       "ovsz_cm": 83.0,
       "sav_ovsz": 6.2,
       "javitott_cm": 83.0,
-      "also": 69.0,
+      "also": 69.4,
       "felso": 95.0
      },
      {
@@ -3374,7 +3374,7 @@
       "ovsz_cm": 83.0,
       "sav_ovsz": 6.9,
       "javitott_cm": 83.0,
-      "also": 69.0,
+      "also": 69.4,
       "felso": 95.0
      },
      {
@@ -3382,7 +3382,7 @@
       "ovsz_cm": 84.0,
       "sav_ovsz": 7.6,
       "javitott_cm": 84.0,
-      "also": 70.0,
+      "also": 70.4,
       "felso": 96.0
      },
      {
@@ -3390,7 +3390,7 @@
       "ovsz_cm": 84.0,
       "sav_ovsz": 8.7,
       "javitott_cm": 84.0,
-      "also": 70.0,
+      "also": 70.4,
       "felso": 96.0
      },
      {
@@ -3398,7 +3398,7 @@
       "ovsz_cm": 85.0,
       "sav_ovsz": 9.7,
       "javitott_cm": 85.0,
-      "also": 71.0,
+      "also": 71.4,
       "felso": 97.0
      },
      {
@@ -3406,7 +3406,7 @@
       "ovsz_cm": 86.0,
       "sav_ovsz": 10.8,
       "javitott_cm": 86.0,
-      "also": 72.0,
+      "also": 72.4,
       "felso": 98.0
      },
      {
@@ -3414,7 +3414,7 @@
       "ovsz_cm": 87.0,
       "sav_ovsz": 11.8,
       "javitott_cm": 87.0,
-      "also": 73.0,
+      "also": 73.4,
       "felso": 99.0
      },
      {
@@ -3490,27 +3490,27 @@
    "Szolnok": {
     "allapot": "ovsz_jobb",
     "kiadas_db": 68,
-    "par_db": 1539,
+    "par_db": 1545,
     "teszt_tol": "2026-11-08 12:00:00",
-    "rmse_ovsz_cm": 58.0,
-    "rmse_javitott_cm": 56.6,
-    "ovsz_sav_lefedettseg": 0.54,
+    "rmse_ovsz_cm": 60.8,
+    "rmse_javitott_cm": 59.5,
+    "ovsz_sav_lefedettseg": 0.53,
     "tanult_sav": {
      "0-24": [
       -11.0,
-      12.7
+      12.4
      ],
      "24-48": [
-      -52.2,
-      51.9
+      -49.8,
+      56.8
      ],
      "48-96": [
       -93.0,
-      51.4
+      57.5
      ],
      "96-200": [
-      -122.0,
-      63.1
+      -118.0,
+      76.0
      ]
     },
     "pontok": [
@@ -3520,7 +3520,7 @@
       "sav_ovsz": 2.4,
       "javitott_cm": 142.0,
       "also": 131.0,
-      "felso": 154.7
+      "felso": 154.4
      },
      {
       "ido": "2026-11-21 18:00:00",
@@ -3528,7 +3528,7 @@
       "sav_ovsz": 4.7,
       "javitott_cm": 173.0,
       "also": 162.0,
-      "felso": 185.7
+      "felso": 185.4
      },
      {
       "ido": "2026-11-22 00:00:00",
@@ -3536,7 +3536,7 @@
       "sav_ovsz": 7.1,
       "javitott_cm": 200.0,
       "also": 189.0,
-      "felso": 212.7
+      "felso": 212.4
      },
      {
       "ido": "2026-11-22 06:00:00",
@@ -3544,39 +3544,39 @@
       "sav_ovsz": 9.4,
       "javitott_cm": 223.0,
       "also": 212.0,
-      "felso": 235.7
+      "felso": 235.4
      },
      {
       "ido": "2026-11-22 12:00:00",
       "ovsz_cm": 243.0,
       "sav_ovsz": 11.3,
       "javitott_cm": 243.0,
-      "also": 190.8,
-      "felso": 294.9
+      "also": 193.2,
+      "felso": 299.8
      },
      {
       "ido": "2026-11-22 18:00:00",
       "ovsz_cm": 262.0,
       "sav_ovsz": 13.2,
       "javitott_cm": 262.0,
-      "also": 209.8,
-      "felso": 313.9
+      "also": 212.2,
+      "felso": 318.8
      },
      {
       "ido": "2026-11-23 00:00:00",
       "ovsz_cm": 280.0,
       "sav_ovsz": 15.1,
       "javitott_cm": 280.0,
-      "also": 227.8,
-      "felso": 331.9
+      "also": 230.2,
+      "felso": 336.8
      },
      {
       "ido": "2026-11-23 06:00:00",
       "ovsz_cm": 297.0,
       "sav_ovsz": 17.1,
       "javitott_cm": 297.0,
-      "also": 244.8,
-      "felso": 348.9
+      "also": 247.2,
+      "felso": 353.8
      },
      {
       "ido": "2026-11-23 12:00:00",
@@ -3584,7 +3584,7 @@
       "sav_ovsz": 18.5,
       "javitott_cm": 311.0,
       "also": 218.0,
-      "felso": 362.4
+      "felso": 368.5
      },
      {
       "ido": "2026-11-23 18:00:00",
@@ -3592,7 +3592,7 @@
       "sav_ovsz": 20.0,
       "javitott_cm": 328.0,
       "also": 235.0,
-      "felso": 379.4
+      "felso": 385.5
      },
      {
       "ido": "2026-11-24 00:00:00",
@@ -3600,7 +3600,7 @@
       "sav_ovsz": 21.5,
       "javitott_cm": 342.0,
       "also": 249.0,
-      "felso": 393.4
+      "felso": 399.5
      },
      {
       "ido": "2026-11-24 06:00:00",
@@ -3608,7 +3608,7 @@
       "sav_ovsz": 23.0,
       "javitott_cm": 353.0,
       "also": 260.0,
-      "felso": 404.4
+      "felso": 410.5
      },
      {
       "ido": "2026-11-24 12:00:00",
@@ -3616,7 +3616,7 @@
       "sav_ovsz": 23.9,
       "javitott_cm": 361.0,
       "also": 268.0,
-      "felso": 412.4
+      "felso": 418.5
      },
      {
       "ido": "2026-11-24 18:00:00",
@@ -3624,7 +3624,7 @@
       "sav_ovsz": 24.9,
       "javitott_cm": 366.0,
       "also": 273.0,
-      "felso": 417.4
+      "felso": 423.5
      },
      {
       "ido": "2026-11-25 00:00:00",
@@ -3632,7 +3632,7 @@
       "sav_ovsz": 25.8,
       "javitott_cm": 367.0,
       "also": 274.0,
-      "felso": 418.4
+      "felso": 424.5
      },
      {
       "ido": "2026-11-25 06:00:00",
@@ -3640,81 +3640,81 @@
       "sav_ovsz": 26.8,
       "javitott_cm": 364.0,
       "also": 271.0,
-      "felso": 415.4
+      "felso": 421.5
      },
      {
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": 357.0,
       "sav_ovsz": 28.0,
       "javitott_cm": 357.0,
-      "also": 235.0,
-      "felso": 420.1
+      "also": 239.0,
+      "felso": 433.0
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": 349.0,
       "sav_ovsz": 29.3,
       "javitott_cm": 349.0,
-      "also": 227.0,
-      "felso": 412.1
+      "also": 231.0,
+      "felso": 425.0
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": 336.0,
       "sav_ovsz": 30.5,
       "javitott_cm": 336.0,
-      "also": 214.0,
-      "felso": 399.1
+      "also": 218.0,
+      "felso": 412.0
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": 321.0,
       "sav_ovsz": 31.7,
       "javitott_cm": 321.0,
-      "also": 199.0,
-      "felso": 384.1
+      "also": 203.0,
+      "felso": 397.0
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": 303.0,
       "sav_ovsz": 33.4,
       "javitott_cm": 303.0,
-      "also": 181.0,
-      "felso": 366.1
+      "also": 185.0,
+      "felso": 379.0
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": 282.0,
       "sav_ovsz": 35.1,
       "javitott_cm": 282.0,
-      "also": 160.0,
-      "felso": 345.1
+      "also": 164.0,
+      "felso": 358.0
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": 263.0,
       "sav_ovsz": 36.9,
       "javitott_cm": 263.0,
-      "also": 141.0,
-      "felso": 326.1
+      "also": 145.0,
+      "felso": 339.0
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": 244.0,
       "sav_ovsz": 38.6,
       "javitott_cm": 244.0,
-      "also": 122.0,
-      "felso": 307.1
+      "also": 126.0,
+      "felso": 320.0
      }
     ]
    },
    "Ágerdőmajor": {
     "allapot": "javit",
     "kiadas_db": 68,
-    "par_db": 1554,
+    "par_db": 1560,
     "teszt_tol": "2026-11-08 12:00:00",
-    "rmse_ovsz_cm": 42.1,
-    "rmse_javitott_cm": 33.8,
+    "rmse_ovsz_cm": 41.7,
+    "rmse_javitott_cm": 33.5,
     "ovsz_sav_lefedettseg": 0.61,
     "tanult_sav": {
      "0-24": [
@@ -3722,16 +3722,16 @@
       4.9
      ],
      "24-48": [
-      -16.9,
-      6.6
+      -16.5,
+      7.3
      ],
      "48-96": [
-      -61.0,
-      9.5
+      -60.9,
+      9.4
      ],
      "96-200": [
-      -83.6,
-      14.9
+      -81.6,
+      14.7
      ]
     },
     "pontok": [
@@ -3739,200 +3739,200 @@
       "ido": "2026-11-21 12:00:00",
       "ovsz_cm": 153.0,
       "sav_ovsz": 1.3,
-      "javitott_cm": 150.4,
-      "also": 142.9,
-      "felso": 155.3
+      "javitott_cm": 151.4,
+      "also": 143.9,
+      "felso": 156.3
      },
      {
       "ido": "2026-11-21 18:00:00",
       "ovsz_cm": 158.0,
       "sav_ovsz": 2.6,
-      "javitott_cm": 151.8,
-      "also": 144.3,
-      "felso": 156.7
+      "javitott_cm": 152.6,
+      "also": 145.1,
+      "felso": 157.5
      },
      {
       "ido": "2026-11-22 00:00:00",
       "ovsz_cm": 162.0,
       "sav_ovsz": 3.9,
-      "javitott_cm": 155.5,
-      "also": 148.0,
-      "felso": 160.4
+      "javitott_cm": 156.9,
+      "also": 149.4,
+      "felso": 161.8
      },
      {
       "ido": "2026-11-22 06:00:00",
       "ovsz_cm": 164.0,
       "sav_ovsz": 5.2,
-      "javitott_cm": 158.1,
-      "also": 150.6,
-      "felso": 163.0
+      "javitott_cm": 159.8,
+      "also": 152.3,
+      "felso": 164.7
      },
      {
       "ido": "2026-11-22 12:00:00",
       "ovsz_cm": 164.0,
       "sav_ovsz": 7.1,
-      "javitott_cm": 158.5,
-      "also": 141.6,
-      "felso": 165.1
+      "javitott_cm": 160.1,
+      "also": 143.6,
+      "felso": 167.4
      },
      {
       "ido": "2026-11-22 18:00:00",
       "ovsz_cm": 164.0,
       "sav_ovsz": 9.0,
-      "javitott_cm": 158.5,
-      "also": 141.6,
-      "felso": 165.1
+      "javitott_cm": 160.3,
+      "also": 143.8,
+      "felso": 167.6
      },
      {
       "ido": "2026-11-23 00:00:00",
       "ovsz_cm": 162.0,
       "sav_ovsz": 10.9,
-      "javitott_cm": 156.8,
-      "also": 139.9,
-      "felso": 163.4
+      "javitott_cm": 158.3,
+      "also": 141.8,
+      "felso": 165.6
      },
      {
       "ido": "2026-11-23 06:00:00",
       "ovsz_cm": 158.0,
       "sav_ovsz": 12.7,
-      "javitott_cm": 154.5,
-      "also": 137.6,
-      "felso": 161.1
+      "javitott_cm": 155.5,
+      "also": 139.0,
+      "felso": 162.8
      },
      {
       "ido": "2026-11-23 12:00:00",
       "ovsz_cm": 154.0,
       "sav_ovsz": 15.2,
-      "javitott_cm": 152.9,
-      "also": 91.9,
-      "felso": 162.4
+      "javitott_cm": 153.5,
+      "also": 92.6,
+      "felso": 162.9
      },
      {
       "ido": "2026-11-23 18:00:00",
       "ovsz_cm": 152.0,
       "sav_ovsz": 17.7,
-      "javitott_cm": 151.7,
-      "also": 90.7,
-      "felso": 161.2
+      "javitott_cm": 151.9,
+      "also": 91.0,
+      "felso": 161.3
      },
      {
       "ido": "2026-11-24 00:00:00",
       "ovsz_cm": 151.0,
       "sav_ovsz": 20.2,
-      "javitott_cm": 150.7,
-      "also": 89.7,
-      "felso": 160.2
+      "javitott_cm": 150.4,
+      "also": 89.5,
+      "felso": 159.8
      },
      {
       "ido": "2026-11-24 06:00:00",
       "ovsz_cm": 153.0,
       "sav_ovsz": 22.6,
-      "javitott_cm": 149.7,
-      "also": 88.7,
-      "felso": 159.2
+      "javitott_cm": 148.8,
+      "also": 87.9,
+      "felso": 158.2
      },
      {
       "ido": "2026-11-24 12:00:00",
       "ovsz_cm": 159.0,
       "sav_ovsz": 24.3,
-      "javitott_cm": 150.5,
-      "also": 89.5,
-      "felso": 160.0
+      "javitott_cm": 150.8,
+      "also": 89.9,
+      "felso": 160.2
      },
      {
       "ido": "2026-11-24 18:00:00",
       "ovsz_cm": 166.0,
       "sav_ovsz": 26.0,
-      "javitott_cm": 158.1,
-      "also": 97.1,
-      "felso": 167.6
+      "javitott_cm": 160.3,
+      "also": 99.4,
+      "felso": 169.7
      },
      {
       "ido": "2026-11-25 00:00:00",
       "ovsz_cm": 173.0,
       "sav_ovsz": 27.7,
-      "javitott_cm": 165.8,
-      "also": 104.8,
-      "felso": 175.3
+      "javitott_cm": 167.6,
+      "also": 106.7,
+      "felso": 177.0
      },
      {
       "ido": "2026-11-25 06:00:00",
       "ovsz_cm": 178.0,
       "sav_ovsz": 29.3,
-      "javitott_cm": 169.0,
-      "also": 108.0,
-      "felso": 178.5
+      "javitott_cm": 168.6,
+      "also": 107.7,
+      "felso": 178.0
      },
      {
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": 180.0,
       "sav_ovsz": 30.2,
-      "javitott_cm": 172.0,
-      "also": 88.4,
-      "felso": 186.9
+      "javitott_cm": 167.8,
+      "also": 86.2,
+      "felso": 182.5
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": 181.0,
       "sav_ovsz": 31.1,
-      "javitott_cm": 174.5,
-      "also": 90.9,
-      "felso": 189.4
+      "javitott_cm": 167.2,
+      "also": 85.6,
+      "felso": 181.9
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": 179.0,
       "sav_ovsz": 32.0,
-      "javitott_cm": 173.7,
-      "also": 90.1,
-      "felso": 188.6
+      "javitott_cm": 168.4,
+      "also": 86.8,
+      "felso": 183.1
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": 175.0,
       "sav_ovsz": 33.0,
-      "javitott_cm": 171.4,
-      "also": 87.8,
-      "felso": 186.3
+      "javitott_cm": 168.8,
+      "also": 87.2,
+      "felso": 183.5
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": 169.0,
       "sav_ovsz": 33.7,
-      "javitott_cm": 166.6,
-      "also": 83.0,
-      "felso": 181.5
+      "javitott_cm": 165.6,
+      "also": 84.0,
+      "felso": 180.3
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": 162.0,
       "sav_ovsz": 34.5,
-      "javitott_cm": 161.2,
-      "also": 77.6,
-      "felso": 176.1
+      "javitott_cm": 160.1,
+      "also": 78.5,
+      "felso": 174.8
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": 154.0,
       "sav_ovsz": 35.3,
-      "javitott_cm": 158.2,
-      "also": 74.6,
-      "felso": 173.1
+      "javitott_cm": 157.7,
+      "also": 76.1,
+      "felso": 172.4
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": 148.0,
       "sav_ovsz": 36.1,
-      "javitott_cm": 152.6,
-      "also": 69.0,
-      "felso": 167.5
+      "javitott_cm": 154.5,
+      "also": 72.9,
+      "felso": 169.2
      }
     ]
    }
   },
   "kiadas_db": 68,
   "merokiadas_db": 476,
-  "par_db": 9532
+  "par_db": 9568
  },
- "futasido_s": 51
+ "futasido_s": 52
 }
