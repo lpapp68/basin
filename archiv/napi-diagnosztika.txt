@@ -1,6 +1,6 @@
 kert_nap=2026-11-21
 feldolgozott_nap=2026-11-20
-ido=2026-11-22T06:06:38Z
+ido=2026-11-22T06:36:37Z
 hol=bot
 visszalepes=igen
 --- naplo ---
