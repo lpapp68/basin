@@ -3885,5 +3885,1123 @@
   "merokiadas_db": 483,
   "par_db": 9718
  },
- "futasido_s": 44
+ "futasido_s": 44,
+ "szerkezet": {
+  "nap": "2026-11-21",
+  "napok_db": 56,
+  "pontszam": [
+   -163.2867,
+   15.0591,
+   1.1205,
+   13.2317,
+   0.0444,
+   0.7976,
+   -3.3434,
+   4.0181
+  ],
+  "mintazatok": [
+   {
+    "kulcs": "m1",
+    "nev": "medenceszint",
+    "felek": null,
+    "arany": 0.8451,
+    "ertek_mm": -1.259,
+    "pct": 18,
+    "szint_mm": 0.49
+   },
+   {
+    "kulcs": "m2",
+    "nev": "síkság – hegyvidék",
+    "felek": [
+     "síkság",
+     "hegyvidék"
+    ],
+    "arany": 0.0485,
+    "ertek_mm": 0.203,
+    "pct": 68
+   },
+   {
+    "kulcs": "m3",
+    "nev": "nyugat – kelet",
+    "felek": [
+     "nyugat",
+     "kelet"
+    ],
+    "arany": 0.0255,
+    "ertek_mm": 0.015,
+    "pct": 54
+   }
+  ],
+  "idovonal": [
+   {
+    "nap": "2025-04-01",
+    "szint": 1.052,
+    "m2": 0.266,
+    "m3": -0.428
+   },
+   {
+    "nap": "2025-04-06",
+    "szint": 1.193,
+    "m2": 0.829,
+    "m3": 0.104
+   },
+   {
+    "nap": "2025-04-11",
+    "szint": 1.701,
+    "m2": 1.454,
+    "m3": 0.466
+   },
+   {
+    "nap": "2025-04-16",
+    "szint": 2.806,
+    "m2": 0.544,
+    "m3": -0.369
+   },
+   {
+    "nap": "2025-04-21",
+    "szint": 3.0,
+    "m2": 0.488,
+    "m3": -0.745
+   },
+   {
+    "nap": "2025-04-26",
+    "szint": 1.87,
+    "m2": 0.264,
+    "m3": -0.922
+   },
+   {
+    "nap": "2025-05-01",
+    "szint": 3.623,
+    "m2": 0.819,
+    "m3": -0.412
+   },
+   {
+    "nap": "2025-05-06",
+    "szint": 1.351,
+    "m2": 0.246,
+    "m3": -0.573
+   },
+   {
+    "nap": "2025-05-11",
+    "szint": 2.654,
+    "m2": 1.365,
+    "m3": 0.036
+   },
+   {
+    "nap": "2025-05-16",
+    "szint": 2.103,
+    "m2": 0.888,
+    "m3": 0.263
+   },
+   {
+    "nap": "2025-05-21",
+    "szint": 2.504,
+    "m2": -0.846,
+    "m3": -0.972
+   },
+   {
+    "nap": "2025-05-26",
+    "szint": 2.818,
+    "m2": 1.158,
+    "m3": -0.009
+   },
+   {
+    "nap": "2025-05-31",
+    "szint": 3.997,
+    "m2": 1.082,
+    "m3": -0.458
+   },
+   {
+    "nap": "2025-06-05",
+    "szint": 5.042,
+    "m2": 0.499,
+    "m3": -0.509
+   },
+   {
+    "nap": "2025-06-10",
+    "szint": 3.814,
+    "m2": -0.089,
+    "m3": 0.096
+   },
+   {
+    "nap": "2025-06-15",
+    "szint": 4.213,
+    "m2": -0.361,
+    "m3": -0.022
+   },
+   {
+    "nap": "2025-06-20",
+    "szint": 3.722,
+    "m2": -0.686,
+    "m3": 0.007
+   },
+   {
+    "nap": "2025-06-25",
+    "szint": 4.209,
+    "m2": -0.765,
+    "m3": 0.041
+   },
+   {
+    "nap": "2025-06-30",
+    "szint": 4.137,
+    "m2": -0.637,
+    "m3": 0.104
+   },
+   {
+    "nap": "2025-07-05",
+    "szint": 3.212,
+    "m2": -0.998,
+    "m3": 0.295
+   },
+   {
+    "nap": "2025-07-10",
+    "szint": 2.048,
+    "m2": 0.69,
+    "m3": 0.744
+   },
+   {
+    "nap": "2025-07-15",
+    "szint": 3.283,
+    "m2": -0.422,
+    "m3": 0.561
+   },
+   {
+    "nap": "2025-07-20",
+    "szint": 3.713,
+    "m2": -0.519,
+    "m3": 0.392
+   },
+   {
+    "nap": "2025-07-25",
+    "szint": 3.301,
+    "m2": -1.299,
+    "m3": -0.123
+   },
+   {
+    "nap": "2025-07-30",
+    "szint": 2.951,
+    "m2": 0.462,
+    "m3": 0.711
+   },
+   {
+    "nap": "2025-09-01",
+    "szint": 2.34,
+    "m2": -0.046,
+    "m3": 1.119
+   },
+   {
+    "nap": "2025-09-06",
+    "szint": 2.049,
+    "m2": -1.015,
+    "m3": 0.258
+   },
+   {
+    "nap": "2025-09-11",
+    "szint": 1.175,
+    "m2": 0.269,
+    "m3": 1.07
+   },
+   {
+    "nap": "2025-09-16",
+    "szint": 1.677,
+    "m2": -0.548,
+    "m3": -0.471
+   },
+   {
+    "nap": "2025-09-21",
+    "szint": 2.469,
+    "m2": -0.542,
+    "m3": 0.46
+   },
+   {
+    "nap": "2025-09-26",
+    "szint": 0.9,
+    "m2": -0.475,
+    "m3": 0.112
+   },
+   {
+    "nap": "2025-10-01",
+    "szint": 0.69,
+    "m2": -0.006,
+    "m3": 0.275
+   },
+   {
+    "nap": "2025-10-06",
+    "szint": 0.655,
+    "m2": 0.148,
+    "m3": 0.302
+   },
+   {
+    "nap": "2025-10-11",
+    "szint": 0.879,
+    "m2": 0.005,
+    "m3": 0.093
+   },
+   {
+    "nap": "2025-10-16",
+    "szint": 0.913,
+    "m2": -0.2,
+    "m3": 0.029
+   },
+   {
+    "nap": "2025-10-21",
+    "szint": 0.835,
+    "m2": -0.416,
+    "m3": -0.066
+   },
+   {
+    "nap": "2025-10-26",
+    "szint": 0.585,
+    "m2": -0.166,
+    "m3": -0.024
+   },
+   {
+    "nap": "2025-10-31",
+    "szint": 1.115,
+    "m2": -0.115,
+    "m3": -0.061
+   },
+   {
+    "nap": "2026-11-04",
+    "szint": 0.311,
+    "m2": -0.052,
+    "m3": 0.038
+   },
+   {
+    "nap": "2026-11-05",
+    "szint": 0.497,
+    "m2": -0.166,
+    "m3": 0.002
+   },
+   {
+    "nap": "2026-11-06",
+    "szint": 0.499,
+    "m2": -0.036,
+    "m3": -0.036
+   },
+   {
+    "nap": "2026-11-07",
+    "szint": 0.537,
+    "m2": -0.126,
+    "m3": -0.056
+   },
+   {
+    "nap": "2026-11-08",
+    "szint": 0.573,
+    "m2": -0.237,
+    "m3": -0.11
+   },
+   {
+    "nap": "2026-11-09",
+    "szint": 0.439,
+    "m2": -0.376,
+    "m3": 0.042
+   },
+   {
+    "nap": "2026-11-10",
+    "szint": 0.246,
+    "m2": -0.285,
+    "m3": -0.081
+   },
+   {
+    "nap": "2026-11-11",
+    "szint": 0.251,
+    "m2": -0.18,
+    "m3": -0.103
+   },
+   {
+    "nap": "2026-11-12",
+    "szint": 0.194,
+    "m2": 0.027,
+    "m3": -0.057
+   },
+   {
+    "nap": "2026-11-13",
+    "szint": 0.316,
+    "m2": 0.072,
+    "m3": -0.189
+   },
+   {
+    "nap": "2026-11-14",
+    "szint": 0.555,
+    "m2": 0.09,
+    "m3": 0.039
+   },
+   {
+    "nap": "2026-11-15",
+    "szint": 0.49,
+    "m2": -0.174,
+    "m3": -0.236
+   },
+   {
+    "nap": "2026-11-16",
+    "szint": 0.216,
+    "m2": -0.156,
+    "m3": -0.066
+   },
+   {
+    "nap": "2026-11-17",
+    "szint": 0.395,
+    "m2": 0.048,
+    "m3": -0.117
+   },
+   {
+    "nap": "2026-11-18",
+    "szint": 0.355,
+    "m2": 0.047,
+    "m3": 0.023
+   },
+   {
+    "nap": "2026-11-19",
+    "szint": 0.421,
+    "m2": -0.23,
+    "m3": -0.285
+   },
+   {
+    "nap": "2026-11-20",
+    "szint": 0.56,
+    "m2": 0.206,
+    "m3": -0.195
+   },
+   {
+    "nap": "2026-11-21",
+    "szint": 0.49,
+    "m2": 0.203,
+    "m3": 0.015
+   }
+  ],
+  "megfogott_kihagyott_napokon": {
+   "1": 0.83941,
+   "2": 0.88197,
+   "3": 0.90297,
+   "4": 0.91839,
+   "5": 0.92553,
+   "6": 0.93127,
+   "7": 0.93755,
+   "8": 0.94068
+  },
+  "kumulalt": [
+   0.84513,
+   0.89368,
+   0.91923,
+   0.93634,
+   0.94674,
+   0.95447,
+   0.96091,
+   0.96533
+  ],
+  "beta": {
+   "aktiv": false,
+   "illesztes": {
+    "napok": 38,
+    "elso": "2025-04-01",
+    "utolso": "2025-10-31"
+   },
+   "nevek": [
+    "medenceszint",
+    "Duna–Tisza köze – hegyvidék",
+    "észak – dél"
+   ],
+   "felek": [
+    null,
+    [
+     "Duna–Tisza köze",
+     "hegyvidék"
+    ],
+    [
+     "észak",
+     "dél"
+    ]
+   ],
+   "arany": [
+    0.3505,
+    0.2377,
+    0.0855
+   ]
+  },
+  "illesztes": {
+   "datum": "2026-11-22",
+   "napok": 56,
+   "elso": "2025-04-01",
+   "utolso": "2026-11-21",
+   "cellak": 23632
+  },
+  "bazis": {
+   "fajl": "szerkezet.json",
+   "verzio": "45212f7023"
+  },
+  "szondak": {
+   "nap": "2026-11-21",
+   "allomasok": [
+    {
+     "nev": "Apaj",
+     "lat": 47.0722,
+     "lon": 19.105,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Battonya",
+     "lat": 46.2658,
+     "lon": 21.0126,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Bernecebaráti",
+     "lat": 47.9944,
+     "lon": 18.8953,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Berzence",
+     "lat": 46.184,
+     "lon": 17.1463,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Bodony",
+     "lat": 47.9075,
+     "lon": 20.0082,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Borota",
+     "lat": 46.2078,
+     "lon": 19.234,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Békés",
+     "lat": 46.7773,
+     "lon": 21.1808,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Bőny",
+     "lat": 47.6393,
+     "lon": 17.9047,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Cigánd",
+     "lat": 48.2391,
+     "lon": 21.8011,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csabacsűd",
+     "lat": 46.769,
+     "lon": 20.6754,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csanádpalota",
+     "lat": 46.2018,
+     "lon": 20.7552,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csaroda",
+     "lat": 48.1783,
+     "lon": 22.3999,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csengele",
+     "lat": 46.5175,
+     "lon": 19.8815,
+     "allapot": "helyi"
+    },
+    {
+     "nev": "Csolnok",
+     "lat": 47.6308,
+     "lon": 18.7297,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csávoly",
+     "lat": 46.1426,
+     "lon": 19.0974,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csókakő",
+     "lat": 47.3013,
+     "lon": 18.2653,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Csólyospálos",
+     "lat": 46.4072,
+     "lon": 19.8104,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Demecser",
+     "lat": 48.0646,
+     "lon": 21.8874,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Deszk",
+     "lat": 46.168,
+     "lon": 20.379,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Egyek",
+     "lat": 47.6027,
+     "lon": 20.8323,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Előszállás",
+     "lat": 46.7987,
+     "lon": 18.8157,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Enying",
+     "lat": 46.87,
+     "lon": 18.2496,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Fajsz",
+     "lat": 46.376,
+     "lon": 18.9451,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Felsőszentmárton",
+     "lat": 45.8234,
+     "lon": 17.6882,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Fényeslitke",
+     "lat": 48.2789,
+     "lon": 22.0611,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Fülöpháza",
+     "lat": 46.8568,
+     "lon": 19.4385,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Gemzse",
+     "lat": 48.1214,
+     "lon": 22.1248,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Gyomaendrőd",
+     "lat": 46.9233,
+     "lon": 20.7842,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Gyula",
+     "lat": 46.5646,
+     "lon": 21.2113,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Gádoros",
+     "lat": 46.6376,
+     "lon": 20.6303,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Görbeháza",
+     "lat": 47.7386,
+     "lon": 21.2071,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Hajdúböszörmény",
+     "lat": 47.681,
+     "lon": 21.4797,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Hajdúnánás",
+     "lat": 47.8764,
+     "lon": 21.3225,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Harta",
+     "lat": 46.6028,
+     "lon": 19.1312,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Hernád",
+     "lat": 47.1423,
+     "lon": 19.4302,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Homokmégy",
+     "lat": 46.4502,
+     "lon": 19.0585,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Hódmezővásárhely",
+     "lat": 46.4258,
+     "lon": 20.3806,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Jakabszállás",
+     "lat": 46.7215,
+     "lon": 19.6301,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Jászberény",
+     "lat": 47.4615,
+     "lon": 19.9418,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Jászkisér",
+     "lat": 47.4311,
+     "lon": 20.1834,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Jászladány",
+     "lat": 47.3255,
+     "lon": 20.1848,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kalocsa",
+     "lat": 46.4628,
+     "lon": 18.9842,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kartal",
+     "lat": 47.6455,
+     "lon": 19.5478,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Katymár",
+     "lat": 45.9609,
+     "lon": 19.2117,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kecel",
+     "lat": 46.5136,
+     "lon": 19.2461,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kenderes",
+     "lat": 47.2131,
+     "lon": 20.6093,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Királyhegyes",
+     "lat": 46.234,
+     "lon": 20.6376,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kiskunfélegyháza",
+     "lat": 46.6714,
+     "lon": 19.8894,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kiskunhalas",
+     "lat": 46.3434,
+     "lon": 19.4809,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kisszállás",
+     "lat": 46.2307,
+     "lon": 19.5775,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kunmadaras",
+     "lat": 47.3536,
+     "lon": 20.7519,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kunpeszér",
+     "lat": 47.0231,
+     "lon": 19.2655,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kunszentmiklós",
+     "lat": 47.0104,
+     "lon": 19.1424,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kálmáncsa",
+     "lat": 46.0409,
+     "lon": 17.6023,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kölcse",
+     "lat": 48.0583,
+     "lon": 22.6481,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Kőszegdoroszló",
+     "lat": 47.3425,
+     "lon": 16.5494,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Lajosmizse",
+     "lat": 46.9518,
+     "lon": 19.4913,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Látrány",
+     "lat": 46.685,
+     "lon": 17.7326,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Létavértes",
+     "lat": 47.3736,
+     "lon": 21.8286,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Magyaregregy",
+     "lat": 46.1927,
+     "lon": 18.2988,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Mencshely",
+     "lat": 46.9135,
+     "lon": 17.7028,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Mezőhegyes",
+     "lat": 46.277,
+     "lon": 20.8505,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Mezősas",
+     "lat": 47.0874,
+     "lon": 21.5734,
+     "allapot": "helyi"
+    },
+    {
+     "nev": "Mezőtúr",
+     "lat": 46.9696,
+     "lon": 20.5203,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Mindszent",
+     "lat": 46.4538,
+     "lon": 20.2191,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Mélykút",
+     "lat": 46.2036,
+     "lon": 19.4853,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nagybánhegyes",
+     "lat": 46.4616,
+     "lon": 20.9388,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nagykanizsa",
+     "lat": 46.4814,
+     "lon": 16.9762,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nagykőrös",
+     "lat": 46.994,
+     "lon": 19.8258,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nyíregyháza",
+     "lat": 47.8442,
+     "lon": 21.661,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nyírmártonfalva",
+     "lat": 47.5854,
+     "lon": 21.8492,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nyírvasvári",
+     "lat": 47.8232,
+     "lon": 22.1388,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Nádudvar",
+     "lat": 47.3576,
+     "lon": 21.1702,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Osli",
+     "lat": 47.6221,
+     "lon": 17.0969,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Oszkó",
+     "lat": 47.0058,
+     "lon": 16.8811,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Prügy",
+     "lat": 48.0791,
+     "lon": 21.1992,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Pusztaszabolcs",
+     "lat": 47.1178,
+     "lon": 18.7342,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Pálmonostora",
+     "lat": 46.5926,
+     "lon": 19.9504,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Püski",
+     "lat": 47.8597,
+     "lon": 17.425,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Ruzsa",
+     "lat": 46.2219,
+     "lon": 19.7827,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Röszke",
+     "lat": 46.1516,
+     "lon": 20.0896,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Sarkad",
+     "lat": 46.7299,
+     "lon": 21.397,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Solt",
+     "lat": 46.753,
+     "lon": 19.066,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szakoly",
+     "lat": 47.7349,
+     "lon": 21.8515,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szederkény",
+     "lat": 45.9537,
+     "lon": 18.4244,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szeghalom",
+     "lat": 47.064,
+     "lon": 21.0966,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szentes",
+     "lat": 46.7159,
+     "lon": 20.3994,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szentistván",
+     "lat": 47.7359,
+     "lon": 20.655,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szentmártonkáta",
+     "lat": 47.419,
+     "lon": 19.6772,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szilvásvárad",
+     "lat": 48.0798,
+     "lon": 20.3708,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Szolnok",
+     "lat": 47.1615,
+     "lon": 20.1359,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Székkutas",
+     "lat": 46.4665,
+     "lon": 20.5669,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Sződ",
+     "lat": 47.6624,
+     "lon": 19.2051,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Sándorfalva",
+     "lat": 46.3642,
+     "lon": 20.1216,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Sükösd",
+     "lat": 46.2619,
+     "lon": 18.9418,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Tata",
+     "lat": 47.5736,
+     "lon": 18.3358,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Tiszaeszlár",
+     "lat": 48.0289,
+     "lon": 21.4691,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Tiszaföldvár",
+     "lat": 46.9122,
+     "lon": 20.2966,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Tyukod",
+     "lat": 47.8322,
+     "lon": 22.4763,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Tázlár",
+     "lat": 46.5169,
+     "lon": 19.4874,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Vasszentmihály",
+     "lat": 46.9577,
+     "lon": 16.3906,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Vasszécseny",
+     "lat": 47.165,
+     "lon": 16.7791,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Visznek",
+     "lat": 47.5973,
+     "lon": 20.029,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Várbalog",
+     "lat": 47.8132,
+     "lon": 17.1227,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Városföld",
+     "lat": 46.8306,
+     "lon": 19.7802,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Zsadány",
+     "lat": 46.9039,
+     "lon": 21.4531,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Zsebeháza",
+     "lat": 47.4806,
+     "lon": 17.2106,
+     "allapot": "egyutt"
+    },
+    {
+     "nev": "Ádánd",
+     "lat": 46.8312,
+     "lon": 18.191,
+     "allapot": "egyutt"
+    }
+   ],
+   "db": {
+    "egyutt": 106,
+    "helyi": 2,
+    "ellenorizendo": 0
+   },
+   "kiemelt": [
+    {
+     "nev": "Csengele",
+     "allapot": "helyi",
+     "eso_mm": 72.2,
+     "irany": "kevesebb"
+    },
+    {
+     "nev": "Mezősas",
+     "allapot": "helyi",
+     "eso_mm": 72.2,
+     "irany": "kevesebb"
+    }
+   ],
+   "eso_napok": 14
+  }
+ }
 }

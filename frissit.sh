@@ -237,6 +237,8 @@ if [ -n "${BASIN_PAGES_PROJECT:-}" ]; then
   cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
   # Egy mérce közelről (2026-11-19): az index.html hivatkozik rájuk.
   cp merce.js merce.css mercek_tsz.json _publish/
+  # A medence mintázatai (2026-11-22): a publikus bázis, a tanuló réteg teszi a repóba.
+  if [ -f szerkezet.json ]; then cp szerkezet.json _publish/; fi
 # ── Lapteszt ─────────────────────────────────────────────────────────────
 # A node --check csak szintaxist néz. Egy nem létező változó vagy elrontott
 # blokkhatár szintaktikailag tökéletes, futáskor viszont megállítja az egész

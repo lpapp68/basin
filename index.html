@@ -856,6 +856,36 @@ a{color:var(--viz)}
 }
 #kutatas-sec{margin:30px 0 0}.kut-gomb{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.04em;padding:8px 14px;border:1px solid var(--tinta);color:var(--tinta);text-decoration:none}.kut-gomb:hover{background:var(--tinta);color:var(--papir)}
 .kut-teaser{font-family:var(--mono);font-size:12px;letter-spacing:.04em;margin:12px 0 0;color:var(--tinta)}.kut-teaser a{color:var(--tinta)}
+/* ── a medence mintázatai (2026-11-22) ─────────── */
+.mz-racs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px;align-items:start}
+.mz-racs2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px;margin-top:16px;align-items:start}
+@media(max-width:900px){.mz-racs,.mz-racs2{grid-template-columns:1fr}}
+.mz-szam{font-family:var(--mono);font-size:25px;font-weight:600;margin:10px 0 2px;letter-spacing:-.01em}
+.mz-szam small{font-size:13px;font-weight:400;color:var(--halvany)}
+.mz-m{font-size:12.5px;color:var(--halvany);margin:0 0 10px;min-height:2.8em}
+.mz-terkep svg{display:block;width:100%;height:auto;background:var(--papir)}
+.mz-jel{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--halvany);margin-top:8px;flex-wrap:wrap}
+.mz-jel i{display:inline-block;width:110px;height:9px;border:1px solid var(--vonal)}
+.mz-gombok{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 10px}
+.mz-gombok button{font-family:var(--mono);font-size:11.5px;padding:5px 10px;border:1px solid var(--vonal);
+  background:var(--papir);color:var(--tinta);cursor:pointer}
+.mz-gombok button[aria-pressed="true"]{background:var(--tinta);color:var(--papir);border-color:var(--tinta)}
+.mz-reszlet{font-family:var(--mono);font-size:11.5px;color:var(--halvany);margin:0 0 8px}
+.mz-ido svg{display:block;width:100%;height:auto}
+.mz-ido text{font-family:var(--mono);font-size:11px;fill:var(--halvany)}
+.mz-beta .mz-szam{font-size:19px}
+.mz-lab{font-size:11.5px;color:var(--halvany);margin-top:16px;max-width:min(110ch,100%)}
+.sz-allapot{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:900px){.sz-allapot{grid-template-columns:1fr}}
+.sz-allapot svg{display:block;width:100%;height:auto}
+.sz-jel{display:flex;flex-direction:column;gap:6px;font-size:13px;margin:4px 0 14px}
+.sz-jel span{display:flex;align-items:center;gap:8px}
+.sz-jel b{font-family:var(--mono);font-weight:600;min-width:2.2em;text-align:right}
+.sz-kor{display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid}
+.sz-kartya{border-left:3px solid var(--viz);padding:6px 0 6px 12px;margin:0 0 10px;font-size:13px}
+.sz-kartya.ell{border-left-color:var(--rekord)}
+.sz-kartya b{font-family:var(--serif)}
+.sz-kartya span{display:block;color:var(--halvany);font-size:12px;margin-top:2px}
 </style>
 </head>
 <body>
@@ -1050,10 +1080,17 @@ a{color:var(--viz)}
   </div>
 </section>
 
+<section id="mintazat-sec">
+  <div class="sz"><h2>A medence három mintázata</h2><span class="n">mi mozgatja ma a párolgást</span></div>
+  <p class="lead">A műhold naponta több mint húszezer pontban becsüli a párolgást a medence fölött. Ezek a pontok együtt mozognak: a teljes mező néhány visszatérő mintázat összegeként írható le. Az első mintázat a medence közös szintje, a többi azt mutatja, hogyan tér el egymástól a medence két része. Itt az látszik, melyik mintázat mennyire erős ma, és mennyit hordoz a medence változékonyságából.</p>
+  <div id="mintazat"></div>
+</section>
+
 <section id="talaj-sec">
   <div class="sz"><h2>A talaj</h2><span class="n">ahol az aszály zajlik</span></div>
   <p class="lead">A folyó és a levegő mellett van egy harmadik hely, ahol a víz megfordul: a talaj. Itt marad napokig-hetekig, és itt dől el, mit ér a lehullott csapadék. Ez az a rekesz, amiről a hírek nem szólnak, pedig az aszály itt zajlik — nem a folyómederben.</p>
   <div id="talaj"></div>
+  <div id="szondaallapot"></div>
 </section>
 
 <section id="beszivargas-sec">
@@ -1106,6 +1143,11 @@ a{color:var(--viz)}
   </div>
   <p class="forrasmegj">A módszertan, a feltételezések és a nyitott kérdések listája
   a projekt dokumentációjában olvasható. A hivatkozható változat Zenodóra kerül, DOI-val.</p>
+  <p class="forrasmegj">A medence mintázatai: a műholdas párolgási mezőt (EUMETSAT LSA SAF, 0,05°)
+  főkomponens-bontás (EOF) írja le néhány visszatérő mintázat összegeként. A lap 8 párolgási és
+  3 vízstressz-mintázatot közöl 0,1°-on; hogy ezek mennyit adnak vissza a változékonyságból, azt az
+  illesztésből kihagyott napokon teszteljük. A bontást és a szondák ellenőrzését saját fejlesztésű
+  tanuló algoritmus végzi (i-Tango Tanácsadó Kft.); a lapra az eredmény kerül.</p>
 </section>
 
 <div class="alairas">
@@ -1135,6 +1177,7 @@ a{color:var(--viz)}
 
   /* ── fogalmak ── */
   const FOGALOM = {
+    "mintázat": "A műholdas párolgási mező visszatérő térbeli alakja. A mai mező ezek súlyozott összege: a súly mutatja, mennyire erős ma az adott mintázat. A sorrend a hordozott változékonyság szerint csökken.",
     "szántóföldi vízkapacitás": "Az a vízmennyiség, amit a talaj a gravitációs elszivárgás után megtart. E fölött a víz lefelé szivárog, ez alatt a növény egyre nehezebben veszi fel. A vízhiányt ehhez az állapothoz mérjük.",
     "vízhozam": "Mennyi víz halad át a szelvényen másodpercenként (m³/s). Nem azonos a vízállással: alacsony vízálláshoz széles mederben is tartozhat nagy hozam.",
     "vízállás": "A vízfelszín magassága a mérce nullpontjához képest, centiméterben. Lehet negatív — az csak azt jelenti, hogy a nullpont alatt van.",
@@ -3438,6 +3481,281 @@ a{color:var(--viz)}
     }catch(err){
       hova.innerHTML = `<p class="bsz-ures">A beszivárgás-panel ebben a frissítésben nem rajzolható ki (${err.message}). A lap többi része érvényes.</p>`;
     }
+  })();
+
+  /* ── A medence mintázatai (2026-11-22) ──
+     A tanuló réteg (tanulo.json → szerkezet) adja a mai erősségeket, a
+     szerkezet.json a publikus bázist: 8 párolgási és 3 vízstressz-mintázat
+     0,1°-on, 8 bitre kvantálva. A térképeket a böngésző rajzolja:
+     a mai mező = átlag + Σ súly × mintázat. A bázis csak akkor töltődik le,
+     amikor a szakasz a képernyő közelébe ér. */
+  const MZ_SZIN = {papir:[237,240,236], viz:[43,92,119], par:[169,119,47], sotet:[92,58,18]};
+  const mzKever = (a,b,t) => a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+  const mzElter = v => !isFinite(v) ? null
+    : v<0 ? mzKever(MZ_SZIN.papir,MZ_SZIN.viz,Math.min(1,-v)) : mzKever(MZ_SZIN.papir,MZ_SZIN.par,Math.min(1,v));
+  const mzFolyt = t => !isFinite(t) ? null
+    : t<0.6 ? mzKever(MZ_SZIN.papir,MZ_SZIN.par,Math.max(0,t)/0.6) : mzKever(MZ_SZIN.par,MZ_SZIN.sotet,Math.min(1,(t-0.6)/0.4));
+  const mzJel = (v,j=2) => v==null ? "—" : (v>0?"+":"") + dec(v,j);
+  const mzSzaz = v => dec(Math.round(v*1000)/10, 1);
+  // névelő és -hoz/-hez/-höz: „a síkság … a hegyvidékhez”, „az észak … a délhez”
+  const mzNe = s => (/^[aáeéiíoóöőuúüű]/i.test(s) ? "az " : "a ") + s;
+  const mzHoz = s => { const m = s.match(/[aáeéiíoóöőuúüű](?=[^aáeéiíoóöőuúüű]*$)/i);
+    const v = m ? m[0].toLowerCase() : "e";
+    return s + ("aáoóuú".includes(v) ? "hoz" : "öőüű".includes(v) ? "höz" : "hez"); };
+  const mzNagy = s => s ? s[0].toUpperCase() + s.slice(1) : s;
+  const mzPct = p => p==null ? "" : p<=20 ? `a megfigyelt napok alsó ötöde (${p}. percentilis)`
+    : p>=80 ? `a megfigyelt napok felső ötöde (${p}. percentilis)` : `a megfigyelt napok középmezőnye (${p}. percentilis)`;
+
+  function mzDekod(o){
+    const s = atob(o.b64), v = new Float32Array(s.length);
+    for(let i=0;i<s.length;i++){ const q = (s.charCodeAt(i)<<24)>>24; v[i] = q===-128 ? NaN : o.k + o.s*q; }
+    return v;
+  }
+  function mzKep(b, ertek, szinez){
+    const cv = document.createElement("canvas");
+    if(!cv || !cv.getContext) return null;
+    const {ny, nx} = b.racs;
+    cv.width = nx; cv.height = ny;
+    const cx = cv.getContext("2d"); if(!cx) return null;
+    const im = cx.createImageData(nx, ny);
+    for(let i=0;i<nx*ny;i++){
+      const c = szinez(ertek[i]); if(!c) continue;
+      im.data[i*4]=c[0]; im.data[i*4+1]=c[1]; im.data[i*4+2]=c[2]; im.data[i*4+3]=255;
+    }
+    cx.putImageData(im,0,0);
+    return cv.toDataURL("image/png");
+  }
+  function mzSvg(b, url, felirat){
+    const v = b.vetulet, r = b.racs;
+    const x0 = v.ax*r.nyugat + v.bx, x1 = v.ax*(r.nyugat + r.nx*r.d) + v.bx;
+    const y0 = v.ay*r.eszak + v.by, y1 = v.ay*(r.eszak - r.ny*r.d) + v.by;
+    const f = n => n.toFixed(1);
+    return `<svg viewBox="${f(x0)} ${f(y0)} ${f(x1-x0)} ${f(y1-y0)}" role="img" aria-label="${felirat}">`+
+      (url ? `<image href="${url}" x="${f(x0)}" y="${f(y0)}" width="${f(x1-x0)}" height="${f(y1-y0)}" preserveAspectRatio="none"/>` : "")+
+      `<path d="${b.hatar}" fill="none" stroke="var(--tinta)" stroke-opacity=".5" stroke-width="2.4" stroke-linejoin="round"/></svg>`;
+  }
+  // A mintázat alakja: a 98. percentilisre normálva, az irány a mai súly előjelét követi.
+  function mzNormal(v, irany){
+    const a = Array.from(v).filter(isFinite).map(Math.abs).sort((p,q)=>p-q);
+    const s = a.length ? (a[Math.floor(a.length*0.98)] || 1) : 1;
+    return v.map(x => x*irany/s);
+  }
+
+  (function(){
+    const box = $("#mintazat");
+    const SZ = D.tanulo && D.tanulo.szerkezet;
+    if(!box) return;
+    if(!SZ || !SZ.mintazatok || !SZ.mintazatok.length){
+      box.innerHTML = `<p class="alcim">A mintázatok a tanuló réteg következő futásával jelennek meg.</p>`;
+      return;
+    }
+    const M = SZ.mintazatok, P = SZ.pontszam || [];
+    const kartyak = M.map((m,i)=>{
+      let szam, magy;
+      if(i===0){
+        szam = `${dec(m.szint_mm,2)}<small> mm/nap</small>`;
+        magy = `a medence átlagos párolgása ma · ${mzPct(m.pct)}`;
+      } else if(m.felek && m.ertek_mm!=null){
+        szam = `${mzJel(m.ertek_mm,2)}<small> mm/nap</small>`;
+        magy = Math.abs(m.ertek_mm) < 0.05
+          ? `${mzNe(m.felek[0])} és ${mzNe(m.felek[1])} a megszokott arányban párologtat`
+          : `${mzNe(m.felek[0])} a megszokottnál ${m.ertek_mm>0?"többet":"kevesebbet"} párologtat ${mzNe(mzHoz(m.felek[1]))} képest`;
+      } else {
+        szam = `${mzJel(P[i],1)}`;
+        magy = `a mintázat mai súlya · ${mzPct(m.pct)}`;
+      }
+      return `<div class="panel">
+        <h3>${i+1} · ${mzNagy(m.nev)} <span class="pontos">a változékonyság ${mzSzaz(m.arany)}%-a</span></h3>
+        <div class="mz-szam">${szam}</div>
+        <p class="mz-m">${magy}</p>
+        <div class="mz-terkep" id="mz-t${i}">${""}</div>
+      </div>`;
+    }).join("");
+
+    const IDO = SZ.idovonal || [];
+    const m2 = M[1] && M[1].felek ? M[1] : null;
+    const kulcs = m2 ? m2.kulcs : "szint";
+    const pontok = IDO.filter(r => r[kulcs]!=null);
+    let ido = "";
+    if(pontok.length > 3){
+      const W = 640, H = 300, bal = 8, jobb = 8, fent = 24, lent = 30;
+      const xs = []; let x = 0;
+      pontok.forEach((r,i)=>{
+        if(i){ const nap = (Date.parse(r.nap) - Date.parse(pontok[i-1].nap))/864e5; x += nap > 20 ? 6 : 1; }
+        xs.push(x);
+      });
+      const vmax = Math.max(...pontok.map(r=>Math.abs(r[kulcs]))) || 1;
+      const lo = m2 ? -vmax : 0, hi = vmax;
+      const X = i => bal + xs[i]/(xs[xs.length-1]||1)*(W-bal-jobb);
+      const Y = v => fent + (hi - v)/(hi - lo)*(H-fent-lent);
+      const szakaszok = []; let akt = [];
+      pontok.forEach((r,i)=>{
+        if(i && xs[i]-xs[i-1] > 1){ szakaszok.push(akt); akt = []; }
+        akt.push(i);
+      });
+      szakaszok.push(akt);
+      const HO = ["jan.","febr.","márc.","ápr.","máj.","jún.","júl.","aug.","szept.","okt.","nov.","dec."];
+      const cimke = n => { const d = new Date(n); return `${d.getFullYear()}. ${HO[d.getMonth()]}`; };
+      const vonalak = szakaszok.map(s => `<polyline fill="none" stroke="var(--parolgas)" stroke-width="2.2"
+        stroke-linejoin="round" points="${s.map(i=>`${X(i).toFixed(1)},${Y(pontok[i][kulcs]).toFixed(1)}`).join(" ")}"/>`).join("");
+      const kezdok = szakaszok.map(s => `<text x="${X(s[0]).toFixed(1)}" y="${H-8}">${cimke(pontok[s[0]].nap)}</text>`).join("");
+      let imax = 0, imin = 0;
+      pontok.forEach((r,i)=>{ if(r[kulcs] > pontok[imax][kulcs]) imax = i; if(r[kulcs] < pontok[imin][kulcs]) imin = i; });
+      const jel = (i, fel) => `<circle cx="${X(i).toFixed(1)}" cy="${Y(pontok[i][kulcs]).toFixed(1)}" r="3.5" fill="var(--parolgas)"/>
+        <text x="${Math.min(W-70, X(i)).toFixed(1)}" y="${(Y(pontok[i][kulcs]) + (fel ? -8 : 16)).toFixed(1)}">${mzJel(pontok[i][kulcs],2)}</text>`;
+      const utolso = pontok.length-1;
+      ido = `<div class="panel mz-ido">
+        <h3>${m2 ? mzNagy(m2.nev) : "Medenceszint"} <span class="pontos">idővonal, mm/nap</span></h3>
+        <p class="alcim">${m2 ? `Pozitív érték: ${mzNe(m2.felek[0])} a megszokottnál többet párologtat ${mzNe(mzHoz(m2.felek[1]))} képest. ` : ""}A vonal a műholdas napokat köti össze; a hosszabb szünetet köz jelzi.</p>
+        <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="A mintázat erősségének idővonala">
+          ${m2 ? `<line x1="${bal}" x2="${W-jobb}" y1="${Y(0).toFixed(1)}" y2="${Y(0).toFixed(1)}" stroke="var(--vonal)" stroke-width="1"/>` : ""}
+          ${vonalak}${kezdok}${jel(imax,true)}${imin!==imax ? jel(imin,false) : ""}
+          ${utolso!==imax && utolso!==imin ? jel(utolso, pontok[utolso][kulcs] >= 0) : ""}
+        </svg>
+      </div>`;
+    }
+
+    const MO = SZ.megfogott_kihagyott_napokon || {};
+    const ma = `<div class="panel">
+        <h3>A mai mező <span class="pontos">${SZ.nap} · párolgás, mm/nap</span></h3>
+        <div class="mz-gombok" role="group" aria-label="Részletesség">
+          <button type="button" data-k="4" aria-pressed="true">ország · 4 mintázat</button>
+          <button type="button" data-k="8" aria-pressed="false">régió · 8 mintázat</button>
+        </div>
+        <p class="mz-reszlet" id="mz-reszlet"></p>
+        <div class="mz-terkep" id="mz-ma"></div>
+        <div class="mz-jel" id="mz-ma-jel"></div>
+      </div>`;
+
+    const B = SZ.beta;
+    let beta = "";
+    if(B && B.nevek){
+      const bk = B.nevek.map((n,i)=>{
+        const felek = (B.felek||[])[i];
+        let szam = "", magy;
+        if(B.aktiv){
+          if(i===0){ szam = `${dec(B.szint_szazalek,1)}<small> %</small>`;
+            magy = `a lehetséges párolgás ennyi százaléka valósul meg · ${mzPct(B.szint_pct)}`; }
+          else if(felek){ const e = (B.elteres_szazalekpont||[])[i];
+            szam = `${mzJel(e,1)}<small> százalékpont</small>`;
+            magy = `${mzNe(felek[0])} párolgási aránya a megszokotthoz mérve, ${mzNe(mzHoz(felek[1]))} képest`; }
+        }
+        if(!magy) magy = i===0 ? "a vízstressz a medence egészén azonos irányban mozog"
+          : felek ? `okker: ${felek[0]} · kék: ${felek[1]}` : "";
+        return `<div class="panel mz-beta">
+          <h3>${mzNagy(n)} <span class="pontos">a változékonyság ${mzSzaz(B.arany[i])}%-a</span></h3>
+          ${szam ? `<div class="mz-szam">${szam}</div>` : ""}
+          <p class="mz-m">${magy}</p>
+          <div class="mz-terkep" id="mz-b${i}"></div>
+        </div>`;
+      }).join("");
+      beta = `<h3 style="font-family:var(--serif);margin:30px 0 4px">A vízstressz mintázatai
+          <span class="pontos">a tényleges és a lehetséges párolgás aránya</span></h3>
+        <p class="lead" style="margin:4px 0 0">${B.aktiv
+          ? `Áprilistól októberig naponta frissül. A mai érték: ${B.nap}.`
+          : `Áprilistól októberig naponta frissül. A térképek a ${B.illesztes.elso} és ${B.illesztes.utolso} közti idény ${B.illesztes.napok} napjának mintázatai: a szín a mintázat két oldalát mutatja.`}</p>
+        <div class="mz-racs">${bk}</div>`;
+    }
+
+    const IL = SZ.illesztes || {};
+    box.innerHTML =
+      `<div class="mz-racs">${kartyak}</div>
+       <div class="mz-jel"><i style="background:linear-gradient(90deg,rgb(${MZ_SZIN.viz}),rgb(${MZ_SZIN.papir}),rgb(${MZ_SZIN.par}))"></i>
+         kék: ma kevesebbet párologtat a megszokottnál · okker: többet. A térkép a mintázat alakját mutatja, a szám a mai erősségét.</div>
+       <div class="mz-racs2">${ma}${ido}</div>
+       ${beta}
+       <p class="mz-lab">Forrás: EUMETSAT LSA SAF napi párolgás és referencia-párolgás, 0,05°. A mintázatokat saját fejlesztésű tanuló algoritmus bontja ki (i-Tango Tanácsadó Kft.); a lapra az eredmény kerül.
+       Legutóbbi illesztés: ${IL.datum || "—"}, ${IL.napok || "—"} műholdas nap (${IL.elso || ""} – ${IL.utolso || ""}), ${IL.cellak ? num(IL.cellak) : "—"} cella. ${pr("muholdas")}</p>`;
+
+    let bazis = null, k = 4;
+    function maiMezo(){
+      const n = Math.min(k, bazis.et.mod.length, P.length);
+      const v = Float32Array.from(bazis.et.atl);
+      for(let i=0;i<n;i++){ const m = bazis.et.mod[i]; for(let j=0;j<v.length;j++) v[j] += P[i]*m[j]; }
+      const ok = Array.from(v).filter(isFinite);
+      const lo = Math.max(0, Math.min(...ok)), hi = Math.max(...ok);
+      const url = mzKep(bazis, v.map(x => (Math.max(0,x)-lo)/((hi-lo)||1)), mzFolyt);
+      $("#mz-ma").innerHTML = mzSvg(bazis, url, `A mai párolgási mező ${n} mintázatból`);
+      $("#mz-ma-jel").innerHTML = `<i style="background:linear-gradient(90deg,rgb(${MZ_SZIN.papir}),rgb(${MZ_SZIN.par}),rgb(${MZ_SZIN.sotet}))"></i>
+        ${dec(lo,1)} – ${dec(hi,1)} mm/nap`;
+      const mo = MO[String(n)];
+      $("#mz-reszlet").innerHTML = `részletesség: ${n} mintázat` +
+        (mo ? ` · a kihagyott napokon tesztelve a változékonyság ${mzSzaz(mo)}%-át adja vissza` : "");
+    }
+    function rajzol(b){
+      if(!b || !b.et || !b.racs || b.verzio !== (SZ.bazis||{}).verzio){
+        $("#mz-ma").innerHTML = `<p class="alcim">A térképek a következő frissítéssel jelennek meg.</p>`;
+        return;
+      }
+      bazis = b;
+      b.et.atl = mzDekod(b.et.atlag);
+      b.et.mod = b.et.modusok.map(mzDekod);
+      M.forEach((m,i)=>{
+        if(!b.et.mod[i]) return;
+        const url = mzKep(b, mzNormal(b.et.mod[i], (P[i]||1) < 0 ? -1 : 1), mzElter);
+        $("#mz-t"+i).innerHTML = mzSvg(b, url, `${m.nev}: a mintázat alakja`);
+      });
+      if(b.beta && B){
+        b.beta.modusok.forEach((o,i)=>{
+          const url = mzKep(b, mzNormal(mzDekod(o), 1), mzElter);
+          const t = $("#mz-b"+i); if(t) t.innerHTML = mzSvg(b, url, `${B.nevek[i]}: a mintázat alakja`);
+        });
+      }
+      maiMezo();
+    }
+    box.querySelectorAll(".mz-gombok button").forEach(g => g.addEventListener("click", ()=>{
+      k = +g.dataset.k;
+      box.querySelectorAll(".mz-gombok button").forEach(h => h.setAttribute("aria-pressed", String(h===g)));
+      if(bazis) maiMezo();
+    }));
+    let betoltve = false;
+    const betolt = () => {
+      if(betoltve) return; betoltve = true;
+      fetch(`${(SZ.bazis||{}).fajl || "szerkezet.json"}?v=${(SZ.bazis||{}).verzio || ""}`)
+        .then(r => r.ok ? r.json() : null).then(rajzol).catch(() => rajzol(null));
+    };
+    if(typeof IntersectionObserver === "function"){
+      const fi = new IntersectionObserver(e => { if(e.some(x=>x.isIntersecting)){ fi.disconnect(); betolt(); } },
+                                          {rootMargin:"600px 0px"});
+      fi.observe($("#mintazat-sec") || box);
+    } else betolt();
+  })();
+
+  /* ── Szondák a hálózatban (2026-11-22) ──
+     Minden szonda mai értékét a többi szondából becsüljük kétféleképpen: a
+     hálózat visszatérő mintázataiból és az öt legközelebbi szomszédból. A lapra
+     csak az állapot kerül; a döntés a tanuló rétegben történik. */
+  (function(){
+    const box = $("#szondaallapot");
+    const SA = D.tanulo && D.tanulo.szerkezet && D.tanulo.szerkezet.szondak;
+    if(!box || !SA || !SA.allomasok || !SA.allomasok.length || !D.terkep || !D.terkep.path) return;
+    const X = lon => 145.9774*lon - 2344.22, Y = lat => -217.3505*lat + 10548.25;
+    const AL = {egyutt:{nev:"a hálózattal együtt mozog", szin:"var(--vonal)", r:7, sor:0},
+                helyi:{nev:"helyi esemény", szin:"var(--viz)", r:12, sor:1},
+                ellenorizendo:{nev:"ellenőrizendő", szin:"var(--rekord)", r:12, sor:2}};
+    const pontok = SA.allomasok.slice().sort((a,b)=>(AL[a.allapot]||AL.egyutt).sor-(AL[b.allapot]||AL.egyutt).sor)
+      .map(a => { const s = AL[a.allapot] || AL.egyutt, x = X(a.lon), y = Y(a.lat);
+        return `<g><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${s.r}" fill="${s.szin}" fill-opacity="${s.sor?0.9:0.55}"
+          stroke="${s.szin}" stroke-width="2"><title>${a.nev} · ${s.nev}</title></circle>`+
+          (s.sor ? `<text x="${(x+s.r+6).toFixed(1)}" y="${(y+7).toFixed(1)}" font-size="22" fill="var(--tinta)" font-family="var(--mono)">${a.nev}</text>` : "")+
+          `</g>`; }).join("");
+    const svg = `<svg viewBox="${D.terkep.viewBox}" role="img" aria-label="Az aszálymonitoring-szondák mai állapota">
+      <path d="${D.terkep.path}" fill="var(--vonal-halk)" stroke="var(--halvany)" stroke-width="2" stroke-linejoin="round"/>
+      ${pontok}</svg>`;
+    const db = SA.db || {};
+    const jel = ["egyutt","helyi","ellenorizendo"].map(k =>
+      `<span><i class="sz-kor" style="background:${AL[k].szin};border-color:${AL[k].szin}"></i><b>${db[k]||0}</b> ${AL[k].nev}</span>`).join("");
+    const kartyak = (SA.kiemelt||[]).map(k => k.allapot === "helyi"
+      ? `<div class="sz-kartya"><b>${k.nev}</b> · helyi esemény<span>az utolsó ${SA.eso_napok} nap esője ${dec(k.eso_mm,1)} mm · a talajban ${k.irany} víz van, mint amit a szomszédos szondák alapján várnánk; a hálózat mintázatába illeszkedik</span></div>`
+      : `<div class="sz-kartya ell"><b>${k.nev}</b> · ellenőrizendő<span>az utolsó ${SA.eso_napok} nap esője ${dec(k.eso_mm,1)} mm · a szonda értéke a hálózat mintázatától is eltér</span></div>`).join("")
+      || `<p class="alcim">Ma minden szonda a hálózattal együtt mozog.</p>`;
+    box.innerHTML = `<div class="panel" style="margin-top:22px">
+      <h3>Szondák a hálózatban <span class="pontos">${SA.nap} · ${SA.allomasok.length} szonda</span></h3>
+      <p class="alcim">Minden szonda mai értékét kétféleképpen becsüljük a többi szondából: a hálózat visszatérő mintázataiból és az öt legközelebbi szomszédból. Ha mindkettővel egyezik, a szonda a hálózattal együtt mozog. Ha a mintázattal egyezik, a szomszédoktól viszont eltér, helyi esemény történt: jellemzően egy zápor vagy a talaj eltérő vízáteresztése. Ha a mintázattól is eltér, a szonda ellenőrizendő.</p>
+      <div class="sz-allapot"><div>${svg}</div>
+        <div><div class="sz-jel">${jel}</div>${kartyak}
+        <p class="alcim">A lehullott eső útja a talajban: <a href="#beszivargas-sec">Beszivárgás</a>. ${pr("mert")}</p></div></div>
+    </div>`;
   })();
 
   /* lábjegyzet */

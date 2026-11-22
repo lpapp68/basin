@@ -103,6 +103,10 @@ const KELL = [
 if (duna) {
   KELL.push(["ov-a-graf", "öntözővíz A grafikon"], ["ov-b-ki", "öntözővíz B összegzés"]);
 }
+// A medence mintázatai és a szondák állapota (2026-11-22): csak ha a tanuló réteg már adott eredményt.
+if (adat.tanulo && adat.tanulo.szerkezet) {
+  KELL.push(["mintazat", "mintázat-szakasz"], ["szondaallapot", "szondaállapot"]);
+}
 let baj = 0;
 for (const [id, nev] of KELL) {
   const e = elemek.get(id);

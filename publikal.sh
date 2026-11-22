@@ -59,6 +59,8 @@ cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt goog
 cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
 # Egy mérce közelről (2026-11-19): a nézet szkriptje, stílusa és a lapok név → törzsszám táblája.
 cp merce.js merce.css mercek_tsz.json _publish/
+# A medence mintázatai (2026-11-22): a publikus bázis, a tanuló réteg teszi a repóba.
+if [ -f szerkezet.json ]; then cp szerkezet.json _publish/; fi
 
 # Az élő adat marad érvényben; helyi másolattal csak akkor pótoljuk, ha a
 # letöltés nem sikerül.
