@@ -1,6 +1,7 @@
 kert_nap=2026-11-23
 feldolgozott_nap=2026-11-22
-ido=2026-11-24T08:06:16Z
+ido=2026-11-24T08:35:59Z
 hol=bot
 visszalepes=igen
 --- naplo ---
+IMERG műholdas csapadék:     raise RuntimeError(ex.response.text) from ex RuntimeError: {"errors":["An Internal Error has occurred."]} 

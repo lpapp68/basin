@@ -1,0 +1,1 @@
+IMERG műholdas csapadék:     raise RuntimeError(ex.response.text) from ex RuntimeError: {"errors":["An Internal Error has occurred."]} 
