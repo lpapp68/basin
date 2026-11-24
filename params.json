@@ -8,20 +8,20 @@
     "havi": "NASA/JPL GRACE es GRACE-FO mascon"
   },
   "csapadek_mm_nap": {
-    "ertek": 3.2,
+    "ertek": 0.34,
     "provenance": "muholdas",
-    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-11-22, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 48,
-    "datum": "2026-11-22",
+    "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-11-23, területsúlyozott átlag országhatár-maszkkal",
+    "kor_ora": 24,
+    "datum": "2026-11-23",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
   },
   "parolgas_mm_nap": {
-    "ertek": 0.32,
+    "ertek": 0.47,
     "provenance": "muholdas",
-    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-11-22, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 48,
-    "datum": "2026-11-22",
+    "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-11-23, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
+    "kor_ora": 24,
+    "datum": "2026-11-23",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
     "hivatkozas": "Data provided by the EUMETSAT Satellite Application Facility on Land Surface Analysis (LSA SAF; Trigo et al., 2011), CC BY 4.0"
@@ -113,30 +113,30 @@
     "megjegyzes": "A kivétel a hőteljesítménnyel skálázódik. A hatvanszoros különbség a két üzemállapot között a lényeg."
   },
   "ontozesigeny": {
-    "datum": "2026-11-22",
-    "et_ref_mm": 0.64,
-    "et_act_mm": 0.32,
-    "vizstressz": 0.497,
+    "datum": "2026-11-23",
+    "et_ref_mm": 0.6,
+    "et_act_mm": 0.47,
+    "vizstressz": 0.78,
     "szanto_ha": 4300000,
     "tartomany": {
       "also": {
         "kc": 0.8,
-        "hiany_mm_nap": 0.19,
-        "m3s": 97
+        "hiany_mm_nap": 0.01,
+        "m3s": 6
       },
       "kozep": {
         "kc": 1.0,
-        "hiany_mm_nap": 0.32,
-        "m3s": 160
+        "hiany_mm_nap": 0.13,
+        "m3s": 65
       },
       "felso": {
         "kc": 1.2,
-        "hiany_mm_nap": 0.45,
-        "m3s": 224
+        "hiany_mm_nap": 0.25,
+        "m3s": 125
       }
     },
     "provenance": "modellezett",
-    "forras": "LSA SAF METREF és DMETv3, 2026-11-22, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
+    "forras": "LSA SAF METREF és DMETv3, 2026-11-23, országhatár-maszkkal; Kc 0.8–1.2; szántóterület 4,300,000 ha",
     "figyelmeztetes": "Nagyságrendi számítás, nem öntözési terv. A műholdas tényleges párolgás vegyes felszínborításra vonatkozik, nem tábla szintű növényállományra. A szántóterület helyőrző, KSH-adattal cserélendő."
   },
   "ontozesigeny_beallitas": {
@@ -146,7 +146,7 @@
     "megjegyzes": "Kc: FAO-56 táblázatos növénykoefficiens tartománya a nyári főnövényekre (kukorica, napraforgó, lucerna) a tenyészidőszakban."
   },
   "kivetel_modell": {
-    "datum": "2026-11-22",
+    "datum": "2026-11-23",
     "honap": 11,
     "osszes_m3s": 24.5,
     "fogyaszto_m3s": 7.0,
@@ -3037,7 +3037,6 @@
           24.4,
           24.4,
           24.4,
-          24.4,
           24.3,
           24.3,
           24.3,
@@ -3504,7 +3503,6 @@
           19.5,
           19.5,
           19.5,
-          19.5,
           19.7,
           19.9,
           20.0,
@@ -3584,7 +3582,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-24T09:36:27+00:00",
+    "lekerve": "2026-11-24T10:06:20+00:00",
     "datum": "2026-11-23",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3984,7 +3982,7 @@
       },
       {
         "nev": "Fehérgyarmat (I)",
-        "cm": 175.0,
+        "cm": 173.0,
         "lat": 47.9945746378417,
         "lon": 22.5141959718982,
         "terkep_xy": [
@@ -4090,21 +4088,21 @@
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
-    "ertek": 6.11,
-    "datum": "2026-11-22",
-    "allomas_db": 262,
+    "ertek": 0.02,
+    "datum": "2026-11-23",
+    "allomas_db": 263,
     "provenance": "helyszini",
-    "forras": "OMSZ (HungaroMet) nyílt adattár, 262 automata állomás órás csapadékösszege, rácsos területi súlyozással",
+    "forras": "OMSZ (HungaroMet) nyílt adattár, 263 automata állomás órás csapadékösszege, rácsos területi súlyozással",
     "figyelmeztetes": "Földi mérés, pontszerű: az állomások között interpolálni kell. A rácsos súlyozás azt kezeli, hogy a hálózat egyenetlen — cellánként átlagolunk, majd a cellák átlagát vesszük, így a sűrűn műszerezett térségek nem nyomják el a ritkábbakat.",
     "hivatkozas": "odp.met.hu"
   },
   "_helyorzo_takaritas": "2026-08-19: a hozam_be/ki és a keszletvaltozas mezők helyőrzőből tartalékká minősítve — a lap ezeket nem használja, a valódi értéket a mércékből és a mérleg zárásából számoljuk.",
   "et_ref_omsz_mm_nap": {
-    "ertek": 0.43,
-    "datum": "2026-11-22",
-    "allomas_db": 248,
+    "ertek": 0.88,
+    "datum": "2026-11-23",
+    "allomas_db": 247,
     "provenance": "helyszini",
-    "forras": "OMSZ (HungaroMet) nyílt adattár, 248 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
+    "forras": "OMSZ (HungaroMet) nyílt adattár, 247 automata állomás; FAO-56 Penman-Monteith referencia-párolgás hőmérsékletből, páratartalomból, szélsebességből és globálsugárzásból",
     "figyelmeztetes": "Ez a REFERENCIA-párolgás: mennyi víz párologna el egy alacsonyra nyírt, korlátlan vízellátású fűfelszínről. A tényleges párolgásra földi mérőhálózat nincs — az műholdas mérésből (LSA SAF) származik."
   },
   "hernad_hatarszelveny": {
@@ -4386,127 +4384,127 @@
         "megjegyzes": "a Tisza középső szakasza",
         "pontok": [
           {
-            "ido": "2026-11-23 12:00:00",
-            "cm": 330.0,
+            "ido": "2026-11-24 12:00:00",
+            "cm": 325.0,
             "sav": 2.4
           },
           {
-            "ido": "2026-11-23 18:00:00",
-            "cm": 344.0,
+            "ido": "2026-11-24 18:00:00",
+            "cm": 330.0,
             "sav": 4.7
           },
           {
-            "ido": "2026-11-24 00:00:00",
-            "cm": 356.0,
+            "ido": "2026-11-25 00:00:00",
+            "cm": 332.0,
             "sav": 7.1
           },
           {
-            "ido": "2026-11-24 06:00:00",
-            "cm": 366.0,
+            "ido": "2026-11-25 06:00:00",
+            "cm": 330.0,
             "sav": 9.4
           },
           {
-            "ido": "2026-11-24 12:00:00",
-            "cm": 372.0,
+            "ido": "2026-11-25 12:00:00",
+            "cm": 325.0,
             "sav": 11.3
           },
           {
-            "ido": "2026-11-24 18:00:00",
-            "cm": 377.0,
+            "ido": "2026-11-25 18:00:00",
+            "cm": 317.0,
             "sav": 13.2
           },
           {
-            "ido": "2026-11-25 00:00:00",
-            "cm": 380.0,
+            "ido": "2026-11-26 00:00:00",
+            "cm": 306.0,
             "sav": 15.1
           },
           {
-            "ido": "2026-11-25 06:00:00",
-            "cm": 380.0,
+            "ido": "2026-11-26 06:00:00",
+            "cm": 291.0,
             "sav": 17.1
           },
           {
-            "ido": "2026-11-25 12:00:00",
-            "cm": 378.0,
+            "ido": "2026-11-26 12:00:00",
+            "cm": 276.0,
             "sav": 18.5
           },
           {
-            "ido": "2026-11-25 18:00:00",
-            "cm": 371.0,
+            "ido": "2026-11-26 18:00:00",
+            "cm": 251.0,
             "sav": 20.0
           },
           {
-            "ido": "2026-11-26 00:00:00",
-            "cm": 360.0,
+            "ido": "2026-11-27 00:00:00",
+            "cm": 228.0,
             "sav": 21.5
           },
           {
-            "ido": "2026-11-26 06:00:00",
-            "cm": 347.0,
+            "ido": "2026-11-27 06:00:00",
+            "cm": 209.0,
             "sav": 23.0
           },
           {
-            "ido": "2026-11-26 12:00:00",
-            "cm": 330.0,
+            "ido": "2026-11-27 12:00:00",
+            "cm": 189.0,
             "sav": 23.9
           },
           {
-            "ido": "2026-11-26 18:00:00",
-            "cm": 309.0,
+            "ido": "2026-11-27 18:00:00",
+            "cm": 166.0,
             "sav": 24.9
           },
           {
-            "ido": "2026-11-27 00:00:00",
-            "cm": 287.0,
+            "ido": "2026-11-28 00:00:00",
+            "cm": 143.0,
             "sav": 25.8
           },
           {
-            "ido": "2026-11-27 06:00:00",
-            "cm": 263.0,
+            "ido": "2026-11-28 06:00:00",
+            "cm": 122.0,
             "sav": 26.8
           },
           {
-            "ido": "2026-11-27 12:00:00",
-            "cm": 239.0,
+            "ido": "2026-11-28 12:00:00",
+            "cm": 102.0,
             "sav": 28.0
           },
           {
-            "ido": "2026-11-27 18:00:00",
-            "cm": 215.0,
+            "ido": "2026-11-28 18:00:00",
+            "cm": 84.0,
             "sav": 29.3
           },
           {
-            "ido": "2026-11-28 00:00:00",
-            "cm": 193.0,
+            "ido": "2026-11-29 00:00:00",
+            "cm": 68.0,
             "sav": 30.5
           },
           {
-            "ido": "2026-11-28 06:00:00",
-            "cm": 172.0,
+            "ido": "2026-11-29 06:00:00",
+            "cm": 54.0,
             "sav": 31.7
           },
           {
-            "ido": "2026-11-28 12:00:00",
-            "cm": 153.0,
+            "ido": "2026-11-29 12:00:00",
+            "cm": 42.0,
             "sav": 33.4
           },
           {
-            "ido": "2026-11-28 18:00:00",
-            "cm": 135.0,
+            "ido": "2026-11-29 18:00:00",
+            "cm": 32.0,
             "sav": 35.1
           },
           {
-            "ido": "2026-11-29 00:00:00",
-            "cm": 117.0,
+            "ido": "2026-11-30 00:00:00",
+            "cm": 24.0,
             "sav": 36.9
           },
           {
-            "ido": "2026-11-29 06:00:00",
-            "cm": 101.0,
+            "ido": "2026-11-30 06:00:00",
+            "cm": 17.0,
             "sav": 38.6
           }
         ],
-        "valtozas_cm": -229.0,
+        "valtozas_cm": -308.0,
         "orak": 144
       },
       {
@@ -4516,127 +4514,127 @@
         "megjegyzes": "nyitott fal: Szlovákia felől",
         "pontok": [
           {
-            "ido": "2026-11-23 12:00:00",
-            "cm": -107.0,
+            "ido": "2026-11-24 12:00:00",
+            "cm": -108.0,
             "sav": 2.2
           },
           {
-            "ido": "2026-11-23 18:00:00",
+            "ido": "2026-11-24 18:00:00",
             "cm": -108.0,
             "sav": 4.5
           },
           {
-            "ido": "2026-11-24 00:00:00",
-            "cm": -109.0,
+            "ido": "2026-11-25 00:00:00",
+            "cm": -108.0,
             "sav": 6.7
           },
           {
-            "ido": "2026-11-24 06:00:00",
-            "cm": -109.0,
+            "ido": "2026-11-25 06:00:00",
+            "cm": -108.0,
             "sav": 9.0
           },
           {
-            "ido": "2026-11-24 12:00:00",
+            "ido": "2026-11-25 12:00:00",
             "cm": -108.0,
             "sav": 10.3
           },
           {
-            "ido": "2026-11-24 18:00:00",
+            "ido": "2026-11-25 18:00:00",
             "cm": -109.0,
             "sav": 11.7
           },
           {
-            "ido": "2026-11-25 00:00:00",
-            "cm": -110.0,
+            "ido": "2026-11-26 00:00:00",
+            "cm": -109.0,
             "sav": 13.0
           },
           {
-            "ido": "2026-11-25 06:00:00",
-            "cm": -110.0,
+            "ido": "2026-11-26 06:00:00",
+            "cm": -109.0,
             "sav": 14.4
           },
           {
-            "ido": "2026-11-25 12:00:00",
+            "ido": "2026-11-26 12:00:00",
             "cm": -109.0,
             "sav": 15.1
           },
           {
-            "ido": "2026-11-25 18:00:00",
+            "ido": "2026-11-26 18:00:00",
             "cm": -110.0,
             "sav": 15.8
           },
           {
-            "ido": "2026-11-26 00:00:00",
+            "ido": "2026-11-27 00:00:00",
             "cm": -110.0,
             "sav": 16.5
           },
           {
-            "ido": "2026-11-26 06:00:00",
+            "ido": "2026-11-27 06:00:00",
             "cm": -111.0,
             "sav": 17.2
           },
           {
-            "ido": "2026-11-26 12:00:00",
+            "ido": "2026-11-27 12:00:00",
             "cm": -111.0,
             "sav": 17.6
           },
           {
-            "ido": "2026-11-26 18:00:00",
-            "cm": -111.0,
-            "sav": 18.0
-          },
-          {
-            "ido": "2026-11-27 00:00:00",
-            "cm": -111.0,
-            "sav": 18.4
-          },
-          {
-            "ido": "2026-11-27 06:00:00",
-            "cm": -110.0,
-            "sav": 18.8
-          },
-          {
-            "ido": "2026-11-27 12:00:00",
-            "cm": -111.0,
-            "sav": 19.0
-          },
-          {
             "ido": "2026-11-27 18:00:00",
-            "cm": -111.0,
-            "sav": 19.3
+            "cm": -112.0,
+            "sav": 18.0
           },
           {
             "ido": "2026-11-28 00:00:00",
             "cm": -112.0,
-            "sav": 19.5
+            "sav": 18.4
           },
           {
             "ido": "2026-11-28 06:00:00",
-            "cm": -111.0,
-            "sav": 19.7
+            "cm": -112.0,
+            "sav": 18.8
           },
           {
             "ido": "2026-11-28 12:00:00",
-            "cm": -111.0,
-            "sav": 20.5
+            "cm": -113.0,
+            "sav": 19.0
           },
           {
             "ido": "2026-11-28 18:00:00",
-            "cm": -112.0,
-            "sav": 21.2
+            "cm": -113.0,
+            "sav": 19.3
           },
           {
             "ido": "2026-11-29 00:00:00",
-            "cm": -111.0,
-            "sav": 22.0
+            "cm": -114.0,
+            "sav": 19.5
           },
           {
             "ido": "2026-11-29 06:00:00",
-            "cm": -111.0,
+            "cm": -114.0,
+            "sav": 19.7
+          },
+          {
+            "ido": "2026-11-29 12:00:00",
+            "cm": -115.0,
+            "sav": 20.5
+          },
+          {
+            "ido": "2026-11-29 18:00:00",
+            "cm": -115.0,
+            "sav": 21.2
+          },
+          {
+            "ido": "2026-11-30 00:00:00",
+            "cm": -115.0,
+            "sav": 22.0
+          },
+          {
+            "ido": "2026-11-30 06:00:00",
+            "cm": -116.0,
             "sav": 22.7
           }
         ],
-        "valtozas_cm": -4.0,
+        "valtozas_cm": -8.0,
         "orak": 144
       },
       {
@@ -4646,127 +4644,127 @@
         "megjegyzes": "nyitott fal: Románia felől",
         "pontok": [
           {
-            "ido": "2026-11-23 12:00:00",
-            "cm": 157.0,
+            "ido": "2026-11-24 12:00:00",
+            "cm": 150.0,
             "sav": 1.3
           },
           {
-            "ido": "2026-11-23 18:00:00",
-            "cm": 156.0,
+            "ido": "2026-11-24 18:00:00",
+            "cm": 150.0,
             "sav": 2.6
           },
           {
-            "ido": "2026-11-24 00:00:00",
-            "cm": 155.0,
+            "ido": "2026-11-25 00:00:00",
+            "cm": 150.0,
             "sav": 3.9
           },
           {
-            "ido": "2026-11-24 06:00:00",
-            "cm": 156.0,
+            "ido": "2026-11-25 06:00:00",
+            "cm": 149.0,
             "sav": 5.2
           },
           {
-            "ido": "2026-11-24 12:00:00",
-            "cm": 158.0,
+            "ido": "2026-11-25 12:00:00",
+            "cm": 149.0,
             "sav": 7.1
           },
           {
-            "ido": "2026-11-24 18:00:00",
-            "cm": 160.0,
+            "ido": "2026-11-25 18:00:00",
+            "cm": 147.0,
             "sav": 9.0
           },
           {
-            "ido": "2026-11-25 00:00:00",
-            "cm": 162.0,
+            "ido": "2026-11-26 00:00:00",
+            "cm": 146.0,
             "sav": 10.9
           },
           {
-            "ido": "2026-11-25 06:00:00",
-            "cm": 161.0,
+            "ido": "2026-11-26 06:00:00",
+            "cm": 144.0,
             "sav": 12.7
           },
           {
-            "ido": "2026-11-25 12:00:00",
-            "cm": 161.0,
+            "ido": "2026-11-26 12:00:00",
+            "cm": 143.0,
             "sav": 15.2
           },
           {
-            "ido": "2026-11-25 18:00:00",
-            "cm": 159.0,
-            "sav": 17.7
-          },
-          {
-            "ido": "2026-11-26 00:00:00",
-            "cm": 155.0,
-            "sav": 20.2
-          },
-          {
-            "ido": "2026-11-26 06:00:00",
-            "cm": 151.0,
-            "sav": 22.6
-          },
-          {
-            "ido": "2026-11-26 12:00:00",
-            "cm": 147.0,
-            "sav": 24.3
-          },
-          {
             "ido": "2026-11-26 18:00:00",
-            "cm": 143.0,
-            "sav": 26.0
+            "cm": 141.0,
+            "sav": 17.7
           },
           {
             "ido": "2026-11-27 00:00:00",
             "cm": 140.0,
-            "sav": 27.7
+            "sav": 20.2
           },
           {
             "ido": "2026-11-27 06:00:00",
-            "cm": 138.0,
-            "sav": 29.3
+            "cm": 139.0,
+            "sav": 22.6
           },
           {
             "ido": "2026-11-27 12:00:00",
-            "cm": 139.0,
-            "sav": 30.2
+            "cm": 142.0,
+            "sav": 24.3
           },
           {
             "ido": "2026-11-27 18:00:00",
-            "cm": 144.0,
-            "sav": 31.1
+            "cm": 146.0,
+            "sav": 26.0
           },
           {
             "ido": "2026-11-28 00:00:00",
-            "cm": 152.0,
-            "sav": 32.0
+            "cm": 150.0,
+            "sav": 27.7
           },
           {
             "ido": "2026-11-28 06:00:00",
-            "cm": 159.0,
-            "sav": 33.0
+            "cm": 158.0,
+            "sav": 29.3
           },
           {
             "ido": "2026-11-28 12:00:00",
             "cm": 167.0,
-            "sav": 33.7
+            "sav": 30.2
           },
           {
             "ido": "2026-11-28 18:00:00",
-            "cm": 174.0,
-            "sav": 34.5
+            "cm": 173.0,
+            "sav": 31.1
           },
           {
             "ido": "2026-11-29 00:00:00",
-            "cm": 181.0,
-            "sav": 35.3
+            "cm": 176.0,
+            "sav": 32.0
           },
           {
             "ido": "2026-11-29 06:00:00",
-            "cm": 186.0,
+            "cm": 174.0,
+            "sav": 33.0
+          },
+          {
+            "ido": "2026-11-29 12:00:00",
+            "cm": 169.0,
+            "sav": 33.7
+          },
+          {
+            "ido": "2026-11-29 18:00:00",
+            "cm": 162.0,
+            "sav": 34.5
+          },
+          {
+            "ido": "2026-11-30 00:00:00",
+            "cm": 155.0,
+            "sav": 35.3
+          },
+          {
+            "ido": "2026-11-30 06:00:00",
+            "cm": 147.0,
             "sav": 36.1
           }
         ],
-        "valtozas_cm": 29.0,
+        "valtozas_cm": -3.0,
         "orak": 144
       },
       {
@@ -4776,127 +4774,127 @@
         "megjegyzes": "nyitott fal: Románia felől",
         "pontok": [
           {
-            "ido": "2026-11-23 12:00:00",
-            "cm": 143.0,
+            "ido": "2026-11-24 12:00:00",
+            "cm": 188.0,
             "sav": 4.2
           },
           {
-            "ido": "2026-11-23 18:00:00",
-            "cm": 133.0,
+            "ido": "2026-11-24 18:00:00",
+            "cm": 197.0,
             "sav": 8.4
           },
           {
-            "ido": "2026-11-24 00:00:00",
-            "cm": 130.0,
+            "ido": "2026-11-25 00:00:00",
+            "cm": 200.0,
             "sav": 12.6
           },
           {
-            "ido": "2026-11-24 06:00:00",
-            "cm": 133.0,
+            "ido": "2026-11-25 06:00:00",
+            "cm": 199.0,
             "sav": 16.8
           },
           {
-            "ido": "2026-11-24 12:00:00",
-            "cm": 141.0,
+            "ido": "2026-11-25 12:00:00",
+            "cm": 191.0,
             "sav": 17.4
           },
           {
-            "ido": "2026-11-24 18:00:00",
-            "cm": 148.0,
+            "ido": "2026-11-25 18:00:00",
+            "cm": 179.0,
             "sav": 17.9
           },
           {
-            "ido": "2026-11-25 00:00:00",
-            "cm": 153.0,
+            "ido": "2026-11-26 00:00:00",
+            "cm": 164.0,
             "sav": 18.5
           },
           {
-            "ido": "2026-11-25 06:00:00",
-            "cm": 153.0,
+            "ido": "2026-11-26 06:00:00",
+            "cm": 150.0,
             "sav": 19.1
           },
           {
-            "ido": "2026-11-25 12:00:00",
-            "cm": 151.0,
+            "ido": "2026-11-26 12:00:00",
+            "cm": 142.0,
             "sav": 20.7
           },
           {
-            "ido": "2026-11-25 18:00:00",
-            "cm": 146.0,
+            "ido": "2026-11-26 18:00:00",
+            "cm": 134.0,
             "sav": 22.3
           },
           {
-            "ido": "2026-11-26 00:00:00",
-            "cm": 141.0,
-            "sav": 24.0
-          },
-          {
-            "ido": "2026-11-26 06:00:00",
-            "cm": 136.0,
-            "sav": 25.6
-          },
-          {
-            "ido": "2026-11-26 12:00:00",
-            "cm": 132.0,
-            "sav": 26.8
-          },
-          {
-            "ido": "2026-11-26 18:00:00",
-            "cm": 129.0,
-            "sav": 28.1
-          },
-          {
             "ido": "2026-11-27 00:00:00",
-            "cm": 126.0,
-            "sav": 29.3
+            "cm": 128.0,
+            "sav": 24.0
           },
           {
             "ido": "2026-11-27 06:00:00",
             "cm": 126.0,
-            "sav": 30.5
+            "sav": 25.6
           },
           {
             "ido": "2026-11-27 12:00:00",
-            "cm": 128.0,
-            "sav": 31.2
+            "cm": 126.0,
+            "sav": 26.8
           },
           {
             "ido": "2026-11-27 18:00:00",
-            "cm": 131.0,
-            "sav": 31.8
+            "cm": 130.0,
+            "sav": 28.1
           },
           {
             "ido": "2026-11-28 00:00:00",
             "cm": 134.0,
-            "sav": 32.4
+            "sav": 29.3
           },
           {
             "ido": "2026-11-28 06:00:00",
-            "cm": 135.0,
-            "sav": 33.0
+            "cm": 136.0,
+            "sav": 30.5
           },
           {
             "ido": "2026-11-28 12:00:00",
             "cm": 135.0,
-            "sav": 34.1
+            "sav": 31.2
           },
           {
             "ido": "2026-11-28 18:00:00",
-            "cm": 133.0,
-            "sav": 35.1
+            "cm": 131.0,
+            "sav": 31.8
           },
           {
             "ido": "2026-11-29 00:00:00",
-            "cm": 132.0,
-            "sav": 36.2
+            "cm": 125.0,
+            "sav": 32.4
           },
           {
             "ido": "2026-11-29 06:00:00",
-            "cm": 130.0,
+            "cm": 121.0,
+            "sav": 33.0
+          },
+          {
+            "ido": "2026-11-29 12:00:00",
+            "cm": 117.0,
+            "sav": 34.1
+          },
+          {
+            "ido": "2026-11-29 18:00:00",
+            "cm": 117.0,
+            "sav": 35.1
+          },
+          {
+            "ido": "2026-11-30 00:00:00",
+            "cm": 116.0,
+            "sav": 36.2
+          },
+          {
+            "ido": "2026-11-30 06:00:00",
+            "cm": 114.0,
             "sav": 37.2
           }
         ],
-        "valtozas_cm": -13.0,
+        "valtozas_cm": -74.0,
         "orak": 144
       },
       {
@@ -4906,131 +4904,131 @@
         "megjegyzes": "nyitott fal: Románia felől",
         "pontok": [
           {
-            "ido": "2026-11-23 12:00:00",
-            "cm": -73.0,
+            "ido": "2026-11-24 12:00:00",
+            "cm": -95.0,
             "sav": 1.3
           },
           {
-            "ido": "2026-11-23 18:00:00",
-            "cm": -83.0,
+            "ido": "2026-11-24 18:00:00",
+            "cm": -98.0,
             "sav": 2.6
           },
           {
-            "ido": "2026-11-24 00:00:00",
-            "cm": -86.0,
+            "ido": "2026-11-25 00:00:00",
+            "cm": -99.0,
             "sav": 3.8
           },
           {
-            "ido": "2026-11-24 06:00:00",
-            "cm": -85.0,
-            "sav": 5.1
-          },
-          {
-            "ido": "2026-11-24 12:00:00",
-            "cm": -86.0,
-            "sav": 6.7
-          },
-          {
-            "ido": "2026-11-24 18:00:00",
-            "cm": -88.0,
-            "sav": 8.3
-          },
-          {
-            "ido": "2026-11-25 00:00:00",
-            "cm": -91.0,
-            "sav": 9.9
-          },
-          {
             "ido": "2026-11-25 06:00:00",
-            "cm": -93.0,
-            "sav": 11.5
+            "cm": -97.0,
+            "sav": 5.1
           },
           {
             "ido": "2026-11-25 12:00:00",
             "cm": -95.0,
-            "sav": 13.0
+            "sav": 6.7
           },
           {
             "ido": "2026-11-25 18:00:00",
-            "cm": -98.0,
-            "sav": 14.5
+            "cm": -90.0,
+            "sav": 8.3
           },
           {
             "ido": "2026-11-26 00:00:00",
-            "cm": -98.0,
-            "sav": 16.0
+            "cm": -85.0,
+            "sav": 9.9
           },
           {
             "ido": "2026-11-26 06:00:00",
-            "cm": -100.0,
-            "sav": 17.5
+            "cm": -81.0,
+            "sav": 11.5
           },
           {
             "ido": "2026-11-26 12:00:00",
-            "cm": -101.0,
-            "sav": 18.6
+            "cm": -78.0,
+            "sav": 13.0
           },
           {
             "ido": "2026-11-26 18:00:00",
-            "cm": -102.0,
-            "sav": 19.8
+            "cm": -77.0,
+            "sav": 14.5
           },
           {
             "ido": "2026-11-27 00:00:00",
-            "cm": -102.0,
-            "sav": 20.9
+            "cm": -79.0,
+            "sav": 16.0
           },
           {
             "ido": "2026-11-27 06:00:00",
-            "cm": -105.0,
-            "sav": 22.1
+            "cm": -80.0,
+            "sav": 17.5
           },
           {
             "ido": "2026-11-27 12:00:00",
-            "cm": -106.0,
-            "sav": 22.8
+            "cm": -82.0,
+            "sav": 18.6
           },
           {
             "ido": "2026-11-27 18:00:00",
-            "cm": -108.0,
-            "sav": 23.6
+            "cm": -86.0,
+            "sav": 19.8
           },
           {
             "ido": "2026-11-28 00:00:00",
-            "cm": -111.0,
-            "sav": 24.3
+            "cm": -89.0,
+            "sav": 20.9
           },
           {
             "ido": "2026-11-28 06:00:00",
-            "cm": -113.0,
-            "sav": 25.0
+            "cm": -92.0,
+            "sav": 22.1
           },
           {
             "ido": "2026-11-28 12:00:00",
-            "cm": -115.0,
-            "sav": 25.9
+            "cm": -93.0,
+            "sav": 22.8
           },
           {
             "ido": "2026-11-28 18:00:00",
-            "cm": -116.0,
-            "sav": 26.9
+            "cm": -93.0,
+            "sav": 23.6
           },
           {
             "ido": "2026-11-29 00:00:00",
-            "cm": -116.0,
-            "sav": 27.8
+            "cm": -91.0,
+            "sav": 24.3
           },
           {
             "ido": "2026-11-29 06:00:00",
-            "cm": -115.0,
+            "cm": -89.0,
+            "sav": 25.0
+          },
+          {
+            "ido": "2026-11-29 12:00:00",
+            "cm": -85.0,
+            "sav": 25.9
+          },
+          {
+            "ido": "2026-11-29 18:00:00",
+            "cm": -83.0,
+            "sav": 26.9
+          },
+          {
+            "ido": "2026-11-30 00:00:00",
+            "cm": -80.0,
+            "sav": 27.8
+          },
+          {
+            "ido": "2026-11-30 06:00:00",
+            "cm": -78.0,
             "sav": 28.8
           }
         ],
-        "valtozas_cm": -42.0,
+        "valtozas_cm": 17.0,
         "orak": 144
       }
     ],
-    "keszult": "2026-11-24T09:36:31Z",
+    "keszult": "2026-11-24T10:06:26Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
