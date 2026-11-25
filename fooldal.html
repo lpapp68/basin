@@ -91,6 +91,26 @@ h2{font-family:var(--serif);font-size:21px;margin:44px 0 12px;padding-bottom:6px
 .idoskala{display:flex;gap:6px;margin:0 0 12px;font-size:13px;color:var(--halvany);flex-wrap:wrap}
 .idoskala span{white-space:nowrap}
 
+/* Országtérkép */
+.orszag{background:var(--papir-2);border:1px solid var(--vonal);padding:14px 16px 12px;margin-bottom:16px}
+.retegek{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.retegek button{font:inherit;font-size:14px;padding:6px 12px;border:1px solid var(--vonal);background:var(--papir);
+  color:var(--tinta);cursor:pointer;border-radius:999px}
+.retegek button[aria-selected="true"]{background:var(--tinta);color:var(--papir-2);border-color:var(--tinta)}
+.terkepdoboz{position:relative;max-width:900px;margin:0 auto}
+#terkep{display:block;width:100%;height:auto}
+#terkep .pont{cursor:pointer;transition:opacity .15s}
+#terkep .pont:hover,#terkep .pont:focus{stroke:var(--tinta);stroke-width:2.5;outline:none}
+#terkep .varos{font-family:var(--sans);font-size:15px;fill:var(--halvany);paint-order:stroke;stroke:var(--papir-2);stroke-width:4}
+#terkep .folyonev{font-family:var(--serif);font-style:italic;font-size:17px;fill:var(--viz);opacity:.8;paint-order:stroke;stroke:var(--papir-2);stroke-width:4}
+.buborek{position:absolute;pointer-events:none;transform:translate(-50%,calc(-100% - 12px));background:var(--tinta);color:var(--papir-2);
+  font-size:13px;line-height:1.35;padding:6px 9px;white-space:nowrap;max-width:260px}
+.jelmagy{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:13.5px;color:var(--halvany);margin-top:6px}
+.jelmagy .sav{display:inline-block;width:110px;height:9px;vertical-align:middle;margin:0 6px;
+  background:linear-gradient(90deg,#2E7D4F,#C8A032,#B03A28)}
+.jelmagy i{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+.jelmagy .mit{flex-basis:100%;color:var(--tinta)}
+
 /* Környék */
 .kornyek{background:var(--papir-2);border:1px solid var(--vonal);padding:18px}
 .kornyek label{display:block;font-weight:600;margin-bottom:8px}
@@ -131,6 +151,16 @@ footer a{color:var(--halvany)}
 <div class="ma" id="ma"><p class="nincs">Az adatok betöltése…</p></div>
 
 <h2>Hol tart a víz?</h2>
+<div class="orszag" id="orszag">
+  <div class="retegek" role="tablist" aria-label="Térképréteg">
+    <button type="button" role="tab" data-reteg="talaj">A talaj vízhiánya</button>
+    <button type="button" role="tab" data-reteg="eso">Hová jutott az eső?</button>
+    <button type="button" role="tab" data-reteg="kut">A talajvíz süllyedése</button>
+  </div>
+  <div class="terkepdoboz"><svg id="terkep" role="img" aria-label="Magyarország térképe a kiválasztott réteggel"></svg>
+    <div class="buborek" id="buborek" hidden></div></div>
+  <div class="jelmagy" id="jelmagy"></div>
+</div>
 <div class="idoskala" aria-hidden="true"><span>gyors →</span><span>folyó: napok</span>·<span>talaj: hetek</span>·<span>talajvíz: évtizedek</span>·<span>az ország egésze: évek</span></div>
 <div class="kartyak" id="kartyak"></div>
 
@@ -271,7 +301,7 @@ if(TV && TV.atlag_mm!=null){
   K.push({cim:"Talaj", link:"/talaj",
     nagy:`${dec(TV.atlag_mm,1)}<small>liter/m²</small>`, hol:"ennyi víz hiányzik a felső 80 cm-ből",
     irany:ir, iranyOsztaly:io,
-    szoveg:"Ennyi beszivárgó eső kell, hogy a növények gyökérzónája megteljen. Az aszály itt zajlik, a folyómederben a víz csak átfolyik.",
+    szoveg:"Ennyi beszivárgó eső kell, hogy a növények gyökérzónája megteljen. Az aszálynak itt van jelentősége, nem a folyók vízállásában.",
     datum:`${TV.allomas_db} állomás átlaga · ${nap(TV.datum)}`});
 }
 const TW = D.talajviz;
@@ -355,12 +385,91 @@ const keres = () => {
 kereso.addEventListener("input", keres);
 kereso.addEventListener("change", keres);
 
+/* ── 4. Országtérkép: a három lassú rekesz egy képen ─────────────────
+   Ugyanaz a vetület és körvonal, mint a részletes lapon (terkep.json, 1000 egység széles).
+   A folyók mindig látszanak; a réteg választja ki, melyik mért állapot kerül rájuk.
+   Egy pontra kattintva a lent lévő helykereső arra a helyre ugrik. */
+const T = D.terkep, svg = $("#terkep");
+const VAROS = [["Budapest",377,203],["Debrecen",760,230],["Szeged",567,468],["Pécs",344,470],
+  ["Győr",216,170],["Miskolc",605,100],["Kecskemét",485,330]];
+const X = lon => 145.9774*lon - 2344.22, Y = lat => -217.3505*lat + 10548.25;
+const keverd = a => a < 0.5 ? `color-mix(in oklab, #C8A032 ${Math.round(a*200)}%, #2E7D4F)`
+                            : `color-mix(in oklab, #B03A28 ${Math.round((a-0.5)*200)}%, #C8A032)`;
+const RETEG = {
+  talaj: () => {
+    const p = hianyAll.filter(a=>a.hiany_mm!=null); if(p.length < 5) return null;
+    const v = p.map(a=>a.hiany_mm), mn = Math.min(...v), mx = Math.max(...v), tr = (mx-mn)||1;
+    return {pontok: p.sort((a,b)=>a.hiany_mm-b.hiany_mm).map(a => { const t=(a.hiany_mm-mn)/tr;
+        return {x:X(a.lon), y:Y(a.lat), r:8+t*12, szin:keverd(t), nev:a.nev,
+          cimke:`${a.nev}: ${dec(a.hiany_mm,1)} liter/m² hiányzik`}; }),
+      jel:`<span class="mit">Mennyi víz hiányzik a talaj felső 80 cm-éből, liter négyzetméterenként · ${nap(TV.datum)}</span>
+           <span>${dec(mn,0)}<span class="sav"></span>${dec(mx,0)} liter/m²</span><span>nagyobb kör: nagyobb hiány</span>`};
+  },
+  eso: () => {
+    const p = szondak.filter(s=>s.P>=5); if(p.length < 5) return null;
+    const mx = Math.max(...p.map(s=>s.P));
+    const SZ = {zaro:"#2B5C77", tobblet:"#2E7D4F", hiany:"#C8A032"};
+    return {pontok: p.sort((a,b)=>b.P-a.P).map(s => ({x:s.ll ? X(s.ll[1]) : 0, y:s.ll ? Y(s.ll[0]) : 0,
+        r:5+Math.sqrt(s.P/mx)*13, szin:SZ[s.osztaly]||"#7A8A8E", nev:s.nev,
+        cimke:`${s.nev}: ${num(s.P)} liter esett, ${num(s.dS)} maradt a talajban${s.mely?` · ${s.mely} cm-ig jutott`:""}`})),
+      jel:`<span class="mit">A legutóbbi eső útja a talajban (${(B.ablak||[]).map(nap).join("–").replace(/^(\S+) (\d+)\.–\1 /,"$1 $2–")}) · nagyobb kör: több eső</span>
+           <span><i style="background:#2B5C77"></i>nagy része a talajban maradt</span>
+           <span><i style="background:#C8A032"></i>nagyobb része továbbment</span>
+           <span><i style="background:#2E7D4F"></i>a szonda többet mutat, mint amennyi esett</span>`};
+  },
+  kut: () => {
+    const p = kutak.filter(k=>k.cm!=null); if(p.length < 5) return null;
+    const mx = Math.max(...p.map(k=>k.cm));
+    return {pontok: p.sort((a,b)=>a.cm-b.cm).map(k => ({x:X(k.lon), y:Y(k.lat), r:6+Math.sqrt(Math.max(0,k.cm)/mx)*14,
+        szin:"#9E3B2E", nev:k.nev, cimke:`${k.nev}: ${dec(k.cm/100,2)} méterrel mélyebben, mint ${TW.evek} éve`})),
+      jel:`<span class="mit">Mennyivel van mélyebben a talajvíz, mint ${TW.evek} éve · a térségek legnagyobb süllyedésű kútja · ${nap(TW.datum)}</span>
+           <span>nagyobb kör: nagyobb süllyedés (legfeljebb ${dec(mx/100,1)} m)</span>`};
+  },
+};
+const rajzolTerkep = nev => {
+  if(!T || !T.path || !svg) return;
+  const r = RETEG[nev] && RETEG[nev](); if(!r) return false;
+  const folyok = (T.folyok||[]).filter(f=>f.rang<=10).map(f => {
+    const w = f.rang <= 2 ? 5 : f.rang <= 6 ? 3 : 1.6;
+    return `<path d="${f.path}" fill="none" stroke="#2B5C77" stroke-width="${w}" opacity="${f.rang<=2?.7:.5}" stroke-linejoin="round" stroke-linecap="round"/>`;
+  }).join("");
+  svg.setAttribute("viewBox", T.viewBox || "0 0 1000 613");
+  svg.innerHTML =
+    `<path d="${T.path}" fill="#F6F7F3" stroke="#A6B5B1" stroke-width="2"/>` + folyok +
+    `<text class="folyonev" x="352" y="300">Duna</text><text class="folyonev" x="596" y="330">Tisza</text>` +
+    `<text class="folyonev" x="300" y="545">Dráva</text>` +
+    r.pontok.map(p => `<circle class="pont" tabindex="0" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r.toFixed(1)}"
+       fill="${p.szin}" fill-opacity=".85" stroke="#F6F7F3" stroke-width="1.6" data-nev="${esc(p.nev)}" data-cimke="${esc(p.cimke)}"><title>${esc(p.cimke)}</title></circle>`).join("") +
+    VAROS.map(([n,x,y]) => `<circle cx="${x}" cy="${y}" r="3.5" fill="#16262B"/><text class="varos" x="${x+7}" y="${y-6}">${n}</text>`).join("");
+  $("#jelmagy").innerHTML = r.jel;
+  document.querySelectorAll(".retegek button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.reteg===nev)));
+  return true;
+};
+if(svg && svg.addEventListener){
+  const bub = $("#buborek");
+  const mutatBub = e => { const c = e.target.closest && e.target.closest(".pont"); if(!c){ bub.hidden = true; return; }
+    const d = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal, k = d.width / vb.width;
+    bub.textContent = c.dataset.cimke; bub.hidden = false;
+    bub.style.left = (c.cx.baseVal.value*k) + "px"; bub.style.top = (c.cy.baseVal.value*k - c.r.baseVal.value*k) + "px"; };
+  svg.addEventListener("mouseover", mutatBub); svg.addEventListener("focusin", mutatBub);
+  svg.addEventListener("mouseleave", () => { bub.hidden = true; });
+  svg.addEventListener("click", e => { const c = e.target.closest && e.target.closest(".pont"); if(!c) return;
+    kereso.value = c.dataset.nev; mutat(c.dataset.nev);
+    $("#talalat").scrollIntoView({behavior:"smooth", block:"center"}); });
+  document.querySelectorAll(".retegek button").forEach(b => b.addEventListener("click", () => rajzolTerkep(b.dataset.reteg)));
+}
+// Az alapréteg a kiemelt megfigyeléshez igazodik: friss eső után az eső útja látszik.
+const kezdo = ma && ma.link === "/beszivargas" ? "eso" : ma && ma.link === "/folyok" ? "talaj" : "talaj";
+if(!rajzolTerkep(kezdo)) rajzolTerkep("talaj");
+// Egy réteg gombja eltűnik, ha nincs hozzá adat.
+document.querySelectorAll && document.querySelectorAll(".retegek button").forEach(b => { if(!(RETEG[b.dataset.reteg]())) b.hidden = true; });
+
 /* ── frissesség ── */
 if(D.generalva){
   const p = Math.max(0, Math.round((Date.now()-Date.parse(D.generalva))/60000));
   $("#frissites").textContent = `Az adat ${p < 90 ? p+" perce" : Math.round(p/60)+" órája"} frissült. A folyók adata óránként, a talajé naponta, a műholdas készleté havonta érkezik.`;
 }
-window.BASIN_FOOLDAL = {ma, kartyak: K.length, helyek: lista.length};
+window.BASIN_FOOLDAL = {ma, kartyak: K.length, helyek: lista.length, terkep: svg ? svg.innerHTML.length : 0};
 })();
 </script>
 </body>

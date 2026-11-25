@@ -25,13 +25,13 @@ const elem = id => {
   return elemek.get(id);
 };
 global.window = { BASIN_DATA: adat };
-global.document = { querySelector: s => elem(String(s).replace(/^#/, "")) };
+global.document = { querySelector: s => elem(String(s).replace(/^#/, "")), querySelectorAll: () => [] };
 global.location = { hash: "" };
 
 let hiba = 0;
 try { new Function(js)(); } catch (e) { console.error("FUTÁSIDEJŰ HIBA:", e.stack || e); process.exit(1); }
 
-const kell = { ma: 40, kartyak: 200, helyek: 20 };
+const kell = { ma: 40, kartyak: 200, helyek: 20, terkep: 2000 };
 for (const [id, min] of Object.entries(kell)) {
   const n = elem(id).innerHTML.length;
   if (n < min) { console.error(`ÜRES: #${id} — ${n} karakter`); hiba++; }
