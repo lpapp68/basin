@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mennyi víz van Magyarországon, és hol? — EQUORA Institute</title>
+<link rel="canonical" href="https://basin.equora.institute/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="EQUORA Institute">
+<meta name="citation_doi" content="10.5281/zenodo.21852060">
+<meta name="description" content="Hol tart most a víz Magyarországon: a folyókban, a talajban, a talajvízben és az ország teljes vízkészletében. Mért adatokból, naponta frissítve.">
+<meta property="og:site_name" content="EQUORA Institute">
+<meta property="og:title" content="Mennyi víz van Magyarországon, és hol?">
+<meta property="og:description" content="A folyók, a talaj, a talajvíz és az ország vízkészlete egy lapon, mért adatokból, naponta frissítve.">
+<meta property="og:image" content="https://basin.equora.institute/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://basin.equora.institute/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://basin.equora.institute/og.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<!-- Régi horgonyok (például /#talaj-sec) a megfelelő aloldalra visznek. A lap 2026-11-25 óta
+     hierarchikus: ez a főoldal a kizoomolt nézet, a részletek az aloldalakon vannak. -->
+<script>
+(function(){
+  var h = location.hash.slice(1); if(!h) return;
+  var t = {"talaj-sec":"/talaj","stressz":"/talaj","beszivargas-sec":"/beszivargas",
+    "valt-sec":"/keszlet","p-egyenleg":"/keszlet","elore-sec":"/folyok","mercek-sec":"/folyok",
+    "kutatas-sec":"/reszvetel","forras-sec":"/modszertan","paks-sec":"/mi-lenne-ha",
+    "ontozo-sec":"/mi-lenne-ha","mdb-sec":"/merleg","mintazat-sec":"/merleg","panel-sec":"/merleg",
+    "p-pulzus":"/merleg","p-hovalett":"/merleg","p-kivetel":"/merleg"};
+  if(/^merce=/.test(h)) location.replace("/folyok#" + h);
+  else if(t[h]) location.replace(t[h] + "#" + h);
+})();
+</script>
+<style>
+:root{
+  --papir:#E2E7E2; --papir-2:#EDF0EC; --tinta:#16262B; --halvany:#5C7075;
+  --vonal:#A6B5B1; --vonal-halk:#C3CFCB;
+  --viz:#2B5C77; --parolgas:#A9772F; --rekord:#9E3B2E; --zold:#2E7D4F;
+  --serif:"Bitter",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papir);color:var(--tinta);font-family:var(--sans);
+  font-size:16px;line-height:1.6;
+  background-image:linear-gradient(var(--vonal-halk) .5px,transparent .5px),
+                   linear-gradient(90deg,var(--vonal-halk) .5px,transparent .5px);
+  background-size:28px 28px;background-position:-1px -1px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+a{color:var(--viz)}
+header{padding:34px 0 22px;border-bottom:2px solid var(--tinta)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--halvany)}
+.fej{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.fej img{width:150px;height:auto}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.6vw,48px);line-height:1.1;
+  text-wrap:balance;margin:.3em 0 .2em;letter-spacing:-.015em}
+.dek{max-width:62ch;color:var(--halvany);font-size:17px;margin:8px 0 0}
+h2{font-family:var(--serif);font-size:21px;margin:44px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--tinta)}
+.u{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--halvany)}
+
+/* Ma */
+.ma{border:2px solid var(--tinta);background:var(--papir-2);padding:22px 24px}
+.ma .u{color:var(--viz)}
+.ma h3{font-family:var(--serif);font-size:23px;line-height:1.25;margin:6px 0 10px}
+.ma p{margin:0;font-size:17px;max-width:68ch}
+.ma .tovabb{display:inline-block;margin-top:14px;font-weight:600;text-decoration:none}
+.ma .tovabb:hover{text-decoration:underline}
+.ma .miert{margin-top:14px;padding-top:10px;border-top:1px solid var(--vonal-halk);font-size:13px;color:var(--halvany)}
+
+/* Négy kártya */
+.kartyak{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.kartya{display:flex;flex-direction:column;background:var(--papir-2);border:1px solid var(--vonal);
+  padding:18px 18px 14px;text-decoration:none;color:inherit;transition:border-color .15s}
+.kartya:hover,.kartya:focus-visible{border-color:var(--tinta)}
+.kartya .u{margin-bottom:8px}
+.kartya .nagy{font-family:var(--serif);font-weight:700;font-size:34px;line-height:1.05;color:var(--viz)}
+.kartya .nagy small{font-size:16px;font-weight:600;margin-left:4px}
+.kartya .hol{font-size:13.5px;color:var(--halvany);margin-top:2px}
+.kartya .irany{font-weight:600;font-size:14.5px;margin-top:10px}
+.kartya .irany.le{color:var(--rekord)} .kartya .irany.fel{color:var(--zold)}
+.kartya p{margin:8px 0 0;font-size:15px}
+.kartya .lab{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;gap:8px;
+  font-size:12.5px;color:var(--halvany)}
+.kartya .lab b{color:var(--viz);font-weight:600}
+.idoskala{display:flex;gap:6px;margin:0 0 12px;font-size:13px;color:var(--halvany);flex-wrap:wrap}
+.idoskala span{white-space:nowrap}
+
+/* Környék */
+.kornyek{background:var(--papir-2);border:1px solid var(--vonal);padding:18px}
+.kornyek label{display:block;font-weight:600;margin-bottom:8px}
+.kornyek input{font:inherit;font-size:17px;width:100%;max-width:420px;padding:9px 12px;
+  border:1px solid var(--vonal);background:#fff;color:var(--tinta)}
+.kornyek input:focus{outline:2px solid var(--viz);outline-offset:1px}
+.talalat{margin-top:16px}
+.talalat h3{font-family:var(--serif);font-size:20px;margin:0 0 8px}
+.talalat ul{margin:0;padding-left:18px}
+.talalat li{margin:6px 0}
+.talalat .halk{color:var(--halvany);font-size:14px}
+
+/* Mélyebben */
+.melyebben{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.melyebben a{display:block;padding:12px 14px;border:1px solid var(--vonal);background:var(--papir-2);
+  text-decoration:none;color:var(--tinta)}
+.melyebben a b{display:block;color:var(--viz)}
+.melyebben a span{font-size:13.5px;color:var(--halvany)}
+.melyebben a:hover{border-color:var(--tinta)}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--vonal);font-size:13px;color:var(--halvany)}
+footer a{color:var(--halvany)}
+.nincs{color:var(--halvany);font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">EQUORA Institute · basin.equora.institute</div>
+  <div class="fej">
+    <a href="https://equora.institute" target="_blank" rel="noopener" aria-label="EQUORA Institute"><img src="/logo.png" alt="" width="204" height="92"></a>
+  </div>
+  <h1>Mennyi víz van Magyarországon, és hol?</h1>
+  <p class="dek">A víz a folyókban napokig marad, a talajban hetekig, a mélyben évtizedekig.
+  Ezért lehet egyszerre sok víz a Dunában és aszály a szántóföldön. Ez a lap megmutatja, hol tart most mindhárom.</p>
+</header>
+
+<h2>Ma</h2>
+<div class="ma" id="ma"><p class="nincs">Az adatok betöltése…</p></div>
+
+<h2>Hol tart a víz?</h2>
+<div class="idoskala" aria-hidden="true"><span>gyors →</span><span>folyó: napok</span>·<span>talaj: hetek</span>·<span>talajvíz: évtizedek</span>·<span>az ország egésze: évek</span></div>
+<div class="kartyak" id="kartyak"></div>
+
+<h2>A te környéked</h2>
+<div class="kornyek">
+  <label for="kereso">Írd be a településed vagy a közeli nagyobb helység nevét</label>
+  <input id="kereso" list="helyek" autocomplete="off" placeholder="például Kecskemét, Szeged, Kalocsa">
+  <datalist id="helyek"></datalist>
+  <div class="talalat" id="talalat" aria-live="polite"></div>
+</div>
+
+<h2>Mélyebben</h2>
+<nav class="melyebben" aria-label="Aloldalak">
+  <a href="/folyok"><b>A folyók</b><span>a 22 főmérce, kereső mind az 507 mércéhez, előrejelzés</span></a>
+  <a href="/talaj"><b>A talaj</b><span>vízhiány, talajvíz, szondák</span></a>
+  <a href="/beszivargas"><b>Hová jut az eső?</b><span>milyen mélyre jutott, mennyi maradt a talajban</span></a>
+  <a href="/keszlet"><b>Az ország vízkészlete</b><span>műholdas mérés 2002 óta</span></a>
+  <a href="/mi-lenne-ha"><b>Mi lenne, ha…?</b><span>Paks hűtővize, öntözés a Dunából</span></a>
+  <a href="/merleg"><b>A napi vízmérleg</b><span>szakmai nézet, bizonytalansággal</span></a>
+  <a href="/modszertan"><b>Módszertan és források</b><span>minden adat nyilvános</span></a>
+  <a href="/reszvetel"><b>Közös kutatás</b><span>egy terület vizsgálata a lap adataiból</span></a>
+</nav>
+
+<footer id="lab">
+  Kutatási felület · EQUORA Institute · a módszertan hivatkozható:
+  <a href="https://doi.org/10.5281/zenodo.21852060" target="_blank" rel="noopener">10.5281/zenodo.21852060</a> ·
+  <a href="/data.json">nyers adat</a> · <a href="/impresszum">Impresszum</a> · <a href="/adatkezeles">Adatkezelés</a>
+  <div id="frissites"></div>
+</footer>
+</div>
+
+<script src="/data.js"></script>
+<script>
+(function(){
+"use strict";
+const D = window.BASIN_DATA || {};
+const $ = s => document.querySelector(s);
+const BALATON = ((D.egyenleg||{}).referencia||{}).terfogat_km3 || 1.9;
+const HONAPOK = ["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"];
+const RHONAP = ["jan.","febr.","márc.","ápr.","máj.","jún.","júl.","aug.","szept.","okt.","nov.","dec."];
+
+const dec = (v,d) => (v==null||isNaN(v)) ? "—" : Number(v).toLocaleString("hu-HU",{minimumFractionDigits:d,maximumFractionDigits:d});
+const num = v => dec(Math.round(v),0);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+// „2026-11-22” vagy „2026-11-22 14” → „nov. 22.”
+const nap = s => { const m = /(\d{4})-(\d{2})-(\d{2})/.exec(s||""); return m ? `${RHONAP[+m[2]-1]} ${+m[3]}.` : ""; };
+const honap = s => { const m = /(\d{4})-(\d{2})/.exec(s||""); return m ? `${m[1]}. ${HONAPOK[+m[2]-1]}` : ""; };
+// A térkép-koordinátából vissza fokra (ugyanaz az illesztés, mint a részletes lapon).
+const xy2ll = (x,y) => [(y-10548.25)/-217.3505, (x+2344.22)/145.9774];
+const tav = (a,b) => { const R=6371, r=Math.PI/180, dl=(b[0]-a[0])*r, dn=(b[1]-a[1])*r;
+  const h=Math.sin(dl/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dn/2)**2; return 2*R*Math.asin(Math.sqrt(h)); };
+const ekezetlen = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+
+/* ── 1. Ma: a nap kiemelt megfigyelése ─────────────────────────────────
+   Minden jelölt kap egy súlyt; a legnagyobb nyer. A súly azt méri, mennyi új
+   információt hordoz a megfigyelés ma: a ritka esemény (kisvíz-rekord) erősebb,
+   mint a friss eső, az pedig erősebb, mint a lassan változó állapot. */
+const jeloltek = [];
+const mercek = D.mercek || [];
+const rekord = mercek.filter(m => m.rekord_alatt);
+if(rekord.length){
+  jeloltek.push({suly:100, cim:`${rekord.length} mércén a víz a valaha mért legalacsonyabb szint alatt van`,
+    szoveg:`${rekord.map(m=>`${esc(m.folyo)}, ${esc(m.nev)}`).join(" · ")}. A folyó ezeken a helyeken alacsonyabban jár, mint a mérések kezdete óta bármikor.`,
+    link:"/folyok", linkSz:"Megnézem a mércéket →",
+    miert:"A kisvíz-rekord ritka esemény, ezért ma ez a legfontosabb hír a lapon."});
+}
+const B = D.beszivargas, H = B && B.hatsag_osszeg;
+if(H && H.P_atlag >= 8 && Array.isArray(B.hatsag) && B.hatsag.length){
+  const kezdetek = B.hatsag.map(a=>a.kezd).filter(Boolean).sort();
+  const vege = (B.ablak||[])[1], kor = vege ? (Date.now()-Date.parse(vege))/864e5 : 99;
+  const le = H.legmelyebb_eloszlas || {}, mely75 = le["75"]||0;
+  // „a nov. 19–22. közötti esők”, hónapváltáskor „a nov. 29–dec. 2. közötti esők”
+  const k1 = nap(kezdetek[0]||""), k2 = nap(kezdetek[kezdetek.length-1]||"");
+  const idoszak = !k1 ? "a legutóbbi eső" : k1 === k2 ? `a ${k1} kezdődött eső`
+      : `a ${k1.replace(/\.$/,"")}–${k2.split(" ")[0] === k1.split(" ")[0] ? k2.split(" ")[1] : k2} közötti esők`;
+  jeloltek.push({suly: kor <= 3 ? 80 + Math.min(15, H.P_atlag/3) : 30,
+    cim:`Duna–Tisza köze · ${idoszak}`,
+    szoveg:`Átlagosan <b>${num(H.P_atlag)} liter eső</b> esett négyzetméterenként. Ebből <b>${num(H.dS_atlag)} liter</b> maradt a talaj felső 75 centiméterében. ` +
+      (mely75 ? `${H.allomas_db} állomás közül ${mely75} helyen a víz 75 centiméter mélyre is lejutott.` : `A víz a legtöbb állomáson ${Object.entries(le).filter(e=>e[0]!=="None").sort((a,b)=>b[1]-a[1])[0]?.[0]||"—"} centiméterig jutott.`),
+    link:"/beszivargas", linkSz:"Megnézem, hogyan haladt lefelé a víz →",
+    miert:"A lap minden nap azt a megfigyelést emeli ki, amelyik a legtöbbet változott. Ma ez a friss eső útja a talajban."});
+}
+const valto = mercek.filter(m => m.valtozas_24h_cm!=null).sort((a,b)=>Math.abs(b.valtozas_24h_cm)-Math.abs(a.valtozas_24h_cm))[0];
+if(valto && Math.abs(valto.valtozas_24h_cm) >= 25){
+  const v = valto.valtozas_24h_cm;
+  jeloltek.push({suly: 50 + Math.min(40, Math.abs(v)/3),
+    cim:`${esc(valto.folyo)}, ${esc(valto.nev)}: egy nap alatt ${num(Math.abs(v))} centimétert ${v>0?"emelkedett":"apadt"} a víz`,
+    szoveg:`A vízállás most ${num(valto.utolso_cm)} cm a helyi mérce nullpontjához képest. Ekkora napi változás áradáskor vagy gyors apadáskor jellemző.`,
+    link:"/folyok", linkSz:"Megnézem a mércéket →",
+    miert:"A lap minden nap azt a megfigyelést emeli ki, amelyik a legtöbbet változott. Ma ez a folyó gyors mozgása."});
+}
+const TV = D.talaj_vizhiany;
+if(TV && TV.atlag_mm!=null){
+  jeloltek.push({suly:10, cim:`A talajból ${dec(TV.atlag_mm,1)} liter víz hiányzik négyzetméterenként`,
+    szoveg:`Ennyi eső kellene, hogy a szántóföldi növények gyökérzónája (a felső 80 cm) megteljen. Az érték ${TV.allomas_db} mérőállomás átlaga, ${nap(TV.datum)}`,
+    link:"/talaj", linkSz:"Megnézem, hol a legszárazabb →",
+    miert:"Ma egyik mért érték sem változott kiugróan, ezért a lap a talaj állapotát emeli ki."});
+}
+jeloltek.sort((a,b)=>b.suly-a.suly);
+const ma = jeloltek[0];
+$("#ma").innerHTML = ma
+  ? `<div class="u">Kiemelt megfigyelés</div><h3>${ma.cim}</h3><p>${ma.szoveg}</p>
+     <a class="tovabb" href="${ma.link}">${ma.linkSz}</a><div class="miert">${ma.miert}</div>`
+  : `<p class="nincs">Most egyik forrásból sincs friss adat. A részletek az aloldalakon olvashatók.</p>`;
+
+/* ── 2. Négy kártya: folyó, talaj, talajvíz, az ország vízkészlete ──── */
+const kartya = o => `<a class="kartya" href="${o.link}">
+  <div class="u">${o.cim}</div>
+  <div class="nagy">${o.nagy}</div>
+  ${o.hol ? `<div class="hol">${o.hol}</div>` : ""}
+  ${o.irany ? `<div class="irany ${o.iranyOsztaly||""}">${o.irany}</div>` : ""}
+  <p>${o.szoveg}</p>
+  <div class="lab"><span>${o.datum||""}</span><b>Részletek →</b></div></a>`;
+const K = [];
+
+const bp = mercek.find(m => m.nev === "Budapest") || mercek.find(m => m.folyo === "Duna");
+if(bp){
+  const v = bp.valtozas_24h_cm;
+  const ir = v==null ? "" : Math.abs(v) < 2 ? "Egy nap alatt alig változott." : `Egy nap alatt ${num(Math.abs(v))} cm-t ${v>0?"emelkedett":"apadt"}.`;
+  K.push({cim:"Folyó", link:"/folyok",
+    nagy:`${num(bp.utolso_cm)}<small>cm</small>`, hol:`${esc(bp.folyo)}, ${esc(bp.nev)} · a helyi mérce nullpontjához képest`,
+    irany:ir, iranyOsztaly:"",
+    szoveg: rekord.length
+      ? `${rekord.length} mércén a víz a valaha mért legalacsonyabb szint alatt van.`
+      : `Mind a ${mercek.length} főmércén a valaha mért legalacsonyabb szint fölött jár a víz. Ami ma Dévénynél belép, egy hét múlva Mohácsnál jár.`,
+    datum: bp.utolso_ido ? `mérés: ${bp.utolso_ido.replace(/^(\d{4})\.(\d{2})\.(\d{2})\.\s*/,(a,y,m,d)=>`${RHONAP[+m-1]} ${+d}. `)}` : ""});
+}
+if(TV && TV.atlag_mm!=null){
+  // Irány: a térképes minta állomásainak hétnapos változása (a sorozat napi érték).
+  const al = (TV.allomasok||[]).filter(a=>Array.isArray(a.sorozat) && a.sorozat.length>=8);
+  let ir = "", io = "";
+  if(al.length >= 10){
+    const d = al.reduce((s,a)=>s + a.sorozat[a.sorozat.length-1] - a.sorozat[a.sorozat.length-8],0)/al.length;
+    if(Math.abs(d) < 1){ ir = "Egy hét alatt alig változott."; }
+    else if(d < 0){ ir = `Egy hét alatt kb. ${num(-d)} literrel csökkent a hiány.`; io = "fel"; }
+    else { ir = `Egy hét alatt kb. ${num(d)} literrel nőtt a hiány.`; io = "le"; }
+  }
+  K.push({cim:"Talaj", link:"/talaj",
+    nagy:`${dec(TV.atlag_mm,1)}<small>liter/m²</small>`, hol:"ennyi víz hiányzik a felső 80 cm-ből",
+    irany:ir, iranyOsztaly:io,
+    szoveg:"Ennyi beszivárgó eső kell, hogy a növények gyökérzónája megteljen. Az aszály itt zajlik, a folyómederben a víz csak átfolyik.",
+    datum:`${TV.allomas_db} állomás átlaga · ${nap(TV.datum)}`});
+}
+const TW = D.talajviz;
+if(TW && TW.sullyedes_cm!=null){
+  K.push({cim:"Talajvíz", link:"/talaj",
+    nagy:`−${dec(TW.sullyedes_cm/100,2)}<small>m</small>`, hol:`ennyivel mélyebben van, mint ${TW.evek} éve`,
+    irany:`${num(TW.kut_db)} kút közül ${num(TW.melyult)} helyen lejjebb van.`, iranyOsztaly:"le",
+    szoveg:"A talajvíz évtizedek alatt pótlódik. Amit itt elveszítünk, azt egy csapadékos év nem hozza vissza.",
+    datum:`kutak mediánja · ${nap(TW.datum)}`});
+}
+const KS = D.keszlet_idosor, KV = D.keszlet_valtozas;
+if(KS && Array.isArray(KS.sorozat) && KS.sorozat.length){
+  const ut = KS.sorozat[KS.sorozat.length-1], bal = ut.km3/BALATON;
+  const ev = KV && (KV.idotavok||[]).find(t=>t.cimke==="egy év");
+  K.push({cim:"Az ország vízkészlete", link:"/keszlet",
+    nagy:`${bal<0?"≈ ":"≈ +"}${num(Math.abs(bal))}<small>Balaton</small>`,
+    hol: bal<0 ? "ennyivel kevesebb víz, mint a sokéves átlag" : "ennyivel több víz, mint a sokéves átlag",
+    irany: ev ? `Egy év alatt ${dec(Math.abs(ev.valtozas_km3)/BALATON,1)} Balatonnyit ${ev.valtozas_km3<0?"csökkent":"nőtt"}.` : "",
+    iranyOsztaly: ev ? (ev.valtozas_km3<0?"le":"fel") : "",
+    szoveg:"Két műhold méri, havonta: a folyók, a talaj és a mélyben lévő víz együtt. Egy Balaton kb. 1,9 km³ víz.",
+    datum:`műholdas adat · ${honap(ut.honap)}`});
+}
+$("#kartyak").innerHTML = K.length ? K.map(kartya).join("") : `<p class="nincs">Az adatok most nem tölthetők be.</p>`;
+
+/* ── 3. A te környéked ───────────────────────────────────────────────
+   Hely: a talajnedvesség-szondák települései (ezeknek van esőesemény-adata),
+   a vízhiány-állomások és a talajvízkutak. A kiválasztott helyhez a legközelebbi
+   szonda, vízhiány-állomás és kút kerül, távolsággal. */
+const helyek = new Map();
+const hozzaad = (nev, ll, tipus, adat) => {
+  if(!nev || !ll || isNaN(ll[0])) return;
+  if(!helyek.has(nev)) helyek.set(nev, {nev, ll});
+  (helyek.get(nev)[tipus] = adat);
+};
+const szondak = ((B||{}).orszagos_lista||[]).map(s => {
+  const p = String(s).split("|");
+  return {nev:p[0], kezd:p[1], P:+p[2], dS:+p[3], arany:+p[4], osztaly:p[5], mely:p[6]==="None"||p[6]===""?null:+p[6],
+          ll: xy2ll(+p[8], +p[9])};
+}).filter(s => s.nev && !isNaN(s.ll[0]));
+szondak.forEach(s => hozzaad(s.nev, s.ll, "szonda", s));
+const hianyAll = ((TV||{}).allomasok||[]).filter(a=>a.lat!=null).map(a=>({...a, ll:[a.lat,a.lon]}));
+hianyAll.forEach(a => hozzaad(a.nev, a.ll, "hiany", a));
+const kutak = ((TW||{}).terkep||[]).filter(k=>k.lat!=null).map(k=>({...k, ll:[k.lat,k.lon]}));
+kutak.forEach(k => hozzaad(k.nev, k.ll, "kut", k));
+
+const lista = [...helyek.keys()].sort((a,b)=>a.localeCompare(b,"hu"));
+$("#helyek").innerHTML = lista.map(n=>`<option value="${esc(n)}">`).join("");
+const pelda = ["Kecskemét","Szeged","Kalocsa","Nyíregyháza","Szolnok","Debrecen","Kiskunhalas","Röszke"].filter(n=>helyek.has(n)).slice(0,3);
+$("#kereso").placeholder = `${pelda.length ? "például " + pelda.join(", ") + " · " : ""}${lista.length} hely közül`;
+
+const legkozelebb = (arr, ll) => arr.map(a=>({a, km:tav(ll,a.ll)})).sort((x,y)=>x.km-y.km)[0];
+const kmSz = km => km < 1 ? "helyben" : `${num(km)} km-re`;
+const mutat = nev => {
+  const h = helyek.get(nev), out = $("#talalat");
+  if(!h){ out.innerHTML = nev ? `<p class="halk">Erre a névre nincs mérőhely a listában. Próbáld a legközelebbi nagyobb település nevével.</p>` : ""; return; }
+  const sor = [];
+  const sz = legkozelebb(szondak, h.ll);
+  if(sz){
+    const s = sz.a, maradt = s.P > 0 ? Math.round(s.dS/s.P*100) : null;
+    const ertek = s.osztaly==="tobblet" ? "a szonda több vizet mutat, mint amennyi esett (a környékről is szivárgott hozzá, vagy a mérés helyi)"
+               : s.osztaly==="hiany" ? "a víz nagyobb része továbbment, elpárolgott vagy lefolyt"
+               : "a lehullott eső nagy része a talajban maradt";
+    sor.push(`<li><b>Eső a talajban</b> (${esc(s.nev)}, ${kmSz(sz.km)}): a ${nap(s.kezd)} kezdődött esőből <b>${num(s.P)} liter</b> esett négyzetméterenként, a felső 75 cm-ben <b>${num(s.dS)} liter</b> többlet jelent meg${maradt!=null?` (${maradt}%)`:""}; ${ertek}.${s.mely?` A víz ${s.mely} cm mélyre jutott le.`:""} <a href="/beszivargas">Részletek →</a></li>`);
+  }
+  const hi = legkozelebb(hianyAll, h.ll);
+  if(hi && hi.km < 60) sor.push(`<li><b>A talaj vízhiánya</b> (${esc(hi.a.nev)}, ${kmSz(hi.km)}): <b>${dec(hi.a.hiany_mm,1)} liter/m²</b> hiányzik a felső 80 cm-ből. Az országos átlag ${dec(TV.atlag_mm,1)} liter. <a href="/talaj">Részletek →</a></li>`);
+  const ku = legkozelebb(kutak, h.ll);
+  if(ku && ku.km < 60) sor.push(`<li><b>Talajvíz</b> (${esc(ku.a.nev)}, ${kmSz(ku.km)}): <b>${dec(ku.a.cm/100,2)} méterrel</b> mélyebben van, mint ${TW.evek} éve. <a href="/talaj">Részletek →</a></li>`);
+  sor.push(`<li class="halk">A legközelebbi folyómérce az összes, 507 mérce közt kereshető: <a href="/folyok#mercek-sec">a folyók oldalán →</a></li>`);
+  out.innerHTML = `<h3>${esc(h.nev)} környéke</h3><ul>${sor.join("")}</ul>`;
+};
+const kereso = $("#kereso");
+const keres = () => {
+  const q = ekezetlen(kereso.value.trim()); if(!q){ mutat(""); return; }
+  const pontos = lista.find(n => ekezetlen(n) === q);
+  if(pontos) return mutat(pontos);
+  const reszl = lista.filter(n => ekezetlen(n).startsWith(q));
+  if(reszl.length === 1) return mutat(reszl[0]);
+  $("#talalat").innerHTML = reszl.length ? `<p class="halk">Lehetséges helyek: ${reszl.slice(0,8).map(esc).join(", ")}</p>` : (q.length >= 3 ? `<p class="halk">Erre a névre nincs mérőhely a listában. Próbáld a legközelebbi nagyobb település nevével.</p>` : "");
+};
+kereso.addEventListener("input", keres);
+kereso.addEventListener("change", keres);
+
+/* ── frissesség ── */
+if(D.generalva){
+  const p = Math.max(0, Math.round((Date.now()-Date.parse(D.generalva))/60000));
+  $("#frissites").textContent = `Az adat ${p < 90 ? p+" perce" : Math.round(p/60)+" órája"} frissült. A folyók adata óránként, a talajé naponta, a műholdas készleté havonta érkezik.`;
+}
+window.BASIN_FOOLDAL = {ma, kartyak: K.length, helyek: lista.length};
+})();
+</script>
+</body>
+</html>

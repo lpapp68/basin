@@ -1,5 +1,29 @@
 {
   "version": 1,
-  "include": ["/", "/index.html", "/impresszum", "/impresszum.html", "/adatkezeles", "/adatkezeles.html", "/motor/*"],
+  "include": [
+    "/",
+    "/index.html",
+    "/impresszum",
+    "/impresszum.html",
+    "/adatkezeles",
+    "/adatkezeles.html",
+    "/folyok",
+    "/folyok.html",
+    "/talaj",
+    "/talaj.html",
+    "/beszivargas",
+    "/beszivargas.html",
+    "/keszlet",
+    "/keszlet.html",
+    "/merleg",
+    "/merleg.html",
+    "/mi-lenne-ha",
+    "/mi-lenne-ha.html",
+    "/modszertan",
+    "/modszertan.html",
+    "/reszvetel",
+    "/reszvetel.html",
+    "/motor/*"
+  ],
   "exclude": []
 }

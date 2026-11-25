@@ -101,5 +101,8 @@ jobs:
           cp merce.js merce.css mercek_tsz.json _publish/
           # A medence mintázatai (2026-11-22): a publikus bázis, a tanuló réteg teszi a repóba.
           if [ -f szerkezet.json ]; then cp szerkezet.json _publish/; fi
+          # Hierarchikus lap (2026-11-25): főoldal + aloldalak. Hibás főoldallal nem publikálunk.
+          python3 oldalak.py _publish
+          node tesztfooldal.js _publish/data.json
           npx --yes wrangler pages deploy _publish \
             --project-name basin --commit-dirty=true

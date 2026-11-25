@@ -929,7 +929,7 @@ a{color:var(--viz)}
   <div id="mdb"></div>
 </section>
 
-<section>
+<section id="mercek-sec">
   <div class="sz"><h2>A mércék</h2><span class="n" id="mercen"></span></div>
   <p class="lead">Vízállás, vízhozam és vízhő <b>negyedóránként</b>, az OVF nyílt adat-API-jából — mind mérés. Minden oszlop egy mérce
   mindenkori vízjárása: a tetején a legnagyobb, az alján a legkisebb valaha mért vízállás.
@@ -997,7 +997,7 @@ a{color:var(--viz)}
 </section>
 
 
-<section>
+<section id="panel-sec">
   <div class="sz"><h2>Négy panel</h2><span class="n">a modell és a bizonytalansága</span></div>
   <div class="jelmagy">
     <span><b class="pr mert">helyszíni mérés</b> műszer mérte a helyszínen: vízállás, vízhő,
@@ -1020,8 +1020,8 @@ a{color:var(--viz)}
       <div class="ablak" id="ablak">
         <div class="ablak-fej">
           <span class="u">Időablak</span><b id="ablakfelirat">1 nap</b>
-          <button type="button" class="sokapcs" id="sokapcs" aria-pressed="true"
-            title="A bizonytalan jegyek villódzása: a 90%-os tartományon belül húzott minták">só: be</button>
+          <button type="button" class="sokapcs" id="sokapcs" aria-pressed="false"
+            title="A bizonytalan jegyek villódzása: a 90%-os tartományon belül húzott minták">bizonytalanság animálása: ki</button>
         </div>
         <input type="range" id="ablakcsuszka" min="0" max="22" step="1" value="15"
           aria-label="Az időablak hossza, egy másodperctől egy hónapig">
@@ -1048,14 +1048,14 @@ a{color:var(--viz)}
           <div><span class="u">Becsült készlet most</span>
             <div class="szam2 neg" id="most-szint">—</div>
             <div class="meta" id="most-szint-meta"></div></div>
-          <div><span class="u">Amióta ezt a lapot nézed</span>
+          <div><span class="u">Amióta ezt a lapot nézed · továbbvezetett becslés a napi mérlegből</span>
             <div class="szam2 neg" id="most-fogy">0<small> m³</small></div>
             <div class="meta" id="most-fogy-meta"></div></div>
         </div>
         <div class="ablak-fej">
           <span class="u">Időablak</span><b id="ablak2felirat">1 év</b>
-          <button type="button" class="sokapcs" id="sokapcs2" aria-pressed="true"
-            title="A bizonytalan jegyek villódzása: a 90%-os tartományon belül húzott minták">só: be</button>
+          <button type="button" class="sokapcs" id="sokapcs2" aria-pressed="false"
+            title="A bizonytalan jegyek villódzása: a 90%-os tartományon belül húzott minták">bizonytalanság animálása: ki</button>
         </div>
         <input type="range" id="ablak2csuszka" min="0" max="12" step="1" value="8"
           aria-label="A készletváltozás időablaka, egy másodperctől a teljes műholdas sorig">
@@ -1450,6 +1450,7 @@ a{color:var(--viz)}
       ? dec(m.hozam_m3s,1)+" m³/s" : "hozam nincs"));
     box.appendChild(el("div","alatt", m.rekord_alatt
       ? "▼ "+Math.abs(m.lkv_folott_cm)+" cm-rel az LKV alatt"
+      : m.lkv_folott_cm == null ? "most nincs adat"
       : m.lkv_folott_cm+" cm-rel az LKV felett"));
     box.title = m.folyo+" – "+m.nev+(m.jegyzet?" · "+m.jegyzet:"")
       +"\n24 órás változás: "+sgn(m.valtozas_24h_cm)+" cm";
@@ -1475,7 +1476,9 @@ a{color:var(--viz)}
   {
     const OI2 = D.ontozesigeny;
     if(OI2 && OI2.vizstressz != null){
-      const v = Math.max(0, Math.min(1, OI2.vizstressz));
+      // A nagy szám és a szöveg ugyanabból a két értékből számol (2026-11-25): korábban a szám a
+      // műholdas, a szöveg a földi referencia-párolgással osztott, így 78% és 53% állt egymás mellett.
+      const v = Math.max(0, Math.min(1, (OI2.et_ref_mm > 0 && OI2.et_act_mm != null) ? OI2.et_act_mm / OI2.et_ref_mm : OI2.vizstressz));
       // mély kék (bő víz) → halvány → okker (száraz). Szürke szándékosan nincs:
       // az adatvizualizációban a szürke azt jelenti, hogy hiányzik az adat.
       const szin = `color-mix(in oklab, var(--viz) ${Math.round(v*100)}%, var(--parolgas))`;
@@ -1508,6 +1511,8 @@ a{color:var(--viz)}
              <b>A növényzet a lehetséges párolgás ${dec(v*100,0)}%-át teljesíti.</b>
              A <b>referencia-párolgás ${dec(OI2.et_ref_mm,2)} mm/nap</b>: ennyi párologna el egy alacsonyra nyírt, <b>korlátlan vízellátású fűfelszínről</b> a mai sugárzás, hőmérséklet, páratartalom és szél mellett. Ez a hidrológia nemzetközi viszonyítási alapja — nem a maximum, hanem a <b>vízhiány nélküli állapot</b>. A mérés ${dec(OI2.et_act_mm,2)} mm/nap. ${nyug
                ? "Az alacsony arányt most az évszak adja: a betakarított, lombtalan felszín alig párologtat. A tanuló modell szerint ugyanez a növényzet nedves talajjal sem párologtatna sokkal többet, ezért ez nyugalmi állapot, a vízhiány jele helyett."
+               : (vh != null && vh >= 0.8)
+               ? "A különbséget most nagyrészt az évszak és a felszín adja: a lombtalan, betakarított területek kevesebbet párologtatnak."
                : "A növény ilyenkor lezárja a leveleit, és amíg zárva vannak, nem is növekszik."}${vh != null
                ? ` A tanuló modell szerint a víz hiánya a lehetséges párolgás ${dec(Math.max(0, 1 - vh) * 100, 0)}%-át veszi el (${TPa.length} állomás mediánja, ${TP.nap}; saját fejlesztésű tanuló algoritmus).`
                : ""}
@@ -2282,7 +2287,7 @@ a{color:var(--viz)}
         return (+r.find(x=>x.type==="hour").value)*60 + (+r.find(x=>x.type==="minute").value);
       }catch(e){ return 720; }
     };
-    let idx = NAP_INDEX, vegPerc = mostPerc(), soBe = true, kocka = 0, lathato = true, aktualis = null;
+    let idx = NAP_INDEX, vegPerc = mostPerc(), soBe = false, kocka = 0, lathato = true, aktualis = null;
     const csendes = !!(W.matchMedia && W.matchMedia("(prefers-reduced-motion: reduce)").matches);
     if(csuszka) csuszka.value = String(idx);
     if(oraCs) oraCs.value = String(Math.max(1,vegPerc));
@@ -2309,7 +2314,7 @@ a{color:var(--viz)}
       const jel = a!=null ? `<circle class="akt" cx="${x(aktiv).toFixed(1)}" cy="${y(a).toFixed(1)}" r="4.5"/>`
                           : `<line class="akt" x1="${x(aktiv).toFixed(1)}" x2="${x(aktiv).toFixed(1)}" y1="${fent}" y2="${MA-lent}"/>`;
       const cimkek = FOCIMKEK.map(([i,t])=>`<text x="${x(i).toFixed(1)}" y="${MA-4}" text-anchor="${i===0?"start":(i===LEPCSOK.length-1?"end":"middle")}">${t}</text>`).join("");
-      return `<svg viewBox="0 0 ${SZ} ${MA}" role="img" aria-label="Só-arány az időablak hosszának függvényében">`+
+      return `<svg viewBox="0 0 ${SZ} ${MA}" role="img" aria-label="Kitöltési arány az időablak hosszának függvényében">`+
         `<line class="tengely" x1="${bal}" x2="${SZ-jobb}" y1="${y(0)}" y2="${y(0)}"/>`+
         `<line class="racs" x1="${bal}" x2="${SZ-jobb}" y1="${y(1)}" y2="${y(1)}"/>`+
         `<text x="${bal-4}" y="${y(0)+3}" text-anchor="end">0%</text><text x="${bal-4}" y="${y(1)+3}" text-anchor="end">100%</text>`+
@@ -2398,7 +2403,7 @@ a{color:var(--viz)}
       if(G){
         const most = pontok[idx];
         G.innerHTML = gorbe(pontok, idx) +
-          `<p>Só-arány a zárási maradékban: a bizonytalanság hányad része jön a kitöltésből — a napon belüli ` +
+          `<p>Kitöltési arány a zárási maradékban: a bizonytalanság hányad része jön a kitöltésből — a napon belüli ` +
           `eloszlásból vagy a hiányzó napokból. ${most==null ? "Ebben az ablakban a maradék még gyűjtés alatt van." : `Most: <b>${Math.round(most*100)} %</b>.`} ` +
           `A szaggatott vonal az egy nap: a mérleg natív felbontása, ott csak a mérési hiba marad.</p>`;
       }
@@ -2432,11 +2437,11 @@ a{color:var(--viz)}
     if(csuszka) csuszka.addEventListener("input", () => { const v = parseInt(csuszka.value,10); idx = isNaN(v) ? NAP_INDEX : v; kocka = 0; rajzol(); });
     if(oraCs) oraCs.addEventListener("input", () => { const v = parseInt(oraCs.value,10); vegPerc = isNaN(v) ? 720 : v; kocka = 0; rajzol(); });
     if(soGomb){
-      if(csendes){ soGomb.setAttribute("aria-pressed","false"); soGomb.textContent = "só: áll"; }
+      if(csendes){ soGomb.setAttribute("aria-pressed","false"); soGomb.textContent = "bizonytalanság animálása: áll"; }
       soGomb.addEventListener("click", () => {
         soBe = !soBe;
         soGomb.setAttribute("aria-pressed", String(soBe));
-        soGomb.textContent = soBe ? "só: be" : "só: ki";
+        soGomb.textContent = soBe ? "bizonytalanság animálása: be" : "bizonytalanság animálása: ki";
         sozas();
       });
     }
@@ -2459,16 +2464,19 @@ a{color:var(--viz)}
     const r = $("#rovid");
     if(r && M && M.csapadek){
       const be = M.csapadek.ertek + M.hozam_be.ertek;
-      const ki = Math.abs(M.parolgas.ertek) + Math.abs(M.hozam_ki.ertek);
-      const dS = M.keszletvaltozas.ertek;
+      // A kivétel is a távozó oldalra kerül, így a két kiírt szám különbsége pontosan a
+      // zárási maradék (2026-11-25: korábban 1870 − 2682 = 812 állt a 820 mellett).
+      const kiv = Math.max(0, -(M.keszletvaltozas.ertek - (M.csapadek.ertek + M.hozam_be.ertek + M.parolgas.ertek + M.hozam_ki.ertek)));
+      const ki = Math.abs(M.parolgas.ertek) + Math.abs(M.hozam_ki.ertek) + kiv;
+      const dS = be - ki;
       r.innerHTML =
         `<div class="u">Röviden${D.merleg_datum ? " · " + D.merleg_datum : ""}</div>` +
         `<p>Ma <b>${num(be)} m³/s</b> víz érkezett az országba — esőből és a folyókon —, ` +
-        `és <b>${num(ki)} m³/s</b> távozott: elpárolgott vagy kifolyt. ` +
+        `és <b>${num(ki)} m³/s</b> távozott: elpárolgott, kifolyt vagy az ember elhasználta` +
+        (kiv >= 0.5 ? ` (ebből ${num(kiv)} m³/s)` : ``) + `. ` +
         (Math.abs(dS) > 200
-          ? `A kettő különbsége <b>${num(Math.abs(dS))} m³/s</b>: ennyi ` +
-            `${dS > 0 ? "maradt itt" : "hiányzik"} — de ez a szám a mérés hibáit is ` +
-            `magába gyűjti.`
+          ? `A különbség <b>${num(Math.abs(dS))} m³/s</b>: ennyivel ${dS > 0 ? "több érkező" : "több távozó"} vizet ` +
+            `számol el a napi modell. Az eltérésben a hiányzó adatok és a becslések hibái is szerepelnek.`
           : `A kettő nagyjából egyensúlyban van.`) + `</p>` +
         `<p class="k">A modell <b>Magyarország területére</b> készül: 22 vízmérce, ` +
         `269 csapadékmérő állomás, műholdas párolgásmérés. A teljes Középső-Duna-medence ` +
@@ -2563,7 +2571,7 @@ a{color:var(--viz)}
 
       const cs2 = $("#ablak2csuszka"), gomb2 = $("#sokapcs2");
       const csendes2 = !!(W.matchMedia && W.matchMedia("(prefers-reduced-motion: reduce)").matches);
-      let idx2 = 8, soBe2 = !csendes2, kocka2 = 0, lathato2 = true, akt2 = null;
+      let idx2 = 8, soBe2 = false, kocka2 = 0, lathato2 = true, akt2 = null;
       if(cs2) cs2.value = String(idx2);
       const sk2 = $("#ablak2skala");
       if(sk2) sk2.innerHTML = CIMKEK2.map(([i,t,n])=>`<span class="${n?"nativ":""}" style="left:${(i/(L2.length-1)*100).toFixed(2)}%">${t}</span>`).join("");
@@ -2643,11 +2651,11 @@ a{color:var(--viz)}
       }
       if(cs2) cs2.addEventListener("input", () => { const v = parseInt(cs2.value,10); idx2 = isNaN(v) ? 8 : v; kocka2 = 0; rajzol2(); sozas2(); });
       if(gomb2){
-        if(csendes2){ gomb2.setAttribute("aria-pressed","false"); gomb2.textContent = "só: áll"; }
+        if(csendes2){ gomb2.setAttribute("aria-pressed","false"); gomb2.textContent = "bizonytalanság animálása: áll"; }
         gomb2.addEventListener("click", () => {
           soBe2 = !soBe2;
           gomb2.setAttribute("aria-pressed", String(soBe2));
-          gomb2.textContent = soBe2 ? "só: be" : "só: ki";
+          gomb2.textContent = soBe2 ? "bizonytalanság animálása: be" : "bizonytalanság animálása: ki";
           sozas2(); szamlaloKi(utem());
         });
       }
@@ -3211,18 +3219,15 @@ a{color:var(--viz)}
         párologtatna el — vagyis <b>${dec(OI.et_ref_mm,2)} liter vizet minden négyzetméterről</b>,
         egy hektárról ${num(Math.round(OI.et_ref_mm*10))} köbmétert. Valójában
         <b>${dec(OI.et_act_mm,2)} millimétert</b> ad le: a lehetségesnek
-        <b>${dec(OI.et_act_mm/OI.et_ref_mm*100,0)} százalékát</b>. Ilyenkor a növény lezárja a
-        leveleit, és amíg zárva vannak, a növekedés is leáll. A szárazság itt kezdődik,
-        jóval a hervadás előtt.</span>
+        <b>${dec(OI.et_act_mm/OI.et_ref_mm*100,0)} százalékát</b>. A különbséget részben az évszak
+        és a felszín adja, részben a víz hiánya; hogy melyik mennyi, azt a fenti tanuló modell becsli.</span>
         <span>Ahhoz, hogy a szántóföldeken ne legyen vízhiány, naponta
         <b>${num(Math.round(OI.tartomany.also.m3s*86400/1e6))}–${num(Math.round(OI.tartomany.felso.m3s*86400/1e6))} millió köbméter</b>
         vízre lenne szükség. A folyók jelenlegi hozama mellett — a Dunán, a Tiszán és a
         többi vízfolyáson együtt <b>${num(M.hozam_be.ertek)} m³/s</b> érkezik az országba —
         ennyi víz nagyjából
-        <b>${dec(OI.tartomany.also.m3s/M.hozam_be.ertek,1)}–${dec(OI.tartomany.felso.m3s/M.hozam_be.ertek,1)} nap</b>
-        alatt folyik be. Vagyis az ország egy-két napi teljes folyóvíz-behozatalát kellene
-        naponta a földekre juttatni. Öntözésre ténylegesen ennek körülbelül egy századát
-        használjuk.</span>
+        <b>${num(Math.round(OI.tartomany.also.m3s*86400/M.hozam_be.ertek/60))}–${num(Math.round(OI.tartomany.felso.m3s*86400/M.hozam_be.ertek/60))} perc</b>
+        alatt folyik be.</span>
         <span><b>Ez a szám a vízhiány méretét mutatja, nem öntözési célt.</b> Ekkora mennyiség a megfelelő helyen és időben hiányzik az országos öntözéshez — a magyar növénytermesztés ezért csapadékfüggő,
         és aszályban a hiányt nem öntözéssel pótolja, hanem terméskieséssel nyeli le.</span>
         <em>${pr(OI.provenance)} Nagyságrendi számítás, nem öntözési terv: a műholdas párolgás

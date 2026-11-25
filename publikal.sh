@@ -59,6 +59,8 @@ cp index.html logo.png logo.svg terkep.json robots.txt sitemap.xml llms.txt goog
 cp -R fonts _publish/ && cp _headers _routes.json 404.html impresszum.html adatkezeles.html og.png _publish/
 # Egy mérce közelről (2026-11-19): a nézet szkriptje, stílusa és a lapok név → törzsszám táblája.
 cp merce.js merce.css mercek_tsz.json _publish/
+# Hierarchikus lap (2026-11-25): a főoldal a fooldal.html, az aloldalak a teljes index.html-ből készülnek.
+python3 oldalak.py _publish
 # A medence mintázatai (2026-11-22): a publikus bázis, a tanuló réteg teszi a repóba.
 if [ -f szerkezet.json ]; then cp szerkezet.json _publish/; fi
 
@@ -93,6 +95,10 @@ done
 # ellenőrizzük, a továbbítót álkérésekkel le is futtatjuk.
 if ! node --check merce.js || ! node tesztmotor.mjs; then
   echo "!! A mérce-nézet vagy a /motor továbbító hibás — a publikálás megállítva."
+  exit 1
+fi
+if ! node tesztfooldal.js _publish/data.json; then
+  echo "!! A főoldal logikája hibás — a publikálás megállítva."
   exit 1
 fi
 if [ -f tesztlap.js ]; then

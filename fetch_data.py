@@ -683,7 +683,11 @@ def main():
         "ontozesigeny": (lambda o, f: (
             {**o, "et_ref_mm": f["ertek"], "et_ref_forras": f["forras"],
              "et_ref_provenance": "helyszini",
-             "et_ref_muhold_mm": o.get("et_ref_mm")}
+             "et_ref_muhold_mm": o.get("et_ref_mm"),
+             # A vízstressz-arány ugyanazzal a referenciával, amelyet a lap kiír (2026-11-25).
+             "vizstressz": (round(o["et_act_mm"] / f["ertek"], 3)
+                            if o.get("et_act_mm") is not None and f.get("ertek") else o.get("vizstressz")),
+             "vizstressz_muhold": o.get("vizstressz")}
             if o and f and f.get("datum") == o.get("datum") else o)
         )(p.get("ontozesigeny"), p.get("et_ref_omsz_mm_nap")),
         "kivetel_modell": p.get("kivetel_modell"),
