@@ -1,1790 +1,1790 @@
 {
- "futas_utc": "2026-11-25T17:46:39+00:00",
+ "futas_utc": "2026-11-26T01:24:56+00:00",
  "jelleg": "saját fejlesztésű tanuló algoritmus (i-Tango Tanácsadó Kft.); a lapra csak az eredmény kerül",
  "parolgas": {
-  "nap": "2026-11-24",
+  "nap": "2026-11-25",
   "allomasok": [
    {
     "nev": "Ádánd",
     "hatsag": false,
     "W": 0.7,
-    "r_mert": 1.1,
-    "r_modell": 0.69,
-    "r_nedves": 0.77,
+    "r_mert": 0.29,
+    "r_modell": 0.4,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.63,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.19,
+    "et_ref": 0.66
    },
    {
     "nev": "Alsóvadász",
     "hatsag": false,
     "W": 0.83,
-    "r_mert": 0.77,
-    "r_modell": 0.75,
-    "r_nedves": 0.77,
+    "r_mert": 0.22,
+    "r_modell": 0.67,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.39,
-    "et_ref": 0.51
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.6
    },
    {
     "nev": "Apaj",
     "hatsag": false,
-    "W": 1.2,
-    "r_mert": 0.8,
-    "r_modell": 0.81,
-    "r_nedves": 0.77,
+    "W": 1.19,
+    "r_mert": 0.23,
+    "r_modell": 0.43,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.66
    },
    {
     "nev": "Bakonypéterd",
     "hatsag": false,
-    "W": 1.02,
-    "r_mert": 1.05,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.33,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.58,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.22,
+    "et_ref": 0.66
    },
    {
     "nev": "Battonya",
     "hatsag": false,
     "W": 1.2,
-    "r_mert": 0.65,
-    "r_modell": 0.83,
-    "r_nedves": 0.76,
+    "r_mert": 0.27,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.4,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.18,
+    "et_ref": 0.66
    },
    {
     "nev": "Békés",
     "hatsag": false,
-    "W": 1.2,
-    "r_mert": 0.83,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.08,
+    "r_mert": 0.41,
+    "r_modell": 0.6,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.26,
+    "et_ref": 0.63
    },
    {
     "nev": "Bernecebaráti",
     "hatsag": false,
-    "W": 0.72,
-    "r_mert": 0.44,
-    "r_modell": 0.71,
-    "r_nedves": 0.77,
+    "W": 0.7,
+    "r_mert": 0.23,
+    "r_modell": 0.51,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.26,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.64
    },
    {
     "nev": "Berzence",
     "hatsag": false,
-    "W": 1.09,
-    "r_mert": 0.89,
-    "r_modell": 0.79,
-    "r_nedves": 0.76,
+    "W": 1.02,
+    "r_mert": 0.52,
+    "r_modell": 0.53,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.54,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.34,
+    "et_ref": 0.65
    },
    {
     "nev": "Bodony",
     "hatsag": false,
     "W": 0.49,
-    "r_mert": 0.57,
-    "r_modell": 0.71,
-    "r_nedves": 0.77,
+    "r_mert": 0.2,
+    "r_modell": 0.45,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.31,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.64
    },
    {
     "nev": "Bonyhád",
     "hatsag": false,
-    "W": 1.07,
-    "r_mert": 0.84,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.04,
+    "r_mert": 0.24,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.51,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.66
    },
    {
     "nev": "Borota",
     "hatsag": false,
-    "W": 1.2,
-    "r_mert": 0.72,
-    "r_modell": 0.81,
-    "r_nedves": 0.76,
+    "W": 1.19,
+    "r_mert": 0.32,
+    "r_modell": 0.45,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.44,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.66
    },
    {
     "nev": "Bőny",
     "hatsag": false,
     "W": 1.01,
-    "r_mert": 0.61,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "r_mert": 0.14,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.33,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.09,
+    "et_ref": 0.66
    },
    {
     "nev": "Celldömölk",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.83,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.99,
+    "r_mert": 0.23,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.66
    },
    {
     "nev": "Cigánd",
     "hatsag": false,
-    "W": 0.48,
-    "r_mert": 0.52,
-    "r_modell": 0.65,
-    "r_nedves": 0.77,
+    "W": 0.49,
+    "r_mert": 0.65,
+    "r_modell": 0.62,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.29,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.33,
+    "et_ref": 0.51
    },
    {
     "nev": "Csabacsűd",
     "hatsag": false,
     "W": 1.2,
-    "r_mert": 0.58,
-    "r_modell": 0.8,
-    "r_nedves": 0.77,
+    "r_mert": 0.2,
+    "r_modell": 0.45,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.34,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.65
    },
    {
     "nev": "Csanádpalota",
     "hatsag": false,
     "W": 1.2,
-    "r_mert": 0.67,
-    "r_modell": 0.8,
-    "r_nedves": 0.76,
+    "r_mert": 0.27,
+    "r_modell": 0.42,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.18,
+    "et_ref": 0.66
    },
    {
     "nev": "Csaroda",
     "hatsag": false,
     "W": 0.6,
-    "r_mert": 0.38,
-    "r_modell": 0.67,
-    "r_nedves": 0.77,
+    "r_mert": 0.71,
+    "r_modell": 0.56,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.23,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.36,
+    "et_ref": 0.51
    },
    {
     "nev": "Csávoly",
     "hatsag": false,
-    "W": 0.81,
-    "r_mert": 0.89,
-    "r_modell": 0.7,
-    "r_nedves": 0.75,
+    "W": 0.79,
+    "r_mert": 0.38,
+    "r_modell": 0.44,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.55,
-    "et_ref": 0.62
+    "allapot": "nyugalmi",
+    "et_act": 0.25,
+    "et_ref": 0.66
    },
    {
     "nev": "Csengele",
     "hatsag": true,
     "W": 0.13,
-    "r_mert": 0.82,
-    "r_modell": 0.49,
-    "r_nedves": 0.77,
+    "r_mert": 0.23,
+    "r_modell": 0.6,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.66
    },
    {
     "nev": "Csókakő",
     "hatsag": false,
-    "W": 0.76,
-    "r_mert": 0.7,
-    "r_modell": 0.7,
-    "r_nedves": 0.77,
+    "W": 0.74,
+    "r_mert": 0.15,
+    "r_modell": 0.42,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.39,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.1,
+    "et_ref": 0.66
    },
    {
     "nev": "Csolnok",
     "hatsag": false,
-    "W": 0.71,
-    "r_mert": 0.55,
-    "r_modell": 0.7,
-    "r_nedves": 0.77,
+    "W": 0.7,
+    "r_mert": 0.18,
+    "r_modell": 0.47,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.3,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.64
    },
    {
     "nev": "Csólyospálos",
     "hatsag": true,
-    "W": 0.8,
-    "r_mert": 0.77,
-    "r_modell": 0.74,
-    "r_nedves": 0.77,
+    "W": 0.77,
+    "r_mert": 0.22,
+    "r_modell": 0.43,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.67
    },
    {
     "nev": "Csongrád",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.89,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.94,
+    "r_mert": 0.21,
+    "r_modell": 0.47,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.52,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.14,
+    "et_ref": 0.67
    },
    {
     "nev": "Dávod",
     "hatsag": false,
-    "W": 1.14,
-    "r_mert": 0.92,
-    "r_modell": 0.76,
-    "r_nedves": 0.73,
+    "W": 1.08,
+    "r_mert": 0.4,
+    "r_modell": 0.44,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.58,
-    "et_ref": 0.63
+    "allapot": "nyugalmi",
+    "et_act": 0.27,
+    "et_ref": 0.67
    },
    {
     "nev": "Demecser",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.64,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.98,
+    "r_mert": 0.72,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.36,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.38,
+    "et_ref": 0.53
    },
    {
     "nev": "Demjén",
     "hatsag": false,
-    "W": 0.96,
-    "r_mert": 0.64,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.93,
+    "r_mert": 0.11,
+    "r_modell": 0.56,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.34,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.07,
+    "et_ref": 0.64
    },
    {
     "nev": "Deszk",
     "hatsag": false,
-    "W": 1.15,
-    "r_mert": 0.82,
-    "r_modell": 0.77,
-    "r_nedves": 0.76,
+    "W": 1.07,
+    "r_mert": 0.37,
+    "r_modell": 0.48,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.24,
+    "et_ref": 0.66
    },
    {
     "nev": "Egyek",
     "hatsag": false,
-    "W": 0.8,
-    "r_mert": 0.84,
-    "r_modell": 0.7,
-    "r_nedves": 0.77,
+    "W": 0.79,
+    "r_mert": 0.23,
+    "r_modell": 0.58,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.14,
+    "et_ref": 0.63
    },
    {
     "nev": "Előszállás",
     "hatsag": false,
     "W": 1.01,
-    "r_mert": 0.79,
-    "r_modell": 0.79,
-    "r_nedves": 0.77,
+    "r_mert": 0.18,
+    "r_modell": 0.47,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.67
    },
    {
     "nev": "Enying",
     "hatsag": false,
-    "W": 0.9,
-    "r_mert": 1.17,
-    "r_modell": 0.84,
-    "r_nedves": 0.77,
+    "W": 0.89,
+    "r_mert": 0.3,
+    "r_modell": 0.58,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.67,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.67
    },
    {
     "nev": "Fajsz",
     "hatsag": false,
-    "W": 0.78,
-    "r_mert": 0.72,
-    "r_modell": 0.73,
-    "r_nedves": 0.77,
+    "W": 0.76,
+    "r_mert": 0.25,
+    "r_modell": 0.43,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.43,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.17,
+    "et_ref": 0.67
    },
    {
     "nev": "Felsőszentmárton",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 1.06,
-    "r_modell": 0.73,
-    "r_nedves": 0.73,
+    "W": 1.01,
+    "r_mert": 0.42,
+    "r_modell": 0.46,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.67,
-    "et_ref": 0.63
+    "allapot": "nyugalmi",
+    "et_act": 0.28,
+    "et_ref": 0.67
    },
    {
     "nev": "Fényeslitke",
     "hatsag": false,
     "W": 0.84,
-    "r_mert": 0.54,
-    "r_modell": 0.75,
-    "r_nedves": 0.77,
+    "r_mert": 0.66,
+    "r_modell": 0.67,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.3,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.33,
+    "et_ref": 0.5
    },
    {
     "nev": "Fülöpháza",
     "hatsag": true,
     "W": 1.2,
-    "r_mert": 0.6,
-    "r_modell": 0.82,
-    "r_nedves": 0.77,
+    "r_mert": 0.13,
+    "r_modell": 0.4,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.35,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.09,
+    "et_ref": 0.67
    },
    {
     "nev": "Gádoros",
     "hatsag": false,
-    "W": 1.12,
-    "r_mert": 0.6,
-    "r_modell": 0.79,
-    "r_nedves": 0.77,
+    "W": 1.03,
+    "r_mert": 0.2,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.35,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.66
    },
    {
     "nev": "Gemzse",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 0.49,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.03,
+    "r_mert": 0.73,
+    "r_modell": 0.71,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.28,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.38,
+    "et_ref": 0.52
    },
    {
     "nev": "Gödre",
     "hatsag": false,
-    "W": 1.01,
-    "r_mert": 0.88,
-    "r_modell": 0.76,
-    "r_nedves": 0.76,
+    "W": 0.99,
+    "r_mert": 0.42,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.54,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.28,
+    "et_ref": 0.66
    },
    {
     "nev": "Görbeháza",
     "hatsag": false,
-    "W": 0.98,
-    "r_mert": 0.61,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.97,
+    "r_mert": 0.27,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.33,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.6
    },
    {
     "nev": "Gyomaendrőd",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 0.6,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.21,
+    "r_modell": 0.57,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.35,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.64
    },
    {
     "nev": "Gyula",
     "hatsag": false,
     "W": 1.2,
-    "r_mert": 0.67,
-    "r_modell": 0.79,
-    "r_nedves": 0.77,
+    "r_mert": 0.34,
+    "r_modell": 0.47,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.4,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.22,
+    "et_ref": 0.64
    },
    {
     "nev": "Hajdúböszörmény",
     "hatsag": false,
-    "W": 1.17,
-    "r_mert": 0.7,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.06,
+    "r_mert": 0.42,
+    "r_modell": 0.69,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.38,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.25,
+    "et_ref": 0.59
    },
    {
     "nev": "Hajdúnánás",
     "hatsag": false,
-    "W": 1.04,
-    "r_mert": 0.92,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.47,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.27,
+    "et_ref": 0.58
    },
    {
     "nev": "Harta",
     "hatsag": false,
-    "W": 1.08,
-    "r_mert": 0.99,
-    "r_modell": 0.81,
-    "r_nedves": 0.77,
+    "W": 1.07,
+    "r_mert": 0.3,
+    "r_modell": 0.47,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.58,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.67
    },
    {
     "nev": "Hernád",
     "hatsag": false,
-    "W": 0.77,
-    "r_mert": 0.88,
-    "r_modell": 0.71,
-    "r_nedves": 0.77,
+    "W": 0.75,
+    "r_mert": 0.22,
+    "r_modell": 0.5,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.14,
+    "et_ref": 0.65
    },
    {
     "nev": "Hódmezővásárhely",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.84,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.96,
+    "r_mert": 0.3,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.66
    },
    {
     "nev": "Homokmégy",
     "hatsag": true,
-    "W": 1.16,
-    "r_mert": 0.95,
-    "r_modell": 0.79,
-    "r_nedves": 0.77,
+    "W": 1.11,
+    "r_mert": 0.31,
+    "r_modell": 0.43,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.57,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.67
    },
    {
     "nev": "Izsák",
     "hatsag": true,
-    "W": 1.1,
-    "r_mert": 0.76,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.03,
+    "r_mert": 0.17,
+    "r_modell": 0.47,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.44,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.67
    },
    {
     "nev": "Jakabszállás",
     "hatsag": true,
-    "W": 0.95,
-    "r_mert": 0.76,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 0.89,
+    "r_mert": 0.18,
+    "r_modell": 0.47,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.67
    },
    {
     "nev": "Jászberény",
     "hatsag": false,
-    "W": 0.68,
-    "r_mert": 0.77,
-    "r_modell": 0.72,
-    "r_nedves": 0.77,
+    "W": 0.66,
+    "r_mert": 0.16,
+    "r_modell": 0.46,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.42,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.1,
+    "et_ref": 0.65
    },
    {
     "nev": "Jászkisér",
     "hatsag": false,
-    "W": 1.12,
-    "r_mert": 0.55,
-    "r_modell": 0.82,
-    "r_nedves": 0.77,
+    "W": 1.07,
+    "r_mert": 0.12,
+    "r_modell": 0.53,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.3,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.08,
+    "et_ref": 0.65
    },
    {
     "nev": "Jászladány",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 0.57,
-    "r_modell": 0.8,
-    "r_nedves": 0.77,
+    "W": 1.04,
+    "r_mert": 0.11,
+    "r_modell": 0.55,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.32,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.07,
+    "et_ref": 0.65
    },
    {
     "nev": "Kálmáncsa",
     "hatsag": false,
-    "W": 1.15,
-    "r_mert": 0.96,
-    "r_modell": 0.76,
-    "r_nedves": 0.75,
+    "W": 1.11,
+    "r_mert": 0.47,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.59,
-    "et_ref": 0.62
+    "allapot": "nyugalmi",
+    "et_act": 0.31,
+    "et_ref": 0.66
    },
    {
     "nev": "Kalocsa",
     "hatsag": false,
-    "W": 1.11,
-    "r_mert": 0.77,
-    "r_modell": 0.81,
-    "r_nedves": 0.77,
+    "W": 1.08,
+    "r_mert": 0.25,
+    "r_modell": 0.46,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.17,
+    "et_ref": 0.67
    },
    {
     "nev": "Kapoly",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 0.85,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.02,
+    "r_mert": 0.3,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.66
    },
    {
     "nev": "Kartal",
     "hatsag": false,
-    "W": 0.66,
-    "r_mert": 0.62,
-    "r_modell": 0.71,
-    "r_nedves": 0.77,
+    "W": 0.64,
+    "r_mert": 0.17,
+    "r_modell": 0.5,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.34,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.63
    },
    {
     "nev": "Katymár",
     "hatsag": false,
-    "W": 0.99,
-    "r_mert": 0.77,
-    "r_modell": 0.82,
-    "r_nedves": 0.73,
+    "W": 0.98,
+    "r_mert": 0.31,
+    "r_modell": 0.5,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.63
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.67
    },
    {
     "nev": "Kecel",
     "hatsag": true,
-    "W": 0.84,
-    "r_mert": 0.82,
-    "r_modell": 0.73,
-    "r_nedves": 0.77,
+    "W": 0.79,
+    "r_mert": 0.3,
+    "r_modell": 0.45,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.67
    },
    {
     "nev": "Kenderes",
     "hatsag": false,
     "W": 1.2,
-    "r_mert": 0.78,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "r_mert": 0.18,
+    "r_modell": 0.44,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.44,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.65
    },
    {
     "nev": "Királyhegyes",
     "hatsag": false,
-    "W": 1.02,
-    "r_mert": 0.7,
-    "r_modell": 0.84,
-    "r_nedves": 0.76,
+    "W": 1.01,
+    "r_mert": 0.29,
+    "r_modell": 0.54,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.43,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.19,
+    "et_ref": 0.66
    },
    {
     "nev": "Kiskunfélegyháza",
     "hatsag": true,
     "W": 1.2,
-    "r_mert": 0.84,
-    "r_modell": 0.83,
-    "r_nedves": 0.77,
+    "r_mert": 0.2,
+    "r_modell": 0.51,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.14,
+    "et_ref": 0.67
    },
    {
     "nev": "Kiskunhalas",
     "hatsag": true,
-    "W": 0.73,
-    "r_mert": 0.8,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.68,
+    "r_mert": 0.31,
+    "r_modell": 0.53,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.66
    },
    {
     "nev": "Kisszállás",
     "hatsag": true,
-    "W": 0.94,
-    "r_mert": 0.88,
-    "r_modell": 0.79,
-    "r_nedves": 0.76,
+    "W": 0.87,
+    "r_mert": 0.37,
+    "r_modell": 0.47,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.54,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.25,
+    "et_ref": 0.66
    },
    {
     "nev": "Kölcse",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.38,
-    "r_modell": 0.76,
-    "r_nedves": 0.76,
+    "W": 0.99,
+    "r_mert": 0.88,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.23,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.45,
+    "et_ref": 0.51
    },
    {
     "nev": "Kőszegdoroszló",
     "hatsag": false,
-    "W": 0.78,
-    "r_mert": 0.74,
-    "r_modell": 0.73,
-    "r_nedves": 0.77,
+    "W": 0.77,
+    "r_mert": 0.2,
+    "r_modell": 0.51,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.64
    },
    {
     "nev": "Kunmadaras",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.69,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.99,
+    "r_mert": 0.2,
+    "r_modell": 0.6,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.38,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.63
    },
    {
     "nev": "Kunpeszér",
     "hatsag": true,
-    "W": 0.99,
-    "r_mert": 0.78,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.98,
+    "r_mert": 0.23,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.44,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.66
    },
    {
     "nev": "Kunszentmiklós",
     "hatsag": false,
-    "W": 0.99,
-    "r_mert": 0.82,
-    "r_modell": 0.82,
-    "r_nedves": 0.77,
+    "W": 0.97,
+    "r_mert": 0.23,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.47,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.66
    },
    {
     "nev": "Lajosmizse",
     "hatsag": true,
     "W": 0.97,
-    "r_mert": 0.63,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "r_mert": 0.16,
+    "r_modell": 0.46,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.36,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.67
    },
    {
     "nev": "Látrány",
     "hatsag": false,
-    "W": 1.03,
-    "r_mert": 0.84,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.01,
+    "r_mert": 0.35,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.23,
+    "et_ref": 0.66
    },
    {
     "nev": "Létavértes",
     "hatsag": false,
-    "W": 1.11,
-    "r_mert": 0.68,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.04,
+    "r_mert": 0.54,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.39,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.32,
+    "et_ref": 0.59
    },
    {
     "nev": "Madocsa",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 2.14,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.83,
+    "r_modell": 0.46,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 1.26,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.56,
+    "et_ref": 0.67
    },
    {
     "nev": "Magyaregregy",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.66,
-    "r_modell": 0.74,
-    "r_nedves": 0.75,
+    "W": 0.98,
+    "r_mert": 0.34,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.62
+    "allapot": "nyugalmi",
+    "et_act": 0.23,
+    "et_ref": 0.66
    },
    {
     "nev": "Mélykút",
     "hatsag": true,
-    "W": 1.2,
-    "r_mert": 0.82,
-    "r_modell": 0.78,
-    "r_nedves": 0.76,
+    "W": 1.12,
+    "r_mert": 0.31,
+    "r_modell": 0.43,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.67
    },
    {
     "nev": "Mencshely",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 1.19,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.96,
+    "r_mert": 0.35,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.68,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.23,
+    "et_ref": 0.66
    },
    {
     "nev": "Mezőfalva",
     "hatsag": false,
-    "W": 1.15,
-    "r_mert": 0.8,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.08,
+    "r_mert": 0.17,
+    "r_modell": 0.45,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.67
    },
    {
     "nev": "Mezőhegyes",
     "hatsag": false,
-    "W": 0.84,
-    "r_mert": 0.62,
-    "r_modell": 0.74,
-    "r_nedves": 0.76,
+    "W": 0.81,
+    "r_mert": 0.29,
+    "r_modell": 0.47,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.38,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.19,
+    "et_ref": 0.66
    },
    {
     "nev": "Mezősas",
     "hatsag": false,
-    "W": 0.34,
-    "r_mert": 0.83,
+    "W": 0.32,
+    "r_mert": 0.44,
     "r_modell": 0.62,
-    "r_nedves": 0.77,
+    "r_nedves": 0.64,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.47,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.27,
+    "et_ref": 0.62
    },
    {
     "nev": "Mezőtúr",
     "hatsag": false,
-    "W": 1.02,
-    "r_mert": 0.71,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 0.97,
+    "r_mert": 0.21,
+    "r_modell": 0.55,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.14,
+    "et_ref": 0.65
    },
    {
     "nev": "Mindszent",
     "hatsag": false,
-    "W": 0.95,
-    "r_mert": 0.73,
-    "r_modell": 0.76,
-    "r_nedves": 0.77,
+    "W": 0.93,
+    "r_mert": 0.24,
+    "r_modell": 0.45,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.44,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.67
    },
    {
     "nev": "Nádudvar",
     "hatsag": false,
-    "W": 0.53,
-    "r_mert": 0.87,
-    "r_modell": 0.65,
-    "r_nedves": 0.77,
+    "W": 0.52,
+    "r_mert": 0.38,
+    "r_modell": 0.59,
+    "r_nedves": 0.67,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.23,
+    "et_ref": 0.61
    },
    {
     "nev": "Nagybajom",
     "hatsag": false,
-    "W": 1.16,
-    "r_mert": 0.88,
-    "r_modell": 0.83,
-    "r_nedves": 0.77,
+    "W": 1.15,
+    "r_mert": 0.4,
+    "r_modell": 0.59,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.53,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.26,
+    "et_ref": 0.66
    },
    {
     "nev": "Nagybánhegyes",
     "hatsag": false,
-    "W": 1.15,
-    "r_mert": 0.72,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.09,
+    "r_mert": 0.32,
+    "r_modell": 0.51,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.43,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.65
    },
    {
     "nev": "Nagykanizsa",
     "hatsag": false,
-    "W": 0.93,
-    "r_mert": 0.83,
-    "r_modell": 0.76,
-    "r_nedves": 0.77,
+    "W": 0.92,
+    "r_mert": 0.39,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.26,
+    "et_ref": 0.66
    },
    {
     "nev": "Nagykőrös",
     "hatsag": true,
-    "W": 1.12,
-    "r_mert": 0.71,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.06,
+    "r_mert": 0.19,
+    "r_modell": 0.54,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.65
    },
    {
     "nev": "Nyíregyháza",
     "hatsag": false,
-    "W": 0.96,
-    "r_mert": 0.76,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.93,
+    "r_mert": 0.54,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.3,
+    "et_ref": 0.57
    },
    {
     "nev": "Nyírmártonfalva",
     "hatsag": false,
-    "W": 1.04,
-    "r_mert": 0.89,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.64,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.37,
+    "et_ref": 0.58
    },
    {
     "nev": "Nyírvasvári",
     "hatsag": false,
     "W": 0.97,
-    "r_mert": 0.53,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "r_mert": 0.64,
+    "r_modell": 0.7,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.3,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.35,
+    "et_ref": 0.54
    },
    {
     "nev": "Olaszfalu",
     "hatsag": false,
-    "W": 0.95,
-    "r_mert": 0.92,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.93,
+    "r_mert": 0.16,
+    "r_modell": 0.46,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.52,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.67
    },
    {
     "nev": "Osli",
     "hatsag": false,
-    "W": 0.67,
-    "r_mert": 0.88,
-    "r_modell": 0.71,
-    "r_nedves": 0.77,
+    "W": 0.66,
+    "r_mert": 0.28,
+    "r_modell": 0.52,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.18,
+    "et_ref": 0.63
    },
    {
     "nev": "Oszkó",
     "hatsag": false,
-    "W": 0.67,
-    "r_mert": 0.92,
-    "r_modell": 0.67,
-    "r_nedves": 0.77,
+    "W": 0.65,
+    "r_mert": 0.24,
+    "r_modell": 0.45,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.52,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.66
    },
    {
     "nev": "Pálmonostora",
     "hatsag": true,
-    "W": 1.2,
-    "r_mert": 0.83,
-    "r_modell": 0.83,
-    "r_nedves": 0.77,
+    "W": 1.14,
+    "r_mert": 0.24,
+    "r_modell": 0.46,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.49,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.67
    },
    {
     "nev": "Prügy",
     "hatsag": false,
-    "W": 0.89,
-    "r_mert": 0.86,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.87,
+    "r_mert": 0.43,
+    "r_modell": 0.68,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.52
+    "allapot": "nyugalmi",
+    "et_act": 0.24,
+    "et_ref": 0.56
    },
    {
     "nev": "Pusztaszabolcs",
     "hatsag": false,
-    "W": 0.82,
-    "r_mert": 0.85,
-    "r_modell": 0.75,
-    "r_nedves": 0.77,
+    "W": 0.8,
+    "r_mert": 0.19,
+    "r_modell": 0.47,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.66
    },
    {
     "nev": "Püski",
     "hatsag": false,
     "W": 0.69,
-    "r_mert": 0.89,
-    "r_modell": 0.71,
-    "r_nedves": 0.77,
+    "r_mert": 0.3,
+    "r_modell": 0.47,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.47,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.19,
+    "et_ref": 0.64
    },
    {
     "nev": "Ráckeresztúr",
     "hatsag": false,
-    "W": 1.03,
-    "r_mert": 0.82,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.01,
+    "r_mert": 0.18,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.66
    },
    {
     "nev": "Rezi",
     "hatsag": false,
     "W": 0.95,
-    "r_mert": 1.72,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "r_mert": 0.85,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 1.0,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.56,
+    "et_ref": 0.66
    },
    {
     "nev": "Röszke",
     "hatsag": false,
-    "W": 0.78,
-    "r_mert": 0.73,
-    "r_modell": 0.7,
-    "r_nedves": 0.75,
+    "W": 0.76,
+    "r_mert": 0.24,
+    "r_modell": 0.41,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.62
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.67
    },
    {
     "nev": "Ruzsa",
     "hatsag": true,
-    "W": 0.79,
-    "r_mert": 0.85,
-    "r_modell": 0.74,
-    "r_nedves": 0.76,
+    "W": 0.77,
+    "r_mert": 0.32,
+    "r_modell": 0.46,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.52,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.66
    },
    {
     "nev": "Sándorfalva",
     "hatsag": false,
-    "W": 1.09,
-    "r_mert": 2.13,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.03,
+    "r_mert": 0.9,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 1.28,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.59,
+    "et_ref": 0.66
    },
    {
     "nev": "Sarkad",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.86,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 0.99,
+    "r_mert": 0.48,
+    "r_modell": 0.6,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.51,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.3,
+    "et_ref": 0.63
    },
    {
     "nev": "Sárospatak (aszálymonitoring)",
     "hatsag": false,
-    "W": 0.63,
-    "r_mert": 0.63,
-    "r_modell": 0.63,
-    "r_nedves": 0.77,
+    "W": 0.6,
+    "r_mert": 0.56,
+    "r_modell": 0.59,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.34,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.3,
+    "et_ref": 0.53
    },
    {
     "nev": "Solt",
     "hatsag": false,
-    "W": 1.14,
-    "r_mert": 0.8,
-    "r_modell": 0.81,
-    "r_nedves": 0.77,
+    "W": 1.05,
+    "r_mert": 0.19,
+    "r_modell": 0.48,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.67
    },
    {
     "nev": "Somogyzsitfa",
     "hatsag": false,
-    "W": 1.02,
-    "r_mert": 0.89,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.38,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.53,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.25,
+    "et_ref": 0.66
    },
    {
     "nev": "Sopronkövesd",
     "hatsag": false,
     "W": 0.23,
-    "r_mert": 1.01,
-    "r_modell": 0.61,
-    "r_nedves": 0.77,
+    "r_mert": 0.33,
+    "r_modell": 0.58,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.55,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.63
    },
    {
     "nev": "Sükösd",
     "hatsag": false,
-    "W": 1.08,
-    "r_mert": 0.9,
-    "r_modell": 0.77,
-    "r_nedves": 0.76,
+    "W": 1.05,
+    "r_mert": 0.38,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.55,
-    "et_ref": 0.61
+    "allapot": "nyugalmi",
+    "et_act": 0.25,
+    "et_ref": 0.66
    },
    {
     "nev": "Szakcs",
     "hatsag": false,
-    "W": 0.93,
-    "r_mert": 0.88,
-    "r_modell": 0.76,
-    "r_nedves": 0.77,
+    "W": 0.92,
+    "r_mert": 0.28,
+    "r_modell": 0.45,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.53,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.19,
+    "et_ref": 0.67
    },
    {
     "nev": "Szakoly",
     "hatsag": false,
-    "W": 0.77,
-    "r_mert": 0.62,
-    "r_modell": 0.72,
-    "r_nedves": 0.77,
+    "W": 0.76,
+    "r_mert": 0.52,
+    "r_modell": 0.65,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.33,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.29,
+    "et_ref": 0.56
    },
    {
     "nev": "Szederkény",
     "hatsag": false,
-    "W": 0.97,
-    "r_mert": 0.85,
-    "r_modell": 0.77,
-    "r_nedves": 0.73,
+    "W": 0.92,
+    "r_mert": 0.36,
+    "r_modell": 0.48,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.54,
-    "et_ref": 0.63
+    "allapot": "nyugalmi",
+    "et_act": 0.24,
+    "et_ref": 0.67
    },
    {
     "nev": "Szeghalom",
     "hatsag": false,
-    "W": 1.02,
-    "r_mert": 0.71,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.25,
+    "r_modell": 0.61,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.63
    },
    {
     "nev": "Székkutas",
     "hatsag": false,
-    "W": 0.61,
-    "r_mert": 0.74,
-    "r_modell": 0.67,
-    "r_nedves": 0.77,
+    "W": 0.6,
+    "r_mert": 0.3,
+    "r_modell": 0.44,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.2,
+    "et_ref": 0.66
    },
    {
     "nev": "Szentes",
     "hatsag": false,
-    "W": 1.2,
-    "r_mert": 0.85,
-    "r_modell": 0.83,
-    "r_nedves": 0.77,
+    "W": 1.17,
+    "r_mert": 0.25,
+    "r_modell": 0.48,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.5,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.17,
+    "et_ref": 0.66
    },
    {
     "nev": "Szentistván",
     "hatsag": false,
     "W": 0.98,
-    "r_mert": 0.78,
-    "r_modell": 0.85,
-    "r_nedves": 0.77,
+    "r_mert": 0.16,
+    "r_modell": 0.74,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.42,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.1,
+    "et_ref": 0.63
    },
    {
     "nev": "Szentmártonkáta",
     "hatsag": false,
-    "W": 1.15,
-    "r_mert": 0.75,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.06,
+    "r_mert": 0.17,
+    "r_modell": 0.52,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.65
    },
    {
     "nev": "Szilvásvárad",
     "hatsag": false,
     "W": 0.73,
-    "r_mert": 0.77,
-    "r_modell": 0.72,
-    "r_nedves": 0.77,
+    "r_mert": 0.37,
+    "r_modell": 0.63,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.22,
+    "et_ref": 0.6
    },
    {
     "nev": "Szolnok",
     "hatsag": false,
-    "W": 1.2,
-    "r_mert": 0.58,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.12,
+    "r_mert": 0.17,
+    "r_modell": 0.46,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.32,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.11,
+    "et_ref": 0.66
    },
    {
     "nev": "Sződ",
     "hatsag": false,
-    "W": 0.99,
-    "r_mert": 0.63,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 0.97,
+    "r_mert": 0.18,
+    "r_modell": 0.58,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.34,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.64
    },
    {
     "nev": "Tata",
     "hatsag": false,
-    "W": 1.01,
-    "r_mert": 0.69,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.16,
+    "r_modell": 0.5,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.38,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.1,
+    "et_ref": 0.66
    },
    {
     "nev": "Tázlár",
     "hatsag": true,
-    "W": 0.71,
-    "r_mert": 0.95,
-    "r_modell": 0.72,
-    "r_nedves": 0.77,
+    "W": 0.68,
+    "r_mert": 0.32,
+    "r_modell": 0.4,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.57,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.67
    },
    {
     "nev": "Tiszaeszlár",
     "hatsag": false,
-    "W": 0.78,
-    "r_mert": 0.69,
-    "r_modell": 0.74,
-    "r_nedves": 0.77,
+    "W": 0.79,
+    "r_mert": 0.45,
+    "r_modell": 0.65,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.37,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.25,
+    "et_ref": 0.56
    },
    {
     "nev": "Tiszaföldvár",
     "hatsag": false,
-    "W": 1.18,
-    "r_mert": 0.89,
-    "r_modell": 0.79,
-    "r_nedves": 0.77,
+    "W": 1.07,
+    "r_mert": 0.24,
+    "r_modell": 0.48,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.51,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.66
    },
    {
     "nev": "Tiszaroff tározó 1",
     "hatsag": false,
-    "W": 1.04,
-    "r_mert": 0.85,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.02,
+    "r_mert": 0.33,
+    "r_modell": 0.6,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.63
    },
    {
     "nev": "Tiszaroff tározó 2",
     "hatsag": false,
-    "W": 0.98,
-    "r_mert": 0.85,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.96,
+    "r_mert": 0.33,
+    "r_modell": 0.6,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.63
    },
    {
     "nev": "Tiszaroff tározó 3",
     "hatsag": false,
-    "W": 0.99,
-    "r_mert": 0.85,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.98,
+    "r_mert": 0.33,
+    "r_modell": 0.6,
+    "r_nedves": 0.6,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.63
    },
    {
     "nev": "Tótkomlós",
     "hatsag": false,
-    "W": 1.2,
-    "r_mert": 0.76,
-    "r_modell": 0.8,
-    "r_nedves": 0.77,
+    "W": 1.19,
+    "r_mert": 0.31,
+    "r_modell": 0.42,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.6
+    "allapot": "nyugalmi",
+    "et_act": 0.21,
+    "et_ref": 0.66
    },
    {
     "nev": "Tököl (aszálymonitoring)",
     "hatsag": false,
-    "W": 1.0,
-    "r_mert": 0.73,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.99,
+    "r_mert": 0.19,
+    "r_modell": 0.49,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.66
    },
    {
     "nev": "Tyukod",
     "hatsag": false,
-    "W": 0.92,
-    "r_mert": 0.4,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 0.9,
+    "r_mert": 0.75,
+    "r_modell": 0.69,
+    "r_nedves": 0.7,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.24,
-    "et_ref": 0.59
+    "allapot": "nyugalmi",
+    "et_act": 0.4,
+    "et_ref": 0.53
    },
    {
     "nev": "Üllő",
     "hatsag": false,
-    "W": 1.03,
-    "r_mert": 0.81,
-    "r_modell": 0.77,
-    "r_nedves": 0.77,
+    "W": 1.0,
+    "r_mert": 0.27,
+    "r_modell": 0.53,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.55
+    "allapot": "nyugalmi",
+    "et_act": 0.17,
+    "et_ref": 0.65
    },
    {
     "nev": "Várbalog",
     "hatsag": false,
-    "W": 0.27,
-    "r_mert": 0.78,
-    "r_modell": 0.59,
-    "r_nedves": 0.77,
+    "W": 0.26,
+    "r_mert": 0.29,
+    "r_modell": 0.61,
+    "r_nedves": 0.64,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.41,
-    "et_ref": 0.53
+    "allapot": "nyugalmi",
+    "et_act": 0.18,
+    "et_ref": 0.62
    },
    {
     "nev": "Városföld",
     "hatsag": true,
     "W": 1.2,
-    "r_mert": 0.69,
-    "r_modell": 0.81,
-    "r_nedves": 0.77,
+    "r_mert": 0.19,
+    "r_modell": 0.39,
+    "r_nedves": 0.46,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.4,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.13,
+    "et_ref": 0.67
    },
    {
     "nev": "Vasszécseny",
     "hatsag": false,
-    "W": 0.66,
-    "r_mert": 0.85,
-    "r_modell": 0.68,
-    "r_nedves": 0.77,
+    "W": 0.65,
+    "r_mert": 0.23,
+    "r_modell": 0.44,
+    "r_nedves": 0.5,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.48,
-    "et_ref": 0.56
+    "allapot": "nyugalmi",
+    "et_act": 0.15,
+    "et_ref": 0.66
    },
    {
     "nev": "Vasszentmihály",
     "hatsag": false,
-    "W": 0.66,
-    "r_mert": 0.94,
-    "r_modell": 0.67,
-    "r_nedves": 0.77,
+    "W": 0.65,
+    "r_mert": 0.27,
+    "r_modell": 0.42,
+    "r_nedves": 0.53,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.54,
-    "et_ref": 0.57
+    "allapot": "nyugalmi",
+    "et_act": 0.17,
+    "et_ref": 0.65
    },
    {
     "nev": "Visznek",
     "hatsag": false,
-    "W": 0.8,
-    "r_mert": 0.72,
-    "r_modell": 0.73,
-    "r_nedves": 0.77,
+    "W": 0.79,
+    "r_mert": 0.19,
+    "r_modell": 0.52,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.39,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.12,
+    "et_ref": 0.64
    },
    {
     "nev": "Zsadány",
     "hatsag": false,
-    "W": 1.05,
-    "r_mert": 0.77,
-    "r_modell": 0.78,
-    "r_nedves": 0.77,
+    "W": 1.04,
+    "r_mert": 0.39,
+    "r_modell": 0.65,
+    "r_nedves": 0.64,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.45,
-    "et_ref": 0.58
+    "allapot": "nyugalmi",
+    "et_act": 0.24,
+    "et_ref": 0.62
    },
    {
     "nev": "Zsebeháza",
     "hatsag": false,
     "W": 0.74,
-    "r_mert": 0.86,
-    "r_modell": 0.68,
-    "r_nedves": 0.77,
+    "r_mert": 0.25,
+    "r_modell": 0.53,
+    "r_nedves": 0.57,
     "vizhatas": null,
-    "allapot": "aktiv",
-    "et_act": 0.46,
-    "et_ref": 0.54
+    "allapot": "nyugalmi",
+    "et_act": 0.16,
+    "et_ref": 0.64
    }
   ],
   "allapot_db": {
-   "aktiv": 134
+   "nyugalmi": 134
   },
   "gorbe": {
    "ma": [
     [
      0.0,
-     0.513
+     0.464
     ],
     [
      0.1,
-     0.525
+     0.47
     ],
     [
      0.2,
-     0.518
+     0.494
     ],
     [
      0.3,
-     0.56
+     0.482
     ],
     [
      0.4,
-     0.633
+     0.422
     ],
     [
      0.5,
-     0.657
+     0.397
     ],
     [
      0.6,
-     0.652
+     0.429
     ],
     [
      0.7,
-     0.676
+     0.458
     ],
     [
      0.8,
-     0.74
+     0.472
     ],
     [
      0.9,
-     0.768
+     0.496
     ],
     [
      1.0,
-     0.771
+     0.494
     ]
    ],
    "julius": [
     [
      0.0,
-     0.563
+     0.583
     ],
     [
      0.1,
-     0.569
+     0.586
     ],
     [
      0.2,
-     0.578
+     0.585
     ],
     [
      0.3,
-     0.609
+     0.597
     ],
     [
      0.4,
-     0.628
+     0.62
     ],
     [
      0.5,
-     0.617
+     0.632
     ],
     [
      0.6,
-     0.602
+     0.626
     ],
     [
      0.7,
-     0.596
-    ],
-    [
-     0.8,
-     0.599
-    ],
-    [
-     0.9,
      0.621
     ],
     [
+     0.8,
+     0.62
+    ],
+    [
+     0.9,
+     0.617
+    ],
+    [
      1.0,
-     0.655
+     0.6
     ]
    ],
-   "ma_et_ref": 0.57,
+   "ma_et_ref": 0.66,
    "ervenyes": false
   },
   "modell": {
-   "minta": 20921,
-   "tanito": 16737,
-   "ervenyesito": 4184,
-   "rmse_tanito": 0.26272441219455367,
-   "rmse_ervenyesito": 0.2679828178835914,
-   "rmse_atlag_alap": 0.32285772046283095,
-   "lepes": 1275
+   "minta": 21055,
+   "tanito": 16844,
+   "ervenyesito": 4211,
+   "rmse_tanito": 0.2617539384061671,
+   "rmse_ervenyesito": 0.26791045611765507,
+   "rmse_atlag_alap": 0.3230904822710587,
+   "lepes": 1900
   },
-  "minta_db": 20921
+  "minta_db": 21055
  },
  "homerseklet": {
-  "szonda_db": 255,
+  "szonda_db": 250,
   "hatsag": {
    "Csengele|10": {
-    "beta": 0.0665,
+    "beta": 0.066,
     "r": 0.43,
-    "n": 59
+    "n": 62
    },
    "Csólyospálos|10": {
-    "beta": 0.0737,
-    "r": 0.65,
-    "n": 58
+    "beta": 0.0811,
+    "r": 0.61,
+    "n": 62
    },
    "Csólyospálos|20": {
-    "beta": 0.0723,
-    "r": 0.71,
-    "n": 58
+    "beta": 0.074,
+    "r": 0.66,
+    "n": 62
    },
    "Csólyospálos|30": {
-    "beta": 0.0681,
+    "beta": 0.0721,
     "r": 0.36,
-    "n": 58
+    "n": 62
    },
    "Fülöpháza|10": {
-    "beta": -0.059,
-    "r": -0.57,
-    "n": 61
+    "beta": -0.06,
+    "r": -0.56,
+    "n": 54
    },
    "Fülöpháza|20": {
     "beta": 0.0,
     "r": -0.22,
-    "n": 61
+    "n": 54
    },
    "Homokmégy|10": {
     "beta": 0.0,
-    "r": -0.05,
-    "n": 53
+    "r": -0.07,
+    "n": 57
    },
    "Izsák|10": {
     "beta": 0.0,
     "r": 0.12,
-    "n": 57
+    "n": 49
    },
    "Izsák|20": {
     "beta": 0.0,
     "r": 0.22,
-    "n": 57
+    "n": 49
    },
    "Jakabszállás|10": {
     "beta": 0.0,
     "r": 0.23,
-    "n": 55
+    "n": 48
    },
    "Jakabszállás|20": {
     "beta": 0.0,
-    "r": -0.03,
-    "n": 55
+    "r": -0.02,
+    "n": 48
    },
    "Jakabszállás|30": {
     "beta": 0.0,
-    "r": 0.04,
-    "n": 55
+    "r": 0.05,
+    "n": 48
    },
    "Kecel|10": {
     "beta": 0.1191,
@@ -1802,289 +1802,274 @@
     "n": 59
    },
    "Kiskunfélegyháza|10": {
-    "beta": -0.073,
-    "r": -0.31,
-    "n": 58
+    "beta": 0.0,
+    "r": -0.26,
+    "n": 61
    },
    "Kiskunfélegyháza|20": {
     "beta": 0.0,
     "r": -0.12,
-    "n": 58
+    "n": 61
    },
    "Kiskunhalas|10": {
     "beta": 0.0,
-    "r": -0.2,
-    "n": 58
+    "r": -0.13,
+    "n": 61
    },
    "Kiskunhalas|20": {
     "beta": 0.0,
-    "r": 0.13,
-    "n": 58
+    "r": 0.15,
+    "n": 61
    },
    "Kisszállás|10": {
     "beta": 0.0,
-    "r": 0.19,
-    "n": 56
+    "r": 0.23,
+    "n": 64
    },
    "Kisszállás|20": {
     "beta": 0.0,
-    "r": -0.04,
-    "n": 56
-   },
-   "Kisszállás|30": {
-    "beta": 0.0,
-    "r": 0.13,
-    "n": 56
+    "r": 0.06,
+    "n": 64
    },
    "Kunpeszér|10": {
     "beta": 0.0,
-    "r": -0.2,
-    "n": 54
-   },
-   "Kunpeszér|20": {
-    "beta": -0.117,
-    "r": -0.35,
-    "n": 54
+    "r": -0.17,
+    "n": 51
    },
    "Lajosmizse|10": {
     "beta": 0.0,
     "r": 0.22,
-    "n": 56
+    "n": 50
    },
    "Lajosmizse|20": {
-    "beta": 0.086,
+    "beta": 0.0857,
     "r": 0.38,
-    "n": 56
+    "n": 50
    },
    "Mélykút|10": {
     "beta": 0.0,
-    "r": -0.01,
-    "n": 54
+    "r": 0.04,
+    "n": 58
    },
    "Mélykút|20": {
     "beta": 0.0,
-    "r": -0.12,
-    "n": 54
-   },
-   "Mélykút|30": {
-    "beta": 0.0,
-    "r": 0.0,
-    "n": 54
+    "r": -0.06,
+    "n": 58
    },
    "Nagykőrös|10": {
     "beta": 0.0,
     "r": 0.01,
-    "n": 55
+    "n": 47
    },
    "Nagykőrös|20": {
     "beta": 0.0,
     "r": -0.12,
-    "n": 55
+    "n": 47
    },
    "Nagykőrös|30": {
     "beta": 0.0,
     "r": -0.06,
-    "n": 55
+    "n": 47
    },
    "Pálmonostora|10": {
-    "beta": 0.0582,
-    "r": 0.59,
-    "n": 55
+    "beta": 0.0616,
+    "r": 0.58,
+    "n": 59
    },
    "Pálmonostora|20": {
-    "beta": 0.0649,
-    "r": 0.34,
-    "n": 55
+    "beta": 0.0684,
+    "r": 0.35,
+    "n": 59
    },
    "Ruzsa|10": {
     "beta": 0.0,
-    "r": 0.17,
-    "n": 55
+    "r": 0.11,
+    "n": 65
    },
    "Ruzsa|20": {
-    "beta": 0.0712,
-    "r": 0.37,
-    "n": 55
+    "beta": 0.0677,
+    "r": 0.31,
+    "n": 65
    },
    "Tázlár|10": {
-    "beta": 0.0243,
-    "r": 0.36,
-    "n": 65
+    "beta": 0.0237,
+    "r": 0.34,
+    "n": 67
    },
    "Tázlár|20": {
     "beta": 0.0,
-    "r": 0.23,
-    "n": 65
+    "r": 0.21,
+    "n": 67
    },
    "Tázlár|30": {
     "beta": 0.0,
-    "r": 0.2,
-    "n": 65
+    "r": 0.16,
+    "n": 67
    },
    "Városföld|10": {
     "beta": 0.0,
     "r": -0.26,
-    "n": 63
+    "n": 55
    },
    "Városföld|20": {
     "beta": 0.0,
     "r": -0.27,
-    "n": 63
+    "n": 55
    }
   },
   "esemeny": {
    "Csengele": {
-    "dS_mm": 7.2,
-    "dS_korr_mm": 7.6,
-    "arany_korr": 0.331,
+    "dS_mm": 7.4,
+    "dS_korr_mm": 7.8,
+    "arany_korr": 0.337,
     "szintek": {
      "10": {
-      "beta": 0.0665,
-      "dT": -3.98,
-      "dtheta_korr": 0.16
+      "beta": 0.066,
+      "dT": -4.28,
+      "dtheta_korr": 0.18
      },
      "20": {
       "beta": 0.0,
-      "dT": -3.13,
+      "dT": -3.43,
       "dtheta_korr": 0.2
      },
      "30": {
       "beta": 0.0,
-      "dT": -2.72,
-      "dtheta_korr": 0.47
+      "dT": -3.02,
+      "dtheta_korr": 0.57
      },
      "45": {
       "beta": 0.0,
-      "dT": -1.98,
-      "dtheta_korr": 0.4
+      "dT": -2.28,
+      "dtheta_korr": 0.3
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.2,
-      "dtheta_korr": 3.9
+      "dT": -1.5,
+      "dtheta_korr": 4.0
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.62,
+      "dT": -0.82,
       "dtheta_korr": 0.2
      }
     }
    },
    "Csólyospálos": {
-    "dS_mm": 1.4,
-    "dS_korr_mm": 2.4,
-    "arany_korr": 0.176,
+    "dS_mm": 1.2,
+    "dS_korr_mm": 2.3,
+    "arany_korr": 0.172,
     "szintek": {
      "10": {
-      "beta": 0.0737,
-      "dT": -3.92,
-      "dtheta_korr": 0.14
+      "beta": 0.0811,
+      "dT": -3.72,
+      "dtheta_korr": 0.25
      },
      "20": {
-      "beta": 0.0723,
-      "dT": -3.9,
-      "dtheta_korr": 0.36
+      "beta": 0.074,
+      "dT": -4.3,
+      "dtheta_korr": 0.2
      },
      "30": {
-      "beta": 0.0681,
-      "dT": -3.53,
-      "dtheta_korr": 0.36
+      "beta": 0.0721,
+      "dT": -4.13,
+      "dtheta_korr": 0.32
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.68,
+      "dT": -3.28,
       "dtheta_korr": 0.12
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.82,
+      "dT": -2.42,
       "dtheta_korr": 0.18
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.52,
+      "dT": -1.82,
       "dtheta_korr": 1.23
      }
     }
    },
    "Fülöpháza": {
-    "dS_mm": 31.6,
-    "dS_korr_mm": 30.9,
-    "arany_korr": 0.934,
+    "dS_mm": 30.6,
+    "dS_korr_mm": 29.9,
+    "arany_korr": 0.895,
     "szintek": {
      "10": {
-      "beta": -0.059,
-      "dT": -7.07,
-      "dtheta_korr": 1.55
+      "beta": -0.06,
+      "dT": -7.17,
+      "dtheta_korr": 1.34
      },
      "20": {
       "beta": 0.0,
-      "dT": -5.32,
-      "dtheta_korr": 1.93
+      "dT": -5.72,
+      "dtheta_korr": 1.73
      },
      "30": {
       "beta": 0.0,
-      "dT": -3.9,
-      "dtheta_korr": 2.8
+      "dT": -4.5,
+      "dtheta_korr": 2.7
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.9,
+      "dT": -3.4,
       "dtheta_korr": 3.43
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.88,
-      "dtheta_korr": 4.4
+      "dT": -2.28,
+      "dtheta_korr": 4.3
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.3,
-      "dtheta_korr": 15.23
+      "dT": -1.7,
+      "dtheta_korr": 14.93
      }
     }
    },
    "Homokmégy": {
-    "dS_mm": 13.4,
-    "dS_korr_mm": 13.4,
-    "arany_korr": 0.404,
+    "dS_mm": 12.6,
+    "dS_korr_mm": 12.6,
+    "arany_korr": 0.378,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -4.17,
-      "dtheta_korr": 0.33
+      "dT": -4.27,
+      "dtheta_korr": 0.23
      },
      "20": {
       "beta": 0.0,
-      "dT": -2.97,
-      "dtheta_korr": 0.5
+      "dT": -3.47,
+      "dtheta_korr": 0.4
      },
      "30": {
       "beta": 0.0,
-      "dT": -1.9,
-      "dtheta_korr": 0.43
+      "dT": -2.3,
+      "dtheta_korr": 0.33
      },
      "45": {
       "beta": 0.0,
-      "dT": -1.2,
-      "dtheta_korr": 1.63
+      "dT": -1.5,
+      "dtheta_korr": 1.53
      },
      "60": {
       "beta": 0.0,
-      "dT": -0.5,
-      "dtheta_korr": 3.62
+      "dT": -0.8,
+      "dtheta_korr": 3.42
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.3,
+      "dT": -0.5,
       "dtheta_korr": 5.35
      }
     }
    },
    "Izsák": {
-    "dS_mm": 3.6,
-    "dS_korr_mm": 3.6,
-    "arany_korr": 0.094,
+    "dS_mm": 2.8,
+    "dS_korr_mm": 2.8,
+    "arany_korr": 0.072,
     "szintek": {
      "10": {
       "beta": 0.0,
@@ -2093,509 +2078,509 @@
      },
      "20": {
       "beta": 0.0,
-      "dT": -5.42,
+      "dT": -5.72,
       "dtheta_korr": 0.3
      },
      "30": {
       "beta": 0.0,
-      "dT": -4.18,
-      "dtheta_korr": 0.8
+      "dT": -4.58,
+      "dtheta_korr": 0.6
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.75,
-      "dtheta_korr": 0.75
+      "dT": -3.25,
+      "dtheta_korr": 0.65
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.82,
-      "dtheta_korr": 0.68
+      "dT": -2.22,
+      "dtheta_korr": 0.48
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.1,
-      "dtheta_korr": 0.8
+      "dT": -1.5,
+      "dtheta_korr": 0.7
      }
     }
    },
    "Jakabszállás": {
-    "dS_mm": 2.7,
-    "dS_korr_mm": 2.7,
-    "arany_korr": 0.074,
+    "dS_mm": 1.8,
+    "dS_korr_mm": 1.8,
+    "arany_korr": 0.048,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -8.92,
-      "dtheta_korr": 0.23
+      "dT": -8.82,
+      "dtheta_korr": 0.33
      },
      "20": {
       "beta": 0.0,
-      "dT": -6.3,
-      "dtheta_korr": 0.6
+      "dT": -6.7,
+      "dtheta_korr": 0.3
      },
      "30": {
       "beta": 0.0,
-      "dT": -4.97,
-      "dtheta_korr": 0.32
+      "dT": -5.47,
+      "dtheta_korr": 0.22
      },
      "45": {
       "beta": 0.0,
-      "dT": -3.6,
-      "dtheta_korr": 0.45
+      "dT": -4.2,
+      "dtheta_korr": 0.25
      },
      "60": {
       "beta": 0.0,
-      "dT": -2.5,
-      "dtheta_korr": 0.45
+      "dT": -3.0,
+      "dtheta_korr": 0.25
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.6,
-      "dtheta_korr": 0.05
+      "dT": -2.0,
+      "dtheta_korr": -0.05
      }
     }
    },
    "Kecel": {
-    "dS_mm": 1.3,
-    "dS_korr_mm": 2.7,
-    "arany_korr": 0.091,
+    "dS_mm": 0.8,
+    "dS_korr_mm": 2.1,
+    "arany_korr": 0.07,
     "szintek": {
      "10": {
       "beta": 0.1191,
-      "dT": -6.2,
-      "dtheta_korr": 0.49
+      "dT": -5.7,
+      "dtheta_korr": 0.63
      },
      "20": {
       "beta": 0.0578,
-      "dT": -4.8,
-      "dtheta_korr": 1.18
+      "dT": -4.9,
+      "dtheta_korr": 1.08
      },
      "30": {
       "beta": 0.0,
-      "dT": -3.73,
-      "dtheta_korr": -0.02
+      "dT": -4.13,
+      "dtheta_korr": -0.22
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.75,
-      "dtheta_korr": 0.07
+      "dT": -3.15,
+      "dtheta_korr": -0.13
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.92,
+      "dT": -2.32,
       "dtheta_korr": 0.1
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.28,
-      "dtheta_korr": 0.78
+      "dT": -1.68,
+      "dtheta_korr": 0.58
      }
     }
    },
    "Kiskunfélegyháza": {
-    "dS_mm": 40.4,
-    "dS_korr_mm": 39.8,
-    "arany_korr": 1.195,
+    "dS_mm": 40.8,
+    "dS_korr_mm": 40.8,
+    "arany_korr": 1.226,
     "szintek": {
      "10": {
-      "beta": -0.073,
+      "beta": 0.0,
       "dT": -5.17,
-      "dtheta_korr": 3.24
+      "dtheta_korr": 3.32
      },
      "20": {
       "beta": 0.0,
-      "dT": -4.07,
-      "dtheta_korr": 3.5
+      "dT": -4.37,
+      "dtheta_korr": 3.3
      },
      "30": {
       "beta": 0.0,
-      "dT": -3.1,
-      "dtheta_korr": 3.87
+      "dT": -3.6,
+      "dtheta_korr": 3.67
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.0,
+      "dT": -2.5,
       "dtheta_korr": 9.82
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.5,
-      "dtheta_korr": 7.9
+      "dT": -1.9,
+      "dtheta_korr": 8.8
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.8,
+      "dT": -1.0,
       "dtheta_korr": 0.02
      }
     }
    },
    "Kiskunhalas": {
-    "dS_mm": 11.8,
-    "dS_korr_mm": 11.8,
-    "arany_korr": 0.593,
+    "dS_mm": 9.7,
+    "dS_korr_mm": 9.7,
+    "arany_korr": 0.49,
     "szintek": {
      "10": {
       "beta": 0.0,
       "dT": -3.57,
-      "dtheta_korr": 1.55
+      "dtheta_korr": 1.05
      },
      "20": {
       "beta": 0.0,
-      "dT": -2.62,
-      "dtheta_korr": 1.68
+      "dT": -3.02,
+      "dtheta_korr": 1.18
      },
      "30": {
       "beta": 0.0,
-      "dT": -1.93,
-      "dtheta_korr": 2.12
+      "dT": -2.53,
+      "dtheta_korr": 1.72
      },
      "45": {
       "beta": 0.0,
-      "dT": -1.65,
-      "dtheta_korr": 3.1
+      "dT": -2.05,
+      "dtheta_korr": 2.8
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.2,
-      "dtheta_korr": 0.33
+      "dT": -1.5,
+      "dtheta_korr": 0.43
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.87,
+      "dT": -1.07,
       "dtheta_korr": 0.0
      }
     }
    },
    "Kisszállás": {
-    "dS_mm": 8.4,
-    "dS_korr_mm": 8.4,
-    "arany_korr": 0.593,
+    "dS_mm": 6.8,
+    "dS_korr_mm": 6.8,
+    "arany_korr": 0.482,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -3.55,
+      "dT": -3.65,
       "dtheta_korr": 0.73
      },
      "20": {
       "beta": 0.0,
-      "dT": -3.33,
-      "dtheta_korr": 1.03
+      "dT": -3.73,
+      "dtheta_korr": 0.63
      },
      "30": {
       "beta": 0.0,
-      "dT": -2.97,
-      "dtheta_korr": 1.3
+      "dT": -3.47,
+      "dtheta_korr": 0.6
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.17,
-      "dtheta_korr": 1.83
+      "dT": -2.67,
+      "dtheta_korr": 1.33
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.58,
-      "dtheta_korr": 0.98
+      "dT": -1.98,
+      "dtheta_korr": 1.08
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.2,
-      "dtheta_korr": 0.6
+      "dT": -1.5,
+      "dtheta_korr": 1.0
      }
     }
    },
    "Kunpeszér": {
-    "dS_mm": 6.2,
-    "dS_korr_mm": 5.7,
-    "arany_korr": 0.218,
+    "dS_mm": 5.9,
+    "dS_korr_mm": 5.9,
+    "arany_korr": 0.22,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -5.92,
+      "dT": -5.72,
       "dtheta_korr": 0.87
      },
      "20": {
-      "beta": -0.117,
-      "dT": -4.23,
-      "dtheta_korr": 0.52
+      "beta": 0.0,
+      "dT": -4.43,
+      "dtheta_korr": 1.02
      },
      "30": {
       "beta": 0.0,
-      "dT": -2.7,
+      "dT": -3.1,
       "dtheta_korr": 0.67
      },
      "45": {
       "beta": 0.0,
-      "dT": -1.5,
-      "dtheta_korr": 0.78
+      "dT": -1.8,
+      "dtheta_korr": 0.68
      },
      "60": {
       "beta": 0.0,
-      "dT": -0.98,
-      "dtheta_korr": 0.87
+      "dT": -1.18,
+      "dtheta_korr": 0.77
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.6,
+      "dT": -0.9,
       "dtheta_korr": 0.73
      }
     }
    },
    "Lajosmizse": {
-    "dS_mm": 26.7,
-    "dS_korr_mm": 27.1,
+    "dS_mm": 27.2,
+    "dS_korr_mm": 27.6,
     "arany_korr": 0.842,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -6.25,
+      "dT": -6.55,
       "dtheta_korr": 1.5
      },
      "20": {
-      "beta": 0.086,
-      "dT": -4.83,
-      "dtheta_korr": 2.92
+      "beta": 0.0857,
+      "dT": -5.23,
+      "dtheta_korr": 2.75
      },
      "30": {
       "beta": 0.0,
-      "dT": -3.78,
+      "dT": -4.28,
       "dtheta_korr": 2.72
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.45,
-      "dtheta_korr": 4.05
+      "dT": -2.85,
+      "dtheta_korr": 3.85
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.92,
-      "dtheta_korr": 7.05
+      "dT": -2.42,
+      "dtheta_korr": 7.15
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.3,
-      "dtheta_korr": 2.53
+      "dT": -1.7,
+      "dtheta_korr": 3.63
      }
     }
    },
    "Mélykút": {
-    "dS_mm": 3.8,
-    "dS_korr_mm": 3.8,
-    "arany_korr": 0.278,
+    "dS_mm": 4.9,
+    "dS_korr_mm": 4.9,
+    "arany_korr": 0.358,
     "szintek": {
      "10": {
       "beta": 0.0,
       "dT": -4.08,
-      "dtheta_korr": -1.12
+      "dtheta_korr": -0.62
      },
      "20": {
       "beta": 0.0,
-      "dT": -4.05,
+      "dT": -4.45,
       "dtheta_korr": -0.03
      },
      "30": {
       "beta": 0.0,
-      "dT": -3.58,
-      "dtheta_korr": 0.9
+      "dT": -4.08,
+      "dtheta_korr": 1.0
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.85,
-      "dtheta_korr": 1.13
+      "dT": -3.35,
+      "dtheta_korr": 1.23
      },
      "60": {
       "beta": 0.0,
-      "dT": -2.0,
+      "dT": -2.3,
       "dtheta_korr": 1.8
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.3,
-      "dtheta_korr": 0.0
+      "dT": -1.6,
+      "dtheta_korr": 0.1
      }
     }
    },
    "Nagykőrös": {
-    "dS_mm": 8.5,
-    "dS_korr_mm": 8.5,
-    "arany_korr": 0.269,
+    "dS_mm": 7.9,
+    "dS_korr_mm": 7.9,
+    "arany_korr": 0.243,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -7.12,
-      "dtheta_korr": 0.23
+      "dT": -7.32,
+      "dtheta_korr": 0.43
      },
      "20": {
       "beta": 0.0,
-      "dT": -5.37,
-      "dtheta_korr": 0.85
+      "dT": -5.67,
+      "dtheta_korr": 0.65
      },
      "30": {
       "beta": 0.0,
-      "dT": -4.02,
-      "dtheta_korr": 1.57
+      "dT": -4.42,
+      "dtheta_korr": 1.27
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.8,
-      "dtheta_korr": 0.87
+      "dT": -3.3,
+      "dtheta_korr": 0.77
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.9,
-      "dtheta_korr": 0.9
+      "dT": -2.3,
+      "dtheta_korr": 0.8
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.3,
+      "dT": -1.7,
       "dtheta_korr": 3.6
      }
     }
    },
    "Pálmonostora": {
-    "dS_mm": 21.6,
-    "dS_korr_mm": 22.4,
-    "arany_korr": 0.815,
+    "dS_mm": 21.3,
+    "dS_korr_mm": 22.0,
+    "arany_korr": 0.802,
     "szintek": {
      "10": {
-      "beta": 0.0582,
-      "dT": -5.65,
-      "dtheta_korr": 0.83
+      "beta": 0.0616,
+      "dT": -4.85,
+      "dtheta_korr": 0.8
      },
      "20": {
-      "beta": 0.0649,
-      "dT": -4.02,
-      "dtheta_korr": 2.16
+      "beta": 0.0684,
+      "dT": -4.12,
+      "dtheta_korr": 1.98
      },
      "30": {
       "beta": 0.0,
-      "dT": -2.88,
-      "dtheta_korr": 1.9
+      "dT": -3.38,
+      "dtheta_korr": 1.8
      },
      "45": {
       "beta": 0.0,
-      "dT": -1.9,
-      "dtheta_korr": 2.5
+      "dT": -2.4,
+      "dtheta_korr": 2.3
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.18,
-      "dtheta_korr": 8.58
+      "dT": -1.58,
+      "dtheta_korr": 8.78
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.73,
+      "dT": -0.93,
       "dtheta_korr": 0.0
      }
     }
    },
    "Ruzsa": {
-    "dS_mm": 2.3,
-    "dS_korr_mm": 2.5,
-    "arany_korr": 0.18,
+    "dS_mm": 2.0,
+    "dS_korr_mm": 2.2,
+    "arany_korr": 0.158,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -4.15,
+      "dT": -4.35,
       "dtheta_korr": 0.22
      },
      "20": {
-      "beta": 0.0712,
-      "dT": -3.45,
-      "dtheta_korr": 0.55
+      "beta": 0.0677,
+      "dT": -3.85,
+      "dtheta_korr": 0.36
      },
      "30": {
       "beta": 0.0,
-      "dT": -2.87,
-      "dtheta_korr": 0.23
+      "dT": -3.17,
+      "dtheta_korr": 0.13
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.22,
+      "dT": -2.52,
       "dtheta_korr": 0.3
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.53,
+      "dT": -1.73,
       "dtheta_korr": 0.27
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.12,
+      "dT": -1.32,
       "dtheta_korr": 0.7
      }
     }
    },
    "Tázlár": {
-    "dS_mm": 1.1,
-    "dS_korr_mm": 1.3,
-    "arany_korr": 0.043,
+    "dS_mm": 0.3,
+    "dS_korr_mm": 0.5,
+    "arany_korr": 0.016,
     "szintek": {
      "10": {
-      "beta": 0.0243,
-      "dT": -6.6,
-      "dtheta_korr": 0.16
+      "beta": 0.0237,
+      "dT": -6.8,
+      "dtheta_korr": -0.04
      },
      "20": {
       "beta": 0.0,
-      "dT": -5.37,
-      "dtheta_korr": -0.07
+      "dT": -5.87,
+      "dtheta_korr": -0.17
      },
      "30": {
       "beta": 0.0,
-      "dT": -4.38,
-      "dtheta_korr": 0.1
+      "dT": -4.98,
+      "dtheta_korr": 0.0
      },
      "45": {
       "beta": 0.0,
-      "dT": -2.9,
-      "dtheta_korr": 0.2
+      "dT": -3.4,
+      "dtheta_korr": 0.1
      },
      "60": {
       "beta": 0.0,
-      "dT": -2.1,
-      "dtheta_korr": 0.32
+      "dT": -2.6,
+      "dtheta_korr": 0.22
      },
      "75": {
       "beta": 0.0,
-      "dT": -1.42,
+      "dT": -1.72,
       "dtheta_korr": 0.33
      }
     }
    },
    "Városföld": {
-    "dS_mm": 46.9,
-    "dS_korr_mm": 46.9,
-    "arany_korr": 1.146,
+    "dS_mm": 46.3,
+    "dS_korr_mm": 46.3,
+    "arany_korr": 1.116,
     "szintek": {
      "10": {
       "beta": 0.0,
-      "dT": -5.97,
-      "dtheta_korr": 1.68
+      "dT": -5.87,
+      "dtheta_korr": 1.58
      },
      "20": {
       "beta": 0.0,
-      "dT": -3.97,
-      "dtheta_korr": 2.62
+      "dT": -4.37,
+      "dtheta_korr": 2.32
      },
      "30": {
       "beta": 0.0,
-      "dT": -2.82,
-      "dtheta_korr": 3.05
+      "dT": -3.42,
+      "dtheta_korr": 2.85
      },
      "45": {
       "beta": 0.0,
-      "dT": -1.82,
-      "dtheta_korr": 3.05
+      "dT": -2.22,
+      "dtheta_korr": 2.95
      },
      "60": {
       "beta": 0.0,
-      "dT": -1.1,
+      "dT": -1.4,
       "dtheta_korr": 16.12
      },
      "75": {
       "beta": 0.0,
-      "dT": -0.7,
-      "dtheta_korr": 12.23
+      "dT": -0.9,
+      "dtheta_korr": 12.63
      }
     }
    }
@@ -2606,27 +2591,27 @@
    "Berettyóújfalu": {
     "allapot": "javit",
     "kiadas_db": 72,
-    "par_db": 1650,
+    "par_db": 1656,
     "teszt_tol": "2026-11-11 12:00:00",
-    "rmse_ovsz_cm": 33.2,
-    "rmse_javitott_cm": 24.7,
-    "ovsz_sav_lefedettseg": 0.47,
+    "rmse_ovsz_cm": 33.1,
+    "rmse_javitott_cm": 24.6,
+    "ovsz_sav_lefedettseg": 0.46,
     "tanult_sav": {
      "0-24": [
       -14.1,
-      12.8
+      13.1
      ],
      "24-48": [
-      -14.3,
-      26.3
+      -14.2,
+      26.2
      ],
      "48-96": [
       -23.1,
-      41.4
+      41.0
      ],
      "96-200": [
-      -39.7,
-      50.9
+      -39.5,
+      50.8
      ]
     },
     "pontok": [
@@ -2634,220 +2619,220 @@
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": -99.0,
       "sav_ovsz": 1.3,
-      "javitott_cm": -102.6,
-      "also": -116.7,
-      "felso": -89.8
+      "javitott_cm": -93.9,
+      "also": -108.0,
+      "felso": -80.8
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": -97.0,
       "sav_ovsz": 2.6,
-      "javitott_cm": -104.4,
-      "also": -118.5,
-      "felso": -91.6
+      "javitott_cm": -93.2,
+      "also": -107.3,
+      "felso": -80.1
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": -94.0,
       "sav_ovsz": 3.8,
-      "javitott_cm": -103.8,
-      "also": -117.9,
-      "felso": -91.0
+      "javitott_cm": -93.5,
+      "also": -107.6,
+      "felso": -80.4
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": -92.0,
       "sav_ovsz": 5.1,
-      "javitott_cm": -102.3,
-      "also": -116.4,
-      "felso": -89.5
+      "javitott_cm": -94.7,
+      "also": -108.8,
+      "felso": -81.6
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": -90.0,
       "sav_ovsz": 6.7,
-      "javitott_cm": -100.9,
-      "also": -115.2,
-      "felso": -74.6
+      "javitott_cm": -95.9,
+      "also": -110.1,
+      "felso": -69.7
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": -89.0,
       "sav_ovsz": 8.3,
-      "javitott_cm": -100.9,
-      "also": -115.2,
-      "felso": -74.6
+      "javitott_cm": -97.5,
+      "also": -111.7,
+      "felso": -71.3
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": -89.0,
       "sav_ovsz": 9.9,
-      "javitott_cm": -101.8,
-      "also": -116.1,
-      "felso": -75.5
+      "javitott_cm": -99.8,
+      "also": -114.0,
+      "felso": -73.6
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": -90.0,
       "sav_ovsz": 11.5,
-      "javitott_cm": -101.7,
-      "also": -116.0,
-      "felso": -75.4
+      "javitott_cm": -102.2,
+      "also": -116.4,
+      "felso": -76.0
      },
      {
       "ido": "2026-11-27 12:00:00",
       "ovsz_cm": -91.0,
       "sav_ovsz": 13.0,
-      "javitott_cm": -101.6,
-      "also": -124.7,
-      "felso": -60.2
+      "javitott_cm": -104.1,
+      "also": -127.2,
+      "felso": -63.1
      },
      {
       "ido": "2026-11-27 18:00:00",
       "ovsz_cm": -92.0,
       "sav_ovsz": 14.5,
-      "javitott_cm": -102.0,
-      "also": -125.1,
-      "felso": -60.6
+      "javitott_cm": -105.3,
+      "also": -128.4,
+      "felso": -64.3
      },
      {
       "ido": "2026-11-28 00:00:00",
       "ovsz_cm": -94.0,
       "sav_ovsz": 16.0,
-      "javitott_cm": -102.2,
-      "also": -125.3,
-      "felso": -60.8
+      "javitott_cm": -106.0,
+      "also": -129.1,
+      "felso": -65.0
      },
      {
       "ido": "2026-11-28 06:00:00",
       "ovsz_cm": -95.0,
       "sav_ovsz": 17.5,
-      "javitott_cm": -102.7,
-      "also": -125.8,
-      "felso": -61.3
+      "javitott_cm": -106.0,
+      "also": -129.1,
+      "felso": -65.0
      },
      {
       "ido": "2026-11-28 12:00:00",
       "ovsz_cm": -96.0,
       "sav_ovsz": 18.6,
-      "javitott_cm": -103.3,
-      "also": -126.4,
-      "felso": -61.9
+      "javitott_cm": -105.9,
+      "also": -129.0,
+      "felso": -64.9
      },
      {
       "ido": "2026-11-28 18:00:00",
       "ovsz_cm": -96.0,
       "sav_ovsz": 19.8,
-      "javitott_cm": -104.1,
-      "also": -127.2,
-      "felso": -62.7
+      "javitott_cm": -106.2,
+      "also": -129.3,
+      "felso": -65.2
      },
      {
       "ido": "2026-11-29 00:00:00",
       "ovsz_cm": -95.0,
       "sav_ovsz": 20.9,
-      "javitott_cm": -105.8,
-      "also": -128.9,
-      "felso": -64.4
+      "javitott_cm": -107.0,
+      "also": -130.1,
+      "felso": -66.0
      },
      {
       "ido": "2026-11-29 06:00:00",
       "ovsz_cm": -94.0,
       "sav_ovsz": 22.1,
-      "javitott_cm": -107.7,
-      "also": -130.8,
-      "felso": -66.3
+      "javitott_cm": -106.2,
+      "also": -129.3,
+      "felso": -65.2
      },
      {
       "ido": "2026-11-29 12:00:00",
       "ovsz_cm": -91.0,
       "sav_ovsz": 22.8,
-      "javitott_cm": -105.7,
-      "also": -145.4,
-      "felso": -54.8
+      "javitott_cm": -100.8,
+      "also": -140.3,
+      "felso": -50.0
      },
      {
       "ido": "2026-11-29 18:00:00",
       "ovsz_cm": -89.0,
       "sav_ovsz": 23.6,
-      "javitott_cm": -97.1,
-      "also": -136.8,
-      "felso": -46.2
+      "javitott_cm": -95.5,
+      "also": -135.0,
+      "felso": -44.7
      },
      {
       "ido": "2026-11-30 00:00:00",
       "ovsz_cm": -87.0,
       "sav_ovsz": 24.3,
-      "javitott_cm": -86.6,
-      "also": -126.3,
-      "felso": -35.7
+      "javitott_cm": -91.8,
+      "also": -131.3,
+      "felso": -41.0
      },
      {
       "ido": "2026-11-30 06:00:00",
       "ovsz_cm": -85.0,
       "sav_ovsz": 25.0,
-      "javitott_cm": -79.0,
-      "also": -118.7,
-      "felso": -28.1
+      "javitott_cm": -89.1,
+      "also": -128.6,
+      "felso": -38.3
      },
      {
       "ido": "2026-11-30 12:00:00",
       "ovsz_cm": -84.0,
       "sav_ovsz": 25.9,
-      "javitott_cm": -77.8,
-      "also": -117.5,
-      "felso": -26.9
+      "javitott_cm": -88.8,
+      "also": -128.3,
+      "felso": -38.0
      },
      {
       "ido": "2026-11-30 18:00:00",
       "ovsz_cm": -83.0,
       "sav_ovsz": 26.9,
-      "javitott_cm": -79.0,
-      "also": -118.7,
-      "felso": -28.1
+      "javitott_cm": -89.3,
+      "also": -128.8,
+      "felso": -38.5
      },
      {
       "ido": "2026-12-01 00:00:00",
       "ovsz_cm": -83.0,
       "sav_ovsz": 27.8,
-      "javitott_cm": -83.8,
-      "also": -123.5,
-      "felso": -32.9
+      "javitott_cm": -92.2,
+      "also": -131.7,
+      "felso": -41.4
      },
      {
       "ido": "2026-12-01 06:00:00",
       "ovsz_cm": -84.0,
       "sav_ovsz": 28.8,
-      "javitott_cm": -91.1,
-      "also": -130.8,
-      "felso": -40.2
+      "javitott_cm": -97.5,
+      "also": -137.0,
+      "felso": -46.7
      }
     ]
    },
    "Budapest": {
     "allapot": "ovsz_jobb",
     "kiadas_db": 72,
-    "par_db": 1578,
+    "par_db": 1584,
     "teszt_tol": "2026-11-11 12:00:00",
-    "rmse_ovsz_cm": 22.9,
-    "rmse_javitott_cm": 25.4,
-    "ovsz_sav_lefedettseg": 0.4,
+    "rmse_ovsz_cm": 22.7,
+    "rmse_javitott_cm": 25.2,
+    "ovsz_sav_lefedettseg": 0.41,
     "tanult_sav": {
      "0-24": [
       -4.0,
       3.0
      ],
      "24-48": [
-      -11.6,
+      -11.4,
       11.0
      ],
      "48-96": [
-      -24.7,
+      -24.5,
       9.0
      ],
      "96-200": [
-      -52.6,
-      -20.7
+      -52.2,
+      -19.9
      ]
     },
     "pontok": [
@@ -2888,7 +2873,7 @@
       "ovsz_cm": 85.0,
       "sav_ovsz": 3.5,
       "javitott_cm": 85.0,
-      "also": 73.4,
+      "also": 73.6,
       "felso": 96.0
      },
      {
@@ -2896,7 +2881,7 @@
       "ovsz_cm": 83.0,
       "sav_ovsz": 4.8,
       "javitott_cm": 83.0,
-      "also": 71.4,
+      "also": 71.6,
       "felso": 94.0
      },
      {
@@ -2904,7 +2889,7 @@
       "ovsz_cm": 81.0,
       "sav_ovsz": 6.0,
       "javitott_cm": 81.0,
-      "also": 69.4,
+      "also": 69.6,
       "felso": 92.0
      },
      {
@@ -2912,7 +2897,7 @@
       "ovsz_cm": 78.0,
       "sav_ovsz": 7.2,
       "javitott_cm": 78.0,
-      "also": 66.4,
+      "also": 66.6,
       "felso": 89.0
      },
      {
@@ -2920,7 +2905,7 @@
       "ovsz_cm": 76.0,
       "sav_ovsz": 8.6,
       "javitott_cm": 76.0,
-      "also": 51.3,
+      "also": 51.5,
       "felso": 85.0
      },
      {
@@ -2928,7 +2913,7 @@
       "ovsz_cm": 74.0,
       "sav_ovsz": 10.0,
       "javitott_cm": 74.0,
-      "also": 49.3,
+      "also": 49.5,
       "felso": 83.0
      },
      {
@@ -2936,7 +2921,7 @@
       "ovsz_cm": 71.0,
       "sav_ovsz": 11.4,
       "javitott_cm": 71.0,
-      "also": 46.3,
+      "also": 46.5,
       "felso": 80.0
      },
      {
@@ -2944,7 +2929,7 @@
       "ovsz_cm": 68.0,
       "sav_ovsz": 12.7,
       "javitott_cm": 68.0,
-      "also": 43.3,
+      "also": 43.5,
       "felso": 77.0
      },
      {
@@ -2952,7 +2937,7 @@
       "ovsz_cm": 66.0,
       "sav_ovsz": 13.9,
       "javitott_cm": 66.0,
-      "also": 41.3,
+      "also": 41.5,
       "felso": 75.0
      },
      {
@@ -2960,7 +2945,7 @@
       "ovsz_cm": 64.0,
       "sav_ovsz": 15.0,
       "javitott_cm": 64.0,
-      "also": 39.3,
+      "also": 39.5,
       "felso": 73.0
      },
      {
@@ -2968,7 +2953,7 @@
       "ovsz_cm": 63.0,
       "sav_ovsz": 16.1,
       "javitott_cm": 63.0,
-      "also": 38.3,
+      "also": 38.5,
       "felso": 72.0
      },
      {
@@ -2976,7 +2961,7 @@
       "ovsz_cm": 61.0,
       "sav_ovsz": 17.3,
       "javitott_cm": 61.0,
-      "also": 36.3,
+      "also": 36.5,
       "felso": 70.0
      },
      {
@@ -2984,74 +2969,74 @@
       "ovsz_cm": 60.0,
       "sav_ovsz": 18.4,
       "javitott_cm": 60.0,
-      "also": 7.4,
-      "felso": 39.3
+      "also": 7.8,
+      "felso": 40.1
      },
      {
       "ido": "2026-11-29 18:00:00",
       "ovsz_cm": 58.0,
       "sav_ovsz": 19.5,
       "javitott_cm": 58.0,
-      "also": 5.4,
-      "felso": 37.3
+      "also": 5.8,
+      "felso": 38.1
      },
      {
       "ido": "2026-11-30 00:00:00",
       "ovsz_cm": 57.0,
       "sav_ovsz": 20.6,
       "javitott_cm": 57.0,
-      "also": 4.4,
-      "felso": 36.3
+      "also": 4.8,
+      "felso": 37.1
      },
      {
       "ido": "2026-11-30 06:00:00",
       "ovsz_cm": 55.0,
       "sav_ovsz": 21.8,
       "javitott_cm": 55.0,
-      "also": 2.4,
-      "felso": 34.3
+      "also": 2.8,
+      "felso": 35.1
      },
      {
       "ido": "2026-11-30 12:00:00",
       "ovsz_cm": 54.0,
       "sav_ovsz": 22.7,
       "javitott_cm": 54.0,
-      "also": 1.4,
-      "felso": 33.3
+      "also": 1.8,
+      "felso": 34.1
      },
      {
       "ido": "2026-11-30 18:00:00",
       "ovsz_cm": 53.0,
       "sav_ovsz": 23.7,
       "javitott_cm": 53.0,
-      "also": 0.4,
-      "felso": 32.3
+      "also": 0.8,
+      "felso": 33.1
      },
      {
       "ido": "2026-12-01 00:00:00",
       "ovsz_cm": 52.0,
       "sav_ovsz": 24.6,
       "javitott_cm": 52.0,
-      "also": -0.6,
-      "felso": 31.3
+      "also": -0.2,
+      "felso": 32.1
      },
      {
       "ido": "2026-12-01 06:00:00",
       "ovsz_cm": 50.0,
       "sav_ovsz": 25.5,
       "javitott_cm": 50.0,
-      "also": -2.6,
-      "felso": 29.3
+      "also": -2.2,
+      "felso": 30.1
      }
     ]
    },
    "Hidasnémeti": {
     "allapot": "javit",
     "kiadas_db": 72,
-    "par_db": 1651,
+    "par_db": 1657,
     "teszt_tol": "2026-11-11 12:00:00",
-    "rmse_ovsz_cm": 20.5,
-    "rmse_javitott_cm": 12.6,
+    "rmse_ovsz_cm": 20.3,
+    "rmse_javitott_cm": 12.5,
     "ovsz_sav_lefedettseg": 0.81,
     "tanult_sav": {
      "0-24": [
@@ -3063,11 +3048,11 @@
       5.5
      ],
      "48-96": [
-      -18.0,
-      6.6
+      -17.8,
+      6.4
      ],
      "96-200": [
-      -15.6,
+      -14.4,
       7.4
      ]
     },
@@ -3076,17 +3061,17 @@
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 2.2,
-      "javitott_cm": -112.2,
-      "also": -115.3,
-      "felso": -107.7
+      "javitott_cm": -112.0,
+      "also": -115.1,
+      "felso": -107.5
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 4.5,
-      "javitott_cm": -112.1,
-      "also": -115.2,
-      "felso": -107.6
+      "javitott_cm": -112.0,
+      "also": -115.1,
+      "felso": -107.5
      },
      {
       "ido": "2026-11-26 00:00:00",
@@ -3100,179 +3085,179 @@
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 9.0,
-      "javitott_cm": -112.1,
-      "also": -115.2,
-      "felso": -107.6
+      "javitott_cm": -112.3,
+      "also": -115.4,
+      "felso": -107.8
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 10.3,
-      "javitott_cm": -112.1,
-      "also": -117.2,
-      "felso": -106.6
+      "javitott_cm": -112.4,
+      "also": -117.5,
+      "felso": -106.9
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 11.7,
-      "javitott_cm": -112.2,
-      "also": -117.3,
-      "felso": -106.7
+      "javitott_cm": -112.5,
+      "also": -117.6,
+      "felso": -107.0
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 13.0,
-      "javitott_cm": -112.2,
-      "also": -117.3,
-      "felso": -106.7
+      "javitott_cm": -112.5,
+      "also": -117.6,
+      "felso": -107.0
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 14.4,
-      "javitott_cm": -112.2,
-      "also": -117.3,
-      "felso": -106.7
+      "javitott_cm": -112.4,
+      "also": -117.5,
+      "felso": -106.9
      },
      {
       "ido": "2026-11-27 12:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 15.1,
       "javitott_cm": -112.2,
-      "also": -130.2,
-      "felso": -105.6
+      "also": -130.0,
+      "felso": -105.8
      },
      {
       "ido": "2026-11-27 18:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 15.8,
       "javitott_cm": -112.1,
-      "also": -130.1,
-      "felso": -105.5
+      "also": -129.9,
+      "felso": -105.7
      },
      {
       "ido": "2026-11-28 00:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 16.5,
       "javitott_cm": -112.2,
-      "also": -130.2,
-      "felso": -105.6
+      "also": -130.0,
+      "felso": -105.8
      },
      {
       "ido": "2026-11-28 06:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 17.2,
       "javitott_cm": -111.9,
-      "also": -129.9,
-      "felso": -105.3
+      "also": -129.7,
+      "felso": -105.5
      },
      {
       "ido": "2026-11-28 12:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 17.6,
       "javitott_cm": -112.0,
-      "also": -130.0,
-      "felso": -105.4
+      "also": -129.8,
+      "felso": -105.6
      },
      {
       "ido": "2026-11-28 18:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 18.0,
       "javitott_cm": -112.0,
-      "also": -130.0,
-      "felso": -105.4
+      "also": -129.8,
+      "felso": -105.6
      },
      {
       "ido": "2026-11-29 00:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 18.4,
-      "javitott_cm": -111.9,
-      "also": -129.9,
-      "felso": -105.3
+      "javitott_cm": -111.8,
+      "also": -129.6,
+      "felso": -105.4
      },
      {
       "ido": "2026-11-29 06:00:00",
       "ovsz_cm": -111.0,
       "sav_ovsz": 18.8,
-      "javitott_cm": -111.6,
-      "also": -129.6,
-      "felso": -105.0
+      "javitott_cm": -111.5,
+      "also": -129.3,
+      "felso": -105.1
      },
      {
       "ido": "2026-11-29 12:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 19.0,
-      "javitott_cm": -111.9,
-      "also": -127.5,
-      "felso": -104.5
+      "javitott_cm": -111.7,
+      "also": -126.1,
+      "felso": -104.3
      },
      {
       "ido": "2026-11-29 18:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 19.3,
-      "javitott_cm": -111.8,
-      "also": -127.4,
-      "felso": -104.4
+      "javitott_cm": -111.7,
+      "also": -126.1,
+      "felso": -104.3
      },
      {
       "ido": "2026-11-30 00:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 19.5,
-      "javitott_cm": -111.8,
-      "also": -127.4,
-      "felso": -104.4
+      "javitott_cm": -111.7,
+      "also": -126.1,
+      "felso": -104.3
      },
      {
       "ido": "2026-11-30 06:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 19.7,
-      "javitott_cm": -111.8,
-      "also": -127.4,
-      "felso": -104.4
+      "javitott_cm": -111.7,
+      "also": -126.1,
+      "felso": -104.3
      },
      {
       "ido": "2026-11-30 12:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 20.5,
-      "javitott_cm": -111.8,
-      "also": -127.4,
-      "felso": -104.4
+      "javitott_cm": -111.7,
+      "also": -126.1,
+      "felso": -104.3
      },
      {
       "ido": "2026-11-30 18:00:00",
       "ovsz_cm": -112.0,
       "sav_ovsz": 21.2,
-      "javitott_cm": -111.8,
-      "also": -127.4,
-      "felso": -104.4
+      "javitott_cm": -111.7,
+      "also": -126.1,
+      "felso": -104.3
      },
      {
       "ido": "2026-12-01 00:00:00",
       "ovsz_cm": -113.0,
       "sav_ovsz": 22.0,
       "javitott_cm": -112.2,
-      "also": -127.8,
+      "also": -126.6,
       "felso": -104.8
      },
      {
       "ido": "2026-12-01 06:00:00",
       "ovsz_cm": -113.0,
       "sav_ovsz": 22.7,
-      "javitott_cm": -112.0,
-      "also": -127.6,
-      "felso": -104.6
+      "javitott_cm": -112.1,
+      "also": -126.5,
+      "felso": -104.7
      }
     ]
    },
    "Mohács": {
     "allapot": "ovsz_jobb",
     "kiadas_db": 72,
-    "par_db": 1638,
+    "par_db": 1644,
     "teszt_tol": "2026-11-11 12:00:00",
-    "rmse_ovsz_cm": 12.0,
-    "rmse_javitott_cm": 13.8,
+    "rmse_ovsz_cm": 12.1,
+    "rmse_javitott_cm": 13.9,
     "ovsz_sav_lefedettseg": 0.54,
     "tanult_sav": {
      "0-24": [
@@ -3281,15 +3266,15 @@
      ],
      "24-48": [
       -4.0,
-      4.7
+      4.6
      ],
      "48-96": [
-      -14.5,
+      -14.3,
       12.0
      ],
      "96-200": [
       -30.0,
-      15.1
+      14.9
      ]
     },
     "pontok": [
@@ -3331,7 +3316,7 @@
       "sav_ovsz": 2.8,
       "javitott_cm": 101.0,
       "also": 97.0,
-      "felso": 105.7
+      "felso": 105.6
      },
      {
       "ido": "2026-11-26 18:00:00",
@@ -3339,7 +3324,7 @@
       "sav_ovsz": 3.5,
       "javitott_cm": 100.0,
       "also": 96.0,
-      "felso": 104.7
+      "felso": 104.6
      },
      {
       "ido": "2026-11-27 00:00:00",
@@ -3347,7 +3332,7 @@
       "sav_ovsz": 4.2,
       "javitott_cm": 99.0,
       "also": 95.0,
-      "felso": 103.7
+      "felso": 103.6
      },
      {
       "ido": "2026-11-27 06:00:00",
@@ -3355,14 +3340,14 @@
       "sav_ovsz": 4.9,
       "javitott_cm": 98.0,
       "also": 94.0,
-      "felso": 102.7
+      "felso": 102.6
      },
      {
       "ido": "2026-11-27 12:00:00",
       "ovsz_cm": 97.0,
       "sav_ovsz": 5.5,
       "javitott_cm": 97.0,
-      "also": 82.5,
+      "also": 82.7,
       "felso": 109.0
      },
      {
@@ -3370,7 +3355,7 @@
       "ovsz_cm": 95.0,
       "sav_ovsz": 6.2,
       "javitott_cm": 95.0,
-      "also": 80.5,
+      "also": 80.7,
       "felso": 107.0
      },
      {
@@ -3378,7 +3363,7 @@
       "ovsz_cm": 93.0,
       "sav_ovsz": 6.9,
       "javitott_cm": 93.0,
-      "also": 78.5,
+      "also": 78.7,
       "felso": 105.0
      },
      {
@@ -3386,7 +3371,7 @@
       "ovsz_cm": 91.0,
       "sav_ovsz": 7.6,
       "javitott_cm": 91.0,
-      "also": 76.5,
+      "also": 76.7,
       "felso": 103.0
      },
      {
@@ -3394,7 +3379,7 @@
       "ovsz_cm": 88.0,
       "sav_ovsz": 8.7,
       "javitott_cm": 88.0,
-      "also": 73.5,
+      "also": 73.7,
       "felso": 100.0
      },
      {
@@ -3402,7 +3387,7 @@
       "ovsz_cm": 86.0,
       "sav_ovsz": 9.7,
       "javitott_cm": 86.0,
-      "also": 71.5,
+      "also": 71.7,
       "felso": 98.0
      },
      {
@@ -3410,7 +3395,7 @@
       "ovsz_cm": 82.0,
       "sav_ovsz": 10.8,
       "javitott_cm": 82.0,
-      "also": 67.5,
+      "also": 67.7,
       "felso": 94.0
      },
      {
@@ -3418,7 +3403,7 @@
       "ovsz_cm": 80.0,
       "sav_ovsz": 11.8,
       "javitott_cm": 80.0,
-      "also": 65.5,
+      "also": 65.7,
       "felso": 92.0
      },
      {
@@ -3427,7 +3412,7 @@
       "sav_ovsz": 13.0,
       "javitott_cm": 77.0,
       "also": 47.0,
-      "felso": 92.1
+      "felso": 91.9
      },
      {
       "ido": "2026-11-29 18:00:00",
@@ -3435,7 +3420,7 @@
       "sav_ovsz": 14.2,
       "javitott_cm": 74.0,
       "also": 44.0,
-      "felso": 89.1
+      "felso": 88.9
      },
      {
       "ido": "2026-11-30 00:00:00",
@@ -3443,7 +3428,7 @@
       "sav_ovsz": 15.4,
       "javitott_cm": 71.0,
       "also": 41.0,
-      "felso": 86.1
+      "felso": 85.9
      },
      {
       "ido": "2026-11-30 06:00:00",
@@ -3451,7 +3436,7 @@
       "sav_ovsz": 16.6,
       "javitott_cm": 69.0,
       "also": 39.0,
-      "felso": 84.1
+      "felso": 83.9
      },
      {
       "ido": "2026-11-30 12:00:00",
@@ -3459,7 +3444,7 @@
       "sav_ovsz": 17.9,
       "javitott_cm": 66.0,
       "also": 36.0,
-      "felso": 81.1
+      "felso": 80.9
      },
      {
       "ido": "2026-11-30 18:00:00",
@@ -3467,7 +3452,7 @@
       "sav_ovsz": 19.2,
       "javitott_cm": 63.0,
       "also": 33.0,
-      "felso": 78.1
+      "felso": 77.9
      },
      {
       "ido": "2026-12-01 00:00:00",
@@ -3475,7 +3460,7 @@
       "sav_ovsz": 20.5,
       "javitott_cm": 61.0,
       "also": 31.0,
-      "felso": 76.1
+      "felso": 75.9
      },
      {
       "ido": "2026-12-01 06:00:00",
@@ -3483,7 +3468,7 @@
       "sav_ovsz": 21.8,
       "javitott_cm": 58.0,
       "also": 28.0,
-      "felso": 73.1
+      "felso": 72.9
      }
     ]
    },
@@ -3494,27 +3479,27 @@
    "Szolnok": {
     "allapot": "ovsz_jobb",
     "kiadas_db": 72,
-    "par_db": 1635,
+    "par_db": 1641,
     "teszt_tol": "2026-11-11 12:00:00",
-    "rmse_ovsz_cm": 76.0,
-    "rmse_javitott_cm": 77.0,
+    "rmse_ovsz_cm": 75.5,
+    "rmse_javitott_cm": 76.4,
     "ovsz_sav_lefedettseg": 0.32,
     "tanult_sav": {
      "0-24": [
       -30.0,
-      20.5
+      20.4
      ],
      "24-48": [
       -69.0,
-      66.6
+      65.2
      ],
      "48-96": [
-      -92.8,
-      115.0
+      -92.6,
+      114.0
      ],
      "96-200": [
-      -113.2,
-      160.3
+      -112.4,
+      160.1
      ]
     },
     "pontok": [
@@ -3524,7 +3509,7 @@
       "sav_ovsz": 2.4,
       "javitott_cm": 300.0,
       "also": 270.0,
-      "felso": 320.5
+      "felso": 320.4
      },
      {
       "ido": "2026-11-25 18:00:00",
@@ -3532,7 +3517,7 @@
       "sav_ovsz": 4.7,
       "javitott_cm": 292.0,
       "also": 262.0,
-      "felso": 312.5
+      "felso": 312.4
      },
      {
       "ido": "2026-11-26 00:00:00",
@@ -3540,7 +3525,7 @@
       "sav_ovsz": 7.1,
       "javitott_cm": 281.0,
       "also": 251.0,
-      "felso": 301.5
+      "felso": 301.4
      },
      {
       "ido": "2026-11-26 06:00:00",
@@ -3548,7 +3533,7 @@
       "sav_ovsz": 9.4,
       "javitott_cm": 269.0,
       "also": 239.0,
-      "felso": 289.5
+      "felso": 289.4
      },
      {
       "ido": "2026-11-26 12:00:00",
@@ -3556,7 +3541,7 @@
       "sav_ovsz": 11.3,
       "javitott_cm": 255.0,
       "also": 186.0,
-      "felso": 321.6
+      "felso": 320.2
      },
      {
       "ido": "2026-11-26 18:00:00",
@@ -3564,7 +3549,7 @@
       "sav_ovsz": 13.2,
       "javitott_cm": 240.0,
       "also": 171.0,
-      "felso": 306.6
+      "felso": 305.2
      },
      {
       "ido": "2026-11-27 00:00:00",
@@ -3572,7 +3557,7 @@
       "sav_ovsz": 15.1,
       "javitott_cm": 222.0,
       "also": 153.0,
-      "felso": 288.6
+      "felso": 287.2
      },
      {
       "ido": "2026-11-27 06:00:00",
@@ -3580,145 +3565,145 @@
       "sav_ovsz": 17.1,
       "javitott_cm": 203.0,
       "also": 134.0,
-      "felso": 269.6
+      "felso": 268.2
      },
      {
       "ido": "2026-11-27 12:00:00",
       "ovsz_cm": 180.0,
       "sav_ovsz": 18.5,
       "javitott_cm": 180.0,
-      "also": 87.2,
-      "felso": 295.0
+      "also": 87.4,
+      "felso": 294.0
      },
      {
       "ido": "2026-11-27 18:00:00",
       "ovsz_cm": 155.0,
       "sav_ovsz": 20.0,
       "javitott_cm": 155.0,
-      "also": 62.2,
-      "felso": 270.0
+      "also": 62.4,
+      "felso": 269.0
      },
      {
       "ido": "2026-11-28 00:00:00",
       "ovsz_cm": 128.0,
       "sav_ovsz": 21.5,
       "javitott_cm": 128.0,
-      "also": 35.2,
-      "felso": 243.0
+      "also": 35.4,
+      "felso": 242.0
      },
      {
       "ido": "2026-11-28 06:00:00",
       "ovsz_cm": 101.0,
       "sav_ovsz": 23.0,
       "javitott_cm": 101.0,
-      "also": 8.2,
-      "felso": 216.0
+      "also": 8.4,
+      "felso": 215.0
      },
      {
       "ido": "2026-11-28 12:00:00",
       "ovsz_cm": 75.0,
       "sav_ovsz": 23.9,
       "javitott_cm": 75.0,
-      "also": -17.8,
-      "felso": 190.0
+      "also": -17.6,
+      "felso": 189.0
      },
      {
       "ido": "2026-11-28 18:00:00",
       "ovsz_cm": 49.0,
       "sav_ovsz": 24.9,
       "javitott_cm": 49.0,
-      "also": -43.8,
-      "felso": 164.0
+      "also": -43.6,
+      "felso": 163.0
      },
      {
       "ido": "2026-11-29 00:00:00",
       "ovsz_cm": 26.0,
       "sav_ovsz": 25.8,
       "javitott_cm": 26.0,
-      "also": -66.8,
-      "felso": 141.0
+      "also": -66.6,
+      "felso": 140.0
      },
      {
       "ido": "2026-11-29 06:00:00",
       "ovsz_cm": 6.0,
       "sav_ovsz": 26.8,
       "javitott_cm": 6.0,
-      "also": -86.8,
-      "felso": 121.0
+      "also": -86.6,
+      "felso": 120.0
      },
      {
       "ido": "2026-11-29 12:00:00",
       "ovsz_cm": -11.0,
       "sav_ovsz": 28.0,
       "javitott_cm": -11.0,
-      "also": -124.2,
-      "felso": 149.3
+      "also": -123.4,
+      "felso": 149.1
      },
      {
       "ido": "2026-11-29 18:00:00",
       "ovsz_cm": -25.0,
       "sav_ovsz": 29.3,
       "javitott_cm": -25.0,
-      "also": -138.2,
-      "felso": 135.3
+      "also": -137.4,
+      "felso": 135.1
      },
      {
       "ido": "2026-11-30 00:00:00",
       "ovsz_cm": -36.0,
       "sav_ovsz": 30.5,
       "javitott_cm": -36.0,
-      "also": -149.2,
-      "felso": 124.3
+      "also": -148.4,
+      "felso": 124.1
      },
      {
       "ido": "2026-11-30 06:00:00",
       "ovsz_cm": -46.0,
       "sav_ovsz": 31.7,
       "javitott_cm": -46.0,
-      "also": -159.2,
-      "felso": 114.3
+      "also": -158.4,
+      "felso": 114.1
      },
      {
       "ido": "2026-11-30 12:00:00",
       "ovsz_cm": -53.0,
       "sav_ovsz": 33.4,
       "javitott_cm": -53.0,
-      "also": -166.2,
-      "felso": 107.3
+      "also": -165.4,
+      "felso": 107.1
      },
      {
       "ido": "2026-11-30 18:00:00",
       "ovsz_cm": -59.0,
       "sav_ovsz": 35.1,
       "javitott_cm": -59.0,
-      "also": -172.2,
-      "felso": 101.3
+      "also": -171.4,
+      "felso": 101.1
      },
      {
       "ido": "2026-12-01 00:00:00",
       "ovsz_cm": -64.0,
       "sav_ovsz": 36.9,
       "javitott_cm": -64.0,
-      "also": -177.2,
-      "felso": 96.3
+      "also": -176.4,
+      "felso": 96.1
      },
      {
       "ido": "2026-12-01 06:00:00",
       "ovsz_cm": -68.0,
       "sav_ovsz": 38.6,
       "javitott_cm": -68.0,
-      "also": -181.2,
-      "felso": 92.3
+      "also": -180.4,
+      "felso": 92.1
      }
     ]
    },
    "Ágerdőmajor": {
     "allapot": "javit",
     "kiadas_db": 72,
-    "par_db": 1656,
+    "par_db": 1662,
     "teszt_tol": "2026-11-11 12:00:00",
-    "rmse_ovsz_cm": 31.9,
-    "rmse_javitott_cm": 17.3,
+    "rmse_ovsz_cm": 31.7,
+    "rmse_javitott_cm": 17.2,
     "ovsz_sav_lefedettseg": 0.66,
     "tanult_sav": {
      "0-24": [
@@ -3726,16 +3711,16 @@
       5.2
      ],
      "24-48": [
-      -11.8,
+      -11.7,
       11.8
      ],
      "48-96": [
-      -22.0,
-      13.0
+      -21.5,
+      12.9
      ],
      "96-200": [
-      -10.8,
-      34.3
+      -10.7,
+      34.1
      ]
     },
     "pontok": [
@@ -3743,213 +3728,213 @@
       "ido": "2026-11-25 12:00:00",
       "ovsz_cm": 149.0,
       "sav_ovsz": 1.3,
-      "javitott_cm": 149.0,
-      "also": 144.4,
-      "felso": 154.2
+      "javitott_cm": 149.1,
+      "also": 144.5,
+      "felso": 154.3
      },
      {
       "ido": "2026-11-25 18:00:00",
       "ovsz_cm": 153.0,
       "sav_ovsz": 2.6,
-      "javitott_cm": 149.9,
-      "also": 145.3,
-      "felso": 155.1
+      "javitott_cm": 151.2,
+      "also": 146.6,
+      "felso": 156.4
      },
      {
       "ido": "2026-11-26 00:00:00",
       "ovsz_cm": 154.0,
       "sav_ovsz": 3.9,
-      "javitott_cm": 148.8,
-      "also": 144.2,
-      "felso": 154.0
+      "javitott_cm": 151.6,
+      "also": 147.0,
+      "felso": 156.8
      },
      {
       "ido": "2026-11-26 06:00:00",
       "ovsz_cm": 154.0,
       "sav_ovsz": 5.2,
-      "javitott_cm": 147.3,
-      "also": 142.7,
-      "felso": 152.5
+      "javitott_cm": 151.1,
+      "also": 146.5,
+      "felso": 156.3
      },
      {
       "ido": "2026-11-26 12:00:00",
       "ovsz_cm": 153.0,
       "sav_ovsz": 7.1,
-      "javitott_cm": 145.9,
-      "also": 134.1,
-      "felso": 157.7
+      "javitott_cm": 149.3,
+      "also": 137.6,
+      "felso": 161.1
      },
      {
       "ido": "2026-11-26 18:00:00",
       "ovsz_cm": 151.0,
       "sav_ovsz": 9.0,
-      "javitott_cm": 144.6,
-      "also": 132.8,
-      "felso": 156.4
+      "javitott_cm": 146.6,
+      "also": 134.9,
+      "felso": 158.4
      },
      {
       "ido": "2026-11-27 00:00:00",
       "ovsz_cm": 149.0,
       "sav_ovsz": 10.9,
-      "javitott_cm": 143.8,
-      "also": 132.0,
-      "felso": 155.6
+      "javitott_cm": 144.8,
+      "also": 133.1,
+      "felso": 156.6
      },
      {
       "ido": "2026-11-27 06:00:00",
       "ovsz_cm": 147.0,
       "sav_ovsz": 12.7,
-      "javitott_cm": 143.0,
-      "also": 131.2,
-      "felso": 154.8
+      "javitott_cm": 144.1,
+      "also": 132.4,
+      "felso": 155.9
      },
      {
       "ido": "2026-11-27 12:00:00",
       "ovsz_cm": 149.0,
       "sav_ovsz": 15.2,
-      "javitott_cm": 144.6,
-      "also": 122.6,
-      "felso": 157.6
+      "javitott_cm": 145.7,
+      "also": 124.2,
+      "felso": 158.6
      },
      {
       "ido": "2026-11-27 18:00:00",
       "ovsz_cm": 150.0,
       "sav_ovsz": 17.7,
-      "javitott_cm": 145.6,
-      "also": 123.6,
-      "felso": 158.6
+      "javitott_cm": 147.3,
+      "also": 125.8,
+      "felso": 160.2
      },
      {
       "ido": "2026-11-28 00:00:00",
       "ovsz_cm": 152.0,
       "sav_ovsz": 20.2,
-      "javitott_cm": 147.5,
-      "also": 125.5,
-      "felso": 160.5
+      "javitott_cm": 149.5,
+      "also": 128.0,
+      "felso": 162.4
      },
      {
       "ido": "2026-11-28 06:00:00",
       "ovsz_cm": 155.0,
       "sav_ovsz": 22.6,
-      "javitott_cm": 150.4,
-      "also": 128.4,
-      "felso": 163.4
+      "javitott_cm": 152.5,
+      "also": 131.0,
+      "felso": 165.4
      },
      {
       "ido": "2026-11-28 12:00:00",
       "ovsz_cm": 159.0,
       "sav_ovsz": 24.3,
-      "javitott_cm": 154.3,
-      "also": 132.3,
-      "felso": 167.3
+      "javitott_cm": 156.0,
+      "also": 134.5,
+      "felso": 168.9
      },
      {
       "ido": "2026-11-28 18:00:00",
       "ovsz_cm": 165.0,
       "sav_ovsz": 26.0,
-      "javitott_cm": 157.6,
-      "also": 135.6,
-      "felso": 170.6
+      "javitott_cm": 158.1,
+      "also": 136.6,
+      "felso": 171.0
      },
      {
       "ido": "2026-11-29 00:00:00",
       "ovsz_cm": 168.0,
       "sav_ovsz": 27.7,
-      "javitott_cm": 156.4,
-      "also": 134.4,
-      "felso": 169.4
+      "javitott_cm": 157.2,
+      "also": 135.7,
+      "felso": 170.1
      },
      {
       "ido": "2026-11-29 06:00:00",
       "ovsz_cm": 170.0,
       "sav_ovsz": 29.3,
-      "javitott_cm": 155.1,
-      "also": 133.1,
-      "felso": 168.1
+      "javitott_cm": 156.3,
+      "also": 134.8,
+      "felso": 169.2
      },
      {
       "ido": "2026-11-29 12:00:00",
       "ovsz_cm": 170.0,
       "sav_ovsz": 30.2,
-      "javitott_cm": 155.6,
-      "also": 144.8,
-      "felso": 189.9
+      "javitott_cm": 156.5,
+      "also": 145.8,
+      "felso": 190.6
      },
      {
       "ido": "2026-11-29 18:00:00",
       "ovsz_cm": 169.0,
       "sav_ovsz": 31.1,
-      "javitott_cm": 157.4,
-      "also": 146.6,
-      "felso": 191.7
+      "javitott_cm": 158.0,
+      "also": 147.3,
+      "felso": 192.1
      },
      {
       "ido": "2026-11-30 00:00:00",
       "ovsz_cm": 166.0,
       "sav_ovsz": 32.0,
-      "javitott_cm": 159.5,
-      "also": 148.7,
-      "felso": 193.8
+      "javitott_cm": 161.0,
+      "also": 150.3,
+      "felso": 195.1
      },
      {
       "ido": "2026-11-30 06:00:00",
       "ovsz_cm": 162.0,
       "sav_ovsz": 33.0,
-      "javitott_cm": 158.7,
-      "also": 147.9,
-      "felso": 193.0
+      "javitott_cm": 162.1,
+      "also": 151.4,
+      "felso": 196.2
      },
      {
       "ido": "2026-11-30 12:00:00",
       "ovsz_cm": 158.0,
       "sav_ovsz": 33.7,
-      "javitott_cm": 156.3,
-      "also": 145.5,
-      "felso": 190.6
+      "javitott_cm": 159.9,
+      "also": 149.2,
+      "felso": 194.0
      },
      {
       "ido": "2026-11-30 18:00:00",
       "ovsz_cm": 154.0,
       "sav_ovsz": 34.5,
-      "javitott_cm": 152.9,
-      "also": 142.1,
-      "felso": 187.2
+      "javitott_cm": 155.2,
+      "also": 144.5,
+      "felso": 189.3
      },
      {
       "ido": "2026-12-01 00:00:00",
       "ovsz_cm": 151.0,
       "sav_ovsz": 35.3,
-      "javitott_cm": 149.2,
-      "also": 138.4,
-      "felso": 183.5
+      "javitott_cm": 150.7,
+      "also": 140.0,
+      "felso": 184.8
      },
      {
       "ido": "2026-12-01 06:00:00",
       "ovsz_cm": 147.0,
       "sav_ovsz": 36.1,
-      "javitott_cm": 145.9,
-      "also": 135.1,
-      "felso": 180.2
+      "javitott_cm": 148.3,
+      "also": 137.6,
+      "felso": 182.4
      }
     ]
    }
   },
   "kiadas_db": 72,
   "merokiadas_db": 504,
-  "par_db": 10186
+  "par_db": 10222
  },
  "szerkezet": {
-  "nap": "2026-11-24",
-  "napok_db": 97,
+  "nap": "2026-11-25",
+  "napok_db": 98,
   "pontszam": [
-   -173.9349,
-   16.1959,
-   2.0039,
-   3.0693,
-   -3.8633,
-   2.5498,
-   -5.2482,
-   1.1339
+   -190.1059,
+   -0.5886,
+   -6.9205,
+   -0.2896,
+   0.3404,
+   -2.6103,
+   -6.1818,
+   5.1046
   ],
   "mintazatok": [
    {
@@ -3957,9 +3942,9 @@
     "nev": "medenceszint",
     "felek": null,
     "arany": 0.8451,
-    "ertek_mm": -1.341,
-    "pct": 10,
-    "szint_mm": 0.408
+    "ertek_mm": -1.466,
+    "pct": 4,
+    "szint_mm": 0.283
    },
    {
     "kulcs": "m2",
@@ -3969,8 +3954,8 @@
      "hegyvidék"
     ],
     "arany": 0.0485,
-    "ertek_mm": 0.219,
-    "pct": 78
+    "ertek_mm": -0.008,
+    "pct": 60
    },
    {
     "kulcs": "m3",
@@ -3980,8 +3965,8 @@
      "kelet"
     ],
     "arany": 0.0255,
-    "ertek_mm": 0.026,
-    "pct": 52
+    "ertek_mm": -0.09,
+    "pct": 34
    }
   ],
   "idovonal": [
@@ -4566,6 +4551,12 @@
     "szint": 0.408,
     "m2": 0.219,
     "m3": 0.026
+   },
+   {
+    "nap": "2026-11-25",
+    "szint": 0.283,
+    "m2": -0.008,
+    "m3": -0.09
    }
   ],
   "megfogott_kihagyott_napokon": {
@@ -4629,7 +4620,7 @@
    "verzio": "45212f7023"
   },
   "szondak": {
-   "nap": "2026-11-24",
+   "nap": "2026-11-25",
    "allomasok": [
     {
      "nev": "Apaj",
@@ -4857,7 +4848,7 @@
      "nev": "Jakabszállás",
      "lat": 46.7215,
      "lon": 19.6301,
-     "allapot": "egyutt"
+     "allapot": "helyi"
     },
     {
      "nev": "Jászberény",
@@ -5287,32 +5278,38 @@
     }
    ],
    "db": {
-    "egyutt": 106,
-    "helyi": 3,
+    "egyutt": 105,
+    "helyi": 4,
     "ellenorizendo": 0
    },
    "kiemelt": [
     {
      "nev": "Csengele",
      "allapot": "helyi",
-     "eso_mm": 66.8,
+     "eso_mm": 61.1,
+     "irany": "kevesebb"
+    },
+    {
+     "nev": "Jakabszállás",
+     "allapot": "helyi",
+     "eso_mm": 80.2,
      "irany": "kevesebb"
     },
     {
      "nev": "Mezősas",
      "allapot": "helyi",
-     "eso_mm": 74.6,
+     "eso_mm": 73.7,
      "irany": "kevesebb"
     },
     {
      "nev": "Városföld",
      "allapot": "helyi",
-     "eso_mm": 85.4,
+     "eso_mm": 84.6,
      "irany": "több"
     }
    ],
    "eso_napok": 14
   }
  },
- "futasido_s": 46
+ "futasido_s": 59
 }
