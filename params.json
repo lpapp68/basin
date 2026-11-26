@@ -3582,7 +3582,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-26T08:45:51+00:00",
+    "lekerve": "2026-11-26T08:58:58+00:00",
     "datum": "2026-11-25",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3881,16 +3881,6 @@
         ]
       },
       {
-        "nev": "Csanádpalota",
-        "cm": 317.5,
-        "lat": 46.2430155802294,
-        "lon": 20.7224271183979,
-        "terkep_xy": [
-          682.3,
-          504.3
-        ]
-      },
-      {
         "nev": "Alsóújlak",
         "cm": 317.5,
         "lat": 47.0558566629553,
@@ -3898,6 +3888,16 @@
         "terkep_xy": [
           112.1,
           328.1
+        ]
+      },
+      {
+        "nev": "Csanádpalota",
+        "cm": 317.5,
+        "lat": 46.2430155802294,
+        "lon": 20.7224271183979,
+        "terkep_xy": [
+          682.3,
+          504.3
         ]
       },
       {
@@ -3991,16 +3991,6 @@
         ]
       },
       {
-        "nev": "Vaja  (I)",
-        "cm": 166.0,
-        "lat": 47.9963160993862,
-        "lon": 22.1656428797911,
-        "terkep_xy": [
-          895.0,
-          124.2
-        ]
-      },
-      {
         "nev": "Tiszadob",
         "cm": 166.0,
         "lat": 48.0000248283835,
@@ -4008,6 +3998,16 @@
         "terkep_xy": [
           747.1,
           123.4
+        ]
+      },
+      {
+        "nev": "Vaja  (I)",
+        "cm": 166.0,
+        "lat": 47.9963160993862,
+        "lon": 22.1656428797911,
+        "terkep_xy": [
+          895.0,
+          124.2
         ]
       },
       {
@@ -5028,7 +5028,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-26T08:45:55Z",
+    "keszult": "2026-11-26T08:59:02Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
