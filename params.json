@@ -4496,136 +4496,6 @@
         "orak": 144
       },
       {
-        "statid": 61,
-        "nev": "Hidasnémeti",
-        "folyo": "Hernád",
-        "megjegyzes": "nyitott fal: Szlovákia felől",
-        "pontok": [
-          {
-            "ido": "2026-11-27 12:00:00",
-            "cm": -110.0,
-            "sav": 2.2
-          },
-          {
-            "ido": "2026-11-27 18:00:00",
-            "cm": -110.0,
-            "sav": 4.5
-          },
-          {
-            "ido": "2026-11-28 00:00:00",
-            "cm": -109.0,
-            "sav": 6.7
-          },
-          {
-            "ido": "2026-11-28 06:00:00",
-            "cm": -108.0,
-            "sav": 9.0
-          },
-          {
-            "ido": "2026-11-28 12:00:00",
-            "cm": -108.0,
-            "sav": 10.3
-          },
-          {
-            "ido": "2026-11-28 18:00:00",
-            "cm": -108.0,
-            "sav": 11.7
-          },
-          {
-            "ido": "2026-11-29 00:00:00",
-            "cm": -109.0,
-            "sav": 13.0
-          },
-          {
-            "ido": "2026-11-29 06:00:00",
-            "cm": -109.0,
-            "sav": 14.4
-          },
-          {
-            "ido": "2026-11-29 12:00:00",
-            "cm": -110.0,
-            "sav": 15.1
-          },
-          {
-            "ido": "2026-11-29 18:00:00",
-            "cm": -110.0,
-            "sav": 15.8
-          },
-          {
-            "ido": "2026-11-30 00:00:00",
-            "cm": -110.0,
-            "sav": 16.5
-          },
-          {
-            "ido": "2026-11-30 06:00:00",
-            "cm": -110.0,
-            "sav": 17.2
-          },
-          {
-            "ido": "2026-11-30 12:00:00",
-            "cm": -110.0,
-            "sav": 17.6
-          },
-          {
-            "ido": "2026-11-30 18:00:00",
-            "cm": -110.0,
-            "sav": 18.0
-          },
-          {
-            "ido": "2026-12-01 00:00:00",
-            "cm": -110.0,
-            "sav": 18.4
-          },
-          {
-            "ido": "2026-12-01 06:00:00",
-            "cm": -110.0,
-            "sav": 18.8
-          },
-          {
-            "ido": "2026-12-01 12:00:00",
-            "cm": -110.0,
-            "sav": 19.0
-          },
-          {
-            "ido": "2026-12-01 18:00:00",
-            "cm": -110.0,
-            "sav": 19.3
-          },
-          {
-            "ido": "2026-12-02 00:00:00",
-            "cm": -110.0,
-            "sav": 19.5
-          },
-          {
-            "ido": "2026-12-02 06:00:00",
-            "cm": -110.0,
-            "sav": 19.7
-          },
-          {
-            "ido": "2026-12-02 12:00:00",
-            "cm": -110.0,
-            "sav": 20.5
-          },
-          {
-            "ido": "2026-12-02 18:00:00",
-            "cm": -110.0,
-            "sav": 21.2
-          },
-          {
-            "ido": "2026-12-03 00:00:00",
-            "cm": -110.0,
-            "sav": 22.0
-          },
-          {
-            "ido": "2026-12-03 06:00:00",
-            "cm": -110.0,
-            "sav": 22.7
-          }
-        ],
-        "valtozas_cm": 0.0,
-        "orak": 144
-      },
-      {
         "statid": 48,
         "nev": "Ágerdőmajor",
         "folyo": "Kraszna",
@@ -5016,12 +4886,14 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-27T23:04:27Z",
+    "keszult": "2026-11-27T23:35:15Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
     "figyelmeztetes": "Vízállás, nem vízhozam: a mérlegbe nem számít bele. A cm-ből m³/s-ba váltáshoz vízhozamgörbe kellene, ami a nyilvános adatban nincs benne.",
-    "hibak": []
+    "hibak": [
+      "Hidasnémeti: The read operation timed out"
+    ]
   },
   "beszivargas": {
     "futas_utc": "2026-11-27T21:37:13+00:00",
