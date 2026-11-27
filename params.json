@@ -3581,7 +3581,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-27T03:36:04+00:00",
+    "lekerve": "2026-11-27T04:06:25+00:00",
     "datum": "2026-11-26",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3766,7 +3766,7 @@
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 147.2,
+    "sullyedes_cm": 147.0,
     "evek": 10,
     "datum": "2026-11-27",
     "kut_db": 540,
@@ -3851,7 +3851,7 @@
       },
       {
         "nev": "Csót-4",
-        "cm": 350.5,
+        "cm": 351.0,
         "lat": 47.3556829949672,
         "lon": 17.6371868159393,
         "terkep_xy": [
@@ -3921,7 +3921,7 @@
       },
       {
         "nev": "Kunbaja",
-        "cm": 300.0,
+        "cm": 300.5,
         "lat": 46.0861995210745,
         "lon": 19.4101281891767,
         "terkep_xy": [
@@ -4011,7 +4011,7 @@
       },
       {
         "nev": "Tiszadob",
-        "cm": 165.5,
+        "cm": 165.0,
         "lat": 48.0000248283835,
         "lon": 21.1621448622796,
         "terkep_xy": [
@@ -4021,7 +4021,7 @@
       },
       {
         "nev": "Tokod",
-        "cm": 129.5,
+        "cm": 130.0,
         "lat": 47.7221604633719,
         "lon": 18.6434495330823,
         "terkep_xy": [
@@ -4072,7 +4072,7 @@
       },
       {
         "nev": "Soroksár",
-        "cm": 25.0,
+        "cm": 24.5,
         "lat": 47.3950562146411,
         "lon": 19.1115752826102,
         "referencia": "Budapest",
@@ -5027,7 +5027,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-27T03:36:09Z",
+    "keszult": "2026-11-27T04:06:31Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
