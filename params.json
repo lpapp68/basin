@@ -11,7 +11,7 @@
     "ertek": 0.53,
     "provenance": "muholdas",
     "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-11-25, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-11-25",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
@@ -20,7 +20,7 @@
     "ertek": 0.2,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-11-25, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-11-25",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
@@ -3580,8 +3580,8 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-26T10:05:45+00:00",
-    "datum": "2026-11-25",
+    "lekerve": "2026-11-27T00:08:55+00:00",
+    "datum": "2026-11-26",
     "belepo": {
       "nev": "Duna, Dévény",
       "hozam_m3s": 974.0,
@@ -3591,11 +3591,11 @@
     },
     "kilepo": {
       "nev": "Duna, Baziás",
-      "hozam_m3s": 4300.0,
+      "hozam_m3s": 4500.0,
       "sokeves_atlag_m3s": 4700.0,
       "forras": "INHGA napi hidrológiai bulletin (hidro.ro), prózából kinyerve"
     },
-    "kulonbseg_m3s": 3326.0,
+    "kulonbseg_m3s": 3526.0,
     "duna_profil": [
       {
         "nev": "Duna, Medve",
@@ -3758,21 +3758,21 @@
   },
   "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli.",
   "parolgas_era5_mm_nap": {
-    "ertek": 0.54,
-    "datum": "2026-11-19",
+    "ertek": 0.66,
+    "datum": "2026-11-20",
     "provenance": "modellezett",
     "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 148.2,
+    "sullyedes_cm": 147.2,
     "evek": 10,
-    "datum": "2026-11-26",
-    "kut_db": 522,
-    "melyult": 508,
+    "datum": "2026-11-27",
+    "kut_db": 540,
+    "melyult": 526,
     "emelkedett": 7,
-    "also_kvartilis": 95.5,
-    "felso_kvartilis": 214.0,
+    "also_kvartilis": 95.0,
+    "felso_kvartilis": 215.0,
     "leginkabb": [
       {
         "nev": "Bugac",
@@ -3791,20 +3791,20 @@
         "cm": 405.0
       },
       {
+        "nev": "Tiszajenő",
+        "cm": 400.5
+      },
+      {
         "nev": "Kiskunhalas",
         "cm": 399.0
       },
       {
         "nev": "Jászszentlászló",
-        "cm": 394.0
+        "cm": 395.0
       },
       {
         "nev": "Kecskemét",
         "cm": 388.0
-      },
-      {
-        "nev": "Kunszentmárton",
-        "cm": 386.0
       }
     ],
     "terkep": [
@@ -3849,6 +3849,26 @@
         ]
       },
       {
+        "nev": "Csót-4",
+        "cm": 350.5,
+        "lat": 47.3556829949672,
+        "lon": 17.6371868159393,
+        "terkep_xy": [
+          227.5,
+          263.1
+        ]
+      },
+      {
+        "nev": "Kup-2",
+        "cm": 341.0,
+        "lat": 47.251231191448,
+        "lon": 17.4745767220833,
+        "terkep_xy": [
+          203.5,
+          285.7
+        ]
+      },
+      {
         "nev": "Tápé",
         "cm": 333.0,
         "lat": 46.2662950268528,
@@ -3870,7 +3890,7 @@
       },
       {
         "nev": "Konyár",
-        "cm": 319.0,
+        "cm": 318.0,
         "lat": 47.3180843741109,
         "lon": 21.6727429529734,
         "terkep_xy": [
@@ -3879,18 +3899,8 @@
         ]
       },
       {
-        "nev": "Alsóújlak",
-        "cm": 317.5,
-        "lat": 47.0558566629553,
-        "lon": 16.8547349054333,
-        "terkep_xy": [
-          112.1,
-          328.1
-        ]
-      },
-      {
         "nev": "Csanádpalota",
-        "cm": 317.5,
+        "cm": 316.0,
         "lat": 46.2430155802294,
         "lon": 20.7224271183979,
         "terkep_xy": [
@@ -3920,7 +3930,7 @@
       },
       {
         "nev": "Jászszentandrás",
-        "cm": 282.5,
+        "cm": 282.0,
         "lat": 47.5841689950968,
         "lon": 20.1730627520489,
         "terkep_xy": [
@@ -3930,7 +3940,7 @@
       },
       {
         "nev": "Medgyesbodzás",
-        "cm": 268.5,
+        "cm": 266.5,
         "lat": 46.5168292837038,
         "lon": 20.9608802368426,
         "terkep_xy": [
@@ -3950,7 +3960,7 @@
       },
       {
         "nev": "Hajdúnánás",
-        "cm": 254.0,
+        "cm": 253.0,
         "lat": 47.7709449162053,
         "lon": 21.4063554991631,
         "terkep_xy": [
@@ -3959,13 +3969,13 @@
         ]
       },
       {
-        "nev": "Magyarbóly",
-        "cm": 233.5,
-        "lat": 45.8362852324481,
-        "lon": 18.485593394306,
+        "nev": "Magyarmecske",
+        "cm": 228.0,
+        "lat": 45.9492298418416,
+        "lon": 17.9643214901695,
         "terkep_xy": [
-          352.6,
-          592.5
+          275.7,
+          568.0
         ]
       },
       {
@@ -3979,23 +3989,13 @@
         ]
       },
       {
-        "nev": "Káloz(Sárhatvan)",
-        "cm": 223.0,
-        "lat": 46.8740267469196,
-        "lon": 18.5464502014965,
+        "nev": "Lovászpatona",
+        "cm": 209.0,
+        "lat": 47.4307031975603,
+        "lon": 17.6268114889549,
         "terkep_xy": [
-          361.5,
-          367.5
-        ]
-      },
-      {
-        "nev": "Tiszadob",
-        "cm": 166.0,
-        "lat": 48.0000248283835,
-        "lon": 21.1621448622796,
-        "terkep_xy": [
-          747.1,
-          123.4
+          226.0,
+          246.8
         ]
       },
       {
@@ -4009,33 +4009,33 @@
         ]
       },
       {
-        "nev": "Neszmély",
-        "cm": 145.0,
-        "lat": 47.7403572756861,
-        "lon": 18.3912180586098,
+        "nev": "Tiszadob",
+        "cm": 165.5,
+        "lat": 48.0000248283835,
+        "lon": 21.1621448622796,
         "terkep_xy": [
-          338.6,
-          179.7
-        ]
-      },
-      {
-        "nev": "Főnyed",
-        "cm": 133.0,
-        "lat": 46.6277328913108,
-        "lon": 17.2572189918728,
-        "terkep_xy": [
-          171.5,
-          420.9
+          747.1,
+          123.4
         ]
       },
       {
         "nev": "Tokod",
-        "cm": 129.0,
+        "cm": 129.5,
         "lat": 47.7221604633719,
         "lon": 18.6434495330823,
         "terkep_xy": [
           375.8,
           183.6
+        ]
+      },
+      {
+        "nev": "Alsópáhok",
+        "cm": 113.0,
+        "lat": 46.7694705056718,
+        "lon": 17.1734658886747,
+        "terkep_xy": [
+          159.1,
+          390.2
         ]
       },
       {
@@ -4050,7 +4050,7 @@
       },
       {
         "nev": "Eger",
-        "cm": 0.5,
+        "cm": -1.0,
         "lat": 47.8946522620158,
         "lon": 20.3886224017715,
         "terkep_xy": [
@@ -4059,19 +4059,19 @@
         ]
       },
       {
-        "nev": "Ászár",
-        "cm": 124.8,
-        "lat": 47.5099087767115,
-        "lon": 18.0044193677648,
+        "nev": "Csót-5",
+        "cm": 330.0,
+        "lat": 47.347345269812,
+        "lon": 17.6344299730291,
         "referencia": "Zirc",
         "terkep_xy": [
-          281.6,
-          229.6
+          227.1,
+          264.9
         ]
       },
       {
         "nev": "Soroksár",
-        "cm": 25.5,
+        "cm": 25.0,
         "lat": 47.3950562146411,
         "lon": 19.1115752826102,
         "referencia": "Budapest",
@@ -4082,7 +4082,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 522 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 540 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5026,7 +5026,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-26T23:34:30Z",
+    "keszult": "2026-11-27T00:08:58Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",

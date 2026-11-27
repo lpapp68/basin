@@ -1,0 +1,1 @@
+talaj vízhiány:     raise URLError(err) urllib.error.URLError: <urlopen error timed out> 
