@@ -11,7 +11,7 @@
     "ertek": 8.65,
     "provenance": "muholdas",
     "forras": "GPM IMERG Early napi (GPM_3IMERGDE V07), 2026-11-26, területsúlyozott átlag országhatár-maszkkal",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-11-26",
     "figyelmeztetes": "Műholdas becslés, nem reanalízis. Az Early futás gyors, de kevésbé pontos, mint az ERA5-Land vagy az IMERG Final. Országhatár-maszkkal súlyozva.",
     "hivatkozas": "GPM IMERG, NASA GES DISC"
@@ -20,7 +20,7 @@
     "ertek": 0.04,
     "provenance": "muholdas",
     "forras": "EUMETSAT LSA SAF DMETv3 (MSG), 2026-11-26, területsúlyozott átlag országhatár-maszkkal, minőségszűrve (missing_values_percent ≤ 20%)",
-    "kor_ora": 24,
+    "kor_ora": 48,
     "datum": "2026-11-26",
     "lefedettseg": 1.0,
     "figyelmeztetes": "Országhatár-maszkkal súlyozva. A minőségszűrés miatt a felhős cellák kimaradnak — erősen felhős napon a maradék minta torzíthat.",
@@ -3580,7 +3580,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-27T15:35:54+00:00",
+    "lekerve": "2026-11-28T00:07:02+00:00",
     "datum": "2026-11-27",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3759,18 +3759,18 @@
   "_klima_megjegyzes": "Sokéves vízstressz-viszonyítás az EUMETSAT LSA SAF archívumából, naptári nap szerint. Az arány ET_act/ET_ref; az átlag ugyanannak a naptári napnak az elmúlt évekbeli értékeiből származik. A szórás megmutatja, mennyire ingadozik az adott nap évről évre — ha nagy, a mai eltérés kevésbé rendkívüli.",
   "parolgas_era5_mm_nap": {
     "ertek": 0.66,
-    "datum": "2026-11-20",
+    "datum": "2026-11-21",
     "provenance": "modellezett",
     "forras": "ECMWF ERA5-Land reanalízis (total_evaporation), 9 km-es rács, területsúlyozott átlag országhatár-maszkkal",
     "figyelmeztetes": "Reanalízis: modell asszimilált megfigyeléssel, nem közvetlen mérés. Öt-hat napos késéssel érkezik, ezért visszamenőleges keresztellenőrzésre való, nem napi működésre."
   },
   "talajviz": {
-    "sullyedes_cm": 147.2,
+    "sullyedes_cm": 147.0,
     "evek": 10,
-    "datum": "2026-11-27",
-    "kut_db": 534,
-    "melyult": 519,
-    "emelkedett": 8,
+    "datum": "2026-11-28",
+    "kut_db": 533,
+    "melyult": 518,
+    "emelkedett": 9,
     "also_kvartilis": 94.0,
     "felso_kvartilis": 215.0,
     "leginkabb": [
@@ -3780,7 +3780,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 447.5
+        "cm": 448.0
       },
       {
         "nev": "Bugac",
@@ -3792,7 +3792,7 @@
       },
       {
         "nev": "Tiszajenő",
-        "cm": 400.0
+        "cm": 399.5
       },
       {
         "nev": "Kiskunhalas",
@@ -3820,7 +3820,7 @@
       },
       {
         "nev": "Tázlár",
-        "cm": 447.5,
+        "cm": 448.0,
         "lat": 46.5606028482933,
         "lon": 19.517643147905,
         "terkep_xy": [
@@ -3850,7 +3850,7 @@
       },
       {
         "nev": "Csót-4",
-        "cm": 351.0,
+        "cm": 351.5,
         "lat": 47.3556829949672,
         "lon": 17.6371868159393,
         "terkep_xy": [
@@ -3950,7 +3950,7 @@
       },
       {
         "nev": "Hajdúnánás",
-        "cm": 253.0,
+        "cm": 251.0,
         "lat": 47.7709449162053,
         "lon": 21.4063554991631,
         "terkep_xy": [
@@ -4010,7 +4010,7 @@
       },
       {
         "nev": "Tiszadob",
-        "cm": 164.5,
+        "cm": 164.0,
         "lat": 48.0000248283835,
         "lon": 21.1621448622796,
         "terkep_xy": [
@@ -4051,7 +4051,7 @@
       },
       {
         "nev": "Eger",
-        "cm": -1.0,
+        "cm": -2.0,
         "lat": 47.8946522620158,
         "lon": 20.3886224017715,
         "terkep_xy": [
@@ -4072,7 +4072,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 534 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 533 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -4496,6 +4496,136 @@
         "orak": 144
       },
       {
+        "statid": 61,
+        "nev": "Hidasnémeti",
+        "folyo": "Hernád",
+        "megjegyzes": "nyitott fal: Szlovákia felől",
+        "pontok": [
+          {
+            "ido": "2026-11-27 12:00:00",
+            "cm": -110.0,
+            "sav": 2.2
+          },
+          {
+            "ido": "2026-11-27 18:00:00",
+            "cm": -110.0,
+            "sav": 4.5
+          },
+          {
+            "ido": "2026-11-28 00:00:00",
+            "cm": -109.0,
+            "sav": 6.7
+          },
+          {
+            "ido": "2026-11-28 06:00:00",
+            "cm": -108.0,
+            "sav": 9.0
+          },
+          {
+            "ido": "2026-11-28 12:00:00",
+            "cm": -108.0,
+            "sav": 10.3
+          },
+          {
+            "ido": "2026-11-28 18:00:00",
+            "cm": -108.0,
+            "sav": 11.7
+          },
+          {
+            "ido": "2026-11-29 00:00:00",
+            "cm": -109.0,
+            "sav": 13.0
+          },
+          {
+            "ido": "2026-11-29 06:00:00",
+            "cm": -109.0,
+            "sav": 14.4
+          },
+          {
+            "ido": "2026-11-29 12:00:00",
+            "cm": -110.0,
+            "sav": 15.1
+          },
+          {
+            "ido": "2026-11-29 18:00:00",
+            "cm": -110.0,
+            "sav": 15.8
+          },
+          {
+            "ido": "2026-11-30 00:00:00",
+            "cm": -110.0,
+            "sav": 16.5
+          },
+          {
+            "ido": "2026-11-30 06:00:00",
+            "cm": -110.0,
+            "sav": 17.2
+          },
+          {
+            "ido": "2026-11-30 12:00:00",
+            "cm": -110.0,
+            "sav": 17.6
+          },
+          {
+            "ido": "2026-11-30 18:00:00",
+            "cm": -110.0,
+            "sav": 18.0
+          },
+          {
+            "ido": "2026-12-01 00:00:00",
+            "cm": -110.0,
+            "sav": 18.4
+          },
+          {
+            "ido": "2026-12-01 06:00:00",
+            "cm": -110.0,
+            "sav": 18.8
+          },
+          {
+            "ido": "2026-12-01 12:00:00",
+            "cm": -110.0,
+            "sav": 19.0
+          },
+          {
+            "ido": "2026-12-01 18:00:00",
+            "cm": -110.0,
+            "sav": 19.3
+          },
+          {
+            "ido": "2026-12-02 00:00:00",
+            "cm": -110.0,
+            "sav": 19.5
+          },
+          {
+            "ido": "2026-12-02 06:00:00",
+            "cm": -110.0,
+            "sav": 19.7
+          },
+          {
+            "ido": "2026-12-02 12:00:00",
+            "cm": -110.0,
+            "sav": 20.5
+          },
+          {
+            "ido": "2026-12-02 18:00:00",
+            "cm": -110.0,
+            "sav": 21.2
+          },
+          {
+            "ido": "2026-12-03 00:00:00",
+            "cm": -110.0,
+            "sav": 22.0
+          },
+          {
+            "ido": "2026-12-03 06:00:00",
+            "cm": -110.0,
+            "sav": 22.7
+          }
+        ],
+        "valtozas_cm": 0.0,
+        "orak": 144
+      },
+      {
         "statid": 48,
         "nev": "Ágerdőmajor",
         "folyo": "Kraszna",
@@ -4886,14 +5016,12 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-27T23:35:15Z",
+    "keszult": "2026-11-28T00:07:07Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
     "figyelmeztetes": "Vízállás, nem vízhozam: a mérlegbe nem számít bele. A cm-ből m³/s-ba váltáshoz vízhozamgörbe kellene, ami a nyilvános adatban nincs benne.",
-    "hibak": [
-      "Hidasnémeti: The read operation timed out"
-    ]
+    "hibak": []
   },
   "beszivargas": {
     "futas_utc": "2026-11-27T21:37:13+00:00",
