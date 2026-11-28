@@ -3580,7 +3580,7 @@
     "figyelmeztetes": "Számított mennyiség: a talajnedvesség-mérésből és a szántóföldi vízkapacitásból az OVF modellje adja. Az átlag mind a 127 állomásból számol; a térképre tíz, egymástól távoli állomás kerül, hogy olvasható maradjon."
   },
   "mdb_falak": {
-    "lekerve": "2026-11-28T07:36:35+00:00",
+    "lekerve": "2026-11-28T08:05:59+00:00",
     "datum": "2026-11-27",
     "belepo": {
       "nev": "Duna, Dévény",
@@ -3768,10 +3768,10 @@
     "sullyedes_cm": 146.0,
     "evek": 10,
     "datum": "2026-11-28",
-    "kut_db": 534,
-    "melyult": 519,
+    "kut_db": 532,
+    "melyult": 517,
     "emelkedett": 9,
-    "also_kvartilis": 93.5,
+    "also_kvartilis": 94.0,
     "felso_kvartilis": 215.0,
     "leginkabb": [
       {
@@ -3860,7 +3860,7 @@
       },
       {
         "nev": "Kup-2",
-        "cm": 341.0,
+        "cm": 340.0,
         "lat": 47.251231191448,
         "lon": 17.4745767220833,
         "terkep_xy": [
@@ -4010,7 +4010,7 @@
       },
       {
         "nev": "Tiszadob",
-        "cm": 164.0,
+        "cm": 165.0,
         "lat": 48.0000248283835,
         "lon": 21.1621448622796,
         "terkep_xy": [
@@ -4030,7 +4030,7 @@
       },
       {
         "nev": "Cserhátsurány",
-        "cm": 92.0,
+        "cm": 91.5,
         "lat": 47.9780696282504,
         "lon": 19.4289904724613,
         "terkep_xy": [
@@ -4072,7 +4072,7 @@
       }
     ],
     "provenance": "helyszini",
-    "forras": "OVF nyílt adat-API, 534 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
+    "forras": "OVF nyílt adat-API, 532 talajvízkút; a mai és a 10 évvel ezelőtti azonos naptári időszak (±15 nap) medián szintjének különbsége",
     "figyelmeztetes": "A napi változás mediánja nulla: a talajvíz lassú rekesz, egyetlen nap alig mond róla valamit. Ezért évtizedes léptékben mérünk, azonos naptári időszakot összevetve — így az évszakos ciklus kiesik. Az országos érték a kutankénti különbségek mediánja."
   },
   "csapadek_omsz_mm_nap": {
@@ -5016,7 +5016,7 @@
         "orak": 144
       }
     ],
-    "keszult": "2026-11-28T07:36:41Z",
+    "keszult": "2026-11-28T08:06:03Z",
     "provenance": "modellezett",
     "forras": "Országos Vízjelző Szolgálat (OVF) hydroinfo API, getfc — vízállás-előrejelzés hatóránként",
     "megjegyzes": "Ez az OVSZ hivatalos előrejelzése, nem a lap saját számítása. A sáv (±) a szolgálat saját bizonytalansági becslése, amely az idővel nő.",
